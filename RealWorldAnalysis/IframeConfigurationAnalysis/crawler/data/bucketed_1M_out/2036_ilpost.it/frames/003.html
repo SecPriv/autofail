@@ -1,0 +1,748 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>&nbsp;</title><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="unsafe-url"></head><body><script>
+
+  ~function( )
+  {
+    if ( !window.fetch || !window.Promise )
+      return;
+
+
+    try
+    {
+      if ( window == parent || !parent.postMessage )
+        return;
+
+      if ( window._ && window._.DL )
+        return;
+    } catch ( _ ) { }
+
+
+    {
+      var fLog = function( )
+      {
+        try
+        {
+          parent.postMessage
+          ({
+            '~DL_log': [].slice.call( arguments )
+          }, '*' );
+
+          return true;
+        } catch ( _ ) { }
+
+        return false;
+      };
+      fLog( 'iframe', 'init' );
+
+
+      var fScramble = function( sString )
+      {
+        var aString = ('' + sString).split( '' );
+
+        for ( var iString = 0; iString < aString.length; ++iString )
+        {
+          var iChar = aString[iString].charCodeAt( 0 );
+
+          if ( iChar >= 33 && iChar <= 126 )
+            aString[iString] = String.fromCharCode( 33 + ((iChar + 14) % 94) );
+        }
+
+        return aString.reverse( ).join( '' );
+      };
+
+
+      var fUniqueID = function( )
+      {
+        var aID = new Uint8Array( 22 );
+        window.crypto.getRandomValues( aID );
+
+        return String.fromCharCode.apply( null, aID.map( function( iNumber ){ return 0x21 + (iNumber % 94); } ) );
+      };
+
+      var fValidateID = function( sId )
+      {
+        if ( !sId || typeof sId != typeof '' )
+          return null;
+
+        sId = sId.trim( );
+        return sId && (sId.length == 22 || sId.length == 44) && Array.from(sId).every( function( cChar ) { return cChar >= '!' && cChar <= '~'; } );
+      };
+
+
+      var fNumberEncode = function( iNumber )
+      {
+        {
+          if ( iNumber === null || iNumber === void 0 )
+            iNumber = 0;
+          else if ( iNumber === false )
+            iNumber = 0;
+          else if ( iNumber === true )
+            iNumber = 1;
+
+          iNumber = parseInt( iNumber, 10 );
+          if ( isNaN(iNumber) || !isFinite(iNumber) )
+            iNumber = 0;
+
+
+          var bNumber = iNumber < 0;
+          iNumber     = Math.abs( iNumber );
+        }
+
+        if ( !iNumber )
+          return String.fromCharCode( 0x21 );
+
+
+        var sNumber = '';
+        while ( iNumber > 0 )
+        {
+          sNumber = String.fromCharCode( 0x21 + (iNumber % 93) ) + sNumber;
+          iNumber = Math.floor( iNumber / 93 );
+        }
+
+        if ( bNumber )
+          sNumber = String.fromCharCode( 0x21+93 ) + sNumber;
+
+        return sNumber;
+      };
+
+
+      var fNumberDecode = function( sNumber )
+      {
+        if ( sNumber === null || sNumber === void 0 )
+          return 0;
+        else if ( sNumber === false )
+          return 0;
+        else if ( sNumber === true )
+          return 1;
+
+        sNumber = ('' + sNumber).trim( );
+        var iNumber = 0;
+
+        var iSign = 1;
+        {
+          if ( sNumber && sNumber.charCodeAt(0) == 0x21+93 )
+          {
+            sNumber = sNumber.substring( 1 );
+            iSign   = -1;
+          }
+        }
+
+        for ( var kNumber = 0; kNumber < sNumber.length; ++kNumber )
+        {
+          var iDigit = sNumber.charCodeAt(kNumber) - 0x21;
+          if ( iDigit < 0 || iDigit > 92 )
+            return iNumber*iSign;
+
+          iNumber = iNumber*93 + iDigit;
+        }
+
+        return iNumber*iSign;
+      };
+
+      var fHash = function( sString )
+      {
+        sString = '' + sString;
+        if ( sString === '' )
+          return 0;
+
+        var iHash = 0;
+        for ( var iString = 0; iString < sString.length; ++iString )
+        {
+          iHash  = ((iHash << 5) - iHash) + sString.charCodeAt( iString );
+          iHash |= 0;
+        }
+
+        return fNumberEncode( (iHash >>> 0) || Number.MAX_SAFE_INTEGER );
+      };
+
+      var fTimeStamp = function( )
+      {
+        return Math.round( (+new Date() - 17578944e5) / 1000 ) || -1;
+      };
+
+
+      var fCookie = function( sName )
+      {
+        if ( !sName )
+          return null;
+
+
+        for ( var sCookieToken of (document.cookie || '').split(';') )
+        {
+          var aCookieToken = sCookieToken.split( '=', 2 );
+          if ( !aCookieToken )
+            continue;
+
+
+          var sCookieName = (aCookieToken[0] || '').trim( );
+          try
+          {
+            sCookieName = decodeURIComponent( sCookieName );
+          } catch ( _ ) { }
+
+          if ( sCookieName != sName )
+            continue;
+
+
+          var sCookieValue = (aCookieToken[1] || '').trim( );
+          try
+          {
+            sCookieValue = decodeURIComponent( sCookieValue );
+          } catch ( _ ) { }
+
+
+          return sCookieValue;
+        }
+
+        return null;
+      };
+    }
+
+
+    {
+      var sVID = fUniqueID( );
+      var fDB  = function( oDB, iLoad )
+      {
+        var oThis = this;
+
+        return new Promise( function( fResolve, fReject )
+        {
+          var iTimeStamp    = fTimeStamp( );
+          var iVersion      = +oThis['#'] || 0;
+
+          var sCookieSuffix = '';
+          var sCookiePath   = oThis['/'] || '/';
+          var sCookieDomain = oThis['@'] || '';
+          var sCookieFlags  = oThis['!'] ? '' : '; secure; samesite=none;';
+
+
+          var bIDMissing = false;
+          var oDBStorage = null;
+          {
+            try
+            {
+              var sDBStorage = (localStorage.getItem( '~DL.d' ) || '').trim( );
+              if ( sDBStorage )
+                oDBStorage = JSON.parse( '{'+fScramble(sDBStorage)+'}' );
+            } catch ( _ ) { }
+
+            if ( !oDBStorage || typeof oDBStorage != typeof {} )
+              oDBStorage = null;
+          }
+
+
+          {
+            try
+            {
+              fLog( 'iframe', 'sandbox', 'storage', Object.keys(localStorage), document.cookie.split(/\s*;\s*/gi) );
+            } catch ( _ ) { }
+          }
+
+
+          fLog( 'iframe', 'call', oThis, oDB, iLoad, oDBStorage );
+
+          var sID = null;
+          var bID = false;
+          {
+            var tsID = null;
+
+            var sCookieDLi = fCookie( '~DL.i' + sCookieSuffix );
+            if ( sCookieDLi )
+            {
+              try
+              {
+                var aID = JSON.parse( '['+ fScramble(sCookieDLi) +']' );
+
+                if ( aID && Array.isArray(aID) && aID[0] && aID[1] && fNumberDecode(aID[2]) >= iVersion )
+                {
+                  sID  = '' + aID[0];
+                  tsID = fNumberDecode( aID[1] );
+
+                  fLog( 'iframe', 'load id', 'cookie', sID, tsID );
+                }
+              } catch ( _ ) { }
+            }
+
+            {
+              if ( !sID || !fValidateID(sID) )
+              {
+                if ( oDB && typeof oDB == typeof {} && oDB.ui )
+                {
+                  sID        = '' + oDB.ui;
+                  tsID       = fNumberDecode( oDB.ts );
+                  bIDMissing = true;
+
+                  fLog( 'iframe', 'load id', 'packet', sID, tsID );
+                }
+              }
+
+              if ( !sID || !fValidateID(sID) )
+              {
+                if ( oThis._ && oThis._.r && oThis._.r.ui )
+                {
+                  sID        = '' + oThis._.r.ui;
+                  tsID       = parseInt( oThis._.r.ts, 36 ) || 0;
+                  bIDMissing = true;
+
+                  fLog( 'iframe', 'load id', 'context', sID, tsID );
+                }
+              }
+
+              if ( !sID || !fValidateID(sID) )
+              {
+                if ( oDBStorage && oDBStorage.ui )
+                {
+                  sID  = '' + oDBStorage.ui;
+                  tsID = fNumberDecode( oDBStorage.ts );
+
+                  fLog( 'iframe', 'load id', 'storage', sID, tsID );
+                }
+              }
+            }
+
+            if ( !sID || !fValidateID(sID) )
+            {
+              fLog( 'iframe', 'no id', sID  );
+
+              sID = fUniqueID( );
+              bID = true;
+
+              try
+              {
+                localStorage.removeItem( '~DL.d' );
+
+                document.cookie = '~DL.s' + sCookieSuffix + '=; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(0).toUTCString() + sCookieFlags;
+                document.cookie = '~DL.c' + sCookieSuffix + '=; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(0).toUTCString() + sCookieFlags;
+              } catch ( _ ) { }
+
+              fLog( 'iframe', 'new id', sID );
+            }
+
+            document.cookie = '~DL.i' + sCookieSuffix + '=' + encodeURIComponent( fScramble(JSON.stringify([sID, fNumberEncode(tsID || iTimeStamp), fNumberEncode(iVersion)]).trim().slice(1,-1)) ) + '; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(new Date().getTime() + 399*24*60*60*1000).toUTCString() + sCookieFlags;
+            fLog( 'iframe', 'id', sID, bID, bIDMissing );
+
+
+            if ( bIDMissing )
+              fLog( 'iframe', 'id corrupted', fCookie('~DL.i') );
+            else if ( bID && !fCookie('~DL.i') )
+            {
+              fLog( 'iframe', 'error saving id' );
+              bIDMissing = true;
+            }
+          }
+
+
+          var sSID = null;
+          {
+            var bSID = false;
+            var tsSID = null;
+
+            if ( !bID )
+            {
+              var sCookieDLs = fCookie( '~DL.s' + sCookieSuffix );
+              if ( sCookieDLs )
+              {
+                try
+                {
+                  var aSID = JSON.parse( '['+ fScramble(sCookieDLs) +']' );
+
+                  if ( aSID && Array.isArray(aSID) && aSID[0] && aSID[1] && fNumberDecode(aSID[2]) >= iVersion )
+                  {
+                    sSID  = '' + aSID[0];
+                    tsSID = fNumberDecode( aSID[1] );
+
+                    fLog( 'iframe', 'load sid', 'cookie', sSID, tsSID, iTimeStamp - tsSID );
+                  }
+                } catch ( _ ) { }
+              }
+
+
+              {
+                if ( !sSID || !fValidateID(sSID) )
+                {
+                  if ( oDB && typeof oDB == typeof {} && oDB.us )
+                  {
+                    sSID  = '' + oDB.us;
+                    tsSID = fNumberDecode( oDB.ts ) + fNumberDecode( oDB.tu );
+
+                    fLog( 'iframe', 'load sid', 'packet', sSID, tsSID, iTimeStamp - tsSID );
+                  }
+                }
+
+                if ( !sSID || !fValidateID(sSID) )
+                {
+                  if ( oThis._ && oThis._.r && oThis._.r.us )
+                  {
+                    sSID  = '' + oThis._.r.us;
+                    tsSID = (parseInt(oThis._.r.ts, 36) || 0) + (parseInt(oThis._.r.tu, 36) || 0);
+
+                    fLog( 'iframe', 'load sid', 'context', sSID, tsSID, iTimeStamp - tsSID );
+                  }
+                }
+
+                if ( !sSID || !fValidateID(sSID) )
+                {
+                  if ( oDBStorage && oDBStorage.us )
+                  {
+                    sSID  = '' + oDBStorage.us;
+                    tsSID = fNumberDecode( oDBStorage.ts ) + fNumberDecode( oDBStorage.tu );
+
+                    fLog( 'iframe', 'load sid', 'storage', sSID, tsSID, iTimeStamp - tsSID );
+                  }
+                }
+              }
+            }
+
+
+            if ( !sSID || !fValidateID(sSID)  || !tsSID || tsSID+(60*30) < iTimeStamp )
+            {
+              fLog( 'iframe', 'no sid', sSID, tsSID  );
+
+              bSID = true;
+              sSID = fUniqueID( );
+
+              fLog( 'iframe', 'new sid', sSID, tsSID+(60*30) < iTimeStamp );
+            }
+
+            document.cookie = '~DL.s' + sCookieSuffix + '=' + encodeURIComponent( fScramble(JSON.stringify([sSID, fNumberEncode(iTimeStamp), fNumberEncode(iVersion)]).trim().slice(1,-1)) ) + '; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(new Date().getTime() + 30*60*1000).toUTCString() + sCookieFlags;
+            fLog( 'iframe', 'sid', sSID, bSID, tsSID );
+          }
+
+
+          var bCache = false;
+          {
+            if ( oThis['^'] || oThis['|'] )
+            {
+              if ( !bID )
+              {
+                bCache = +Infinity;
+                fLog( 'iframe', 'cache', 'unchecked' );
+              }
+            }
+
+
+            else
+            {
+              var sLink = oThis.pl || '';
+              {
+                if ( !sLink.indexOf('//') )
+                  sLink = 'https:' + sLink;
+                else if ( !~sLink.indexOf('://') )
+                  sLink = 'https://' + sLink;
+              }
+
+              var oLink  = document.createElement( 'a' );
+              oLink.href = sLink;
+              var sHash  = fHash( ('' + oLink.host).toLowerCase() );
+
+              fLog( 'iframe', 'cache current', sHash, oLink.host, oThis.pl );
+
+              if ( !bID )
+              {
+                var sCookieDLc = fCookie( '~DL.c' + sCookieSuffix );
+                if ( sCookieDLc )
+                {
+                  try
+                  {
+                    var aCache = JSON.parse( '['+ fScramble(sCookieDLc) +']' );
+
+                    if ( aCache && Array.isArray(aCache) && aCache[0] && fNumberDecode(aCache[1]) >= iVersion )
+                    {
+                      fLog( 'iframe', 'cache loaded', aCache[0] );
+
+                      if ( aCache[0] == sHash )
+                        bCache = true;
+                    }
+                  } catch ( _ ) { }
+                }
+              }
+
+              document.cookie = '~DL.c' + sCookieSuffix + '=' + encodeURIComponent( fScramble(JSON.stringify([sHash, fNumberEncode(iVersion)]).trim().slice(1,-1)) ) + '; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(new Date().getTime() + 90*24*60*60*1000).toUTCString() + sCookieFlags;
+              fLog( 'iframe', 'cache', bCache, sHash );
+            }
+          }
+
+
+          new Promise( function( fThen )
+          {
+            if ( oDB && typeof oDB == typeof {} )
+            {
+              fThen( );
+              return;
+            }
+
+            if ( bID )
+            {
+              fThen( );
+              return;
+            }
+
+
+            if ( bCache )
+            {
+              fLog( 'iframe', 'storage cache', !!oDBStorage );
+
+              if ( oDBStorage && typeof oDBStorage == typeof {} )
+              {
+                oDB = oDBStorage;
+                
+                fThen( );
+                return;
+              }
+            }
+
+            {
+              fLog( 'iframe', 'network load' );
+
+              fetch
+              (
+                (oThis['.'] || '') + 'd',
+                {
+                  cache:          'no-store',
+                  credentials:    'omit',
+                  mode:           'cors',
+                  referrerPolicy: 'unsafe-url',
+                  priority:       'high',
+                  method:         'POST',
+                  headers:        { 'Content-Type': 'text/plain' },
+                  body:           fScramble( sID )
+                }
+              )
+                .then( function( oResponse )
+                {
+                  fLog( 'iframe', 'network loaded', oResponse.ok );
+
+                  if ( !oResponse.ok )
+                  {
+                    fThen( );
+                    return;
+                  }
+
+                  oResponse.text( ).then( function( sDBRemote )
+                  {
+                    if ( sDBRemote )
+                    {
+                      var oDBRemote = null;
+                      try
+                      {
+                        oDBRemote = JSON.parse( '{'+fScramble(sDBRemote)+'}' );
+                      } catch ( _ ) { }
+
+                      if ( oDBRemote && typeof oDBRemote == typeof {} )
+                        oDB = oDBRemote;
+                    }
+
+                   fThen( );
+                  } ).catch( fThen );
+
+                } ).catch( fThen );
+            }
+
+          } ).then( function( )
+          {
+            fLog( 'iframe', 'db', oDB );
+
+            var bObject  = false;
+            var bVersion = false;
+            {
+              if ( !oDB || typeof oDB != typeof {} )
+              {
+                bObject = true;
+                oDB     = { };
+              }
+              else if ( oDB.ua && fNumberDecode(oDB.ua) < iVersion )
+              {
+                bVersion = true;
+                oDB      = { };
+              }
+
+              oDB.ua = fNumberEncode( iVersion );
+              oDB.ui = sID;
+              oDB.us = sSID;
+              oDB.uv = sVID;
+            }
+
+            {
+              oDB.$ = { };
+
+              if ( bObject )
+                oDB.$._ = true;
+              if ( bVersion )
+                oDB.$.ua = true;
+
+              if ( bID )
+                oDB.$.ui = true;
+              if ( bSID )
+                oDB.$.us = true;
+
+              if ( bIDMissing )
+                oDB.$.x = true;
+
+              if ( !Object.keys(oDB.$).length )
+                delete oDB.$;
+            }
+
+
+
+            try
+            {
+              var sDB = JSON.stringify( oDB ).trim( ).slice( 1, -1 );
+
+              if ( sDB )
+                localStorage.setItem( '~DL.d', fScramble(sDB) );
+              else
+                localStorage.removeItem( '~DL.d' );
+
+              fLog( 'iframe', 'db saved', oDB, oDB.$ );
+            } catch ( _ ) { fLog( 'iframe', 'db save error' ); }
+
+
+            fResolve( oDB );
+          } ).catch( fReject );
+
+        } );
+      };
+    }
+
+    {
+      var oDL =
+      {
+        l:       'db_load',
+        db_load: function( iLoad )
+        {
+          iLoad = parseInt( iLoad );
+          if ( isNaN(iLoad) || !isFinite(iLoad) || iLoad < 0 )
+            iLoad = 0;
+
+          return fDB.call( this, null, iLoad );
+        },
+
+        s:       'db_store',
+        db_store: function( oDB, bReset )
+        {
+          if ( !oDB || typeof oDB != typeof {} )
+            return null;
+
+          if ( bReset )
+          {
+            var oThis         = this;
+
+            var sCookieSuffix = '';
+            var sCookiePath   = oThis['/'] || '/';
+            var sCookieDomain = oThis['@'] || '';
+            var sCookieFlags  = oThis['!'] ? '' : '; secure; samesite=none;';
+
+
+            try
+            {
+              this._ = { };
+
+              document.cookie = '~DL.i' + sCookieSuffix + '=; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(0).toUTCString() + sCookieFlags;
+              document.cookie = '~DL.s' + sCookieSuffix + '=; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(0).toUTCString() + sCookieFlags;
+              document.cookie = '~DL.c' + sCookieSuffix + '=; path=' + sCookiePath + '; domain=' + sCookieDomain + '; expires=' + new Date(0).toUTCString() + sCookieFlags;
+
+              localStorage.removeItem( '~DL.d' );
+            } catch ( _ ) { }
+          }
+
+          return fDB.call( this, oDB, bReset ? -Infinity : -1 );
+        }
+      };
+    }
+
+    window.addEventListener( 'message', function( oEvent )
+    {
+      if ( !oEvent.data || !oEvent.data['~DL'] || typeof oEvent.data['~DL'] != typeof {} )
+        return;
+
+      fLog( 'iframe', 'function', oEvent.data['~DL'] );
+
+
+      var sTask = oEvent.data['~DL'][''];
+      if ( !sTask || typeof sTask != typeof '' )
+        return;
+
+      var aParameters = oEvent.data['~DL']['$'];
+      if ( !aParameters || !Array.isArray(aParameters) || !aParameters.length )
+        return;
+
+      var oEnvironment = oEvent.data['~DL']['_'] || { };
+      if ( !oEnvironment || typeof oEnvironment != typeof {} )
+        oEnvironment = { };
+
+
+      var sFunction = aParameters.shift( );
+      sFunction     = sFunction ? ('' + sFunction).trim() : '';
+      sFunction     = sFunction.toLowerCase( );
+      sFunction     = sFunction.replace( /[^A-Za-z0-9._-]/gi, '_' );
+      sFunction     = sFunction.replace( /([._-])\1+/gi, '$1' );
+      sFunction     = sFunction.replace( /[._-]{2,}/gi, '_' );
+      sFunction     = sFunction.replace( /^[._-]+|[._-]+$/gi, '' );
+
+
+      while ( sFunction && oDL[sFunction] && typeof oDL[sFunction] == typeof '' )
+        sFunction = oDL[ sFunction ];
+
+
+      var mReturn = null;
+      {
+        try
+        {
+          if ( !sFunction || !oDL[sFunction] || typeof oDL[sFunction] != typeof function(){} )
+            throw '';
+
+          mReturn = oDL[sFunction].apply( oEnvironment, aParameters );
+        }
+
+        catch ( _ )
+        {
+          try
+          {
+            parent.postMessage
+            ({
+              '~DL':
+              {
+                '': sTask,
+              }
+            }, '*' );
+          } catch ( _ ) { }
+
+          return;
+        }
+
+        if ( !mReturn || !mReturn.then )
+          mReturn = Promise.resolve( mReturn );
+      }
+
+
+      mReturn
+        .then( function( mReturn )
+        {
+          try
+          {
+            parent.postMessage
+            ({
+              '~DL':
+              {
+                '': sTask,
+                $:  mReturn
+              }
+            }, '*' );
+          } catch ( _ ) { }
+        } )
+        .catch( function( )
+        {
+          try
+          {
+            parent.postMessage
+            ({
+              '~DL':
+              {
+                '': sTask
+              }
+            }, '*' );
+          } catch ( _ ) { }
+        } );
+    } );
+  }( );
+
+</script></body></html>

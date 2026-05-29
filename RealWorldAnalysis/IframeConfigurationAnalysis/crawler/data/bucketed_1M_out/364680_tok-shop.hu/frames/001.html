@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en" class=""><head>
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+(function () {
+    const BARION_VISITOR_COOKIE_NAME = 'ba_vid';
+    const BARION_SESSION_COOKIE_NAME = 'ba_sid';
+    const BA_TEST_COOKIE_NAME = 'ba_test';
+
+    const MINUTE = 60;
+    const YEAR = 31536000;
+    const VISITOR_TIMEOUT = 1.5 * YEAR;
+    const SESSION_TIMEOUT = 30 * MINUTE;
+
+    const cookie = function(e,o,n,t,i,c){return arguments.length>1?document.cookie=e+"="+encodeURIComponent(o)+(n?"; expires="+new Date(+new Date+1e3*n).toUTCString():"")+(t?"; path="+t:"")+(i?"; domain="+i:"")+(c?"; SameSite=None; Secure":""):decodeURIComponent((("; "+document.cookie).split("; "+e+"=")[1]||"").split(";")[0])};
+
+    // uuid
+    // https://gist.github.com/jcxplorer/823878
+    const uuid = function() {
+        let uuid = "", i, random;
+        for (i = 0; i < 32; i++) {
+            random = Math.random() * 16 | 0;
+            if (i === 8 || i === 12 || i === 16 || i === 20) {
+                uuid += "-"
+            }
+            uuid += (i === 12 ? 4 : (i === 16 ? (random & 3 | 8) : random)).toString(16);
+        }
+        return uuid;
+    };
+
+    const extend_or_create_cookie = function(name, timeout) {
+        if (cookie(name) === '') {
+            // create
+            cookie(name, uuid(), timeout, '/', '.' + document.domain, true);
+        }
+        else {
+            // extend
+            cookie(name, cookie(name), timeout, '/', '.' + document.domain, true);
+        }
+    };
+
+    const get_parameter_by_name = function(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    };
+
+    const thirdparty_cookie_allowed = function() {
+        cookie(BA_TEST_COOKIE_NAME, 1, "", "", "", true);
+        var result = cookie(BA_TEST_COOKIE_NAME) !== '';
+        cookie(BA_TEST_COOKIE_NAME, 0, -1, "", "", true);
+        return result
+    };
+
+    const loadPixelStatus = function () {
+        const cookieAllowed = thirdparty_cookie_allowed();
+        const sourceSite = get_parameter_by_name('s');
+
+        let pixelStatus = {};
+
+        if (sourceSite === "https://secure.barion.com") {
+            pixelStatus = {
+                "approvedBase": true,
+                "approvedMarketing": true,
+                "deniedBase": false,
+                "deniedMarketing": false
+            };
+            extend_or_create_cookie(BARION_VISITOR_COOKIE_NAME, VISITOR_TIMEOUT);
+			extend_or_create_cookie(BARION_SESSION_COOKIE_NAME, SESSION_TIMEOUT);
+
+            window.parent.postMessage({
+                message: "pixelStatusBase",
+                pixelStatus: pixelStatus,
+                multisite_session_id: cookie(BARION_SESSION_COOKIE_NAME),
+                cookieAllowed: true,
+				ba_vid: cookie(BARION_VISITOR_COOKIE_NAME)
+            }, sourceSite);
+            window["pixelStatus"] = pixelStatus;
+        } else {
+            if (window.name === "") {
+                console.error('ERROR', 'Barion Pixel: Base code implementaion not found.')
+            } else {
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === 4 && xhttp.status === 200) {
+                        pixelStatus = JSON.parse(xhttp.response);
+                        window["pixelStatus"] = pixelStatus;
+                        if (cookieAllowed && pixelStatus["approvedBase"]) {
+                            extend_or_create_cookie(BARION_VISITOR_COOKIE_NAME, VISITOR_TIMEOUT);
+                            extend_or_create_cookie(BARION_SESSION_COOKIE_NAME, SESSION_TIMEOUT);
+                        }
+                        window["pixelStatus"] = pixelStatus;
+                        window.parent.postMessage({
+                                message: "pixelStatusBase",
+                                pixelStatus: pixelStatus,
+                                multisite_session_id: cookie(BARION_SESSION_COOKIE_NAME),
+                                cookieAllowed: true,
+				                ba_vid: cookie(BARION_VISITOR_COOKIE_NAME)
+                            }, sourceSite);
+
+                        if (typeof(window.parent.postMessage) === 'function' && !window["pixelStatus"]["deniedBase"] && !window["pixelStatus"]["deniedMarketing"]) {
+                            let msg = {};
+                            if (pixelStatus['approvedBase']) {
+                                msg[BARION_VISITOR_COOKIE_NAME] = cookie(BARION_VISITOR_COOKIE_NAME);
+                            }
+                            msg['cookieAllowed'] = cookieAllowed;
+                            window.parent.postMessage(msg, sourceSite);
+                        }
+                    }
+                };
+                xhttp.open("GET", "https://pixel.barion.com/pixel-status/" + window.name);
+                xhttp.send();
+            }
+        }
+    };
+
+    window.addEventListener('load', loadPixelStatus);
+}());
+        </script>
+    
+</body></html>

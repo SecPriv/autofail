@@ -1,0 +1,32 @@
+[
+  {
+    "frameId": "000",
+    "url": "https://m.business-gazeta.ru/",
+    "name": null,
+    "isMainFrame": true,
+    "adFrameStatus": {
+      "adFrameType": "none"
+    },
+    "iframes": [
+      {
+        "childFrameId": "001",
+        "width": "374px",
+        "height": "250px",
+        "frameborder": "0",
+        "srcdoc": "<!DOCTYPE html>\n\n<html>\n<head>\n<base href=\"https://static.gazeta.bo/2026/05/07/670013/\"/>\n<meta charset=\"UTF-8\">\n<meta name=\"authoring-tool\" content=\"Adobe_Animate_CC\">\n<meta name=\"description\" content=\"adfox_template\">\n<title>aristokrat</title>\n<script src=\"https://beta-cdn.business-gazeta.ru/js/createjs.js\" type=\"text/javascript\"></script>\n\n<style>\n  #animation_container {\n\tposition:absolute;\n\tmargin:auto;\n\tleft:0;right:0;\n\ttop:0;bottom:0;\n  }\n</style>\n<script src=\"https://static.gazeta.bo/2026/05/07/670013/aristokrat.js\"></script>\n<script>\nvar canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;\nfunction init() {\n\tcanvas = document.getElementById(\"canvas\");\n\tanim_container = document.getElementById(\"animation_container\");\n\tdom_overlay_container = document.getElementById(\"dom_overlay_container\");\n\tvar comp=AdobeAn.getComposition(\"B1523E1B232E9E47A743315A1044A0F0\");\n\tvar lib=comp.getLibrary();\n\tvar loader = new createjs.LoadQueue(false);\n\tloader.addEventListener(\"fileload\", function(evt){handleFileLoad(evt,comp)});\n\tloader.addEventListener(\"complete\", function(evt){handleComplete(evt,comp)});\n\tvar lib=comp.getLibrary();\n\tloader.loadManifest(lib.properties.manifest);\n}\n    var flashVars = {\n      reference: \"https://vendo.gazeta.bo/api/banner/click/489/46\",\n      link: \"aHR0cHM6Ly94bi0tLS04c2Jhbndta3Blc2RqbmUueG4tLXAxYWkvZmxhdHM/dXRtX3NvdXJjZT1ibyZ1dG1fbWVkaXVtPWJhbm5lciZlcmlkPTJTRG5qZEJmZXBh&user_uuid=3ee23f9900f11a13379a8e5be0710fa5\",\n      target: \"_blank\",\n      rnd: parseInt(\"%request.place_random%\") || parseInt(\"%system.random%\"),\n      events: [\n            \"\",\n            \"%banner.event1%\",\n            \"%banner.event2%\",\n            \"%banner.event3%\",\n            \"%banner.event4%\",\n            \"%banner.event5%\",\n            \"%banner.event6%\",\n            \"%banner.event7%\",\n            \"%banner.event8%\",\n            \"%banner.event9%\",\n            \"%banner.event10%\",\n            \"%banner.event11%\",\n            \"%banner.event12%\",\n            \"%banner.event13%\",\n            \"%banner.event14%\",\n            \"%banner.event15%\",\n            \"%banner.event16%\",\n            \"%banner.event17%\",\n            \"%banner.event18%\",\n            \"%banner.event19%\",\n            \"%banner.event20%\",\n            \"%banner.event21%\",\n            \"%banner.event22%\",\n            \"%banner.event23%\",\n            \"%banner.event24%\",\n            \"%banner.event25%\",\n            \"%banner.event26%\",\n            \"%banner.event27%\",\n            \"%banner.event28%\",\n            \"%banner.event29%\",\n            \"%banner.event30%\"\n      ]\n    };\nfunction callClick(n) {\n      var link = ( n ? flashVars.events[n] : flashVars.link );\n      window.open(flashVars.reference + \"?url=\" + link, flashVars.target);\n}\nfunction callEvent(n) {\n      (new Image()).src = flashVars.events[n]; \n}\nfunction handleFileLoad(evt, comp) {\n\tvar images=comp.getImages();\t\n\tif (evt && (evt.item.type == \"image\")) { images[evt.item.id] = evt.result; }\t\n}\nfunction handleComplete(evt,comp) {\n\tvar lib=comp.getLibrary();\n\tvar ss=comp.getSpriteSheet();\n\tvar queue = evt.target;\n\tvar ssMetadata = lib.ssMetadata;\n\tfor(i=0; i<ssMetadata.length; i++) {\n\t\tss[ssMetadata[i].name] = new createjs.SpriteSheet( {\"images\": [queue.getResult(ssMetadata[i].name)], \"frames\": ssMetadata[i].frames} )\n\t}\n\texportRoot = new lib.Безымянный1();\n\tstage = new lib.Stage(canvas);\t\n\tfnStartAnimation = function() {\n\t\tstage.addChild(exportRoot);\n\t\tcreatejs.Ticker.framerate = lib.properties.fps;\n\t\tcreatejs.Ticker.addEventListener(\"tick\", stage);\n\t}\t    \n\tAdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);\t\n\tAdobeAn.compositionLoaded(lib.properties.id);\n\tfnStartAnimation();\n}\n</script>\n\n</head>\n<body onload=\"init();\" style=\"margin:0px;\">\n\t<div id=\"animation_container\" style=\"background-color:rgba(255, 255, 255, 1.00); width:374px; height:250px\">\n\t\t<canvas id=\"canvas\" width=\"374\" height=\"250\" style=\"position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);\"></canvas>\n\t\t<div id=\"dom_overlay_container\" style=\"pointer-events:none; overflow:hidden; width:374px; height:250px; position: absolute; left: 0px; top: 0px; display: block;\">\n\t\t</div>\n\t</div>\n  <script type=\"text/javascript\">\n      var elem = document.getElementsByTagName(\"canvas\")[0];\n      elem.style.cursor = \"pointer\";\n      elem.addEventListener(\"click\", function(){\n        callClick();\n      }, false);\n  </script>\n</body>\n</html>",
+        "style": "border-radius: 8px; max-width: 374px; width: 100%;"
+      }
+    ]
+  },
+  {
+    "frameId": "001",
+    "url": "about:srcdoc",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  }
+]

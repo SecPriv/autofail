@@ -1,0 +1,1524 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sci-Hub:Get the latest free papers Library</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Sci-Hub:Get the latest free papers Library">
+    <meta name="description" content="Sci-Hub:Get the latest free papers Library">
+</head>
+
+<body onload="init()">
+    <style type="text/css">
+        @font-face {
+            font-family: 'Courier Prime';
+            src: url('./fonts/CourierPrime-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Courier 10';
+            src: url('./fonts/courier_10_pitch_win95bt.ttf');
+        }
+
+        @font-face {
+            font-family: 'Courier Prime';
+            src: url('./fonts/CourierPrime-SemiBold.ttf');
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: 'Mono';
+            src: url('./fonts/FiraCode-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Mono';
+            src: url('./fonts/FiraCode-SemiBold.ttf');
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: 'Carmelit';
+            src: url('./fonts/Carmelit Bold Bold.ttf');
+        }
+
+
+        html,
+        body,
+        div {
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+
+        div {
+            z-index: 2;
+            font-family: 'Mono';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        html,
+        body {
+            width: 100%
+        }
+
+
+
+        body {
+            white-space: nowrap;
+        }
+
+        #back {
+            z-index: -1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50vw;
+            min-width: 640px;
+            max-width: 800px;
+            height: 100vh;
+            background: url('//img.sci-hub.shop/scihubnew/assets/formulas.png') repeat-x;
+            background-size: auto 100%;
+            background-position: 0 0;
+            opacity: 0.04
+        }
+
+        #wall,
+        #emc,
+        #bulb,
+        #dna {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: -1
+        }
+
+        #wall {
+            max-height: 25vh;
+            width: 100%;
+            overflow: hidden
+        }
+
+        #wall img {
+            max-width: 22vw;
+            min-width: 255px;
+        }
+
+        #emc {
+            left: max(290px, 18vw)
+        }
+
+        #emc img {
+            max-width: 16vw;
+            min-width: 180px
+        }
+
+        #bulb {
+            left: max(min(600px, 38vw), 400px)
+        }
+
+        #bulb img {
+            max-height: 30vh;
+            opacity: 0.14
+        }
+
+        #dna {
+            left: max(min(800px, 49.5vw), 640px);
+            height: 100%;
+            overflow: auto;
+            width: 0.77vw
+                 
+            ;
+            background: url('//img.sci-hub.shop/scihubnew/assets/dna.png') repeat-y;
+            background-size: 100% auto;
+            z-index: 3
+        }
+
+        #container {
+            display: flex
+        }
+
+        #main {
+            display: inline-block;
+            white-space: normal;
+            vertical-align: top;
+            width: 50vw;
+            min-width: 640px;
+            max-width: 800px;
+            height: 100vh;
+            flex: 1
+        }
+
+        #logo {
+            margin-top: 12vh;
+            text-align: center
+        }
+
+        #logo img {
+            width: min(max(106px, 8.3vw), 140px);
+            vertical-align: middle
+        }
+
+        #logo span {
+            vertical-align: middle;
+            font-family: 'Courier Prime';
+            color: darkred;
+            font-size: min(max(90px, 7vw), 140px);
+            font-weight: bold;
+            white-space: nowrap
+        }
+
+        #enter {
+            width: 100%;
+            height: 11vh;
+            padding: 2vh 0 2vh 0;
+            text-align: center;
+            background: #eee
+        }
+
+        #enter textarea {
+            width: 60%;
+            height: 90%;
+            max-height: 90%;
+            border: solid 1px #ccc;
+            border-radius: 0.4vw;
+            text-align: center;
+            font-size: 1.33rem
+        }
+
+        #enter button {
+            cursor: pointer;
+            border: solid 1px darkred;
+            color: white;
+            font-size: max(24px, 1.88vw);
+            background: darkred;
+            border-radius: 0.4vw;
+            vertical-align: top;
+            height: 92%;
+            padding-right: 2%;
+        }
+
+        #enter button:hover {
+            background: firebrick;
+            border-color: firebrick
+        }
+
+        #enter button img,
+        #enter button span {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            font-family: 'Mono';
+            max-height: 100%
+        }
+
+        #enter button span {
+            font-family: 'Courier Prime';
+        }
+
+        #motto {
+            font-family: 'Mono';
+            text-align: center;
+            width: 90%;
+            margin: 2vh 0 0 5%;
+            color: #aaa;
+            font-size: max(24px, 1.44vw);
+            white-space: normal;
+        }
+
+        #menu {
+            text-align: center;
+            margin: 6vh 5% 0 5%;
+            border-bottom: solid 1px #ddd
+        }
+
+        #menu a {
+            font-family: 'Courier Prime';
+            font-size: min(max(22px, 1.33vw), 24px);
+            text-decoration: none;
+            font-weight: bold;
+            color: #444;
+            display: inline-block;
+            margin-left: 1vw;
+            padding: 0.4vh 0.4vw 0.4vh 0.4vw;
+            border-radius: 0.4vw;
+            background: white
+        }
+
+        #menu a.select {
+            color: #e8a202
+        }
+
+        #menu a:hover {
+            background: #e8a202;
+            text-decoration: none;
+            color: white
+        }
+
+        #menu a.donate:hover {
+            background: green
+        }
+
+        #info {
+            display: inline-block;
+            vertical-align: top;
+            width: 50vw;
+            background: #fafafa;
+            height: 100vh;
+            flex: 1;
+            flex-grow: 1;
+            overflow-y: auto
+        }
+
+        #stats {
+            margin: 2vh 0 0 3.5%;
+            max-width: 95%;
+            white-space: nowrap;
+            font-size: min(1.11rem, 1.2vw)
+        }
+
+        #stats a {
+            display: inline-block;
+            padding: 0 1% 0 1%;
+            text-decoration: none;
+            color: black;
+            white-space: normal;
+            vertical-align: middle;
+            cursor: url('//img.sci-hub.shop/scihubnew/assets/zoom.png'), auto
+        }
+
+        #stats a:hover {
+            background: lemonchiffon
+        }
+
+        #stats a:hover .nu {
+            font-weight: bold
+        }
+
+        #stats #total {
+            border-right: solid 1px #ccc;
+            width: 16%;
+        }
+
+        #stats #users {
+            width: 11%
+        }
+
+        #stats #last {
+            width: 67%;
+            border-left: solid 1px #ccc
+        }
+
+        #stats #last .author {
+            font-weight: bold
+        }
+
+        #stats #last .doi {
+            font-weight: bold
+        }
+
+        #stats #last .nu {
+            font-size: min(1rem, 1vw)
+        }
+
+        #stats a#last:hover .nu {
+            font-weight: normal
+        }
+
+        #stats .he {
+            color: darkred;
+            font-weight: bold;
+            margin-bottom: 1vh;
+            white-space: nowrap
+        }
+
+        #stats .nu {
+            word-wrap: break-word
+        }
+
+        #stats .su {
+            color: #666
+        }
+
+        #lang {
+            margin: 1vh 1% 0 4.5%;
+            font-size: min(1.11rem, 1.2vw);
+            text-align: left
+        }
+
+        #lang .he {
+            color: #999;
+            background: #aaa;
+            color: white;
+            padding: 0.2vh 0.2vw 0.2vw 0.2vw;
+            border-radius: 0.1vw;
+            font-weight: bold;
+            cursor: default
+        }
+
+        #lang a {
+            display: inline-block;
+            margin-left: 4px;
+            color: #777;
+            text-decoration: none;
+            padding: 0.2vh 0.2vw 0.2vh 0.2vw;
+            border-radius: 0.2vw
+        }
+
+        #lang a:hover {
+            background: green;
+            color: white
+        }
+
+        #lang a.selected {
+            background: #e8a202;
+            color: white
+        }
+
+        #lang a:hover.selected {
+            background: #e8a202
+        }
+
+        #langi {
+            display: none
+        }
+
+        #mirrors {
+            margin: 1vh 1% 0 4.5%;
+            font-size: min(1.11rem, 1.2vw);
+            text-align: left
+        }
+
+        #mirrors .he {
+            color: #999;
+            background: #aaa;
+            color: white;
+            padding: 0.2vh 0.2vw 0.2vw 0.2vw;
+            border-radius: 0.1vw;
+            font-weight: bold;
+            cursor: default
+        }
+
+        #mirrors a {
+            display: inline-block;
+            color: #777;
+            text-decoration: none
+        }
+
+        #mirrors a:hover {
+            color: darkred;
+            text-decoration: underline
+        }
+
+        #mirrors a#seall {
+            color: #333
+        }
+
+        #mirrors a#seall:hover {
+            text-decoration: none;
+            font-weight: bold
+        }
+
+        #contacts {
+            margin: 5vh 0 0 8.5%;
+            font-size: 1rem;
+        }
+
+        #contacts .he span {
+            color: darkred;
+            font-size: max(1.44rem, 1.44vw);
+            padding: 0 0 1vh 0;
+            border-bottom: dashed 1px #ccc
+        }
+
+        #contacts #mailto {
+            margin-top: 2vh
+        }
+
+        #contacts #mailto a {
+            color: #444;
+            text-decoration: none;
+            font-size: max(1rem, 1vw);
+        }
+
+        #contacts #mailto a:hover {
+            text-decoration: underline
+        }
+
+        #contacts #social {
+            margin-top: 1vh
+        }
+
+        #contacts #social a {
+            color: #333;
+            text-decoration: none;
+            font-size: max(1rem, 1vw);
+            display: inline-block;
+            margin-right: 1%
+        }
+
+        #contacts #social a:hover {
+            color: darkred;
+            text-decoration: underline
+        }
+
+        .bar {
+            height: 4vh;
+            width: 100%
+        }
+
+        #stats-big {
+            display: none
+        }
+
+        #stats-big a {
+            text-decoration: none;
+            color: black;
+            cursor: url('//img.sci-hub.shop/scihubnew/assets/zoom.png'), auto
+        }
+
+        #stats-big a:hover {
+            background: lightyellow
+        }
+
+
+        #about {
+            display: none;
+            margin: 8vh 0 8vh 0;
+            padding-top: 8vh;
+            border-top: dashed 2vh darksalmon;
+        }
+
+        #about p {
+            margin: 2vh 3% 0 4%;
+            font-size: 1.22rem;
+            text-align: left;
+        }
+
+        #about .he {
+            font-family: 'Courier Prime';
+            font-size: 7rem;
+            color: goldenrod;
+        }
+
+        #about .te {
+            display: inline-block;
+            width: 66%;
+            vertical-align: middle
+        }
+
+        #about .im {
+            display: inline-block;
+            width: 33%;
+            vertical-align: middle
+        }
+
+        #about .im img {
+            width: 100%;
+        }
+
+        #about a {
+            color: darkred;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #about a:hover {
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-height: 640px) {
+
+            #wall,
+            #emc {
+                display: none
+            }
+        }
+
+        @media only screen and (max-width: 1440px) {
+            #back {
+                width: 100%;
+                max-width: 100%;
+                min-width: 100%;
+                background-size: 37% auto;
+                background-repeat: repeat;
+                opacity: 0.07
+            }
+
+            #dna {
+                display: none
+            }
+
+            #emc {
+                display: none
+            }
+
+            #bulb {
+                z-index: -1;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                left: auto;
+            }
+
+            #bulb img {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+            #container {
+                display: block
+            }
+
+            #main {
+                display: block;
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                padding-top: 2vh;
+                height: auto;
+                background: url('//img.sci-hub.shop/scihubnew/assets/wall_600.png');
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+            }
+
+            #logo {
+                margin-top: 0;
+            }
+
+            #enter {
+                height: 8vh;
+                min-height: 64px;
+                background: none;
+                padding-bottom: 0
+            }
+
+            #motto {
+                margin-top: 2vh
+            }
+
+            #motto span {
+                background: white;
+                padding: 0.5vh 0.5vw 0.5vh 0.5vw;
+                border-radius: 0.5vw
+            }
+
+            #menu {
+                margin: 3vh 0 0 0;
+            }
+
+            #info {
+                display: block;
+                width: 100%;
+                height: auto;
+                padding-top: 2vh;
+                white-space: normal
+            }
+
+
+            #stats-big {
+                display: inline-block;
+                vertical-align: middle;
+                width: 27%;
+                text-align: left;
+
+                border: dashed 8px #ccc;
+                border-radius: 16px;
+                background: white;
+
+                padding: 0 2% 2% 2%;
+
+                font-size: 1rem;
+                color: black;
+                background: white;
+
+            }
+
+            #stats-big .he {
+                text-align: left;
+            }
+
+            #stats-big .he span {
+                background: #ccc;
+                font-size: 1.44rem;
+                padding: 1%;
+                color: white;
+            }
+
+            #stats-big .number {
+                color: darkred;
+                font-size: 1.44rem;
+                font-family: 'Courier Prime';
+                font-weight: bold;
+                background: white;
+                margin-top: 2vh;
+            }
+
+            #stats-big #lastart {
+                margin-top: 2vh;
+                color: darkred;
+                font-weight: bold;
+            }
+
+            #stats-big .author {
+                font-weight: bold;
+            }
+
+
+
+            #lang {
+                margin: 0 0 0 1%;
+                display: block;
+                vertical-align: middle;
+                padding: 1vh 1.5% 1vh 1%;
+                 
+            }
+
+            #lang a {
+                display: inline-block;
+                font-size: 0.9rem;
+            }
+
+            #lang span {
+                font-size: 0.8rem;
+            }
+
+            #lang .he {
+                background: none;
+                font-weight: bold;
+                color: #444
+            }
+
+            #mirrors {
+                margin: 0 0 0 1%;
+                display: block;
+                vertical-align: middle;
+                padding: 0 1.5% 1vh 1%;
+                 
+            }
+
+            #mirrors a {
+                display: inline-block;
+                font-size: 0.9rem;
+            }
+
+            #mirrors span {
+                font-size: 0.8rem;
+            }
+
+            #mirrors .he {
+                background: none;
+                font-weight: bold;
+                color: #444
+            }
+
+            #stats {
+                display: none
+            }
+
+            #contacts {
+                margin: 4vh 0 0 0;
+                padding: 3vh 0 3vh 0;
+                width: 100%;
+                background: #444;
+            }
+
+            #contacts div {
+                margin-left: 4.5%;
+                color: white;
+            }
+
+            #contacts .he span,
+            #contacts #social a,
+            #contacts #mailto a,
+            #contacts #social a:hover {
+                color: white;
+            }
+
+            #contacts #mailto {
+                margin-top: 4vh;
+            }
+
+            .bar {
+                display: none
+            }
+
+            #about {
+                display: block
+            }
+
+            .third {
+                display: none
+            }
+        }
+
+        @media only screen and (max-height: 600px) and (max-width: 1440px) {
+            #main {
+                background-image: url('//img.sci-hub.shop/scihubnew/assets/wall_600.png');
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media only screen and (max-width: 1100px) {
+            #stats-big {
+                display: none
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+
+            #logo,
+            #enter {
+                width: 85%;
+                margin-left: 15%
+            }
+
+            #motto,
+            #menu {
+                width: 77%;
+                margin-left: 20%
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+
+            #logo,
+            #enter,
+            #motto,
+            #menu {
+                width: 96%;
+                margin-left: 0;
+                font-size: 18px
+            }
+
+            #back {
+                background-size: 50% auto
+            }
+
+            #main {
+                background: none
+            }
+
+            #bulb {
+                display: none
+            }
+
+            #about .te {
+                display: inline-block;
+                width: 100%;
+            }
+
+            #about .im {
+                display: none;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            #logo span {
+                font-size: 70px
+            }
+
+            #menu {
+                margin: 4vh 0 4vh 4%;
+                width: 90%
+            }
+
+            #menu a {
+                font-size: 24px;
+            }
+
+            #mirrors {
+                text-align: center;
+                margin: 2vh 1% 0 1%;
+            }
+
+            #lang {
+                text-align: center;
+                display: none;
+            }
+
+            #langi {
+                display: block;
+                position: absolute;
+                font-size: 0.88rem;
+                right: auto;
+                top: 0;
+                left: 0;
+                padding: 0 2% 0 2%;
+                width: 96%;
+                text-align: center;
+                background: #444;
+                border: 0;
+            }
+
+            #langi a {
+                display: inline-block;
+                margin-left: 8px;
+                text-decoration: none;
+                padding: 0.2vh 0.2vw 0.2vh 0.2vw;
+                color: white;
+            }
+
+            #langi a.selected {
+                background: white;
+                color: black;
+            }
+
+            #container {
+                margin-top: 24px
+            }
+
+
+            #mirrors a,
+            #lang a {
+                font-size: 1.11rem;
+            }
+
+            #about .he {
+                font-size: 4rem
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #enter {
+                height: auto
+            }
+
+            #enter button {
+                border-radius: 4px
+            }
+
+            #enter button img {
+                height: 48px
+            }
+
+            #enter textarea {
+                width: 88%;
+                height: 64px
+            }
+
+            #logo span {
+                font-size: 64px
+            }
+
+            .second {
+                display: none
+            }
+        }
+
+
+
+        #news {
+            margin: 4vh 0 0 4.5%;
+            width: 95%
+        }
+
+        #news a,
+        #news a div {
+            color: #444;
+            text-decoration: none;
+            font-family: 'Courier Prime'
+        }
+
+        #news .he {
+            display: inline-block;
+            vertical-align: top;
+            font-size: max(1.55rem, 1.55vw);
+            padding: 0 3% 1vh 0;
+            margin-left: 3%;
+            border-bottom: dashed 1px #bbb;
+            color: darkred;
+            max-width: 20%;
+            cursor: default;
+        }
+
+        #news .it {
+            display: inline-block;
+            vertical-align: top;
+            width: 70%;
+            margin-left: 4%;
+            white-space: nowrap;
+        }
+
+
+        #news .super {
+            width: 100%;
+            margin: 2vh 0 2vh 0;
+        }
+
+        #news .super .title {
+            font-size: min(1.6rem, 1.6vw)
+        }
+
+        #news .super img,
+        #news .super span {
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 1vw
+        }
+
+        #news .super img {
+            display: none;
+            margin-left: 1%;
+            white-space: normal;
+            max-width: 11%
+        }
+
+        #news .super span {
+            margin-left: 1vw;
+            white-space: normal;
+            max-width: 88%;
+            text-align: left
+        }
+
+        #news .super .sub {
+            font-size: min(1rem, 1vw);
+        }
+
+        #news .super a.title:hover span {
+             
+            background: lightyellow;
+            color: black;
+        }
+
+        #news .super a.title:hover span.date {
+            border: none
+        }
+
+        #news .super .date {
+            margin-left: 0;
+            font-size: min(1rem, 1vw);
+        }
+
+        #news .puper {
+            margin-top: 3vh
+        }
+
+        #news .puper img {
+            margin-left: 1%;
+            white-space: normal;
+            max-width: 30%;
+            border-radius: 50%
+        }
+
+        #news .puper span {
+            max-width: 69%
+        }
+
+        #news .super a.title:hover span.pinned {
+            background: #aaa;
+            color: white
+        }
+
+        #news .super a.title span.pinned {
+            padding: 0.4vh 0.2vw 0 0.2vw;
+            border-radius: 0.2vw;
+            color: white;
+            background: #aaa;
+            font-size: 0.8rem;
+        }
+
+        #more {
+            text-align: left;
+            margin: 6vh 2vw 4vh 0;
+        }
+
+        #more a {
+            font-family: 'Courier Prime';
+            display: inline-block;
+            text-decoration: none;
+            font-size: min(1.4rem, 1.4vw);
+            color: #777;
+            background: none;
+            padding: 1vh 1vw 1vh 1vw;
+            border-radius: 0.4vw;
+            border: solid 1px #777
+        }
+
+        #more a:hover {
+            background: #777;
+            color: white
+        }
+
+        @media only screen and (min-width: 1441px) {
+            #news .super span {
+                background: white;
+                padding: 0.6vw;
+                border: solid 1px #bbb;
+                border-radius: 1vw
+            }
+
+            #news .super .date {
+                padding: 0.2vw;
+                border: 0
+            }
+
+            #news .super a.title span.pinned {
+                display: inline-block;
+                background: #e8a202;
+                margin-top: -3.5vh
+            }
+        }
+
+        @media only screen and (max-width: 1440px) {
+            #news {
+                margin-left: 2%;
+
+                display: inline-block;
+                vertical-align: top;
+                width: 62%;
+            }
+
+            #news .he {
+                font-size: max(1.44rem, 1.88vw);
+                margin-left: 0;
+                width: 14%;
+            }
+
+            #news .it {
+                margin-left: 1%;
+                width: 80%;
+            }
+
+            #news .super .title {
+                font-size: 1.55rem;
+            }
+
+            #news .super .date {
+                font-size: 1rem;
+            }
+
+            #news .super {
+                margin: 1vh 0 1vh 0;
+            }
+
+            #news .super img {
+                display: none;
+            }
+
+            #news .super a.title:hover span {
+                background: white;
+            }
+
+        }
+
+        @media only screen and (max-width: 1100px) {
+            #news {
+                width: 95%
+            }
+
+            #news .super span {
+                max-width: 100%
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            #news .he {
+                display: block;
+                margin-left: 0;
+            }
+
+            #news .it {
+                display: block;
+                width: 95%;
+                margin-left: 0;
+            }
+
+            #news .super {
+                border-bottom: solid 1px #ddd;
+                margin-top: 2vh;
+            }
+
+        }
+
+        #mailbox {
+            margin: 8vh 0 0 8.5%;
+            white-space: normal;
+            width: 80%;
+        }
+
+        #mailbox .he div {
+            display: inline-block;
+            vertical-align: middle
+        }
+
+        #mailbox .he #stamp {
+            width: 8%
+        }
+
+        #mailbox .he #stamp img {
+            width: 90%
+        }
+
+        #mailbox .he #title {
+            margin: 0 0 0 2%;
+            font-size: max(1.44rem, 1.44vw);
+            padding: 0 0 1vh 0;
+            border-bottom: dashed 1px #ccc
+        }
+
+        #mailbox .description {
+            margin: 0 0 0 10%;
+            font-size: min(1.11rem, 1.11vw);
+            text-align: justify
+        }
+
+        #mailbox #mail-thanks p {
+            color: darkred;
+            font-weight: bold
+        }
+
+        #mailbox #mail-thanks {
+            display: none;
+            text-decoration: none
+        }
+
+        #mailbox #mail-error {
+            display: none
+        }
+
+
+        #mailbox #mail {
+            margin: 1.44vh 0 0 10%
+        }
+
+        #mailbox #mail input {
+            vertical-align: middle;
+            font-size: min(1.11rem, 1.11vw);
+            line-height: 1.33rem;
+            text-align: center;
+            width: 33%;
+            padding: 0.6vw;
+            border-radius: 0.4vw;
+            border: solid 1px #777
+        }
+
+        #mailbox #mail button {
+            vertical-align: middle;
+            font-size: min(1.11rem, 1.11vw);
+            margin-left: 0.5%;
+            padding: 0.6vw;
+            cursor: pointer;
+            border-radius: 0.4vw;
+            border: solid 1px white;
+            background-color: goldenrod;
+            color: white
+        }
+
+        #mailbox #mail button:hover {
+            background-color: green;
+        }
+
+        @media only screen and (max-width: 1440px) {
+
+            #mailbox {
+                margin-left: 2%;
+                width: 66%;
+                display: block;
+            }
+
+            #mailbox .description {
+                font-size: 1.11rem
+            }
+
+            #mailbox #mail input {
+                font-size: 1.11rem;
+            }
+
+            #mailbox #mail button {
+                font-size: 1.11rem;
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+            #mailbox #mail input {
+                width: 55%;
+            }
+
+            #mailbox {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {}
+    </style>
+
+
+
+    <style type="text/css">
+        #news .it {
+            white-space: normal
+        }
+
+        .paper {
+            margin-top: 2vh
+        }
+
+        #news .paper a:hover {
+            background: black;
+            color: lime
+        }
+
+        @media only screen and (max-width: 1440px) {
+            #stats-big {
+                display: none
+            }
+
+            #news {
+                width: 90%
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function submit(e) {
+            if (e.which === 13 && !e.shiftKey) {
+                e.preventDefault();
+                e.target.form.submit();
+            }
+        }
+
+        function init() {
+            document.getElementById("request").value = '';
+            document.getElementById("request").addEventListener("keypress", submit);
+        }
+
+        function language(la) {
+            document.cookie = 'language=; Max-Age=-99999999;';
+            document.cookie = 'language' + "=" + la + "; path=/";
+            window.location.reload();
+        }
+
+    </script>
+
+    <div id="langi"><span class="list"><a href="./" class="selected">English</a><a href="./" onclick="language('cn')">简体中文</a><a href="./" onclick="language('ru')">Русский</a><a href="./" onclick="language('pt')">Português</a></span></div>
+
+
+    <div id="container">
+
+        <div id="main">
+
+            <div id="logo">
+                <span><img src="//img.sci-hub.shop/scihubnew/assets/ravenround_hs.gif"><span><span>sci-hub</span>
+                    </span></span>
+            </div>
+
+            <form method="POST" action="https://sci-hub.sidesgame.com/">
+                <div id="enter">
+                    <textarea placeholder="enter your reference" autofocus="" name="request" id="request" spellcheck="false"></textarea>
+                    <button type="submit"><img src="//img.sci-hub.shop/scihubnew/assets/key.png"><span>open</span></button>
+                </div>
+            </form>
+
+            <div id="motto">
+                <span>emancipation and democratisation of knowledge</span>
+            </div>
+
+            <div id="menu">
+                <a href="./database" class="select">database</a>
+                <a href="./about">about</a>
+                <a href="./alexandra">Elbakyan</a>
+                <a href="./stats">stats</a>
+                <a href="./donate" class="donate">donate</a>
+            </div>
+
+            <div id="back"></div>
+            <div id="bulb"><img src="//img.sci-hub.shop/scihubnew/assets/bulb.png"></div>
+
+        </div>
+        <div id="info">
+
+            <div id="lang">
+                <span class="he">language</span>
+                <span class="list"><a href="./" class="selected">English</a><a href="./" onclick="language('cn')">简体中文</a><a href="./" onclick="language('ru')">Русский</a><a href="./" onclick="language('pt')">Português</a></span>
+            </div>
+
+            <div id="mirrors">
+                <span class="he">mirrors</span>
+                <span class="list">
+                    <a href="https://www.tesble.com" rel="nofollow" target="_blank">sci-hub.shop</a>
+                    <a href="https://www.wellesu.com" rel="nofollow" target="_blank">sci-hub.vg</a>
+                    <a href="https://www.pismin.com" rel="nofollow" target="_blank">sci-hub.al</a>
+                </span>
+                <a href="./" id="seall">see all →</a>
+            </div>
+
+            <div id="stats">
+
+                <a href="./database" id="total">
+                    <div class="he">total</div>
+                    <div class="nu">88,343,822</div>
+                    <div class="su">docs</div>
+                </a><a href="./stats" id="users">
+                    <div class="he">users</div>
+                    <div class="nu">86</div>
+                    <div class="su">in 1h</div>
+                </a>
+                <a href="./10.1016/0014-5793%2890%2981320-n" id="last">
+                    <div class="he">latest read</div>
+                    <div class="nu">
+                        <span class="title">Firefly luciferase, synthesized to very high levels in caterpillars infected with a recombinant baculovirus, can also be used as an efficient reporter enzyme in vivo</span>
+                        <span class="journal">/ .</span>
+                        <span class="author">Prakash K. Jha; Bita Nakhai; Padma Sridhar; G.P. Talwar; Seyed E. Hasnain</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div id="news">
+
+
+                <div class="he">
+                    latest<br>reads
+                </div>
+                <div class="it">
+                    
+                    <div class="paper"><a href="./10.1016/0014-5793%2890%2981320-n"><span class="dt">13:05:06</span> <span class="title">Firefly luciferase, synthesized to very high levels in caterpillars infected with a recombinant baculovirus, can also be used as an efficient reporter enzyme in vivo</span> / <span class="journal"></span> <span class="author">Prakash K. Jha; Bita Nakhai; Padma Sridhar; G.P. Talwar; Seyed E. Hasnain</span>, <span class="year">1990</span></a></div>
+                    
+                    <div class="paper"><a href="./10.1145/2872518.2890560"><span class="dt">13:05:06</span> <span class="title"></span> / <span class="journal"></span> <span class="author"></span>, <span class="year"></span></a></div>
+                    
+                    <div class="paper"><a href="./10.1007/s13201-020-01227-x"><span class="dt">13:05:06</span> <span class="title">An electrochemical analysis of acute contamination of environmental water and restoring of water quality using taro carbon</span> / <span class="journal">Applied Water Science</span> <span class="author">Aman, Efdtekhar U. M.; Islam, Md. Fahamidul; Chowdhury, Tahmid A.; Alam, Md. Saiful; Elias, Md.; Uddin, Md. Nizam; Samed, Ahmed J.; Hasnat, Mohammad A. </span>, <span class="year">2020</span></a></div>
+                    
+                    <div class="paper"><a href="./10.1109/icebeg.2011.5881563"><span class="dt">13:05:06</span> <span class="title"> [IEEE 2011 International Conference on E-Business and E-Government (ICEE) - Shanghai, China (2011.05.6-2011.05.8)] 2011 International Conference on E-Business and E-Government (ICEE) - Research of multinational corporations based on information technology</span> / <span class="journal"></span> <span class="author">Juan, Zhang; Ning, Hu; Jianhua, Chen </span>, <span class="year">2011</span></a></div>
+                    
+                    <div class="second">
+                        
+                        <div class="paper"><a href="./10.1057/jibs.2016.20"><span class="dt">13:05:06</span> <span class="title">How does regional institutional complexity affect MNE internationalization?</span> / <span class="journal">Journal of International Business Studies</span> <span class="author">Arregle, Jean-Luc; Miller, Toyah L; Hitt, Michael A; Beamish, Paul W </span>, <span class="year">2016</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1017/sjp.2017.53"><span class="dt">13:05:05</span> <span class="title">Gender Differences in the Influence of Parenting on Youth Antisocial Behavior through Deviant Peers</span> / <span class="journal">The Spanish Journal of Psychology</span> <span class="author">Cutrín, Olalla; Gómez-Fraguela, José Antonio; Sobral, Jorge </span>, <span class="year">2017</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1109/csci49370.2019.00258"><span class="dt">13:05:05</span> <span class="title"> [IEEE 2019 International Conference on Computational Science and Computational Intelligence (CSCI) - Las Vegas, NV, USA (2019.12.5-2019.12.7)] 2019 International Conference on Computational Science and Computational Intelligence (CSCI) - Design of a Multi-Dimensional Model for UGC-Based Emotion Analysis</span> / <span class="journal"></span> <span class="author">Yen-Jou, Wang; Yen, Neil; Hung, Jason C. </span>, <span class="year">2019</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1086/209380"><span class="dt">13:05:05</span> <span class="title">The Persuasion Knowledge Model: How People Cope with Persuasion Attempts</span> / <span class="journal">Journal of Consumer Research</span> <span class="author">Friestad, Marian; Wright, Peter </span>, <span class="year">1994</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1126/science.153.3738.856"><span class="dt">13:05:05</span> <span class="title">Papers in Archeology</span> / <span class="journal">Science</span> <span class="author">Ehrich, R. W.</span>, <span class="year">1966</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1109/ipfa.1997.638362"><span class="dt">13:05:05</span> <span class="title"> [IEEE 1997 6th International Symposium on the Physical and Failure Analysis of Integrated Circuits - Singapore (21-25 July 1997)] Proceedings of the 1997 6th International Symposium on the Physical and Failure Analysis of Integrated Circuits - Ion beam induced charge imaging for the failure analysis of semiconductor devices</span> / <span class="journal"></span> <span class="author">Kolachina, S.; Chan, D.S.H.; Phang, J.C.H.; Osipowicz, T.; Sanchez, J.L.; Watt, S.F. </span>, <span class="year">1997</span></a></div>
+                        
+                        <div class="paper"><a href="./10.2519/jospt.2010.3211"><span class="dt">13:05:04</span> <span class="title">Trunk Muscle Activity During Lumbar Stabilization Exercises on Both a Stable and Unstable Surface</span> / <span class="journal">Journal of Orthopaedic &amp; Sports Physical Therapy</span> <span class="author">Imai, Atsushi; Kaneoka, Koji; Okubo, Yu; Shiina, Itsuo; Tatsumura, Masaki; Izumi, Shigeki; Shiraki, Hitoshi </span>, <span class="year">2010</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1111/j.1365-2109.2011.02883.x"><span class="dt">13:05:04</span> <span class="title">Partial replacement of fish meal with peanut meal in practical diets for the Pacific white shrimp, &lt;em&gt;Litopenaeus vannamei&lt;/em&gt;</span> / <span class="journal"></span> <span class="author">Xiang-he Liu; Ji-dan Ye; Kun Wang; Jiang-hong Kong; Wei Yang; Lei Zhou</span>, <span class="year">2012</span></a></div>
+                        
+                    </div>
+                    <div class="third">
+                        
+                        <div class="paper"><a href="./10.1016/j.jacceco.2005.03.001"><span class="dt">13:05:04</span> <span class="title">Acquirers’ abnormal returns and the non-Big 4 auditor clientele effect</span> / <span class="journal"></span> <span class="author">Henock Louis</span>, <span class="year">2005</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1093/cje/bew056"><span class="dt">13:05:04</span> <span class="title">Index to Volume 40</span> / <span class="journal">Cambridge Journal of Economics</span> <span class="author"></span>, <span class="year">2016</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1016/j.scitotenv.2020.142880"><span class="dt">13:05:04</span> <span class="title">Dibutyl phthalate-induced oxidative stress, inflammation and apoptosis in grass carp hepatocytes and the therapeutic use of taxifolin</span> / <span class="journal">Science of The Total Environment</span> <span class="author">Cui, Yuan; Zhang, Xintong; Yin, Kai; Qi, Xue; Zhang, Yue; Zhang, Jinxi; Li, Shu; Lin, Hongjin </span>, <span class="year">2020</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1016/j.evolhumbehav.2021.03.003"><span class="dt">13:05:03</span> <span class="title">Short term, long term: An unexpected confound in human-mating research </span> / <span class="journal">Evolution and Human Behavior</span> <span class="author">Paola Bressan;</span>, <span class="year">2021</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1097/PCC.0000000000001573"><span class="dt">13:05:03</span> <span class="title">Landiolol Hydrochloride Rapidly Controls Junctional Ectopic Tachycardia After Pediatric Heart Surgery</span> / <span class="journal">Pediatric Critical Care Medicine</span> <span class="author">Yoneyama, Fumiya; Tokunaga, Chiho; Kato, Hideyuki; Nakajima, Tomomi; Mathis, Bryan J.; Sakamoto, Hiroaki; Hiramatsu, Yuji </span>, <span class="year">2018</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1080/15659801.2015.1048617"><span class="dt">13:05:02</span> <span class="title">Integration of photovoltaic panels and green roofs: review and predictions of effects on electricity production and plant communities</span> / <span class="journal">Israel Journal of Ecology &amp; Evolution</span> <span class="author">Schindler, Bracha Y.; Blank, Lior; Levy, Shay; Kadas, Gyongyver; Pearlmutter, David; Blaustein, Leon </span>, <span class="year">2016</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1007/s12671-014-0319-x"><span class="dt">13:05:02</span> <span class="title">The Mediating Effect of Self-Acceptance in the Relationship Between Mindfulness and Peace of Mind</span> / <span class="journal">Mindfulness</span> <span class="author">Xu, Wei; Rodriguez, Marcus A.; Zhang, Qian; Liu, Xinghua </span>, <span class="year">2015</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1021/jf500705s"><span class="dt">13:05:02</span> <span class="title">Separation and Identification of Anthocyanin Extracted from Mulberry Fruit and the Pigment Binding Properties toward Human Serum Albumin</span> / <span class="journal">Journal of Agricultural and Food Chemistry</span> <span class="author">Sheng, Feng; Wang, Yuning; Zhao, Xingchen; Tian, Na; Hu, Huali; Li, Pengxia </span>, <span class="year">2014</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1016/j.jhazmat.2016.06.019"><span class="dt">13:05:02</span> <span class="title">Toxic effects of graphene on the growth and nutritional levels of wheat (Triticum aestivum L.): short- and long-term exposure studies</span> / <span class="journal">Journal of Hazardous Materials</span> <span class="author">Zhang, Peng; Zhang, Ranran; Fang, Xianzhi; Song, Tianqi; Cai, Xiaodan; Liu, Huijun; Du, Shaoting </span>, <span class="year">2016</span></a></div>
+                        
+                        <div class="paper"><a href="./10.2307/4110699"><span class="dt">13:05:02</span> <span class="title">A Note on the Pollen of Trichaulax mwasumbii (Acanthaceae: Justicieae)</span> / <span class="journal">Kew Bulletin</span> <span class="author">Carol A. Furness</span>, <span class="year">1992</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1007/978-3-642-10305-6_1"><span class="dt">13:05:02</span> <span class="title">Waterlogging Signalling and Tolerance in Plants || Oxygen Transport in Waterlogged Plants</span> / <span class="journal"></span> <span class="author">Mancuso, Stefano; Shabala, Sergey </span>, <span class="year">2010</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1542/peds.2009-2441"><span class="dt">13:05:02</span> <span class="title">Systemic Hypothermia After Neonatal Encephalopathy: Outcomes of neo.nEURO.network RCT</span> / <span class="journal">PEDIATRICS</span> <span class="author">Simbruner, G.; Mittal, R. A.; Rohlmann, F.; Muche, R. </span>, <span class="year">2010</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1016/S1006-706X%2813%2960073-4"><span class="dt">13:05:02</span> <span class="title">An Inverse Method for Equivalent Gray Gas Radiation Characteristic Parameter</span> / <span class="journal">Journal of Iron and Steel Research, International</span> <span class="author">ZHANG, Wei-jun; YI, Zhi; LIU, Xiao-ting; LI, Guo-jun; CHEN, Hai-geng </span>, <span class="year">2013</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1097/00075197-200403000-00002"><span class="dt">13:05:02</span> <span class="title">Using different intravenous lipids: underutilized therapeutic approaches?</span> / <span class="journal">Current Opinion in Clinical Nutrition and Metabolic Care</span> <span class="author">Deckelbaum, Richard J; Calder, Philip C; Carpentier, Yvon A </span>, <span class="year">2004</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1021/ef500749d"><span class="dt">13:05:01</span> <span class="title">Molecular Weight and Aggregation of Heavy Petroleum Fractions Measured by Vapor Pressure Osmometry and a Hindered Stepwise Aggregation Model</span> / <span class="journal">Energy &amp; Fuels</span> <span class="author">Zhang, Linzhou; Zhao, Suoqi; Xu, Zhiming; Chung, Keng H.; Zhao, Changsen; Zhang, Na; Xu, Chunming; Shi, Quan </span>, <span class="year">2014</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1016/j.jbusres.2015.09.007"><span class="dt">13:05:01</span> <span class="title">Corporate social responsibility authenticity: Investigating its antecedents and outcomes</span> / <span class="journal">Journal of Business Research</span> <span class="author">Alhouti, Sarah; Johnson, Catherine M.; Holloway, Betsy Bugg </span>, <span class="year">2015</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1158/0008-5472.can-04-0272"><span class="dt">13:05:01</span> <span class="title">Phosphorylation of Akt (Ser473) is an Excellent Predictor of Poor Clinical Outcome in Prostate Cancer</span> / <span class="journal">Cancer Research</span> <span class="author">Kreisberg, J. I.</span>, <span class="year">2004</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1021/jp076034b"><span class="dt">13:05:01</span> <span class="title">Gold Nanotubes Synthesized via Magnetic Alignment of Cobalt Nanoparticles as Templates</span> / <span class="journal">Journal of Physical Chemistry C</span> <span class="author">Schawartzberg, A.M.; Olson, T.Y.; Talley, C.E.; Zhang, J.Z. </span>, <span class="year">2007</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1080/03601238709372556"><span class="dt">13:05:01</span> <span class="title">Residues of organochlorine chemicals and concentrations of heavy metals in ciconiforme eggs in relation to diet and habitat</span> / <span class="journal">Journal of Environmental Science and Health, Part B</span> <span class="author">Hernandez, L. M.; Rico, Ma.; Gonzalez, Ma.; Montero, M. C.; Fernandez, H. A. </span>, <span class="year">1987</span></a></div>
+                        
+                        <div class="paper"><a href="./10.1016/j.jcorpfin.2011.03.006"><span class="dt">13:05:00</span> <span class="title">Financial flexibility and corporate liquidity</span> / <span class="journal"></span> <span class="author">David J. Denis</span>, <span class="year">2011</span></a></div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div id="stats-big">
+                <div class="he"><span>statistics</span></div>
+                <a href="./database">
+                    <div class="number">88,343,822</div>
+                    <span>articles in database</span>
+                </a>
+                <a href="./stats">
+                    <div class="number">229,388</div>
+                    <span>users in last hour</span>
+                </a>
+                <a href="./10.1016/j.atmosenv.2020.117886">
+                    <div id="lastart">latest article read</div>
+                    <span>
+                        <span class="title">PM10 and PM2.5 emission factors for non-exhaust particles from road
+                            vehicles: Dependence upon ve...</span>
+                        <span class="journal">/ Atmospheric Environment.</span>
+                        <span class="author">Beddows 2020</span>
+                    </span>
+                </a>
+            </div>
+
+            <div id="about">
+                <div class="te">
+                    <p><span class="he">Sci-Hub</span> is the most controversial project in today science.
+                        The goal of Sci-Hub is to provide <b>free and unrestricted</b> access to all scientific
+                        knowledge ever published in journal or book form.
+                    </p>
+                    <p>Today the circulation of knowledge in science is restricted by high prices. Many students and
+                        researchers cannot afford academic journals and books that are locked behind paywalls.
+                        Sci-Hub emerged in 2011 to tackle this problem. Since then, the website has revolutionized the
+                        way science is being done.
+                    </p>
+                    <p>Sci-Hub is helping millions of students and researchers, medical professionals, journalists and
+                        curious people in all countries to unlock access to knowledge.
+                        The mission of Sci-Hub is to fight every obstacle that prevents open access to knowledge: be it
+                        legal, technical or otherwise.
+                    </p>
+                    <p>To get more information visit the <a href="./about">about Sci-Hub</a> section.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="contacts">
+                <div class="he"><span>contacts</span></div>
+                <div id="mailto">
+                    to contact Sci-Hub creator Alexandra Elbakyan email to:<br>
+                    <a href="mailto:alexandra@dns.cymru">alexandra@dns.cymru</a>
+                </div>
+            </div>
+
+            <div class="bar"></div>
+
+
+        </div>
+
+    </div>
+
+    <div id="wall"><img src="//img.sci-hub.shop/scihubnew/assets/wallcorner.png"></div>
+    <div id="emc"><img src="//img.sci-hub.shop/scihubnew/assets/emc.png"></div>
+    <div id="dna"></div>
+
+
+
+
+
+</body></html>

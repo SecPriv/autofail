@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ad</title>
+  <style>
+    html, body { margin:0; padding:0; background:transparent; }
+    #slot { width:100%; height:100%; overflow:hidden; }
+  </style>
+<script type="text/javascript" src="//jssdk.tsyndicate.com/5aa732824fa74060959558d3b1dcabb2.js" data-load-script-status="loaded"></script></head>
+<body>
+  <div id="slot"></div>
+
+  <script>
+    // read query params: spot, tid, categories, subid
+    const p = new URLSearchParams(location.search);
+
+    const spot = p.get('spot') || '472c96c8c35b4ccc9e13c5014d4e2870';
+    const tid  = p.get('tid')  || '3';
+    const categories = p.get('categories') || '';
+    const subid = p.get('subid') || '';
+
+    // create the exact required script tag dynamically
+    const s = document.createElement('script');
+    s.src = '//cdn.tsyndicate.com/sdk/v1/ms.js';
+    s.async = true;
+    s.defer = true;
+
+    s.setAttribute('data-ts-spot', spot);
+    s.setAttribute('data-ts-template-id', tid);
+    if (categories) s.setAttribute('data-ts-categories', categories);
+    if (subid)      s.setAttribute('data-ts-subid', subid);
+
+    document.body.appendChild(s);
+  </script><script src="//cdn.tsyndicate.com/sdk/v1/ms.js" async="" defer="" data-ts-spot="5aa732824fa74060959558d3b1dcabb2" data-ts-template-id="10" data-ts-categories="porn,hd,4k,uhd,ultra,hd,max,hd,high,quality,high,resolution,porn,sex,streaming,videos,movies" data-ts-subid="106200" data-ts-processed="true"></script><div id="ts_ms_9ul1sva" style="font-size: 0px; overflow: hidden; width: 300px; height: 250px; display: flex; flex-wrap: wrap; place-content: space-evenly; align-items: center; margin: auto;"><iframe sandbox="allow-same-origin allow-popups allow-forms allow-scripts allow-popups-to-escape-sandbox" scrolling="no" style="overflow: hidden; width: 300px; height: 250px; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important;"></iframe></div>
+
+</body></html>

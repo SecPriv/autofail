@@ -1,0 +1,159 @@
+[
+  {
+    "frameId": "000",
+    "url": "https://www.enervit.com/it/",
+    "name": null,
+    "isMainFrame": true,
+    "adFrameStatus": {
+      "adFrameType": "none"
+    },
+    "iframes": [
+      {
+        "childFrameId": "001",
+        "aria-hidden": "true",
+        "srcdoc": "<body><script>var AWIN = AWIN || {};AWIN.Tracking = AWIN.Tracking || {};AWIN.payload = {\"advertiser\":{\"config\":{\"advertiserId\":\"28348\",\"pagetype\":\"generic\",\"accessConfig\":{\"location\":true,\"referrer\":true,\"sale\":true,\"basket\":true,\"zxParams\":[\"pagetype\",\"identifier\",\"product_name\",\"product_price\",\"search_query\",\"category\",\"total_amount\",\"transaction\",\"isClient\"]}}},\"plugin\":{\"publisherId\":\"\",\"advertiserId\":23312,\"protocol\":\"https://\",\"zxParams\":{},\"location\":{\"ancestorOrigins\":{},\"href\":\"https://www.enervit.com/it/\",\"origin\":\"https://www.enervit.com\",\"protocol\":\"https:\",\"host\":\"www.enervit.com\",\"hostname\":\"www.enervit.com\",\"port\":\"\",\"pathname\":\"/it/\",\"search\":\"\",\"hash\":\"\"},\"referrer\":\"\",\"basket\":[]}};AWIN.pluginName = \"SirData\";</script><script>var AWIN = AWIN || {};\nAWIN.iScriptCount = 0;\n\nAWIN.Tracking = (function (pluginName, payload) {\n\tvar fetchZxParam = function (name) {\n\t\treturn payload.plugin.zxParams[name] || null;\n\t};\n\tvar scriptAppend = function (sScriptSrc, sScriptContent, onLoadCallback, oScriptTagParams, tcfVendorId) {\n\t\t// only one of the two can be set\n\t\tif (sScriptSrc && sScriptContent) {\n\t\t\treturn false;\n\t\t}\n\n\t\t// create script node\n\t\tvar scriptNode = document.createElement('script');\n\t\tscriptNode.type = 'text/javascript';\n\t\tscriptNode.id = '_aw_script_' + AWIN.iScriptCount++;\n\n\t\t// only add if param was passed\n\t\tif (sScriptSrc) {\n\t\t\tscriptNode.src = sScriptSrc;\n\t\t} else if (sScriptContent) {\n\t\t\tscriptNode.text = sScriptContent;\n\t\t}\n\n\t\t// set optional parameters\n\t\tif (oScriptTagParams) {\n\t\t\tfor (var name in oScriptTagParams) {\n\t\t\t\tscriptNode[name] = oScriptTagParams[name];\n\t\t\t}\n\t\t}\n\n\t\t// attach an event handler\n\t\tif (onLoadCallback) {\n\t\t\t// send Debug EVent when onLoadCallback is not a function. TODO This is temporary change, should be removed after analysis\n\t\t\tif (typeof onLoadCallback !== 'function') {\n\t\t\t\tAWIN.Tracking.sendDebugEvent({\n\t\t\t\t\tseverity: 'warning',\n\t\t\t\t\tsource: { app: 'AMT', category: 'scriptAppend' },\n\t\t\t\t\tbody: {\n\t\t\t\t\t\tmessage: 'onLoadCallback is not a function in mastertag-sb.',\n\t\t\t\t\t\turl: sScriptSrc || 'inline script',\n\t\t\t\t\t\tadvertiserId: AWIN.Tracking.iMerchantId,\n\t\t\t\t\t},\n\t\t\t\t});\n\t\t\t}\n\n\t\t\t// for IE\n\t\t\tscriptNode.onreadystatechange = function () {\n\t\t\t\tif (scriptNode.readyState == 'complete' || scriptNode.readyState == 'loaded') {\n\t\t\t\t\tonLoadCallback();\n\t\t\t\t}\n\t\t\t};\n\n\t\t\t// for everything elses\n\t\t\tscriptNode.onload = onLoadCallback;\n\t\t}\n\n\t\t// append node\n\t\tif (sScriptSrc) {\n\t\t\tAWIN.Tracking.Consent.getGdprAppends(\n\t\t\t\ttcfVendorId,\n\t\t\t\tAWIN.Tracking.getQueryParameterDelimiter(scriptNode.src),\n\t\t\t\tfunction (gdprAppends) {\n\t\t\t\t\tscriptNode.src += gdprAppends;\n\t\t\t\t\tAWIN.Tracking.getScriptAppendNode().appendChild(scriptNode);\n\t\t\t\t}\n\t\t\t);\n\t\t} else {\n\t\t\tAWIN.Tracking.getScriptAppendNode().appendChild(scriptNode);\n\t\t}\n\n\t\treturn scriptNode;\n\t};\n\tvar frameAppend = function (sFrameSrc, tcfVendorId) {\n\t\tif (document.getElementsByTagName('body')[0]) {\n\t\t\tAWIN.Tracking.Consent.getGdprAppends(\n\t\t\t\ttcfVendorId,\n\t\t\t\tAWIN.Tracking.getQueryParameterDelimiter(sFrameSrc),\n\t\t\t\tfunction (gdprAppends) {\n\t\t\t\t\tsFrameSrc += gdprAppends;\n\n\t\t\t\t\tvar iframe = document.createElement('iframe');\n\t\t\t\t\tiframe.setAttribute('aria-hidden', 'true');\n\t\t\t\t\tiframe.src = sFrameSrc;\n\t\t\t\t\tdocument.getElementsByTagName('body')[0].appendChild(iframe);\n\t\t\t\t\t// AWIN.Tracking.hideElement(iframe); // not needed, iframe is hidden already\n\t\t\t\t}\n\t\t\t);\n\t\t}\n\t};\n\tvar pixelAppend = function (sImageSrc, tcfVendorId) {\n\t\tif (document.getElementsByTagName('body')[0]) {\n\t\t\tAWIN.Tracking.Consent.getGdprAppends(\n\t\t\t\ttcfVendorId,\n\t\t\t\tAWIN.Tracking.getQueryParameterDelimiter(sImageSrc),\n\t\t\t\tfunction (gdprAppends) {\n\t\t\t\t\tsImageSrc += gdprAppends;\n\n\t\t\t\t\tvar image = document.createElement('img');\n\t\t\t\t\timage.setAttribute('aria-hidden', 'true');\n\t\t\t\t\timage.src = sImageSrc;\n\t\t\t\t\tdocument.getElementsByTagName('body')[0].appendChild(image);\n\t\t\t\t\t// AWIN.Tracking.hideElement(image); // not needed, iframe is hidden already\n\t\t\t\t}\n\t\t\t);\n\t\t}\n\t};\n\tvar getQueryParameterDelimiter = function (currentUrl) {\n\t\treturn currentUrl.indexOf('?') === -1 ? '?' : '&';\n\t};\n\tvar buildQueryString = function (params) {\n\t\tvar bits = [];\n\t\tfor (var name in params) {\n\t\t\tif (params.hasOwnProperty(name)) {\n\t\t\t\tbits.push(name + '=' + encodeURIComponent(params[name]));\n\t\t\t}\n\t\t}\n\t\treturn bits.join('&');\n\t};\n\tvar getScriptAppendNode = function () {\n\t\treturn document.body;\n\t};\n\tvar getBasketData = function () {\n\t\treturn payload.plugin.basket || [];\n\t};\n\tvar getAffiliateId = function () {\n\t\treturn payload.plugin.publisherId;\n\t};\n\tvar _getAWCValue = function () {\n\t\treturn payload.plugin.awc;\n\t};\n\n\tvar Consent = {};\n\n\t(function (awinTrackingConsent) {\n\t\t// if we locate the CMP iframe we will reference it with this\n\t\tvar cmpFrame;\n\n\t\t(function () {\n\t\t\t// start here at our window\n\t\t\tvar frame = window;\n\n\t\t\t// map of calls\n\t\t\tvar cmpCallbacks = {};\n\t\t\twhile (frame) {\n\t\t\t\ttry {\n\t\t\t\t\t/**\n\t\t\t\t\t * throws a reference error if no frames exist\n\t\t\t\t\t */\n\t\t\t\t\tif (frame.frames['__tcfapiLocator']) {\n\t\t\t\t\t\tcmpFrame = frame;\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t} catch (ignore) {}\n\t\t\t\tif (frame === window.top) {\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\tframe = frame.parent;\n\t\t\t}\n\n\t\t\t/**\n\t\t\t * Set up a __tcfapi proxy method to do the postMessage and map the callback.\n\t\t\t * From the caller's perspective, this function behaves identically to the\n\t\t\t * CMP API's __tcfapi call\n\t\t\t */\n\t\t\twindow.__tcfapi = function (cmd, version, callback, arg) {\n\t\t\t\tif (!cmpFrame) {\n\t\t\t\t\tcallback({ msg: 'CMP not found' }, false);\n\t\t\t\t} else {\n\t\t\t\t\tvar callId = Math.random() + '';\n\t\t\t\t\tvar msg = {\n\t\t\t\t\t\t__tcfapiCall: {\n\t\t\t\t\t\t\tcommand: cmd,\n\t\t\t\t\t\t\tparameter: arg,\n\t\t\t\t\t\t\tversion: version,\n\t\t\t\t\t\t\tcallId: callId,\n\t\t\t\t\t\t},\n\t\t\t\t\t};\n\n\t\t\t\t\t/**\n\t\t\t\t\t * map the callback for lookup on response\n\t\t\t\t\t */\n\t\t\t\t\tcmpCallbacks[callId] = callback;\n\t\t\t\t\tcmpFrame.postMessage(msg, '*');\n\t\t\t\t}\n\t\t\t};\n\n\t\t\tfunction postMessageHandler(event) {\n\t\t\t\t/**\n\t\t\t\t * when we get the return message, call the mapped callback\n\t\t\t\t */\n\t\t\t\tvar json = {};\n\n\t\t\t\ttry {\n\t\t\t\t\t/**\n\t\t\t\t\t * if this isn't valid JSON then this will throw an error\n\t\t\t\t\t */\n\t\t\t\t\tjson = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;\n\t\t\t\t} catch (ignore) {}\n\n\t\t\t\tvar payload = json.__tcfapiReturn;\n\t\t\t\tif (payload) {\n\t\t\t\t\t/**\n\t\t\t\t\t * messages we care about will have a payload\n\t\t\t\t\t */\n\t\t\t\t\tif (typeof cmpCallbacks[payload.callId] === 'function') {\n\t\t\t\t\t\t/**\n\t\t\t\t\t\t * call the mapped callback and then remove the reference\n\t\t\t\t\t\t */\n\n\t\t\t\t\t\tcmpCallbacks[payload.callId](payload.returnValue, payload.success);\n\t\t\t\t\t\tcmpCallbacks[payload.callId] = null;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\twindow.addEventListener('message', postMessageHandler, false);\n\t\t})();\n\n\t\tawinTrackingConsent.isCmpPresentOnPage = function () {\n\t\t\treturn typeof cmpFrame !== 'undefined';\n\t\t};\n\n\t\tawinTrackingConsent.getGdprAppends = function (tcfVendorId, delimiter, callback) {\n\t\t\tif (tcfVendorId) {\n\t\t\t\t// prepare for no CMP and errors\n\t\t\t\tvar fallbackAppend = delimiter + 'gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_' + tcfVendorId + '}';\n\n\t\t\t\t// cmp found, asking __tcfapi for a consent string for this vendorId\n\t\t\t\tif (AWIN.Tracking.Consent.isCmpPresentOnPage()) {\n\t\t\t\t\ttry {\n\t\t\t\t\t\t__tcfapi(\n\t\t\t\t\t\t\t'getTCData',\n\t\t\t\t\t\t\t2,\n\t\t\t\t\t\t\tfunction (tcData, success) {\n\t\t\t\t\t\t\t\tvar appends = delimiter;\n\t\t\t\t\t\t\t\tif (tcData && success) {\n\t\t\t\t\t\t\t\t\tif (typeof tcData.gdprApplies !== 'undefined') {\n\t\t\t\t\t\t\t\t\t\tif (tcData.gdprApplies) {\n\t\t\t\t\t\t\t\t\t\t\tappends += 'gdpr=1';\n\t\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\t\tappends += 'gdpr=0';\n\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\tappends += '&gdpr_consent=' + tcData.tcString;\n\t\t\t\t\t\t\t\t\t\tcallback(appends);\n\t\t\t\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t// no data, no success or missing tcData.gdprApplies\n\t\t\t\t\t\t\t\tcallback(fallbackAppend);\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t[tcfVendorId]\n\t\t\t\t\t\t);\n\t\t\t\t\t} catch (err) {\n\t\t\t\t\t\tcallback(fallbackAppend);\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\t// no CMP found\n\t\t\t\t\tcallback(fallbackAppend);\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\t// no vendorId provided\n\t\t\t\tcallback('');\n\t\t\t}\n\t\t};\n\t})(Consent);\n\n\tvar publicObject = {\n\t\t// functions\n\t\tfetchZxParam: fetchZxParam,\n\t\tscriptAppend: scriptAppend,\n\t\tframeAppend: frameAppend,\n\t\tpixelAppend: pixelAppend,\n\t\tgetQueryParameterDelimiter: getQueryParameterDelimiter,\n\t\tbuildQueryString: buildQueryString,\n\t\tgetScriptAppendNode: getScriptAppendNode,\n\t\tgetBasketData: getBasketData,\n\t\tgetAffiliateId: getAffiliateId,\n\t\t_getAWCValue: _getAWCValue,\n\t\tConsent: Consent,\n\n\t\t// Awin properties\n\t\tSale: payload.plugin.sale,\n\t\tiMerchantId: payload.plugin.advertiserId, // can be added without configuration\n\t\tsProtocol: payload.plugin.protocol, // can be added without configuration\n\n\t\t// new access property\n\t\tcontext: {\n\t\t\tplugin: payload.plugin,\n\t\t\tadvertiser: payload.advertiser,\n\t\t\tlocation: payload.plugin.location,\n\t\t},\n\t};\n\n\tAWIN.sProtocol = payload.plugin.protocol;\n\tpublicObject[pluginName] = payload.advertiser.config;\n\treturn publicObject;\n})(AWIN.pluginName, AWIN.payload);\n\nAWIN.Tracking.SirData = AWIN.Tracking.SirDataSB || AWIN.Tracking.SirData || {};\nAWIN.Tracking.SirData.url = AWIN.Tracking.SirData.url || AWIN.sProtocol + \"js.cookieless-data.com\";\n\n(function ($s) {\n    if ($s.terminate === true) {\n        return;\n    }\n\n    if (\"undefined\" === typeof $s.advertiserId) {\n        return;\n    }\n    \n    var pagetype = $s.pagetype || AWIN.Tracking.fetchZxParam('pagetype');\n\n    if (\"undefined\" === typeof pagetype) {\n        return;\n    }\n\n    if (AWIN.Tracking.Sale) {\n        pagetype = \"checkout\";\n    } else if (\"checkout\" === pagetype.toLowerCase()) {\n        AWIN.Tracking.Sale = {};\n    }\n\n    var url = $s.url;\n    var query = false;\n\n    switch (pagetype.toLowerCase()) {\n        case \"product\":\n            url += \"/product.d?\" + AWIN.Tracking.buildQueryString({\n                product_id: $s.identifier || AWIN.Tracking.fetchZxParam('identifier'),\n                product_name: $s.productName || AWIN.Tracking.fetchZxParam('product_name'),\n                product_price: $s.price || AWIN.Tracking.fetchZxParam('product_price')\n            });\n            query = true;\n            break;\n        case \"search\":\n            url += \"/LAL.d?\" + AWIN.Tracking.buildQueryString({\n                s: $s.searchQuery || AWIN.Tracking.fetchZxParam('search_query')\n            });\n            query = true;\n            break;\n        case \"category\":\n            url += \"/LAL.d?\" + AWIN.Tracking.buildQueryString({\n                cat_name: $s.category || AWIN.Tracking.fetchZxParam('category')\n            });\n            query = true;\n            break;\n        case \"basket\":\n            url += \"/cart.d?\" + AWIN.Tracking.buildQueryString({\n                command_amount: $s.totalAmount || AWIN.Tracking.fetchZxParam('total_amount')\n            });\n            query = true;\n            break;\n        case \"checkout\":\n            url += \"/order.d?\" + AWIN.Tracking.buildQueryString({\n                command_amount: AWIN.Tracking.fetchZxParam('total_amount') || AWIN.Tracking.Sale.amount,\n                command_id: AWIN.Tracking.fetchZxParam('transaction') || AWIN.Tracking.Sale.orderRef,\n                ht_paid: 1\n            });\n            query = true;\n            break;\n        default:\n            url += \"/LAL.d\";\n            break;\n    }\n    \n    __tcfapi('addEventListener', 2, function (tcData, success) {\n      // should get response from window.top's CMP\n      url += (query ? \"&\" : \"?\") + AWIN.Tracking.buildQueryString({\n          pa: $s.advertiserId,\n          si: 1,\n          su: 1,\n          u: AWIN.Tracking.context.plugin.location.href,\n          r: AWIN.Tracking.context.plugin.referrer,\n          is_client: AWIN.Tracking.fetchZxParam('isClient') || $s.isClient || 0,\n          gdpr : tcData.gdprApplies,\n          gdpr_consent : tcData.tcString\n      });\n\n      AWIN.Tracking.scriptAppend(url);\n    });\n   \n})(AWIN.Tracking.SirData);\n</script></body>",
+        "sandbox": "allow-scripts",
+        "id": "awin-plugin-SirData",
+        "style": "height: 0px !important; width: 0px !important; visibility: hidden !important; display: inherit !important; margin: 0px !important; border: 0px !important; padding: 0px !important;",
+        "data-cmp-info": "7"
+      },
+      {
+        "childFrameId": "002",
+        "title": "IND - Default Props",
+        "sandbox": "allow-same-origin allow-scripts",
+        "id": "INDdefaultPropIframe",
+        "style": "display: none;",
+        "data-cmp-info": "7"
+      },
+      {
+        "childFrameId": "003",
+        "title": "reCAPTCHA",
+        "width": "304",
+        "height": "78",
+        "role": "presentation",
+        "name": "a-dgtji8gusvog",
+        "frameborder": "0",
+        "scrolling": "no",
+        "sandbox": "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation",
+        "src": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeI8yEeAAAAABoWnPG6XC8FIcJsYOPDQHMtYDBZ&co=aHR0cHM6Ly93d3cuZW5lcnZpdC5jb206NDQz&hl=en&v=Br0hYqpfWeFzYCAXLD4UuCIV&theme=light&size=normal&anchor-ms=20000&execute-ms=30000&cb=nmhq1j4dvgnv",
+        "data-cmp-vendor": "289",
+        "data-cmp-info": "8"
+      },
+      {
+        "childFrameId": "004",
+        "data-cmp-info": "7",
+        "style": "display: none;"
+      },
+      {
+        "childFrameId": "005",
+        "name": "__privateStripeMetricsController1100",
+        "frameborder": "0",
+        "allowtransparency": "true",
+        "scrolling": "no",
+        "role": "presentation",
+        "allow": "payment *",
+        "src": "https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.enervit.com%2Fit%2F&title=Nutrizione%20sportiva%2C%20benessere%20e%20forma%20fisica%20%7C%20Enervit&referrer=&muid=NA&sid=NA&version=6&preview=false&__shared_params__[version]=v3",
+        "aria-hidden": "true",
+        "tabindex": "-1",
+        "data-cmp-vendor": "84",
+        "data-cmp-info": "8",
+        "style": "border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: initial !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"
+      },
+      {
+        "childFrameId": "008",
+        "title": "recaptcha challenge expires in two minutes",
+        "name": "c-dgtji8gusvog",
+        "frameborder": "0",
+        "scrolling": "no",
+        "sandbox": "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation",
+        "src": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=Br0hYqpfWeFzYCAXLD4UuCIV&k=6LeI8yEeAAAAABoWnPG6XC8FIcJsYOPDQHMtYDBZ&bft=0dAFcWeA4NlfLXyP5Tt2WcV2vjRlIFN1OXlIH-1Dflxkda9oCOQY7ThT6mBBtuFGH-sFUsQRfEvS__9vbhW0WnZi4SERLmKnMOPA",
+        "data-cmp-vendor": "289",
+        "data-cmp-info": "8",
+        "style": "width: 100%; height: 100%;"
+      }
+    ]
+  },
+  {
+    "frameId": "001",
+    "url": "about:srcdoc",
+    "name": "awin-plugin-SirData",
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "002",
+    "url": "about:blank",
+    "name": "INDdefaultPropIframe",
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "003",
+    "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeI8yEeAAAAABoWnPG6XC8FIcJsYOPDQHMtYDBZ&co=aHR0cHM6Ly93d3cuZW5lcnZpdC5jb206NDQz&hl=en&v=Br0hYqpfWeFzYCAXLD4UuCIV&theme=light&size=normal&anchor-ms=20000&execute-ms=30000&cb=nmhq1j4dvgnv",
+    "name": "a-dgtji8gusvog",
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": [
+      {
+        "childFrameId": "007",
+        "style": "display: none;"
+      }
+    ]
+  },
+  {
+    "frameId": "004",
+    "url": "about:blank",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "005",
+    "url": "https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.enervit.com%2Fit%2F&title=Nutrizione%20sportiva%2C%20benessere%20e%20forma%20fisica%20%7C%20Enervit&referrer=&muid=NA&sid=NA&version=6&preview=false&__shared_params__[version]=v3",
+    "name": "__privateStripeMetricsController1100",
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": [
+      {
+        "childFrameId": "006",
+        "src": "https://m.stripe.network/inner.html#url=https%3A%2F%2Fwww.enervit.com%2Fit%2F&title=Nutrizione%20sportiva%2C%20benessere%20e%20forma%20fisica%20%7C%20Enervit&referrer=&muid=NA&sid=NA&version=6&preview=false&__shared_params__[version]=v3"
+      }
+    ]
+  },
+  {
+    "frameId": "006",
+    "url": "https://m.stripe.network/inner.html#url=https%3A%2F%2Fwww.enervit.com%2Fit%2F&title=Nutrizione%20sportiva%2C%20benessere%20e%20forma%20fisica%20%7C%20Enervit&referrer=&muid=NA&sid=NA&version=6&preview=false&__shared_params__[version]=v3",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": []
+  },
+  {
+    "frameId": "007",
+    "url": "about:blank",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": []
+  },
+  {
+    "frameId": "008",
+    "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=Br0hYqpfWeFzYCAXLD4UuCIV&k=6LeI8yEeAAAAABoWnPG6XC8FIcJsYOPDQHMtYDBZ&bft=0dAFcWeA4NlfLXyP5Tt2WcV2vjRlIFN1OXlIH-1Dflxkda9oCOQY7ThT6mBBtuFGH-sFUsQRfEvS__9vbhW0WnZi4SERLmKnMOPA",
+    "name": "c-dgtji8gusvog",
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": []
+  }
+]

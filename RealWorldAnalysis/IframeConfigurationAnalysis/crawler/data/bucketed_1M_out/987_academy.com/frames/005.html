@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Clarip Cookie Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="https://cdn.clarip.com/resources/images/favicon.ico">
+    <style>
+        a:focus {
+            text-decoration: none;
+        }
+        a.accordion-toggle:hover {
+            text-decoration: underline;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdn.clarip.com/resources/vendors/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.clarip.com/resources/styles/cc.min.css"><link rel="stylesheet" href="https://cdn.clarip.com/academy/cookieconsent/assets/css/consent-tool.min.css"><link rel="stylesheet" href="https://cdn.clarip.com/academy/cookieconsent/assets/css/custom-cookie-preferences-popup.css"></head>
+<body style="max-width: 780px;">
+<div class="row header-wrapper">
+    <div id="cookie-manager-title">
+        <img id="header-logo" class="title-image" src="https://cdn.clarip.com/academy/cookieconsent/assets/img/5542aecc6dcbc3bce21a.png" alt="Header Logo">
+        <h2 role="heading" aria-level="1">Introduction to Cookie Preferences</h2>
+        
+    </div>
+    <button id="close-cookie-manager" class="cookie-manager-closer" data-dismiss="modal" aria-label="close" tabindex="1"></button>
+</div>
+
+<div id="cookie-manager-details">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div id="heading-required" class="panel-heading-required">
+                <div class="row">
+        <div class="col-sm-10 col-xs-8">
+            <h4 role="heading" aria-level="2" class="panel-title">
+                <b>Your Cookie Choices</b>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-11">
+            <p style="padding: 0 20px 0 0;">We collect personal and other data using digital tracking tools, such as cookies, and other similar technologies, when you visit our website. We also partner with third parties that collect information this way. Cookies and the information they collect might relate to you, your preferences or your device. You can choose not to allow targeting cookies by clicking on the category heading below and following the provided instructions; doing so may impact your experience on our website. <br> <br> Any choice you make not to allow targeting cookies is specific to the device, website and browser you are using, and is deleted when you clear your cookies. Furthermore, if you disable cookies on your browser or device, this feature will no longer work. To allow all cookies, click on the "Allow All" button below. <a href=" https://www.academy.com/privacy-policy" class="privacy-notice-link" rel="noopener" target="_blank" aria-label="More information about your privacy, opens in a new tab" tabindex="2">More Information</a></p>
+        </div>
+    </div>
+                <div class="row">
+                    <div class="col-sm-10 col-xs-8">
+                        <h2 class="panel-title">
+                            <a class="accordion-toggle" data-grid-id="grid-required" data-category="Required" data-toggle="collapse" data-parent="#accordion" href="#collapse-heading" aria-expanded="true" aria-controls="collapse-required" tabindex="3">
+                                <b>Strictly Necessary</b>
+                                <i class="gg-chevron-up"></i>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="col-sm-2 col-xs-4">
+                        <label style="float: right;margin-top: 10px;margin-right: 8px;">ALWAYS ON</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-11">
+                        <p id="required-category-description" style="padding: 0 20px 0 0;">
+                            Strictly necessary cookies cannot be switched off. Strictly necessary cookies are necessary for the website to function.
+                        </p>
+                    </div>
+                </div>
+                <div id="collapse-required" class="panel-collapse collapse" aria-label="heading">
+                    <div class="panel-body">
+                        <div id="required-grid" style="display: block;" class="data-grid required-grid">
+                            <table>
+                                <thead><tr><th>Domain</th><th>Parent Company</th></tr></thead>
+                                <tbody><tr class="data-row"><td>academy.com</td><td>academy.com</td></tr><tr class="data-row"><td>careers.academy.com</td><td>careers.academy.com</td></tr><tr class="data-row"><td>help.academy.com</td><td>help.academy.com</td></tr><tr class="data-row"><td>investors.academy.com</td><td>investors.academy.com</td></tr><tr class="data-row"><td>www.academy.com</td><td>www.academy.com</td></tr></tbody>
+                            </table>
+                        </div>
+                        <div id="required-grid-pagination-block" class="pagination-block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="categorization-allow-all-heading" class="panel-heading">
+            <div class="row">
+                <div class="col-sm-6 col-xs-4">
+                    <h2 class="panel-title">
+                        <b>For Optimal Experience</b>
+                    </h2>
+                </div>
+                <div class="col-sm-6 col-xs-8">
+                    <label style="float: right; display: flex;"><h5 role="heading" aria-level="3">Allow All</h5>
+                        <div class="toggle-item">
+                            <input id="opt-out-all" type="checkbox" name="check" tabindex="-1">
+                            <span class="switch" role="switch" aria-checked="false" aria-label="Allow All Toggle" tabindex="4">&nbsp;</span>
+                            <span class="toggle"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-11"></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-8 col-xs-6">
+                    <h4 role="heading" aria-level="2" class="panel-title">
+                        <a class="accordion-toggle collapsed" data-grid-id="grid-functional" data-category="Functional" data-toggle="collapse" data-parent="#accordion" href="#collapse-functional" aria-expanded="true" aria-controls="collapse-functional" tabindex="5">
+                            <b>Functional</b>
+                            <i class="gg-chevron-up"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                    <label style="float: right;">
+                        <div class="always-active">ALWAYS ON<input id="functional-checkbox" type="checkbox" name="check" class="category-toggle" data-cookie-value="1" aria-label="functional-checkbox" data-always-active="on" checked="" tabindex="-1"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-11">
+                    <p>Functionality cookies enable the website to provide enhanced functionality and personalization.</p>
+                </div>
+            </div>
+        </div>
+        <div id="collapse-functional" class="panel-collapse collapse" aria-label="heading">
+            <div class="panel-body">
+                <div id="functional-grid" style="display: block;" class="data-grid functional-grid"> 
+                    <table>
+                        <thead><tr><th>Domain</th><th>Parent Company</th></tr></thead>
+                        <tbody><tr class="data-row"><td>at1.listrakbi.com</td><td>at1.listrakbi.com</td></tr><tr class="data-row"><td>bat.bing.com</td><td>Microsoft</td></tr><tr class="data-row"><td>bing.com</td><td>Microsoft</td></tr><tr class="data-row"><td>comenity.net</td><td>comenity.net</td></tr><tr class="data-row"><td>curalate.com</td><td>Curalate</td></tr><tr class="data-row"><td>everesttech.net</td><td>Everest Technologies</td></tr><tr class="data-row"><td>kmsmep.com</td><td>kmsmep.com</td></tr><tr class="data-row"><td>listrakbi.com</td><td>listrakbi.com</td></tr><tr class="data-row"><td>nhnace.com</td><td>nhnace.com</td></tr><tr class="data-row"><td>rules.ee.channels.ocs.oraclecloud.com</td><td>rules.ee.channels.ocs.oraclecloud.com</td></tr></tbody>
+                    </table>
+                </div>
+                 <div id="functional-grid-pagination-block" class="pagination-block"><label class="pagination-text">Pages:</label>
+<label id="prev-button" class="page-button outline-none pager-inactive-button" aria-label="Previous Page" tabindex="6">Prev</label>
+<label id="page-number" class="outline-none"><label class="click-page-number" aria-label="Page 1" tabindex="7" style="border: 0px; font-weight: 700;">1</label><label class="click-page-number" aria-label="Page 2" tabindex="8" style="border: 1px solid rgb(230, 230, 230); font-weight: normal;">2</label></label>
+<label id="next-button" class="page-button outline-none" aria-label="Next Page" tabindex="9">Next</label><label id="pager-index">1 of 2</label></div>
+            </div>
+        </div>
+    </div><div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-8 col-xs-6">
+                    <h4 role="heading" aria-level="2" class="panel-title">
+                        <a class="accordion-toggle collapsed" data-grid-id="grid-performance" data-category="Performance" data-toggle="collapse" data-parent="#accordion" href="#collapse-performance" aria-expanded="true" aria-controls="collapse-performance" tabindex="10">
+                            <b>Performance</b>
+                            <i class="gg-chevron-up"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                    <label style="float: right;">
+                        <div class="always-active">ALWAYS ON<input id="performance-checkbox" type="checkbox" name="check" class="category-toggle" data-cookie-value="2" aria-label="performance-checkbox" data-always-active="on" checked="" tabindex="-1"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-11">
+                    <p>Performance cookies allow us to measure and improve the performance of our site.</p>
+                </div>
+            </div>
+        </div>
+        <div id="collapse-performance" class="panel-collapse collapse" aria-label="heading">
+            <div class="panel-body">
+                <div id="performance-grid" style="display: block;" class="data-grid performance-grid"> 
+                    <table>
+                        <thead><tr><th>Domain</th><th>Parent Company</th></tr></thead>
+                        <tbody><tr class="no-data-row"><td colspan="2">No cookies information available. Please contact us.</td></tr></tbody>
+                    </table>
+                </div>
+                 <div id="performance-grid-pagination-block" class="pagination-block"></div>
+            </div>
+        </div>
+    </div><div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-8 col-xs-6">
+                    <h4 role="heading" aria-level="2" class="panel-title">
+                        <a class="accordion-toggle collapsed" data-grid-id="grid-targeting" data-category="Targeting" data-toggle="collapse" data-parent="#accordion" href="#collapse-targeting" aria-expanded="true" aria-controls="collapse-targeting" tabindex="11">
+                            <b>Targeting</b>
+                            <i class="gg-chevron-up"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                    <label style="float: right;">
+                        <div class="toggle-item">
+                                <input id="targeting-checkbox" type="checkbox" name="check" class="category-toggle" data-always-active="" data-cookie-value="3" aria-label="targeting-checkbox" tabindex="-1">
+                                <span class="switch" role="switch" aria-checked="false" aria-label="targeting Toggle" tabindex="12">&nbsp;</span>
+                                <span class="toggle"></span>
+                            </div>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-11">
+                    <p>Targeting cookies collect information that is used, for example, to serve personalized ads for Academy products or services or the products or services of other companies.</p>
+                </div>
+            </div>
+        </div>
+        <div id="collapse-targeting" class="panel-collapse collapse" aria-label="heading">
+            <div class="panel-body">
+                <div id="targeting-grid" style="display: block;" class="data-grid targeting-grid"> 
+                    <table>
+                        <thead><tr><th>Domain</th><th>Parent Company</th></tr></thead>
+                        <tbody><tr class="data-row"><td>ads.stickyadstv.com</td><td>StickyADStv SAS</td></tr><tr class="data-row"><td>demdex.net</td><td>Adobe</td></tr><tr class="data-row"><td>doubleclick.net</td><td>Alphabet</td></tr><tr class="data-row"><td>dpm.demdex.net</td><td>Adobe</td></tr><tr class="data-row"><td>everesttech.net</td><td>Everest Technologies</td></tr><tr class="data-row"><td>facebook.com</td><td>Facebook</td></tr><tr class="data-row"><td>google.com</td><td>Alphabet</td></tr><tr class="data-row"><td>kmsmep.com</td><td>kmsmep.com</td></tr><tr class="data-row"><td>mktgcdn.com</td><td>Yext</td></tr><tr class="data-row"><td>smaato.net</td><td>Smaato</td></tr></tbody>
+                    </table>
+                </div>
+                 <div id="targeting-grid-pagination-block" class="pagination-block"><label class="pagination-text">Pages:</label>
+<label id="prev-button" class="page-button outline-none pager-inactive-button" aria-label="Previous Page" tabindex="13">Prev</label>
+<label id="page-number" class="outline-none"><label class="click-page-number" aria-label="Page 1" tabindex="14" style="border: 0px; font-weight: 700;">1</label><label class="click-page-number" aria-label="Page 2" tabindex="15" style="border: 1px solid rgb(230, 230, 230); font-weight: normal;">2</label></label>
+<label id="next-button" class="page-button outline-none" aria-label="Next Page" tabindex="16">Next</label><label id="pager-index">1 of 2</label></div>
+            </div>
+        </div>
+    </div><div class="panel panel-default panel-other">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-8 col-xs-6">
+                    <h4 role="heading" aria-level="2" class="panel-title">
+                        <a class="accordion-toggle collapsed" data-grid-id="grid-other" data-category="Other" data-toggle="collapse" data-parent="#accordion" href="#collapse-other" aria-expanded="true" aria-controls="collapse-other" tabindex="17">
+                            <b>Other</b>
+                            <i class="gg-chevron-up"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                    <label style="float: right;">
+                        <div class="toggle-item">
+                            <input id="other-checkbox" type="checkbox" name="check" class="category-toggle" data-always-active="" data-cookie-value="4" tabindex="-1">
+                            <span class="switch" role="switch" aria-checked="false" aria-label="Other Toggle" tabindex="18">&nbsp;</span>
+                            <span class="toggle"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-11">
+                    <p>These are for cookies with uncategorized categories.</p>
+                </div>
+            </div>
+        </div>
+        <div id="collapse-other" class="panel-collapse collapse" aria-label="heading">
+            <div class="panel-body">
+                <div id="other-grid" style="display: block;" class="data-grid other-grid">
+                    <table>
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="other-grid-pagination-block" class="pagination-block"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="gpc-message-container" style="display: none; background: #fff; padding-top: 10px;">
+        <p id="gpc-message" style="margin: 0 20px; font-size: 11px; color: red;">
+            Global Privacy Control/Do Not Track is enabled on the browser.
+            If you would like to change cookie consent settings, please disable GPC/DNT first.
+        </p>
+    </div>
+</div>
+<div id="cookie-manager-footer">
+    <div class="footer-btn-group">
+        <a href="https://clarip.com" style="display: inline-block;float: left;margin: 16px auto 0;" target="__blank" rel="noopener" title="The most powerful enterprise privacy governance platform" aria-label="clarip cookie consent" tabindex="19">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="84.917px" height="11.563px" viewBox="0 0 84.917 11.563" enable-background="new 0 0 84.917 11.563" xml:space="preserve">
+<path fill="#00b3ee" d="M58.039,6.554c-0.244,0-0.448-0.081-0.612-0.246c-0.165-0.164-0.247-0.366-0.247-0.609
+	c0-0.237,0.077-0.437,0.231-0.593c0.156-0.156,0.353-0.234,0.595-0.234c0.281,0,0.515,0.119,0.699,0.358l2.142-0.079
+	c-0.132-0.682-0.467-1.243-1.005-1.684c-0.539-0.439-1.161-0.66-1.864-0.66c-0.806,0-1.497,0.279-2.074,0.839
+	c-0.577,0.56-0.864,1.232-0.864,2.02c0,0.828,0.285,1.526,0.856,2.097c0.57,0.571,1.27,0.856,2.098,0.856
+	c0.784,0,1.448-0.26,1.995-0.777c0.546-0.519,0.85-1.181,0.91-1.985l-2.096,0.077C58.652,6.347,58.398,6.554,58.039,6.554
+	L58.039,6.554L58.039,6.554z M61.82,0.866V8.5h2.112V0.866H61.82L61.82,0.866z M67.786,6.554c-0.227,0-0.413-0.073-0.559-0.224
+	c-0.147-0.148-0.222-0.339-0.222-0.569c0-0.221,0.082-0.411,0.244-0.571c0.162-0.161,0.354-0.24,0.576-0.24
+	c0.244,0,0.439,0.087,0.585,0.263c0.144,0.176,0.217,0.41,0.217,0.704V8.5h2.113V5.766c0-0.913-0.263-1.635-0.788-2.161
+	c-0.525-0.527-1.244-0.792-2.156-0.792c-0.817,0-1.51,0.281-2.083,0.846c-0.569,0.562-0.855,1.248-0.855,2.058
+	c0,0.831,0.283,1.522,0.848,2.074c0.564,0.552,1.271,0.828,2.119,0.828c0.143,0,0.301-0.015,0.474-0.046V6.409
+	C68.142,6.505,67.971,6.554,67.786,6.554L67.786,6.554L67.786,6.554z M74.419,2.807c-0.743,0-1.336,0.24-1.78,0.719
+	c-0.444,0.479-0.666,1.122-0.666,1.927V8.5h2.112V5.855c0-0.582,0.193-0.873,0.577-0.873c0.121,0,0.254,0.042,0.401,0.123V2.869
+	C74.798,2.828,74.585,2.807,74.419,2.807L74.419,2.807L74.419,2.807z M75.685,2.925V8.5h2.113V2.925H75.685L75.685,2.925z
+	 M76.003,0.735C75.794,0.934,75.69,1.17,75.69,1.441c0,0.292,0.1,0.531,0.296,0.717c0.197,0.187,0.452,0.279,0.759,0.279
+	c0.309,0,0.563-0.093,0.76-0.279c0.198-0.186,0.296-0.425,0.296-0.717c0-0.271-0.104-0.508-0.313-0.706
+	c-0.21-0.199-0.457-0.3-0.744-0.3C76.461,0.436,76.212,0.536,76.003,0.735L76.003,0.735z"></path>
+                <path fill="#00b3ee" d="M81.063,5.989c0-0.741,0.271-1.113,0.813-1.113c0.227,0,0.421,0.078,0.583,0.232
+	c0.161,0.154,0.243,0.342,0.243,0.563c0,0.22-0.078,0.41-0.234,0.57s-0.344,0.241-0.562,0.241c-0.173,0-0.347-0.069-0.52-0.208
+	v2.304c0.249,0.027,0.437,0.04,0.564,0.04c0.783,0,1.462-0.287,2.034-0.862c0.572-0.574,0.859-1.255,0.859-2.046
+	c0-0.813-0.288-1.498-0.865-2.059c-0.577-0.56-1.284-0.839-2.124-0.839c-0.422,0-0.834,0.091-1.234,0.273
+	c-0.401,0.183-0.732,0.43-0.991,0.738c-0.453,0.537-0.678,1.233-0.678,2.087v4.653h2.112V5.989L81.063,5.989z"></path>
+                <path fill="#00b3ee" d="M84.712,2.951c0.031-0.026,0.047-0.061,0.047-0.103c0-0.102-0.056-0.213-0.167-0.337
+	c-0.112-0.122-0.286-0.267-0.523-0.431c-0.347-0.236-0.708-0.413-1.081-0.531s-0.763-0.178-1.17-0.178
+	c-0.447,0-0.875,0.069-1.285,0.211c-0.408,0.14-0.796,0.353-1.163,0.637c-0.172,0.132-0.297,0.248-0.375,0.348
+	c-0.079,0.1-0.118,0.192-0.118,0.281c0,0.042,0.015,0.076,0.045,0.103c0.031,0.027,0.069,0.04,0.118,0.04
+	c0.054,0,0.188-0.057,0.404-0.171c0.216-0.113,0.405-0.205,0.564-0.274c0.3-0.133,0.599-0.231,0.897-0.296
+	c0.299-0.065,0.603-0.098,0.913-0.098c0.34,0,0.671,0.038,0.991,0.115c0.321,0.076,0.674,0.204,1.061,0.382
+	c0.1,0.047,0.231,0.116,0.397,0.206c0.165,0.09,0.272,0.136,0.32,0.136C84.64,2.991,84.68,2.979,84.712,2.951L84.712,2.951z"></path>
+                <g>
+	<path fill="#00b3ee" d="M6.042,3.799c0,0.585-0.228,1.039-0.679,1.355C4.905,5.472,4.259,5.628,3.413,5.628H2.641v2.283H1.877
+		V2.109h1.7C5.222,2.109,6.042,2.669,6.042,3.799z M2.641,5.049h0.687c0.677,0,1.166-0.098,1.47-0.292
+		c0.301-0.193,0.451-0.502,0.451-0.929c0-0.381-0.143-0.669-0.426-0.856C4.541,2.786,4.097,2.691,3.496,2.691H2.641V5.049z"></path>
+                    <path fill="#00b3ee" d="M11.552,5.729c0,0.711-0.202,1.266-0.606,1.662c-0.403,0.4-0.964,0.597-1.678,0.597
+		c-0.439,0-0.83-0.09-1.171-0.273C7.758,7.533,7.494,7.27,7.307,6.93C7.122,6.587,7.029,6.189,7.029,5.729
+		c0-0.707,0.202-1.261,0.603-1.657c0.399-0.393,0.958-0.593,1.67-0.593c0.689,0,1.235,0.204,1.64,0.608
+		C11.348,4.494,11.552,5.042,11.552,5.729z M7.801,5.729c0,0.556,0.127,0.979,0.378,1.273C8.43,7.293,8.801,7.436,9.29,7.436
+		c0.486,0,0.855-0.143,1.111-0.432c0.251-0.291,0.375-0.715,0.375-1.274c0-0.552-0.124-0.972-0.375-1.259
+		c-0.256-0.286-0.628-0.43-1.123-0.43c-0.488,0-0.857,0.143-1.104,0.424C7.928,4.747,7.801,5.173,7.801,5.729z"></path>
+                    <path fill="#00b3ee" d="M16.877,7.911l-0.904-2.554c-0.056-0.156-0.163-0.511-0.316-1.063h-0.039
+		c-0.118,0.462-0.222,0.82-0.312,1.07l-0.932,2.546h-0.859l-1.346-4.351h0.783c0.317,1.093,0.56,1.924,0.722,2.497
+		c0.169,0.572,0.266,0.955,0.287,1.154H14c0.03-0.149,0.083-0.345,0.157-0.583c0.075-0.24,0.136-0.429,0.193-0.571l0.904-2.497
+		h0.807l0.88,2.497c0.17,0.457,0.281,0.835,0.34,1.146h0.038c0.013-0.093,0.043-0.242,0.094-0.441
+		c0.055-0.196,0.365-1.266,0.94-3.201h0.771l-1.362,4.351H16.877z"></path>
+                    <path fill="#00b3ee" d="M22.093,7.989c-0.729,0-1.304-0.193-1.723-0.587c-0.42-0.393-0.631-0.937-0.631-1.63
+		c0-0.703,0.194-1.261,0.583-1.673c0.395-0.413,0.917-0.62,1.576-0.62c0.619,0,1.105,0.18,1.463,0.537
+		C23.72,4.378,23.9,4.85,23.9,5.438v0.416h-3.389c0.014,0.511,0.159,0.899,0.437,1.162c0.277,0.266,0.668,0.399,1.169,0.399
+		c0.531,0,1.054-0.099,1.573-0.293v0.587c-0.265,0.098-0.513,0.172-0.751,0.214C22.708,7.969,22.425,7.989,22.093,7.989z
+		 M21.892,4.031c-0.398,0-0.712,0.114-0.948,0.343c-0.233,0.226-0.371,0.542-0.415,0.943h2.572c0-0.415-0.102-0.732-0.313-0.954
+		C22.579,4.142,22.278,4.031,21.892,4.031z"></path>
+                    <path fill="#00b3ee" d="M27.418,3.479c0.217,0,0.416,0.016,0.587,0.047l-0.102,0.612c-0.204-0.04-0.384-0.061-0.542-0.061
+		c-0.397,0-0.738,0.144-1.021,0.429c-0.283,0.29-0.426,0.645-0.426,1.07v2.334H25.17V3.561h0.616l0.087,0.807h0.035
+		c0.185-0.286,0.405-0.502,0.661-0.66C26.825,3.559,27.109,3.479,27.418,3.479z"></path>
+                    <path fill="#00b3ee" d="M31.006,7.989c-0.73,0-1.301-0.193-1.721-0.587c-0.422-0.393-0.633-0.937-0.633-1.63
+		c0-0.703,0.195-1.261,0.584-1.673c0.394-0.413,0.917-0.62,1.576-0.62c0.617,0,1.106,0.18,1.463,0.537
+		c0.358,0.362,0.541,0.834,0.541,1.421v0.416h-3.39c0.012,0.511,0.158,0.899,0.436,1.162c0.276,0.266,0.669,0.399,1.169,0.399
+		c0.533,0,1.055-0.099,1.574-0.293v0.587c-0.266,0.098-0.514,0.172-0.75,0.214C31.623,7.969,31.339,7.989,31.006,7.989z
+		 M30.805,4.031c-0.397,0-0.711,0.114-0.949,0.343c-0.231,0.226-0.372,0.542-0.416,0.943h2.576c0-0.415-0.104-0.732-0.313-0.954
+		C31.493,4.142,31.191,4.031,30.805,4.031z"></path>
+                    <path fill="#00b3ee" d="M37.438,7.326h-0.043c-0.345,0.442-0.856,0.663-1.542,0.663c-0.644,0-1.146-0.191-1.505-0.583
+		c-0.354-0.391-0.536-0.943-0.536-1.661c0-0.715,0.182-1.273,0.539-1.671c0.359-0.395,0.861-0.595,1.503-0.595
+		c0.665,0,1.18,0.217,1.532,0.645h0.062l-0.033-0.314l-0.019-0.305V1.735h0.748v6.176h-0.609L37.438,7.326z M35.944,7.436
+		c0.51,0,0.882-0.123,1.106-0.369c0.231-0.243,0.345-0.636,0.345-1.181V5.746c0-0.616-0.116-1.055-0.348-1.318
+		c-0.229-0.264-0.602-0.396-1.113-0.396c-0.433,0-0.766,0.152-1.001,0.453c-0.233,0.3-0.347,0.723-0.347,1.271
+		c0,0.556,0.114,0.976,0.346,1.257C35.162,7.297,35.501,7.436,35.944,7.436z"></path>
+                    <path fill="#00b3ee" d="M44.402,3.488c0.647,0,1.147,0.196,1.507,0.584c0.357,0.392,0.536,0.943,0.536,1.657
+		c0,0.718-0.18,1.272-0.541,1.666c-0.361,0.397-0.86,0.593-1.501,0.593c-0.32,0-0.611-0.052-0.878-0.155
+		c-0.264-0.104-0.486-0.267-0.669-0.482h-0.052l-0.158,0.56h-0.533V1.735h0.743v1.498c0,0.338-0.008,0.64-0.033,0.905h0.033
+		C43.202,3.706,43.72,3.488,44.402,3.488z M44.295,4.041c-0.509,0-0.879,0.13-1.104,0.387c-0.222,0.256-0.337,0.691-0.337,1.302
+		c0,0.612,0.119,1.049,0.347,1.314c0.232,0.264,0.603,0.393,1.109,0.393c0.461,0,0.802-0.146,1.025-0.438
+		c0.224-0.297,0.339-0.724,0.339-1.275c0-0.565-0.115-0.986-0.339-1.267C45.113,4.181,44.763,4.041,44.295,4.041z"></path>
+                    <path fill="#00b3ee" d="M46.968,3.561h0.796l1.08,2.479c0.235,0.568,0.382,0.976,0.437,1.227h0.04
+		c0.037-0.135,0.119-0.366,0.243-0.69c0.127-0.328,0.532-1.334,1.221-3.015h0.798l-2.114,4.953
+		c-0.209,0.489-0.456,0.835-0.736,1.043c-0.28,0.203-0.624,0.308-1.03,0.308c-0.225,0-0.45-0.024-0.672-0.068V9.269
+		c0.166,0.03,0.348,0.048,0.552,0.048c0.514,0,0.876-0.255,1.095-0.764l0.274-0.621L46.968,3.561z"></path>
+</g>
+</svg></a>
+        <button id="save-cookie-options" class="btn footer-btn" tabindex="20">Confirm</button>
+    </div>
+</div>
+
+<script>
+    var client = 'academy';
+    var scanCookiesRealTime = '0';
+    var identifier = '5542aecc6dcbc3bce21a';
+    var cacheClear = '1779202815';
+    var customPopupCSS = 'https://cdn.clarip.com/academy/cookieconsent/assets/css/custom-cookie-preferences-popup.css';
+    var cookieJSONFilePrefix = '5542aecc6dcbc3bce21a_20260519100002';
+    var cookieAcceptanceAllValue = '0,1,2,3,';
+</script>
+
+<!-- Scripts -->
+<script defer="" src="https://cdn.clarip.com/academy/cookieconsent/assets/js/cookieconsent-manager-extended.min.js?1779202815"></script>
+
+
+
+</body></html>

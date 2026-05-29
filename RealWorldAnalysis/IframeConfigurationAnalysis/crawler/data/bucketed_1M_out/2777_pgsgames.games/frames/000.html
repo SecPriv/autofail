@@ -1,0 +1,834 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="image/icon180.png"><link rel="manifest" href="/manifest.json"><title>PGSlot ค่ายเกมอันดับหนึ่งของประเทศไทย</title><link href="/css/app.fb3bddf4.css" rel="preload" as="style"><link href="/css/chunk-vendors.247dd7bc.css" rel="preload" as="style"><link href="/js/app.98ac2208.js" rel="preload" as="script"><link href="/js/chunk-vendors.2354b6f5.js" rel="preload" as="script"><link href="/css/chunk-vendors.247dd7bc.css" rel="stylesheet"><link href="/css/app.fb3bddf4.css" rel="stylesheet"><style type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style></head><body data-aos-easing="ease" data-aos-duration="1200" data-aos-delay="0"><noscript><strong>We're sorry but pg-slot doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><main><canvas id="vue-niege-canvas" height="851" style="pointer-events: none; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 999; user-select: none;" width="393"></canvas><div class="container"><div data-v-f27c63cc="" class="row"><div data-v-f27c63cc="" class="col-3 mobile-menu-icon"><span data-v-f27c63cc="" class="side-navbar-expand">☰</span></div><div data-v-f27c63cc="" class="col-2-lg col-xl-3 col-md-3 col-4 logo-container"><img data-v-f27c63cc="" src="/img/pg-slot-logo.81aa8a60.png" alt="Responsive image" class="logo-img img-fluid float-left"></div><div data-v-f27c63cc="" class="col-6 logo-container-mobile"><img data-v-f27c63cc="" src="/img/pg-slot-logo.81aa8a60.png" alt="Responsive image" class="logo-img img-fluid float-left"></div><div data-v-f27c63cc="" class="col-8 col-xl-9 col-md-9 login-section font-size-120vw"><div data-v-f27c63cc="" class="col-2 offset-10 px-0 mt-2"><div data-v-f27c63cc="" class="language-btn"><img data-v-f27c63cc="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAApNJREFUOE+tlEtok0EQx2d2v5j0IZImjQ2t2oMFsRRE6cUHiMV6MCB4EikVpFD0JuJJkaKgHsSL1INStXpoQXoUihcfeNAigiK1UqUNKsRHbENp+kh2x/8mPvomLV1Y2N1v5jc78+38meYMIfLGqSQU0KpeizQQUy0JRWCmsE5i3W+YH00Z01dM6R9MlJ2JwD4/AHLrdYb8O7VSx+C/G0cRYvZmxRQxsAZYXmHeIZp4iu9JOFtnlwPmYEeOR+njQBMlvzdRJrMFhw70L+DcTOCVJc8Xp2Com7Zt7aTq6k/c1mbzwNHRYGYo3uwNDp7iVKpKrNXzAfNPmNnK2tKE2Vxzd2rThuulkUiCRcQ5N9ps9jIZU4ebqUJgfwuVgzIPi9bntdY9DhjFbMeHGFL3FQ5zqcHD1YXZ/ZgnmCf4we2HsbKKcIfSXjnAS9Rs8VAAis2a1K944gwHdUO70dIK84LqtlQG2qgujuiDvYr5AK3scv/57NKXlxz1xd56pOuWVbtFjA3ZAQd8B2DtKgE/cNSLPVak9q4G0JLt46BqvDFpM63YLOP9LRzeT7qL2y/eO+wPldwUrUIrv6WQGJuaTqbOsqTTlRII3MJb2u+UZiVQJrHosBeU4RbXKZ4xdEgpuUTWbsa+4NTdg/7TLwnF+gKa9n5eHMbGym1ypJXjwydlPF0BJSqoY5gALCr6aSurujPhyquBssDnPNC13OlzVfbN6xb1LXGUMlPVSMF1zlLyZcjn+2rD4Z709vqO0mtX3juhmCmwSLV4PW63j1g1Y+4AMAjk7BJITkjHULZ+BO2EfS/R5BeAILwL3ABFCRD5N5JeswdOuyAlNXAsc5oC+IgVGVKkn5OdeEY0PQTGJGB52cH4DQ1xAcKN+Z6EAAAAAElFTkSuQmCC" alt="Timor-Leste Flag" class="language-flag" style="user-select: none;"><p data-v-f27c63cc="" class="my-0" style="user-select: none;">ไทย</p><svg data-v-f27c63cc="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-caret-down"><path data-v-f27c63cc="" fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" class=""></path></svg></div></div><div data-v-f27c63cc="" class="justify-content-end d-flex login-container mt-2"><div data-v-f27c63cc="" class="header-button col-2 size-btn"> เข้าสู่ระบบ </div></div><div data-v-f27c63cc="" class="col-9 offset-3 d-flex justify-content-between font-size-110vw mt-2 px-0"><div data-v-f27c63cc=""><span data-v-f27c63cc="" class="menu-item whi" style="white-space: nowrap;">คำถามพบบ่อย</span></div><div data-v-f27c63cc=""><span data-v-f27c63cc="">|</span></div><div data-v-f27c63cc=""><span data-v-f27c63cc="" class="menu-item whi" style="white-space: nowrap;">ความปลอดภัย</span></div><div data-v-f27c63cc=""><span data-v-f27c63cc="">|</span></div><div data-v-f27c63cc=""><span data-v-f27c63cc="" class="menu-item whi" style="white-space: nowrap;">การใช้งาน</span></div><div data-v-f27c63cc=""><span data-v-f27c63cc="">|</span></div><div data-v-f27c63cc=""><span data-v-f27c63cc="" class="menu-item whi" style="white-space: nowrap;">ติดต่อเรา</span></div></div></div><div data-v-f27c63cc="" class="col-3 mobile-menu-login"><div data-v-f27c63cc="" class="header-button-mobile"> ลงชื่อเข้าใช้ </div></div><div data-v-4dcf7151="" data-v-f27c63cc="" id="mySidenav" class="sidenav"><a data-v-4dcf7151="" href="javascript:void(0)" class="closebtn">×</a><section data-v-4dcf7151="" class="menu-container-mobile d-flex flex-column align-items-between justify-content-between"><span data-v-4dcf7151="" class="separate-line"></span><div data-v-4dcf7151="" class="menu-item">หน้าแรก</div><span data-v-4dcf7151="" class="separate-line"></span><div data-v-4dcf7151="" class="menu-item">ดาวน์โหลด</div><span data-v-4dcf7151="" class="separate-line"></span><div data-v-4dcf7151="" class="menu-item">คำถามพบบ่อย</div><span data-v-4dcf7151="" class="separate-line"></span><div data-v-4dcf7151="" class="menu-item">ความปลอดภัย</div><span data-v-4dcf7151="" class="separate-line"></span><div data-v-4dcf7151="" class="menu-item">การใช้งาน</div><span data-v-4dcf7151="" class="separate-line"></span></section></div><!----><div data-v-f27c63cc="" role="alert" aria-live="polite" aria-atomic="true" class="alert position-fixed fixed-bottom m-0 rounded-0 downloadTap display-mobile d-lg-none alert-#213a29" style="z-index: 2000;"><!----><section data-v-f27c63cc="" class="d-flex mt-2 pd-0"><div data-v-f27c63cc="" class="mt-2"><a data-v-f27c63cc="" class="iconClose">×</a></div><div data-v-f27c63cc="" class="col-3"><img data-v-f27c63cc="" src="/image/icon180.png" alt="crime_scene_card" class="icon"></div><div data-v-f27c63cc="" class="col-4 text-left downloadText"><div data-v-f27c63cc=""><span data-v-f27c63cc=""> PGSLOT แอพมือถือ </span></div><div data-v-f27c63cc=""><span data-v-f27c63cc=""> ดาวน์โหลดเดี๋ยวนี้ </span></div></div><div data-v-f27c63cc="" class="col-4 text-right"><img data-v-f27c63cc="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAyCAMAAADY6iMOAAAAV1BMVEXRXQrRXQqQQAZrMATRXQrRXQrRXQpHcExHNSLRXQoZGwIwDwA4CwAlFQEgGAEdGgIqEgE0DQAWCgD//viWkIU2IROinZP48eZ6al3Y0cXb1s6Eem/Iva2YQ8lIAAAACnRSTlOrCsXWgFcvAPqdQVxCWQAAAgRJREFUSMflltuCqyAMRWmnrQhSEG2tbf//OycJBBV1TnXO22yUS8gigD5EFEVxOJ9KsU3l6XwAUhTFZSsaF7ggfRHiKK3aJiuPQlwKcSjFl9qjL1EexFkc1T4dgT0JuZOWwJbC7qStwOtWe0VX/z9pCxr3reKxtdvofGaZpgBWWa5SMO+VndI2OGMb6Li7YJpKttLbXIpjML0i1TYvtT69RF+Hrr837b/oK8jSk4lof53b8YEq0WxFmWRYoVlTOrCohdiDeUabWJiGvpnENsOiJhWiTRqz2DnQI0vocom0ybnYEm1WNaM56I0269umDTu++XXapWLoNfINMV2MDW37lryrkS/RziVL6ALdEBZ3Dk0nMbgbucKA6UzGvxAn+uocwA9v5m4rtHP+1QFOsf0azLSOZZA2D8SRvnfdwwywHryJ1slAQjs0HvDXvblzZK3TNHtHWg9TWIUazt49u2fTIMzcRDnNC5Dw7A1Gdhn1Az3iEUdY65/pmksdYeo4/+hD5HrEsG+k65HICi/8KcbDHwuV93TVaK2nmtHE187JXC5Hl2mUk3hfeGWxhT/VfUBXdVUh/e77Z9+HCt/3zeHkAl1NhD7a3TLBwauZFui4QD2+Zvoan9Kf6g/T5S/oEjOunTBmXJDt7aQx28NMcxdMmWbIcrdvO2S5v8ywKbvfzIbs/htK24iGvcz7FAAAAABJRU5ErkJggg==" class="iconLoading"></div></section></div><!----></div></div><div data-v-08f7f276="" class="mt-2"><div data-v-08f7f276="" class="mobile-login"><label data-v-08f7f276="" class="text-newera">Experience The New Era</label><label data-v-08f7f276="" class="text-slotgames">Slot Games</label><img data-v-08f7f276="" src="/img/pgslot-newera.0bfc3211.png" class="append-newera"><div data-v-08f7f276="" class="header-button-login col-10 mt-4"> PLAY NOW </div></div></div><div data-v-184cf6a7="" class="d-flex flex-column fix-footer w-100"><div data-v-184cf6a7="" class="d-flex justify-content-between container"><div data-v-184cf6a7="" class="d-flex bottom-menu justify-content-between w-100 mt-2 font-size-120vw"><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="menu-item">ดาวน์โหลด</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="seperate-bottom-menu">|</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="menu-item">คำถามพบบ่อย</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="seperate-bottom-menu">|</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="menu-item">ความปลอดภัย</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="seperate-bottom-menu">|</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="menu-item">การใช้งาน</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="seperate-bottom-menu">|</span></div><div data-v-184cf6a7=""><span data-v-184cf6a7="" class="menu-item">ติดต่อเรา</span></div></div><div data-v-184cf6a7="" class="os-icon pl-5"><i data-v-184cf6a7="" aria-label="icon: android" class="bottom-font-color mr-2 anticon anticon-android"><svg viewBox="64 64 896 896" data-icon="android" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M448.3 225.2c-18.6 0-32 13.4-32 31.9s13.5 31.9 32 31.9c18.6 0 32-13.4 32-31.9.1-18.4-13.4-31.9-32-31.9zm393.9 96.4c-13.8-13.8-32.7-21.5-53.2-21.5-3.9 0-7.4.4-10.7 1v-1h-3.6c-5.5-30.6-18.6-60.5-38.1-87.4-18.7-25.7-43-47.9-70.8-64.9l25.1-35.8v-3.3c0-.8.4-2.3.7-3.8.6-2.4 1.4-5.5 1.4-8.9 0-18.5-13.5-31.9-32-31.9-9.8 0-19.5 5.7-25.9 15.4l-29.3 42.1c-30-9.8-62.4-15-93.8-15-31.3 0-63.7 5.2-93.8 15L389 79.4c-6.6-9.6-16.1-15.4-26-15.4-18.6 0-32 13.4-32 31.9 0 6.2 2.5 12.8 6.7 17.4l22.6 32.3c-28.7 17-53.5 39.4-72.2 65.1-19.4 26.9-32 56.8-36.7 87.4h-5.5v1c-3.2-.6-6.7-1-10.7-1-20.3 0-39.2 7.5-53.1 21.3-13.8 13.8-21.5 32.6-21.5 53v235c0 20.3 7.5 39.1 21.4 52.9 13.8 13.8 32.8 21.5 53.2 21.5 3.9 0 7.4-.4 10.7-1v93.5c0 29.2 23.9 53.1 53.2 53.1H331v58.3c0 20.3 7.5 39.1 21.4 52.9 13.8 13.8 32.8 21.5 53.2 21.5 20.3 0 39.2-7.5 53.1-21.3 13.8-13.8 21.5-32.6 21.5-53v-58.2H544v58.1c0 20.3 7.5 39.1 21.4 52.9 13.8 13.8 32.8 21.5 53.2 21.5 20.4 0 39.2-7.5 53.1-21.6 13.8-13.8 21.5-32.6 21.5-53v-58.2h31.9c29.3 0 53.2-23.8 53.2-53.1v-91.4c3.2.6 6.7 1 10.7 1 20.3 0 39.2-7.5 53.1-21.3 13.8-13.8 21.5-32.6 21.5-53v-235c-.1-20.3-7.6-39-21.4-52.9zM246 609.6c0 6.8-3.9 10.6-10.7 10.6-6.8 0-10.7-3.8-10.7-10.6V374.5c0-6.8 3.9-10.6 10.7-10.6 6.8 0 10.7 3.8 10.7 10.6v235.1zm131.1-396.8c37.5-27.3 85.3-42.3 135-42.3s97.5 15.1 135 42.5c32.4 23.7 54.2 54.2 62.7 87.5H314.4c8.5-33.4 30.5-64 62.7-87.7zm39.3 674.7c-.6 5.6-4.4 8.7-10.5 8.7-6.8 0-10.7-3.8-10.7-10.6v-58.2h21.2v60.1zm202.3 8.7c-6.8 0-10.7-3.8-10.7-10.6v-58.2h21.2v60.1c-.6 5.6-4.3 8.7-10.5 8.7zm95.8-132.6H309.9V364h404.6v399.6zm85.2-154c0 6.8-3.9 10.6-10.7 10.6-6.8 0-10.7-3.8-10.7-10.6V374.5c0-6.8 3.9-10.6 10.7-10.6 6.8 0 10.7 3.8 10.7 10.6v235.1zM576.1 225.2c-18.6 0-32 13.4-32 31.9s13.5 31.9 32 31.9c18.6 0 32.1-13.4 32.1-32-.1-18.6-13.4-31.8-32.1-31.8z"></path></svg></i><i data-v-184cf6a7="" aria-label="icon: apple" class="bottom-font-color mr-2 anticon anticon-apple"><svg viewBox="64 64 896 896" data-icon="apple" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M747.4 535.7c-.4-68.2 30.5-119.6 92.9-157.5-34.9-50-87.7-77.5-157.3-82.8-65.9-5.2-138 38.4-164.4 38.4-27.9 0-91.7-36.6-141.9-36.6C273.1 298.8 163 379.8 163 544.6c0 48.7 8.9 99 26.7 150.8 23.8 68.2 109.6 235.3 199.1 232.6 46.8-1.1 79.9-33.2 140.8-33.2 59.1 0 89.7 33.2 141.9 33.2 90.3-1.3 167.9-153.2 190.5-221.6-121.1-57.1-114.6-167.2-114.6-170.7zm-10.6 267c-14.3 19.9-28.7 35.6-41.9 45.7-10.5 8-18.6 11.4-24 11.6-9-.1-17.7-2.3-34.7-8.8-1.2-.5-2.5-1-4.2-1.6l-4.4-1.7c-17.4-6.7-27.8-10.3-41.1-13.8-18.6-4.8-37.1-7.4-56.9-7.4-20.2 0-39.2 2.5-58.1 7.2-13.9 3.5-25.6 7.4-42.7 13.8-.7.3-8.1 3.1-10.2 3.9-3.5 1.3-6.2 2.3-8.7 3.2-10.4 3.6-17 5.1-22.9 5.2-.7 0-1.3-.1-1.8-.2-1.1-.2-2.5-.6-4.1-1.3-4.5-1.8-9.9-5.1-16-9.8-14-10.9-29.4-28-45.1-49.9-27.5-38.6-53.5-89.8-66-125.7-15.4-44.8-23-87.7-23-128.6 0-60.2 17.8-106 48.4-137.1 26.3-26.6 61.7-41.5 97.8-42.3 5.9.1 14.5 1.5 25.4 4.5 8.6 2.3 18 5.4 30.7 9.9 3.8 1.4 16.9 6.1 18.5 6.7 7.7 2.8 13.5 4.8 19.2 6.6 18.2 5.8 32.3 9 47.6 9 15.5 0 28.8-3.3 47.7-9.8 7.1-2.4 32.9-12 37.5-13.6 25.6-9.1 44.5-14 60.8-15.2 4.8-.4 9.1-.4 13.2-.1 22.7 1.8 42.1 6.3 58.6 13.8-37.6 43.4-57 96.5-56.9 158.4-.3 14.7.9 31.7 5.1 51.8 6.4 30.5 18.6 60.7 37.9 89 14.7 21.5 32.9 40.9 54.7 57.8-11.5 23.7-25.6 48.2-40.4 68.8zm-94.5-572c50.7-60.2 46.1-115 44.6-134.7-44.8 2.6-96.6 30.5-126.1 64.8-32.5 36.8-51.6 82.3-47.5 133.6 48.4 3.7 92.6-21.2 129-63.7z"></path></svg></i><i data-v-184cf6a7="" aria-label="icon: windows" class="bottom-font-color mr-2 anticon anticon-windows"><svg viewBox="64 64 896 896" data-icon="windows" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M120.1 770.6L443 823.2V543.8H120.1v226.8zm63.4-163.5h196.2v141.6l-196.2-31.9V607.1zm340.3 226.5l382 62.2v-352h-382v289.8zm63.4-226.5h255.3v214.4l-255.3-41.6V607.1zm-63.4-415.7v288.8h382V128.1l-382 63.3zm318.7 225.5H587.3V245l255.3-42.3v214.2zm-722.4 63.3H443V201.9l-322.9 53.5v224.8zM183.5 309l196.2-32.5v140.4H183.5V309z"></path></svg></i><i data-v-184cf6a7="" aria-label="icon: html5" class="bottom-font-color mr-2 anticon anticon-html5"><svg viewBox="64 64 896 896" data-icon="html5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M145 96l66 746.6L511.8 928l299.6-85.4L878.7 96H145zm610.9 700.6l-244.1 69.6-245.2-69.6-56.7-641.2h603.8l-57.8 641.2zM281 249l1.7 24.3 22.7 253.5h206.5v-.1h112.9l-11.4 118.5L511 672.9v.2h-.8l-102.4-27.7-6.5-73.2h-91l11.3 144.7 188.6 52h1.7v-.4l187.7-51.7 1.7-16.3 21.2-242.2 3.2-24.3H511v.2H389.9l-8.2-94.2h352.1l1.7-19.5 4.8-47.2L742 249H511z"></path></svg></i><i data-v-184cf6a7="" aria-label="icon: chrome" class="bottom-font-color anticon anticon-chrome"><svg viewBox="64 64 896 896" data-icon="chrome" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M928 512.3v-.3c0-229.8-186.2-416-416-416S96 282.2 96 512v.4c0 229.8 186.2 416 416 416s416-186.2 416-416v-.3.2zm-6.7-74.6l.6 3.3-.6-3.3zM676.7 638.2c53.5-82.2 52.5-189.4-11.1-263.7l162.4-8.4c20.5 44.4 32 93.8 32 145.9 0 185.2-144.6 336.6-327.1 347.4l143.8-221.2zM512 652.3c-77.5 0-140.2-62.7-140.2-140.2 0-77.7 62.7-140.2 140.2-140.2S652.2 434.5 652.2 512 589.5 652.3 512 652.3zm369.2-331.7l-3-5.7 3 5.7zM512 164c121.3 0 228.2 62.1 290.4 156.2l-263.6-13.9c-97.5-5.7-190.2 49.2-222.3 141.1L227.8 311c63.1-88.9 166.9-147 284.2-147zM102.5 585.8c26 145 127.1 264 261.6 315.1C229.6 850 128.5 731 102.5 585.8zM164 512c0-55.9 13.2-108.7 36.6-155.5l119.7 235.4c44.1 86.7 137.4 139.7 234 121.6l-74 145.1C302.9 842.5 164 693.5 164 512zm324.7 415.4c4 .2 8 .4 12 .5-4-.2-8-.3-12-.5z"></path></svg></i></div></div><div data-v-184cf6a7="" class="d-flex container"><div data-v-184cf6a7="" class="single-line mt-1"></div></div><div data-v-184cf6a7="" class="d-flex justify-content-center container font-size-140vw mt-1"><p data-v-184cf6a7="" class="bottom-font-color mt-1 mb-0">POWERED BY</p></div><div data-v-184cf6a7="" class="container d-flex align-items-content justify-content-center flex-wrap px-0"><div data-v-184cf6a7="" class="d-block p-1 px-1"><img data-v-184cf6a7="" src="/img/logo_askmebet.1dcb988f.png" alt="Responsive image" class="partner-logo ml-2"><img data-v-184cf6a7="" src="data:image/png;base64,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" alt="Responsive image" class="partner-logo ml-4"></div></div><div data-v-184cf6a7="" class="copyright-container font-size-140vw py-2 mt-2"><p data-v-184cf6a7="" class="copyright-text" style="margin-bottom: 0px;"> 2026 © Copyright <span data-v-184cf6a7=""><a data-v-184cf6a7="" href="/home" class="copyright-link">PGSLOT.CO</a></span> All rights Reserved. </p></div></div></main></div><script src="/js/chunk-vendors.2354b6f5.js"></script><script src="/js/app.98ac2208.js"></script></body></html>

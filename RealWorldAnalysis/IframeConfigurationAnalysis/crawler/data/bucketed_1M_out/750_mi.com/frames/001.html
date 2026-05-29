@@ -1,0 +1,314 @@
+<!DOCTYPE html><html><head><style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @supports (-webkit-touch-callout: none) {
+            input, textarea, select {
+                font-size: 16px !important;
+            }
+        }
+    </style>
+    <script src="../../v2scripts/react.production.min.js"></script>
+    <script src="../../v2scripts/react-dom.production.min.js"></script>
+    <script src="../../v2scripts/webchat.js"></script><meta name="react-film" content="version=3.1.1-main.f623bf6"><meta name="web-speech-cognitive-services" content="version=8.1.3"><meta name="botframework-directlinespeech:version" content="4.18.1-hotfix.20260308.b15b405"><meta name="botframework-directlinespeech" content="version=4.18.1-hotfix.20260308.b15b405; build_tool=tsup; format=esmodules"><meta name="botframework-webchat:api" content="version=4.18.1-hotfix.20260308.b15b405; build-tool=tsup; module-format=esmodules"><meta name="botframework-webchat:bundle" content="version=4.18.1-hotfix.20260308.b15b405; variant=full; build-tool=tsup; module-format=global"><meta name="botframework-webchat:component" content="version=4.18.1-hotfix.20260308.b15b405; build-tool=tsup; module-format=esmodules"><meta name="botframework-webchat:core" content="version=4.18.1-hotfix.20260308.b15b405; build-tool=tsup; module-format=esmodules"><meta name="botframework-webchat:bundle:variant" content="full"><meta name="botframework-webchat:bundle:version" content="4.18.1-hotfix.20260308.b15b405"><meta name="botframework-webchat:core:version" content="4.18.1-hotfix.20260308.b15b405"><meta name="botframework-webchat:ui:version" content="4.18.1-hotfix.20260308.b15b405">
+<title>Omnichannel Live Chat Widget</title><style data-load-themed-styles="true">.pickerText_9f838726{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #a19f9d;min-width:180px;padding:1px;min-height:32px}.pickerText_9f838726:hover{border-color:#c7e0f4}.pickerInput_9f838726{height:34px;border:none;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;outline:0;padding:0 6px 0;margin:1px}.pickerInput_9f838726::-ms-clear{display:none}</style><style data-load-themed-styles="true">.resultContent_4cc31f3f{display:table-row}.resultContent_4cc31f3f .resultItem_4cc31f3f{display:table-cell;vertical-align:bottom}.peoplePickerPersona_4cc31f3f{width:180px}.peoplePickerPersona_4cc31f3f .ms-Persona-details{width:100%}.peoplePicker_4cc31f3f .ms-BasePicker-text{min-height:40px}.peoplePickerPersonaContent_4cc31f3f{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}</style><style data-load-themed-styles="true">.callout_ad5629e1 .ms-Suggestions-itemButton{padding:0;border:none}.callout_ad5629e1 .ms-Suggestions{min-width:300px}</style><style data-load-themed-styles="true">.root_8c91000a{min-width:260px}.suggestionsItem_8c91000a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;position:relative;overflow:hidden}.suggestionsItem_8c91000a:hover{background:#f3f2f1}.suggestionsItem_8c91000a:hover .closeButton_8c91000a{display:block}.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a{background:#edebe9}.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a:hover{background:#c8c6c4}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a:hover{background:Highlight;color:HighlightText}}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a{background:Highlight;color:HighlightText;-ms-high-contrast-adjust:none}}.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a .closeButton_8c91000a:hover{background:#a19f9d;color:#323130}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.suggestionsItem_8c91000a.suggestionsItemIsSuggested_8c91000a .itemButton_8c91000a{color:HighlightText}}.suggestionsItem_8c91000a .closeButton_8c91000a{display:none;color:#605e5c}.suggestionsItem_8c91000a .closeButton_8c91000a:hover{background:#edebe9}.actionButton_8c91000a{background-color:transparent;border:0;cursor:pointer;margin:0;position:relative;border-top:1px solid #edebe9;height:40px;width:100%;font-size:12px}[dir=ltr] .actionButton_8c91000a{padding-left:8px}[dir=rtl] .actionButton_8c91000a{padding-right:8px}html[dir=ltr] .actionButton_8c91000a{text-align:left}html[dir=rtl] .actionButton_8c91000a{text-align:right}.actionButton_8c91000a:hover{background-color:#edebe9;cursor:pointer}.actionButton_8c91000a:active,.actionButton_8c91000a:focus{background-color:#c7e0f4}.actionButton_8c91000a .ms-Button-icon{font-size:16px;width:25px}.actionButton_8c91000a .ms-Button-label{margin:0 4px 0 9px}html[dir=rtl] .actionButton_8c91000a .ms-Button-label{margin:0 9px 0 4px}.buttonSelected_8c91000a{background-color:#c7e0f4}.suggestionsTitle_8c91000a{padding:0 12px;color:#0078d4;font-size:12px;line-height:40px;border-bottom:1px solid #edebe9}.suggestionsContainer_8c91000a{overflow-y:auto;overflow-x:hidden;max-height:300px;border-bottom:1px solid #edebe9}.suggestionsNone_8c91000a{text-align:center;color:#797775;font-size:12px;line-height:30px}.suggestionsSpinner_8c91000a{margin:5px 0;white-space:nowrap;line-height:20px;font-size:12px}html[dir=ltr] .suggestionsSpinner_8c91000a{padding-left:14px}html[dir=rtl] .suggestionsSpinner_8c91000a{padding-right:14px}html[dir=ltr] .suggestionsSpinner_8c91000a{text-align:left}html[dir=rtl] .suggestionsSpinner_8c91000a{text-align:right}.suggestionsSpinner_8c91000a .ms-Spinner-circle{display:inline-block;vertical-align:middle}.suggestionsSpinner_8c91000a .ms-Spinner-label{display:inline-block;margin:0 10px 0 16px;vertical-align:middle}html[dir=rtl] .suggestionsSpinner_8c91000a .ms-Spinner-label{margin:0 16px 0 10px}.itemButton_8c91000a.itemButton_8c91000a{width:100%;padding:0;min-width:0;height:100%}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.itemButton_8c91000a.itemButton_8c91000a{color:WindowText}}.itemButton_8c91000a.itemButton_8c91000a:hover{color:#201f1e}.closeButton_8c91000a.closeButton_8c91000a{padding:0 4px;height:auto;width:32px}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.closeButton_8c91000a.closeButton_8c91000a{color:WindowText}}.closeButton_8c91000a.closeButton_8c91000a:hover{background:#c8c6c4;color:#201f1e}.suggestionsAvailable_8c91000a{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style><style data-load-themed-styles="true">.picker_94f06b16{position:relative}.pickerText_94f06b16{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #a19f9d;min-width:180px;min-height:30px}.pickerText_94f06b16:hover{border-color:#323130}.pickerText_94f06b16.inputFocused_94f06b16{position:relative;border-color:#0078d4}.pickerText_94f06b16.inputFocused_94f06b16:after{pointer-events:none;content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;right:-1px;border:2px solid #0078d4}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.pickerText_94f06b16.inputDisabled_94f06b16{position:relative;border-color:GrayText}.pickerText_94f06b16.inputDisabled_94f06b16:after{pointer-events:none;content:"";position:absolute;left:0;top:0;bottom:0;right:0;background-color:Window}}.pickerInput_94f06b16{height:34px;border:none;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;outline:0;padding:0 6px 0;-ms-flex-item-align:end;align-self:flex-end}.pickerItems_94f06b16{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:100%}.screenReaderOnly_94f06b16{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style><style data-load-themed-styles="true">.suggestionsContainer_44c59fda{overflow-y:auto;overflow-x:hidden;max-height:300px}.suggestionsContainer_44c59fda .ms-Suggestion-item:hover{background-color:#f3f2f1;cursor:pointer}.suggestionsContainer_44c59fda .is-suggested{background-color:#deecf9}.suggestionsContainer_44c59fda .is-suggested:hover{background-color:#c7e0f4;cursor:pointer}</style><style data-load-themed-styles="true">.root_ade399af{min-width:260px}.actionButton_ade399af{background:0 0;background-color:transparent;border:0;cursor:pointer;margin:0;padding:0;position:relative;width:100%;font-size:12px}html[dir=ltr] .actionButton_ade399af{text-align:left}html[dir=rtl] .actionButton_ade399af{text-align:right}.actionButton_ade399af:hover{background-color:#f3f2f1;cursor:pointer}.actionButton_ade399af:active,.actionButton_ade399af:focus{background-color:#c7e0f4}.actionButton_ade399af .ms-Button-icon{font-size:16px;width:25px}.actionButton_ade399af .ms-Button-label{margin:0 4px 0 9px}html[dir=rtl] .actionButton_ade399af .ms-Button-label{margin:0 9px 0 4px}.buttonSelected_ade399af{background-color:#deecf9}.buttonSelected_ade399af:hover{background-color:#c7e0f4;cursor:pointer}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.buttonSelected_ade399af:hover{background-color:Highlight;color:HighlightText}}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.buttonSelected_ade399af{background-color:Highlight;color:HighlightText;-ms-high-contrast-adjust:none}}.suggestionsTitle_ade399af{font-size:12px}.suggestionsSpinner_ade399af{margin:5px 0;white-space:nowrap;line-height:20px;font-size:12px}html[dir=ltr] .suggestionsSpinner_ade399af{padding-left:14px}html[dir=rtl] .suggestionsSpinner_ade399af{padding-right:14px}html[dir=ltr] .suggestionsSpinner_ade399af{text-align:left}html[dir=rtl] .suggestionsSpinner_ade399af{text-align:right}.suggestionsSpinner_ade399af .ms-Spinner-circle{display:inline-block;vertical-align:middle}.suggestionsSpinner_ade399af .ms-Spinner-label{display:inline-block;margin:0 10px 0 16px;vertical-align:middle}html[dir=rtl] .suggestionsSpinner_ade399af .ms-Spinner-label{margin:0 16px 0 10px}.itemButton_ade399af{height:100%;width:100%;padding:7px 12px}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.itemButton_ade399af{color:WindowText}}.screenReaderOnly_ade399af{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style><style data-load-themed-styles="true">.resultContent_f73be5be{display:table-row}.resultContent_f73be5be .resultItem_f73be5be{display:table-cell;vertical-align:bottom}.peoplePickerPersona_f73be5be{width:180px}.peoplePickerPersona_f73be5be .ms-Persona-details{width:100%}.peoplePicker_f73be5be .ms-BasePicker-text{min-height:40px}.peoplePickerPersonaContent_f73be5be{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:7px 12px}</style><style data-load-themed-styles="true">.personaContainer_6625fd9a{border-radius:15px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:#eff6fc;margin:4px;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;position:relative}.personaContainer_6625fd9a::-moz-focus-inner{border:0}.personaContainer_6625fd9a{outline:transparent}.personaContainer_6625fd9a{position:relative}.ms-Fabric--isFocusVisible .personaContainer_6625fd9a:focus:after{-webkit-box-sizing:border-box;box-sizing:border-box;content:"";position:absolute;top:-2px;right:-2px;bottom:-2px;left:-2px;pointer-events:none;border:1px solid #605e5c;border-radius:0}.personaContainer_6625fd9a .ms-Persona-primaryText{color:#005a9e;font-size:14px;font-weight:400}.personaContainer_6625fd9a .ms-Persona-primaryText.hover_6625fd9a{color:#005a9e}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a .ms-Persona-primaryText{color:HighlightText}}.personaContainer_6625fd9a .actionButton_6625fd9a:hover{background:#c7e0f4}.personaContainer_6625fd9a .actionButton_6625fd9a .ms-Button-icon{color:#005a9e}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a .actionButton_6625fd9a .ms-Button-icon{color:HighlightText}}.personaContainer_6625fd9a:hover{background:#deecf9}.personaContainer_6625fd9a:hover .ms-Persona-primaryText{color:#005a9e;font-size:14px;font-weight:400}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a:hover .ms-Persona-primaryText{color:HighlightText}}.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a{background:#0078d4}.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a .ms-Persona-primaryText{color:#ffffff}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a .ms-Persona-primaryText{color:HighlightText}}.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a .actionButton_6625fd9a{color:#ffffff}.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a .actionButton_6625fd9a .ms-Button-icon{color:#005a9e}.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a .actionButton_6625fd9a .ms-Button-icon:hover{background:#005a9e}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a .actionButton_6625fd9a .ms-Button-icon{color:HighlightText}}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a.personaContainerIsSelected_6625fd9a{border-color:Highlight;background:Highlight;-ms-high-contrast-adjust:none}}.personaContainer_6625fd9a.validationError_6625fd9a .ms-Persona-primaryText{color:#e81123}.personaContainer_6625fd9a.validationError_6625fd9a .ms-Persona-initials{font-size:20px}@media screen and (-ms-high-contrast:active),screen and (forced-colors:active){.personaContainer_6625fd9a{border:1px solid WindowText}}.personaContainer_6625fd9a .itemContent_6625fd9a{-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;min-width:0;max-width:100%}.personaContainer_6625fd9a .removeButton_6625fd9a{border-radius:15px;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:33px;height:33px;-ms-flex-preferred-size:32px;flex-basis:32px}.personaContainer_6625fd9a .expandButton_6625fd9a{border-radius:15px 0 0 15px;height:33px;width:44px;padding-right:16px;position:inherit;display:-webkit-box;display:-ms-flexbox;display:flex;margin-right:-17px}.personaContainer_6625fd9a .personaWrapper_6625fd9a{position:relative;display:inherit}.personaContainer_6625fd9a .personaWrapper_6625fd9a .ms-Persona-details{padding:0 8px}.personaContainer_6625fd9a .personaDetails_6625fd9a{-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto}.itemContainer_6625fd9a{display:inline-block;vertical-align:top}</style><script src="https://oc-cdn-public-eur.azureedge.net/livechatwidget/WebChatControl/scripts/locale/1033.js" type="text/javascript"></script><script src="https://oc-cdn-public-eur.azureedge.net/livechatwidget/WebChatControl/scripts/locale/1031.js" type="text/javascript"></script><style data-emotion="webchat--css-ahovi" data-s=""></style><script src="https://oc-cdn-public-eur.azureedge.net/livechatwidget/v2scripts/callingsdk/1.0.20240809-2/CallingBundle.js" type="text/javascript"></script><style data-webchat-injected="component" nonce="">
+.webchat__css-custom-properties.wc-1dj653j1ukf {
+  display: contents;
+  --webchat__border-animation--color-1: #203C91;
+  --webchat__border-animation--color-2: #4DD3FF;
+  --webchat__border-animation--color-3: #2B8DD8;
+  --webchat__color--accent: #0063B1;
+  --webchat__color--subtle: #767676;
+  --webchat__color--timestamp: #767676;
+  --webchat__font--primary: Segoe UI, Arial, sans-serif;
+  --webchat__font-size--small: 80%;
+  --webchat__icon-url--external-link: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIzIDMgMTggMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTcuMjUwMSA0LjUwMDE3SDEwLjc0OTVDMTEuMTYzNyA0LjUwMDE3IDExLjQ5OTUgNC44MzU5NiAxMS40OTk1IDUuMjUwMTdDMTEuNDk5NSA1LjYyOTg2IDExLjIxNzMgNS45NDM2NiAxMC44NTEzIDUuOTkzMzJMMTAuNzQ5NSA2LjAwMDE3SDcuMjQ5NzRDNi4wNzA3OSA1Ljk5OTYxIDUuMTAzNDkgNi45MDY1NiA1LjAwNzg2IDguMDYxMTJMNS4wMDAyOCA4LjIyMDAzTDUuMDAzMTIgMTYuNzUwN0M1LjAwMzQzIDE3Ljk0MTUgNS45Mjg4NSAxOC45MTYxIDcuMDk5NjYgMTguOTk0OUw3LjI1MzcxIDE5LjAwMDFMMTUuNzUxOCAxOC45ODg0QzE2Ljk0MTUgMTguOTg2OCAxNy45MTQ1IDE4LjA2MiAxNy45OTM1IDE2Ljg5MjNMMTcuOTk4NyAxNi43Mzg0VjEzLjIzMjFDMTcuOTk4NyAxMi44MTc5IDE4LjMzNDUgMTIuNDgyMSAxOC43NDg3IDEyLjQ4MjFDMTkuMTI4NCAxMi40ODIxIDE5LjQ0MjIgMTIuNzY0MyAxOS40OTE4IDEzLjEzMDNMMTkuNDk4NyAxMy4yMzIxVjE2LjczODRDMTkuNDk4NyAxOC43NDA3IDE3LjkyOTMgMjAuMzc2OSAxNS45NTI4IDIwLjQ4MjlMMTUuNzUzOCAyMC40ODg0TDcuMjU4MjcgMjAuNTAwMUw3LjA1NDk1IDIwLjQ5NDlDNS4xNDIzOSAyMC4zOTU0IDMuNjA4OTUgMTguODYyNyAzLjUwODM3IDE2Ljk1MDJMMy41MDMxMiAxNi43NTExTDMuNTAwODkgOC4yNTI3TDMuNTA1MjkgOC4wNTAyQzMuNjA1MzkgNi4xMzc0OSA1LjEzODY3IDQuNjA0NDkgNy4wNTA5NiA0LjUwNTI3TDcuMjUwMSA0LjUwMDE3SDEwLjc0OTVINy4yNTAxWk0xMy43NDgxIDMuMDAxNDZMMjAuMzAxOCAzLjAwMTk3TDIwLjQwMTQgMy4wMTU3NUwyMC41MDIyIDMuMDQzOTNMMjAuNTU5IDMuMDY4MDNDMjAuNjEyMiAzLjA5MTIyIDIwLjY2MzQgMy4xMjE2MyAyMC43MTExIDMuMTU4ODVMMjAuNzgwNCAzLjIyMTU2TDIwLjg2NDEgMy4zMjAxNEwyMC45MTgzIDMuNDEwMjVMMjAuOTU3IDMuNTAwNTdMMjAuOTc2MiAzLjU2NDc2TDIwLjk4OTggMy42Mjg2MkwyMC45OTkyIDMuNzIyODJMMjAuOTk5NyAxMC4yNTU0QzIwLjk5OTcgMTAuNjY5NiAyMC42NjM5IDExLjAwNTQgMjAuMjQ5NyAxMS4wMDU0QzE5Ljg3IDExLjAwNTQgMTkuNTU2MiAxMC43MjMyIDE5LjUwNjUgMTAuMzU3MUwxOS40OTk3IDEwLjI1NTRMMTkuNDk4OSA1LjU2MTQ3TDEyLjI3OTcgMTIuNzg0N0MxMi4wMTM0IDEzLjA1MSAxMS41OTY4IDEzLjA3NTMgMTEuMzAzMSAxMi44NTc1TDExLjIxOSAxMi43ODQ5QzEwLjk1MjcgMTIuNTE4NyAxMC45Mjg0IDEyLjEwMjEgMTEuMTQ2MiAxMS44MDg0TDExLjIxODggMTEuNzI0M0wxOC40MzY5IDQuNTAxNDZIMTMuNzQ4MUMxMy4zNjg0IDQuNTAxNDYgMTMuMDU0NiA0LjIxOTMxIDEzLjAwNSAzLjg1MzI0TDEyLjk5ODEgMy43NTE0NkMxMi45OTgxIDMuMzcxNzcgMTMuMjgwMyAzLjA1Nzk3IDEzLjY0NjQgMy4wMDgzMUwxMy43NDgxIDMuMDAxNDZaIiBmaWxsPSIjMjEyMTIxIiAvPjwvc3ZnPg==);
+  --webchat__max-height--image-bubble: 240px;
+  --webchat__max-width--attachment-bubble: 250px;
+  --webchat__min-width--attachment-bubble: 20px;
+  --webchat__max-width--message-bubble: 250px;
+  --webchat__min-width--message-bubble: 20px;
+  --webchat__min-height--bubble: 34px;
+  --webchat__min-height--image-bubble: 240px;
+  --webchat__padding--regular: 10px;
+  --webchat__size--avatar: 32px;
+}
+</style></head>
+
+<body>
+    <div id="oc-lcw-container" style="width: 100%; height: 100%; position: fixed; right: 0; bottom: 0"><div id="oclcw-arialive-region" aria-live="assertive" role="alert" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;">Livechat ist verfügbar</div><style>
+            #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 10px;
+            }
+
+            #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+
+            /* High Contrast mode support - optimized for all variants */
+            @media (prefers-contrast: high), (-ms-high-contrast: active), (forced-colors: active) {
+                #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-track {
+                    background: Canvas !important;
+                    border: 1px solid CanvasText !important;
+                }
+
+                #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-thumb {
+                    background: CanvasText !important;
+                    border: 1px solid Canvas !important;
+                    min-height: 20px !important;
+                }
+
+                #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-thumb:hover {
+                    background: Highlight !important;
+                    border: 1px solid CanvasText !important;
+                }
+
+                #oc-lcw .webchat__basic-transcript__scrollable::-webkit-scrollbar-corner {
+                    background: Canvas !important;
+                }
+            }
+
+            .webchat__basic-transcript__activity-markdown-body > :last-child {
+                margin-bottom: 0px;
+            }
+
+            .webchat__basic-transcript__activity-markdown-body > :first-child {
+                margin-top: 0px;
+            }
+
+            /* Remove browser-default <p> margins inside system messages.
+               Without this, each markdown paragraph adds ~1em top+bottom gap
+               which causes the oversized line spacing visible on iOS Safari.
+               Also disable iOS Safari's auto font-size scaling (-webkit-text-size-adjust)
+               which inflates font sizes and causes line-height to grow over time
+               when the layout is viewed in a narrow viewport. */
+            .webchat__basic-transcript__activity-markdown-body {
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+
+            .webchat__basic-transcript__activity-markdown-body p {
+                margin-top: 0;
+                margin-bottom: 4px;
+                line-height: 1.4;
+            }
+
+            .webchat__basic-transcript__activity-markdown-body p:last-child {
+                margin-bottom: 0;
+            }
+                
+            .webchat__basic-transcript__activity-markdown-body img.webchat__render-markdown__external-link-icon {
+                background-image : url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIzIDMgMTggMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTcuMjUwMSA0LjUwMDE3SDEwLjc0OTVDMTEuMTYzNyA0LjUwMDE3IDExLjQ5OTUgNC44MzU5NiAxMS40OTk1IDUuMjUwMTdDMTEuNDk5NSA1LjYyOTg2IDExLjIxNzMgNS45NDM2NiAxMC44NTEzIDUuOTkzMzJMMTAuNzQ5NSA2LjAwMDE3SDcuMjQ5NzRDNi4wNzA3OSA1Ljk5OTYxIDUuMTAzNDkgNi45MDY1NiA1LjAwNzg2IDguMDYxMTJMNS4wMDAyOCA4LjIyMDAzTDUuMDAzMTIgMTYuNzUwN0M1LjAwMzQzIDE3Ljk0MTUgNS45Mjg4NSAxOC45MTYxIDcuMDk5NjYgMTguOTk0OUw3LjI1MzcxIDE5LjAwMDFMMTUuNzUxOCAxOC45ODg0QzE2Ljk0MTUgMTguOTg2OCAxNy45MTQ1IDE4LjA2MiAxNy45OTM1IDE2Ljg5MjNMMTcuOTk4NyAxNi43Mzg0VjEzLjIzMjFDMTcuOTk4NyAxMi44MTc5IDE4LjMzNDUgMTIuNDgyMSAxOC43NDg3IDEyLjQ4MjFDMTkuMTI4NCAxMi40ODIxIDE5LjQ0MjIgMTIuNzY0MyAxOS40OTE4IDEzLjEzMDNMMTkuNDk4NyAxMy4yMzIxVjE2LjczODRDMTkuNDk4NyAxOC43NDA3IDE3LjkyOTMgMjAuMzc2OSAxNS45NTI4IDIwLjQ4MjlMMTUuNzUzOCAyMC40ODg0TDcuMjU4MjcgMjAuNTAwMUw3LjA1NDk1IDIwLjQ5NDlDNS4xNDIzOSAyMC4zOTU0IDMuNjA4OTUgMTguODYyNyAzLjUwODM3IDE2Ljk1MDJMMy41MDMxMiAxNi43NTExTDMuNTAwODkgOC4yNTI3TDMuNTA1MjkgOC4wNTAyQzMuNjA1MzkgNi4xMzc0OSA1LjEzODY3IDQuNjA0NDkgNy4wNTA5NiA0LjUwNTI3TDcuMjUwMSA0LjUwMDE3SDEwLjc0OTVINy4yNTAxWk0xMy43NDgxIDMuMDAxNDZMMjAuMzAxOCAzLjAwMTk3TDIwLjQwMTQgMy4wMTU3NUwyMC41MDIyIDMuMDQzOTNMMjAuNTU5IDMuMDY4MDNDMjAuNjEyMiAzLjA5MTIyIDIwLjY2MzQgMy4xMjE2MyAyMC43MTExIDMuMTU4ODVMMjAuNzgwNCAzLjIyMTU2TDIwLjg2NDEgMy4zMjAxNEwyMC45MTgzIDMuNDEwMjVMMjAuOTU3IDMuNTAwNTdMMjAuOTc2MiAzLjU2NDc2TDIwLjk4OTggMy42Mjg2MkwyMC45OTkyIDMuNzIyODJMMjAuOTk5NyAxMC4yNTU0QzIwLjk5OTcgMTAuNjY5NiAyMC42NjM5IDExLjAwNTQgMjAuMjQ5NyAxMS4wMDU0QzE5Ljg3IDExLjAwNTQgMTkuNTU2MiAxMC43MjMyIDE5LjUwNjUgMTAuMzU3MUwxOS40OTk3IDEwLjI1NTRMMTkuNDk4OSA1LjU2MTQ3TDEyLjI3OTcgMTIuNzg0N0MxMi4wMTM0IDEzLjA1MSAxMS41OTY4IDEzLjA3NTMgMTEuMzAzMSAxMi44NTc1TDExLjIxOSAxMi43ODQ5QzEwLjk1MjcgMTIuNTE4NyAxMC45Mjg0IDEyLjEwMjEgMTEuMTQ2MiAxMS44MDg0TDExLjIxODggMTEuNzI0M0wxOC40MzY5IDQuNTAxNDZIMTMuNzQ4MUMxMy4zNjg0IDQuNTAxNDYgMTMuMDU0NiA0LjIxOTMxIDEzLjAwNSAzLjg1MzI0TDEyLjk5ODEgMy43NTE0NkMxMi45OTgxIDMuMzcxNzcgMTMuMjgwMyAzLjA1Nzk3IDEzLjY0NjQgMy4wMDgzMUwxMy43NDgxIDMuMDAxNDZaIiBmaWxsPSIjMjEyMTIxIiAvPjwvc3ZnPg==) !important;
+                height: .75em;
+                margin-left: .25em;
+            }
+
+            /* ── iOS Safari: underline + number alignment fixes ────────────────
+               1. Position underlines below all glyphs (not at alphabetic baseline)
+                  so they never intersect numbers in links or auto-detected tel: hrefs.
+               2. Use a solid underline (skip-ink: none) so numbers aren't split by
+                  gaps the browser renders around descenders.
+               3. Prevent ::marker pseudo-element from inheriting text-decoration,
+                  which Safari applies to ol/ul counters causing them to appear
+                  underlined and misaligned.
+               4. Normalise ordered-list indentation across Safari/WebKit. */
+            .webchat__basic-transcript__activity-markdown-body a {
+                -webkit-text-underline-position: under;
+                text-underline-position: under;
+                text-decoration-skip-ink: none;
+                -webkit-text-decoration-skip: none;
+            }
+
+            .webchat__basic-transcript__activity-markdown-body ol li::marker,
+            .webchat__basic-transcript__activity-markdown-body ul li::marker {
+                text-decoration: none;
+            }
+
+            .webchat__basic-transcript__activity-markdown-body ol {
+                -webkit-padding-start: 1.5em;
+                padding-inline-start: 1.5em;
+            }
+
+            .webchat__link-definitions__header-text {
+                color: #D24204
+            }
+            
+            .webchat__link-definitions__header-chevron {
+                color: #D24204
+            }
+
+            undefined
+            </style> <div class="webchat webchat__css-custom-properties webchat--css-ahovi-97xyxt webchat__css-custom-properties wc-1dj653j1ukf"><div aria-live="polite" class="webchat__live-region"></div><div id="oc-lcw" class="ms-Stack css-109" style="left: 0px; top: 0px;"></div><span class="webchat__submit-error-message webchat--css-ahovi-1e9i5sl" id="webchat__send-box__error-message-id--qa1sj"></span></div> </div>
+    <script>
+        const MicrosoftOmnichannelLCWidgetChatIframePageId = "Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window";
+        window[MicrosoftOmnichannelLCWidgetChatIframePageId] = true;
+
+        const attachRulesScript = () => {
+            let scriptElement = document.createElement("script");
+            scriptElement.id = "oc-rules-script";
+            scriptElement.src = "../../v2scripts/OrchestrationEngine.js";
+            document.getElementsByTagName("body")[0].appendChild(scriptElement);
+        }
+
+        const attachAppInsightsScript = () => {
+            try {
+                let scriptElement = document.createElement("script");
+                scriptElement.id = "oc-app-insights-script";
+                scriptElement.src = "../../v2scripts/ai.3.gbl.min.js";
+                scriptElement.type = "text/javascript";
+                document.getElementsByTagName("body")[0].appendChild(scriptElement);
+            } catch (error) {
+                console.warn("Error attaching Application Insights script:", error);
+            }
+        }
+
+        const attachBootScript = (parameters) => {
+            let scriptElement = document.createElement("script");
+            const chunks = ['ocw', 'widget'];
+
+            chunks.forEach((chunkName, index) => {
+                const scriptElement = document.createElement("script");
+                scriptElement.src = `../../v2scripts/${chunkName}.js`;
+                if(chunkName === 'widget') {
+                    scriptElement.id = "oc-lcw-script";
+                    scriptElement.src = "../../v2scripts/widget.js";
+                    scriptElement.setAttribute("data-app-id", parameters["data-app-id"]);
+                    scriptElement.setAttribute("data-org-id", parameters["data-org-id"]);
+                    scriptElement.setAttribute("data-org-url", parameters["data-org-url"]);
+                    scriptElement.setAttribute("hostname", parameters["hostname"]);
+                    scriptElement.setAttribute("data-open-in-window", parameters["data-open-in-window"]);
+                    scriptElement.setAttribute("is-popout-mode", parameters["is-popout-mode"] || "false");
+                    scriptElement.setAttribute("is-custom-popout-mode", parameters["is-custom-popout-mode"] || "false");
+                    scriptElement.setAttribute("data-disable-telemetry", parameters["data-disable-telemetry"] || "false");
+                    scriptElement.setAttribute("data-hide-chat-button", parameters["data-hide-chat-button"] || "false");
+                    scriptElement.setAttribute("data-render-mobile", parameters["data-render-mobile"] || "false");
+                    scriptElement.setAttribute("data-lcw-version", parameters["data-lcw-version"] || "prod");
+                    scriptElement.setAttribute("data-enable-lcw-autofill", parameters["data-enable-lcw-autofill"] || "false");
+                    scriptElement.setAttribute("data-bypass-cache", parameters["data-bypass-cache"] || "false");
+                    scriptElement.setAttribute("data-hide-minimize-button", parameters["data-hide-minimize-button"] || "false");
+                    scriptElement.setAttribute("data-enable-newline", parameters["data-enable-newline"] || "default");
+                    scriptElement.setAttribute("data-enable-markdown", parameters["data-enable-markdown"] || "default");
+                    scriptElement.setAttribute("data-enable-sso-magic-code", parameters["data-enable-sso-magic-code"] || "true");
+                    scriptElement.setAttribute("data-widget-instance-id", parameters["data-widget-instance-id"]);
+                    scriptElement.setAttribute("data-enable-disconnect-alert", parameters["data-enable-disconnect-alert"] || "false");
+                    scriptElement.setAttribute("data-hyperlink-text-override", parameters["data-hyperlink-text-override"] || "false");
+                    scriptElement.setAttribute("data-responsive-fullscreen", parameters["data-responsive-fullscreen"] || "true");
+                    if (!!parameters["data-custom-close-button-text"]) scriptElement.setAttribute("data-custom-close-button-text", parameters["data-custom-close-button-text"]);
+                    if (!!parameters["data-font-family-override"]) scriptElement.setAttribute("data-font-family-override", parameters["data-font-family-override"]);
+                    if (!!parameters["data-enable-font-smoothing"]) scriptElement.setAttribute("data-enable-font-smoothing", parameters["data-enable-font-smoothing"]);
+                    if (!!parameters["data-suggested-action-layout"]) scriptElement.setAttribute("data-suggested-action-layout", parameters["data-suggested-action-layout"]);
+                    if (!!parameters["data-color-override"]) scriptElement.setAttribute("data-color-override", parameters["data-color-override"]);
+                    if (!!parameters["data-customization-callback"]) scriptElement.setAttribute("data-customization-callback", parameters["data-customization-callback"]);
+                    if (!!parameters["data-portal-contact-id"]) scriptElement.setAttribute("data-portal-contact-id", parameters["data-portal-contact-id"]);
+                    if (!!parameters["skip-prechat"]) scriptElement.setAttribute("skip-prechat", parameters["skip-prechat"]);
+                    if (!!parameters["data-external-runtime-id"]) scriptElement.setAttribute("data-external-runtime-id", parameters["data-external-runtime-id"]);
+                    if (!!parameters["data-ruleset-id"]) scriptElement.setAttribute("data-ruleset-id", parameters["data-ruleset-id"]);
+                    if (!!parameters["data-ruleset-version"]) scriptElement.setAttribute("data-ruleset-version", parameters["data-ruleset-version"]);
+                    if (!!parameters["data-disable-app-insights"]) scriptElement.setAttribute("data-disable-app-insights", parameters["data-disable-app-insights"]);
+                }
+                document.getElementsByTagName("body")[0].appendChild(scriptElement);
+            });
+
+            const htmlTitle = parameters["data-html-title"];
+            if (htmlTitle && htmlTitle.length > 0) {
+                document.title = decodeURIComponent(htmlTitle);
+            } else {
+                document.title = "Omnichannel Live Chat Widget";
+            }
+        }
+
+        const parseSearchParameters = (searchUrl) => {
+            let parameters = {};
+            if (!searchUrl) return parameters;
+            let searchPart = searchUrl.substr(1);
+            searchPart.split('&').forEach((param) => {
+                let paramArr = param.split('=');
+                if (paramArr && paramArr[0]) {
+                    parameters[paramArr[0]] = paramArr[1];
+                }
+            });
+            return parameters;
+        }
+        // Improved error handling: catch and log errors in the iframe, including unhandledrejection
+        function sendErrorToParent(errorData) {
+            const message = {
+                messageName: "lcw:error",
+                payload: errorData
+            };
+            if (window.parent) {
+                window.parent.postMessage(message, "*");
+            }
+            /*
+                This is for the internal telemetry logger if that is available to receive message.
+                If recieves it logs logConfigDataEvent with the event name as "ScriptError".
+            */
+            window.postMessage({
+                triggeredBy: "LiveChatWidget",
+                messageName: "internal:logTelemetry",
+                event: "ScriptError",
+                exceptionDetails: {
+                    message: JSON.stringify(errorData)
+                }
+            }, "*");
+        }
+
+        window.addEventListener("error", function (event) {
+            // Only handle errors from scripts or runtime errors
+            if (event.filename && event.filename.endsWith('.js') || event.error || event.message) {
+                sendErrorToParent({
+                    error: event.error ? (event.error.stack || event.error.toString()) : event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    type: "error"
+                });
+            }
+            return false;
+        });
+
+        const attachFontSmoothingStyle = () => {
+            const styleElement = document.createElement("style");
+            styleElement.textContent = 'html, body, [class*="webchat"] { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }';
+            document.getElementsByTagName("head")[0].appendChild(styleElement);
+        }
+
+        const main = () => {
+            let parameters = parseSearchParameters(window.location.search);
+            if (parameters["data-ruleset-id"]) {
+                attachRulesScript();
+            }
+            if (parameters["data-enable-font-smoothing"] === "true") {
+                attachFontSmoothingStyle();
+            }
+            if (parameters["data-disable-app-insights"] === "false") {
+                attachAppInsightsScript();
+            }
+            attachBootScript(parameters);
+            // Set up window properties if it's pop out
+            if (parameters["is-popout-mode"]) {
+                window.addEventListener("lcw:ready", function handleLivechatReadyEvent() {
+                    var link = document.createElement('link');
+                    link.type = "image/x-icon";
+                    link.rel = "icon";
+                    link.href = Microsoft.Omnichannel.LiveChatWidget.Loader.liveChatConfig.chatButtonIconUrl ? Microsoft.Omnichannel.LiveChatWidget.Loader.liveChatConfig.chatButtonIconUrl : " ";
+                    document.getElementsByTagName('head')[0].appendChild(link);
+                    document.title = Microsoft.Omnichannel.LiveChatWidget.Loader.liveChatConfig.chatButtonTitle;
+                    document.documentElement.lang = (Microsoft.Omnichannel.LiveChatWidget.Loader.liveChatConfig.chatWidgetLocale).split("-")[0];
+                });
+                document.addEventListener('contextmenu', function (event) { event.preventDefault(); });
+            }
+        }
+        main();
+    </script><script src="../../v2scripts/ocw.js"></script><script src="../../v2scripts/widget.js" id="oc-lcw-script" data-app-id="8e593262-3005-46a4-9602-6fcceb7bc3cc" data-org-id="cc2a190d-824c-4a3e-9688-057769101233" data-org-url="https://m-cc2a190d-824c-4a3e-9688-057769101233.eu.omnichannelengagementhub.com" hostname="www.mi.com" data-open-in-window="undefined" is-popout-mode="false" is-custom-popout-mode="false" data-disable-telemetry="false" data-hide-chat-button="true" data-render-mobile="false" data-lcw-version="prod" data-enable-lcw-autofill="true" data-bypass-cache="false" data-hide-minimize-button="false" data-enable-newline="default" data-enable-markdown="default" data-enable-sso-magic-code="true" data-widget-instance-id="undefined" data-enable-disconnect-alert="false" data-hyperlink-text-override="false" data-responsive-fullscreen="true"></script>
+
+
+</body></html>

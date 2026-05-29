@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="next-head-count" content="2"><link rel="preload" href="https://dashboard.vgcdn.net/_next/static/css/d88233495e051173.css" as="style"><link rel="stylesheet" href="https://dashboard.vgcdn.net/_next/static/css/d88233495e051173.css" data-n-g=""><link rel="preload" href="https://dashboard.vgcdn.net/_next/static/css/1df2d4e2717fa645.css" as="style"><link rel="stylesheet" href="https://dashboard.vgcdn.net/_next/static/css/1df2d4e2717fa645.css" data-n-p=""><noscript data-n-css=""></noscript><script src="https://s0.2mdn.net/instream/video/client.js" async="" type="text/javascript"></script><script src="https://sc.lfeeder.com/lftracker_v1_kn9Eq4RXNZl8RlvP.js" async=""></script><script defer="" nomodule="" src="https://dashboard.vgcdn.net/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/webpack-a245ebbc456e0b35.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/framework-eae1dab60e375b5f.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/main-ae6b35db66c4a8b9.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/pages/_app-142e1003ef2487f4.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/37a763b4-613b59682f849549.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/7066-f4aaf2896b54efca.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/1664-ea9c0747ebfa7ee7.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/4480-d7b1433026b4e95e.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/chunks/pages/%5Benvuuid%5D/videos/embed-f40d2f8a98aa8095.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/KU7SG3p8MszPHPr-atpDS/_buildManifest.js" defer=""></script><script src="https://dashboard.vgcdn.net/_next/static/KU7SG3p8MszPHPr-atpDS/_ssgManifest.js" defer=""></script><style id="janya-sdk-styles">.janya-container {
+    position: relative;
+    overflow: hidden;
+    background: none center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    container-type: inline-size;
+    container-name: player;
+}
+
+.janya-container:focus-visible {
+    outline: none;
+}
+
+.janya-lband-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.janya-video {
+    height: 100%;
+    width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.janya-ad-container {
+    display: none;
+    inset: 0;
+    position: absolute;
+    z-index: 3;
+}
+
+.janya-player-controls-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    pointer-events: none;
+    transition-delay: 5s;
+}
+
+.janya-container:hover .janya-player-controls-container {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 50ms;
+}
+
+.janya-seek-wrapper {
+    position: relative;
+    height: 8px;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.janya-buffer-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+.janya-progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #eb581f;
+    border-radius: 8px;
+    transition: width 0.25s ease;
+    z-index: 2;
+}
+
+.janya-knob {
+    position: absolute;
+    top: 50%;
+    height: 12px;
+    width: 12px;
+    background-color: #eb581f;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: left 0.25s ease;
+    z-index: 2;
+}
+
+.janya-knob:hover {
+    width: 16px;
+    height: 16px;
+}
+
+.janya-controls-row {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.janya-left-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.janya-control-group {
+    display: flex;
+    padding: 8px;
+    border-radius: 9999px;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+.janya-control-group:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.janya-rewind-forward-span {
+    position: absolute;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.janya-forward-rewind-button {
+    position: relative;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.janya-button {
+    padding: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    height: 20px;
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.janya-button svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.janya-volume-level {
+    position: relative;
+    width: 0px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.janya-volume-track {
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    border-radius: 9999px;
+    position: relative;
+}
+
+.janya-volume-knob {
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    background-color: gray;
+    cursor: pointer;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.janya-volume-knob:hover {
+    width: 15px;
+    height: 15px;
+    transition: all 300ms;
+}
+
+.janya-volume-group {
+    gap: 0px;
+}
+
+.janya-volume-group:hover {
+    gap: 8px;
+    padding-right: 12px;
+    transition: all 300ms;
+}
+
+.janya-volume-group:hover .janya-volume-level {
+    width: 60px;
+    transition: width 300ms;
+}
+
+.janya-volume-level:hover .janya-volume-knob {
+    /* display: block; */
+    opacity: 1;
+    transition: all 300ms;
+    pointer-events: auto;
+}
+
+.text-white {
+    color: white;
+}
+
+.janya-controls-block {
+    display: flex;
+    gap: 8px;
+}
+
+.settings-btn {
+    position: relative;
+}
+
+.settings-btn svg {
+    transition: rotate 300ms;
+}
+
+.janya-quality-menu {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid black;
+    border-radius: 8px;
+    color: white;
+    min-width: 100px;
+    display: none;
+    z-index: 50;
+    bottom: calc(100% + 8px);
+    right: 0;
+}
+
+.settings-btn.open .janya-quality-menu {
+    display: block;
+}
+
+.settings-btn.open svg {
+    rotate: 90deg;
+    transition: rotate 500ms;
+}
+
+.janya-resolution-list {
+    padding: 0px;
+    margin: 0px;
+}
+
+.janya-resolution-list:not(:focus) .janya-quality-menu {
+    display: none;
+}
+
+.janya-resolution-item {
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #ffffff;
+    user-select: none;
+    transition: background-color 0.15s ease;
+}
+
+.janya-resolution-item:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.janya-resolution-item.active {
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.janya-resolution-item .check {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.janya-qualitymenu-title {
+    margin: 6px 0;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    white-space: nowrap;
+}
+
+.janya-hover-time {
+    padding: 4px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 100%;
+    border-radius: 4px;
+    display: none;
+    transform: translate(-50%, -50%);
+}
+
+.janya-ad-marker {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #fde047;
+    /* yellow-200 */
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+.janya-ad-toggle-button {
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    z-index: 999;
+    padding: 10px;
+    font-size: 30px;
+    fill: white;
+    /* width: 30px; */
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.janya-ad-toggle-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.janya-container:hover .janya-ad-toggle-button.active {
+    display: flex;
+}
+
+.janya-loader-container {
+    position: absolute;
+    padding: 10px;
+    color: white;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: none;
+}
+
+.janya-loader {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.janya-ad-audio-button {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.show {
+    display: block;
+    z-index: 999;
+}
+
+.janya-seek-overlay {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.janya-seek-overlay.forward {
+    right: 20%;
+}
+
+.janya-seek-overlay.rewind {
+    left: 20%;
+}
+
+.janya-seek-overlay.show {
+    opacity: 1;
+}
+
+@container player (max-width:480px) {
+    .janya-button {
+        height: 16px;
+        font-size: 14px;
+    }
+
+    .janya-control-group {
+        font-size: 14px;
+        gap: 4px
+    }
+
+    .janya-rewind-forward-span {
+        font-size: 6px;
+    }
+
+    .janya-volume-group:hover .janya-volume-level {
+        width: 40px;
+    }
+
+    .janya-controls-block {
+        gap: 4px;
+    }
+}
+
+@container player (max-width:320px) {
+    .janya-button {
+        height: 10px;
+        font-size: 8px;
+    }
+
+    .janya-control-group {
+        font-size: 8px;
+        gap: 1px
+    }
+
+    .janya-rewind-forward-span {
+        font-size: 4px;
+    }
+
+    .janya-volume-group:hover .janya-volume-level {
+        width: 20px;
+    }
+
+    .janya-controls-block {
+        gap: 1px;
+    }
+}
+
+@container player (max-width:280px) {
+    .janya-button {
+        height: 8px;
+        font-size: 6px;
+    }
+
+    .janya-control-group {
+        font-size: 6px;
+        gap: 0.5px
+    }
+
+    .janya-rewind-forward-span {
+        font-size: 2px;
+    }
+
+    .janya-volume-group:hover .janya-volume-level {
+        width: 15px;
+    }
+
+    .janya-controls-block {
+        gap: 0.5px;
+    }
+}</style><script src="//imasdk.googleapis.com/js/sdkloader/ima3.js" async=""></script></head><body><div id="__next"><div id="container" style="position:fixed;inset:0;background-color:#000;z-index:9999" class="janya-container" tabindex="0"><img class="janya-lband-img" id="janya-lband-img"><video playsinline="true" webkit-playsinline="true" class="janya-video" id="janya-video" src="blob:https://dashboard.videograph.ai/fabeb88a-4fcf-4378-92e5-cba5523a6718"></video><div class="janya-ad-container"><div style="position: absolute;"><div style="display: none;"><video title="Advertisement" webkit-playsinline="true" playsinline="true" style="background-color: rgb(0, 0, 0); height: 100%; width: 100%; position: absolute; left: 0px; top: 0px;"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><div style="display: none;"><video title="Advertisement" webkit-playsinline="true" playsinline="true" style="background-color: rgb(0, 0, 0); height: 100%; width: 100%; position: absolute; left: 0px; top: 0px;"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><iframe src="https://imasdk.googleapis.com/js/core/bridge3.765.0_en.html?gdpr=1#deid=%22%22&amp;eventfe_experiment_ids=%5B%5D&amp;fid=%22goog_851738000%22&amp;genotype_experiment_data=%7B%22experimentStateProto%22%3A%22%5B%5B%5B45713128%2Cnull%2Cnull%2C%5B%5D%5D%2C%5Bnull%2C745150931%2Cnull%2C%5Bnull%2C1%5D%5D%2C%5Bnull%2C749060184%2Cnull%2C%5Bnull%2C128%5D%5D%2C%5B841585769%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B45761044%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45792550%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45722344%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45774999%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45784857%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45668885%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45685340%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45765927%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45734716%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45735891%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45663239%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45661356%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B839547366%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B45676441%2Cnull%2Cnull%2C%5B%5D%5D%2C%5Bnull%2C45645574%2Cnull%2C%5B%5D%5D%2C%5B45688859%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45685601%2Cnull%2Cnull%2C%5B%5D%5D%2C%5Bnull%2C45685602%2Cnull%2C%5Bnull%2C500%5D%5D%2C%5Bnull%2C45767902%2Cnull%2C%5Bnull%2C500%5D%5D%2C%5B45756824%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45747172%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B775241416%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B781107959%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B781107958%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B792614055%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B781107957%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45729602%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45753603%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45753604%2Cnull%2Cnull%2C%5B%5D%5D%2C%5B45761216%2Cnull%2Cnull%2C%5B%5D%5D%5D%2C%5B%5B16%2C%5B%5B1%2C%5B%5B31089630%5D%2C%5B31089631%2C%5B%5B45668885%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B10%2C%5B%5B31097690%5D%2C%5B31097691%2C%5B%5B846355750%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B1000%2C%5B%5B95332046%5D%5D%5D%2C%5Bnull%2C%5B%5B95332047%5D%5D%5D%2C%5B10%2C%5B%5B95338769%2C%5B%5Bnull%2C45645574%2Cnull%2C%5Bnull%2C1%5D%5D%5D%5D%2C%5B95338770%2C%5B%5Bnull%2C45645574%2Cnull%2C%5Bnull%2C2%5D%5D%5D%5D%5D%5D%2C%5B50%2C%5B%5B95345206%5D%2C%5B95345207%2C%5B%5B45661356%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B1%2C%5B%5B95351425%5D%2C%5B95351426%2C%5B%5B45676441%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B20%2C%5B%5B95356068%5D%2C%5B95356069%2C%5B%5B45685601%2Cnull%2Cnull%2C%5B%5D%5D%2C%5Bnull%2C45685602%2Cnull%2C%5B%5D%5D%5D%5D%2C%5B95356070%2C%5B%5B45685601%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5Bnull%2C45685602%2Cnull%2C%5B%5D%5D%5D%5D%2C%5B95356071%2C%5B%5B45685601%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5Bnull%2C45685602%2Cnull%2C%5Bnull%2C100%5D%5D%5D%5D%5D%5D%2C%5B1%2C%5B%5B95373378%2C%5B%5B792614055%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%2C%5B95373379%2C%5B%5B45747172%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B781107959%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B792614055%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B781107957%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B10%2C%5B%5B95378629%5D%2C%5B95378630%2C%5B%5B45729602%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%2C%5B95381582%2C%5B%5B45729602%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B45753603%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%2C%5B95381583%2C%5B%5B45729602%2Cnull%2Cnull%2C%5B1%5D%5D%2C%5B45753604%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B50%2C%5B%5B95382403%5D%2C%5B95386528%2C%5B%5Bnull%2C45767902%2Cnull%2C%5B%5D%5D%2C%5B45756824%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B10%2C%5B%5B95385193%5D%2C%5B95385194%2C%5B%5B45765927%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B100%2C%5B%5B95387816%5D%2C%5B95387817%2C%5B%5B45774999%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B10%2C%5B%5B95389581%5D%2C%5B95389582%2C%5B%5B635466687%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5B10%2C%5B%5B95390088%5D%2C%5B95390089%2C%5B%5B45784857%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5Bnull%2C%5B%5B95391694%5D%2C%5B95391695%2C%5B%5B45761216%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%2C%5Bnull%2C%5B%5B95391735%5D%5D%5D%2C%5B10%2C%5B%5B95391958%5D%2C%5B95391959%2C%5B%5B45792550%2Cnull%2Cnull%2C%5B1%5D%5D%5D%5D%5D%5D%5D%5D%5D%2Cnull%2Cnull%2C%5Bnull%2C1000%2C1%2C1000%5D%5D%22%7D&amp;imalib_experiments=%5B95322027%2C95331589%2C95332046%5D&amp;is_eap_loader=false&amp;managed_js_experiment_id=0&amp;page_correlator=302609507633706&amp;pvsid=3863924187012613&amp;top_accessible_page_url=%22https%3A%2F%2Fwww.asianetnews.com%2F%22" allowfullscreen="" allow="autoplay" id="goog_851738000" title="Advertisement" data-lf-form-tracking-inspected-kn9eq4rxnzl8rlvp="true" data-lf-yt-playback-inspected-kn9eq4rxnzl8rlvp="true" data-lf-vimeo-playback-inspected-kn9eq4rxnzl8rlvp="true" style="border: 0px; opacity: 0; margin: 0px; padding: 0px; position: relative; color-scheme: light;"></iframe><iframe title="Advertisement" data-lf-form-tracking-inspected-kn9eq4rxnzl8rlvp="true" data-lf-yt-playback-inspected-kn9eq4rxnzl8rlvp="true" data-lf-vimeo-playback-inspected-kn9eq4rxnzl8rlvp="true" style="visibility: hidden; width: 0px; height: 0px; position: absolute; left: 0px; top: 0px;"></iframe></div></div><div class="janya-player-controls-container"><div class="janya-seek-wrapper" id="janya-seek-wrapper"><div class="janya-buffer-bar"></div><div class="janya-progress-bar" style="width: 87.9512%;"></div><div class="janya-knob" style="left: 87.9512%;"></div><div class="janya-hover-time"></div></div><div class="janya-controls-row"><div class="janya-controls-block"><div class="janya-control-group"><button class="janya-forward-rewind-button janya-button" title="[←] -10s"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg><span class="janya-rewind-forward-span">10</span></button><button class="janya-button" title="Pause [Space]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="3" width="5" height="18" rx="1"></rect><rect x="5" y="3" width="5" height="18" rx="1"></rect></svg></button><button class="janya-forward-rewind-button janya-button" title="+10s [→]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-cw-icon lucide-rotate-cw"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path></svg><span class="janya-rewind-forward-span">10</span></button></div><div class="janya-control-group janya-volume-group"><button class="janya-button" id="janya-volume-button" title="Unmute [M]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-off-icon lucide-volume-off"><path d="M16 9a5 5 0 0 1 .95 2.293"></path><path d="M19.364 5.636a9 9 0 0 1 1.889 9.96"></path><path d="m2 2 20 20"></path><path d="m7 7-.587.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298V11"></path><path d="M9.828 4.172A.686.686 0 0 1 11 4.657v.686"></path></svg></button><div class="janya-volume-level"><div class="janya-volume-track"></div><div class="janya-volume-knob" style="left: 0px;"></div></div></div><div class="janya-control-group text-white">01:56 / 02:12</div><div class="janya-control-group" id="btn-live-group"><button id="btn-live" class="janya-button">LIVE</button></div></div><div class="janya-control-group"><button class="janya-button settings-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg><div class="janya-quality-menu"><p class="janya-qualitymenu-title">Video Quality</p><ul id="janya-resolution-list" class="janya-resolution-list"><li class="janya-resolution-item active" data-level-index="-1">Auto<span style="visibility: visible;">✔</span></li><li class="janya-resolution-item" data-level-index="0">360p<span style="visibility: hidden;">✔</span></li><li class="janya-resolution-item" data-level-index="1">576p<span style="visibility: hidden;">✔</span></li><li class="janya-resolution-item" data-level-index="2">720p<span style="visibility: hidden;">✔</span></li></ul></div></button><button class="janya-button" title="Full screen [F]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize-icon lucide-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></button><button class="janya-button" title="Picture In Picture [P]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-picture-in-picture-icon lucide-picture-in-picture"><path d="M2 10h6V4"></path><path d="m2 4 6 6"></path><path d="M21 10V7a2 2 0 0 0-2-2h-7"></path><path d="M3 14v2a2 2 0 0 0 2 2h3"></path><rect x="12" y="14" width="10" height="7" rx="1"></rect></svg></button></div></div></div><div id="janya-ad-playback-toggle" class="janya-ad-toggle-button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="3" width="5" height="18" rx="1"></rect><rect x="5" y="3" width="5" height="18" rx="1"></rect></svg></div><div class="janya-loader-container" style="display: none;"><span class="janya-loader"></span></div><button class="janya-button janya-ad-audio-button" id="janya-ad-audio-button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-off-icon lucide-volume-off"><path d="M16 9a5 5 0 0 1 .95 2.293"></path><path d="M19.364 5.636a9 9 0 0 1 1.889 9.96"></path><path d="m2 2 20 20"></path><path d="m7 7-.587.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298V11"></path><path d="M9.828 4.172A.686.686 0 0 1 11 4.657v.686"></path></svg></button><div class="janya-seek-overlay"></div></div><div class="Toastify"></div></div><script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/surveys.js?v=1.297.2"></script><script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/array/phc_ME9D60v2DowzToEIkDrkmBCdByBFo7Axo5ViaxjfjRI/config.js"></script><script id="__NEXT_DATA__" type="application/json">{"props":{},"page":"/[envuuid]/videos/embed","query":{"streamId":"1c19363c-e4a0-4e4d-ba28-771d5615b88e","envuuid":"d2737514-6c26-401d-8ead-0a9008aaf3c5"},"buildId":"KU7SG3p8MszPHPr-atpDS","assetPrefix":"https://dashboard.vgcdn.net","runtimeConfig":{"VG_API_HOST":"https://api.videograph.ai","PUBNUB_PUBLISH_KEY":"pub-c-d456b3bd-4b0c-45b2-a14e-2516aa1ff3be","PUBNUB_SUBSCRIBE_KEY":"sub-c-b585d744-3986-4967-b1f5-6ecf2e7bf53c","PUBNUB_USER_ID":"prod-dashboard-web","ADV_ANALYTICS_API_HOST":"https://adv-analytics-api.videograph.ai","ADV_APP_ANALYTICS_API_HOST":"https://app-analytics-api.videograph.ai","REDIRECT_URI_YOUTUBE":"https://dashboard.videograph.ai/settings/youtube/callback","EDITOR_HOST":"https://editor.videograph.ai","CLIENT_ID_YOUTUBE":"456142124789-rojhg30fafbpa1ga8uj657i8kkhm9go2.apps.googleusercontent.com","REDIRECT_URI_FACEBOOK":"https://dashboard.videograph.ai/settings/facebook/callback","REDIRECT_URI_INSTAGRAM":"https://dashboard.videograph.ai/settings/instagram/callback","CLIENT_ID_FACEBOOK":"2145830115793369","CLIENT_ID_INSTAGRAM":"1349787066055960","CLIENT_ID_LINKEDIN":"868wlpde4fhyr3","REDIRECT_URI_LINKEDIN":"https://dashboard.videograph.ai/settings/linkedin/callback","CLIENT_ID_X":"T3lVRGNwSVNzTXBFV0NJd212UWQ6MTpjaQ","REDIRECT_URI_X":"https://dashboard.videograph.ai/settings/x/callback","ASSET_CDN_URL":"https://dashboard.vgcdn.net","VOD_CDN_DOMAIN":"https://ond.vgcdn.net","VCONNECT_HOST":"http://vconnect:3000","VCONNECT_UI_HOST":"https://dashboard.videograph.ai/vconnect","POSTHOG_TOKEN":"phc_ME9D60v2DowzToEIkDrkmBCdByBFo7Axo5ViaxjfjRI","POSTHOG_API_HOST":"https://us.i.posthog.com","LIVECUT_HOST":"https://demo.videograph.ai/broadcast"},"isFallback":false,"customServer":true,"appGip":true,"locale":"en","locales":["en","hi","ar","te"],"defaultLocale":"en","scriptLoader":[]}</script><script id="leadfeeder" data-nscript="afterInteractive">
+            (function(ss,ex){
+              window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};
+              (function(d,s){
+                var fs=d.getElementsByTagName(s)[0];
+                function ce(src){
+                  var cs=d.createElement(s);
+                  cs.src = src;
+                  cs.async = 1;
+                  fs.parentNode.insertBefore(cs, fs);
+                };
+                ce('https://sc.lfeeder.com/lftracker_v1_' + ss + (ex ? '_' + ex : '') + '.js');
+              })(document, 'script');
+            })('kn9Eq4RXNZl8RlvP');
+          </script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p></next-route-announcer><script id="janya-sdk-script" src="https://config.vgcdn.net/76e22091-828b-4fd8-8c0a-dbc9ecd67541/sdk.js" async=""></script><iframe name="google_video_inner_static_iframe" id="google_video_inner_static_iframe" src="about:blank" style="height: 0px; width: 0px; display:none" data-lf-form-tracking-inspected-kn9eq4rxnzl8rlvp="true" data-lf-yt-playback-inspected-kn9eq4rxnzl8rlvp="true" data-lf-vimeo-playback-inspected-kn9eq4rxnzl8rlvp="true"></iframe></body></html>

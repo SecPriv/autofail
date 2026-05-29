@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FenixDB — Service Notice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&amp;family=Barlow+Condensed:wght@700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --fenix-teal: #1a9fbb;
+      --fenix-blue: #1565c0;
+      --fenix-dark: #1a2b3c;
+      --fenix-accent: #00c4e0;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--fenix-dark);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Subtle animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,159,187,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,159,187,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridShift 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gridShift {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(60px); }
+    }
+
+    /* ── Navbar — matches FenixDB white nav exactly ── */
+    nav {
+      position: relative;
+      z-index: 10;
+      background: #ffffff;
+      padding: 0 1.5rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    /* Real logo from the Django static files */
+    .nav-brand img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-brand-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #2c3e50;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: #999;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e53935;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    /* ── Main content ── */
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(26,159,187,0.2);
+      border-radius: 4px;
+      max-width: 660px;
+      width: 100%;
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-top-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--fenix-teal), var(--fenix-accent), var(--fenix-blue));
+    }
+
+    .card-body {
+      padding: 3rem 3.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(229,57,53,0.12);
+      border: 1px solid rgba(229,57,53,0.3);
+      color: #ef9a9a;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e53935;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1rem;
+      animation: fadeUp 0.7s ease 0.15s both;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--fenix-accent);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.75;
+      margin-bottom: 2.25rem;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .subtitle strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(26,159,187,0.18);
+      margin-bottom: 2.25rem;
+      animation: fadeUp 0.7s ease 0.25s both;
+    }
+
+    .action-block {
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
+
+    .action-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fenix-teal);
+      margin-bottom: 1rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--fenix-teal);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.9rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.1);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+    }
+
+    .cta-btn:hover::after  { transform: translateX(0); }
+    .cta-btn:hover {
+      background: var(--fenix-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(26,159,187,0.3);
+    }
+
+    .cta-btn svg {
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .cta-btn:hover svg { transform: translateX(3px); }
+
+    .support-note {
+      margin-top: 1.4rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.7;
+    }
+
+    .support-note a {
+      color: rgba(26,196,224,0.7);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(26,196,224,0.25);
+      transition: color 0.2s;
+    }
+
+    .support-note a:hover { color: var(--fenix-accent); }
+
+    /* ── Footer — matches original exactly ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.28);
+    }
+
+    @media (max-width: 580px) {
+      .card-body { padding: 2rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.3rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="#">
+      <!-- Real Fenix logo from static files -->
+      <img src="/static/images/wing_logo.png" alt="FenixDB Logo">
+    </a>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      Service Decommissioned
+    </div>
+  </nav>
+
+  <main>
+    <div class="card">
+      <div class="card-top-bar"></div>
+      <div class="card-body">
+
+        <div class="badge">Service Discontinued</div>
+
+        <h1>FenixDB is no longer<br><em>available.</em></h1>
+
+        <p class="subtitle">
+          This platform has been decommissioned as part of our infrastructure transition.
+          All operations have moved to <strong>PowerHub</strong>.
+        </p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>Fenix International © 2026. All Rights Reserved.</span>
+    <span>FenixDB — End of Life</span>
+  </footer>
+
+
+</body></html>

@@ -1,0 +1,253 @@
+<html><head><style>
+    @import url('https://f.pmo.ee/fonts/GTEesti.css');
+
+    body {
+        margin:0;
+        padding:0;
+    }
+
+    #id_6a118a56e357c {
+        position: relative;
+        background-color: #FF5500;
+        background-image: url('https://export.tvnet.lv/headers/hockey-2026/assets/images/mob/bg-tvnet.jpg?1');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100px;
+        width: 1200px;
+        font-family: 'GT Eesti', sans-serif;
+    }
+
+    #id_6a118a56e357c a {
+        color:#fff;
+        text-decoration: none;
+    }
+
+    #id_6a118a56e357c a.main-url {
+        position: absolute;
+        width:100%;
+        height:100%;
+        display:block;
+        z-index: 1;
+    }
+
+    #id_6a118a56e357c .header-content  {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width:100%;
+        height:100%;
+        z-index: 2;
+        align-items: center;
+        justify-content: space-between;
+        padding:10px;
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+
+    #id_6a118a56e357c .header-content > div.parts {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 233px;
+        justify-content: end;
+    }
+
+    #id_6a118a56e357c .header-content .left-part {
+        flex: 0 0 78%;
+        justify-content: space-between;
+    }
+
+    #id_6a118a56e357c .header-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        text-transform: uppercase;
+        justify-content: flex-end;
+    }
+
+    #id_6a118a56e357c:not(.countdown-active) .header-buttons {
+         flex: 0 0 320px;
+     }
+
+    #id_6a118a56e357c .header-buttons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 142px;
+        height: 29px;
+        box-sizing: border-box;
+        border: 1px solid #FF5500;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #FF5500;
+        font-family: 'GT Eesti', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 25px;
+        text-align: center;
+        pointer-events: auto;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+
+    #id_6a118a56e357c.mob {
+        width:100%;
+        height:0;
+        padding-bottom: 45%;
+    }
+
+    #id_6a118a56e357c.mob .header-content .left-part {
+        flex-direction: column;
+        height: 100%;
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        min-width: 0;
+        left: 5.25%;
+        justify-content: end;
+        bottom: 5.25%;
+        width: 50%;
+    }
+
+    #id_6a118a56e357c.mob .header-buttons {
+        flex: 0;
+        width: 100%;
+        gap: 5px;
+        justify-content: flex-start;
+    }
+
+    #id_6a118a56e357c.mob .header-buttons a {
+         width: 48%;
+         height: 25px;
+         font-size: 12px;
+         line-height: 1;
+    }
+
+    #id_6a118a56e357c .countdown-timer {
+        display: flex;
+        background-color: #fff;
+        color: #FF5500;
+        border-radius: 10px;
+        padding: 8px 18px;
+        justify-content: center;
+        font-size: 10px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+    }
+
+    #id_6a118a56e357c.countdown-active .header-content > div.parts {
+        right: 270px;
+    }
+
+    #id_6a118a56e357c .countdown-timer > div {
+        text-align: center;
+        margin:0 1px;
+        line-height: 1;
+        font-family: 'GT Eesti', sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    #id_6a118a56e357c .countdown-timer > div span {
+        font-family: 'GT Eesti', sans-serif;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    #id_6a118a56e357c.mob .countdown-timer {
+         padding: 6px 16px;
+         justify-content: center;
+         font-size: 10px;
+    }
+
+    #id_6a118a56e357c.mob .countdown-timer > div span {
+        font-size: 28px;
+    }
+</style>
+
+</head><body><div id="id_6a118a56e357c" class="header-container mob">
+    <a href="https://sports.tvnet.lv/section/6599" class="main-url" target="_top"></a>
+
+    <div class="header-content">
+        <div class="parts left-part">
+            <div class="header-buttons" style="display: flex;">
+                                    <a href="https://sports.tvnet.lv/section/6600" target="_top">Kalendārs</a>
+                                    <a href="https://sports.tvnet.lv/section/6601" target="_top">Tabulas</a>
+                                    <a href="https://sports.tvnet.lv/section/6602" target="_top">Statistika</a>
+                                    <a href="https://sports.tvnet.lv/8468370/latvijas-hokeja-izlases-sastavs-pasaules-cempionata" target="_top">LAT Izlase</a>
+                            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+setTimeout(function() {
+
+    const parentElement = document.getElementById('id_6a118a56e357c');
+    const rootElement = parentElement.closest('.root');
+    const headerButtons = parentElement.querySelector('.header-buttons');
+
+    var buttons_html = '';
+    var givenCurrentTime, givenEndTime, intervalId;
+
+    if (rootElement) {
+        rootElement.classList.add('structured-content__group');
+    }
+
+    function updateCountdown() {
+        let timeDiff = givenEndTime - givenCurrentTime;
+
+        if (timeDiff - 60000 <= 0) {
+            clearInterval(intervalId);
+            headerButtons.innerHTML = buttons_html;
+            parentElement.classList.remove('countdown-active');
+            return;
+        }
+
+        let totalMinutes = Math.floor(timeDiff / 60000);
+        let days = Math.floor(totalMinutes / (24 * 60));
+        let hours = Math.floor((totalMinutes % (24 * 60)) / 60);
+        let minutes = totalMinutes % 60;
+
+        parentElement.querySelector('.days').innerHTML = String(days).padStart(2, '0');
+        parentElement.querySelector('.hours').innerHTML = String(hours).padStart(2, '0');
+        parentElement.querySelector('.minutes').innerHTML = String(minutes).padStart(2, '0');
+
+        givenCurrentTime.setMinutes(givenCurrentTime.getMinutes() + 1);
+    }
+
+    function setCountdown(showCountdown = false) {
+
+        if (!showCountdown) {
+            headerButtons.style.display = 'flex';
+            return;
+        }
+
+        let countdown_html = '<div class="countdown-timer"><div><span class="days">00</span><br>dienas</div><div><span>:</span></div><div><span class="hours">00</span><br>stundas</div><div><span>:</span></div><div><span class="minutes">00</span><br>minūtes</div></div>';
+
+        buttons_html = headerButtons.innerHTML;
+        headerButtons.innerHTML = countdown_html;
+        parentElement.classList.add('countdown-active');
+
+        updateCountdown();
+        intervalId = setInterval(updateCountdown, 60000);
+
+        headerButtons.style.display = 'flex';
+    }
+
+    givenEndTime = new Date("2026-05-15T14:20:00Z");
+
+    fetch('https://export.tvnet.lv/time?'+Math.random())
+        .then(res => res.text())
+        .then(data => {
+            givenCurrentTime = new Date(data);
+            setCountdown(givenEndTime > givenCurrentTime);
+        });
+
+}, 100);
+
+</script>
+</body></html>

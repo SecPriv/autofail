@@ -1,0 +1,576 @@
+<!DOCTYPE html><html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="juicyads-site-verification" content="6f600f85076c1d004ed57d309516734e">
+        <meta name="wap-font-scale" content="no">
+        
+    <meta name="Keywords" content="漫畫,成人漫畫,手機漫畫,紳士漫畫,同人志">
+    <meta name="Description" content="紳士漫畫移動版-專注分享漢化本子">
+    <title>紳士漫畫移動版-專注分享漢化本子</title>
+    <link href="/themes/mo/images/global.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="/themes/mo/images/style.css" rel="stylesheet">
+    <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script type="text/javascript" src="/themes/mo/images/common.js"></script>
+    <script type="text/javascript" src="/themes/mo/images/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/themes/mo/images/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/themes/mo/images/search.js"></script>
+    <script src="https://s2.pstatp.com/cdn/expire-1-M/jquery.lazyload/1.9.1/jquery.lazyload.min.js" data-no-instant=""></script>
+    <script type="text/javascript">
+      $(function() {
+          $("img").lazyload({ 
+          placeholder : "loading.jpg",
+                 effect: "fadeIn"
+           });  
+      });
+    </script>
+    <style>
+        .searInput {
+            height: 28px;
+            margin: 8px 0 0 0px;
+        }
+        video::-webkit-media-controls-fullscreen-button {
+        display: none;
+        }
+        video::-webkit-media-controls-play-button {
+            display: none;
+        }
+        video::-webkit-media-controls-timeline {
+            display: none;
+        }
+        video::-webkit-media-controls-current-time-display{
+            display: none;            
+        }
+        video::-webkit-media-controls-time-remaining-display {
+            display: none;            
+        }
+        video::-webkit-media-controls-mute-button {
+            display: none;            
+        }
+        video::-webkit-media-controls-toggle-closed-captions-button {
+            display: none;            
+        }
+        video::-webkit-media-controls-volume-slider {
+            display: none;            
+        }
+        video::-webkit-media-controls-enclosure{ 
+            display: none;
+        }
+        .nav li {
+            width: 16.666% !important;
+        }
+        
+        .nav li:nth-child(5) {
+            background: url(/themes/mo/images/nav_line.gif) no-repeat right center !important;
+            background-size: 1px 50% !important;
+        }
+        
+        .nav li:nth-child(6),
+        .nav li:last-child {
+            background: none !important;
+        }
+        
+        .nav li a {
+            white-space: nowrap !important;
+            overflow: hidden !important; 
+            text-overflow: ellipsis !important;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--head-->
+    <div class="header">
+        <!--搜索-->
+        <div class="serCh" id="serCh">
+            <form id="searchForm album_search" action="/q/" method="get"> 
+     <a href="javascript:void(0);" onclick="m_global.closed('serCh')" class="searClose"></a> 
+     <a href="javascript:void(0);" onclick="serchAction()" class="searBtn"></a> 
+                <div class="serChinputBox"><input type="text" class="searInput" name="q" value="" title="搜索漫畫" id="searInput"><input style="display:none" type="radio" name="f" value="_all" checked="">
+<input style="display:none" name="s" value="create_time_DESC">
+<input style="display:none" name="syn" value="yes">
+<button style="display:none" type="" name=""></button></div>
+            </form>
+        </div>
+
+        <!--<div class="menuBar" id="menuBar">
+            <ul>
+                <li><a href="/" title="漫畫">漫畫</a></li>
+                <li><a href="https://forum.wnacg.com" title="論壇">論壇</a></li><li><a href="https://wnacg01.link/" title="紳士漫畫永久地址發佈頁">發佈頁</a></li>
+                <li><a href="#" title=""></a></li>
+            </ul>
+            <a href="javascript:void(0);" class="searClose" onClick="m_global.closed('menuBar')"></a>
+        </div>-->
+        <div class="logo"><a href="/"><img src="/themes/mo/images/logo.png" width="105" height="44"></a></div>
+        <a href="#" title="" class="icon setup" onclick="m_global.Open('menuBar')"></a>
+        <a href="javascript:;" title="" class="icon serch" onclick="m_global.serchAction('serCh')"></a>
+                <a title="" class="icon head" href="/users-login.html"><span class="tip" id="subscribe"></span></a>    </div>
+    <!--head end-->
+
+    <ul class="nav autoHeight">
+        <li><a href="/" class="cur" title="推荐">推荐</a></li>
+        <li><a href="/albums.html" title="更新">更新</a></li>
+        <li><a href="/albums-favorite_ranking.html" title="排行">排行</a></li>
+        <li><a href="https://wnbbs.cc/" title="論壇">論壇</a></li><li><a href="https://wnacg01.link/" title="紳士漫畫永久地址發佈頁">發佈頁</a></li>
+        <li><a href="https://www.miss001.com/home?inviteCode=972E602D" title="AI女神">AI女神</a></li>
+    </ul>
+<div>
+<div><a href="/link-index-aid-2.html" target="_blank"><img alt="櫻境物語" style="width: 100%;" src="//t4.qy0.ru/data/t/3537/74/17750661211295.webp"></a></div></div>
+     <div class="sh">
+
+     </div>
+
+   <div class="imgBox">
+            
+            <div class="Sub_H2">
+                <span class="icon"><img src="/themes/mo/images/icon_h2_9.png"></span>
+                <span class="Title">最新上架</span>
+
+                                                    <a href="albums.html" title="更新"><span class="icon_More"></span></a>
+                
+            </div>
+
+            <ul class="col_3_2" id="42">
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361846.html">
+                                                    <img src="//t4.qy0.ru/data/t/3618/46/17795260963297.jpg" width="100%">
+                                                   </a>
+                        
+						
+                                                	<a class="txtA">[Xipa] Fall 1+2[廉价汉化组]</a>
+                            <span class="info">2026-05-23, 12張照片</span>
+                            
+                                            </li>
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361845.html">
+                                                    <img src="//t4.qy0.ru/data/t/3618/45/17795260925642.jpg" width="100%">
+                                                   </a>
+                        
+						
+                                                	<a class="txtA">[O157] 不倫上手の人妻さん♡ (からかい上手の高木さん) [中国翻訳]</a>
+                            <span class="info">2026-05-23, 24張照片</span>
+                            
+                                            </li>
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361844.html">
+                                                    <img src="//t4.qy0.ru/data/t/3618/44/17795260906991.jpg" width="100%">
+                                                   </a>
+                        
+						
+                                                	<a class="txtA">[さなつき] 性特区へようこそ! 第3話 (COMIC 真激 2026年6月号) [中国翻訳] [DL版]</a>
+                            <span class="info">2026-05-23, 20張照片</span>
+                            
+                                            </li>
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361843.html">
+                                                    <img src="//t4.qy0.ru/data/t/3618/43/1779526078244.jpg" width="100%">
+                                                   </a>
+                        
+						
+                                                	<a class="txtA">[アンソロジー] 二次元コミックマガジン TS百合堕ち 女の子同士なら何回でもイケるよねVol.2</a>
+                            <span class="info">2026-05-23, 90張照片</span>
+                            
+                                            </li>
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361842.html">
+                                                    <img src="//t4.qy0.ru/data/t/3618/42/17795260668202.jpg" width="100%">
+                                                   </a>
+                        
+						
+                                                	<a class="txtA">[蟻地獄 (砂場)] 魔法少女終了〜淫魔の装置で強制発情♡〜 [紫藤汉化组]</a>
+                            <span class="info">2026-05-23, 77張照片</span>
+                            
+                                            </li>
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361841.html">
+                                                    <img src="//t4.qy0.ru/data/t/3618/41/17795260626427.jpg" width="100%">
+                                                   </a>
+                        
+						
+                                                	<a class="txtA">[尻肉DON!! (アイモ)] ゲーム大好き双子姉妹の臭い当てゲーム (ブルーアーカイブ) [廉价汉化组] [DL版]</a>
+                            <span class="info">2026-05-23, 21張照片</span>
+                            
+                                            </li>
+                                                            
+                            </ul>
+        </div>
+     <div class="sh">
+<!-- JuicyAds v3.1 -->
+<script type="text/javascript" data-cfasync="false" async="" src="https://poweredby.jads.co/js/jads.js"></script>
+<iframe id="5v5klcundefinedundefinedundefined" style="z-index: 198; border: 0px; background-color: transparent; height: 112px; width: 300px; position: relative; visibility: visible; clear: both;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" height="112" width="300" allowtransparency="true" src="//adserver.juicyads.com/adshow.php?adzone=616258"></iframe>
+<script type="text/javascript" data-cfasync="false" async="">(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':616258});</script>
+     </div>
+        <div class="imgBox">
+            
+            <div class="Sub_H2">
+                <span class="icon"><img src="/themes/mo/images/icon_h2_1.png"></span>
+                <span class="Title">同人志</span>
+
+                                                    <a href="/albums-index-cate-5.html" title="同人志"><span class="icon_More"></span></a>
+                
+            </div>
+
+            <ul class="col_3_2" id="34">
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361846.html">
+                                                                                    <img src="//t4.qy0.ru/data/t/3618/46/17795260963297.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[Xipa] Fall 1+2[廉价汉化组]</a>
+                            <span class="info">2026-05-23, 12張照片</span>
+                            
+                                            </li>
+                                     <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361845.html">
+                                                                                    <img src="//t4.qy0.ru/data/t/3618/45/17795260925642.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[O157] 不倫上手の人妻さん♡ (からかい上手の高木さん) [中国翻訳]</a>
+                            <span class="info">2026-05-23, 24張照片</span>
+                            
+                                            </li>
+                                     <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361842.html">
+                                                                                    <img src="//t4.qy0.ru/data/t/3618/42/17795260668202.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[蟻地獄 (砂場)] 魔法少女終了〜淫魔の装置で強制発情♡〜 [紫藤汉化组]</a>
+                            <span class="info">2026-05-23, 77張照片</span>
+                            
+                                            </li>
+                                     <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361841.html">
+                                                                                    <img src="//t4.qy0.ru/data/t/3618/41/17795260626427.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[尻肉DON!! (アイモ)] ゲーム大好き双子姉妹の臭い当てゲーム (ブルーアーカイブ) [廉价汉化组] [DL版]</a>
+                            <span class="info">2026-05-23, 21張照片</span>
+                            
+                                            </li>
+                                     <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361840.html">
+                                                                                    <img src="//t4.qy0.ru/data/t/3618/40/1779526052501.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[七原みつる] オジサンが無知っ娘にエッチなこと♡を教える話・上｜油膩大叔教給純潔小姑娘色色知識的故事 上巻 [中国翻訳]</a>
+                            <span class="info">2026-05-23, 43張照片</span>
+                            
+                                            </li>
+                                     <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361839.html">
+                                                                                    <img src="//t4.qy0.ru/data/t/3618/39/17795260465077.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[フジノエ本舗 (フジノエ13B)] バイト先の人妻、秋山さん。3｜打工處的人妻、秋山太太。3 [中国翻訳] [DL版]</a>
+                            <span class="info">2026-05-23, 57張照片</span>
+                            
+                                            </li>
+                         
+                            </ul>
+        </div>
+       
+        <div class="imgBox">
+            
+            <div class="Sub_H2">
+                <span class="icon"><img src="/themes/mo/images/icon_h2_4.png"></span>
+                <span class="Title">單行本</span>
+
+                                                    <a href="/albums-index-cate-6.html" title="單行本"><span class="icon_More"></span></a>
+                
+            </div>
+
+            <ul class="col_3_2" id="37">
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361761.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/61/17795037923515.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                    <a class="txtA hei">[星野竜一] 催眠調教学園 [DL版]</a>
+                                                 <span class="info">2026-05-23, 197張照片</span>
+                                            </li>
+                                                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361753.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/53/17794754978643.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                    <a class="txtA hei">[梅楓味] ふしだらあぴーる [DL版]</a>
+                                                 <span class="info">2026-05-23, 241張照片</span>
+                                            </li>
+                                                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361752.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/52/17794754475155.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                    <a class="txtA hei">[あおき七瀬] 恋結びぱらどくす [DL版]</a>
+                                                 <span class="info">2026-05-23, 446張照片</span>
+                                            </li>
+                                                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361697.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3616/97/17794685163132.png" width="100%">
+                                                    </a>
+                        
+						
+                                                    <a class="txtA hei">[あたげ] 便利なオナホのそだてかた [DL版] [中文]</a>
+                                                 <span class="info">2026-05-23, 90張照片</span>
+                                            </li>
+                                                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361693.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3616/93/17794664347382.png" width="100%">
+                                                    </a>
+                        
+						
+                                                    <a class="txtA hei">[仁志田メガネ] 熟れ盛り奥様は交わりたい [DL版] [中文]</a>
+                                                 <span class="info">2026-05-23, 199張照片</span>
+                                            </li>
+                                                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361691.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3616/91/17794652442564.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                    <a class="txtA hei">[sage・ジョー] イキザカリ 〜sage・ジョー作品集〜 [DL版] [中文]</a>
+                                                 <span class="info">2026-05-22, 190張照片</span>
+                                            </li>
+                                                                    
+ 
+                            </ul>
+        </div>
+<div><a href="https://dhxcdd.qsjn29c3.shop/?dc=WYFNS" target="_blank"><img alt="淫妻NTR" style="width: 100%;" src="//t4.qy0.ru/data/t/3113/31/17532678458412.gif"></a></div>        <div class="imgBox">
+            
+            <div class="Sub_H2">
+                <span class="icon"><img src="/themes/mo/images/icon_h2_5.png"></span>
+                <span class="Title">雜誌·短篇</span>
+
+                                                    <a href="/albums-index-cate-7.html" title="雜誌·短篇"><span class="icon_More"></span></a>
+                
+            </div>
+
+            <ul class="col_3_2" id="38">
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361844.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3618/44/17795260906991.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[さなつき] 性特区へようこそ! 第3話 (COMIC 真激 2026年6月号) [中国翻訳] [DL版]</a>
+                            <span class="info">2026-05-23, 20張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361843.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3618/43/1779526078244.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[アンソロジー] 二次元コミックマガジン TS百合堕ち 女の子同士なら何回でもイケるよねVol.2</a>
+                            <span class="info">2026-05-23, 90張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361777.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/77/17795125308651.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[はちの八八] 静香先生はオレのモノ 前編</a>
+                            <span class="info">2026-05-23, 38張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361776.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/76/17795125328225.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[おめちょ] 都会っ子奉納初体験</a>
+                            <span class="info">2026-05-23, 20張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361772.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/72/17795124805666.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[榊歌丸] 万引き妻の情景</a>
+                            <span class="info">2026-05-23, 20張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361771.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/71/177951234304.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">[深田拓士] バスジャック</a>
+                            <span class="info">2026-05-23, 20張照片</span>
+                            
+                                            </li>
+                                    
+                            </ul>
+        </div><div id="k4hicxxl11undefinedundefinedundefined" style="border:0;padding:0;margin:0;width:1px;height:1px;display:inline-block;clear:none;position:absolute;left:-393px;top:851px;"></div>
+
+ <script type="text/javascript">
+window.onload = function() {
+	var local1=document.getElementById('videoID');
+	local1.autoplay = true;
+	local1.loop = true;
+	local1.muted=true;
+	if(local1.paused){ 
+		local1.play();  
+	} else {
+		local1.pause();  
+	}
+}
+function btn(){
+	var local=document.getElementById('videoID');  
+	if(local.paused){ 
+		local.play(); 
+	} else {
+		local.pause(); 
+	}
+}
+</script>       
+        <div></div> 
+        <div class="imgBox">
+            <div class="Sub_H2">
+                <span class="icon"><img src="/themes/mo/images/icon_h2_8.png"></span>
+                <span class="Title">韓漫</span>
+
+                                                    <a href="/albums-index-cate-19.html" title="韓漫"><span class="icon_More"></span></a>
+                
+            </div>
+
+            <ul class="col_3_2" id="39">
+                                                                        <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361803.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3618/03/17795199995801.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">戀愛版本更新中 7-8話</a>
+                            <span class="info">2026-05-23, 31張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361802.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3618/02/1779519976213.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">不純吸血鬼 15-16話</a>
+                            <span class="info">2026-05-23, 34張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361801.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3618/01/17795199580774.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">與生巨來 22-23話</a>
+                            <span class="info">2026-05-23, 28張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361800.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3618/00/17795199390541.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">兄妹的秘密授課 106-107話[完結]</a>
+                            <span class="info">2026-05-23, 30張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361799.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/99/17795199240587.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">罪愛人妻 31-32話</a>
+                            <span class="info">2026-05-23, 34張照片</span>
+                            
+                                            </li>
+                                                <li>
+                                    <!--load photo info-->
+                        <a class="ImgA" href="/photos-index-aid-361798.html">
+                                                                            <img src="//t4.qy0.ru/data/t/3617/98/17795199060539.jpg" width="100%">
+                                                    </a>
+                        
+						
+                                                	<a class="txtA">不要戀愛要打砲 41-42話</a>
+                            <span class="info">2026-05-23, 23張照片</span>
+                            
+                                            </li>
+                                    
+                            </ul>
+        </div>
+<div class="bottom">
+        <div class="pageLine"><img src="//cdn.jsdelivr.net/gh/saicbs/1234/mo/head_line.gif" width="100%"></div>
+        <ul class="subNav">
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li class="last"><a href="javascript:;" onclick="m_global.toTop()"><span class="a6">返回頂部</span></a></li>
+        </ul>
+	</div>
+<div style="display:none"></div>
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(88763966, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/88763966" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body></html>

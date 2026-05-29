@@ -1,0 +1,746 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-878106099"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-878106099');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Mafia MMO - Text Based RPG</title>
+    <meta name="description" content="Rule the neon underworld as a rising hustler. Recruit your crew, build a criminal empire, outsmart rivals, and fight your way to the top. Every decision could m">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+    <link rel="canonical" href="https://mafiammo.com/login.php">
+
+    <meta name="theme-color" content="#2d2c2c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="manifest" href="/manifest-v2.json">
+    <link rel="apple-touch-icon" href="/images/appicon.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mafia MMO">
+    <meta property="og:title" content="Mafia MMO - Text Based RPG">
+    <meta property="og:description" content="Rule the neon underworld as a rising hustler. Recruit your crew, build a criminal empire, outsmart rivals, and fight your way to the top. Every decision could m">
+    <meta property="og:url" content="https://mafiammo.com/login.php">
+    <meta property="og:image" content="https://mafiammo.com/images/og-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mafia MMO - Text Based RPG">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mafia MMO - Text Based RPG">
+    <meta name="twitter:description" content="Rule the neon underworld as a rising hustler. Recruit your crew, build a criminal empire, outsmart rivals, and fight your way to the top. Every decision could m">
+    <meta name="twitter:image" content="https://mafiammo.com/images/og-home.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mafiammo.com/#organization","name":"SaMz Media","url":"https://mafiammo.com/"},{"@type":"WebSite","@id":"https://mafiammo.com/#website","name":"Mafia MMO","url":"https://mafiammo.com/","description":"Rule the neon underworld as a rising hustler. Recruit your crew, build a criminal empire, outsmart rivals, and fight your way to the top. Every decision could m","publisher":{"@id":"https://mafiammo.com/#organization"}},{"@type":"WebPage","@id":"https://mafiammo.com/login.php#webpage","url":"https://mafiammo.com/login.php","name":"Mafia MMO - Text Based RPG","description":"Rule the neon underworld as a rising hustler. Recruit your crew, build a criminal empire, outsmart rivals, and fight your way to the top. Every decision could m","isPartOf":{"@id":"https://mafiammo.com/#website"},"about":{"@id":"https://mafiammo.com/#organization"}}]}    </script>
+
+    <!-- Preloads / performance -->
+    <link rel="preload" href="/images/playerbarbg.jpg" as="image">
+    <link rel="preload" href="/images/hero2.jpg" as="image">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================
+   HOME - Frosted / Transparent (square theme)
+   ============================================ */
+
+:root{
+  --blur: 14px;
+  --glass-alpha: 0.5;
+  --glass-strong-alpha: 0.74;
+
+  --titleA: rgba(42, 42, 42, 0.78);
+  --titleB: rgba(31, 31, 31, 0.78);
+
+  --stroke: rgba(255, 255, 255, 0.11);
+  --stroke-soft: rgba(255, 255, 255, 0.08);
+  --divider: rgba(255, 255, 255, 0.06);
+
+  --text: #e9e9e9;
+  --muted: rgba(233,233,233,.72);
+
+  --accent: #4dff8c;
+  --danger: #ff6b6b;
+
+  --radius: 0px;
+  --shadow: 0 18px 55px rgba(0,0,0,.55);
+}
+
+:root{
+  --panel: rgba(26, 26, 26, var(--glass-alpha));
+  --panel-strong: rgba(26, 26, 26, var(--glass-strong-alpha));
+  --panel-even: rgba(29, 29, 29, calc(var(--glass-strong-alpha) - 0.02));
+  --panel-hover: rgba(34, 34, 34, calc(var(--glass-strong-alpha) + 0.06));
+  --panel-hover2: rgba(36, 36, 36, calc(var(--glass-strong-alpha) + 0.06));
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  color: var(--text);
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  line-height:1.45;
+  background-image: url("/images/playerbarbg.jpg");
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.72)),
+    url("../images/playerbarbg.jpg");
+  background-size:cover;
+  background-position:center;
+  opacity:.46;
+  filter: saturate(1.05) contrast(1.06);
+}
+
+a{color:#dfe8ff;text-decoration:none}
+a:hover{color:#fff;text-decoration:none}
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid rgba(77,255,140,.35);
+  outline-offset:2px;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  left:12px;top:12px;width:auto;height:auto;z-index:9999;
+  padding:10px 12px;
+  background: var(--panel-strong);
+  border:1px solid var(--stroke);
+  color:var(--text);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border-radius: var(--radius);
+}
+
+/* Top bar */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background: rgba(15,15,15,.52);
+  border-bottom:1px solid var(--stroke-soft);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+.topbar-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 12px;
+  gap:12px;
+}
+.brand{
+  font-weight:900;letter-spacing:.02em;
+  display:flex;align-items:center;gap:10px;
+}
+.brand-badge{
+  width:10px;height:10px;border-radius:50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(77,255,140,.12), 0 0 18px rgba(77,255,140,.12);
+}
+.top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+
+/* Buttons */
+.btn{
+  appearance:none;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.045);
+  color:var(--text);
+  padding:9px 11px;
+  border-radius: var(--radius);
+  cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:800;font-size:13px;
+  transition: background .2s ease, transform .15s ease, border-color .2s ease;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover{
+  background: rgba(255,255,255,.065);
+  border-color: rgba(255,255,255,.16);
+  transform: translateY(-1px);
+}
+.btn.primary{
+  border-color: rgba(77,255,140,.28);
+  background: rgba(77,255,140,.095);
+}
+.btn.primary:hover{
+  background: rgba(77,255,140,.13);
+  border-color: rgba(77,255,140,.36);
+}
+
+/* Google “pop” (lighter + glow) */
+.btn.google,
+.btn-google{
+  border-color: rgba(255,255,255,.28) !important;
+  background: rgba(255,255,255,.12) !important;
+  color:#fff !important;
+  font-weight:950;
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.06) inset,
+    0 0 22px rgba(77,255,140,.14);
+}
+.btn.google::before,
+.btn-google::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(255,255,255,.22), transparent 45%);
+  opacity:.55;
+}
+.btn.google:hover,
+.btn-google:hover{
+  background: rgba(255,255,255,.18) !important;
+  border-color: rgba(255,255,255,.40) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 44px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 34px rgba(77,255,140,.20);
+}
+.btn.google:active,
+.btn-google:active{ transform: translateY(0); }
+
+/* Layout */
+.page{max-width:1100px;margin:0 auto;padding:12px;}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;}
+@media (min-width:980px){ .grid{grid-template-columns:1.2fr .8fr;} }
+
+/* Panels */
+.box{
+  background: var(--panel);
+  border:1px solid var(--stroke);
+  border-radius: var(--radius);
+  overflow:hidden;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.box::after{
+  content:"";
+  position:absolute;inset:0;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), transparent 32%);
+  opacity:.55;
+}
+.box-title{
+  background: linear-gradient(180deg, var(--titleA) 0%, var(--titleB) 100%);
+  color: var(--text);
+  padding:10px 14px;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--stroke);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+.box-body{
+  padding:10px 14px;
+  font-size:13px;
+  color: var(--text);
+  line-height:1.45;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+.muted{color:var(--muted);}
+.divider{border:0;border-top:1px solid var(--divider);margin:12px 0;}
+
+/* Stats tiles */
+.digits{display:flex;gap:10px;align-items:stretch;justify-content:space-between;flex-wrap:wrap;}
+.digit-block{
+  flex:1;
+  min-width:140px;
+  background: rgba(26,26,26,.52);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  padding:10px 12px;
+  transition: background .2s ease, transform .15s ease;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+.digit-block:hover{background: rgba(34,34,34,.60);transform: translateY(-1px);}
+.digit-value{font-size:28px;font-weight:900;letter-spacing:.02em;color:#fff;}
+.digit-label{
+  font-size:12px;
+  color: rgba(255,255,255,.70);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-top:4px;
+  font-weight:800;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+  align-items:stretch;
+}
+@media (min-width:980px){
+  .hero{grid-template-columns: 1.2fr .8fr;}
+}
+.hero h1{
+  margin:0 0 8px 0;
+  font-size:24px;
+  font-weight:950;
+  letter-spacing:.02em;
+  color:#fff;
+}
+.hero p{margin:0;}
+.hero-kickers{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+.kicker{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  padding:7px 10px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color: rgba(255,255,255,.82);
+  border-radius: var(--radius);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+
+.hero-media{
+  min-height: 220px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.55)),
+    url("/images/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+}
+@media (min-width:980px){
+  .hero-media{min-height: 260px;}
+}
+.hero-media-caption{
+  padding:12px;
+  display:flex;
+  align-items:flex-end;
+  height:100%;
+  color: rgba(255,255,255,.90);
+  font-weight:950;
+  letter-spacing:.02em;
+  text-shadow: 0 1px 0 rgba(0,0,0,.7);
+}
+
+/* Features */
+.features{display:grid;grid-template-columns:1fr;gap:10px;}
+@media (min-width:720px){ .features{grid-template-columns:1fr 1fr;} }
+.feature{
+  background: rgba(26,26,26,.58);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  padding:10px 12px;
+  display:flex;gap:10px;align-items:flex-start;
+  transition: background .2s ease, transform .15s ease;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+.feature:hover{background: rgba(34,34,34,.66);transform: translateY(-1px);}
+.feature .ic{
+  width:34px;height:34px;border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(42,42,42,.80), rgba(31,31,31,.80));
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  flex:0 0 auto;
+}
+.feature h3{margin:0;font-size:14px;font-weight:900}
+.feature p{margin:4px 0 0;font-size:13px;color:rgba(255,255,255,.70)}
+
+/* Leaderboards */
+.lb{
+  background: rgba(26,26,26,.50);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  overflow:hidden;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+.lb-head{
+  display:grid;grid-template-columns:70px 1fr 90px;
+  background: linear-gradient(180deg, rgba(42,42,42,.80), rgba(31,31,31,.80));
+  border-bottom:1px solid rgba(255,255,255,.10);
+  padding:10px 14px;
+  font-weight:900;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+.lb-row{
+  display:grid;grid-template-columns:70px 1fr 90px;
+  padding:10px 14px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  align-items:center;
+  background: var(--panel-strong);
+  transition: background .2s ease;
+}
+.lb-row:nth-child(even){background: var(--panel-even);}
+.lb-row:hover{background: var(--panel-hover);}
+.lb-row:nth-child(even):hover{background: var(--panel-hover2);}
+.lb-row:last-child{border-bottom:none}
+.lb-rank{font-weight:900}
+.lb-val{font-weight:900;text-align:right}
+.lb-name a{font-weight:900;color:#dfe8ff}
+.lb-name a:hover{color:#fff}
+
+/* Live feed */
+.feed{display:flex;flex-direction:column;gap:8px;}
+.feed-item{
+  background: rgba(26,26,26,.58);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  padding:10px 12px;
+  display:flex;gap:10px;align-items:flex-start;
+  transition: background .2s ease, transform .15s ease;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+.feed-item:hover{background: rgba(34,34,34,.66);transform: translateY(-1px);}
+.feed-ic{
+  width:28px;height:28px;border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(42,42,42,.80), rgba(31,31,31,.80));
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  flex:0 0 auto;
+  margin-top:2px;
+}
+.feed-text{font-size:13px;color:rgba(255,255,255,.88);flex:1}
+.feed-time{font-size:12px;color:rgba(255,255,255,.60);white-space:nowrap}
+
+/* Footer */
+.footer{
+  margin-top:12px;
+  padding:14px 12px;
+  text-align:center;
+  color: rgba(255,255,255,.65);
+}
+.footer a{color: rgba(255,255,255,.85);text-decoration:underline}
+.footer .pipe{padding:0 8px;color:rgba(255,255,255,.35)}
+
+/* Modal */
+.modal{display:none;position:fixed;inset:0;background: rgba(0,0,0,.72);z-index:1000;}
+.modal.show{display:flex;align-items:center;justify-content:center;padding:16px;}
+/* (modal styles unchanged below) */
+.modal-content{width:min(560px, 100%);background: rgba(20, 20, 20, 0.55);border-radius: 0 !important;border:1px solid rgba(255,255,255,.12);box-shadow: 0 18px 70px rgba(0,0,0,.65);overflow:hidden;backdrop-filter: blur(16px);-webkit-backdrop-filter: blur(16px);position:relative;}
+.modal-content::before{content:"";position:absolute;inset:0;pointer-events:none;background: linear-gradient(180deg, rgba(255,255,255,.08), transparent 40%);opacity:.55;}
+.modal-header{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background: linear-gradient(180deg, rgba(42,42,42,.78), rgba(31,31,31,.78));border-bottom: 1px solid rgba(255,255,255,.10);border-radius: 0 !important;}
+.modal-header-left{display:flex;align-items:center;gap:10px;min-width:0;}
+.modal-title{margin:0;font-size:16px;font-weight:950;letter-spacing:.02em;color:#fff;white-space:nowrap;}
+.modal-header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+.modal-register{font-weight:900;font-size:13px;color: rgba(223,232,255,.92);text-decoration:none;border-bottom: 1px solid rgba(223,232,255,.25);}
+.modal-register:hover{color:#fff;border-bottom-color: rgba(255,255,255,.40);}
+.modal-close{background: rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;width:36px;height:36px;border-radius: 0 !important;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;}
+.modal-close:hover{background: rgba(255,255,255,.10);}
+.modal-body{position:relative;z-index:1;padding:16px;background: transparent;border-radius: 0 !important;}
+.modal-content *{ box-sizing: border-box; }
+.form-group{margin-bottom:12px;}
+.form-label{display:block;font-weight:900;margin-bottom:6px;color: rgba(255,255,255,.92);letter-spacing:.01em;}
+.form-control{width:100%;padding:11px 12px;border-radius: 0 !important;border:1px solid rgba(255,255,255,.12);background: rgba(0,0,0,.22);color:#fff;font-size:14px;transition: border-color .2s ease, background .2s ease;backdrop-filter: blur(12px);-webkit-backdrop-filter: blur(12px);-webkit-appearance:none;appearance:none;}
+.form-control:focus{outline: none;box-shadow: none;border-color: rgba(77,255,140,.35);}
+.radio-group{display:flex;gap:12px;flex-wrap:wrap;}
+.radio-label{display:flex;gap:8px;align-items:center;font-weight:900;color: rgba(255,255,255,.82);}
+.btn-submit{width:100%;padding:11px 12px;border-radius: 0 !important;border:1px solid rgba(255,255,255,.12);background: linear-gradient(180deg, rgba(42,42,42,.80), rgba(31,31,31,.80));color:#fff;font-weight:950;cursor:pointer;transition: filter .2s ease, transform .15s ease;}
+.btn-submit:hover{filter:brightness(1.07);transform: translateY(-1px);}
+.modal-divider{display:flex;align-items:center;gap:10px;margin:14px 0 12px;color: rgba(255,255,255,.55);font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:11px;}
+.modal-divider::before,.modal-divider::after{content:"";height:1px;flex:1;background: rgba(255,255,255,.10);}
+.btn-google{width:100%;justify-content:center;padding:10px 12px;border-radius: 0 !important;border:1px solid rgba(255,255,255,.12);background: rgba(255,255,255,.06);color:#fff;font-weight:950;display:inline-flex;align-items:center;gap:10px;transition: background .2s ease, transform .15s ease, border-color .2s ease;backdrop-filter: blur(12px);-webkit-backdrop-filter: blur(12px);text-decoration:none;}
+.form-footer{margin-top:12px;text-align:center;color: rgba(255,255,255,.68);font-size:13px;}
+.form-footer a{color:#dfe8ff;text-decoration:none;border-bottom:1px solid rgba(223,232,255,.25);font-weight:900;}
+.form-footer a:hover{color:#fff;border-bottom-color: rgba(255,255,255,.40);}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<header class="topbar" role="banner">
+    <div class="topbar-inner">
+        <div class="brand" aria-label="Site name">
+            <span class="brand-badge" aria-hidden="true"></span>
+            <span>Mafia MMO</span>
+        </div>
+        <div class="top-actions" aria-label="Actions">
+            <a class="btn primary" href="register.php">
+                <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                Register
+            </a>
+            <button class="btn" id="loginBtn" onclick="openLoginModal()" type="button" aria-label="Open login modal">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+                Login
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="main" class="page" role="main">
+    <div class="grid">
+
+        <section class="box" aria-label="Start playing" style="grid-column:1 / -1;">
+            <div class="box-title">Start Your Journey</div>
+            <div class="box-body">
+                <div class="hero">
+                    <div>
+                        <h1>Build your character. Rule the city.</h1>
+                        <p class="muted">
+                            Step into a text-based mafia RPG where strategy matters. Train your stats, run crimes, complete missions,
+                            join gangs, and compete with real players as you climb the ranks.
+                        </p>
+
+                        <div class="hero-kickers" aria-label="Highlights">
+                            <span class="kicker"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i> Gym Training</span>
+                            <span class="kicker"><i class="fa-solid fa-mask" aria-hidden="true"></i> Crimes</span>
+                            <span class="kicker"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> PvP Attacks</span>
+                            <span class="kicker"><i class="fa-solid fa-users" aria-hidden="true"></i> Gangs</span>
+                            <span class="kicker"><i class="fa-solid fa-dice" aria-hidden="true"></i> Casino</span>
+                            <span class="kicker"><i class="fa-solid fa-map" aria-hidden="true"></i> Roam &amp; Hunt</span>
+                        </div>
+                    </div>
+
+                    <!-- Image panel -->
+                    <div class="hero-media" role="img" aria-label="Mafia MMO city backdrop"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="box" aria-label="About">
+            <div class="box-title">About</div>
+            <div class="box-body">
+                <p>
+                    Mafia MMO is a free online text-based RPG where every choice shapes your reputation. Create your character, grow your stats, earn cash, and rise through the criminal underworld in a persistent city filled with rival players and opportunities.                </p>
+
+                <p class="muted">
+                    Train in the gym to build strength, attack rivals, join or create gangs, hunt and roam the streets for loot, and test your luck in the casino.
+                    Run crimes, complete missions, trade items, and climb the ranks as you build your empire—whether you play solo or with a crew.
+                </p>
+
+                <hr class="divider">
+
+                <div class="digits" aria-label="Statistics">
+                    <div class="digit-block">
+                        <div class="digit-value">1,864</div>
+                        <div class="digit-label">Total Players</div>
+                    </div>
+                    <div class="digit-block">
+                        <div class="digit-value">11</div>
+                        <div class="digit-label">Online Now</div>
+                    </div>
+                    <div class="digit-block">
+                        <div class="digit-value">50</div>
+                        <div class="digit-label">Active Gangs</div>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="top-actions" style="justify-content:flex-start;">
+                    <a class="btn google" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=1046444083863-2p6362jvm95g0eikj9hdmdfdfrren5r4.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fmafiammo.com%2Fgoogle-callback.php&amp;response_type=code&amp;scope=email+profile&amp;access_type=online&amp;prompt=select_account" rel="nofollow">
+                        <i class="fa-brands fa-google" aria-hidden="true"></i>
+                        Continue with Google
+                    </a>
+                    <a class="btn" href="register.php">
+                        <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                        Create account
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <aside class="box" aria-label="Activity">
+            <div class="box-title">Live Activity</div>
+            <div class="box-body">
+                <div class="feed" aria-live="polite">
+                    <div class="feed-item"><div class="feed-ic"><i class="fa-solid fa-hospital" aria-hidden="true"></i></div><div class="feed-text"><a href="viewuser.php?u=878"><b>Wonitall</b></a> attacked and hospitalized <a href="viewuser.php? u=808"><b>BigJay</b></a></div><div class="feed-time">1 minute ago</div></div><div class="feed-item"><div class="feed-ic"><i class="fa-solid fa-gem" aria-hidden="true"></i></div><div class="feed-text"><a href="viewuser.php?u=1419"><b>Spook</b></a> found <b>10 crystals</b> while exploring Rome</div><div class="feed-time">1 minute ago</div></div><div class="feed-item"><div class="feed-ic"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div><div class="feed-text"><a href="viewuser.php?u=1920"><b>KSinghK</b></a> has logged in</div><div class="feed-time">4 minutes ago</div></div><div class="feed-item"><div class="feed-ic"><i class="fa-solid fa-gem" aria-hidden="true"></i></div><div class="feed-text"><a href="viewuser.php?u=488"><b>DukeBR</b></a> found <b>6 crystals</b> while exploring Las Vegas</div><div class="feed-time">4 minutes ago</div></div><div class="feed-item"><div class="feed-ic"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></div><div class="feed-text"><a href="viewuser.php?u=488"><b>DukeBR</b></a> found $13,754 while exploring Las Vegas</div><div class="feed-time">4 minutes ago</div></div><div class="feed-item"><div class="feed-ic"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div><div class="feed-text"><a href="viewuser.php?u=1951"><b>mrinal007</b></a> has logged in</div><div class="feed-time">11 minutes ago</div></div>                </div>
+            </div>
+        </aside>
+
+        <section class="box" aria-label="Features" style="grid-column:1 / -1;">
+            <div class="box-title">Top Features</div>
+            <div class="box-body">
+                <div class="features">
+                    <div class="feature">
+                        <div class="ic"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Gangs</h3>
+                            <p>Create or join a crew, work together, and take over the streets.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="ic"><i class="fa-solid fa-gun" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Combat</h3>
+                            <p>Fight rivals, defend your name, and climb the ladder.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="ic"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Economy</h3>
+                            <p>Crimes, markets, trading, and smart investing—build your fortune.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="ic"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Progression</h3>
+                            <p>Level up, unlock more content, and become a legend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="box" aria-label="Leaderboards">
+            <div class="box-title">Top Players</div>
+            <div class="box-body">
+                <div class="lb">
+                    <div class="lb-head">
+                        <div>Rank</div><div>Player</div><div style="text-align:right;">Level</div>
+                    </div>
+                    <div class="lb-row"><div class="lb-rank">🥇</div><div class="lb-name"><a href="viewuser.php?u=27">___ Raffle 5 million ___</a></div><div class="lb-val">85</div></div><div class="lb-row"><div class="lb-rank">🥈</div><div class="lb-name"><a href="viewuser.php?u=729">SENA</a></div><div class="lb-val">66</div></div><div class="lb-row"><div class="lb-rank">🥉</div><div class="lb-name"><a href="viewuser.php?u=1419">Spook</a></div><div class="lb-val">57</div></div><div class="lb-row"><div class="lb-rank">4</div><div class="lb-name"><a href="viewuser.php?u=749">Bowtie406</a></div><div class="lb-val">56</div></div><div class="lb-row"><div class="lb-rank">5</div><div class="lb-name"><a href="viewuser.php?u=951">Dwight Manfredi</a></div><div class="lb-val">56</div></div>                </div>
+            </div>
+        </section>
+
+        <section class="box" aria-label="Top gangs">
+            <div class="box-title">Top Gangs</div>
+            <div class="box-body">
+                <div class="lb">
+                    <div class="lb-head">
+                        <div>Rank</div><div>Gang</div><div style="text-align:right;">Respect</div>
+                    </div>
+                    <div class="lb-row"><div class="lb-rank">🥇</div><div class="lb-name"><a href="gangs.php?action=view&amp;ID=27">LEGACY</a></div><div class="lb-val">1,620</div></div><div class="lb-row"><div class="lb-rank">🥈</div><div class="lb-name"><a href="gangs.php?action=view&amp;ID=43">Dungeon of Rebirth</a></div><div class="lb-val">1,500</div></div><div class="lb-row"><div class="lb-rank">🥉</div><div class="lb-name"><a href="gangs.php?action=view&amp;ID=48">Manfredi Crime Syndicate</a></div><div class="lb-val">724</div></div><div class="lb-row"><div class="lb-rank">4</div><div class="lb-name"><a href="gangs.php?action=view&amp;ID=50">La Famiglia</a></div><div class="lb-val">659</div></div><div class="lb-row"><div class="lb-rank">5</div><div class="lb-name"><a href="gangs.php?action=view&amp;ID=2">Death_Note</a></div><div class="lb-val">276</div></div>                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div>
+            <span>© 2026 SaMz Media</span>
+            <span class="pipe">|</span> <a href="about.php">About Us</a>
+            <span class="pipe">|</span> <a href="privacy.php">Privacy</a>
+            <span class="pipe">|</span> <a href="terms.php">Terms</a>
+            <span class="pipe">|</span> <a href="contact.php">Contact</a>
+            <span class="pipe">|</span> <a href="recover_password.php">Recover Password</a>
+        </div>
+    </footer>
+</main>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal" onclick="closeModalBackdrop(event)" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <i class="fa-solid fa-right-to-bracket" aria-hidden="true" style="color:rgba(255,255,255,.9)"></i>
+        <h2 class="modal-title" id="loginTitle">Login</h2>
+      </div>
+
+      <div class="modal-header-right">
+        <a class="modal-register" href="register.php">Register</a>
+        <button class="modal-close" onclick="closeLoginModal()" type="button" aria-label="Close modal">✕</button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <form action="authenticate.php" method="POST" id="loginForm" onsubmit="return validateLogin()" autocomplete="on">
+        <div class="form-group">
+          <label for="login_username" class="form-label">Username</label>
+          <input type="text" id="login_username" name="username" class="form-control" placeholder="Enter your username" autocomplete="username" autocapitalize="off" autocorrect="off" required="">
+        </div>
+
+        <div class="form-group">
+          <label for="login_password" class="form-label">Password</label>
+          <input type="password" id="login_password" name="password" class="form-control" placeholder="Enter your password" autocomplete="current-password" required="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Remember Me</label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" value="ON" name="save" id="saveYes"> <span>Yes</span></label>
+            <label class="radio-label"><input type="radio" value="OFF" name="save" id="saveNo" checked=""> <span>No</span></label>
+          </div>
+        </div>
+
+        <input type="hidden" name="verf" value="538ff71382e61485554c2b7474fc784915efdea5b619bfb21c9e0b7c27144f2f">
+
+        <button type="submit" class="btn-submit">
+          <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Login
+        </button>
+
+        <div class="modal-divider">or</div>
+        <a class="btn-google" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=1046444083863-2p6362jvm95g0eikj9hdmdfdfrren5r4.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fmafiammo.com%2Fgoogle-callback.php&amp;response_type=code&amp;scope=email+profile&amp;access_type=online&amp;prompt=select_account" rel="nofollow">
+          <i class="fa-brands fa-google" aria-hidden="true"></i>
+          Continue with Google
+        </a>
+
+        <div class="form-footer">
+          <a href="register.php">Don't have an account? Sign up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/home.js"></script>
+<script src="/pwa-install.js"></script>
+<script>
+(function () {
+  const modal = document.getElementById('loginModal');
+  const loginBtn = document.getElementById('loginBtn');
+
+  if (!modal) return;
+
+  window.openLoginModal = function () { modal.classList.add('show'); };
+  window.closeLoginModal = function () { modal.classList.remove('show'); };
+  window.closeModalBackdrop = function (e) { if (e && e.target === modal) window.closeLoginModal(); };
+
+  if (loginBtn) loginBtn.addEventListener('click', function () { window.openLoginModal(); });
+
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') window.closeLoginModal(); });
+
+  const username = document.getElementById('login_username');
+  const originalOpen = window.openLoginModal;
+  window.openLoginModal = function () {
+    originalOpen();
+    setTimeout(() => username && username.focus(), 0);
+  };
+})();
+</script>
+
+
+</body></html>

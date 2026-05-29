@@ -1,0 +1,617 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Last-Modified" content="Last-Modified: Wen 11 Mar 2020 12:00:00 GMT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon">
+
+  <title>Premierbetzone</title>
+
+  <script>
+    const LANGS = { EN: 'English (UK)', FR: 'Français', PT: 'Portugués' };
+    const SELECT_COUNTRY_TEXTS = { EN: 'SELECT YOUR COUNTRY', FR: '', PT: '' };
+    const SELECT_DEVICE_TEXTS = { EN: 'Select Device', FR: '', PT: '' };
+    const WELCOME_TEXTS = { EN: 'Welcome to Premierbetzone', FR: 'Bienvenue a Premierbetzone', PT: 'Bem-vindo a Premierbetzone' };
+    const DROPDOWN_TEXTS = { EN: 'Please select your country', FR: 'Veuillez sélectionner votre pays', PT: 'Por favor seleciona o teu país' };
+    const GO_TEXTS = { EN: 'go', FR: 'aller', PT: 'ir' };
+    const COMING_SOON_TEXTS = { EN: 'Coming Soon', FR: 'Arrive Bientôt', PT: 'Em breve' };
+    const NEW_TEXTS = { EN: 'New!', FR: 'Nouveau!', PT: 'Novo!' };
+    const NIGERIA_TEXTS = { EN: 'Nigeria', FR: 'Nigeria', PT: 'Nigéria' };
+    const CAMEROUN_TEXTS = { EN: 'Cameroun', FR: 'Cameroun', PT: 'Cameroun' };
+    const GHANA_TEXTS = { EN: 'Ghana', FR: 'Ghana', PT: 'Ghana' };
+    const MOZAMBIQUE_TEXTS = { EN: 'Moçambique', FR: 'Moçambique', PT: 'Moçambique' };
+    const CONGO_TEXTS = { EN: 'Brazzaville', FR: 'Brazzaville', PT: 'Brazzaville' };
+    const GUINEA_TEXTS = { EN: 'Guinée', FR: 'Guinée', PT: 'Guinée' };
+    const RDCONGO_TEXTS = { EN: 'RD Congo', FR: 'RD Congo', PT: 'RD Congo' };
+    const MALAWI_TEXTS = { EN: 'Malawi', FR: 'Malawi', PT: 'Malawi' };
+    const RWANDA_TEXTS = { EN: 'Rwanda', FR: 'Rwanda', PT: 'Rwanda' };
+    const GABON_TEXTS = { EN: 'Gabon', FR: 'Gabon', PT: 'Gabon' };
+    const MALI_TEXTS = { EN: 'Mali', FR: 'Mali', PT: 'Mali' };
+    const SIERRA_TEXTS = { EN: 'Sierra Leone', FR: 'Sierra Leone', PT: 'Sierra Leone' };
+    const TANZANIA_TEXTS = { EN: 'Tanzania', FR: 'Tanzania', PT: 'Tanzania' };
+    const TCHAD_TEXTS = { EN: 'Tchad', FR: 'Tchad', PT: 'Tchad' };
+    const UGANDA_TEXTS = { EN: 'Uganda', FR: 'Uganda', PT: 'Uganda' };
+    const ANGOLA_TEXTS = { EN: 'Angola', FR: 'Angola', PT: 'Angola' };
+    const LIBERIA_TEXTS = { EN: 'Liberia', FR: 'Liberia', PT: 'Liberia' };
+    const TOGO_TEXTS = { EN: 'Togo', FR: 'Togo', PT: 'Togo' };
+    const ZIMBABWE_TEXTS = { EN: 'Zimbabwe', FR: 'Zimbabwe', PT: 'Zimbabwe' };
+    const BURUNDI_TEXTS = { EN: 'Burundi', FR: 'Burundi', PT: 'Burundi' };
+    const IVORY_TEXTS = { EN: 'Ivory Coast', FR: "Côte d'Ivoire", PT: 'Costa do Marfim' };
+    const NAMIBIA_TEXTS = { EN: "Namibia", FR: "Namibie", PT: "Namíbia" };
+    const ETHIOPIA_TEXTS = { EN: "Ethiopia", FR: "Éthiopie", PT: "Etiópia" };
+
+    function onLoadScript() {
+      fill();
+      saveCookieAffiliate();
+      autoRedirectToBrandPage();
+      onIframe();
+    }
+
+    function onIframe() {
+      const trustedDomains = ["premierbetzone.com", "premierbetzone.co.ao", "guineegameszone.com", "premierbetzone.co.tz", "mercurybetzone.com", "ogabetzone.com", "sbazone.com"];
+
+      const isStatic = window.location.pathname === '/static-start-page.html';
+      const targetOrigin = trustedDomains.find((domain) => window.location.ancestorOrigins?.contains(`https://${domain}`));
+
+      if (!isStatic || !targetOrigin) return;
+      window.top?.postMessage("hideIframeOnAtlasBack", `https://${targetOrigin}`);
+    }
+
+    function fill() {
+      try {
+        const language = fetchLanguage();
+        fillTexts(language);
+      } catch (err) {
+        fillTexts("EN");
+      }
+    }
+
+    function saveCookieAffiliate() {
+      const affiliateId = getParameterByName('AffiliateID');
+      if (affiliateId) {
+        createCookie('netReferAffiliateId', affiliateId, 360);
+      }
+    }
+
+    function autoRedirectToBrandPage() {
+      const countryCode = getParameterByName('CountryCode');
+      const affiliateId = getParameterByName('AffiliateID');
+      redirectToBrandPage(countryCode, affiliateId);
+    }
+
+    function getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    function fillTexts(language) {
+      document.getElementById('contentHeader').innerHTML = SELECT_COUNTRY_TEXTS[language];
+      document.getElementById('cameroun').innerHTML = CAMEROUN_TEXTS[language];
+      document.getElementById('ghana').innerHTML = GHANA_TEXTS[language];
+      document.getElementById('mozambique').innerHTML = MOZAMBIQUE_TEXTS[language];
+      document.getElementById('congo').innerHTML = CONGO_TEXTS[language];
+      document.getElementById('guinea').innerHTML = GUINEA_TEXTS[language];
+      document.getElementById('nigeria').innerHTML = NIGERIA_TEXTS[language];
+      document.getElementById('rdcongo').innerHTML = RDCONGO_TEXTS[language];
+      document.getElementById('malawi').innerHTML = MALAWI_TEXTS[language];
+      document.getElementById('rwanda').innerHTML = RWANDA_TEXTS[language];
+      document.getElementById('gabon').innerHTML = GABON_TEXTS[language];
+      document.getElementById('mali').innerHTML = MALI_TEXTS[language];
+      document.getElementById('sierra').innerHTML = SIERRA_TEXTS[language];
+      document.getElementById('tanzania').innerHTML = TANZANIA_TEXTS[language];
+      document.getElementById('tchad').innerHTML = TCHAD_TEXTS[language];
+      document.getElementById('uganda').innerHTML = UGANDA_TEXTS[language];
+      document.getElementById('angola').innerHTML = ANGOLA_TEXTS[language];
+      document.getElementById('liberia').innerHTML = LIBERIA_TEXTS[language];
+      document.getElementById('togo').innerHTML = TOGO_TEXTS[language];
+      document.getElementById('zimbabwe').innerHTML = ZIMBABWE_TEXTS[language];
+      document.getElementById('burundi').innerHTML = BURUNDI_TEXTS[language];
+      document.getElementById('ivory-coast').innerHTML = IVORY_TEXTS[language];
+      document.getElementById('namibia').innerHTML = NAMIBIA_TEXTS[language];
+      document.getElementById('ethiopia').innerHTML = ETHIOPIA_TEXTS[language];
+      document.getElementsByClassName('coming-soon-div').innerHTML = COMING_SOON_TEXTS[language];
+
+      var a = document.getElementsByClassName("coming-soon-div");
+      for (var i = 0; i < a.length; i++) {
+        a[i].innerHTML = COMING_SOON_TEXTS[language];
+      }
+      var b = document.getElementsByClassName("new-brand");
+      for (var j = 0; j < b.length; j++) {
+        b[j].innerHTML = NEW_TEXTS[language];
+      }
+    }
+
+    function fillLanguages(language) {
+      document.getElementById('selected-language').innerHTML = LANGS[language];
+      var html = '';
+      for (var key in LANGS) {
+        if (key == language) {
+          continue;
+        }
+        if (LANGS.hasOwnProperty(key)) {
+          html += '<div class="option" onclick="changeLanguage(\'' + key + '\')">' + LANGS[key] + '</div>';
+        }
+      }
+      document.getElementById('other-languages').innerHTML = html;
+    }
+
+    function changeLanguage(language) {
+      let cookieValue = '';
+      switch (language) {
+        case 'EN': cookieValue = 'en_US'; break;
+        case 'FR': cookieValue = 'fr_FR'; break;
+        case 'PT': cookieValue = 'pt_PT'; break;
+        default: cookieValue = 'en_US'; break;
+      }
+      createCookie("Language", cookieValue, 120);
+      const dropdown = document.getElementById('other-languages');
+      dropdown.classList.add('hide');
+      fill();
+    }
+
+    function fetchLanguage() {
+      const cookieValue = getCookie("Language");
+      if (cookieValue == "") {
+        return "EN";
+      }
+      const languageCode = cookieValue.split("_")[0];
+      return languageCode.toUpperCase();
+    }
+
+    function createCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function getCookie(cname) {
+      const name = cname + "=";
+      const ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function navigate(me) {
+      const selectedCountry = me.dataset['context'];
+      const affiliateId = getCookieByName('netReferAffiliateId');
+      redirectToBrandPage(selectedCountry, affiliateId);
+    }
+
+    function getCookieByName(name) {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return match[2];
+    }
+
+    function redirectToBrandPage(selectedCountry, affiliateId) {
+      if (selectedCountry) {
+        createCookie('countryCode', selectedCountry.toUpperCase(), 120);
+
+        let mobileAppUrl = "";
+	const ua = navigator.userAgent.toLowerCase();
+	const isWebView = ua.includes("wv");
+        
+	if (isWebView) {
+          mobileAppUrl = "mobile-platform/";
+        }
+
+        if (affiliateId && ['ug', 'ng', 'sl', 'tz', 'gn', 'et'].indexOf(selectedCountry) > -1) {
+          mobileAppUrl += "?affiliateId=" + affiliateId;
+        }
+        switch (selectedCountry) {
+          case 'ug':
+            location.href = 'https://sbazone.com/' + mobileAppUrl;
+            break;
+          case 'ng':
+            location.href = 'https://ogabetzone.com/' + mobileAppUrl;
+            break;
+          case 'sl':
+            location.href = 'https://mercurybetzone.com/' + mobileAppUrl;
+            break;
+          case 'tz':
+            location.href = 'https://premierbetzone.co.tz/' + mobileAppUrl;
+            break;
+          case 'gn':
+            location.href = 'https://guineegameszone.com/' + mobileAppUrl;
+            break;
+          case 'ao':
+            location.href = 'https://premierbetzone.co.ao/' + mobileAppUrl;
+            break;
+          case 'et':
+            location.href = 'https://bluenilebet.com/' + mobileAppUrl;
+            break;
+          default:
+            location.href = 'https://premierbetzone.com/' + mobileAppUrl + selectedCountry + '/';
+            break;
+        }
+      }
+    }
+
+  </script>
+
+  <style>
+    body {
+      min-width: 288px;
+      width: 100%;
+      background-color: #242424;
+      color: #2a2a2a;
+      font-family: roboto;
+      font-size: 14px;
+      line-height: 26px;
+      outline: none;
+      margin: 0;
+      height: calc(100vh - 50px);
+    }
+
+    .header {
+      height: 50px;
+      width: 100%;
+      background-color: #2D2D2D;
+      display: flex;
+      align-items: center;
+    }
+
+    #main {
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('https://premierbetzone.com/static/welcome/welcome_background.png');
+      height: 100%;
+      padding-top: 3rem;
+    }
+
+    #logo {
+      width: 100%;
+      height: 35px;
+      background-position: center;
+      background-size: initial;
+      background-repeat: no-repeat;
+      background-image: url('https://premierbetzone.com/static/welcome/welcome_logo.png');
+    }
+
+    #content {
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.7);
+      margin: 0rem auto;
+      padding: 0 2rem;
+    }
+
+    @media screen and (max-width: 560px) {
+      #content {
+        max-width: 77%;
+      }
+    }
+
+    .content-header {
+      border-bottom: 2px solid #2D2D2D;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+
+    .country-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 0.5rem;
+    }
+
+    .country-wrapper ul {
+      width: 100%;
+      list-style-type: none;
+      padding-inline-start: 0;
+      display: grid;
+      grid-gap: 13px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 500px) {
+      .country-wrapper ul {
+        grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+      }
+    }
+
+    .country-wrapper ul button {
+      border: 0;
+      background: transparent;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+    }
+
+    .country-wrapper ul button div {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .country-wrapper ul button span {
+      margin-left: 5px;
+    }
+
+    .country-wrapper ul button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .country-wrapper ul button.disabled {
+      cursor: default;
+    }
+
+    .country-wrapper ul button.disabled div {
+      cursor: default;
+    }
+
+    .country-wrapper ul button.disabled div img {
+      opacity: .35;
+      cursor: default;
+    }
+
+    .country-wrapper ul button.disabled div .coming-soon-block {
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: 5px;
+      cursor: default;
+    }
+
+    .country-wrapper ul button.disabled div span {
+      margin: 0;
+    }
+
+    .country-wrapper ul button.disabled div .coming-soon-div {
+      margin-top: 4px;
+      font-size: 10px;
+      color: darkgoldenrod;
+      cursor: default;
+    }
+  </style>
+
+</head>
+
+<body onload="onLoadScript();">
+
+  <div class="header">
+    <div id="logo"></div>
+  </div>
+  <div id="main">
+    <div id="content">
+      <div id="contentHeader" class="content-header">SELECT YOUR COUNTRY</div>
+      <div class="country-wrapper">
+        <ul>
+          <li>
+            <button class="btn" data-context="cm" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/cm/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/cameroun.png">
+                <span id="cameroun">Cameroun</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="gh" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/gh/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/ghana.png">
+                <span id="ghana">Ghana</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="mz" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/mz/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/mozambique.png">
+                <span id="mozambique">Moçambique</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="cg" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/cg/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/congo.png">
+                <span id="congo">Brazzaville</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="gn" onclick="navigate(this)">
+              <a href="https://guineegameszone.com/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/guinea.png">
+                <span id="guinea">Guinée</span>
+              </div>
+            </button>
+          </li>
+          <li style="display: none;">
+            <button class="btn" data-context="ng" onclick="navigate(this)">
+              <a href="https://ogabetzone.com/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/nigeria.png">
+                <span id="nigeria">Nigeria</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="cd" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/cd/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/rdcongo.png">
+                <span id="rdcongo">RD Congo</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="mw" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/mw/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/malawi.png">
+                <span id="malawi">Malawi</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="rw" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/rw/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/rwanda.png">
+                <span id="rwanda">Rwanda</span>
+              </div>
+            </button>
+          </li>
+          <li style="display: none;">
+            <button class="btn" data-context="ga">
+              <img src="https://premierbetzone.com/static/welcome/gabon.png">
+              <span id="gabon">Gabon</span>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="ml" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/ml/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/mali.png">
+                <span id="mali">Mali</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="sl" onclick="navigate(this)">
+              <a href="https://mercurybetzone.com/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/sierra-leone.png">
+                <span id="sierra">Sierra Leone</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="tz" onclick="navigate(this)">
+              <a href="https://premierbetzone.co.tz/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/tanzania.png">
+                <span id="tanzania">Tanzania</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="td" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/td/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/tchad.png">
+                <span id="tchad">Tchad</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="ug" onclick="navigate(this)">
+              <a href="https://sbazone.com/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/uganda.png">
+                <span id="uganda">Uganda</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="ao" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/ao/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/angola.png">
+                <span id="angola">Angola</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="lr" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/lr/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/liberia.png">
+                <span id="liberia">Liberia</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="tg" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/tg/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/togo.png">
+                <span id="togo">Togo</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="zw" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/zw/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/zimbabwe.png">
+                <span id="zimbabwe">Zimbabwe</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="bi" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/bi/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/burundi.png">
+                <div>
+                  <span id="burundi">Burundi</span>
+                </div>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn disabled" disabled="" data-context="ci" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/ci/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/ivory-coast.png">
+                <div class="coming-soon-block">
+                  <span id="ivory-coast">Ivory Coast</span>
+                  <div class="coming-soon-div">Coming Soon</div>
+                </div>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="btn" data-context="na" onclick="navigate(this)">
+              <a href="https://premierbetzone.com/na/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/namibia.png">
+                <span id="namibia">Namibia</span>
+              </div>
+            </button>
+          </li>
+          <li style="display:none">
+            <button class="btn" data-context="et" onclick="navigate(this)">
+              <a href="https://bluenilebet.com/" style="display:none"></a>
+              <div>
+                <img src="https://premierbetzone.com/static/welcome/ethiopia.png">
+                <span id="ethiopia">Ethiopia</span>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="monitoring"></div>
+
+
+
+</body></html>

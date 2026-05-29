@@ -1,0 +1,2598 @@
+<!DOCTYPE html><html lang="ja"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Content-Style-type" content="text/css">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <style>
+        @font-face {
+            font-family: 'material-icons';
+            src:  url('/chat/css/fonts/material-icons.eot?ver=10.5.2.0&modeno=1');
+            src:  url('/chat/css/fonts/material-icons.eot?ver=10.5.2.0&modeno=1#iefix') format('embedded-opentype'),
+            url('/chat/css/fonts/material-icons.ttf?ver=10.5.2.0&modeno=1') format('truetype'),
+            url('/chat/css/fonts/material-icons.woff?ver=10.5.2.0&modeno=1') format('woff'),
+            url('/chat/css/fonts/material-icons.svg?ver=10.5.2.0&modeno=1#material-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('/chat/css/fonts/icomoon.eot?ver=10.5.2.0&modeno=1');
+            src:  url('/chat/css/fonts/icomoon.eot?ver=10.5.2.0&modeno=1#iefix') format('embedded-opentype'),
+            url('/chat/css/fonts/icomoon.ttf?ver=10.5.2.0&modeno=1') format('truetype'),
+            url('/chat/css/fonts/icomoon.woff?ver=10.5.2.0&modeno=1') format('woff'),
+            url('/chat/css/fonts/icomoon.svg?ver=10.5.2.0&modeno=1#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="/chat/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/chat/css/reset.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/chat.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/material-icons.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/iconstyle.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/loaders.css?ver=10.5.2.0&amp;modeno=1">
+
+    <script type="text/javascript" src="/chat/js/jquery.js?ver=10.5.2.0&amp;modeno=1"></script>
+    <script type="text/javascript" src="/chat/js/common.js?ver=10.5.2.0&amp;modeno=1"></script>
+
+    <script>
+        $(window).on('load',function(){
+            $('#loading-chat-window').removeClass('loading-chat-window');
+        });
+    </script>
+
+        <style>
+            .comment-text-group {
+                background-color: #f2f2f2;
+                color: #333333;
+            }
+            .comment-text-group.comment-text-front {
+                background-color: #c1c5e0;
+                color: #2d2f3e;
+            }
+            .comment-meta-read,
+            .comment-meta-date {
+                color: #999999;
+            }
+            .comment-meta-name {
+                color:#999999;
+            }
+        </style>
+</head>
+
+<body>
+
+<div id="loading-chat-window" class=""></div>
+<style type="text/css">
+<!--
+body {
+    overflow: hidden;
+}
+#chatTitle {
+    background-color: #f3ead6;
+    color: #2d2f3e;
+    border-color: #f3ead6;
+}
+#chatView {
+    background-color: #ffffff;
+}
+#uploadBtn span {
+    color: #b2b6d8;
+}
+#chatBtn span {
+    color: #b2b6d8;
+}
+.qa-answer-enquete-header {
+  background-color: #cd0000;
+  color: #ffffff;
+  border-color: #cd0000;
+}
+.qa-answer-enquete-select-text {
+  background-color: #ffffff;
+  color: #394359;
+}
+.qa-answer-enquete-submit-btn {
+  background-color: #cd0000;
+  color: #ffffff;
+}
+-->
+</style>
+<script type="text/javascript" src="/chat/js/uploader.js?ver=10.5.2.0&amp;modeno=1"></script>
+<script type="text/javascript" src="/chat/js/mobile-scroll-controller.js?ver=10.5.2.0&amp;modeno=1"></script>
+
+<script type="text/javascript">
+<!--
+var chatWindow;
+var chatTitle;
+var mainView;
+var chatInput;
+
+var msgSendText = '送信中です...';
+
+var isNodeConnect = false;
+
+var sendMsgCache = [];
+var selectedOptionCache = [];
+var selectedEnqueteCache = [];
+
+var isLoad = false;
+var lastMsgSeq = 0;
+
+var scrollTop = -1;
+
+var urlIndex = 0;
+var sameUrlIndex = 0;
+
+let suggestIndex = null;
+
+let suggestCount = 0;
+
+const maxSuggestCount = 5;
+
+let callQaMoreScrollTop = 0;
+
+let isEnableSystemLinkage = false;
+let isEnableApi = false;
+
+let isSoldAutoActionMsg = false;
+
+var isGetReversMsg = false;
+
+let addClass = '';
+
+let overlay_flag = true;
+
+function waitReversMsg(retryCount) {
+    if (isGetReversMsg) {
+        $('#chatInput').val("");
+        $('#chatBtn').prop('disabled', false);
+        $('#chatBtn span').css({'color': '#b2b6d8'});
+        $('#chatInput').removeClass('disabled');
+        $('#chatInput').focus();
+        resizeMessageField();
+
+        isGetReversMsg = false;
+    } else {
+        retryCount++;
+
+        if (retryCount > 150) {
+            $('#chatBtn').prop('disabled', false);
+            $('#chatBtn span').css({'color': '#b2b6d8'});
+            $('#chatInput').removeClass('disabled');
+            $('#chatInput').focus();
+            hideSendWaitingPopup();
+            sendMsgCache = [];
+            selectedOptionCache = [];
+            selectedEnqueteCache = [];
+            parent.postMessage('chatdealer_timeout','*');
+            isGetReversMsg = false;
+
+        } else {
+            $('#chatBtn').prop('disabled', true);
+            $('#chatBtn span').css({'color': '#d2d2d2'});
+            $('#chatInput').addClass('disabled');
+            setTimeout(function () {
+                waitReversMsg(retryCount)
+            }, 200);
+        }
+    }
+}
+
+$(function () {
+    if (parent.isIos()) {
+        $('body').addClass('device-ios');
+    }
+
+    setIosScrollSetting('#chatView');
+
+    if (!parent.isMobile) {
+        $('#chatInput').css({'overflow-y': 'hidden'});
+    }
+
+    if (parent.staffCallViewMode == 'calling' && !parent.isQaCallingStaff()) {
+        parent.staffCallViewMode = 'before';
+    }
+    switch (parent.staffCallViewMode) {
+        case 'before':
+            showStaffCallBtn();
+            break;
+        case 'calling':
+            showStaffCallingPopup(500);
+            break;
+    }
+
+    if (parent.visitChatbotType == 1 && !parent.chatbot.isShowInputArea()) {
+        $('.chat-window-table-input').hide();
+    }
+
+    switchMode();
+
+    isLoad = true;
+    parent.postMessage('chatdealer_open_fram_ready','*');
+
+    $('#chatBtn').click(function () {
+        userExecuteSendMessage();
+    });
+
+    $('#chatInput')
+        .on('input', function () {
+            createAndShowSuggest($(this).val());
+            inputMessage($(this).val());
+        })
+        .on('keydown click mousedown', function (e) {
+            if ($(this).hasClass('disabled')) {
+                return false;
+            }
+            if (e.shiftKey) {
+                if (e.keyCode === KEY_CODE_ENTER) {
+                    userExecuteSendMessage();
+                    return false;
+                }
+            }
+        })
+        .on('keyup', function (e) {
+            var msg = $('#chatInput').val();
+
+            if (e.which === KEY_CODE_ARROW_UP) {
+                suggestIndex = suggestCount;
+                focusSuggestItem(suggestIndex);
+                e.preventDefault();
+            } else if (e.which === KEY_CODE_ARROW_DOWN) {
+                suggestIndex = 1;
+                focusSuggestItem(suggestIndex);
+                e.preventDefault();
+            }
+        })
+        .on('focusin', function (e) {
+            window.requestAnimationFrame(function () {
+                createAndShowSuggest(e.target.value);
+            });
+        })
+        .on('blur', function () {
+            setTimeout(function () {
+                if (parent.getActiveWindow() != 'chat_close' && parent.isMobile) {
+                    resizeMessageField();
+                }
+            }, 200);
+
+            setTimeout(function () {
+                if (!document.querySelector('#chatInput:focus')) {
+                    hideSuggestIfNoFocusInWindow();
+                }
+            }, 100);
+        });
+
+    $('#chatSuggest')
+        .on('focusin', function (e) {
+            replaceTextChatInput(e.target.dataset.suggest);
+        })
+        .on('focusout', function (e) {
+            window.requestAnimationFrame(function () {
+                hideSuggestIfNoFocusInWindow();
+            });
+        })
+        .on('mousedown mouseup', function (e) {
+            const suggest = e.target.dataset.suggest;
+            if (suggest) {
+                window.requestAnimationFrame(function () {
+                    replaceTextChatInput(suggest);
+                    moveCursorToEndChatInput();
+
+                    const chatInput = document.querySelector('#chatInput');
+                    chatInput.blur(); 
+                    window.requestAnimationFrame(function () {
+                        chatInput.focus();
+                    });
+                });
+            }
+        })
+        .on('keydown', function (e) {
+            if (e.which === KEY_CODE_ARROW_UP) {
+                if (suggestIndex > 1) {
+                    suggestIndex--;
+                } else {
+                    suggestIndex = suggestCount;
+                }
+                focusSuggestItem(suggestIndex);
+                e.preventDefault();
+            } else if (e.which === KEY_CODE_ARROW_DOWN) {
+                if (suggestIndex < suggestCount) {
+                    suggestIndex++;
+                } else {
+                    suggestIndex = 1;
+                }
+                focusSuggestItem(suggestIndex);
+                e.preventDefault();
+            } else if (e.which === KEY_CODE_ENTER) {
+                const suggest = e.target.dataset.suggest;
+                replaceTextChatInput(suggest);
+                moveCursorToEndChatInput();
+
+                const chatInput = document.querySelector('#chatInput');
+                chatInput.focus();
+
+                e.preventDefault();
+            }
+        });
+
+    $(document).on('click', 'input:radio[name^=selectMsg]', function() {
+        // チャットボットの場合
+        if (parent.visitChatbotType == 1) {
+            var p = $(this).parents('div.comment-text');
+            p.find('input:radio').prop('disabled', true);
+            p.find('input:radio').parent().addClass('disabled');
+            p.find('input:radio').removeAttr("onclick");
+            setArrayWebStorage(parent.aasc, p.attr('data'), 'local', true);
+        }
+    });
+
+    $(document).on('click', 'input:radio[name^=selectEnq]', function() {
+        if (!$(this).is(':disabled')) {
+            $(this).parents('label').addClass('selected');
+            var p = $(this).parents('div.comment-footer');
+            p.find('input:radio').prop('disabled', true);
+            p.find('input:radio').parent().addClass('chosen');
+            p.find('input:radio').removeAttr("onclick");
+        }
+    });
+
+    $(document).on('click', 'input:radio[name^=selectQaEnq]', function() {
+        if (!$(this).is(':disabled')) {
+            $(this).parents('label').addClass('selected');
+            var p = $(this).parents('div.comment-footer');
+            p.find('input:radio').prop('disabled', true);
+            p.find('input:radio').parent().addClass('chosen');
+            p.find('input:radio').removeAttr("onclick");
+        }
+    });
+
+    $(document).on('click', '.qa-answer-enquete-submit-btn', function(e) {
+        e.preventDefault();
+        const form = $(this).parents('form');
+        const comment = form.find('.qa-answer-enquete-textarea').val();
+        if (!comment) {
+            return false;
+        }
+        const chatId = form.children('.enqueteChatId').val();
+        const messageSeq = form.children('.enqueteMessageSeq').val();
+        const msdt = getWebStorage(parent.msdt, 'local');
+        const qaEnquete = msdt[messageSeq];
+        if (qaEnquete) {
+            qaEnquete.enquete_status = 3;
+            msdt[messageSeq] = qaEnquete;
+            setWebStorage(parent.msdt, msdt, 'local');
+            const message = $('#message' + messageSeq);
+            message.find('textarea.qa-answer-enquete-textarea').val("");
+            message.find('textarea.qa-answer-enquete-textarea').removeAttr('placeholder');
+            message.find('textarea.qa-answer-enquete-textarea').addClass('disabled');
+            message.find('textarea.qa-answer-enquete-textarea').attr('disabled', true);
+            message.find('input.qa-answer-enquete-submit-btn').addClass('disabled');
+            message.find('input.qa-answer-enquete-submit-btn').attr('disabled', true);
+        }
+        receiveQaEnqueteComment(chatId, messageSeq, comment);
+    });
+
+    chatWindow = $('.chat-window-table');
+    chatTitle = $('.chat-window-table-title');
+    mainView = $('#chatView');
+    chatInput = $('.chat-window-table-input');
+
+    setOpenWindowEvent(function () {
+        focused(false);
+        parent.postMessage('chatdealer_close', '*');
+    }, function () {
+        focused(false);
+        parent.postMessage('chatdealer_end', '*');
+    }, function () {
+        focused(false);
+        parent.postMessage('chatdealer_scinario_back_home', '*');
+    });
+
+    fitToWindowSize();
+
+    setChatTitleBtn();
+
+    setCloseBtn(parent.isShowCloseButton);
+
+    mainView.on('scroll', function(e){
+        if (isLastMessageShow()) {
+            var noticeNewMessage = $('#noticeNewMessage');
+            if (noticeNewMessage.length > 0 && noticeNewMessage.is(':visible')) {
+                noticeNewMessage.fadeOut();
+                focused(true);
+            }
+        }
+    });
+
+    let fncResize = function (retryCount) {
+        if (chatTitle.is(':visible')) {
+            var logHeight = window.innerHeight;
+            logHeight -= chatTitle.outerHeight(true) || 0;
+
+            if (chatInput.is(':visible')) {
+                logHeight -= chatInput.outerHeight(true);
+            }
+
+            if ($('.cd-uploader-form').is(':visible')) {
+                $('#chatView').css({'padding': '0 25px 0px'});
+            } else {
+                logHeight -= 50;
+                $('#chatView').css({'padding': '25px 25px 25px 25px'});
+            }
+
+            mainView.height(logHeight);
+
+        } else {
+            retryCount++;
+            if (retryCount <= 10) {
+                setTimeout(function () {
+                    fncResize(retryCount);
+                }, 250);
+            }
+        }
+    };
+
+    clearNewMessageWebStorage();
+
+    $(window)
+        .on('focus', function (e) {
+            if (focused()) {
+                return;
+            }
+
+            chatWindow.addClass('chat_window_focusin');
+
+        })
+        .on('blur', function () {
+            if (focused() == false) {
+                return;
+            }
+
+            scrollTop = mainView.scrollTop();
+
+            $(chatWindow).removeClass('chat_window_focusin');
+        })
+        .resize(function () {
+            fncResize(0);
+        });
+
+    resizeWindow();
+});
+
+function inputAreaShow() {
+    $('.chat-window-table-input').show();
+    resizeWindow();
+}
+function inputAreaHide() {
+    $('.chat-window-table-input').hide();
+    $('#chatInput').val('');
+    resizeWindow();
+}
+
+function initialize() {
+    setPositionPopupMsg('#noticeNewMessage');
+    if (scrollTop >= 0) {
+        scrollChatLog(scrollTop, 0)
+    } else {
+        autoScrollToLastMessage(0);
+    }
+}
+
+function inputCheck(msg) {
+    if (!msg && msg !== 0) {
+        return false;
+    }
+
+    var chkValue = msg.replace(/(?:\r\n|\r|\n)/g, '');
+    chkValue = chkValue.replace(/\s+/g, '');
+
+    return chkValue != '';
+}
+
+function userExecuteSendMessage() {
+    var input = $('#chatInput');
+    var msg = input.val();
+
+    if (inputCheck(msg)) {
+        isGetReversMsg = false;
+        waitReversMsg(0);
+        sendMessage(msg);
+    }
+}
+
+function sendMessage(data, type) {
+    if (typeof type == 'undefined') {
+        type = 'msg';
+    }
+    if (isNodeConnect) {
+        switch (type) {
+            case 'msg':
+                parent.sendMessage(data, false, '', null);
+                break;
+            case 'attach':
+                parent.sendAttach(data);
+                break;
+        }
+    } else {
+        showSendWaitingPopup();
+        sendMsgCache.push({
+            data: data,
+            type: type,
+        });
+    }
+}
+
+function inputMessage(msg) {
+    if (isNodeConnect) {
+        parent.inputMessage(msg);
+    }
+
+    resizeMessageField();
+}
+
+function resizeMessageField() {
+    var lHeight = Number($('#chatInput').css('line-height').replace('px', ''));
+    $('#chatInput').height(lHeight);
+
+    var pHeight = Number($('#chatInput').css('padding-top').replace('px', '')) + Number($('#chatInput').css('padding-bottom').replace('px', ''));
+    var oHeight = $('#chatInput')[0].offsetHeight;
+    var sHeight = $('#chatInput')[0].scrollHeight;
+    if (oHeight < sHeight) {
+        $('#chatInput').height(sHeight - pHeight);
+    }
+
+    resizeWindow();
+
+    setTimeout(function () {
+        var noticeNewMessage = $('#noticeNewMessage');
+        if (noticeNewMessage.length > 0 && noticeNewMessage.is(':visible')) {
+            setPositionPopupMsg('#noticeNewMessage');
+        }
+        if (parent.staffCallViewMode == 'calling') {
+            setPositionPopupMsg('#staffCallingMessage');
+        }
+    }, 100);
+}
+
+function disconnect() {
+    isNodeConnect = false;
+}
+
+var isInit = true;
+function connect() {
+
+    parent.getChatMessage(lastMsgSeq);
+
+    hideSendWaitingPopup();
+
+    var sendMsgArray = sendMsgCache;
+    var selectedOptionArray = selectedOptionCache;
+    var selectedEnqueteArray = selectedEnqueteCache;
+    var sendIndex = 0;
+
+    sendMsgCache = [];
+    selectedOptionCache = [];
+    selectedEnqueteCache = [];
+    isNodeConnect = true;
+
+    $.each(sendMsgArray, function (key, val) {
+        setTimeout(function () {
+            sendMessage(val.data, val.type);
+        }, 250 * (sendIndex++));
+    });
+
+    $.each(selectedOptionArray, function (key, val) {
+        setTimeout(function () {
+            selectedOption(val.msg, val.id, val.passedIds, val.messageSeq, val.reportDate, val.el);
+        }, 250 * (sendIndex++));
+    });
+
+    $.each(selectedEnqueteArray, function (key, val) {
+        setTimeout(function () {
+            selectedActEnquete(val.msgSeq, val.goodCnt, val.badCnt);
+        }, 250 * (sendIndex++));
+    });
+}
+
+function startSession() {
+    hideStaffCallBtn();
+    hideStaffCallingPopup();
+        $('#attachBtn').css({'display': 'block'});
+        $('#attachBtn').parent().removeClass('w0');
+        $('#attachBtn').parent().addClass('w33');
+}
+
+function qaCallTimeout() {
+    showStaffCallBtn();
+    hideStaffCallingPopup();
+}
+
+function getLastMessage(isStop) {
+    if (isStop) {
+        return mainView.children('div.post-person-2').last();
+    } else {
+        return mainView.children('div:last-child');
+    }
+}
+
+function receiveMessage(data) {
+    if (data.length > 0 && parent.visitChatbotType === 1) {
+        if (data[0]['post_person_type'] == 3 && !isSoldAutoActionMsg) {
+            $('.chat-btn-home').show();
+            isSoldAutoActionMsg = true;
+        }
+    }
+    var retPrintMsg = printMessage(data);
+
+    if (isInit) {
+        setTimeout(function () {
+            autoScrollToLastMessage(0);
+        }, 100);
+
+        isInit = false;
+
+    } else if (retPrintMsg.is_add_msg) {
+        if (parent.isIos()) {
+            messageRepaint();
+        }
+        var isChatOpen = (parent.getActiveWindow() == 'chat_open');
+
+        if (retPrintMsg.is_add_staff_msg) {
+            parent.postMessage('chatdealer_new_message','*');
+        }
+
+        if (isChatOpen) {
+            releasePreventScrollOut(data);
+        } else {
+            setTimeout(function () {
+                releasePreventScrollOut(data);
+            }, 500);
+        }
+    }
+}
+
+
+function receiveMessageUpdateFreeSearch(data) {
+    replaceMessageFreeSearch(data);
+}
+
+function receiveMessageUpdateFreeSearchSimulation(messageSeq, rootSeq) {
+    let qamb = getWebStorage(parent.qamb, 'local');
+    if (messageSeq in qamb) {
+        let reedMessage = qamb[messageSeq].reedMessage;
+        let qaListShow = qamb[messageSeq].freeSearchOptionListShow;
+        let notApplicable = qamb[messageSeq].notApplicable;
+        let messageHtml = '';
+        messageHtml += reedMessage;
+        messageHtml += '<p>';
+        for (let i = 0; i < qaListShow.length; i++) {
+            messageHtml += '{○}' + escapeHtml(qaListShow[i].question) + '<br />';
+        }
+        if (qamb[messageSeq].freeSearchOptionListMore.length == 0) {
+            messageHtml += '{○}' + escapeHtml(notApplicable) + '<br />';
+        }
+        messageHtml += '</p>';
+        let data = [];
+        data[0] = {
+            message_seq: messageSeq,
+            message_html: messageHtml,
+            root_seq: rootSeq
+        };
+        replaceMessageFreeSearch(data);
+    }
+}
+
+function receiveMessageUpdateQa(data) {
+    replaceMessageQa(data);
+}
+
+function messageRepaint() {
+    setTimeout(function () {
+        $('#chatView').hide();
+        setTimeout(function () {
+            $('#chatView').show();
+        }, 0);
+    }, 0);
+}
+
+function clearNewMessageWebStorage() {
+    setWebStorage(parent.mswt, {}, 'local');
+    setWebStorage(parent.vcms, {}, 'local');
+}
+
+function setWaitingMessage(postPerson, receiveData) {
+    var mswtData = getWebStorage(parent.mswt, 'local');
+    switch(postPerson) {
+        case 'staff':
+            var setData = Array.isArray(mswtData.staff) ? mswtData.staff : [];
+            var staffId = receiveData.staffId;
+            var index = setData.indexOf(staffId);
+            if (receiveData.isInput && index === -1) {
+                setData.push(receiveData.staffId);
+            } else if (!receiveData.isInput && index >= 0) {
+                setData.splice(index, 1)
+            }
+            break;
+        case 'chatBot':
+        case 'qa':
+            var setData = receiveData;
+            break;
+        case 'qaQuestion':
+            var setData =  mswtData.qaQuestion ? mswtData.qaQuestion : 0;
+            switch (receiveData) {
+                case 'add':
+                    setData++;
+                    break;
+                case 'sub':
+                    setData = (setData > 0) ? setData - 1 : 0;
+                    break;
+                case 'clr':
+                    setData = 0;
+                    break;
+            }
+            break;
+    }
+    setArrayWebStorageByKey(parent.mswt, postPerson, setData, 'local');
+    updateShowWaitingMessage();
+}
+
+function updateShowWaitingMessage() {
+    mswtData = getWebStorage(parent.mswt, 'local');
+    if (
+        mswtData.chatBot ||
+        mswtData.qa ||
+        mswtData.qaQuestion && mswtData.qaQuestion > 0 ||
+        mswtData.staff && mswtData.staff.length
+    ) {
+        var msg = '<div class="comment-box-group clearfix" style="margin-bottom: 5px;">';
+            msg += '<div class="comment-box-group-inner comment-box-left clearfix">';
+            msg += '<div class="profile-image-front profile-image3">';
+            msg += '<div class="profile-image-frame profile-image-frame2"><img src="https://chat1-662.chatdealer.jp/img/acc/p2JaSChat1-662/1/dsf/162fe03da92afd6.28494719_l.png" onerror="imgLoadRetry(this)"></div>';
+            msg += '</div>';
+        msg += '<div class="comment-box pull-left ">';
+        msg += '<div class="comment-text-group comment-text-left">';
+        msg += '<div class="comment-text-inner">';
+        msg += '<div class="comment-text" data="wait">';
+        msg += '<div class="ball-pulse-sync wait-auto-message">';
+        msg += '<div style="background-color: #333333"></div>';
+        msg += '<div style="background-color: #333333"></div>';
+        msg += '<div style="background-color: #333333"></div>';
+        msg += '</div>';
+        msg += '</div>';
+        msg += '</div>';
+        msg += '</div>';
+        msg += '</div>';
+        msg += '</div>';
+            msg += '<div class="comment-meta-left ml50">';
+        msg += '</div>';
+        msg += '</div>';
+        if (!$('#chatView > div.wait').length) {
+            $('#chatView').append('<div class="wait">' + msg + '</div>');
+        }
+
+        const vcmsData = getWebStorage(parent.vcms, 'local');
+        const isStop = (vcmsData.isStop) ? true : false;
+        if(!isStop) {
+            if (parent.visitChatbotType === 2) {
+                scrollChatLog($('#chatView')[0].scrollHeight, 0);
+                autoScrollToLastMessage(0);
+            } else if (parent.visitChatbotType === 1) {
+                if ($("#chatView div[id^=message]").length !== 0 && !$("#chatView div[id^=message]:last").hasClass('post-person-3')) {
+                    autoScrollToLastMessage(0);
+                }
+            }
+        } else {
+            scrollChatLog($('#chatView')[0].scrollHeight, 0);
+        }
+    } else {
+        removeWaitingMessage();
+    }
+}
+
+function removeWaitingMessage() {
+    $('#chatView > div.wait').remove();
+}
+
+function printMessage(data) {
+    var retVal = {is_add_msg: false, is_add_staff_msg: false};
+
+    $.each(data, function (key, val) {
+        var msg = '';
+        var postDateObj = new Date(val.post_date);
+        var postHours = postDateObj.getHours();
+        var postMinutes = postDateObj.getMinutes();
+
+        var postTime = (String(postHours).length == 1 ? '0' : '') + postHours + ':' + (String(postMinutes).length == 1 ? '0' : '') + postMinutes;
+        addClass = 'post-person-' + val.post_person_type;
+
+        var msgId = 'message' + val.message_seq;
+
+        var msgObj = $('#' + msgId);
+
+        if (!msgObj.length) {
+            if(overlay_flag) {
+                msg += '<div id="overlay-bg"></div>';
+                overlay_flag = false;
+            }
+            switch (val.post_person_type) {
+                case 2:
+
+                    msg += '<div class="comment-box-group comment-box-front clearfix">';
+                    msg += '<div class="comment-box-group-inner clearfix">';
+                    msg += '<div class="comment-box pull-right ">';
+                    msg += '<div class="comment-text-group comment-text-front">';
+                    msg += '<div class="comment-text-inner">';
+
+                    switch (val.message_type) {
+                        case 2:
+                            var defaultParam = 'chatId=' + encodeURIComponent(val.chat_id)
+                                + '&msgSeq=' + encodeURIComponent(val.message_seq)
+                                + '&vgAtxt=' + encodeURIComponent(parent.vgAtxt)
+                                + '&vgSid=' + encodeURIComponent(parent.vgSid)
+                                + '&eacc=' + encodeURIComponent(parent.eacc);
+
+                            $.each(val.attach, function (attachKey, attachVal) {
+                                msg += '<div class="comment-attach" id="attach' + escapeHtml(escapeJsString(String(attachVal.file))) + '" data-person="visitor">' +
+                                    '<div>';
+
+                                msg += '' +
+                                    '<div class="deleted-attach" ' + (attachVal.is_deleted? '' : 'hidden') + '>' +
+                                        '<div class="enable-attach-inner" title="削除済み">' +
+                                        '<div class="attach-thumbnail">';
+                                        if(attachVal.thumbnail) {
+                                            msg += '<span class="material-icons-image"></span>';
+                                        } else {
+                                            msg += '<span class="material-icons-insert_drive_file"></span>';
+                                        }
+                                        msg += '</div>' +
+                                                '<div class="attach-text">' +
+                                                '<p class="attach-file-name">' + escapeOutput(attachVal.name) + '</p>' +
+                                                '</div>' +
+                                        '</div>';
+                                if(attachVal.thumbnail) {
+                                    msg += '<div class="deleted-label">この画像は削除されました</div>';
+                                } else {
+                                    msg += '<div class="deleted-label">このファイルは削除されました</div>';
+                                }
+                                msg += '</div>';
+
+                                if (!attachVal.is_deleted) {
+                                    msg += '<div class="enable-attach change_class1">' +
+                                        '<div class="enable-attach-inner small-attach-inner ' + (attachVal.thumbnail ? 'is-thumbnail' : '') + '" onclick="onFileDownloadMenu(' + (String(val.message_seq) + String(attachKey) + String(attachVal.file)) + ')">' +
+                                        '<div class="attach-thumbnail ' + (attachVal.thumbnail ? 'is-thumbnail' : '') + '">';
+                                    if (attachVal.thumbnail) {
+                                        msg += '<img src="' + appendVersion('/chat/chatOpen/thumbnail?' + defaultParam + '&id=' + encodeURIComponent(attachVal.thumbnail) + '&tltn=' + encodeURIComponent(attachVal.tltn)) + '">';
+                                    } else {
+                                        msg += '<div class="attach-no-img">';
+                                        switch (attachVal.ext) {
+                                            case 'pdf':
+                                                msg += '<span class="material-icons-ico_pdf"></span>';
+                                                break;
+                                            case 'txt':
+                                                msg += '<span class="material-icons-ico_txt"></span>';
+                                                break;
+                                            case 'csv':
+                                                msg += '<span class="material-icons-ico_csv"></span>';
+                                                break;
+                                            case 'xls':
+                                            case 'xlsx':
+                                            case 'xlsm':
+                                                msg += '<span class="material-icons-ico_excel"></span>';
+                                                break;
+                                            case 'doc':
+                                            case 'docx':
+                                            case 'docm':
+                                                msg += '<span class="material-icons-ico_word"></span>';
+                                                break;
+                                            case 'ppt':
+                                            case 'pps':
+                                            case 'pptx':
+                                            case 'pptm':
+                                            case 'ppsx':
+                                                msg += '<span class="material-icons-ico_powerpoint"></span>';
+                                                break;
+                                            default:
+                                                msg += '<span class="material-icons-ico_other"></span>';
+                                                break;
+                                        }
+                                        msg += '</div>';
+                                    }
+                                    msg += '</div>' +
+                                        '<div class="attach-text">' +
+                                            '<p class="attach-file-name" title="ダウンロード">' + escapeOutput(attachVal.name) + '</p>' +
+                                            '<p class="attach-file-size">' + formatFileSize(attachVal.size) + '</p>' +
+                                        '</div>' +
+                                        '<div class="attach-download-wrap">' +
+                                            '<div class="attach-download-inner">' +
+                                                '<span class="att-download-btn" title="ダウンロード">' +
+                                                    '<span class="material-icons-more_vert file-download"></span>' +
+                                                '</span>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<ul id="fileDownloadMenu-' + (String(val.message_seq) + String(attachKey) + String(attachVal.file)) + '" class="dropdown-menu file-download-menu" style="visibility: hidden">' +
+                                            '<li title="ダウンロード">' +
+                                                '<div class="att-download-btn" onclick="fileDownload(\'' + defaultParam + '&id=' + encodeURIComponent(attachVal.file) + '\', \'' + escapeJsString(escapeHtml(attachVal.name)) + '\', \'' + escapeOutput(attachVal.mime_type) + '\');">' +
+                                                    '<span class="material-icons-file_download file-download"></span>ダウンロード' +
+                                                '</div>' +
+                                            '</li>' +
+                                            '<li title="削除">' +
+                                                '<div class="att-delete-btn" onclick="fileDelete(\'' + escapeHtml(escapeJsString(val.chat_id)) + '\',\'' + escapeHtml(escapeJsString(attachVal.file)) + '\',\'' + escapeHtml(escapeJsString(attachVal.name)) + '\');">' +
+                                                    '<span title="削除" class="material-icons-delete file-delete"></span>削除' +
+                                                '</div>' +
+                                            '</li>' +
+                                        '</ul>' +
+                                    '</div>' +
+                                    '</div>';
+                                        objAttachControl.incrementUploadNum();
+                                }
+
+                                msg += '</div>' +
+                                    '</div>';
+                            });
+                            break;
+
+                        case 3:
+                            msg += '<div class="comment-delete-attach">' + escapeOutput(val.message) + '</div>';
+                            break;
+
+                        default:
+                            msg += '<div class="comment-text">' + escapeOutput(val.message, true) + '</div>';
+                            break;
+                    }
+
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '<div class="comment-meta-right">';
+                        msg += '<span class="comment-meta-date">' + postTime + '</span>';
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                    break;
+
+                case 1:
+                    retVal.is_add_staff_msg = true;
+
+                    msg += '<div class="comment-box-group clearfix">';
+                        msg += '<div class="comment-box-group-inner comment-box-left clearfix">';
+                        msg += '<div class="profile-image-front profile-image3">';
+                        msg += '<div class="profile-image-frame profile-image-frame2"><img src="https://chat1-662.chatdealer.jp' + val.staff_img_l_src + '" onerror="imgLoadRetry(this)"></div>';
+                        msg += '</div>';
+                    msg += '<div class="comment-box pull-left ">';
+                    msg += '<div class="comment-text-group comment-text-left">';
+                    msg += '<div class="comment-text-inner">';
+
+                    switch (val.message_type) {
+                        case 2:
+                            var defaultParam = 'chatId=' + encodeURIComponent(val.chat_id)
+                                + '&msgSeq=' + encodeURIComponent(val.message_seq)
+                                + '&vgAtxt=' + encodeURIComponent(parent.vgAtxt)
+                                + '&vgSid=' + encodeURIComponent(parent.vgSid)
+                                + '&eacc=' + encodeURIComponent(parent.eacc);
+
+                            $.each(val.attach, function (attachKey, attachVal) {
+                                msg += '<div class="comment-attach" id="attach' + escapeHtml(escapeJsString(String(attachVal.file))) + '" data-person="staff">' +
+                                    '<div>';
+
+                                msg += '' +
+                                    '<div class="deleted-attach" ' + (attachVal.is_deleted? '' : 'hidden') + '>' +
+                                    '<div class="enable-attach-inner" title="削除済み">' +
+                                    '<div class="attach-thumbnail">';
+                                if(attachVal.thumbnail) {
+                                    msg += '<span class="material-icons-image"></span>';
+                                } else {
+                                    msg += '<span class="material-icons-insert_drive_file"></span>';
+                                }
+                                msg += '</div>' +
+                                        '<div class="attach-text">' +
+                                        '<p class="attach-file-name">' + escapeOutput(attachVal.name) + '</p>' +
+                                        '</div>' +
+                                        '</div>';
+                                if(attachVal.thumbnail) {
+                                    msg += '<div class="deleted-label' + (val.post_person_type === 1 ? 'staff': '') + '">この画像は削除されました</div>';
+                                } else {
+                                    msg += '<div class="deleted-label' + (val.post_person_type === 1 ? 'staff': '') + '">このファイルは削除されました</div>';
+                                }
+                                msg += '</div>';
+
+                                if (!attachVal.is_deleted) {
+                                    msg += '<div class="enable-attach change_class2">' +
+                                        '<div class="enable-attach-inner small-attach-inner ' + (attachVal.thumbnail ? 'is-thumbnail' : '') + '" onclick="fileDownload(\'' + defaultParam + '&id=' + encodeURIComponent(attachVal.file) + '\', \'' + escapeJsString(escapeHtml(attachVal.name)) + '\', \'' + escapeOutput(attachVal.mime_type) + '\');return false;">' +
+                                        '<div class="attach-thumbnail ' + (attachVal.thumbnail ? 'is-thumbnail' : '') + '">';
+                                    if (attachVal.thumbnail) {
+                                        msg += '<img src="' + appendVersion('/chat/chatOpen/thumbnail?' + defaultParam + '&id=' + encodeURIComponent(attachVal.thumbnail) + '&tltn=' + encodeURIComponent(attachVal.tltn)) + '">';
+                                    } else {
+                                        msg += '<div class="attach-no-img">';
+                                        switch (attachVal.ext) {
+                                            case 'pdf':
+                                                msg += '<span class="material-icons-ico_pdf"></span>';
+                                                break;
+                                            case 'txt':
+                                                msg += '<span class="material-icons-ico_txt"></span>';
+                                                break;
+                                            case 'csv':
+                                                msg += '<span class="material-icons-ico_csv"></span>';
+                                                break;
+                                            case 'xls':
+                                            case 'xlsx':
+                                            case 'xlsm':
+                                                msg += '<span class="material-icons-ico_excel"></span>';
+                                                break;
+                                            case 'doc':
+                                            case 'docx':
+                                            case 'docm':
+                                                msg += '<span class="material-icons-ico_word"></span>';
+                                                break;
+                                            case 'ppt':
+                                            case 'pps':
+                                            case 'pptx':
+                                            case 'pptm':
+                                            case 'ppsx':
+                                                msg += '<span class="material-icons-ico_powerpoint"></span>';
+                                                break;
+                                            default:
+                                                msg += '<span class="material-icons-ico_other"></span>';
+                                                break;
+                                        }
+                                        msg += '</div>';
+                                    }
+                                    msg += '</div>' +
+                                        '<div class="attach-text">' +
+                                            '<p class="attach-file-name" title="ダウンロード">' + escapeOutput(attachVal.name) + '</p>' +
+                                            '<p class="attach-file-size">(' + formatFileSize(attachVal.size) + ')</p>' +
+                                        '</div>' +
+                                        '<div class="attach-download-wrap">' +
+                                            '<div class="attach-download-inner">' +
+                                                '<span class="att-download-btn" title="ダウンロード">' +
+                                                    '<span class="material-icons-file_download file-download"></span>' +
+                                                '</span>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '</div>';
+                                }
+
+                                msg += '</div>' +
+                                    '</div>';
+                            });
+                            break;
+
+                        case 3:
+                            msg += '<div class="comment-delete-attach">' + escapeOutput(val.message) + '</div>';
+                            break;
+
+                        default:
+                            if ((val.message_html != null) && (val.message_html !== '')) {
+                                msg += '<div class="comment-text editor" data="' + val.message_seq + '">' + outputForDecoratedChatMessage(val.message_html, val.message_seq, val.root_seq) + '</div>';
+                            } else {
+                                msg += '<div class="comment-text" data="' + val.message_seq + '">' + escapeOutput(val.message, true, true, val.message_seq, val.root_seq) + '</div>';
+                            }
+                            break;
+                    }
+
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                        msg += '<div class="comment-meta-left ml50">';
+                        msg += '<span class="comment-meta-date">' + postTime + '</span>';
+                    msg += '</div>';
+                    msg += '</div>';
+
+                    break;
+
+                case 3:
+                    if ($("#chatView div[id^=message]:last").hasClass(addClass)) {
+                        let last = $("#chatView div[id^=message]:last");
+                        last.find('.comment-meta-left').css({'display': 'none'});
+                        last.find('div.comment-box-group').css({'margin-bottom': '5px'});
+                    }
+
+                    if (val.auto_action_id) {
+                        setArrayWebStorageByKey(parent.msdt, val.message_seq, {
+                            'auto_action_id': val.auto_action_id,
+                            'passed_auto_action_ids': val.passed_auto_action_ids,
+                            'assess': val.assess,
+                            'good_cnt': val.good_cnt,
+                            'bad_cnt': val.bad_cnt
+                        }, 'local');
+                    } else {
+                        let msdtVal = getWebStorage(parent.msdt, 'local');
+                        if (msdtVal[val.message_seq]) {
+                            val.auto_action_id = msdtVal[val.message_seq].auto_action_id;
+                            val.qa_id = msdtVal[val.message_seq].qa_id;
+                            val.qa_machine_learning_id = msdtVal[val.message_seq].qa_machine_learning_id;
+                            val.passed_auto_action_ids = msdtVal[val.message_seq].passed_auto_action_ids;
+                            val.assess = msdtVal[val.message_seq].assess;
+                            val.good_cnt = msdtVal[val.message_seq].good_cnt;
+                            val.bad_cnt = msdtVal[val.message_seq].bad_cnt;
+                            if (msdtVal[val.message_seq].message_type) {
+                                val.message_type = msdtVal[val.message_seq].message_type;
+                            }
+                        }
+                    }
+
+                    retVal.is_add_staff_msg = true;
+
+                    msg += '<div class="comment-box-group clearfix full-width">';
+                        msg += '<div class="comment-box-group-inner comment-box-left clearfix">';
+                        msg += '<div class="profile-image-front profile-image3">';
+                        if ($("#chatView div[id^=message]:last").hasClass(addClass)) {
+                            // 連続投稿の場合はアイコンを非表示にする
+                            msg += '<div class="profile-image-frame profile-image-frame2" style="display:none;"><img src="https://chat1-662.chatdealer.jp' + val.staff_img_l_src + '" onerror="imgLoadRetry(this)"></div>';
+                        } else {
+                            msg += '<div class="profile-image-frame profile-image-frame2"><img src="https://chat1-662.chatdealer.jp' + val.staff_img_l_src + '" onerror="imgLoadRetry(this)"></div>';
+                        }
+                        msg += '</div>';
+
+                    let isQaEnquete = false;
+                    let isQaEnqueteDisplayComennt = false;
+                    if (val.message_type === 10) {
+                        isQaEnquete = true;
+                        const msdt = getWebStorage(parent.msdt, 'local');
+                        const qaEnquete = msdt[val.message_seq];
+                        if (qaEnquete.assessment === 2) {
+                            isQaEnqueteDisplayComennt = true;
+                        }
+                    }
+                    msg += '<div class="comment-box pull-left' + (isQaEnqueteDisplayComennt ? ' full-width' : '') + '">';
+                    msg += '<div class="comment-text-group comment-text-left' + (isQaEnquete ? ' qa-answer-enquete' : '') + '">';
+                    msg += '<div class="comment-text-inner">';
+                    switch (val.message_type) {
+                        case 4:
+                        case 5:
+                        case 6:
+                            msg += '<div class="comment-text" data="' + val.message_seq + '"><a href="#" onclick="parent.showQueryForm(' + escapeJsString(val.query_form_id) + ')">' + escapeOutput(val.message) + '</a></div>';
+                            break;
+                        case 8:
+                        case 9:
+                            msg += '<div class="comment-text" data="' + val.message_seq + '"><a href="#" onclick="parent.execScenarioTopFreeSearch(' + escapeJsString(val.root_seq) + ')">' + escapeOutput(val.message) + '</a></div>';
+                            break;
+                        case 10:
+                            const name = 'selectEnq' + val.message_seq;
+                            const msdt = getWebStorage(parent.msdt, 'local');
+                            const qaEnquete = msdt[val.message_seq];
+                            const qaAnswer = msdt[qaEnquete.reply_to];
+                            const reportDate = qaAnswer.report_date;
+                            const isSelectGood = (qaEnquete.assessment === 1);
+                            const isSelectBad = (qaEnquete.assessment === 2);
+                            const isCommented = (qaEnquete.enquete_status === 3);
+
+                            msg += '<div class="qa-answer-enquete-header">';
+                            msg += '  <div class="qa-answer-enquete-title">';
+                            msg += '    <span class="qa-answer-enquete-title-icon"><span class="material-icons-edit"></span></span>回答アンケート';
+                            msg += '  </div>';
+                            msg += '</div>';
+                            msg += '<div class="qa-answer-enquete-body">';
+                            msg += '  <div class="comment-text">';
+                            msg += '    <div class="qa-answer-enquet-caption">この回答は役に立ちましたか？</div>';
+                            msg += '    <div class="qa-answer-enquet-supplement">※評価は回答精度の向上に利用されます。</div>';
+                            msg += '  </div>';
+                            msg += '  <div class="qa-answer-enquete-select">';
+                            msg += '    <label for="' + name + '_good" class="comment-select-text qa-answer-enquete-select-text' + (isSelectGood ? ' selected' : (isSelectBad ? ' disabled' : '')) + '">';
+                            msg += '      <input type="radio" name="' + name + '_good" id="' + name + '_good" style="display: none;" onclick="selectedQaEnquete(unescapeHtml(\'' + escapeHtml(escapeJsString(val.message_seq)) + '\'), true, false, unescapeHtml(\'' + escapeHtml(escapeJsString(qaAnswer.qa_id)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(qaAnswer.qa_machine_learning_id)) + '\'), \'' + escapeHtml(escapeJsString(reportDate)) + '\', unescapeHtml(\'' + escapeHtml(escapeJsString(val.chat_id)) + '\'))"' + (isSelectGood || isSelectBad ? ' disabled' : '') + '><span class="qa-answer-enquete-select-icon material-icons-thumb_up"></span>役に立った';
+                            msg += '    </label>';
+                            msg += '    <label for="' + name + '_bad" class="comment-select-text qa-answer-enquete-select-text' + (isSelectBad ? ' selected' : (isSelectGood ? ' disabled' : '')) + '">';
+                            msg += '      <input type="radio" name="' + name + '_bad" id="' + name + '_bad" style="display: none;" onclick="selectedQaEnquete(unescapeHtml(\'' + escapeHtml(escapeJsString(val.message_seq)) + '\'), false, true, unescapeHtml(\'' + escapeHtml(escapeJsString(qaAnswer.qa_id)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(qaAnswer.qa_machine_learning_id)) + '\'), \'' + escapeHtml(escapeJsString(reportDate)) + '\', unescapeHtml(\'' + escapeHtml(escapeJsString(val.chat_id)) + '\'))"' + (isSelectGood || isSelectBad ? ' disabled' : '') + '><span class="qa-answer-enquete-select-icon material-icons-thumb_down"></span>役に立たなかった';
+                            msg += '    </label>';
+                            msg += '  </div>';
+                            msg += '  <div class="comment-text qa-answer-enquete-bad-comment"' + (!isQaEnqueteDisplayComennt ? ' style="display: none;"' : '') +'>';
+                            msg += '    <form>';
+                            msg += '      <div>' + 'よろしければ上記を選択した理由をお聞かせください。'.replace(/\n/g, '<br>') + '</div>';
+                            msg += '      <div>';
+                            msg += '        <textarea name="qaEnqueteComment" placeholder="' + (isCommented ? '' : 'いただいたコメントは今後の改善に役立てます。') + '" class="query-form-textarea query-form-text qa-answer-enquete-textarea"' + (isCommented ? ' disabled' : '') + '></textarea>';
+                            msg += '      </div>';
+                            msg += '      <div class="qa-answer-enquete-send-button">';
+                            msg += '        <input type="submit" value="回答する" class="btn btn-primary qa-answer-enquete-submit-btn"' + (isCommented ? ' disabled' : '') + '>';
+                            msg += '      </div>';
+                            msg += '      <input type="hidden" name="enqueteChatId" class="enqueteChatId" value="' + val.chat_id + '">';
+                            msg += '      <input type="hidden" name="enqueteMessageSeq" class="enqueteMessageSeq" value="' + val.message_seq + '">';
+                            msg += '    </form>';
+                            msg += '  </div>';
+                            msg += '</div>';
+                            break;
+                        case 1:
+                        default:
+                            if ((val.message_html != null) && (val.message_html !== '')) {
+                                if (val.message_html.indexOf('{○}') >= 0) {
+                                    const isFreeSearchSelectOption =
+                                            parent.visitChatbotType === 1
+                                            && ('free_search_option_list' in val || getWebStorage(parent.qamb, 'local')[val.message_seq] != null);
+                                    let reportDate = '';
+                                    if (parent.visitChatbotType === 2 && getWebStorage(parent.qamb, 'local')[val.message_seq]) {
+                                        let qamb = getWebStorage(parent.qamb, 'local')[val.message_seq];
+                                        reportDate = qamb['reportDate'];
+                                    }
+                                    msg += '<div class="comment-text editor qa-message" data="' + val.message_seq + '">' + outputForDecoratedChatMessage(val.message_html, val.message_seq, val.root_seq, val.auto_action_id, val.passed_auto_action_ids, isFreeSearchSelectOption, reportDate, val.reply_to) +'</div>';
+                                } else {
+                                    msg += '<div class="comment-text editor" data="' + val.message_seq + '">' + outputForDecoratedChatMessage(val.message_html, val.message_seq, val.root_seq, val.auto_action_id, val.passed_auto_action_ids) +'</div>';
+                                }
+                            } else {
+                                msg += '<div class="comment-text" data="' + val.message_seq + '">' + escapeOutput(val.message, true, true, val.message_seq, val.root_seq, val.auto_action_id, val.passed_auto_action_ids) + '</div>';
+                            }
+                    }
+                    msg += '</div>';
+
+                    if (val.attach && val.attach.length) {
+                        msg += '<div class="mt10">';
+                        $.each(val.attach, function (attachKey, attachVal) {
+                            msg += '<div class="comment-attach" id="attach' + escapeHtml(escapeJsString(String(attachVal.file))) + '" data-person="visitor">' +
+                                    '<div>';
+
+                            msg += '' +
+                                    '<div class="deleted-attach" ' + (attachVal.is_deleted? '' : 'hidden') + '>' +
+                                    '<div class="enable-attach-inner" title="削除済み">' +
+                                    '<div class="attach-thumbnail">';
+                            if(attachVal.thumbnail) {
+                                msg += '<span class="material-icons-image"></span>';
+                            } else {
+                                msg += '<span class="material-icons-insert_drive_file"></span>';
+                            }
+                            msg += '</div>' +
+                                    '<div class="attach-text">' +
+                                    '<p class="attach-file-name">' + escapeOutput(attachVal.name) + '</p>' +
+                                    '</div>' +
+                                    '</div>';
+                            if(attachVal.thumbnail) {
+                                msg += '<div class="deleted-label">この画像は削除されました</div>';
+                            } else {
+                                msg += '<div class="deleted-label">このファイルは削除されました</div>';
+                            }
+                            msg += '</div>';
+
+                            if (!attachVal.is_deleted) {
+                                msg += '<div class="enable-attach change_class3">' +
+                                        '<div class="enable-attach-inner small-attach-inner ' + (attachVal.thumbnail_url ? 'is-thumbnail' : '') + '" onclick="fileUrlDownload(\'' + attachVal.file_url + '\', \'' + escapeJsString(escapeHtml(attachVal.name)) + '\', \'' + escapeOutput(attachVal.mime_type) + '\');">' +
+                                        '<div class="attach-thumbnail ' + (attachVal.thumbnail_url ? 'is-thumbnail' : '') + '">';
+                                if (attachVal.thumbnail_url) {
+                                    msg += '<img src="' + setNoCacheParameter(attachVal.thumbnail_url) + '">';
+                                } else {
+                                    msg += '<div class="attach-no-img">';
+                                    switch (attachVal.ext) {
+                                        case 'pdf':
+                                            msg += '<span class="material-icons-ico_pdf"></span>';
+                                            break;
+                                        case 'txt':
+                                            msg += '<span class="material-icons-ico_txt"></span>';
+                                            break;
+                                        case 'csv':
+                                            msg += '<span class="material-icons-ico_csv"></span>';
+                                            break;
+                                        case 'xls':
+                                        case 'xlsx':
+                                        case 'xlsm':
+                                            msg += '<span class="material-icons-ico_excel"></span>';
+                                            break;
+                                        case 'doc':
+                                        case 'docx':
+                                        case 'docm':
+                                            msg += '<span class="material-icons-ico_word"></span>';
+                                            break;
+                                        case 'ppt':
+                                        case 'pps':
+                                        case 'pptx':
+                                        case 'pptm':
+                                        case 'ppsx':
+                                            msg += '<span class="material-icons-ico_powerpoint"></span>';
+                                            break;
+                                        default:
+                                            msg += '<span class="material-icons-ico_other"></span>';
+                                            break;
+                                    }
+                                    msg += '</div>';
+                                }
+                                msg += '</div>' +
+                                        '<div class="attach-text">' +
+                                        '<p class="attach-file-name" title="ダウンロード">' + escapeOutput(attachVal.name) + '</p>' +
+                                        '<p class="attach-file-size">(' + formatFileSize(attachVal.size) + ')</p>' +
+                                        '</div>' +
+                                        '<div class="attach-download-wrap">' +
+                                            '<div class="attach-download-inner">' +
+                                                '<span class="att-download-btn" title="ダウンロード">' +
+                                                    '<span class="material-icons-file_download file-download"></span>' +
+                                                '</span>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '</div>';
+                            }
+
+                            msg += '</div>' +
+                                    '</div>';
+                        });
+                        msg += '</div>';
+                    }
+
+                    if (parent.isEnableActEnq) {
+                        if (val.assess) {
+                            var name = 'selectEnq' + val.message_seq;
+                            var id;
+                            var chosen = '';
+                            var selectedAry = {1: '', 2: '', length: 2};
+                            if (val.good_cnt || val.bad_cnt) {
+                                var chosen = 'chosen';
+                            }
+                            msg += '<div class="comment-footer">';
+                            msg += '<span class="comment-footer-text">' + parent.actEnqComment + '</span>';
+                            msg += '<p class="comment-footer-unit">';
+                            if (val.good_cnt) {
+                                msg += '<label for="' + name + '_1" class="' + chosen + ' selected"><input name="' + name + '" id="' + name + '_1" type="radio" style="display: none" disabled><span class="material-icons-thumb_up"></label>';
+                                msg += '<label for="' + name + '_2" class="' + chosen + '"><input name="' + name + '" id="' + name + '_2" type="radio" style="display: none" disabled><span class="material-icons-thumb_down"></label>';
+                            } else if (val.bad_cnt) {
+                                msg += '<label for="' + name + '_1" class="' + chosen + '"><input name="' + name + '" id="' + name + '_1" type="radio" style="display: none" disabled><span class="material-icons-thumb_up"></label>';
+                                msg += '<label for="' + name + '_2" class="' + chosen + ' selected"><input name="' + name + '" id="' + name + '_2" type="radio" style="display: none" disabled><span class="material-icons-thumb_down"></label>';
+                            } else {
+                                msg += '<label for="' + name + '_1" class="' + chosen + '"><input name="' + name + '" id="' + name + '_1" type="radio" style="display: none" onclick="selectedActEnquete(unescapeHtml(\'' + escapeHtml(escapeJsString(val.message_seq)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(1)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(0)) + '\'))"><span class="material-icons-thumb_up"></label>';
+                                msg += '<label for="' + name + '_2" class="' + chosen + '"><input name="' + name + '" id="' + name + '_2" type="radio" style="display: none" onclick="selectedActEnquete(unescapeHtml(\'' + escapeHtml(escapeJsString(val.message_seq)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(0)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(1)) + '\'))"><span class="material-icons-thumb_down"></label>';
+                            }
+                            msg += '</p>';
+                            msg += '</div>';
+                        }
+                    }
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                        msg += '<div class="comment-meta-left ml50">';
+                        msg += '<span class="comment-meta-date">' + postTime + '</span>';
+                    msg += '</div>';
+                    msg += '</div>';
+
+                    break;
+
+                case 5:
+                    retVal.is_add_staff_msg = true;
+
+                    msg += '<div class="comment-box-group clearfix">';
+                        msg += '<div class="comment-box-group-inner comment-box-left clearfix">';
+                        msg += '<div class="profile-image-front profile-image3">';
+                        msg += '<div class="profile-image-frame profile-image-frame2"><img src="https://chat1-662.chatdealer.jp' + val.staff_img_l_src + '" onerror="imgLoadRetry(this)"></div>';
+                        msg += '</div>';
+                    msg += '<div class="comment-box pull-left ">';
+                    msg += '<div class="comment-text-group comment-text-left">';
+                    msg += '<div class="comment-text-inner">';
+
+                    switch (val.message_type) {
+                        case 3:
+                            msg += '<div class="comment-delete-attach">' + escapeOutput(val.message) + '</div>';
+                            break;
+
+                        default:
+                            msg += '<div class="comment-text" data="' + val.message_seq + '">' + escapeOutput(val.message, true, true, val.message_seq) + '</div>';
+                            break;
+                    }
+
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                    msg += '</div>';
+                        msg += '<div class="comment-meta-left ml50">';
+                        msg += '<span class="comment-meta-date">' + postTime + '</span>';
+                    msg += '</div>';
+                    msg += '</div>';
+
+                    break;
+            }
+            msg += '<div class="spacer-comment"></div>';
+
+            if (val.post_person_type == 2) {
+                isGetReversMsg = true;
+            }
+
+            removeWaitingMessage();
+            $('#chatView').append('<div id="' + msgId + '" class="' + addClass + '">' + msg + '</div>');
+            $('#' + msgId)
+                .find('.comment-text img')
+                .on('error', function (e) {
+                    const $img = $(e.target);
+                    const dispName = $img.attr('alt') || $img.attr('src');
+                    const $attachFileName = $('<div class="attach-file-name2"></div>')
+                        .append('<span class="material-icons-insert_drive_file"></span>')
+                        .append(escapeHtml(dispName));
+                    const $altImg = $('<div class="deleted-attach"></div>')
+                        .append($attachFileName)
+                        .append('<div class="deleted-label">削除済み</div>');
+                    $img.replaceWith($altImg);
+                });
+            retVal.is_add_msg = true;
+
+            if (val.post_person_type == 2) {
+                autoScrollToLastMessage(0);
+                setTimeout(function () {
+                    updateShowWaitingMessage();
+                }, 1000);
+            } else {
+                updateShowWaitingMessage();
+            }
+        }
+
+        if (lastMsgSeq < val.message_seq) {
+            lastMsgSeq = val.message_seq;
+        }
+
+        if (parent.visitChatbotType == 2 && val.post_person_type == 2) {
+            setPreventScrollOut();
+            let lsq = getWebStorage(parent.wsKeyLsq, 'local');
+            if (lsq < val.message_seq) {
+                setWebStorage(parent.wsKeyLsq, lastMsgSeq, 'local');
+            }
+        }
+    });
+
+    return retVal;
+}
+
+function replaceMessageFreeSearch(data) {
+    $.each(data, function (key, val) {
+        var msgId = 'message' + val.message_seq;
+        var msgObj = $('#' + msgId);
+        if (msgObj.length) {
+            msgObj.find('div.comment-text').html(outputForDecoratedChatMessage(val.message_html, val.message_seq, val.root_seq, '', '', true));
+        }
+    });
+}
+
+function replaceMessageQa(data) {
+    $.each(data, function (key, val) {
+        var msgId = 'message' + val.message_seq;
+        var msgObj = $('#' + msgId);
+        if (msgObj.length) {
+            msgObj.find('div.comment-text').html(outputForDecoratedChatMessage(val.message_html, val.message_seq, val.root_seq, '', '', false, val.report_date));
+        }
+    });
+    scrollChatLog(callQaMoreScrollTop);
+}
+
+function receiveDeleteAttach (file) {
+    var target = $('#attach' + file);
+
+    if (target.length) {
+        if (target.find('.enable-attach:visible').length) {
+            target.find('.enable-attach').hide();
+            target.find('.deleted-attach').show();
+
+            if (target.data('person') == 'visitor') {
+                objAttachControl.decrementUploadNum();
+            }
+        }
+    }
+}
+
+function messageToRead(lastMessageSeq) {
+    $('#chatView').children('div').each(function(idx) {
+        if (idx >= lastMessageSeq) {
+            return false;
+        }
+        $(this).find('.comment-meta-read').removeClass('invisible');
+    });
+}
+
+function selectedOption(msg, id, passedIds, messageSeq, reportDate, el) {
+    if (isNodeConnect) {
+        setPreventScrollOut();
+
+        if (parent.visitChatbotType == 2) {
+            setWebStorage(parent.wsKeyMsq, [messageSeq - 1, msg], 'local');
+        }
+
+        if (el != null && !!parseInt(el.dataset.isFreeSearchSelectOption)) {
+            parent.selectFreeSearch(messageSeq, el.dataset.rootSeq, msg);
+        } else {
+            parent.sendMessage(msg, true, reportDate, messageSeq);
+        }
+        if (id) {
+            parent.sendSelectedOption(msg, id, passedIds);
+        }
+    } else {
+        showSendWaitingPopup();
+        selectedOptionCache.push({
+            msg: msg,
+            id: id,
+            passedIds: passedIds,
+            messageSeq: messageSeq,
+            reportDate: reportDate,
+            el: el
+        });
+    }
+}
+
+function setPreventScrollOut() {
+    setWebStorage(parent.vcms, {"isStop": true, "isResClkMsg": false}, 'local');
+}
+
+function releasePreventScrollOut(data) {
+    var vcmsData = getWebStorage(parent.vcms, 'local');
+    var isStop = (vcmsData.isStop) ? true : false;       
+
+    if (isStop) {
+        switch (data[0].post_person_type) {
+            case 1:
+                vcmsData.isStop = false;
+                setWebStorage(parent.vcms, vcmsData, 'local');
+                autoScrollToLastMessage(0);
+                break;
+            case 2:
+                var isResClkMsg = vcmsData.isResClkMsg ? true : false;
+                if (isResClkMsg) {
+                    vcmsData.isStop = false;
+                } else {
+                    vcmsData.isResClkMsg = true;
+                }
+                setWebStorage(parent.vcms, vcmsData, 'local');
+                autoScrollToLastMessage(0);
+                break;
+            case 3:
+                if (parent.visitChatbotType == 2 && data[0].is_answer_complete) {
+                    vcmsData.isStop = false;
+                } else if (parent.visitChatbotType == 1) {
+                    vcmsData.isStop = false;
+                }
+                autoScrollToLastMessage(0);
+                setWebStorage(parent.vcms, vcmsData, 'local');
+                break;
+        }
+    } else {
+        if (parent.visitChatbotType == 1) {
+            const cvMessageEl = $("#chatView div[id^=message]");
+            const cvMessageElLast = $("#chatView div[id^=message]:last");
+
+            if (cvMessageEl.length !== 0 &&
+                !(cvMessageEl.length === 1 && cvMessageElLast.hasClass('post-person-3')) &&
+                !(cvMessageEl.length > 1 && cvMessageElLast.hasClass('post-person-3') && $(cvMessageEl[cvMessageEl.length - 2]).hasClass('post-person-3'))
+            ) {
+                autoScrollToLastMessage(0);
+            } else {
+                if (cvMessageEl.length > 1 && cvMessageElLast.hasClass('post-person-3') && $(cvMessageEl[cvMessageEl.length - 2]).hasClass('post-person-3')) {
+                    if (cvMessageElLast.outerHeight() > $(cvMessageEl[cvMessageEl.length - 2]).outerHeight()) {
+                        autoScrollToLastMessage(0);
+                    }
+                }
+            }
+        } else {
+            autoScrollToLastMessage(0);
+        }
+    }
+}
+
+function selectedActEnquete(msgSeq, goodCnt, badCnt) {
+    if (isNodeConnect) {
+        let msdtVal = getWebStorage(parent.msdt, 'local');
+        if (msdtVal[msgSeq]) {
+            let row = msdtVal[msgSeq];
+            row.good_cnt = parseInt(goodCnt);
+            row.bad_cnt = parseInt(badCnt);
+            setArrayWebStorageByKey(parent.msdt, msgSeq, row, 'local');
+            parent.sendSelectedActEnquete(goodCnt, badCnt, row.auto_action_id, row.passed_auto_action_ids);
+        }
+    } else {
+        selectedEnqueteCache.push({
+            msgSec: msgSeq,
+            goodCnt: goodCnt,
+            badCnt: badCnt
+        });
+    }
+}
+
+function clickUrl(autoActionId, url, msgSeq, index, passedAutoActionIds) {
+    if (autoActionId == null || autoActionId === '') {
+        return;
+    }
+
+    var clickUrlStorage = getWebStorage(parent.wsUc, 'local').length != 0 ? JSON.parse(getWebStorage(parent.wsUc, 'local')) : {};
+    let escapedUrl = escapeHtml(url);
+    if (clickUrlStorage[escapedUrl]) {
+        for (let i = 0; i < clickUrlStorage[escapedUrl].length; i++) {
+            clickUrlStorage[escapedUrl][i] = JSON.parse(clickUrlStorage[escapedUrl][i]);
+            if (clickUrlStorage[escapedUrl][i][0] == autoActionId && clickUrlStorage[escapedUrl][i][1] == msgSeq && clickUrlStorage[escapedUrl][i][2] == false && clickUrlStorage[escapedUrl][i][4] == index) {
+                clickUrlStorage[escapedUrl][i][2] = true;
+                parent.urlClickCount(url, autoActionId, clickUrlStorage[escapedUrl][i][3], passedAutoActionIds);
+            }
+            clickUrlStorage[escapedUrl][i] = JSON.stringify(clickUrlStorage[escapedUrl][i]);
+        }
+        setWebStorage(parent.wsUc, JSON.stringify(clickUrlStorage), 'local');
+    }
+}
+
+function selectedQaEnquete(msgSeq, goodCnt, badCnt, qaId, qaMId, reportDate, chatId) {
+    if (isNodeConnect) {
+        const msdt = getWebStorage(parent.msdt, 'local');
+        const qaEnquete = msdt[msgSeq];
+        const qaAnswer = msdt[qaEnquete.reply_to];
+        if (qaEnquete && qaAnswer) {
+            qaEnquete.enquete_status = 2;
+            qaEnquete.assessment = goodCnt ? 1 : badCnt ? 2 : qaEnquete.assessment;
+            msdt[msgSeq] = qaEnquete;
+            setWebStorage(parent.msdt, msdt, 'local');
+            const selectedQuestion = [
+                qaAnswer.question_message_seq,
+                qaAnswer.question
+            ];
+            const reportDate = qaAnswer.report_date;
+
+            const message = $('div#message' + msgSeq);
+            if (goodCnt) {
+                message.find('input#selectEnq' + msgSeq + '_good').parent().addClass('selected');
+                message.find('input#selectEnq' + msgSeq + '_bad').parent().addClass('disabled');
+            } else if (badCnt) {
+                message.find('input#selectEnq' + msgSeq + '_good').parent().addClass('disabled');
+                message.find('input#selectEnq' + msgSeq + '_bad').parent().addClass('selected');
+                message.find('div.comment-box').addClass('full-width');
+                message.find('div.qa-answer-enquete-bad-comment').css('display', 'block');
+            }
+            message.find('input#selectEnq' + msgSeq + '_good').attr('disabled', true);
+            message.find('input#selectEnq' + msgSeq + '_bad').attr('disabled', true);
+
+            parent.sendSelectedQaEnquete(qaId, qaMId, goodCnt, badCnt, selectedQuestion, reportDate, msgSeq, chatId);
+        }
+    }
+}
+
+function receiveQaEnqueteComment(chatId, messageSeq, comment) {
+    if (isNodeConnect) {
+        parent.sendReceiveQaEnqueteComment(chatId, messageSeq, parent.filterInput(comment));
+    }
+}
+
+var selectMsgIndex = 0;
+
+function escapeOutput(value, isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate) {
+    if (!value && value !== 0) {
+        return "";
+    }
+    if (typeof isEnableSelect === 'undefined') {
+        isEnableSelect = false;
+    }
+    if (typeof autoActionId === 'undefined') {
+        autoActionId = '';
+    }
+    if (typeof passedAutoActionIds === 'undefined') {
+        passedAutoActionIds = '';
+    }
+    if (typeof isForDecoratedChatMessage === 'undefined') {
+        isForDecoratedChatMessage = false;
+    }
+    if (typeof isFreeSearchSelectOption === 'undefined') {
+        isFreeSearchSelectOption = false;
+    }
+    if (typeof reportDate === 'undefined') {
+        reportDate = '';
+    }
+
+    value = value.replace(/(\r\n|\r|\n)/gm,"\n");
+
+    var escaped = "";
+
+    for(var i = 0; i < value.length; i++){
+        escaped += escapeHtml(value.charAt(i));
+    }
+
+    escaped = escaped.replace(/ /g, "&#x20;");
+
+    var escapedArr = escaped.split("\n");
+    optionRegexp = new RegExp('\\{○\\}(.*)$', "gm");
+    for(var i = 0; i < escapedArr.length; i++){
+        if (!escapedArr[i].match(optionRegexp)) {
+            var telStr = escapedArr[i].match(new RegExp('^[0-9]{2,}-[0-9]{1,}-[0-9]{4,}$')) + '';
+            telStr = telStr != 'null' ? telStr : escapedArr[i].match(new RegExp('^[0-9]{9,}$')) + '';
+            var telHref = telStr.replace(/-/g, "");
+            if (parent.isMobile && isMessage && telStr != 'null') {
+                var telHref = telStr.replace(/-/g, "");
+                escapedArr[i] = escapedArr[i].replace(telStr, '<a href="tel:' + telHref + '" class="link" rel="noreferrer">' + telStr + '</a>');
+            } else {
+                var tmpUrl = Array();
+                var urlArray = escapedArr[i]
+                        .split('&#x20;').join(' ')
+                        .match(/((https?):\/\/([\w-.]+|(\d+\.){3}\d+)(:\d+)?(\/[-.!~*'()\w;\/?:@&=+$,%#]+|\/)?)/gm);
+                if (urlArray) {
+                    for (j = 0; j < urlArray.length; j++){
+                        var alinkUrl = urlArray[j];
+                        const dt = new Date();
+                        var msgStorageAry = getWebStorage(parent.wsUc, 'local').length != 0 ? JSON.parse(getWebStorage(parent.wsUc, 'local')) : {};
+                        if (typeof(msgStorageAry[alinkUrl]) != 'object') {
+                            msgStorageAry[alinkUrl] = [];
+                        }
+                        if ($.inArray(urlArray[j], tmpUrl) == -1) {
+                            var reRepUrl = new RegExp(urlArray[j].replace(/([.*+?^=!:${}()|[\]\/\\])/g, "\\$1"), "gm");
+                            if (alinkUrl.indexOf('&#39;') != -1 || alinkUrl.indexOf("'") != -1) {
+                                escapedArr[i] = escapedArr[i].replace(reRepUrl, '<a href="' + alinkUrl + '" target="_blank" class="link" rel="noreferrer">' + alinkUrl + '</a>');
+                            } else {
+                                if (autoActionId === undefined || autoActionId === null || autoActionId === '') {
+                                    escapedArr[i] = escapedArr[i].replace(reRepUrl, '<a href="' + alinkUrl + '" target="_blank" class="link" rel="noreferrer">' + alinkUrl + '</a>');
+                                } else {
+                                    escapedArr[i] = escapedArr[i].replace(reRepUrl, '<a href="' + alinkUrl + '" target="_blank" class="link" rel="noreferrer" onclick="clickUrl(\'' + autoActionId + '\', \'' + alinkUrl + '\', \'' + messageSeq + '\', \'' + urlIndex + '\', \'' + passedAutoActionIds + '\')">' + alinkUrl + '</a>');
+                                }
+                            }
+                            tmpUrl.push(urlArray[j]);
+                            sameUrlIndex = urlIndex;
+                        }
+                        if (msgStorageAry[alinkUrl].length > 0) {
+                            var isExistStorage = false;
+                            for (let i = 0; i < msgStorageAry[alinkUrl].length; i++) {
+                                const storage = JSON.parse(msgStorageAry[alinkUrl][i])
+                                if (storage[0] == autoActionId && storage[1] == messageSeq && storage[4] == urlIndex) {
+                                    isExistStorage = true;
+                                }
+                            }
+                            if (!isExistStorage) {
+                                msgStorageAry[alinkUrl].push(JSON.stringify([autoActionId, messageSeq, false, dt, urlIndex]));
+                            }
+                        } else {
+                            msgStorageAry[alinkUrl].push(JSON.stringify([autoActionId, messageSeq, false, dt, urlIndex]));
+                        }
+                        setWebStorage(parent.wsUc, JSON.stringify(msgStorageAry), 'local');
+                        if (alinkUrl.indexOf('&#39;') != -1 || alinkUrl.indexOf("'") != -1) {
+                            escapedArr[i] = escapedArr[i].replace("clickUrl('" + autoActionId + "', '" + alinkUrl + "', '" + messageSeq + "', '" + sameUrlIndex + "'", "");
+                        } else {
+                            escapedArr[i] = escapedArr[i].replace("clickUrl('" + autoActionId + "', '" + alinkUrl + "', '" + messageSeq + "', '" + sameUrlIndex + "'", "clickUrl('" + autoActionId + "', '" + alinkUrl + "', '" + messageSeq + "', '" + urlIndex + "'");
+                        }
+                        urlIndex += 1;
+                    }
+                }
+            }
+        }
+    }
+
+    if (isEnableSelect) {
+        selectMsgIndex++;
+        idIndex = 0;
+        var name = '';
+        var id = '';
+        var selectAry = Array();
+        var escapedLine = '';
+        for (var i = 0; i < escapedArr.length; i++) {
+            if (escapedArr[i].match(optionRegexp)) {
+                name = 'selectMsg' + selectMsgIndex;
+                selectAry = escapedArr[i].split('{○}');
+                escapedLine = selectAry[0] ? selectAry[0] + '<br>' : '';
+                selectAry.shift();
+                if (selectAry) {
+                    for (j = 0; j < selectAry.length; j++) {
+                        id = name + '_' + (++idIndex);
+                        if (parent.visitChatbotType == 1 && checkArrayWebStorage(parent.aasc, messageSeq, 'local')) {
+                            escapedLine += '<label for="' + id + '" class="comment-select-text disabled" style="background-color: #ffffff; color: #394359"><input name="' + name + '" id="' + id + '" type="radio" style="display: none">' + selectAry[j] + '</label>';
+                        } else {
+                            escapedLine += '<label for="' + id + '" class="comment-select-text" style="background-color: #ffffff; color: #394359"><input name="' + name + '" id="' + id + '" type="radio" style="display: none" data-is-free-search-select-option="' + (isFreeSearchSelectOption ? 1 : 0) + '" data-root-seq="' + escapeHtml(escapeJsString(rootSeq)) + '" onclick="selectedOption(unescapeHtml(\'' + escapeHtml(escapeJsString(selectAry[j])) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(autoActionId)) + '\'), unescapeHtml(\'' + escapeHtml(escapeJsString(passedAutoActionIds)) + '\'), \'' + messageSeq + '\', \'' + escapeHtml(escapeJsString(reportDate)) + '\', this);" >' + selectAry[j] + '</label>';
+                        }
+                    }
+                }
+                escapedArr[i] = escapedLine;
+            } else {
+                if (!isForDecoratedChatMessage) {
+                    escapedArr[i] += '<br>';
+                }
+            }
+        }
+    } else if(isMessage) {
+        if (!isForDecoratedChatMessage) {
+            for (var i = 0; i < escapedArr.length; i++) {
+                escapedArr[i] += '<br>';
+            }
+        }
+    }
+
+    escaped = escapedArr.join('\n');
+
+    return escaped;
+}
+
+function outputForDecoratedChatMessage(html, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isFreeSearchSelectOption, reportDate, replyTo) {
+    if (!html && html !== 0) {
+        return "";
+    }
+    if (typeof autoActionId === 'undefined') {
+        autoActionId = '';
+    }
+    if (typeof passedAutoActionIds === 'undefined') {
+        passedAutoActionIds = '';
+    }
+    if (typeof reportDate === 'undefined') {
+        reportDate = '';
+    }
+    if (typeof replyTo === 'undefined') {
+        replyTo = null;
+    }
+
+    let isMessage = true;
+    let isEnableSelect = true;
+    let isForDecoratedChatMessage = true;
+
+    let fragment = document.createDocumentFragment();
+    fragment.appendChild(document.createElement('div'));
+    fragment.firstChild.innerHTML = html;
+
+    let nodeList = fragment.querySelectorAll('p'); 
+
+    let optionPatternCombinedText = '';
+    let moderatedHtml = '';
+
+    for (let nodeIndex = 0; nodeIndex < nodeList.length; nodeIndex++) {
+        let targetNodeInnerHTML = '';
+        let targetNode = nodeList[nodeIndex];
+        let childNodes = targetNode.childNodes;
+
+        let fncOptionOutput = function () {
+            if (optionPatternCombinedText !== '') {
+                if (targetNodeInnerHTML !== '') {
+                    moderatedHtml += '<p>' + targetNodeInnerHTML + '</p>';
+                }
+                targetNodeInnerHTML = '';
+
+                moderatedHtml += escapeOutput(optionPatternCombinedText, isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate);
+                optionPatternCombinedText = '';
+            }
+        };
+
+        if (targetNode.textContent.indexOf('{○}') >= 0) {
+            let isPrevNodeBr = false;
+
+            let isOptionPatternStarted = false;
+
+            for (let nodeChildIndex = 0; nodeChildIndex < childNodes.length; nodeChildIndex++) {
+                let childNode = childNodes[nodeChildIndex];
+
+                if (childNode.outerHTML === '<br>') {
+                    optionPatternCombinedText += '\n';
+                    isPrevNodeBr = true;
+                } else {
+                    if (!isOptionPatternStarted && (childNode.nodeType === 3) && (childNode.textContent.indexOf('{○}') >= 0) ) {
+                        isOptionPatternStarted = true;
+
+                        let startPositionOfOptionPattern = childNode.textContent.indexOf('{○}');
+
+                        if (startPositionOfOptionPattern === 0) {
+                            optionPatternCombinedText += childNode.textContent;
+                        } else {
+                            fncOptionOutput();
+
+                            targetNodeInnerHTML += escapeOutput(childNode.textContent.substring(0, startPositionOfOptionPattern), isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate);
+                            optionPatternCombinedText += childNode.textContent.slice(startPositionOfOptionPattern);
+                        }
+                    } else {
+                        if (isOptionPatternStarted) {
+                            if (isPrevNodeBr && ((childNode.nodeType !== 3) || (childNode.textContent.indexOf('{○}') !== 0))) {
+                                fncOptionOutput();
+
+                                if (childNode.nodeType === 3) {
+                                    targetNodeInnerHTML += escapeOutput(childNode.textContent, isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate);
+                                } else {
+                                    targetNodeInnerHTML += childNode.outerHTML;
+                                }
+                            } else {
+                                optionPatternCombinedText += childNode.textContent;
+                            }
+                        } else {
+                            fncOptionOutput();
+
+                            if (childNode.nodeType === 3) {
+                                targetNodeInnerHTML += escapeOutput(childNode.textContent, isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate);
+                            } else {
+                                targetNodeInnerHTML += childNode.outerHTML;
+                            }
+                        }
+                    }
+
+                    isPrevNodeBr = false;
+                }
+            }
+        } else {
+            fncOptionOutput();
+
+            for (let nodeChildIndex = 0; nodeChildIndex < childNodes.length; nodeChildIndex++) {
+                let childNode = childNodes[nodeChildIndex];
+
+                if (childNode.nodeType === 3) {
+                    targetNodeInnerHTML += escapeOutput(childNode.textContent, isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate);
+                } else {
+                    var outerHtml = childNode.outerHTML;
+                    var aTagMsg = outerHtml.match(/<a(?: .+?)?>.*?<\/a>/g);
+                    if (aTagMsg) {
+                        for (let aTagIndex = 0; aTagIndex < aTagMsg.length; aTagIndex++) {
+                            const alinkUrl = aTagMsg[aTagIndex].match(/((https?):\/\/([\w-.]+|(\d+\.){3}\d+)(:\d+)?(\/[-.!~*\'()\w;\/?:@&=+$,%#]+|\/)?)/gm);
+                            if (alinkUrl) {
+                                if (alinkUrl.length > 0) {
+                                    if (alinkUrl.indexOf('&#39;') != -1 || alinkUrl[0].indexOf("'") != -1) {
+                                        outerHtml = outerHtml.replace('href="' + alinkUrl[0] + '"', 'href="' + alinkUrl[0] + '"' + 'target="_blank" class="link" rel="noreferrer"');
+                                    } else {
+                                        if (autoActionId === undefined || autoActionId === null || autoActionId === '') {
+                                            outerHtml = outerHtml.replace('href="' + alinkUrl[0] + '"', 'href="' + alinkUrl[0] + '"' + 'target="_blank" class="link" rel="noreferrer"');
+                                        } else {
+                                            outerHtml = outerHtml.replace('href="' + alinkUrl[0] + '"', 'href="' + alinkUrl[0] + '"' + 'target="_blank" class="link" rel="noreferrer" onclick="clickUrl(\'' + autoActionId + '\', \'' + alinkUrl[0] + '\', \'' + messageSeq + '\', \'' + urlIndex + '\', \'' + passedAutoActionIds + '\')"');
+                                        }
+                                    }
+                                    var msgStorageAry = getWebStorage(parent.wsUc, 'local').length != 0 ? JSON.parse(getWebStorage(parent.wsUc, 'local')) : {};
+                                    if (typeof(msgStorageAry[alinkUrl[0]]) != 'object') {
+                                        msgStorageAry[alinkUrl[0]] = [];
+                                    }
+                                    const dt = new Date();
+                                    if (msgStorageAry[alinkUrl[0]].length > 0) {
+                                        var isExistStorage = false;
+                                        for (let i = 0; i <  msgStorageAry[alinkUrl[0]].length; i++) {
+                                            const storage = JSON.parse(msgStorageAry[alinkUrl[0]][i])
+                                            if (storage[0] == autoActionId && storage[1] == messageSeq && storage[4] == urlIndex) {
+                                                isExistStorage = true;
+                                            }
+                                        }
+                                        if (!isExistStorage) {
+                                            msgStorageAry[alinkUrl[0]].push(JSON.stringify([autoActionId, messageSeq, false, dt, urlIndex]));
+                                        }
+                                    } else {
+                                        msgStorageAry[alinkUrl[0]].push(JSON.stringify([autoActionId, messageSeq, false, dt, urlIndex]));
+                                    }
+                                    setWebStorage(parent.wsUc, JSON.stringify(msgStorageAry), 'local');
+                                    urlIndex += 1;
+                                }
+                            }
+                        }
+                    }
+                    targetNodeInnerHTML += outerHtml;
+                }
+            }
+        }
+        if (targetNodeInnerHTML !== '') {
+            moderatedHtml += '<p>' + targetNodeInnerHTML + '</p>';
+        }
+    }
+    urlIndex = 0;
+    sameUrlIndex = 0;
+
+    if (optionPatternCombinedText !== '') {
+        moderatedHtml += escapeOutput(optionPatternCombinedText, isMessage, isEnableSelect, messageSeq, rootSeq, autoActionId, passedAutoActionIds, isForDecoratedChatMessage, isFreeSearchSelectOption, reportDate);
+        optionPatternCombinedText = '';
+    }
+
+    const qamb = getWebStorage(parent.qamb, 'local');
+    if (messageSeq in qamb) {
+        const qambRow = qamb[messageSeq];
+        if (parent.visitChatbotType === 2 && qambRow.qaListMore && qambRow.qaListMore.length) {
+            let reportDate = qambRow.reportDate;
+            const replyToInJs = replyTo ? replyTo : 'null';
+            moderatedHtml += '<label class="comment-text-button" style="color: #333333"><input id="moreBtn' + messageSeq + '" type="button" style="display: none" onclick="callQaMore(' + messageSeq + ', \'' + escapeHtml(escapeJsString(reportDate))  + '\', ' + replyToInJs + '); this.disabled = true;">' + '他の選択肢を見る' + '</label>';
+        } else if (isFreeSearchSelectOption && qambRow.freeSearchOptionListMore.length) {
+            moderatedHtml += '<label class="comment-text-button" style="color: #333333"><input id="moreBtn' + messageSeq + '" type="button" style="display: none" onclick="callFreeSearchMore(' + messageSeq + ', ' + rootSeq + '); this.disabled = true;">' + '他の選択肢を見る' + '</label>';
+        }
+    }
+
+    return moderatedHtml;
+}
+
+function isLastMessageShow(aLazy) {
+    var isShowLast = false;
+
+    if (parent.getActiveWindow() == 'chat_open') {
+        var lastMessage = getLastMessage();
+        var ohMessage = (lastMessage.length) ? lastMessage.outerHeight(true) : 0;
+        var stChatView = mainView.scrollTop();
+        var shChatView = mainView.get(0).scrollHeight;
+        var ohChatView = mainView.get(0).offsetHeight;
+
+        isShowLast = (aLazy)? (stChatView + ohChatView >= shChatView) : (stChatView + ohChatView >= shChatView - ohMessage);
+    }
+
+    return isShowLast;
+}
+
+function autoScrollToLastMessage(duration) {
+    var vcmsData = getWebStorage(parent.vcms, 'local');
+    var isStop = (vcmsData.isStop) ? true : false;       
+    var lastMessage = getLastMessage(isStop);
+    const cvMessageElements = $("#chatView div[id^=message]");
+
+    if (lastMessage.length && lastMessage.is(':visible')) {
+        var hChatView = mainView.height();               
+        var curScrollTop = mainView.scrollTop();         
+        var position = lastMessage.position();           
+        var top = (position ? position.top : 0);         
+        var height = lastMessage.outerHeight(true);      
+        var msgMargin = 5;                               
+
+        if (parent.visitChatbotType === 1) {
+            if(cvMessageElements.length > 1) {
+                if($("#chatView div[id^=message]:last").hasClass('post-person-3') && $(cvMessageElements[cvMessageElements.length - 2]).hasClass('post-person-3')) {
+                    const visitorMsg = mainView.children('div.post-person-2').last();
+                    if(visitorMsg && visitorMsg.length) {
+                        const visitorMsgTop = (visitorMsg.position() ? visitorMsg.position().top : 0);
+                        if(visitorMsgTop > msgMargin) {
+                            scrollChatLog(curScrollTop + visitorMsg.position().top - msgMargin, (duration ? duration : 0));
+                        }
+                    }
+                    return;
+                }
+            }
+        }
+
+        if (height > hChatView || isStop) {
+            scrollChatLog(curScrollTop + top - msgMargin, (duration ? duration : 0));
+        } else {
+            scrollChatLog(curScrollTop + top + height + msgMargin - hChatView, (duration ? duration : 0));
+        }
+    }
+}
+function scrollChatLog(scrollTop, duration) {
+    mainView.animate({'scrollTop': scrollTop}, (duration ? duration : 0), "swing");
+}
+
+function showPopupMsg(id, message, fncClickEvn) {
+    var popupMessage = $('#' + id);
+
+    if (popupMessage.length == 0) {
+
+        popupMessage = $('<div id="' + id + '" align="left">').text(message);
+        if (typeof clickEvn == 'undefined') {
+            popupMessage.on('click', fncClickEvn);
+        }
+
+        popupMessage.hide();
+        mainView.after(popupMessage);
+    }
+
+    popupMessage.fadeIn();
+    setPositionPopupMsg('#' + id);
+}
+
+function setPositionPopupMsg(selector) {
+    var chatViewOffset = mainView.offset();
+    var message = $(selector);
+
+    if (message.length) {
+        message.css('top', chatViewOffset.top + mainView.outerHeight(true) - message.outerHeight(true) - 11);
+    }
+}
+
+function showSendWaitingPopup() {
+    $('#noticeNewMessage').hide();
+
+    showPopupMsg('sendWaitingMessage', msgSendText);
+}
+function hideSendWaitingPopup() {
+    $('#sendWaitingMessage').remove();
+}
+
+function chatOpen () {
+    if (parent.staffCallViewMode == 'calling') {
+        hideStaffCallingPopup();
+        showStaffCallingPopup(500);
+    }
+}
+
+function callFreeSearchMore (messageSeq, rootSeq) {
+    if (parent.visitChatbotType === 1) {
+        let qamb = getWebStorage(parent.qamb, 'local');
+        let qals = getWebStorage(parent.qals, 'local');
+        if (messageSeq in qamb && qamb[messageSeq].freeSearchOptionListMore.length) {
+            let messageData = qamb[messageSeq];
+            messageData.messageSeq = messageSeq;
+            parent.updateMessageFreeSearch(messageData);
+            let times = Math.min(5, messageData.freeSearchOptionListMore.length);
+            for (let i = 0; i < times; i++) {
+                let setData = messageData.freeSearchOptionListMore[0];
+                qals[rootSeq][setData.question] = setData.autoActionId;
+                messageData.freeSearchOptionListShow.push(setData);
+                messageData.freeSearchOptionListMore.shift();
+            }
+            qamb[messageSeq] = messageData;
+            setWebStorage(parent.qamb, qamb, 'local');
+            setWebStorage(parent.qals, qals, 'local');
+        }
+    }
+}
+
+function callQaMore (messageSeq, reportDate, replyTo) {
+    if (parent.visitChatbotType === 2) {
+        callQaMoreScrollTop = mainView.scrollTop();
+        let qamb = getWebStorage(parent.qamb, 'local');
+        let qals = getWebStorage(parent.qals, 'local');
+        if (messageSeq in qamb && qamb[messageSeq].qaListMore.length) {
+            let messageData = qamb[messageSeq];
+            messageData.messageSeq = messageSeq;
+            parent.updateMessageQa(messageData, reportDate);
+            let times = Math.min(5, messageData.qaListMore.length);
+            for (let i = 0; i < times; i++) {
+                let setData = messageData.qaListMore[0];
+                qals[setData.question] = {'id': setData.id, 'mId': setData.mId, 'answer': setData.answer};
+                messageData.qaListShow.push(setData);
+                messageData.qaListMore.shift();
+            }
+            qamb[messageSeq] = messageData;
+            setWebStorage(parent.qamb, qamb, 'local');
+            setWebStorage(parent.qals, qals, 'local');
+        }
+    }
+}
+
+function callStart (chatId, fileId, fileName) {
+    parent.confirmDialog('スタッフを呼び出します。\nよろしいですか？', false, function (result) {
+        if (result) {
+            if (parent.staffCallViewMode == 'started') {
+                hideStaffCallBtn();
+            } else {
+                parent.sendQaCallOperator();
+                hideStaffCallBtn();
+                showStaffCallingPopup(0);
+            }
+        }
+    }, false);
+}
+
+function showStaffCallBtn() {
+    if (!parent.isViewStaffCall()) {
+        return false;
+    }
+
+    $('#callBtn').css({'display': 'block'});
+    $('#callBtn').parent().removeClass('w0');
+    $('#callBtn').parent().addClass('w45');
+    resizeWidth();
+}
+function hideStaffCallBtn() {
+    $('#callBtn').css({'display': 'none'});
+    $('#callBtn').parent().removeClass('w45');
+    $('#callBtn').parent().addClass('w0');
+    resizeWidth();
+}
+
+function showStaffCallingPopup(wait) {
+    let qaInCallMessage = parent.getQaInCallMessage();
+
+    setTimeout(function () {
+        let popupHtml = '';
+        popupHtml += '<div id="staffCallingMessage">';
+        popupHtml += '  <div>' + qaInCallMessage + '</div>';
+        popupHtml += '  <div class="ball-pulse-sync"><div></div><div></div><div></div></div>';
+        popupHtml += '  <div class="callCancelBtn"><button id="callCancelBtn" class="btn btn-sm btn-dark">キャンセル</button></div>';
+        popupHtml += '</div>';
+
+        $(document).off('click', '#callCancelBtn');
+
+        if (!parent.isViewStaffCall()) {
+            return false;
+        }
+
+        if (parent.staffCallViewMode == 'calling') {
+            $(document).on('click', '#callCancelBtn', function () {
+                parent.sendQaCallOperatorCancel();
+                showStaffCallBtn();
+                hideStaffCallingPopup();
+            });
+
+            hideStaffCallingPopup();
+            mainView.append(popupHtml);
+
+            setPositionPopupMsg('#staffCallingMessage');
+        }
+    }, wait);
+}
+
+function hideStaffCallingPopup() {
+    $('#staffCallingMessage').remove();
+}
+
+function focused() {
+    if (arguments.length) {
+        if (arguments[0]) {
+            $(window).focus()
+                .triggerHandler('focus');
+        } else {
+            $('#chatInput').blur();
+            $(window).blur()
+                .triggerHandler('blur');
+        }
+    } else {
+        return chatWindow.hasClass('chat_window_focusin');
+    }
+}
+
+function hideInput() {
+    chatInput.hide();
+    resizeWindow();
+}
+
+function switchMode() {
+    hideStaffCallingPopup();
+
+    resizeWidth();
+
+    setTimeout(function () {
+        try {
+            autoScrollToLastMessage(0);
+            if (parent.staffCallViewMode == 'calling') {
+                showStaffCallingPopup();
+            }
+        } catch (e) {
+            errorProcess(e);
+        }
+    }, 500);
+}
+
+function onFileDownloadMenu(id) {
+    if(!id) return;
+    $('#fileDownloadMenu-' + id).css({'visibility': 'visible'}).mouseleave(function() {
+        $(this).css({'visibility': 'hidden'});
+        $('#overlay-bg').css({'display': 'none'});
+    });
+    const $headerHeight = $('.chat-window-table-title').outerHeight();
+    const $chatViewHeight = $('#chatView').outerHeight();
+    $('#overlay-bg').css({
+        'display': 'block',
+        'top': $headerHeight + 'px',
+        'height': $chatViewHeight + 'px',
+    }).on('click', function() {
+        $(this).css({'display': 'none'});
+        $('.file-download-menu').css({'visibility': 'hidden'});
+    });
+}
+
+function resizeWidth() {
+        if (parent.visitChatbotType == 1 || (parent.visitChatbotType == 2 && parent.staffCallViewMode == 'started')) {
+            $('#attachBtn').css({'display': 'block'});
+            $('#attachBtn').parent().removeClass('w0');
+            $('#attachBtn').parent().addClass('w33');
+        }
+
+    resizeMessageField();
+}
+
+function fileDownload (param, filename, mimeType) {
+    if (isNodeConnect) {
+        parent.getToken(function (token) {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('POST', appendVersion('/chat/chatOpen/dl'), true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.responseType = 'arraybuffer';
+            xhr.onload = function(e) {
+                var blob = new Blob([xhr.response], {type: mimeType});
+
+                var reader = new FileReader();
+                reader.onload = function () {
+                    parent.downloadFile(reader.result, filename);
+                };
+                reader.onerror = function () {
+                    parent.alertDialog('ダウンロードに失敗しました。');
+                    errorProcess(reader.error);
+                };
+                reader.readAsDataURL(blob);
+            };
+
+            let sendParam = param;
+
+            if (isEnableApi && isEnableSystemLinkage) {
+                sendParam += '&visitorId=' + parent.visitorId;
+            } else {
+                sendParam += '&vt=' + parent.vt;
+            }
+            sendParam += '&token=' + token;
+
+            xhr.send(sendParam);
+        });
+    } else {
+        parent.alertDialog('ダウンロードに失敗しました。');
+    }
+}
+
+function fileUrlDownload (url, filename, mimeType) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', setNoCacheParameter(url), true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.responseType = 'arraybuffer';
+    xhr.onload = function(e) {
+        if (xhr.readyState != 4) {
+            return;
+        }
+
+        if (xhr.status == 403) {
+            parent.alertDialog('ファイルが削除されています。');
+        } else if (xhr.status >= 200 && xhr.status <= 299) {
+            var blob = new Blob([xhr.response], {type: mimeType});
+
+            var reader = new FileReader();
+            reader.onload = function () {
+                parent.downloadFile(reader.result, filename);
+            };
+            reader.onerror = function () {
+                parent.alertDialog('ダウンロードに失敗しました。');
+                errorProcess(reader.error);
+            };
+            reader.readAsDataURL(blob);
+        }
+    };
+    xhr.send();
+}
+
+function fileDelete (chatId, fileId, fileName) {
+    parent.confirmDialog('<div class="emphasis">' + escapeHtml(fileName) + '</div>' + '添付ファイルを削除します。\nよろしいですか？', false, function (result) {
+        if (result) {
+            if (isNodeConnect) {
+                parent.sendDeleteAttach(chatId, fileId);
+            } else {
+                parent.alertDialog('ファイルの削除に失敗しました。');
+            }
+        }
+    }, false);
+}
+
+function hideHomeButton() {
+    $('.chat-btn-home').remove();
+}
+function showCloseButton() {
+    if (parent.isMobile && parent.viewMode == 'half') {
+        $('#fullOrClose').html('<div class="chat-btn-full mr5"><span class="material-icons-web_asset"></span></div>');
+    } else {
+        $('#fullOrClose').html('<div class="chat-btn-close mr5"><span class="material-icons-close"></span></div>');
+    }
+}
+
+var objAttachControl = null;
+$(function () {
+    $("#attachBtn").on('click', function () {
+        $('#msgForm').hide();
+        $('#attachForm').show();
+
+        resizeWindow();
+    });
+
+    $("#uploadCancelLink").on('click', function () {
+        objAttachControl.reset(function (result) {
+            if (result) {
+                $('#attachForm').hide();
+                $('#msgForm').show();
+
+                resizeWindow();
+            }
+        });
+    });
+
+    $("#attachForm").on('resize', function () {
+        resizeWindow();
+    });
+
+    objAttachControl = $('#attachField').cd_uploader({
+        vgAtxt: parent.vgAtxt,
+        vgSid: parent.vgSid,
+        eacc: parent.eacc,
+        vt: parent.vt,
+        visitorId: parent.visitorId,
+        isEnableSystemLinkage: isEnableSystemLinkage,
+        isEnableApi: isEnableApi,
+        upload_btn_id: 'uploadBtn',
+        max_file_size: 5,
+        max_file_num: 3,
+        upload_ext: JSON.parse('[\"jpeg\",\"jpg\",\"png\",\"gif\",\"pdf\",\"txt\",\"csv\",\"xls\",\"xlsx\",\"xlsm\",\"doc\",\"docx\",\"docm\",\"ppt\",\"pps\",\"pptx\",\"pptm\",\"ppsx\",\"zip\"]'),
+        is_drag: parent.isMobile ? false : true,
+        on_upload: function (fileIds) {
+            sendMessage(fileIds, 'attach');
+
+            $('#attachForm').hide();
+            $('#msgForm').show();
+
+            resizeWindow();
+
+            return true;
+        },
+        on_resize: function () {
+            resizeWindow();
+        }
+    });
+});
+
+function createSuggest (input) {
+    if (
+        parent.visitChatbotType !== 2 ||
+            parent.staffCallViewMode === 'started'
+    ) {
+        document.querySelector('#chatSuggest').innerHTML = '';
+        return;
+    }
+
+    const suggestAll = [
+    ];
+
+    const suggestAllNormalized = [
+    ];
+
+    suggestCount = 0;
+
+    let suggestHtml = '';
+    let inputPreprocessed = normalizeForSuggest(input.trim());
+    if (inputPreprocessed.length > 0) {
+        for (let index = 0; index < suggestAll.length ; index++) {
+            const question= suggestAll[index];
+            if (suggestAllNormalized[index].indexOf(inputPreprocessed) > -1) {
+                suggestHtml += '<button class="chat-suggest-item" type="button" data-suggest="' + escapeHtml(question) + '">' +
+                        escapeHtml(question) +
+                        '</button>'
+                ;
+                suggestCount++;
+                if (suggestCount >= maxSuggestCount) {
+                    break;
+                }
+            }
+        }
+    }
+
+    document.querySelector('#chatSuggest').innerHTML = suggestHtml;
+    return suggestCount;
+}
+
+
+function showSuggest () {
+    document.getElementById('chatSuggestParent').style.display = 'block';
+}
+
+function createAndShowSuggest (input) {
+    hideSuggest();
+    const suggestCount = createSuggest(input);
+    if (suggestCount > 0) {
+        window.requestAnimationFrame(function () {
+            showSuggest();
+        });
+    }
+}
+
+function hideSuggest () {
+    document.querySelector('#chatSuggest').innerHTML = '';
+    document.getElementById('chatSuggestParent').style.display = 'none';
+}
+
+function hideSuggestIfNoFocusInWindow () {
+    if (document.hasFocus()) {
+        if (!document.querySelectorAll('#chatSuggestParent button:focus').length) {
+            hideSuggest();
+        }
+    }
+}
+
+function focusSuggestItem (index) {
+    let target = $('#chatSuggestParent button').eq(index - 1);
+    if (target.length) {
+        window.requestAnimationFrame(function () {
+            target[0].focus();
+        });
+    }
+}
+
+function replaceTextChatInput (text) {
+    $('#chatInput').val(text);
+    resizeMessageField();
+}
+
+function moveCursorToEndChatInput () {
+    const input = $('#chatInput').val();
+
+    document.querySelector('#chatInput').setSelectionRange(input.length, input.length);
+}
+
+function normalizeForSuggest (targetString) {
+    return fullWidthKatakanaToHiragana(
+        convertToFullZenkaku(
+            fullWidthAlphanumericToHalfWidth(
+                targetString
+            ).toLowerCase()
+        )
+    );
+}
+
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+    $(function () {
+        if (parent.isIos()) {
+            const chatLogElement = document.getElementById("chatView");
+            const chatLog = new ChatLog(chatLogElement, "chatView");
+            chatLog.set();
+        }
+    });
+//-->
+</script>
+
+<div class="chat-window">
+    <table class="chat-window-table" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+                <tr>
+                    <td class="chat-window-table-title text-and-image">
+                        <div id="chatTitle" class="chat-title-window text-and-image" style="cursor: pointer;">
+                            <table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+                                <tbody>
+                                <tr>
+                                        <td class="chat-title-image chat-mb-window-close">
+                                            <div class="profile-image-title"><div class="profile-image-frame"><img id="headerStaffImg" align="left" src="https://chat1-662.chatdealer.jp/img/acc/p2JaSChat1-662/1/dsf/162fe03da92afd6.28494719_l.png" onerror="imgLoadRetry(this)"></div></div>
+                                        </td>
+                                    <td class="chat-mb-window-close">
+                                        <div class="chat-title-text">
+                                            <div class="str-ellipsis" title="チャットでご案内します！">
+                                                <p class="profile-company str-ellipsis"><span class="str-ellipsis">チャットでご案内します！</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                        <td><div class="chat-btn-window"><span class="material-icons-remove"></span></div></td>
+                                    <td><div id="fullOrClose"><div class="chat-btn-full mr5"><span class="material-icons-web_asset"></span></div></div></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            <tr>
+                <td class="chat-window-table-body">
+                    <div id="chatView"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="chat-window-table-input" style="display: none;">
+                    <table id="msgForm" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td id="chatInputTd">
+                                    <div id="chatInputDiv">
+                                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="w0">
+                                                        <button id="callBtn" style="display: none;" onclick="callStart();"><span class="material-icons-staff"></span></button>
+                                                    </td>
+                                                    <td>
+                                                        <div id="chatSuggestParent" class="chat-suggest-parent">
+                                                            <div id="chatSuggest" class="chat-suggest">
+                                                            </div>
+                                                        </div>
+                                                        <textarea name="textStr" id="chatInput" maxlength="2001" placeholder="質問を入力してください" style="height: 32px;"></textarea>
+                                                    </td>
+                                                        <td class="w33">
+                                                            <button id="attachBtn" style="display: block;"><span class="material-icons-image"></span></button>
+                                                        </td>
+                                                    <td class="w45">
+                                                        <button id="chatBtn"><span class="material-icons-send"></span></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="attachForm" width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td id="chatAttachTd">
+                                    <div id="chatInputDiv">
+                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100%">
+                                                        <div id="attachField"><div class="cd-uploader-form"><div class="cd-uploader-input-box"><div><input type="file" multiple="" style="display: none;"><div class="cd-uploader-input-div"><div class="drag-msg-row3 p5"><div class="btn btn-default btn-sm">ファイルを選択</div></div></div></div></div><div class="cd-uploader-itembox" style="display: none;"></div></div><input type="hidden" name="fIsTmpUpload" value="true"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="chatAttachBtnTd">
+                                                        <a id="uploadCancelLink" class="upload-cancel fleft mt10" href="javascript:void(0)">キャンセル</a>
+                                                        <button id="uploadBtn" class="hidden"><span class="material-icons-send"></span></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- ver.10.5.2.0 -->
+
+
+</body></html>

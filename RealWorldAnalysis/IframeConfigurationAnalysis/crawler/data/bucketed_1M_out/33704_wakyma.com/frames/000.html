@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wakyma | Software de Gestión y Marketing para centros veterinarios</title>
+<meta name="description" content="Wakyma: software veterinario e innovación para el cuidado de las mascotas.">
+<link rel="icon" href="assets/logo-269x300.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/cookieconsent.css">
+<style>
+  :root{
+    --teal:#4297A8;
+    --teal-dark:#357a89;
+    --cream:#dfedf1;
+    --text:#2E3132;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Montserrat',system-ui,sans-serif;color:var(--text);line-height:1.5;background:#fff;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* Header */
+  header{height:80px;background:#fff;display:flex;align-items:center}
+  .nav{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 75px;max-width:1800px;margin:0 auto}
+  .nav .logo img{height:38px;width:auto}
+  .nav-right{display:flex;align-items:center;gap:32px}
+  .nav-right a.link{font-family:'Montserrat';font-weight:700;font-size:13px;letter-spacing:.6px;color:var(--text)}
+  .nav-right a.link:hover{color:var(--teal)}
+  .btn{display:inline-block;padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.6px;transition:background .2s ease}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-dark)}
+
+  /* Hero split */
+  .hero{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:546px;overflow:hidden}
+  .side{position:relative;padding:100px 80px 30px 80px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start}
+
+  /* Capa de imagen (escala en hover) y capa de gradiente (encima) */
+  .side::before,.side::after{content:"";position:absolute;inset:0;pointer-events:none}
+  .side::before{
+    background-size:250%;
+    background-repeat:no-repeat;
+    transition:transform .7s ease;
+    z-index:0;
+  }
+  .side::after{z-index:1}
+  .side > *{position:relative;z-index:2}
+
+  .vet{background:var(--teal);color:#fff}
+  .vet::before{background-image:url('assets/Mockup_peque.png');background-position:-39px -68px}
+  .vet::after{background:linear-gradient(rgba(66,151,168,1),rgba(66,151,168,.85))}
+
+  .pet{background:#fff;color:var(--teal)}
+  .pet::before{background-image:url('assets/fondo-blog.png');background-position:50% 100%}
+  .pet::after{background:linear-gradient(rgba(255,255,255,1),rgba(255,255,255,.85))}
+
+  /* Zoom solo en dispositivos con hover real (desktop) */
+  @media (hover:hover){
+    .side:hover::before{transform:scale(1.1)}
+    .side:hover::after{transition:background .7s ease}
+    .vet:hover::after{background:linear-gradient(rgba(66,151,168,.95),rgba(66,151,168,.7))}
+    .pet:hover::after{background:linear-gradient(rgba(255,255,255,.95),rgba(255,255,255,.7))}
+  }
+  .side h1{font-family:'Montserrat';font-size:40px;font-weight:800;line-height:1.2;margin-bottom:28px;white-space:nowrap}
+  .side p{font-size:20px;font-weight:500;line-height:30px;max-width:420px;margin-bottom:auto}
+  .brand-logo{max-width:280px;height:auto;margin-top:auto}
+  .vet .brand-logo{margin-left:0}
+  .pet{text-align:right;align-items:flex-end}
+  .pet p{margin-left:auto;margin-right:0}
+  .pet .brand-logo{margin-left:auto;margin-right:0}
+
+  /* Center dog+cat image */
+  .center-img{position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);width:399px;max-width:60%;height:auto;z-index:5;pointer-events:none}
+
+  /* Tagline */
+  .tagline{text-align:center;padding:90px 24px;background:#fff}
+  .tagline h2{font-size:clamp(22px,2.3vw,32px);font-weight:600;color:var(--text);max-width:820px;margin:0 auto;line-height:1.35}
+  .tagline h2 strong{color:var(--teal);font-weight:800}
+
+  /* CTA band */
+  .cta{background:var(--cream);padding:130px 24px 0 24px;text-align:center}
+  .cta h2{font-size:clamp(26px,3vw,38px);font-weight:700;margin-bottom:14px;color:var(--text)}
+  .cta p{font-size:17px;color:var(--text);opacity:.8;max-width:620px;margin:0 auto 32px}
+  .cta .team{margin:56px auto 0;max-width:900px;border-radius:10px;overflow:hidden}
+  .cta .btn-lg{padding:16px 34px;font-size:14px;text-transform:uppercase}
+
+  /* Socials */
+  .socials{display:flex;gap:14px;justify-content:center;padding:40px 24px 80px;background:var(--cream)}
+  .socials a{width:44px;height:44px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s}
+  .socials a:hover{background:var(--teal-dark);transform:translateY(-2px)}
+  .socials svg{width:18px;height:18px;fill:#fff}
+
+  /* Footer */
+  footer{background:var(--teal);color:#fff;padding:60px 0 24px}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto;padding:0 40px}
+  .foot-grid h4{color:#fff;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;font-weight:700}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px}
+  .foot-grid a{color:rgba(255,255,255,.9)}
+  .foot-grid a:hover{color:#fff;text-decoration:underline}
+  .foot-logo{height:40px;margin-bottom:18px}
+  .foot-about p{font-size:14px;line-height:1.65;margin-bottom:14px;color:rgba(255,255,255,.85);max-width:280px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.2);margin-top:48px;padding-top:22px;text-align:center;font-size:13px;color:rgba(255,255,255,.75)}
+
+  /* Responsive */
+  @media (max-width:1100px){
+    .nav{padding:0 32px}
+    .side{padding:60px 50px}
+    .side h1{font-size:36px;white-space:normal}
+    .side p{font-size:18px;line-height:1.55}
+  }
+  @media (max-width:900px){
+    header{height:70px}
+    .nav{padding:0 20px}
+    .nav .logo img{height:32px}
+    .nav-right{gap:18px}
+
+    .hero{
+      grid-template-columns:1fr;
+      grid-template-rows:auto auto;
+      min-height:auto;
+      overflow:hidden;
+    }
+    .side{min-height:auto;width:100%}
+    .vet{padding:56px 32px;align-items:flex-start;text-align:left;order:1}
+    .pet{padding:56px 32px;align-items:center;text-align:center;order:2}
+    .pet p{margin-left:auto;margin-right:auto}
+    .pet .brand-logo{margin-left:auto;margin-right:auto}
+
+    .side h1{font-size:32px;margin-bottom:20px}
+    .side h1 br{display:none}
+    .side p{font-size:17px;line-height:1.55;margin-bottom:28px;max-width:none}
+    .side p br{display:none}
+    .brand-logo{max-width:220px;margin-top:24px}
+
+    /* En mobile la imagen central decorativa estorba: la ocultamos */
+    .center-img{display:none}
+
+    .cta{padding:64px 24px 0}
+    .cta h2{font-size:28px}
+    .cta p{font-size:16px}
+    .cta .team{max-width:90%; margin-top:36px}
+
+    .socials{padding:32px 24px 60px}
+    footer{padding:48px 0 24px}
+    .foot-grid{grid-template-columns:1fr 1fr;padding:0 24px;gap:32px}
+  }
+  @media (max-width:540px){
+    header{height:64px}
+    .nav .logo img{height:28px}
+    .nav-right{gap:10px}
+    .nav-right a.link{display:none}
+    .btn{padding:8px 14px;font-size:12px;letter-spacing:.4px}
+
+    .vet,.pet{padding:48px 24px}
+    .side h1{font-size:26px;margin-bottom:16px}
+    .side p{font-size:15px;margin-bottom:24px}
+    .brand-logo{max-width:180px;margin-top:20px}
+
+    .cta{padding:48px 20px 0}
+    .cta h2{font-size:24px}
+    .cta p{font-size:15px}
+    .cta .btn-lg{padding:14px 22px;font-size:12px}
+    .cta .team{margin-top:28px}
+
+    .socials{padding:28px 20px 50px}
+    .socials a{width:38px;height:38px}
+    .socials svg{width:15px;height:15px}
+
+    .foot-grid{grid-template-columns:1fr;gap:28px;padding:0 20px}
+  }
+</style>
+<style id="wk-partials-css">.wk-header-legal{height:70px;background:#fff;display:flex;align-items:center;border-bottom:1px solid #eee}.wk-header-legal .wk-nav{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 30px;max-width:1800px;margin:0 auto}.wk-header-legal .wk-logo img{height:33px;width:auto;display:block}.wk-header-legal .wk-nav-right{display:flex;align-items:center;gap:32px}.wk-header-legal .wk-nav-right a{font-weight:700;font-size:13px;letter-spacing:.6px;color:var(--text,#2E3132);text-decoration:none}.wk-header-legal .wk-nav-right a:hover{color:var(--teal,#4297A8)}.wk-header-legal .wk-btn{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--teal,#4297A8);color:#fff!important;transition:background .2s}.wk-header-legal .wk-btn:hover{background:#357a89;text-decoration:none}@media (max-width:900px){.wk-header-legal .wk-nav{padding:0 20px}}.wk-footer{background:var(--teal,#4297A8);color:#fff;padding:60px 0 24px;font-family:inherit}.wk-foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto;padding:0 40px}.wk-foot-grid h4{color:#fff;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;font-weight:700}.wk-foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;padding:0;margin:0}.wk-foot-grid li{margin:0}.wk-foot-grid a{color:rgba(255,255,255,.9);text-decoration:none}.wk-foot-grid a:hover{color:#fff;text-decoration:underline}.wk-foot-logo{height:40px;margin-bottom:18px;display:block}.wk-foot-about p{font-size:14px;line-height:1.65;margin-bottom:14px;color:rgba(255,255,255,.85);max-width:280px}.wk-foot-bottom{border-top:1px solid rgba(255,255,255,.2);margin-top:48px;padding-top:22px;text-align:center;font-size:13px;color:rgba(255,255,255,.75)}@media (max-width:900px){.wk-foot-grid{grid-template-columns:1fr 1fr;padding:0 24px}}@media (max-width:540px){.wk-foot-grid{grid-template-columns:1fr;gap:32px}}</style></head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#" aria-label="Wakyma">
+      <img src="assets/logo_wakyma-1.png" alt="Wakyma">
+    </a>
+    <div class="nav-right">
+      <a class="link" href="https://wakymavets.com/contacto/">CONTACTO</a>
+      <a class="btn btn-primary" href="https://wakymavets.com/">¿ERES VETERINARIO?</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <a class="side vet" href="https://wakymavets.com/">
+      <h1>¿Eres<br> veterinario?</h1>
+      <p>Descubre el<br> software veterinario<br> más potente del mercado</p>
+      <img class="brand-logo" src="assets/Wakyma-Vets-Blanco-768x135.png" alt="Wakyma Vets">
+    </a>
+    <a class="side pet" href="https://wakyma.com/blog/">
+      <h1>¿Tienes<br> una mascota?</h1>
+      <p>Descubre en nuestro blog<br> los mejores consejos<br> para cuidar a tu mascota</p>
+      <img class="brand-logo" src="assets/Wakyma-Blog-768x136.png" alt="Wakyma Blog">
+    </a>
+    <img class="center-img" src="assets/perro-labrador-retriever-jadeando-gato-jengibre-sentado-frente-fondo-amarillo-oscuro-802x1024.png" alt="Perro y gato">
+  </section>
+
+  <section class="cta">
+    <h2>¡Da el primer paso!</h2>
+    <p>Nuestro equipo se pondrá en contacto contigo para aclarar tus dudas, sin ningún compromiso.</p>
+    <a class="btn btn-primary btn-lg" href="https://wakymavets.com/contacto/">SOLICITA MÁS INFORMACIÓN</a>
+    <img class="team" src="assets/Equipo_Wakyma-e1676546608440.png" alt="Equipo Wakyma">
+  </section>
+
+</main>
+
+<footer class="wk-footer"><div class="wk-foot-grid"><div class="wk-foot-about"><img class="wk-foot-logo" src="assets/wakyma_letras_blanco.png" alt="Wakyma"><p>Innovación y tecnología para el cuidado de las mascotas.</p></div><div><h4>Atención al cliente</h4><ul><li><a href="https://wakyma.com/terminos-de-uso/">Términos de Uso</a></li><li><a href="https://wakyma.com/politica-de-privacidad/">Política de Privacidad</a></li><li><a href="https://wakyma.com/politica-de-cookies/">Política de Cookies</a></li><li><a href="https://wakyma.com/politica-de-seguridad-de-la-informacion/">Política de Seguridad</a></li><li><a href="#" data-wakyma-cookies="">Gestionar cookies</a></li><li><a href="mailto:hola@wakyma.com">hola@wakyma.com</a></li></ul></div><div><h4>Descubre</h4><ul><li><a href="https://wakyma.com/">Home</a></li><li><a href="https://wakymavets.com/">Wakyma Vets</a></li><li><a href="https://wakymavets.com/slothvet">SlothVet</a></li><li><a href="https://wakymavets.com/es/contacto/">Contacto</a></li><li><a href="https://wakyma.com/blog/">Blog</a></li></ul></div></div><div class="wk-foot-bottom">© Wakyma. Todos los derechos reservados.</div></footer>
+
+<script>window.WAKYMA_ENABLE_CRISP = true;</script>
+<script defer="" src="assets/cookieconsent.umd.js"></script>
+<script defer="" src="assets/cookies.js"></script>
+<script defer="" src="assets/partials.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0044776cffdc1f9',t:'MTc3OTU0MTU5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+</body></html>

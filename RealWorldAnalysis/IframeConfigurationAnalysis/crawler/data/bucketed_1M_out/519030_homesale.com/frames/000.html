@@ -1,0 +1,687 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Connection Verification | Digital Sentinel</title>
+	<!-- Material Symbols -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com" rel="preconnect">
+	<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--primary: #0052FF;
+			--primary-container: #dfe3ff;
+			--on-primary: #ffffff;
+			--background: #f7f9fb;
+			--surface: #ffffff;
+			--text-main: #191c1e;
+			--text-variant: #434656;
+			--outline-variant: #e0e3e5;
+			--shadow: rgba(25, 28, 30, 0.08);
+			--font-headline: 'Manrope', sans-serif;
+			--font-body: 'Inter', sans-serif;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: var(--background);
+			font-family: var(--font-body);
+			color: var(--text-main);
+			line-height: 1.5;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		/* Layout */
+		.header {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 72px;
+			background: rgba(255, 255, 255, 0.8);
+			backdrop-filter: blur(20px);
+			z-index: 100;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.header-content {
+			width: 100%;
+			max-width: 1280px;
+			padding: 0 32px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.logo {
+			font-family: var(--font-headline);
+			font-size: 20px;
+			font-weight: 800;
+			color: #0038b6;
+			letter-spacing: -0.02em;
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: 32px;
+		}
+
+		.nav-link {
+			font-size: 14px;
+			font-weight: 500;
+			color: #64748b;
+			cursor: pointer;
+			transition: color 0.2s;
+			text-decoration: none;
+		}
+
+		.nav-link:hover {
+			color: var(--primary);
+		}
+
+		.nav-icons {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			margin-left: 24px;
+		}
+
+		.icon-btn {
+			color: #64748b;
+			cursor: pointer;
+			transition: color 0.2s;
+		}
+
+		.icon-btn:hover {
+			color: var(--primary);
+		}
+
+		main {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 80px 24px 48px;
+			background: radial-gradient(circle at 50% 50%, rgba(0, 82, 255, 0.03) 0%, transparent 70%);
+		}
+
+		/* Central Card */
+		.verification-container {
+			width: 100%;
+			max-width: 512px;
+			position: relative;
+		}
+
+		.card {
+			background: var(--surface);
+			border-radius: 16px;
+			box-shadow: 0 20px 50px var(--shadow);
+			overflow: hidden;
+			animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+			position: relative;
+		}
+
+		.card-inner {
+			padding: 64px 40px 48px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		/* Visual Indicator */
+		.visual-box {
+			position: relative;
+			width: 96px;
+			height: 96px;
+			margin-bottom: 32px;
+			border: 4px solid var(--outline-variant);
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		
+
+		.visual-box .shield-icon {
+			font-size: 32px;
+			color: var(--primary);
+			animation: pulseSoft 3s ease-in-out infinite;
+			font-variation-settings: 'FILL' 1;
+		}
+
+		.scan-line {
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, rgba(0, 82, 255, 0.2), transparent);
+			animation: scanSweep 2.5s linear infinite;
+		}
+
+		/* Typography */
+		h1 {
+			font-family: var(--font-headline);
+			font-size: 30px;
+			font-weight: 800;
+			margin-bottom: 12px;
+			letter-spacing: -0.01em;
+		}
+
+		h2 {
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 12px;
+			color: var(--text-main);
+		}
+
+		.description {
+			color: var(--text-variant);
+			font-size: 14px;
+			line-height: 1.6;
+			margin-bottom: 24px;
+		}
+
+		/* Progress & Button */
+		.progress-container {
+			width: 100%;
+			height: 4px;
+			background: var(--outline-variant);
+			border-radius: 100px;
+			overflow: hidden;
+			margin-bottom: 32px;
+			position: relative;
+		}
+
+		.progress-bar {
+			position: absolute;
+			height: 100%;
+			width: 40%;
+			background: rgba(0, 82, 255, 0.2);
+			border-radius: 100px;
+			animation: loadingSweep 2s infinite linear;
+		}
+
+		.verify-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: #f1f3f4;
+			color: var(--primary);
+			padding: 14px 40px;
+			border-radius: 8px;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+			transition: all 0.2s;
+			font-family: var(--font-body);
+			font-size: 15px;
+		}
+
+		.verify-btn:hover {
+			background: var(--primary);
+			color: white;
+			transform: translateY(-1px);
+		}
+
+		.verify-btn:active {
+			transform: scale(0.98);
+		}
+
+		.verify-btn span {
+			font-size: 18px;
+			transition: transform 0.2s;
+		}
+
+		.verify-btn:hover span {
+			transform: translateX(4px);
+		}
+
+		.micro-copy {
+			margin-top: 32px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			color: var(--text-variant);
+			opacity: 0.6;
+			font-size: 10px;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+
+		.micro-copy .lock-icon {
+			font-size: 14px;
+			font-variation-settings: 'FILL' 1;
+		}
+
+		.card-bottom-accent {
+			height: 4px;
+			background: linear-gradient(90deg, var(--primary), #b7c4ff);
+		}
+
+		.metadata {
+			margin-top: 32px;
+			text-align: center;
+			color: var(--text-variant);
+			font-size: 11px;
+			opacity: 0.5;
+			letter-spacing: 0.05em;
+		}
+
+		.mono {
+			font-family: monospace;
+		}
+
+		/* Footer */
+		.footer {
+			width: 100%;
+			padding: 48px 0;
+			background: #f8fafc;
+			border-top: 1px solid #edf2f7;
+		}
+
+		.footer-content {
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 0 48px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 24px;
+		}
+
+		@media (min-gap: 768px) {
+			.footer-content {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+
+		.copyright {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: var(--text-variant);
+		}
+
+		.footer-nav {
+			display: flex;
+			gap: 32px;
+		}
+
+		.footer-link {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: #94a3b8;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+
+		.footer-link:hover {
+			color: var(--primary);
+		}
+
+		/* Animations */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes pulseSoft {
+
+			0%,
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 0.7;
+				transform: scale(0.92);
+			}
+		}
+
+		@keyframes scanSweep {
+			0% {
+				top: -10%;
+			}
+
+			100% {
+				top: 110%;
+			}
+		}
+
+		@keyframes loadingSweep {
+			0% {
+				transform: translateX(-100%);
+			}
+
+			100% {
+				transform: translateX(250%);
+			}
+		}
+
+		/* Utility */
+		.material-symbols-outlined {
+			font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+			display: inline-block;
+			line-height: 1;
+			vertical-align: middle;
+		}
+
+		.hidden-mobile {
+			display: none;
+		}
+
+		@media (min-width: 768px) {
+			.hidden-mobile {
+				display: flex;
+			}
+
+			.footer-content {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+	</style>
+<style id="autoconsent-prehide">#didomi-popup,.didomi-popup-container,.didomi-popup-notice,.didomi-consent-popup-preferences,#didomi-notice,.didomi-popup-backdrop,.didomi-screen-medium,.trustarc-banner-container,.truste_popframe,.truste_overlay,.truste_box_overlay,#truste-consent-track,#CybotCookiebotDialog,#CybotCookiebotDialogBodyUnderlay,#dtcookie-container,#cookiebanner,#cb-cookieoverlay,.modal--cookie-banner,#cookiebanner_outer,#CookieBanner,div[id^='sp_message_container_'],.message-overlay,#sp_privacy_manager_container,#cmpbox,#cmpbox2,#onetrust-banner-sdk,#onetrust-consent-sdk,.onetrust-pc-dark-filter,.js-consent-banner,.klaro,.unic,.modal:has(.unic),.cmp-root,dialog.cookie-consent,div.acris-cookie-consent,#cookie-banner,#adroll_consent_container,#sp-cc-wrapper,[data-action=sp-cc],span[data-action="sp-cc"][data-sp-cc*="rejectAllAction"],#user-consent-management-granular-banner-overlay,#consent-tracking,.modal-open bahf-cookie-disclaimer-dpl3,#cookie-policy-info,#cookie-policy-info-bg,form[class*="cookie-banner"][method="post"],#awsccc-cb-content,#awsccc-cs-container,#awsccc-cs-modalOverlay,#awsccc-cs-container-inner,.axeptio_widget,.axeptio_mount,.b-cookie.is-open,.cookie-alert.t-dark,.cookies-message,#consent-manager,#bnp_container,.cookie-notification,#BorlabsCookieBox,#bsw-consentCookie,.bpa-cookie-banner,.cookie-modal,#notice-cookie-block,.cassie-cookie-module,.cc-banner[data-cc-banner],.cc_banner-wrapper,[data-modal-content]:has([data-toggle-target^='cookie']),#cp-gdpr-choices,#ccc-module,#ccc-overlay,#ccc,.cc-individual-cookie-settings,#cl-consent,.consent-modal[role=dialog],.cf_modal_container,#cmplz-cookiebanner-container,.cc-type-categories[aria-describedby="cookieconsent:desc"],.cc-type-info[aria-describedby="cookieconsent:desc"],[aria-describedby="cookieconsent:desc"] .cc-type-opt-both,[aria-describedby="cookieconsent:desc"].cc-type-opt-out,.cc-type-opt-in[aria-describedby="cookieconsent:desc"],csm-cookie-consent,.spicy-consent-wrapper,.spicy-consent-bar,#cookie-law-info-bar, #cookie-law-bg, .cli-popupbar-overlay,#btn-cookie-settings,#cookiescript_injected,#cookieAcceptBar.cookieAcceptBar,#cc--main,#cc-main,.cc-cookies,#cookiefirst-root,.cookiefirst-root,[aria-labelledby=cookie-preference-panel-title],.ch2-container,#cookie-information-template-wrapper,.cookiejs-banner-wrapper,.cookiejs-banner-wrapper,.cky-overlay,.cky-consent-container,.cookiealert,#ct-ultimate-gdpr-cookie-popup,#cookiebar,div[class*="CookiePopup__desktopContainer"]:has(div[class*="CookiePopup"]),*[data-testid='dl-cookieBanner'],#didomi-popup,.didomi-popup-container,.didomi-popup-notice,.didomi-consent-popup-preferences,#didomi-notice,.didomi-popup-backdrop,.didomi-screen-medium,#mol-ads-cmp-iframe, div.mol-ads-cmp > form > div,[data-project="mol-fe-cmp"],#pg-root-shadow-host,.sp-dsgvo,div[data-testid=cookie-consent-modal-backdrop],div[role='dialog'][aria-modal='true']:has([data-qa='accept-all-button']),#ensNotifyBanner,.ensModal,#gdpr-single-choice-overlay,#gdpr-privacy-settings,.pea_cook_wrapper,.pea_cook_more_info_popover,#ez-cookie-dialog-wrapper,#fast-cmp-root,fedex-gdpr,#fides-overlay, #fides-overlay-wrapper,[fs-consent-element=banner],.fc-consent-root,.fc-dialog-container,.fc-dialog-overlay,.fc-dialog-content,[class*="gcb-modal-overlay"],.overlay_bc_banner,.glue-cookie-notification-bar,.HTjtHe#xe7COe,.gravitoCMP-background-overlay,#modal-host > div.no-hash > div.window-wrapper,.cookie-modal,.cookieModalContent,#cookie-banner-overlay,dialog[data-cookie-consent],#hu.hu-wrapper,.accept-cookie,.privacy-consent--backdrop,.privacy-consent--modal,#iubenda-cs-banner,body.cookies-request #cookie-bar,.widget_eu_cookie_law_widget,div[class^=pecr-cookie-banner-],.cookie-bar,.consent-banner,.kc-overlay,#lanyard_root div[role='dialog'],#ketch-banner,#ketch-modal,.lia-cookie-banner-alert,.darken-layer.open,.lightbox.lightbox--cookie-consent,#lgcookieslaw_banner,#lgcookieslaw_modal,.lgcookieslaw-overlay,.artdeco-global-alert[type=COOKIE_CONSENT],#macaron_cookie_box,div[aria-labelledby=pwa-consent-layer-title],div[class^=StyledConsentLayerWrapper-],#wcpConsentBannerCtrl,#moove_gdpr_cookie_info_bar,#nhsuk-cookie-banner,.disc-cp--active,.tx-om-cookie-consent,.legalmonster-cleanslate,.osano-cm-window,.osano-cm-dialog,.cookieBanner--visibility,.cookie-banner:has([data-ol-cookie-banner-set-consent]),.js-cookie-notice:has(#cookie_settings-form),#pandectes-banner,#ccpaCookieContent_wrapper, article.ppvx_modal--overpanel,#gdprCookieBanner,#pmc-pp-tou--notice,.cookiesBanner,.gdpr-wrapper,#cookie-bar,#cookie-consent-banner,#pubtech-cmp,#qc-cmp2-main,#qc-cmp2-container,div[consent-skip-blocker="1"][id][data-bg],.cookies-consent,s4s-privacy-module,#shopify-pc__banner,sibbo-cmp-layout,#sd-cmp,.cookie-banner-mount-point,#cookie-consent-banner,.cookies-reminder,#CookieConsentBannerPlaceholder,.syno_cookie_element,div[class^="cookies-banner-module_"],#tarteaucitronRoot,#tarteaucitronRoot,#taunton-user-consent__overlay,#tccCmpAlert,#__tealiumGDPRecModal,#__tealiumGDPRcpPrefs,#__tealiumImplicitmodal,#consent-layer,#termly-code-snippet-support,.termsfeed-com---nb,.cc_dialog.cc_css_reboot,.cc_overlay_lock,#privacy-test-page-cmp-test-prehide,#reject-all,.consent-banner-box,#cmpBanner,#cookie-banner.visible,.tp-dialog.cookie-dialog,div.aem-page > div[class^="CookiesAlert_cookiesAlert__"],#transcend-consent-manager,#shopify-section-cookies-controller,#truyo-consent-module,#twcc__mechanism,.u12-data-protection-notice,dialog.cookie-policy,#catapult-cookie-bar,div[aria-labelledby=CookieAlertModalHeading],section[data-test=initial-waitrose-cookie-consent-banner],section[data-test=cookie-consent-modal],.fs-cc-components,[fs-cc=banner],.mw-cookiewarning-container,.wccom-comp-privacy-banner .wccom-privacy-banner,#gdpr-cookie-consent-bar,.wpcc-container,.cookie_warn,#cookies-use-alert,.euCookieModal, #js_euCookieModal,tp-yt-iron-overlay-backdrop.opened,ytd-consent-bump-v2-lightbox,.consent-bump-v2-lightbox,#zdf-cmp-banner-sdk { opacity: 0 !important; z-index: -1 !important; pointer-events: none !important; } </style></head>
+
+<body>
+	<main>
+		<div class="verification-container">
+			<div class="card">
+				<div class="card-inner">
+					<div class="visual-box">
+						<span class="material-symbols-outlined shield-icon">security</span>
+						<div class="scan-line"></div>
+					</div>
+					<h1>Verifying Your Browser</h1>
+					<div class="description-block">
+						<h2>Why am I seeing this?</h2>
+						<p class="description">
+							This site is protected against bots. Your browser is running a quick check to verify you're human — this takes under 10 seconds, then you'll be redirected automatically.
+						</p>
+					</div>
+					<div class="progress-container">
+						<div class="progress-bar"></div>
+					</div>
+					<div class="status-box">
+						<div id="status-message"><span class="spinner"></span> Verification complete!</div>
+						<div class="progress-bar-container">
+							<div id="progress-bar" style="width: 100%;"></div>
+						</div>
+						<div class="error-message" id="error-message"></div>
+					</div>
+					<div class="micro-copy">
+						<span class="material-symbols-outlined lock-icon">lock</span>
+						Verification provided by Delta Media Group
+					</div>
+				</div>
+				<div class="card-bottom-accent"></div>
+			</div>
+			<div class="metadata">
+				RAY ID: <span class="font-mono" id="challenge-id">b66iGhXDJXXZ</span> • YOUR IP: <span class="font-mono">128.130.112.81</span>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="copyright">
+				© 2026. All systems operational.
+			</div>
+		</div>
+	</footer>
+
+
+
+	<script>
+		// Redirect URL from PHP
+		const redirectUrl = "\/";
+		const bScore = 0;
+		// Base URL for API endpoints
+		const apiBaseUrl = window.location.origin;
+
+		// Referrer preservation: capture the original referrer BEFORE PoW bounce clears it.
+		// document.referrer is still the external source (e.g. google.com) at this point
+		// because browsers preserve the referrer through server-side 302 redirects.
+		// The PHP-passed value ($original_referrer) is the authoritative server-side backup.
+		const phpReferrer = "";
+		const originalReferrer = phpReferrer || document.referrer || '';
+		if (originalReferrer && originalReferrer.indexOf(window.location.hostname) === -1) {
+			try {
+				sessionStorage.setItem('_dmg_ref', originalReferrer);
+				// Short-lived cookie fallback for browsers with strict sessionStorage partitioning
+				document.cookie = '_dmg_ref=' + encodeURIComponent(originalReferrer) + ';path=/;max-age=300;SameSite=Lax';
+			} catch (e) {}
+		}
+
+		// DOM elements
+		const statusMessage = document.getElementById('status-message');
+		const progressBar = document.getElementById('progress-bar');
+		const errorMessage = document.getElementById('error-message');
+		const debugElement = document.getElementById('debug');
+
+		// Debug mode (set to true to show detailed information)
+		const debugMode = false;
+
+		// Show debug information if enabled
+		if (debugMode) {
+			debugElement.style.display = 'block';
+		}
+
+		// Log message to debug element
+		function logDebug(message) {
+			if (debugMode) {
+				const timestamp = new Date().toISOString().substring(11, 19);
+				debugElement.innerHTML += `[${timestamp}] ${message}<br>`;
+				debugElement.scrollTop = debugElement.scrollHeight;
+			}
+		}
+
+		// Update the status message
+		function updateStatus(message, progress = null) {
+			statusMessage.innerHTML = `<span class="spinner"></span> ${message}`;
+			if (progress !== null) {
+				progressBar.style.width = `${progress}%`;
+			}
+		}
+
+		// Show an error message
+		function showError(message) {
+			errorMessage.textContent = message;
+			errorMessage.style.display = 'block';
+			statusMessage.innerHTML = 'Verification failed';
+		}
+
+		// Set a cookie
+		function setCookie(name, value, domain, secure) {
+			console.log(secure);
+			document.cookie = `${name}=${value};expires=0;domain=${domain};path=/;SameSite=Lax` + (secure ? `; secure` : ``);
+		}
+
+		// Perform SHA-256 hashing
+		async function sha256(message) {
+			// Convert the message to an ArrayBuffer
+			const msgBuffer = new TextEncoder().encode(message);
+
+			// Hash the message
+			const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+
+			// Convert the hash to a hex string
+			const hashArray = Array.from(new Uint8Array(hashBuffer));
+			return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+		}
+
+		// Solve the proof-of-work challenge
+		async function solveChallenge(challenge, difficulty) {
+			updateStatus('Computing verification...', 20);
+			logDebug(`Solving challenge: ${challenge} with difficulty ${difficulty}`);
+
+			const target = '0'.repeat(difficulty);
+			let nonce = 0;
+			let hash = '';
+			const startTime = performance.now();
+			document.getElementById('challenge-id').textContent = challenge.split(':')[0];
+			// Set up progress updates
+			const progressInterval = setInterval(() => {
+				const elapsedTime = performance.now() - startTime;
+				// After 10 seconds, show more detailed progress
+				if (elapsedTime > 10000) {
+					updateStatus(`Still computing (tested ${nonce.toLocaleString()} solutions)...`, 40);
+				}
+			}, 2000);
+
+			try {
+				while (true) {
+					const attempt = `${challenge}:${nonce}`;
+					hash = await sha256(attempt);
+
+					if (hash.startsWith(target)) {
+						clearInterval(progressInterval);
+						const duration = Math.round((performance.now() - startTime) / 10) / 100;
+						logDebug(`Found solution in ${duration}s: nonce=${nonce}, hash=${hash}`);
+						return {
+							nonce,
+							hash,
+							duration
+						};
+					}
+
+					nonce++;
+
+					// Every 5000 attempts, yield to the browser to prevent UI freezing
+					if (nonce % 5000 === 0) {
+						await new Promise(resolve => setTimeout(resolve, 0));
+					}
+				}
+			} catch (error) {
+				clearInterval(progressInterval);
+				logDebug(`Error solving challenge: ${error.message}`);
+				throw error;
+			}
+		}
+
+		// Get a challenge from the server
+		async function fetchChallenge() {
+			try {
+				updateStatus('Requesting challenge...', 10);
+				logDebug('Fetching challenge from server');
+				const urlParams = new URLSearchParams({
+					redirectUrl: redirectUrl,
+					score: bScore
+				});
+
+				const response = await fetch(`${apiBaseUrl}/shared/human/pow_controller.php?${urlParams}`);
+				if (!response.ok) {
+					throw new Error(`Server returned ${response.status}`);
+				}
+
+				const data = await response.json();
+				logDebug(`Received challenge: ${JSON.stringify(data)}`);
+				return data;
+			} catch (error) {
+				logDebug(`Error fetching challenge: ${error.message}`);
+				throw error;
+			}
+		}
+
+		// Submit a solution to the server
+		async function submitSolution(challenge, nonce) {
+			try {
+				updateStatus('Submitting verification...', 70);
+				logDebug(`Submitting solution: challenge=${challenge}, nonce=${nonce}`);
+
+				const response = await fetch(`${apiBaseUrl}/shared/human/pow_controller.php`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						challenge,
+						nonce
+					})
+				});
+
+				if (!response.ok) {
+					throw new Error(`Server returned ${response.status}`);
+				}
+
+				const data = await response.json();
+				logDebug(`Received token: ${JSON.stringify(data)}`);
+				return data;
+			} catch (error) {
+				logDebug(`Error submitting solution: ${error.message}`);
+				throw error;
+			}
+		}
+
+		// Main verification flow
+		async function startVerification() {
+			try {
+				// Fetch a challenge from the server
+				const challengeData = await fetchChallenge();
+
+				// Solve the challenge
+				const solution = await solveChallenge(
+					challengeData.challenge,
+					challengeData.difficulty
+				);
+
+				// Submit the solution to the server
+				const tokenData = await submitSolution(
+					challengeData.challenge,
+					solution.nonce
+				);
+
+				// Save the token as a cookie
+				if (tokenData.token) {
+					setCookie('isHuman', tokenData.token, tokenData.domain, false);
+
+					// Show completion status
+					updateStatus('Verification complete!', 100);
+
+					// Redirect to the original URL, appending the original referrer
+					// as _dmg_ref so analytics tools (GA4/GTM) can restore correct attribution
+					setTimeout(() => {
+						let finalUrl = redirectUrl;
+						if (originalReferrer && originalReferrer.indexOf(window.location.hostname) === -1) {
+							const sep = finalUrl.indexOf('?') !== -1 ? '&' : '?';
+							finalUrl = finalUrl + sep + '_dmg_ref=' + encodeURIComponent(originalReferrer);
+						}
+						window.location.href = finalUrl;
+					}, 1000);
+				} else {
+					throw new Error('Server did not return a valid token');
+				}
+			} catch (error) {
+				logDebug(`Verification failed: ${error.message}`);
+				showError(`Verification failed: ${error.message}. Please try refreshing the page.`);
+			}
+		}
+
+		// Start the verification process when the page loads
+		window.addEventListener('DOMContentLoaded', startVerification);
+	</script>
+
+
+
+
+</body></html>

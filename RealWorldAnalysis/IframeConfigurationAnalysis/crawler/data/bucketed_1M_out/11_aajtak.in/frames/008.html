@@ -1,0 +1,116 @@
+<html><head><script>
+    var getUUID = function () {
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function (c) {
+                var r = (Math.random() * 16) | 0,
+                    v = c == "x" ? r : (r & 0x3) | 0x8;
+                return v.toString(16);
+            }
+        );
+    };
+    var getCookie = function (cname) {
+        try {
+            var name = cname + "=";
+            var decodedCookie = document.cookie;
+            var ca = decodedCookie.split(";");
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == " ") {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return decodeURIComponent(c.substring(name.length, c.length));
+                }
+            }
+            return "";
+        } catch (e) { }
+    };
+
+    var setCookie = function (k, v) {
+        var d = new Date();
+        d.setTime(d.getTime() + 1500 * 240 * 60 * 60 * 1000);
+        var expires = "expires=" + d.toUTCString();
+        document.cookie =
+            k +
+            "=" +
+            v +
+            ";path=/;" +
+            expires +
+            ";domain=.izooto.com;SameSite=None;Secure;";
+    };
+
+    var setStorage = function (k, v) {
+        try {
+            localStorage.setItem(k, v);
+            setCookie(k, v);
+        } catch (e) { }
+    };
+
+    var getStorage = function (k) {
+        try {
+            return getCookie(k) || localStorage.getItem(k) || "";
+        } catch (e) { }
+    };
+
+    var sendMessage = function (key, value, option, bkey) {
+        var jsonToSend = {
+            k: key,
+            v: value,
+        };
+        if (bkey != undefined) {
+            jsonToSend.bkey = bkey;
+        }
+        var msg = {
+            izootoMsg: jsonToSend,
+        };
+
+        if ("parent" === option) {
+            window.parent.postMessage(JSON.stringify(msg), "*");
+        } else if ("opener" === option) {
+            window.opener.postMessage(JSON.stringify(msg), "*");
+        } else {
+            //console.log(JSON.stringify(jsonToSend));
+            option.contentWindow.postMessage(JSON.stringify(msg), "*");
+        }
+    };
+
+    var cvalue = getCookie("IZCID");
+    if (cvalue == "") {
+        var cvalue = getUUID();
+        setCookie("IZCID", cvalue);
+    } else {
+        setCookie("IZCID", cvalue);
+    }
+
+    var pidList = getStorage("izootoAllowedSites") || "";
+    var izCidWithPidList = { izcid: cvalue, pidList: pidList };
+    izCidWithPidList = JSON.stringify(izCidWithPidList);
+    sendMessage("izCidWithPidList", izCidWithPidList, "parent");
+    sendMessage('izCidToParent',cvalue,'parent');
+
+    try {
+        window.addEventListener("message", function (e) {
+            if (e.data) {
+		try {
+                var data = JSON.parse(e.data);
+                if (data["izootoMsg"] && data["izootoMsg"]["setAllowedList"]) {
+                    let pid = data["izootoMsg"]["setAllowedList"];
+                    let allowedSiteList = getStorage("izootoAllowedSites");
+                    allowedSiteList = allowedSiteList
+                        ? JSON.parse(allowedSiteList)
+                        : [];
+                    if (allowedSiteList.indexOf(pid) == -1) {
+                        allowedSiteList.push(pid);
+                        allowedSiteList = JSON.stringify(allowedSiteList);
+                        setStorage("izootoAllowedSites", allowedSiteList);
+                    }
+                    sendMessage("allowedListUpdated", allowedSiteList, "parent");
+                }
+		} catch(e) {
+		}
+            }
+        });
+    } catch (e) { }
+</script>
+
+</head><body>
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://mint-outdoor.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+const GOOGLE_TAG = 'AW-16794470748';
+const VIEW_ITEM_CONVERSION_LABEL = 'kqbiCMffk_AZENySncg-';
+const ADD_TO_CART_CONVERSION_LABEL = 'XV5RCIbpj_AZENySncg-';
+const BEGIN_CHECKOUT_CONVERSION_LABEL = '0WOACOSHiPAZENySncg-';
+const PURCHASE_CONVERSION_LABEL = 'kzrKCOuEye8ZENySncg-';
+
+
+const script = document.createElement('script');
+script.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG}`);
+script.setAttribute('async', '');
+document.head.appendChild(script);
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', GOOGLE_TAG);
+
+analytics.subscribe("page_viewed", (event) => {
+  window.dataLayer.push({
+    event: "page_view",
+    page_location: event.context.window.location.href,
+    page_title: event.context.document.title,
+  });
+});
+
+analytics.subscribe("product_viewed", (event) => {
+  const currency = event.data.productVariant.price.currencyCode;
+  const value = event.data.productVariant.price.amount;
+  const items = [event.itemData];
+
+  gtag('event', 'view_item', {
+    'send_to': `${GOOGLE_TAG}/${VIEW_ITEM_CONVERSION_LABEL}`,
+    'currency': currency,
+    'value': value,
+    'items': items,
+  });
+});
+
+analytics.subscribe("product_added_to_cart", (event) => {
+  const currency = event.data.cartLine.cost.totalAmount.currencyCode;
+  const value = event.data.cartLine.cost.totalAmount.amount;
+  const items = [event.itemData];
+
+  gtag('event', 'add_to_cart', {
+    'send_to': `${GOOGLE_TAG}/${ADD_TO_CART_CONVERSION_LABEL}`,
+    'currency': currency,
+    'value': value,
+    'items': items,
+  });
+});
+
+analytics.subscribe("checkout_started", (event) => {
+  const checkout = event.data.checkout;
+  const currency = checkout.currencyCode;
+  const value = checkout.totalPrice;
+
+  const allDiscountCodes = checkout.discountApplications
+    .filter((discount) => discount.type === 'DISCOUNT_CODE')
+    .map((discount) => discount.title);
+
+  const items = [event.itemData];
+
+  gtag('set', 'user_data', {
+    "email": checkout.email,
+    "phone_number": checkout.phone,
+  });
+
+  gtag('event', 'begin_checkout', {
+    'send_to': `${GOOGLE_TAG}/${BEGIN_CHECKOUT_CONVERSION_LABEL}`,
+    'currency': currency,
+    'value': value,
+    'coupon': allDiscountCodes,
+    'items': items,
+  });
+});
+
+analytics.subscribe("checkout_completed", (event) => {
+  const checkout = event.data.checkout;
+
+  gtag('set', 'user_data', {
+    "email": checkout.email,
+    "phone_number": checkout.phone,
+  });
+
+  gtag('event', 'conversion', {
+    'send_to': `${GOOGLE_TAG}/${PURCHASE_CONVERSION_LABEL}`,
+    'value': checkout.totalPrice.amount,
+    'transaction_id': checkout.order.id,
+    'currency': checkout.currencyCode,
+  });
+});
+});})(self.webPixelsManager.createShopifyExtend('141721932', 'custom'));
+
+</script>
+
+  <script src="https://www.googletagmanager.com/gtag/js?id=AW-16794470748" async=""></script></head>
+  <body>
+
+</body></html>

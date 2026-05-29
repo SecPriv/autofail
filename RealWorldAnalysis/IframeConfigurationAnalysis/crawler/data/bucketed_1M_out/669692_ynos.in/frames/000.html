@@ -1,0 +1,1585 @@
+<!DOCTYPE html><html lang="en" data-ng-app="launchApp" class="ng-scope"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" id="zsiqscript" defer="" src="https://salesiq.zoho.com/widget"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-482470186&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-9G0XK62J3V&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-M7QCSPXTP7&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://app.posthog.com/static/array.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MC5XHT7"></script><script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MC5XHT7');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- PostHog Analytics -->
+    <script>
+        ! function (t, e) {
+            var o, n, p, r;
+            e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) {
+                function g(t, e) {
+                    var o = e.split(".");
+                    2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () {
+                        t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                    }
+                }(p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host +
+                    "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
+                var u = e;
+                for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString =
+                    function (t) {
+                        var e = "posthog";
+                        return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                    }, u.people.toString = function () {
+                        return u.toString(1) + ".people (stub)"
+                    }, o =
+                    "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags"
+                    .split(" "), n = 0; n < o.length; n++) g(u, o[n]);
+                e._i.push([i, s, a])
+            }, e.__SV = 1)
+        }(document, window.posthog || []);
+        posthog.init('phc_oLZUJZj9F8plbcTuajTSxX9zuTBWkWLGLxPYdivqT83', {
+            api_host: 'https://app.posthog.com'
+        })
+    </script>
+    <!-- End PostHog Analytics -->
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "Organization",
+            "name": "YNOS Venture Engine",
+            "logo": "https://www.ynos.in/images/ynos-logo-full.svg",
+            "url": "https://www.ynos.in",
+            "foundingDate": "2017",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Chennai",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "600113",
+                "streetAddress": "E1-08, Block E, IIT Madras Research Park, Kanagam Road, Taramani, Chennai, Tamil Nadu 600113"
+            },
+            "founders": [{
+                "@type": "Person",
+                "name": "A Thillai Rajan"
+            }, {
+                "@type": "Person",
+                "name": "Pradeep Kumar Venkatramu"
+            }, {
+                "@type": "Person",
+                "name": "Sangeetha Viswanathan"
+            }, {
+                "@type": "Person",
+                "name": "Muthuraman Natarajan"
+            }],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Partnership",
+                "email": "jeeves@ynos.in",
+                "url": "https://www.ynos.in/contact"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/ynos-in/",
+                "https://www.linkedin.com/company/ynos-venture-engine",
+                "https://twitter.com/YnosIn",
+                "https://www.facebook.com/YNOSVenture/",
+                "https://www.instagram.com/ynosventure/",
+                "https://www.youtube.com/channel/UC0GW9GDba027XLyY8qDzX9w",
+                "https://blog.ynos.in/"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "YNOS Venture Engine",
+            "url": "https://www.ynos.in"
+        }
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="title" content="YNOS Venture Engine - Indian Startup Ecosystem Platform">
+    <meta name="description" content="YNOS is an information powerhouse on the Indian startup ecosystem covering Startups, Founders, Incubators, Angels, VCs, Corporates, Investors, Government Agencies, &amp; Banks. YNOS dramatically reduces down the time, effort, and costs for getting the comprehensive and up-to-date information on opportunities, funding, growth, impact for startups &amp; entrepreneurs.">
+
+    <!-- https://css-tricks.com/essential-meta-tags-social-media/ -->
+    <!-- https://moz.com/blog/meta-data-templates-123 -->
+
+    <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup -->
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.ynos.in/images/favicons/favicon.ico">
+
+    <!-- OG,Twitter tags starts -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YNOS Venture Engine - Indian Startup Ecosystem Platform">
+    <meta property="og:description" content="YNOS is an information powerhouse on the Indian startup ecosystem covering Startups, Founders, Incubators, Angels, VCs, Corporates, Investors, Government Agencies, &amp; Banks. YNOS dramatically reduces down the time, effort, and costs for getting the comprehensive and up-to-date information on opportunities, funding, growth, impact for startups &amp; entrepreneurs.">
+    <meta property="og:url" content="https://www.ynos.in">
+    <meta property="og:site_name" content="YNOS Venture Engine">
+    <meta property="fb:pages" content="https://www.facebook.com/YNOSVenture/">
+
+    <meta property="og:image" content="https://static.ynos.in/images/misc/ynos-banner-seo.jpg">
+    <meta property="og:image:secure_url" content="https://static.ynos.in/images/misc/ynos-banner-seo.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="YNOS Venture Engine: Startup Informed. Startup Smart.">
+
+    <meta property="og:image" content="https://static.ynos.in/images/misc/ynos-logo-seo.jpg">
+    <meta property="og:image:secure_url" content="https://static.ynos.in/images/misc/ynos-logo-seo.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt" content="YNOS Venture Engine Logo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@YnosIn">
+    <meta name="twitter:title" content="YNOS Venture Engine - Indian Startup Ecosystem Platform">
+    <meta name="twitter:description" content="YNOS is an information powerhouse on the Indian startup ecosystem covering Startups, Founders, Incubators, Angels, VCs, Corporates, Investors, Government Agencies, &amp; Banks. YNOS dramatically reduces down the time, effort, and costs for getting the comprehensive and up-to-date information on opportunities, funding, growth, impact for startups &amp; entrepreneurs.">
+    <meta name="twitter:image" content="https://static.ynos.in/images/misc/ynos-banner-seo.jpg">
+    <meta name="twitter:image:alt" content="YNOS Venture Engine: Startup Informed. Startup Smart.">
+    <!-- OG,Twitter tags ends  -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://static.ynos.in/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://static.ynos.in/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://static.ynos.in/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://static.ynos.in/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://static.ynos.in/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://static.ynos.in/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://static.ynos.in/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://static.ynos.in/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.ynos.in/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://static.ynos.in/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://static.ynos.in/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://static.ynos.in/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://static.ynos.in/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://static.ynos.in/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://static.ynos.in/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>YNOS Venture Engine - Indian Startup Ecosystem Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+            integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,95,200..900;1,95,200..900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Mona+Sans:ital,wdth,wght@0,95,200..900;1,95,200..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/dist/landing.css">
+    <link rel="preconnect" href="https://api.ynos.in">
+
+    <link rel="canonical" data-ng-href="https://www.ynos.in/" href="https://www.ynos.in/">
+    <link rel="stylesheet" type="text/css" href="/static/css/zoho-chat.css">
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x- ng-cloak {
+            display: none !important;
+        }
+    </style>
+<script async="" src="https://static.hotjar.com/c/hotjar-1263992.js?sv=6"></script><script async="" src="https://script.hotjar.com/modules.6a0f3932cb1341a35c18.js" charset="utf-8"></script><script src="https://script.hotjar.com/survey-v2.e6c6788db3e06a837094.js"></script><style>._hj-Pbej5__styles__resetStyles *{line-height:normal;font-family:Arial, sans-serif, Tahoma !important;text-transform:initial !important;letter-spacing:normal !important}._hj-Pbej5__styles__resetStyles *::before,._hj-Pbej5__styles__resetStyles *::after{box-sizing:initial}._hj-Pbej5__styles__resetStyles div{height:auto}._hj-Pbej5__styles__resetStyles button{display:inline-block;height:auto;font-size:1rem}._hj-Pbej5__styles__resetStyles div,._hj-Pbej5__styles__resetStyles span,._hj-Pbej5__styles__resetStyles p,._hj-Pbej5__styles__resetStyles a,._hj-Pbej5__styles__resetStyles button{font-weight:normal !important}._hj-Pbej5__styles__resetStyles div,._hj-Pbej5__styles__resetStyles span,._hj-Pbej5__styles__resetStyles p,._hj-Pbej5__styles__resetStyles a,._hj-Pbej5__styles__resetStyles img,._hj-Pbej5__styles__resetStyles strong,._hj-Pbej5__styles__resetStyles form,._hj-Pbej5__styles__resetStyles label{border:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;float:none !important}._hj-Pbej5__styles__resetStyles span{color:inherit}._hj-Pbej5__styles__resetStyles ol,._hj-Pbej5__styles__resetStyles ul,._hj-Pbej5__styles__resetStyles li{list-style:none !important;margin:0 !important;padding:0 !important}._hj-Pbej5__styles__resetStyles li:before,._hj-Pbej5__styles__resetStyles li:after{content:none !important}._hj-Pbej5__styles__resetStyles hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}._hj-Pbej5__styles__resetStyles input[type='submit'],._hj-Pbej5__styles__resetStyles input[type='button'],._hj-Pbej5__styles__resetStyles button{margin:0;padding:0;float:none !important}._hj-Pbej5__styles__resetStyles input,._hj-Pbej5__styles__resetStyles select,._hj-Pbej5__styles__resetStyles a img{vertical-align:middle}._hj-s3UIi__styles__globalStyles *,._hj-s3UIi__styles__globalStyles *::before,._hj-s3UIi__styles__globalStyles *::after{box-sizing:border-box}@font-face{font-family:'hotjar';src:url(https://script.hotjar.com/font-hotjar_5.f4b154.eot);src:url(https://script.hotjar.com/font-hotjar_5.f4b154.eot#iefix) format("embedded-opentype"),url(https://script.hotjar.com/font-hotjar_5.65042d.woff2) format("woff2"),url(https://script.hotjar.com/font-hotjar_5.0ddfe2.ttf) format("truetype"),url(https://script.hotjar.com/font-hotjar_5.17b429.woff) format("woff"),url(https://script.hotjar.com/font-hotjar_5.2c7ab2.svg#hotjar) format("svg");font-weight:normal;font-style:normal}@keyframes _hj-eYRYp__styles__spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes _hj-5\+Z5O__styles__colors{0%{border-color:#f4364c;border-top-color:transparent}25%{border-color:#00a2f2;border-top-color:transparent}50%{border-color:#efb60c;border-top-color:transparent}75%{border-color:#42ca49;border-top-color:transparent}100%{border-color:#f4364c;border-top-color:transparent}}._hj-s3UIi__styles__globalStyles p{color:inherit !important}._hj-s3UIi__styles__globalStyles a,._hj-s3UIi__styles__globalStyles a:link,._hj-s3UIi__styles__globalStyles a:hover,._hj-s3UIi__styles__globalStyles a:active{color:inherit !important;text-decoration:underline}._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon{speak:none !important;font-style:normal !important;font-weight:normal !important;font-variant:normal !important;text-transform:none !important;overflow-wrap:normal !important;word-break:normal !important;word-wrap:normal !important;white-space:nowrap !important;line-height:normal !important;-webkit-font-smoothing:antialiased !important;-moz-osx-font-smoothing:grayscale !important;vertical-align:middle !important}._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon,._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon:before,._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon:after,._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon *,._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon *:before,._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon *:after{font-family:'hotjar' !important;display:inline-block !important;direction:ltr !important}._hj-s3UIi__styles__globalStyles ._hj-L5SMl__styles__icon:before{color:inherit !important}._hj-s3UIi__styles__globalStyles ._hj-dk3Fb__styles__iconX:before{content:'\e803'}._hj-s3UIi__styles__globalStyles ._hj-9iDZB__styles__iconOk:before{content:'\e804'}._hj-s3UIi__styles__globalStyles ._hj-t13KX__styles__iconError:before{content:'\e90c'}._hj-s3UIi__styles__globalStyles ._hj-D\+oDX__styles__iconLogo:before{content:'\e806'}._hj-s3UIi__styles__globalStyles ._hj-Nbq9C__styles__iconSelectElement:before{content:'\e91a'}._hj-s3UIi__styles__globalStyles ._hj-mtJG6__styles__surveyIcons{background-repeat:no-repeat;width:16px;height:16px;display:inline-block !important;zoom:1;vertical-align:middle}._hj-widget-theme-light ._hj-s3UIi__styles__globalStyles ._hj-mtJG6__styles__surveyIcons{background-image:url(https://script.hotjar.com/widget_icons_light.766225.png)}._hj-widget-theme-dark ._hj-s3UIi__styles__globalStyles ._hj-mtJG6__styles__surveyIcons{background-image:url(https://script.hotjar.com/widget_icons_dark.ad934a.png)}._hj-s3UIi__styles__globalStyles ._hj-EZqbk__styles__inputField{font-family:Arial, sans-serif, Tahoma;font-size:14px;color:#333 !important;padding:6px !important;text-indent:0 !important;height:30px;width:100%;min-width:100%;background:white;border:1px solid !important;outline:none !important;max-width:none !important;float:none;border-radius:3px}._hj-s3UIi__styles__globalStyles ._hj-AwaE7__styles__textarea{resize:none;height:100px}._hj-s3UIi__styles__globalStyles ._hj-EIBGi__styles__basicButton,._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton{cursor:pointer;text-decoration:none;text-transform:capitalize;font-size:14px;font-weight:bold;padding:6px 16px !important;border:0;outline:0;display:inline-block;vertical-align:top;width:auto;zoom:1;transition:all 0.2s ease-in-out;box-shadow:0 2px 3px 0 rgba(0,0,0,0.15);border-radius:4px;color:white}._hj-s3UIi__styles__globalStyles ._hj-EIBGi__styles__basicButton:hover,._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:hover,._hj-s3UIi__styles__globalStyles ._hj-EIBGi__styles__basicButton:focus,._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:focus,._hj-s3UIi__styles__globalStyles ._hj-EIBGi__styles__basicButton:active,._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:active{background:#00a251}._hj-s3UIi__styles__globalStyles ._hj-EIBGi__styles__basicButton[disabled],._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton[disabled]{cursor:default}._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton{font-size:14px !important;font-weight:500 !important;padding:6px 16px !important;border:0 !important;outline:0 !important;min-height:initial !important;width:auto !important;min-width:initial !important;background:var(--hjFeedbackAccentColor) !important;color:var(--hjFeedbackAccentTextColor) !important;box-shadow:none !important}._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:hover,._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:focus,._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:active{background:var(--hjFeedbackAccentActiveColor) !important}._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:focus{background:var(--hjFeedbackAccentColor) !important;box-shadow:0 0 0 1px var(--hjFeedbackPrimaryColor),0 0 0 3px var(--hjFeedbackAccentColor) !important}._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton:hover{background:var(--hjFeedbackAccentHoverColor) !important}._hj-s3UIi__styles__globalStyles ._hj-SU8LU__styles__primaryButton[disabled]{cursor:default;background:var(--hjFeedbackDisabledAccentColor) !important;color:var(--hjFeedbackDisabledAccentTextColor) !important}._hj-s3UIi__styles__globalStyles ._hj-F457\+__styles__clearButton{cursor:pointer;text-decoration:underline;font-size:13px !important;padding:0 10px !important;border:0 !important}._hj-s3UIi__styles__globalStyles ._hj-F457\+__styles__clearButton,._hj-s3UIi__styles__globalStyles ._hj-F457\+__styles__clearButton:hover,._hj-s3UIi__styles__globalStyles ._hj-F457\+__styles__clearButton:focus,._hj-s3UIi__styles__globalStyles ._hj-F457\+__styles__clearButton:active{background:transparent !important}._hj-s3UIi__styles__globalStyles ._hj-hTm4\+__styles__answersContentWrapper{padding:4px 12px 16px 12px}._hj-s3UIi__styles__globalStyles ._hj-ag9y\+__styles__spinner{border:1px solid rgba(0,0,0,0.6);border-top-color:transparent !important;border-radius:50%;transform:rotate(0deg);animation:_hj-eYRYp__styles__spin 0.4s linear infinite, _hj-5\+Z5O__styles__colors 5.6s ease-in-out infinite}._hj-s3UIi__styles__globalStyles ._hj-H1LCt__styles__widget{font-size:13px !important;position:fixed;z-index:2147483640;bottom:-400px;right:100px;width:300px;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;-webkit-transform:translateZ(0) !important;transform:translateZ(0) !important}._hj-AwaE7__styles__textarea{}._hj-dk3Fb__styles__iconX,._hj-9iDZB__styles__iconOk,._hj-t13KX__styles__iconError,._hj-D\+oDX__styles__iconLogo,._hj-Nbq9C__styles__iconSelectElement{}._hj-eJm8p__styles__rtl,._hj-eJm8p__styles__rtl *{direction:rtl !important}._hj-hc6BA__styles__roundedCorners{border-radius:3px}@media screen and (max-width: 480px){._hj-A4W17__styles__inlineSurvey{max-width:100%;overflow-x:auto}}
+</style><style data-emotion="css-global" data-s=""></style><style data-emotion="css" data-s=""></style><link rel="stylesheet" href="https://css.zohocdn.com/salesiq/styles/floatbutton1_GIFLbol1kJZVrV24d51HLLrd0QNzUVBhzbSnHpFr6Dj8_iuVzZkr5HAQG2y9n9wR_.css" integrity="sha384-GIFLbol1kJZVrV24d51HLLrd0QNzUVBhzbSnHpFr6Dj8/iuVzZkr5HAQG2y9n9wR" crossorigin="anonymous"><script src="https://js.zohocdn.com/salesiq/js/floatbutton1_erpGdyclq6oBvJqFAvLSHLVGUFrgdMEduI4lY-Tr4RMb5SjwjbYjEt1kqCpX5EMp_.js" integrity="sha384-erpGdyclq6oBvJqFAvLSHLVGUFrgdMEduI4lY+Tr4RMb5SjwjbYjEt1kqCpX5EMp" crossorigin="anonymous"></script><link rel="stylesheet" href="https://css.zohocdn.com/salesiq/styles/floatbuttonpostload_S5HNJwau1PlMkc18a6InKleG3V-M1srNOiYisVaC3wqeJ7BJWxpuIqc1E9mPchsP_.css" integrity="S5HNJwau1PlMkc18a6InKleG3V-M1srNOiYisVaC3wqeJ7BJWxpuIqc1E9mPchsP" crossorigin="anonymous"></head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC5XHT7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.dots.min.js"></script> -->
+    <script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/exception-autocapture.js?v=1.376.0"></script><script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/surveys.js?v=1.376.0"></script><script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/static/posthog-recorder.js?v=1.376.0"></script><script type="text/javascript" crossorigin="anonymous" src="https://us-assets.i.posthog.com/array/phc_oLZUJZj9F8plbcTuajTSxX9zuTBWkWLGLxPYdivqT83/config.js"></script><script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <!--  Home banner-->
+    <!-- <div data-ng-include="'/static/banners/maintenance_banner.html'" class="ys-banner"
+        data-ng-controller="maintainBannerCtrl"></div> -->
+    <!-- <div ng-controller="homeBannerCtrl" ng-include="'/banners/home_banner.html'" class="ys-banner"></div> -->
+    <!-- End Home banner -->
+
+    <!-- Main Section -->
+    <div class="ys-fluid-container ng-scope" data-ng-controller="homeController">
+        <div class="ys-main">
+            <section class="top-section">
+                <!-- Header Section -->
+                <!-- ngInclude: '/static/templates/header-home.html' --><header data-ng-include="'/static/templates/header-home.html'" data-ng-controller="headerCtrl" class="ng-scope" style=""><div id="ys-header-section" class="header-home-style ng-scope">
+    <div class="header-container visible-header-sm">
+        <div class="header-wrapper">
+            <div class="header-row">
+                <div class="header-left-col">
+                    <div class="ys-logo-wrapper">
+                        <a href="/">
+                            <img src="https://static.ynos.in/images/logos/ynos-white-horizontal-tagline-transparent-bg.svg" alt="YNOS Logo" class="whiteLogo" width="170" height="28">
+                            <img src="https://static.ynos.in/images/logos/ynos-black-horizontal-tagline-transparent-bg.svg" alt="YNOS Logo" class="greenLogo" style="display:none;" width="170" height="28">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-middle-col">
+                    <nav class="ys-nav">
+                        <ul class="ys-nav-list">
+                            <li class="ys-nav-item">
+                                <header-products-menu><div class="dropdown nav-dropdown-container">
+    <span ng-class="{ active: isActive('/products')}" class="dropdown-toggle nav-dropdown-btn" data-toggle="dropdown" aria-expanded="false">Products</span>
+    <div class="dropdown-menu nav-dropdown-content" role="menu">
+        <div class="nav-dropdown-list products-nav">
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Information Platform</h3>
+                    <a href="/products/startups/index.html#!/dashboard" class="nav-item-links">Startups</a>
+                    <a href="/products/angels/index.html#!/dashboard" class="nav-item-links">Angels</a>
+                    <a href="/products/vcs/index.html#!/dashboard" class="nav-item-links">VCs</a>
+                    <a href="/products/incubators/index.html#!/dashboard" class="nav-item-links">Incubators</a>
+                    <a href="/products/government-funding/index.html#!/dashboard" class="nav-item-links">Govt. Funding</a>
+                    <a href="/products/debt-funding/index.html#!/dashboard" class="nav-item-links">Debt Funding</a>
+                </div>
+            </div>
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Dashboards</h3>
+                    <a target="_blank" href="/one-innovation" class="nav-item-links">
+                        One Innovation
+                        <span class="nav-new-label">New</span>
+                        <span class="nav-item-link-description">Startups &amp; Universities</span>
+                    </a>
+                    <a target="_blank" href="/tamilnadu-innovation" class="nav-item-links">
+                        InnovationTN
+                        <span class="nav-new-label">New</span>
+                        <span class="nav-item-link-description">TN Startups &amp; Innovation</span>
+                    </a>
+                    <a target="_blank" href="/vibgyor" class="nav-item-links">
+                        VIBGYOR
+                        <!-- <span class="nav-new-label">New</span> -->
+                        <span class="nav-item-link-description">Startups in Textiles</span>
+                    </a>
+                    <a href="/products/insight" class="nav-item-links">
+                        Insight
+                        <span class="nav-item-link-description">Startup &amp; Investor Dashboard</span>
+                    </a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">AI Chatbot</h3>
+                    <a target="_blank" rel="noopener" href="https://chat.ynos.in/" class="nav-item-links">
+                        StartupGPT
+                        <!-- <span class="nav-new-label">New</span> -->
+                    </a>
+                </div>
+                <!-- <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Innovation Platform</h3>
+                    <a href="/products/ip-engine/index.html#!/dashboard" class="nav-item-links">IP Engine</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Expert Platform</h3>
+                    <a href="/products/delphi/index.html#!/dashboard" class="nav-item-links">Delphi</a>
+                    <a href="/products/consult" class="nav-item-links">Consult</a>
+                </div> -->
+            </div>
+        </div>
+        <a class="dropdown-see-all" href="/products">See All</a>
+    </div>
+</div></header-products-menu>
+                            </li>
+                            <li class="ys-nav-item">
+                                <header-solutions-menu><!-- Mobile Solution -->
+
+<div class="visible-header-xs mobile-dropdown-container">
+    <a href="javascript:void(0);" ng-class="{ active: solutionsNavLinkActive('/solutions')}">Solutions</a>
+    <div class="mobile-dropdown-list">
+        <a href="/solutions/for-startups-and-founders" class="mobile-dropdown-item">For Startups</a>
+        <a href="/solutions/for-angel-and-vc-investors" class="mobile-dropdown-item">For Investors</a>
+        <a href="/solutions/for-incubators-and-accelerators" class="mobile-dropdown-item">For Incubators &amp; Accelerators</a>
+        <a href="/solutions/for-corporates-and-organisations" class="mobile-dropdown-item">For Organizations</a>
+        <a href="/solutions/for-researchers-and-policy-makers" class="mobile-dropdown-item">For Researchers &amp; Policy Makers</a>
+    </div>
+</div>
+
+
+<!-- Website Solution -->
+
+
+
+
+<div class="dropdown nav-dropdown-container visible-header-sm">
+    <span ng-class="{ active: solutionsNavLinkActive('/solutions')}" class="dropdown-toggle nav-dropdown-btn" data-toggle="dropdown" aria-expanded="false">Solutions</span>
+    <div class="dropdown-menu nav-dropdown-content" role="menu">
+        <div class="nav-dropdown-list solutions-nav">
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Startups</h3>
+                    <a ng-href="/products/angels" class="nav-item-links" href="/products/angels">Angel Investor Matchmaking</a>
+                    <a ng-href="/products/verve" class="nav-item-links" href="/products/verve">Determine your Startup's Valuation</a>
+                    <a ng-href="/products/insight" class="nav-item-links" href="/products/insight">Analyse &amp; Benchmark with Competition</a>
+                    <a href="/solutions/for-startups-and-founders" class="nav-item-links nav-view-more">View More</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Investors</h3>
+                    <a ng-href="/products/verve" class="nav-item-links" href="/products/verve">Startup Valuation Estimator</a>
+                    <a ng-href="/products/insight" class="nav-item-links" href="/products/insight">Competition Analysis &amp; Due Diligence</a>
+                    <a href="/solutions/for-angel-and-vc-investors" class="nav-item-links">Deal Screening &amp; Pitch Presentations</a>
+                    <a href="/solutions/for-angel-and-vc-investors" class="nav-item-links">Showcase your Portfolio</a>
+                    <a href="/solutions/for-angel-and-vc-investors" class="nav-item-links nav-view-more">View More</a>
+                </div>
+            </div>
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Incubators &amp; Accelerators</h3>
+                    <a ng-href="/products/insight" class="nav-item-links" href="/products/insight">Competition Analysis &amp; Due Diligence</a>
+                    <a href="/solutions/for-incubators-and-accelerators" class="nav-item-links">Showcase your Portfolio</a>
+                    <a href="/solutions/for-incubators-and-accelerators" class="nav-item-links nav-view-more">View More</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Organisations</h3>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links">Data Curation by Expert Analysts</a>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links">Data Access through API</a>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links">Showcase your Portfolio</a>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links nav-view-more">View More</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Researchers &amp; Policy Makers</h3>
+                    <a href="/solutions/for-researchers-and-policy-makers" class="nav-item-links">Data Curation by Expert Analysts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></header-solutions-menu>
+                            </li>
+                            <li class="ys-nav-item">
+                                <header-subscription-benefits-menu><div class="dropdown nav-dropdown-container">
+    <span ng-class="{ active: subscriptionBenefitsNavLinkActive('/subscription-benefits-plus')}" class="dropdown-toggle nav-dropdown-btn" data-toggle="dropdown" aria-expanded="false">Benefits+</span>
+    <div class="dropdown-menu nav-dropdown-content" role="menu">
+        <div class="nav-dropdown-list subscription-benefits-plus-nav">
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Cloud Hosting</h3>
+                    <a href="/subscription-benefits-plus/digitalocean-hatch-for-startups" class="nav-item-links">DigitalOcean for Startups</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">CRM &amp; Engagement</h3>
+                    <a href="/subscription-benefits-plus/freshworks-for-startups" class="nav-item-links">Freshworks for Startups</a>
+                    <a href="/subscription-benefits-plus/hubspot-for-startups" class="nav-item-links">HubSpot for Startups</a>
+                    <a href="/subscription-benefits-plus/zoho-for-startups" class="nav-item-links">Zoho for Startups</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Email &amp; Workspace</h3>
+                    <a href="/subscription-benefits-plus/zoho-for-startups" class="nav-item-links">Zoho for Startups</a>
+                </div>
+            </div>
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Legal &amp; Compliance</h3>
+                    <a href="/subscription-benefits-plus/vakilsearch-for-startups" class="nav-item-links">Vakilsearch for Startups</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Patents &amp; Trademarks</h3>
+                    <a href="/subscription-benefits-plus/vakilsearch-for-startups" class="nav-item-links">Vakilsearch for Startups</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Payments &amp; Subscriptions</h3>
+                    <a href="/subscription-benefits-plus/chargebee-for-startups" class="nav-item-links">Chargebee for Startups</a>
+                    <a href="/subscription-benefits-plus/paytm-for-startups" class="nav-item-links">Paytm for Startups</a>
+                </div>
+            </div>
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Hiring</h3>
+                    <a href="/subscription-benefits-plus/yourtribe-for-startups" class="nav-item-links">YourTribe for Startups</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Product Development</h3>
+                    <a href="/subscription-benefits-plus/kissflow-for-startups" class="nav-item-links">Kissflow for Startups</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">Sales &amp; Marketing</h3>
+                    <a href="/subscription-benefits-plus/paytm-for-startups" class="nav-item-links">Paytm for Startups</a>
+                    <a href="/subscription-benefits-plus/freshworks-for-startups" class="nav-item-links">Freshworks for Startups</a>
+                    <a href="/subscription-benefits-plus/hubspot-for-startups" class="nav-item-links">HubSpot for Startups</a>
+                    <a href="/subscription-benefits-plus/zoho-for-startups" class="nav-item-links">Zoho for Startups</a>
+                </div>
+            </div>
+        </div>
+        <a class="dropdown-see-all" href="/subscription-benefits-plus">See All</a>
+    </div>
+</div></header-subscription-benefits-menu>
+                            </li>
+                            <li class="ys-nav-item">
+                                <a href="/pricing">Pricing</a>
+                            </li>
+                            <li class="ys-nav-item">
+                                <header-resources-menu><div class="dropdown nav-dropdown-container">
+    <span class="dropdown-toggle nav-dropdown-btn" data-toggle="dropdown" aria-expanded="false">Resources</span>
+    <div class="dropdown-menu nav-dropdown-content" role="menu">
+        <div class="nav-dropdown-list resources-dropdown-list">
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <a href="/contact" class="nav-item-links">Contact Us</a>
+                    <a href="https://blog.ynos.in/" class="nav-item-links" rel="noopener">Trust &amp; Grow - Blog</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSeo07KKuJx7UxMOlbFg5F8rudDbCGR05pHVywtmNKndolsw/viewform" class="nav-item-links" target="_blank" rel="noopener nofollow">Add your Startup</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></header-resources-menu>
+                            </li>
+                            <li class="ys-nav-item">
+                                <a target="_blank" href="https://chat.ynos.in/">
+                                    StartupGPT
+                                    <!-- <span class="nav-new-label">New</span> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right-col">
+                    <nav class="ys-nav-list">
+                        <!-- ngIf: !isEmpty($root.IPBasedSubscriptionGroup) -->
+                        <!-- ngIf: showLogin --><li ng-if="showLogin" class="ys-nav-item profile-item ng-scope">
+                            <a href="/launch.html#!/login" tooltip-placement="bottom" uib-tooltip="Let's Login! 😃">Login</a>
+                        </li><!-- end ngIf: showLogin -->
+                        <li class="ys-nav-item">
+                            <button class="book-demo-btn" ng-click="requestDemo()">Get Demo</button>
+                        </li>
+                        <!-- ngIf: showLogin && isEmpty($root.IPBasedSubscriptionGroup) --><li ng-if="showLogin &amp;&amp; isEmpty($root.IPBasedSubscriptionGroup)" class="ng-scope"><a data-ng-href="/launch.html#!/signup" tooltip-placement="bottom" uib-tooltip="Let's go! 🚀" class="get-started-btn get-started" href="/launch.html#!/signup">Get Started!</a>
+                        </li><!-- end ngIf: showLogin && isEmpty($root.IPBasedSubscriptionGroup) -->
+                        <!-- ngIf: !showLogin && !hasUserAccess() && isEmpty($root.IPBasedSubscriptionGroup) -->
+                        <!-- ngIf: !showLogin -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-header visible-header-xs">
+        <div class="mobile-header-container">
+            <div class="mobile-header-row">
+                <div class="ys-header-mobile">
+                    <a href="/" class="ys-logo">
+                        <img src="https://static.ynos.in/images/logos/ynos-white-horizontal-tagline-transparent-bg.svg" alt="YNOS Logo" class="whiteLogo" width="170" height="28">
+                        <img src="https://static.ynos.in/images/logos/ynos-black-horizontal-tagline-transparent-bg.svg" alt="YNOS Logo" class="greenLogo" style="display:none;" width="170" height="28">
+                    </a>
+                    <div class="hamburger-section home-page-hamburger">
+                        <!-- <a ng-if="showLogin" data-ng-href="/launch.html#!/login"
+                            tooltip-placement="top" uib-tooltip="Login"><span class="profile-icon"></span></a> -->
+                        <button class="book-demo-btn" ng-click="requestDemo()">Get Demo</button>
+                        <div class="ys-burger" ng-click="openNav()">
+                            <span class="burger-icon"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="header-overlay" ng-click="closeNav()"></div>
+                <div id="side-nav-section" class="sidenav">
+                    <div class="close-btn" ng-click="closeNav()"></div>
+                    <div class="header-modal">
+                        <nav class="ys-nav-mobile">
+                            <ul class="ys-nav-list-mobile">
+                                <li class="ys-nav-item-mobile">
+                                    <a href="/products">Products</a>
+                                </li>
+                                <li class="ys-nav-item-mobile">
+                                    <header-solutions-menu><!-- Mobile Solution -->
+
+<div class="visible-header-xs mobile-dropdown-container">
+    <a href="javascript:void(0);" ng-class="{ active: solutionsNavLinkActive('/solutions')}">Solutions</a>
+    <div class="mobile-dropdown-list">
+        <a href="/solutions/for-startups-and-founders" class="mobile-dropdown-item">For Startups</a>
+        <a href="/solutions/for-angel-and-vc-investors" class="mobile-dropdown-item">For Investors</a>
+        <a href="/solutions/for-incubators-and-accelerators" class="mobile-dropdown-item">For Incubators &amp; Accelerators</a>
+        <a href="/solutions/for-corporates-and-organisations" class="mobile-dropdown-item">For Organizations</a>
+        <a href="/solutions/for-researchers-and-policy-makers" class="mobile-dropdown-item">For Researchers &amp; Policy Makers</a>
+    </div>
+</div>
+
+
+<!-- Website Solution -->
+
+
+
+
+<div class="dropdown nav-dropdown-container visible-header-sm">
+    <span ng-class="{ active: solutionsNavLinkActive('/solutions')}" class="dropdown-toggle nav-dropdown-btn" data-toggle="dropdown" aria-expanded="false">Solutions</span>
+    <div class="dropdown-menu nav-dropdown-content" role="menu">
+        <div class="nav-dropdown-list solutions-nav">
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Startups</h3>
+                    <a ng-href="/products/angels" class="nav-item-links" href="/products/angels">Angel Investor Matchmaking</a>
+                    <a ng-href="/products/verve" class="nav-item-links" href="/products/verve">Determine your Startup's Valuation</a>
+                    <a ng-href="/products/insight" class="nav-item-links" href="/products/insight">Analyse &amp; Benchmark with Competition</a>
+                    <a href="/solutions/for-startups-and-founders" class="nav-item-links nav-view-more">View More</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Investors</h3>
+                    <a ng-href="/products/verve" class="nav-item-links" href="/products/verve">Startup Valuation Estimator</a>
+                    <a ng-href="/products/insight" class="nav-item-links" href="/products/insight">Competition Analysis &amp; Due Diligence</a>
+                    <a href="/solutions/for-angel-and-vc-investors" class="nav-item-links">Deal Screening &amp; Pitch Presentations</a>
+                    <a href="/solutions/for-angel-and-vc-investors" class="nav-item-links">Showcase your Portfolio</a>
+                    <a href="/solutions/for-angel-and-vc-investors" class="nav-item-links nav-view-more">View More</a>
+                </div>
+            </div>
+            <div class="nav-dropdown-item">
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Incubators &amp; Accelerators</h3>
+                    <a ng-href="/products/insight" class="nav-item-links" href="/products/insight">Competition Analysis &amp; Due Diligence</a>
+                    <a href="/solutions/for-incubators-and-accelerators" class="nav-item-links">Showcase your Portfolio</a>
+                    <a href="/solutions/for-incubators-and-accelerators" class="nav-item-links nav-view-more">View More</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Organisations</h3>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links">Data Curation by Expert Analysts</a>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links">Data Access through API</a>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links">Showcase your Portfolio</a>
+                    <a href="/solutions/for-corporates-and-organisations" class="nav-item-links nav-view-more">View More</a>
+                </div>
+                <div class="nav-dropdown-item-wrap">
+                    <h3 class="nav-item-header">For Researchers &amp; Policy Makers</h3>
+                    <a href="/solutions/for-researchers-and-policy-makers" class="nav-item-links">Data Curation by Expert Analysts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></header-solutions-menu>
+                                </li>
+                                <li class="ys-nav-item-mobile">
+                                    <a href="/pricing" ng-class="{ active: isActive('/pricing')}">Pricing</a>
+                                </li>
+                                <li class="ys-nav-item-mobile">
+                                    <a href="/subscription-benefits-plus" ng-class="{ active: subscriptionBenefitsNavLinkActive('/subscription-benefits-plus')}">
+                                        <span class="superscript-symbol">Benefits</span></a>
+                                </li>
+                                <li class="ys-nav-item-mobile">
+                                    <a href="/contact" ng-class="{ active: isActive('/contact')}">Contact Us</a>
+                                </li>
+                                <li class="ys-nav-item-mobile">
+                                    <a target="_blank" href="https://chat.ynos.in/">
+                                        StartupGPT
+                                        <!-- <span class="nav-new-label">New</span> -->
+                                    </a>
+                                </li>
+                                <li class="ys-nav-item-mobile">
+                                    <a href="https://blog.ynos.in/" rel="noopener">Blog</a>
+                                </li>
+                                <!-- ngIf: showLogin --><li class="ys-nav-item-mobile ng-scope" ng-if="showLogin">
+                                    <a data-ng-href="/launch.html#!/login" tooltip-placement="top" uib-tooltip="Login" ng-class="{ active: partialNavLinkActive('/login')}" href="/launch.html#!/login">Login</a>
+                                </li><!-- end ngIf: showLogin -->
+                                <!-- ngIf: !showLogin -->
+                                <!-- ngIf: !showLogin && showInstituteAdmin -->
+                                <!-- ngIf: !showLogin -->
+                                <!-- ngIf: !showLogin -->
+                                <!-- ngIf: !showLogin -->
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="side-nav-bottom">
+                        <!-- ngIf: !isEmpty($root.IPBasedSubscriptionGroup) -->
+                        <!-- ngIf: showLogin && isEmpty($root.IPBasedSubscriptionGroup) --><a class="get-started-btn ng-scope" data-ng-href="/launch.html#!/signup" ng-if="showLogin &amp;&amp; isEmpty($root.IPBasedSubscriptionGroup)" href="/launch.html#!/signup">Get Started for Free!</a><!-- end ngIf: showLogin && isEmpty($root.IPBasedSubscriptionGroup) -->
+                        <!-- ngIf: !showLogin && !hasUserAccess() && isEmpty($root.IPBasedSubscriptionGroup) -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></header>
+                <!-- End Header Section -->
+                <div class="top-section-main">
+                    <div id="dots-container" ng-init="initVanta()"><canvas data-engine="three.js r160" width="393" height="452" style="display: block; width: 393px; height: 452px;"></canvas></div>
+                    <div class="hero-title__container">
+                        <div class="site_padding">
+                            <div class="site_width hero-main">
+                                <p class="mini-points">
+                                    Opportunities <span>•</span> Growth <span>•</span> Funding <span>•</span> Impact
+                                </p>
+                                <h1 class="hero-title__h1 ng-binding" data-ng-bind-html="heroHeading()">Navigate the Indian Startup &amp; Investor Ecosystem with Ease &amp; Accuracy</h1>
+                                <div class="hero-sub-title-wrapper">
+                                    <h3 class="hero-sub-title__h3">
+                                        YNOS is an information powerhouse, that saves time, effort, and cost with
+                                        the most comprehensive, up-to-date insights across Startups, Founders,
+                                        Incubators, Angels, VCs, Government Agencies, &amp; Banks
+                                    </h3>
+                                </div>
+                                <a href="/launch.html#!/signup" class="hero-get-started-button">Sign-up for Free</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="metrics-section">
+                <div class="metrics-section-scroll-bar">
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_startups)">321,454</span>
+                                    &nbsp;Startups
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_startups_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_startups_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_startups_month" class="ng-binding">5987</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_startups_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_founders)">553,432</span>
+                                    &nbsp;Founders
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_founders_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_founders_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_founders_month" class="ng-binding">12087</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_founders_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_investors)">14,643</span>
+                                    &nbsp;Angels
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_investors_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_funds)">6,277</span>
+                                    &nbsp;VCs &amp; Networks
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_funds_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_funds_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_funds_month" class="ng-binding">11</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_funds_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_incubators)">1,457</span>
+                                    &nbsp;Incubators
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_incubators_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_incubators_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_incubators_month" class="ng-binding">1</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_incubators_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_govt_funds)">115</span>
+                                    &nbsp;Govt. Schemes
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_govt_funds_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_debt_funds)">1,027</span>
+                                    &nbsp;Banks &amp; FIs
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_debt_funds_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_deals)">100,030</span>
+                                    &nbsp;Deals
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_deals_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_deals_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_deals_month" class="ng-binding">74</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_deals_month) -->
+                        </div>
+                    </div>
+
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_startups)">321,454</span>
+                                    &nbsp;Startups
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_startups_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_startups_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_startups_month" class="ng-binding">5987</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_startups_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_founders)">553,432</span>
+                                    &nbsp;Founders
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_founders_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_founders_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_founders_month" class="ng-binding">12087</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_founders_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_investors)">14,643</span>
+                                    &nbsp;Angels
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_investors_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_funds)">6,277</span>
+                                    &nbsp;VCs &amp; Networks
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_funds_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_funds_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_funds_month" class="ng-binding">11</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_funds_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_incubators)">1,457</span>
+                                    &nbsp;Incubators
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_incubators_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_incubators_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_incubators_month" class="ng-binding">1</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_incubators_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_govt_funds)">115</span>
+                                    &nbsp;Govt. Schemes
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_govt_funds_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_debt_funds)">1,027</span>
+                                    &nbsp;Banks &amp; FIs
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_debt_funds_month) -->
+                        </div>
+                    </div>
+                    <div class="each-entity">
+                        <div class="metrics-section-delimiter"></div>
+                        <div class="each-entity-metric">
+                            <div class="total-count-metric">
+                                <p>
+                                    <span class="total-count-metric-value ng-binding" data-ng-bind="utilFactory.numberWithCommas(statisticsData.num_deals)">100,030</span>
+                                    &nbsp;Deals
+                                </p>
+                            </div>
+                            <!-- ngIf: !isNumEmpty(statisticsData.num_new_deals_month) --><div class="last-month-increase-metric ng-scope" ng-if="!isNumEmpty(statisticsData.num_new_deals_month)" style="">
+                                <div class="last-month-increase-metric-value">
+                                    +<span ng-bind="statisticsData.num_new_deals_month" class="ng-binding">74</span>
+                                </div>
+                                <p>&nbsp;last month</p>
+                            </div><!-- end ngIf: !isNumEmpty(statisticsData.num_new_deals_month) -->
+                        </div>
+                        <div class="metrics-section-delimiter"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-section">
+                <div class="search-section-overlay"></div>
+                <div class="search-header">
+                    <p>Give it a Try</p>
+                    <h2>Search for anything on YNOS platform</h2>
+                </div>
+
+                <div class="search-box">
+                    <div class="tabs">
+                        <button class="tab search-tab-active" data-ng-click="changePlaceholderValue('startups')" ng-class="{ 'search-tab-active': isSearchTabActive('startups') }">Startups</button>
+                        <button class="tab" data-ng-click="changePlaceholderValue('angels')" ng-class="{ 'search-tab-active': isSearchTabActive('angels') }">Angels</button>
+                        <button class="tab" data-ng-click="changePlaceholderValue('vcs')" ng-class="{ 'search-tab-active': isSearchTabActive('vcs') }">VCs &amp; Networks</button>
+                        <button class="tab" data-ng-click="changePlaceholderValue('incubators')" ng-class="{ 'search-tab-active': isSearchTabActive('incubators') }">Incubators</button>
+                        <button class="tab" data-ng-click="changePlaceholderValue('govt-funds')" ng-class="{ 'search-tab-active': isSearchTabActive('govt-funds') }">Govt. Schemes</button>
+                        <button class="tab" data-ng-click="changePlaceholderValue('debt-funds')" ng-class="{ 'search-tab-active': isSearchTabActive('debt-funds') }">Banks &amp; FIs</button>
+                    </div>
+
+                    <div class="search-main">
+                        <div class="search-input-wrapper">
+                            <input id="search-input" type="text" class="search-text-input ng-pristine ng-untouched ng-valid ng-empty" placeholder="Search Startups (Eg. Ather Energy)" autocomplete="off" spellcheck="false" data-ng-model="search">
+                            <!-- ngIf: search -->
+                        </div>
+                        <button class="search-btn" data-ng-click="searchQuery(search, product)">Search</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="solutions-section">
+                <div class="site_padding">
+                    <div id="solutions-container" class="solutions-container site_width">
+                        <div class="solutions-container-top-section">
+                            <div class="solutions-container-header">
+                                <p>Be Ahead of the Curve</p>
+                                <h2>Enjoy the YNOS Advantage</h2>
+                            </div>
+                            <div class="solutions-container-navigation">
+                                <div class="solutions-container-navigation-arrows left-arrow" ng-click="goToPreviousSolution()"></div>
+                                <div class="solutions-container-navigation-arrows right-arrow" ng-click="goToNextSolution()"></div>
+                            </div>
+                        </div>
+                        <div id="solutions-container-solutions-section" class="solutions-container-solutions-section">
+                            <a href="/solutions/for-angel-and-vc-investors">
+                                <div class="solution-card">
+                                    <div class="solution-card-icon">
+                                        <img class="__solutions_icon_2" src="https://static.ynos.in/images/landing/icons/badge-2.svg" alt="screen next unicorn icon">
+                                        <img class="__solutions_icon_4" src="https://static.ynos.in/images/landing/icons/badge-4.svg" alt="screen next unicorn icon">
+                                        <img class="__solutions_icon_5" src="https://static.ynos.in/images/landing/icons/badge-5.svg" alt="screen next unicorn icon">
+                                    </div>
+                                    <div class="solution-card-title">
+                                        <!-- <h3>Screen for the next
+                                            <span class="highlight">
+                                                <span>unicorn</span>
+                                                <img src="https://static.ynos.in/images/landing/text-highlight-yellow.svg" alt="text highlighter image">
+                                            </span>
+                                            winner to invest
+                                        </h3> -->
+                                        <h3>Efficiently screen Startups for investment opportunities</h3>
+                                        <h4 style="color: #FF6262;">For Investors</h4>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/solutions/for-startups-and-founders">
+                                <div class="solution-card">
+                                    <div class="solution-card-icon">
+                                        <img class="__solutions_icon_2" src="https://static.ynos.in/images/landing/icons/tick-card-2.svg" alt="identify investor pool icon">
+                                        <img class="__solutions_icon_4" src="https://static.ynos.in/images/landing/icons/tick-card-4.svg" alt="identify investor pool icon">
+                                        <img class="__solutions_icon_5" src="https://static.ynos.in/images/landing/icons/tick-card-5.svg" alt="identify investor pool icon">
+                                    </div>
+                                    <div class="solution-card-title">
+                                        <h3>Directly reach out to 20,000+ Angels, VCs &amp; Funding Agencies</h3>
+                                        <h4 style="color: #E0BD31;">For Startups</h4>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/solutions/for-incubators-and-accelerators">
+                                <div class="solution-card">
+                                    <div class="solution-card-icon">
+                                        <img class="__solutions_icon_2" src="https://static.ynos.in/images/landing/icons/message-2.svg" alt="create compelling messages icon">
+                                        <img class="__solutions_icon_4" src="https://static.ynos.in/images/landing/icons/message-4.svg" alt="create compelling messages icon">
+                                        <img class="__solutions_icon_5" src="https://static.ynos.in/images/landing/icons/message-5.svg" alt="create compelling messages icon">
+                                    </div>
+                                    <div class="solution-card-title">
+                                        <h3>Scan &amp; reach out to thousands of high potential Startups</h3>
+                                        <h4 style="color: #64BDFF;">For Incubators</h4>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/solutions/for-researchers-and-policy-makers">
+                                <div class="solution-card">
+                                    <div class="solution-card-icon">
+                                        <img class="__solutions_icon_2" src="https://static.ynos.in/images/landing/icons/chart-2.svg" alt="captivating datasets for research icon">
+                                        <img class="__solutions_icon_4" src="https://static.ynos.in/images/landing/icons/chart-4.svg" alt="captivating datasets for research icon">
+                                        <img class="__solutions_icon_5" src="https://static.ynos.in/images/landing/icons/chart-5.svg" alt="captivating datasets for research icon">
+                                    </div>
+                                    <div class="solution-card-title">
+                                        <h3>Access up-to-date virgin data sets on the Indian Startup Ecosystem</h3>
+                                        <h4 style="color: #3ACE96;">For Researchers</h4>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/solutions/for-corporates-and-organisations">
+                                <div class="solution-card">
+                                    <div class="solution-card-icon">
+                                        <img class="__solutions_icon_2" src="https://static.ynos.in/images/landing/icons/search-card-2.svg" alt="identify partner for innovation icon">
+                                        <img class="__solutions_icon_4" src="https://static.ynos.in/images/landing/icons/search-card-4.svg" alt="identify partner for innovation icon">
+                                        <img class="__solutions_icon_5" src="https://static.ynos.in/images/landing/icons/search-card-5.svg" alt="identify partner for innovation icon">
+                                    </div>
+                                    <div class="solution-card-title">
+                                        <h3>Access trends &amp; analytic reports on Startups &amp; Investments</h3>
+                                        <h4 style="color: #94AEF5;">For Corporates</h4>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/solutions/for-researchers-and-policy-makers">
+                                <div class="solution-card">
+                                    <div class="solution-card-icon">
+                                        <img class="__solutions_icon_2" src="https://static.ynos.in/images/landing/icons/flag-2.svg" alt="raise funds with confidence">
+                                        <img class="__solutions_icon_4" src="https://static.ynos.in/images/landing/icons/flag-4.svg" alt="raise funds with confidence">
+                                        <img class="__solutions_icon_5" src="https://static.ynos.in/images/landing/icons/flag-5.svg" alt="raise funds with confidence">
+                                    </div>
+                                    <div class="solution-card-title">
+                                        <h3>Better prepare &amp; ace placement interviews with Startups &amp; VCs</h3>
+                                        <h4 style="color: #CA97FD;">For Students</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="site_padding">
+                    <div class="site_width">
+                        <p>Our Key Products</p>
+                        <h2>Cruise through the Startup Ecosystem</h2>
+                        <div class="view-product-page">
+                            <a href="/products">View all Products</a>
+                        </div>
+                        <div class="products-list">
+                            <div class="product-card startups-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">The intelligent technology platform to scan the landscape
+                                        &amp; discover Startups.</h4>
+                                    <a href="/products/startups" class="product-link">VISIT STARTUPS</a>
+                                </div>
+                            </div>
+                            <div class="product-card angels-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">Identify the right investors. Let our path breaking
+                                        algorithm help you in shortlisting.</h4>
+                                    <a href="/products/angels" class="product-link">VISIT ANGELS</a>
+                                </div>
+                            </div>
+                            <div class="product-card vcs-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">Analyse and shortlist suitable &amp; relevant VC,
+                                        Fund or Angel Network for your startup.</h4>
+                                    <a href="/products/vcs" class="product-link">VISIT VCs</a>
+                                </div>
+                            </div>
+                            <div class="product-card incubators-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">
+                                        Find, compare and identify the ideal incubators &amp; accelerators
+                                        for your venture.</h4>
+                                    <a href="/products/incubators" class="product-link">VISIT INCUBATORS</a>
+                                </div>
+                            </div>
+                            <div class="product-card govt-funding-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">Discover various central &amp; state govt.
+                                        funding schemes, all in one place.</h4>
+                                    <a href="/products/government-funding" class="product-link">VISIT GOVT. FUNDING</a>
+                                </div>
+                            </div>
+                            <div class="product-card debt-funding-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">Find the perfect loan &amp; debt funding
+                                        options available for your startup.</h4>
+                                    <a href="/products/debt-funding" class="product-link">VISIT DEBT FUNDING</a>
+                                </div>
+                            </div>
+                            <div class="product-card insight-product">
+                                <div class="product-image"></div>
+                                <div class="product-main-content">
+                                    <div class="product-logo"></div>
+                                    <h4 class="product-description">The most powerful dashboard solution on Indian Startups &amp;
+                                        Investors.</h4>
+                                    <a href="/products/insight" class="product-link">VISIT INSIGHT</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-product-page-mobile">
+                            <a href="/products">View all Products</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog section -->
+            <section class="blog-section">
+                <div class="site_padding">
+                    <div class="site_width">
+                        <div class="blog-section-main">
+                            <div class="blog-heading-wrap">
+                                <p>Trust &amp; Grow</p>
+                                <h2>Latest from our Blog</h2>
+                                <div class="blog-navigation">
+                                    <a href="https://blog.ynos.in" class="view-all-blog" target="_blank" rel="noopener">View all articles</a>
+                                    <!-- <span class="blog-arrow-right-large blog-arrow"></span> -->
+                                </div>
+                            </div>
+                            <div class="blog-cards-container">
+                                <!-- ngRepeat: card in articles --><a class="blog-card ng-scope" ng-repeat="card in articles" ng-href="https://blog.ynos.in/p/tier-2-3-startups-india" target="_blank" rel="noopener" href="https://blog.ynos.in/p/tier-2-3-startups-india" style="">
+                                    <div class="blog-body">
+                                        <!-- <img ng-src="{{ card.cover_image }}" class="blog-image" /> -->
+                                        <h3 class="blog-title ng-binding" ng-bind="card.title">Unlocking Startup Opportunities in India's Emerging Cities</h3>
+                                    </div>
+                                    <div class="blog-footer">
+                                        <span class="format-blog-date ng-binding"> 04 Mar 2025</span>
+                                        <div class="blog-navigation">
+                                            <span class="blog-article-link" ng-click="readArticle(card.url)">Read</span>
+                                            <span class="blog-arrow-right-small blog-arrow"></span>
+                                        </div>
+                                    </div>
+                                </a><!-- end ngRepeat: card in articles --><a class="blog-card ng-scope" ng-repeat="card in articles" ng-href="https://blog.ynos.in/p/indias-deep-tech-revolution-startups" target="_blank" rel="noopener" href="https://blog.ynos.in/p/indias-deep-tech-revolution-startups">
+                                    <div class="blog-body">
+                                        <!-- <img ng-src="{{ card.cover_image }}" class="blog-image" /> -->
+                                        <h3 class="blog-title ng-binding" ng-bind="card.title">India’s Deep Tech Revolution: Startups, Challenges &amp; Growth</h3>
+                                    </div>
+                                    <div class="blog-footer">
+                                        <span class="format-blog-date ng-binding"> 05 Feb 2025</span>
+                                        <div class="blog-navigation">
+                                            <span class="blog-article-link" ng-click="readArticle(card.url)">Read</span>
+                                            <span class="blog-arrow-right-small blog-arrow"></span>
+                                        </div>
+                                    </div>
+                                </a><!-- end ngRepeat: card in articles --><a class="blog-card ng-scope" ng-repeat="card in articles" ng-href="https://blog.ynos.in/p/indias-startup-bubble-debunking-the" target="_blank" rel="noopener" href="https://blog.ynos.in/p/indias-startup-bubble-debunking-the">
+                                    <div class="blog-body">
+                                        <!-- <img ng-src="{{ card.cover_image }}" class="blog-image" /> -->
+                                        <h3 class="blog-title ng-binding" ng-bind="card.title">India’s Startup Bubble? Debunking the Hype Around 2025's Emerging Sectors and Funding Trends</h3>
+                                    </div>
+                                    <div class="blog-footer">
+                                        <span class="format-blog-date ng-binding"> 31 Dec 2024</span>
+                                        <div class="blog-navigation">
+                                            <span class="blog-article-link" ng-click="readArticle(card.url)">Read</span>
+                                            <span class="blog-arrow-right-small blog-arrow"></span>
+                                        </div>
+                                    </div>
+                                </a><!-- end ngRepeat: card in articles --><a class="blog-card ng-scope" ng-repeat="card in articles" ng-href="https://blog.ynos.in/p/startup-awards-when-why-and-how-to" target="_blank" rel="noopener" href="https://blog.ynos.in/p/startup-awards-when-why-and-how-to">
+                                    <div class="blog-body">
+                                        <!-- <img ng-src="{{ card.cover_image }}" class="blog-image" /> -->
+                                        <h3 class="blog-title ng-binding" ng-bind="card.title">Startup Awards: When, Why, and How to Leverage Them for Success</h3>
+                                    </div>
+                                    <div class="blog-footer">
+                                        <span class="format-blog-date ng-binding"> 11 Dec 2024</span>
+                                        <div class="blog-navigation">
+                                            <span class="blog-article-link" ng-click="readArticle(card.url)">Read</span>
+                                            <span class="blog-arrow-right-small blog-arrow"></span>
+                                        </div>
+                                    </div>
+                                </a><!-- end ngRepeat: card in articles -->
+                            </div>
+                            <div class="newsletter-container">
+                                <div>
+                                    <h4 class="mini-text">For the Builders &amp; Innovators</h4>
+                                    <h4 class="main-text">Stay in the Loop, Get Real Insights, Not Noise — Straight to your Inbox.</h4>
+                                    <div class="newsletter-email-container">
+                                        <div class="newsletter-email-wrap">
+                                            <form name="newsletterForm" novalidate="" class="newsletter-email-form home-newsletter-email ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern" siq_id="autopick_3479">
+                                                <input type="email" name="email" placeholder="Email address" class="newsletter-email ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern" ng-model="newsletter_form.email" autocomplete="off" spellcheck="false" autocorrect="off" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-keyup="checkValidEmail()" required="">
+                                                <button class="newsletter-btn home-newsletter-action" ng-click="newsletterAction(newsletterForm, newsletter_form)">
+                                                    <span class="newsletter-btn-text">Subscribe</span>
+                                                </button>
+                                            </form>
+                                            <div role="newsletter-alert">
+                                                <!-- ngIf: home_newsletter_error -->
+                                                <!-- ngIf: home_newsletter_success -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog section ends-->
+            </section>
+
+            <section class="bottom-section">
+                <div class="site_width site_padding">
+                    <div class="clients-partner-section">
+                        <div class="clients-partners-title">
+                            <h2><span>Trusted by</span> Industry Leaders</h2>
+                        </div>
+                        <div class="clients-partner-main">
+                            <div class="overlay"></div>
+                            <div class="clients-partner-scroll-bar">
+                                <img src="https://static.ynos.in/images/clients/StartupTN.jpg" alt="StartupTN Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/IITM-Incubation-Cell.png" alt="IITM Incubation Cell Logo" class="client-partner-image" loading="lazy" width="133" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/IITM-Bioincubator.png" alt="IITM Bioincubator Logo"
+                                    class="client-partner-image" loading="lazy" width="212" height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/IIM-Nagpur.jpg" alt="IIM-Nagpur Logo" class="client-partner-image" loading="lazy" width="200" height="96">
+                                <img src="https://static.ynos.in/images/clients/IIT-Patna.png" alt="IIT Patna Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/IIT-Indore.png" alt="IIT Indore Logo" class="client-partner-image" loading="lazy" width="92" height="96">
+                                <img src="https://static.ynos.in/images/clients/IIM-Udaipur.png" alt="IIM Udaipur Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/Indigram-Labs.png" alt="Indigram Labs Logo"
+                                    class="client-partner-image" loading="lazy" width="121" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/i-TIC-Foundation-IIT-Hyderabad.png"
+                                    alt="i-TIC Foundation IIT Hyderabad Logo" class="client-partner-image" loading="lazy" width="96"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/IIM-Kozhikode.png" alt="IIM Kozhikode Live Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/BIMTECH.png" alt="BIMTECH Logo" class="client-partner-image" loading="lazy" width="212" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/School-of-Design-Thinking.png"
+                                    alt="School of Design Thinking Logo" class="client-partner-image" loading="lazy" width="249"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/Accenture-Ventures.png" alt="Accenture Ventures Logo" class="client-partner-image" loading="lazy" width="152" height="96">
+                                <img src="https://static.ynos.in/images/clients/Arali-Ventures.png" alt="Arali Ventures Logo" class="client-partner-image" loading="lazy" width="153" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/Kerala-Startup-Mission.png"
+                                    alt="Kerala Startup Mission Logo" class="client-partner-image" loading="lazy" width="140" height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/VelTech.png" alt="VelTech Logo" class="client-partner-image" loading="lazy" width="163" height="96">
+                                <img src="https://static.ynos.in/images/clients/VIT-TBI.png" alt="VIT TBI Logo" class="client-partner-image" loading="lazy" width="124" height="96">
+                                <img src="https://static.ynos.in/images/clients/Crescent-Innovation-Incubation-Council.png" alt="Crescent Innovation Incubation Council Logo" class="client-partner-image" loading="lazy" width="140" height="96">
+                                <img src="https://static.ynos.in/images/clients/Coromandel.jpg" alt="Coromandel Logo" class="client-partner-image" loading="lazy" width="161" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/KEMI-Jain-University.png" alt="KEMI Jain University Logo"
+                                    class="client-partner-image" loading="lazy" width="97" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/Grow-Trust.png" alt="GrowTrust Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img title="RANA Investment Advisors"
+                                    src="https://static.ynos.in/images/clients/RANA-Investment-Advisors.png"
+                                    alt="RANA Investment Advisors Logo" class="client-partner-image" loading="lazy" width="138"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/Karunya-University.png" alt="Karunya University Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/PSNA-College-of-Engineering-and-Technology.png" alt="PSNA College of Engineering and Technology Logo" class="client-partner-image" loading="lazy" width="268" height="96">
+                                <img src="https://static.ynos.in/images/clients/HDFC-Bank.png" alt="HDFC Bank Logo" class="client-partner-image" loading="lazy" width="348" height="96">
+                                <img src="https://static.ynos.in/images/clients/DBS-Bank.png" alt="DBS Bank Logo" class="client-partner-image" loading="lazy" width="323" height="96">
+                                <!-- <img src="https://static.ynos.in/images/partners/ICICI-Bank.png" alt="ICICI Bank Logo"
+                                    class="client-partner-image" loading="lazy" width="301" height="96"> -->
+                                <img src="https://static.ynos.in/images/partners/IIT-Madras.png" alt="IIT Madras (CREST) Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <!-- <img src="https://static.ynos.in/images/partners/Headstart.png" alt="Headstart Logo"
+                                    class="client-partner-image" loading="lazy" width="338" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/Probe-Information.png"
+                                    alt="Probe42 Information Services Logo" class="client-partner-image" loading="lazy" width="131"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/partners/Nasscom-10000-Startups.png" alt="NASSCOM 10000 Startups Logo" class="client-partner-image" loading="lazy" width="163" height="96">
+                                <!-- <img src="https://static.ynos.in/images/partners/Federal-Bank.png" alt="Federal Bank Logo"
+                                    class="client-partner-image" loading="lazy" width="196" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/Venture-Intelligence.png" alt="Venture Intelligence Logo"
+                                    class="client-partner-image" loading="lazy" width="229" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/WeAim.png" alt="WeAim Logo" class="client-partner-image"
+                                    loading="lazy" width="121" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/CCE.png" alt="Centre for Continuing Education Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/TiE-Chennai.png" alt="TiE Chennai Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/Way-2-World.png" alt="Way 2 World Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/VANS-Skilling-and-Advisory.png"
+                                    class="client-partner-image" loading="lazy" alt="VANS Skilling and Advisory Logo" width="193"
+                                    height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/Nanayam-Vikatan.png" alt="Nanayam Vikatan Logo"
+                                    class="client-partner-image" loading="lazy" width="252" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/The-Hindu-Business-Line.png"
+                                    alt="The Hindu Business Line Logo" class="client-partner-image" loading="lazy" width="436" height="96"> -->
+
+                                <img src="https://static.ynos.in/images/clients/StartupTN.jpg" alt="StartupTN Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/IITM-Incubation-Cell.png" alt="IITM Incubation Cell Logo" class="client-partner-image" loading="lazy" width="133" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/IITM-Bioincubator.png" alt="IITM Bioincubator Logo"
+                                    class="client-partner-image" loading="lazy" width="212" height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/IIM-Nagpur.jpg" alt="IIM-Nagpur Logo" class="client-partner-image" loading="lazy" width="200" height="96">
+                                <img src="https://static.ynos.in/images/clients/IIT-Patna.png" alt="IIT Patna Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/IIT-Indore.png" alt="IIT Indore Logo" class="client-partner-image" loading="lazy" width="92" height="96">
+                                <img src="https://static.ynos.in/images/clients/IIM-Udaipur.png" alt="IIM Udaipur Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/Indigram-Labs.png" alt="Indigram Labs Logo"
+                                    class="client-partner-image" loading="lazy" width="121" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/i-TIC-Foundation-IIT-Hyderabad.png"
+                                    alt="i-TIC Foundation IIT Hyderabad Logo" class="client-partner-image" loading="lazy" width="96"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/IIM-Kozhikode.png" alt="IIM Kozhikode Live Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/BIMTECH.png" alt="BIMTECH Logo" class="client-partner-image" loading="lazy" width="212" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/School-of-Design-Thinking.png"
+                                    alt="School of Design Thinking Logo" class="client-partner-image" loading="lazy" width="249"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/Accenture-Ventures.png" alt="Accenture Ventures Logo" class="client-partner-image" loading="lazy" width="152" height="96">
+                                <img src="https://static.ynos.in/images/clients/Arali-Ventures.png" alt="Arali Ventures Logo" class="client-partner-image" loading="lazy" width="153" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/Kerala-Startup-Mission.png"
+                                    alt="Kerala Startup Mission Logo" class="client-partner-image" loading="lazy" width="140" height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/VelTech.png" alt="VelTech Logo" class="client-partner-image" loading="lazy" width="163" height="96">
+                                <img src="https://static.ynos.in/images/clients/VIT-TBI.png" alt="VIT TBI Logo" class="client-partner-image" loading="lazy" width="124" height="96">
+                                <img src="https://static.ynos.in/images/clients/Crescent-Innovation-Incubation-Council.png" alt="Crescent Innovation Incubation Council Logo" class="client-partner-image" loading="lazy" width="140" height="96">
+                                <img src="https://static.ynos.in/images/clients/Coromandel.jpg" alt="Coromandel Logo" class="client-partner-image" loading="lazy" width="161" height="96">
+                                <!-- <img src="https://static.ynos.in/images/clients/KEMI-Jain-University.png" alt="KEMI Jain University Logo"
+                                    class="client-partner-image" loading="lazy" width="97" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/Grow-Trust.png" alt="GrowTrust Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img title="RANA Investment Advisors"
+                                    src="https://static.ynos.in/images/clients/RANA-Investment-Advisors.png"
+                                    alt="RANA Investment Advisors Logo" class="client-partner-image" loading="lazy" width="138"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/clients/Karunya-University.png" alt="Karunya University Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <img src="https://static.ynos.in/images/clients/PSNA-College-of-Engineering-and-Technology.png" alt="PSNA College of Engineering and Technology Logo" class="client-partner-image" loading="lazy" width="268" height="96">
+                                <img src="https://static.ynos.in/images/clients/HDFC-Bank.png" alt="HDFC Bank Logo" class="client-partner-image" loading="lazy" width="348" height="96">
+                                <img src="https://static.ynos.in/images/clients/DBS-Bank.png" alt="DBS Bank Logo" class="client-partner-image" loading="lazy" width="323" height="96">
+                                <!-- <img src="https://static.ynos.in/images/partners/ICICI-Bank.png" alt="ICICI Bank Logo"
+                                    class="client-partner-image" loading="lazy" width="301" height="96"> -->
+                                <img src="https://static.ynos.in/images/partners/IIT-Madras.png" alt="IIT Madras (CREST) Logo" class="client-partner-image" loading="lazy" width="96" height="96">
+                                <!-- <img src="https://static.ynos.in/images/partners/Headstart.png" alt="Headstart Logo"
+                                    class="client-partner-image" loading="lazy" width="338" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/Probe-Information.png"
+                                    alt="Probe42 Information Services Logo" class="client-partner-image" loading="lazy" width="131"
+                                    height="96"> -->
+                                <img src="https://static.ynos.in/images/partners/Nasscom-10000-Startups.png" alt="NASSCOM 10000 Startups Logo" class="client-partner-image" loading="lazy" width="163" height="96">
+                                <!-- <img src="https://static.ynos.in/images/partners/Federal-Bank.png" alt="Federal Bank Logo"
+                                    class="client-partner-image" loading="lazy" width="196" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/Venture-Intelligence.png" alt="Venture Intelligence Logo"
+                                    class="client-partner-image" loading="lazy" width="229" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/WeAim.png" alt="WeAim Logo" class="client-partner-image"
+                                    loading="lazy" width="121" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/CCE.png" alt="Centre for Continuing Education Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/TiE-Chennai.png" alt="TiE Chennai Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/Way-2-World.png" alt="Way 2 World Logo"
+                                    class="client-partner-image" loading="lazy" width="96" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/clients/VANS-Skilling-and-Advisory.png"
+                                    class="client-partner-image" loading="lazy" alt="VANS Skilling and Advisory Logo" width="193"
+                                    height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/Nanayam-Vikatan.png" alt="Nanayam Vikatan Logo"
+                                    class="client-partner-image" loading="lazy" width="252" height="96"> -->
+                                <!-- <img src="https://static.ynos.in/images/partners/The-Hindu-Business-Line.png"
+                                    alt="The Hindu Business Line Logo" class="client-partner-image" loading="lazy" width="436" height="96"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <div class="contact-container">
+                        <div class="contact-container-wrap">
+                            <p>#StartupsForAll</p>
+                            <h2>Complimentary Access for Everyone!</h2>
+                            <h4>Register now and avail <span>1,00,000</span> credits! No strings attached.</h4>
+                            <div class="button-group">
+                                <a href="/launch.html#!/signup" target="_blank" rel="noopener" class="button button-primary">Sign-up for Free</a>
+                                <!-- <a href="/contact" target="_blank" rel="noopener"
+                                    class="button button-secondary" data-ng-cloak>Contact Sales</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- End Main Section -->
+
+    <!-- Footer Section -->
+    <!-- ngInclude: '/static/templates/footer.html' --><footer data-ng-include="'/static/templates/footer.html'" class="ng-scope" style=""><div ng-controller="footerCtrl" class="ng-scope">
+    <section class="ys-footer" id="ys-footer-section">
+        <div id="footer-container">
+            <div class="footer-site-pad">
+                <div class="wrapper">
+                    <div id="footer-links">
+                        <div class="left-side">
+                            <div id="ys-logo"></div>
+                            <!-- <p class="logo-content">In Partnership with <a class="logo-content-highlight"
+                                ng-href="{{ addCustomParameterToUrl('https://doms.iitm.ac.in/crest/') }}" target="_blank" rel="noopener nofollow">CREST,
+                                IIT Madras</a></p> -->
+                            <div class="supported-by-partners">
+                                <p>Supported By</p>
+                                <div class="crest-iitm-ic-logo"></div>
+                            </div>
+                            <!-- <div class="newsletter-layout">
+                                <h2 class="newsletter-footer-heading">Signup for the Startup Pulse!</h2>
+                                <form name="newsletterForm" class="newsletter-footer-form" novalidate>
+                                    <input type="email" name="email" placeholder="Email" class="footer-newsletter-email" ng-model="newsletter_form.email"
+                                    autocomplete="off" spellcheck="false" autocorrect="off" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-keyup="checkValidEmail()" required />
+                                    <button class="newsletter-action_arrow footer-newsletter-action" ng-click="newsletterAction(newsletterForm, newsletter_form)">
+                                    </button>
+                                    <button class="newsletter-loader"></button>
+                                    <div role="newsletter-alert">
+                                        <span class="newsletter-error" ng-show="footer_newsletter_error">Enter a valid email address</span>
+                                        <span class="newsletter-success" ng-show="footer_newsletter_success">Newsletter signup successful</span>
+                                    </div>
+                                </form>
+                            </div> -->
+                        </div>
+                        <div class="right-side">
+                            <div class="first-column">
+                                <div class="link-column">
+                                    <p>Company</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/about">About</a></li>
+                                        <li>
+                                            <a href="/events">Events
+                                                <!-- <span class="footer-new-label">New</span> -->
+                                            </a>
+                                        </li>
+                                        <li><a href="/team">Team</a></li>
+                                        <li><a href="/investors">Our Investors</a></li>
+                                        <li><a href="/faq">FAQ</a></li>
+                                        <li><a href="/contact" tooltip-placement="right" uib-tooltip="Say hi! 👋">Contact</a></li>
+                                        <li><a href="/terms-and-conditions" target="_blank">Terms</a>
+                                        </li>
+                                        <li><a href="/privacy-policy" target="_blank">Privacy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="link-column">
+                                    <p>Perspectives</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/thought-leadership">Reports</a>
+                                        </li>
+                                        <li><a href="/thought-leadership">News
+                                                Articles</a>
+                                        </li>
+                                        <li><a href="https://blog.ynos.in/" rel="noopener">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="second-column">
+                                <div class="link-column">
+                                    <p>Information Platform</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/products/startups">Startups</a></li>
+                                        <li><a href="/products/angels">Angels</a></li>
+                                        <li><a href="/products/vcs">VCs</a></li>
+                                        <li><a href="/products/incubators">Incubators</a></li>
+                                        <li><a href="/products/government-funding">Govt. Funding</a></li>
+                                        <li>
+                                            <a href="/products/debt-funding">Debt Funding</a>
+                                            <!-- <span class="footer-beta-label">Beta</span> -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="link-column">
+                                    <p>Dashboards</p>
+                                    <ul class="link-navs">
+                                        <li>
+                                            <a target="_blank" href="/one-innovation">One Innovation</a>
+                                            <span class="footer-new-label">New</span>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="/tamilnadu-innovation">InnovationTN</a>
+                                            <span class="footer-new-label">New</span>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="/vibgyor">VIBGYOR</a>
+                                            <!-- <span class="footer-new-label">New</span> -->
+                                        </li>
+                                        <li><a href="/products/insight">Insight</a></li>
+                                    </ul>
+                                </div>
+                                <div class="link-column">
+                                    <p>AI Chatbot</p>
+                                    <ul class="link-navs">
+                                        <li><a target="_blank" href="https://chat.ynos.in/">StartupGPT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="link-column">
+                                    <p>Innovation Platform</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/products/ip-engine">IP
+                                                Engine</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                            <div class="third-column">
+                                <!-- <div class="link-column">
+                                    <p>Expert Consultation</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/products/delphi">Delphi</a>
+                                        </li>
+                                        <li><a href="/products/consult">Consult</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="link-column">
+                                    <p>Training</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/products/clarity">Clarity</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <div class="link-column">
+                                    <p>Pricing</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/pricing">Compare
+                                                Plans</a></li>
+                                        <li><a href="/subscription-benefits-plus">Benefits+</a></li>
+                                    </ul>
+                                </div>
+                                <div class="link-column">
+                                    <p>Contribute</p>
+                                    <ul class="link-navs">
+                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeSeo07KKuJx7UxMOlbFg5F8rudDbCGR05pHVywtmNKndolsw/viewform" target="_blank" rel="noopener nofollow">Add your
+                                                Startup</a>
+                                            <!-- <span>New</span> -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="link-column">
+                                    <p>Resources</p>
+                                    <ul class="link-navs">
+                                        <li><a href="https://static.ynos.in/documents/marketing-brochures/ynos-user-manual-for-startups-and-founders.pdf" target="_blank" rel="noopener">User Manual for Founders</a>
+                                        </li>
+                                        <li><a href="https://static.ynos.in/documents/marketing-brochures/ynos-user-manual-for-students.pdf" target="_blank" rel="noopener">User Manual for Students</a>
+                                        </li>
+                                        <li><a href="https://static.ynos.in/documents/marketing-brochures/ynos-user-manual-for-incubators.pdf" target="_blank" rel="noopener">User Manual for Incubators</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="fourth-column">
+                                <div class="link-column sub-link">
+                                    <p>Discover</p>
+                                    <ul class="link-navs">
+                                        <li><a href="/top-angels-for-startups-in-india">Top Angels for Startups in India</a></li>
+                                        <li><a href="/top-angels-from-iit-madras">Top Angels from IIT Madras</a></li>
+                                        <li><a href="/top-vcs-for-startups-in-india">Top VCs for Startups in India</a></li>
+                                        <li><a href="/top-startups-in-india">Top Startups in India</a></li>
+                                        <li><a href="/unicorn-startups-in-india">Unicorn Startups in India</a></li>
+                                        <li class="mb"><a href="/startups-supported-by-t-hub-hyderabad">Startups supported by T-Hub</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-social-connect">
+                        <div class="policy">
+                            <p>© YNOS Venture Engine CC Private Limited</p>
+                        </div>
+                        <div class="social-links">
+                            <!-- ngIf: isHomePage --><ul class="footer-social-icons ng-scope" ng-if="isHomePage">
+                                <li class="group-social-sites"><a class="discord" href="https://discord.gg/YFYVbva" target="_blank" rel="noopener"></a></li>
+                                <li class="group-social-sites"><a class="linkedin" href="https://www.linkedin.com/company/ynos-venture-engine/" target="_blank" rel="noopener"></a></li>
+                                <li class="group-social-sites"><a class="twitter" href="https://twitter.com/YnosIn" target="_blank" rel="noopener"></a></li>
+                                <li class="group-social-sites"><a class="facebook" href="https://www.facebook.com/YNOSVenture/" target="_blank" rel="noopener"></a>
+                                </li>
+                                <li class="group-social-sites"><a class="instagram" href="https://www.instagram.com/ynosventure/" target="_blank" rel="noopener"></a>
+                                </li>
+                                <li class="group-social-sites"><a class="youtube" href="https://www.youtube.com/channel/UC0GW9GDba027XLyY8qDzX9w" target="_blank" rel="noopener"></a></li>
+                                <li class="group-social-sites"><a class="medium" href="https://blog.ynos.in/" rel="noopener"></a></li>
+                                <li class="group-social-sites"><a class="whatsapp" href="https://wa.me/917358431831" rel="noopener" target="_blank"></a></li>
+                            </ul><!-- end ngIf: isHomePage -->
+                            <!-- Add rel= "nofollow" for other pages -->
+                            <!-- ngIf: !isHomePage -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-colors">
+            <div class="color-1"></div>
+            <div class="color-2"></div>
+            <div class="color-3"></div>
+            <div class="color-4"></div>
+            <div class="color-5"></div>
+        </div>
+    </section>
+</div>
+</footer>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-cookies.min.js"></script>
+    <script src="/static/js/config.js"></script>
+    <script src="/static/dist/landing.bundle.js"></script><style type="text/css">.marquee{white-space:nowrap;overflow:hidden;visibility:hidden;}#marq_kill_marg_bord{border:none!important;margin:0!important;}</style><div id="zsiqwidget"></div>
+    <!--Global site tag (gtag.js) -Google Analytics -->
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-127422277-1"></script>
+    <script src="/static/js/gtag.js"></script>
+
+    <script>
+        // const vantaEffect = VANTA.DOTS({
+        //     el: "#top-section",
+        //     mouseControls: false,
+        //     touchControls: false,
+        //     gyroControls: false,
+        //     // minHeight: 200.00,
+        //     // minWidth: 200.00,
+        //     scale: 1.00,
+        //     scaleMobile: 1.00,
+        //     color: "#50b446",
+        //     color2: "#50b446",
+        //     backgroundColor: "#002c25",
+        //     spacing: 21.00,
+        //     showLines: false
+        // });
+        // vantaEffect.resize();
+    </script>
+
+
+<iframe id="_hjSafeContext_42374631" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe id="_hjSafeContext_60831073" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div class="_hj-widget-container _hj-widget-theme-light" id="survey_1075365"><div class="_hj-s3UIi__styles__globalStyles _hj-Pbej5__styles__resetStyles "><div lang="en" id="hotjar-survey-017cd198-be6b-44c7-b549-513cc1d84580" dir="ltr" style="--hjFeedbackAccentColor: #51b247; --hjFeedbackAccentHoverColor: #418d38; --hjFeedbackAccentActiveColor: #397b31; --hjFeedbackAccentTextColor: #000; --hjFeedbackDisabledAccentColor: #F1F2F6; --hjFeedbackDisabledAccentTextColor: rgba(0, 0, 0, 0.43); --hjFeedbackBorderColor: #E4E6EB; --hjFeedbackOptionButtonBackgroundColor: #e6e6e6; --hjFeedbackInputPlaceholderColor: #677b65; font-size: clamp(16px, 1rem, 32px) !important; --hjFeedbackPageTextColor: rgba(255, 255, 255, 0.94);"><div data-testid="survey-root"><div class="css-sfbnep"><div aria-hidden="true" class="css-1jii8h"></div><div class="css-112xj8j"><button aria-label="Feedback - Show survey" id="hj-survey-toggle-1" class="css-1o83lg7"><div class="css-1xi4v5y"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="none" viewBox="0 0 24 22" data-testid="icon-buddy"><path fill="#010201" fill-rule="evenodd" d="M22.362.827C21.72.5 20.88.5 19.2.5H3.3C1.755.5.983.5.575.819A1.5 1.5 0 000 1.969c-.01.517.453 1.135 1.38 2.371l1.14 1.52c.178.237.267.356.33.487a1.5 1.5 0 01.122.365C3 6.855 3 7.003 3 7.3v9.4c0 1.68 0 2.52.327 3.162a3 3 0 001.311 1.311c.642.327 1.482.327 3.162.327h11.4c1.68 0 2.52 0 3.162-.327a3 3 0 001.311-1.311C24 19.22 24 18.38 24 16.7V5.3c0-1.68 0-2.52-.327-3.162a3 3 0 00-1.31-1.311zM9.277 11.937a1.125 1.125 0 00-1.948 1.126 7.123 7.123 0 006.171 3.562 7.123 7.123 0 006.171-3.562 1.125 1.125 0 10-1.947-1.126 4.872 4.872 0 01-4.224 2.438 4.873 4.873 0 01-4.223-2.438zM10.5 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM18 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"></path></svg></div><span class="css-rob2o6">Feedback</span></button><div role="dialog" aria-labelledby="hj-survey-lbl-1" aria-hidden="true"><div id="innerLayer" class="css-t0lbh8"><div class="css-1g0iqql"><div class="css-hgo30f"><button class="css-zzqb0h"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" data-testid="icon-collapse"><path d="M17.8059 9.87186L13.2207 16.2912C12.6225 17.1287 11.3778 17.1287 10.7795 16.2912L6.19431 9.87186C5.48516 8.87905 6.19485 7.5 7.41491 7.5L16.5853 7.5C17.8054 7.5 18.5151 8.87906 17.8059 9.87186Z" fill="#728970"></path></svg></button></div><div><form inert="" class="css-dptyls" siq_id="autopick_5752"><div aria-labelledby="hj-survey-lbl-1"><div class="css-jr2rfv"><h2 id="hj-survey-lbl-1" tabindex="-1" class="css-1gthstb"><span style="display: contents;">How would you rate your experience?</span></h2><div aria-label="where 1 is Hate and 5 is Love" role="radiogroup" class="css-1pi8oih"><div class="css-1u0ka8c"><label class="css-aqntsj"><input type="radio" name="19e40fa4-0e9d-467a-99a9-786a689ac63f" aria-label="1" aria-describedby="hj-surveys-scale-option-label-0-7b6e2294-6324-40b5-9815-594b20a57cfe" class="css-3bml7r"><div class="css-1eb42c9"><svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="none"><path d="M36.3 2.5h-35a1.2 1.2 0 0 0-1 2.1L5 9.3v22A3.8 3.8 0 0 0 8.8 35h27.5a3.7 3.7 0 0 0 3.7-3.7v-25a3.8 3.8 0 0 0-3.7-3.8Z" fill="#FFC107"></path><path d="M22.5 22.5a5 5 0 0 1 5 4A1.3 1.3 0 1 0 30 26a7.7 7.7 0 0 0-15 0 1.3 1.3 0 1 0 2.5.5c0-.2.9-4 5-4ZM16.3 18.1a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7ZM28.7 18.1a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7ZM32.4 8.2a1.3 1.3 0 0 0-1.7-.6l-5 2.5a1.3 1.3 0 1 0 1.1 2.3l5-2.5a1.3 1.3 0 0 0 .6-1.7ZM18.8 12.5a1.3 1.3 0 0 0 .5-2.4l-5-2.5a1.3 1.3 0 1 0-1.1 2.3l5 2.5.6.1Z" fill="#000"></path><defs><clipPath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clipPath></defs></svg></div></label><label class="css-aqntsj"><input type="radio" name="19e40fa4-0e9d-467a-99a9-786a689ac63f" aria-label="2" aria-describedby="" class="css-3bml7r"><div class="css-1eb42c9"><svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="none"><path d="M36.2 2.5h-35a1.3 1.3 0 0 0-.8 2.1L5 9.3v22A3.7 3.7 0 0 0 8.7 35h27.5a3.8 3.8 0 0 0 3.8-3.8v-25a3.8 3.8 0 0 0-3.8-3.7Z" fill="#FFC107"></path><path d="M22.5 22.5a5 5 0 0 0-5 4A1.3 1.3 0 1 1 15 26a7.6 7.6 0 0 1 7.5-6 7.6 7.6 0 0 1 7.5 6 1.3 1.3 0 1 1-2.5.5c0-.2-.8-4-5-4ZM16.3 15.6a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7ZM28.8 15.6a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7Z" fill="#000"></path><defs><clipPath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clipPath></defs></svg></div></label><label class="css-aqntsj"><input type="radio" name="19e40fa4-0e9d-467a-99a9-786a689ac63f" aria-label="3" aria-describedby="" class="css-3bml7r"><div class="css-1eb42c9"><svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="none"><path d="M36.3 2.5h-35A1.3 1.3 0 0 0 0 4c0 .2.2.5.4.6L5 9.3v22A3.8 3.8 0 0 0 8.8 35h27.5a3.7 3.7 0 0 0 3.7-3.7v-25a3.7 3.7 0 0 0-3.7-3.8Zm-20 20h12.5a1.2 1.2 0 1 1 0 2.5H16.3a1.2 1.2 0 1 1 0-2.5Zm-2-8.7a1.9 1.9 0 1 1 3.8 0 1.9 1.9 0 0 1-3.7 0Zm14.5 1.8a1.9 1.9 0 1 1 0-3.7 1.9 1.9 0 0 1 0 3.7Z" fill="#FFC107"></path><path d="M16.3 15.6a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7ZM28.7 15.6a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7ZM16.2 25h12.5a1.3 1.3 0 0 0 0-2.5H16.2a1.3 1.3 0 0 0 0 2.5Z" fill="#000"></path><defs><clipPath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clipPath></defs></svg></div></label><label class="css-aqntsj"><input type="radio" name="19e40fa4-0e9d-467a-99a9-786a689ac63f" aria-label="4" aria-describedby="" class="css-3bml7r"><div class="css-1eb42c9"><svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="none"><path d="M36.2 2.5h-35c-.5 0-1 .3-1 .8-.3.5-.2 1 .2 1.3L5 9.3v22c0 2 1.6 3.7 3.7 3.7h27.5c2.2 0 3.8-1.6 3.8-3.7v-25c0-2.2-1.6-3.8-3.8-3.8Z" fill="#FFC107"></path><path d="M16 20c.6-.1 1.4.3 1.5 1a5 5 0 0 0 5 4 5 5 0 0 0 5-4c.1-.7.8-1.1 1.5-1 .8.1 1.1.8 1 1.5a7.6 7.6 0 0 1-9.1 5.9c-3-.6-5.3-3-5.9-5.9-.1-.6.3-1.4 1-1.5ZM16.3 15.6a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7ZM28.7 15.6a1.9 1.9 0 1 0 0-3.7 1.9 1.9 0 0 0 0 3.7Z" fill="#000"></path><defs><clipPath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clipPath></defs></svg></div></label><label class="css-aqntsj"><input type="radio" name="19e40fa4-0e9d-467a-99a9-786a689ac63f" aria-label="5" aria-describedby="hj-surveys-scale-option-label-1-cb4e684c-84cf-4832-b11d-660e99005a3c" class="css-3bml7r"><div class="css-1eb42c9"><svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="none"><path d="M36.2 2.5h-35c-.5 0-1 .3-1 .8-.3.5-.2 1 .2 1.3L5 9.3v22c0 2 1.6 3.7 3.7 3.7h27.5c2.2 0 3.8-1.6 3.8-3.7v-25c0-2.2-1.6-3.8-3.8-3.8Z" fill="#FFC107"></path><path d="M18.8 10.6c-1-.8-2.3-.8-3.2 0l-.6.7-.6-.7c-.9-.8-2.3-.8-3.1 0-1 .9-1 2.3 0 3.2l3.7 3.7 3.8-3.8c.8-.8.8-2.2 0-3ZM30.6 10.6l-.6.7-.6-.7c-.9-.8-2.3-.8-3.2 0-.8.9-.8 2.3 0 3.2l3.8 3.7 3.7-3.8c1-.8 1-2.2 0-3-.8-1-2.2-1-3 0ZM22.4 27.5c5 0 7.5-4.4 7.5-6 0-.4 0-.6-.3-1-.2-.4-.6-.5-1-.5H16.2c-.3 0-.7.1-1 .5-.2.4-.2.6-.2 1 0 1.6 2.5 6 7.4 6Z" fill="#000"></path><defs><clipPath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clipPath></defs></svg></div></label></div><div class="css-10fm8f7"><span aria-hidden="true" id="hj-surveys-scale-option-label-0-7b6e2294-6324-40b5-9815-594b20a57cfe" title="Hate" class="css-wg0tbm"><span style="display: contents;">Hate</span></span><span aria-hidden="true" id="hj-surveys-scale-option-label-1-cb4e684c-84cf-4832-b11d-660e99005a3c" title="Love" class="css-tcbgst"><span style="display: contents;">Love</span></span></div></div></div><div class="css-iqp8dm"><div class="css-36amt5"><button type="button" kind="primary" disabled="" size="m" class="css-gfpm87"><span style="display: contents;">Next</span></button></div></div></div></form></div></div></div></div></div></div></div></div></div></div><div class="zsiq_floatmain zsiq_theme1 siq_bR zsiqfanim" data-id="zsalesiq" style="visibility: hidden; display: none;"><div id="zsiq_float" class="zsiq_float " style="font-family:inherit"><div class="zsiq_flt_rel"><em id="zsiq_agtpic" class="zsiq_user siqicon siqico-chat"></em><div id="titlediv" class="zsiq_cnt  zsiqhide_tip"><div id="zsiq_maintitle" class="zsiq_ellips" title="We're Online!">We're Online!</div><p id="zsiq_byline" class="zsiq_ellips" title="How may we help you?">How may we help you?</p><em class="siqico-close"></em></div><em id="zsiq_unreadcnt" class="zsiq_unrdcnt" style="display: none;"></em><em id="zsiq_avcall" class="zsiqmin_unrdcnt zsiq_unrdcnt siqico-mincall" style="display: none;"></em></div></div></div><style id="zsiqcustomcss" data-id="zsalesiq">.zsiq_flt_rel{ background-color:#52DF7E !important;} .zsiq_seasonal .st2 { fill: #52DF7E !important;}</style><div class="zls-sptwndw siqembed siqtrans zsiq-mobhgt zsiq-newtheme mobile-device siq_rht zsiq_size2 siqanim" embedtheme="8" data-id="zsiqembed" style="visibility: hidden; display: block;"><div id="siqcht" class="zls-prelative"><iframe id="siqiframe" title="SalesIQ Chatwindow" seamless="seamless" height="460" width="100%" scrolling="no"></iframe></div></div></body></html>

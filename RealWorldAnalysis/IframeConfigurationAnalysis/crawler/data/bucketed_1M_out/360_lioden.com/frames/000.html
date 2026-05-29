@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="en"><head>
+		<!-- Google tag (gtag.js) -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TWCRKLBL21"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-TWCRKLBL21');
+	</script>
+	<!-- end Google tag -->
+
+		<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	<title>Welcome :|: Lioden</title>
+	<base href="//www.lioden.com">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="shortcut icon" href="//static.lioden.com/images/favicon.ico" type="image/x-icon">
+	<script type="text/javascript">
+	const URL_STATIC = 'https://static.lioden.com';
+	var runOnDOMReady = []; var domIsReady = false;
+	if (typeof globalThis == 'undefined') {
+		var globalThis = window;
+	}
+	"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(e,t){"use strict";if(null==e)throw new TypeError("Cannot convert undefined or null to object");for(var n=Object(e),r=1;r<arguments.length;r++){var o=arguments[r];if(null!=o)for(var c in o)Object.prototype.hasOwnProperty.call(o,c)&&(n[c]=o[c])}return n},writable:!0,configurable:!0});
+	"remove"in Element.prototype||(Element.prototype.remove=function(){this.parentNode&&this.parentNode.removeChild(this)});
+	</script>
+	<script type="text/javascript">
+	var ldCfg = (function() {
+		var options = {
+			url: 'https://www.lioden.com/'
+		}
+		return {
+			getURL: function() {
+				return options.url;
+			},
+			getTime: function() {
+				return 'night';
+			},
+			getSeason: function() {
+				return 'dry';
+			}
+		}
+	}());
+	</script>
+		<script src="//static.lioden.com/inc/jquery.min.js?v=1.10.1"></script>
+	<script src="//static.lioden.com/inc/jquery.flexselect.js?v=3.0"></script>
+	<script src="//static.lioden.com/inc/liquidmetal.js?v=2.0"></script>
+	<script src="//static.lioden.com/js/quickscore.min.js"></script>
+	<script src="//static.lioden.com/js/timeago.min.js" type="text/javascript"></script>
+		<script>
+	var b_lsis=null;function localStorageIsSupported(){if(null!==b_lsis)return b_lsis;try{var o="__na8h4oak4g302kk__";return storage.setItem(o,o),storage.removeItem(o),b_lsis=!0}catch(o){return b_lsis=!1}}function setSetting(o,t){localStorageIsSupported()?localStorage.setItem(o,t):CK.create(o,t,365)}function getSetting(o){return localStorageIsSupported()?localStorage.getItem(o):CK.read(o)}
+	var CK={create:function(e,t,n){var r;if(n){var i=new Date;i.setTime(i.getTime()+24*n*60*60*1e3),r="; expires="+i.toGMTString()}else r="";document.cookie=e+"="+t+r+"; path=/"},read:function(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var i=n[r];" "===i.charAt(0);)i=i.substring(1,i.length);if(0===i.indexOf(t))return i.substring(t.length,i.length)}return null},erase:function(e){utils.createCookie(e,"",-1)}};
+
+	var LogError = (function() {
+		var throttle = 0;
+		var throttleMax = 3;
+		var uid = 0;
+
+		function captureError(err) {
+			var errName = '';
+			var errMsg = '';
+			if (typeof err.name !== 'undefined') {
+				errName = err.name;
+			}
+
+			if (typeof err.message !== 'undefined') {
+				errMsg = ': ' + err.message;
+			}
+
+			var report = {
+				"uid": uid,
+				"name": 'Uncaught ' + errName + errMsg,
+				"url": document.location.href,
+				"stack": err.stack.replace(/\n/g, '¶')
+			}
+
+			save(report);
+		}
+
+		function windowError(msg, url, lineNo, columnNo, error) {
+			var stackErr = 'Unsupported Stack';
+			if (typeof error != 'undefined') {
+				stackError = error.stack.replace(/\n/g, '¶');
+			}
+
+			var report = {
+				"uid": uid,
+				"name": msg,
+				"url": document.location.href,
+				"stack": stackError
+			};
+
+			save(report);
+		}
+
+		function save(report) {
+			if (throttle > throttleMax) {
+				return false;
+			}
+
+			++throttle;
+
+			var bc = '?' + (new Date().getTime());
+			var request = new XMLHttpRequest();
+			request.open('POST', 'ajax_errors.php' + bc);
+			request.setRequestHeader('Content-type', 'application/json');
+			request.onload = function(e) {
+				if (request.status == 200) {
+					// Request is good
+				} else {
+					// Request not good
+				}
+			}
+			request.send(JSON.stringify(report));
+		}
+
+		return {
+			window: windowError,
+			capture: captureError
+		}
+	}());
+	(function() {
+			}());
+	</script>
+		<!--
+	<script>
+	$(document).ready(function() {
+		$("#dialog").dialog();
+	 });
+	</script>
+	-->
+	
+	<!-- Bootstrap -->
+	<link href="/css/bootstrap.min.css?v=1.1" rel="stylesheet">
+	<link href="/css/flexselect.css" rel="stylesheet">
+	<link href="/css/common.1779198003.css" rel="stylesheet">
+	<link href="/css/fontoldstyle.css" rel="stylesheet">
+	<link href="/css/jquery-ui.css" rel="stylesheet">
+
+	<link href="/css/main.1779177593.css" rel="stylesheet">
+	<style>
+		/* throwing this in, will see how it affects the site at large */
+		body {
+			text-wrap: stable;
+		}
+	</style>
+
+	
+	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+	<script type="text/javascript">
+		window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-bottom"};
+	</script>
+
+
+		<!-- Google Analytics -->
+<!--
+		DISABLED ON 2023-01-03
+		ENABLING GA4 "immediately after the <head> element"
+<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-34281078-1', {'sampleRate': 5});
+		ga('send', 'pageview');
+	</script> -->
+	<!-- End Google Analytics -->
+
+	
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+	
+	<!-- End Cookie Consent plugin -->
+
+	
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/dark-bottom.css"><style id="autoconsent-css-rules">.cc_banner-wrapper { display: none !important; z-index: -1 !important; pointer-events: none !important; } </style></head>
+<body style=""><div class="cc_banner-wrapper "><div class="cc_banner cc_container cc_container--open"><a href="#null" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all">Got it!</a><p class="cc_message">This website uses cookies to ensure you get the best experience on our website </p><a class="cc_logo" target="_blank" href="http://silktide.com/cookieconsent">Cookie Consent plugin for the EU cookie law</a></div></div>
+	<script src="//static.lioden.com/js/mezr.min.js" type="text/javascript"></script>
+		<div id="fraCopyPlaceholder"></div>
+	<div id="fraAchievements"><div class="alert alert-warning achievement no-close" style="display: none" id="fraAchievementLink"><a href="/achievements.php" class="blockLink">View your achievements</a></div></div>
+	<script>
+		var Achievement = (function() {
+			var fraContainer = document.getElementById('fraAchievements');
+			var fraAchievementLink = document.getElementById('fraAchievementLink');
+			fraAchievementLink.style.display = 'none';
+
+			function applyClasses(target) {
+				target.classList.add('alert');
+				target.classList.add('alert-warning');
+				target.classList.add('achievement');
+			}
+
+			function checkIfEmpty() {
+				if (fraContainer.childElementCount <= 1) {
+					fraAchievementLink.style.display = 'none';
+				} else {
+					fraAchievementLink.style.display = 'block';
+				}
+			}
+
+			function display(achievements) {
+				achievements.forEach(function(html) {
+					var blockAchievement = document.createElement('div');
+					applyClasses(blockAchievement);
+					blockAchievement.innerHTML = html;
+					blockAchievement.addEventListener('click', function() {
+						this.classList.add('removed');
+						window.setTimeout(function(target) {
+							target.remove();
+							checkIfEmpty();
+						}, 750, this);
+					});
+					var firstEl = fraContainer.firstChild;
+					fraContainer.insertBefore(blockAchievement, firstEl);
+				});
+				checkIfEmpty();
+			}
+
+			return {
+				display: display
+			}
+		}());
+	</script>
+
+
+	<div class="container topbar">
+			</div>
+
+	<div class="container main">
+		<div class="row">
+			<nav class="navbar navbar-default" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand visible-lg visible-md" href="/">
+					
+						<img src="//static.lioden.com/img/layout/logo-full-2.png" alt="Lioden"></a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav visible-lg">
+					<li><a href="/territory.php">Den</a></li>
+					<li><a href="/explore.php">Crossroads</a></li>
+					<li><a href="/hoard.php">Hoard</a></li>
+					<li><a href="/oasis.php">Oasis</a></li>
+					<li><a href="/boards.php">Chatter</a></li>
+					<li><a href="/news.php">News</a></li>
+					<li><a href="/event.php">Event</a></li>
+					<li><a href="/faq.php">FAQ</a></li>
+				</ul>
+				<ul class="nav navbar-nav visible-xs visible-sm visible-md smaller-nav">
+					<li><a href="/territory.php">Den</a></li>
+					<li><a href="/explore.php">Crossroads</a></li>
+					<li><a href="/hoard.php">Hoard</a></li>
+					<li><a href="/oasis.php">Oasis</a></li>
+					<li><a href="/boards.php">Chatter</a></li>
+					<li><a href="/news.php">News</a></li>
+					<li><a href="/event.php">Event</a></li>
+					<li><a href="/faq.php">FAQ</a></li>
+				</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="row">
+			<div class="col-md-9 col-xs-12" id="pageContainer">
+				<ol class="breadcrumb">
+					<li><a href="/">Home</a></li>
+					<li class="breadcrumb-item active">Welcome to Lioden</li>				</ol>
+
+				<br>			<style>
+			.randommember {
+				background: #6D381F;
+				padding: 10px;
+				border-radius: 3px;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				max-width: 245px;
+			}
+			.randommember h3 {
+				margin-top: 0;
+				color: #fff;
+			}
+			.randommember a:link, .randommember a:visited, .randommember a:active {
+				margin-top: 0;
+				color: #E8A137;
+			}
+			.randommember a:hover {
+				margin-top: 0;
+				color: #000;
+			}
+			</style>
+
+			<h1>Welcome to Lioden</h1>
+
+			<p>
+				Lioden is a revolutionary twist on the SIM game experience - be the king of your very own pride of lionesses, breed the best cubs, defend your territory and battle other lions for supremacy.
+			</p>
+
+						<p class="center">
+				<a href="/register.php"><img src="//static.lioden.com/images/layout/play-now.png" title="Play now!" alt="Join Lioden and play now"></a>
+			</p>
+
+			<div class="col-lg-5 hidden-md hidden-sm">
+				<form method="post">
+				<table class="table">
+					<tbody><tr>
+						<td class="top center">Log In</td>
+					</tr>
+					<tr>
+						<td class="left" style="text-align: center;"><b>Username or Email: </b></td>
+					</tr>
+					<tr>
+						<td class="right center"><input type="text" name="username"></td>
+					</tr>
+					<tr>
+						<td class="left" style="text-align: center;"><b>Password: </b></td>
+					</tr>
+					<tr>
+						<td class="right center"><input type="password" name="password"></td>
+					</tr>
+					<tr>
+						<td class="right center"><input type="checkbox" name="staylogged" value="1"> Remember Me</td>
+					</tr>
+					<tr>
+						<td class="bottom center">
+							<input type="submit" name="login" value="Login">
+						</td>
+					</tr>
+				</tbody></table>
+				</form>
+			</div>
+			<div class="col-lg-5 visible-md visible-sm">
+				<form method="post">
+				<table class="table">
+					<tbody><tr>
+						<td class="top center" colspan="2">Log In</td>
+					</tr>
+					<tr>
+						<td class="left" style="text-align: center;"><b>Username: </b></td>
+						<td class="left" style="text-align: center;"><b>Password: </b></td>
+					</tr>
+					<tr>
+						<td class="right center"><input type="text" name="username"></td>
+						<td class="right center"><input type="password" name="password"></td>
+					</tr>
+					<tr>
+						<td class="right center" colspan="2"><input type="checkbox" name="staylogged" value="1"> Remember Me</td>
+					</tr>
+					<tr>
+						<td class="bottom center" colspan="2">
+							<input type="submit" name="login" value="Login">
+						</td>
+					</tr>
+				</tbody></table>
+				</form>
+			</div>
+			<div class="col-lg-7">
+				<div style="padding-bottom: 78.125%; height: 0;"><img src="https://static.lioden.com/images/slides/5/174119.jpg" style="width: 95%; max-width: 640px; max-height: 500px; aspect-ratio: 1.28 / 1;  position: absolute;"></div>			</div>
+						<br class="clear">
+
+			<h2 class="center">Random Game Items</h2>
+			<div class="hoard">
+									<div class="item center floatleft small">
+						<div class="item-header">Tibetan Dragon Spikes</div>
+						<a href="/item.php?id=7502">
+							<img src="https://static.lioden.com/images/items/Decoration/tibetiandragonspikes.png" alt="Tibetan Dragon Spikes" style="border: 0; width: 100px;" width="100" height="100">
+						</a>
+						<div class="item-footer">
+							<a href="/item.php?id=7502">View Item →</a>
+						</div>
+					</div>
+									<div class="item center floatleft small">
+						<div class="item-header">Beetle Nemesis: Delta dimidiatipenne [Black]</div>
+						<a href="/item.php?id=6142">
+							<img src="https://static.lioden.com/images/items/Beetles/beetledeltadimidiatipenneblack.png" alt="Beetle Nemesis: Delta dimidiatipenne [Black]" style="border: 0; width: 100px;" width="100" height="100">
+						</a>
+						<div class="item-footer">
+							<a href="/item.php?id=6142">View Item →</a>
+						</div>
+					</div>
+									<div class="item center floatleft small">
+						<div class="item-header">Nyanga Trout</div>
+						<a href="/item.php?id=4450">
+							<img src="https://static.lioden.com/images/items/Food/nyangatrout.png" alt="Nyanga Trout" style="border: 0; width: 100px;" width="100" height="100">
+						</a>
+						<div class="item-footer">
+							<a href="/item.php?id=4450">View Item →</a>
+						</div>
+					</div>
+									<div class="item center floatleft small">
+						<div class="item-header">Interstellar Remnants</div>
+						<a href="/item.php?id=3426">
+							<img src="https://static.lioden.com/images/items/Other/app_interstellar.png" alt="Interstellar Remnants" style="border: 0; width: 100px;" width="100" height="100">
+						</a>
+						<div class="item-footer">
+							<a href="/item.php?id=3426">View Item →</a>
+						</div>
+					</div>
+									<div class="item center floatleft small">
+						<div class="item-header">Body Paint: Bone</div>
+						<a href="/item.php?id=2571">
+							<img src="https://static.lioden.com/images/items/Decoration/deertushbonepaint.png" alt="Body Paint: Bone" style="border: 0; width: 100px;" width="100" height="100">
+						</a>
+						<div class="item-footer">
+							<a href="/item.php?id=2571">View Item →</a>
+						</div>
+					</div>
+								<br class="clear">
+			</div>
+
+			<h2 class="center">Random NPCs</h2>
+			<div style="width: 530px;" class="auto">
+			<img src="//static.lioden.com/images/randomnpc/155.png" style="width: 126px; margin: 0 3px;"><img src="//static.lioden.com/images/randomnpc/67.png" style="width: 126px; margin: 0 3px;"><img src="//static.lioden.com/images/randomnpc/30.png" style="width: 126px; margin: 0 3px;"><img src="//static.lioden.com/images/randomnpc/70.png" style="width: 126px; margin: 0 3px;">			</div>
+
+
+
+			<br class="clear">
+			<br><br><br>
+			<div class="center visible-md visible-lg">
+			</div>
+			</div>
+			<div class="sidebar col-md-3 visible-xs visible-sm col-xs-12 visible-md visible-lg" id="pageSidebar">
+
+										<center><a href="/register.php" style="color: #F00;" class="xlarge">Join For Free!</a><br><br>
+						<a href="/index.php">Log in</a><br>
+						<a href="/activate.php">Activate Your Account</a><br>
+						<a href="/lostpass.php">Lost Your Password?</a><br><br><br></center>
+					
+
+				
+
+				<div class="col-md-12 col-xs-6">
+
+					
+					<div class="panel panel-default">
+						<div class="panel-body small">
+							<div class="floatright right" style="width: 45px;">
+								<img src="//static.lioden.com/img/layout/icon-time-night.png" alt="night Time">
+								<img src="//static.lioden.com/img/layout/icon-season-dry.png" alt="dry Season">
+							</div>
+							23rd May, 2026<br>3:12am Lioden time<br>
+							<a href="/online.php">1716 members online</a><br>						</div>
+					</div>
+					
+				
+				<p class="text-center"><br>
+					<a class="btn btn-default button" href="/bugbox"><img src="//static.lioden.com/images/layout/bugbox.png"> Bug Box</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container footer white">
+		<div class="row">
+			<div class="col-xs-10">
+				Lioden Ltd © 2012-2026.  All rights reserved.<br>
+				Company number 09846917 registered in England &amp; Wales.  VAT number 234362915.<br>
+				<ul class="small" style="padding-left: 0;">
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/terms.php">Terms of Service</a></li>
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/code.php">Code of Conduct</a></li>
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/privacy.php">Privacy Policy</a></li>
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/contact.php">Contact Us</a></li>
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/modbox.php">Modbox</a></li>
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/faq.php">FAQ</a></li>
+					<li style="display: inline; padding-right: 10px; margin-bottom: 5px;"><a href="/conservation.php">Conservation Efforts</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-2 text-right">
+				<img src="//static.lioden.com/images/layout/hand_text.svg" style="width: 50px; margin-bottom: 10px; opacity: 0.7;">
+			</div>
+		</div>
+	</div>
+	<!-- <div class="center footer white">
+		Lioden Ltd &copy; 2012-2026.  All rights reserved.<br>
+		Company number 09846917 registered in England & Wales.  VAT number 234362915.<br>
+		<a href="/terms.php">Terms of Service</a> -
+		<a href="/code.php">Code of Conduct</a> -
+		<a href="/privacy.php">Privacy Policy</a> -
+		<a href="/contact.php">Contact Us</a> -
+		<a href="/modbox.php">Modbox</a> -
+		<a href="/faq.php">FAQ</a> -
+		<a href="/conservation.php">Conservation Efforts</a>
+	</div> -->
+
+	<script src="//static.lioden.com/js/bootstrap.min.js"></script>
+	<script src="//static.lioden.com/inc/jquery-ui.min.js"></script>
+	<script src="/js/main.1779177593.js"></script>
+		<script>$(document).ready(function() { if ($('#dialog').length) { $("#dialog").dialog(); } });</script>
+	<script>
+		(function() {
+			var btnToggleSidebarChat = document.getElementById('btnToggleSidebarChat');
+			var fraSidebarChat = document.getElementById('fraSidebarChat');
+			var uiM = document.createElement('div');
+			uiM.setAttribute('id', 'uimid'); uiM.setAttribute('data-mid', typeof mid != 'undefined' ? mid : false);
+			document.body.appendChild(uiM);
+
+			if (fraSidebarChat) {
+				var fraSidebarContent = fraSidebarChat.querySelector('iframe');
+				if (btnToggleSidebarChat) {
+					btnToggleSidebarChat.addEventListener('click', function(e) {
+						e.preventDefault();
+						if (this.value == 'Hide') {
+							var visibility = (CK.read('chat_sidebar') == 2 ? 3 : 0);
+							CK.create('chat_sidebar', visibility, 365);
+							updateChatboxSetting(visibility);
+							this.value = 'Show';
+							fraSidebarChat.classList.add('hidden');
+						} else {
+							var visibility = (CK.read('chat_sidebar') == 3 ? 2 : 1);
+							CK.create('chat_sidebar', visibility, 365);
+							updateChatboxSetting(visibility);
+							this.value = 'Hide';
+							fraSidebarChat.classList.remove('hidden');
+							loadChat();
+						}
+					});
+				}
+
+				function loadChat() {
+					if (CK.read('chat_sidebar') != 0 && CK.read('chat_sidebar') != 3) {
+						fraSidebarContent.src = fraSidebarContent.getAttribute('data-src');
+					}
+				}
+
+							}
+		}());
+	</script>
+	
+<div style="background: rgba(0,0,0,0.5); color: #CCC; padding: 4px; text-align: center; font-size: 9px;">Memory Used: 712.16 KB - Queries: 0 - Query Time: 0.00000 - Total Time: 0.00824s</div>
+
+
+
+</div><div id="uimid" data-mid="false"></div></body></html>

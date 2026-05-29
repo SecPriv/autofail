@@ -1,0 +1,709 @@
+<!DOCTYPE html><html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Portal Karir BPR Restu</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://absen.bankrestu.com/assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF', // Sesuaikan dengan warna BPR Restu
+                        secondary: '#1D4ED8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script src="//unpkg.com/alpinejs" defer=""></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        scroll-behavior: smooth;
+    }
+    .mesh-gradient {
+        background-color: #ffffff;
+        background-image: 
+            radial-gradient(at 0% 0%, hsla(221,100%,92%,1) 0, transparent 50%), 
+            radial-gradient(at 50% 0%, hsla(220,100%,95%,1) 0, transparent 50%), 
+            radial-gradient(at 100% 0%, hsla(215,100%,92%,1) 0, transparent 50%);
+    }
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.pointer-events-auto{pointer-events:auto}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-10{bottom:-2.5rem}.-bottom-2{bottom:-0.5rem}.-left-10{left:-2.5rem}.-right-1{right:-0.25rem}.-right-2{right:-0.5rem}.-right-8{right:-2rem}.-top-1{top:-0.25rem}.-top-2{top:-0.5rem}.bottom-8{bottom:2rem}.bottom-full{bottom:100%}.left-1\/2{left:50%}.right-0{right:0px}.right-8{right:2rem}.right-full{right:100%}.top-1\/2{top:50%}.top-10{top:2.5rem}.top-8{top:2rem}.-z-10{z-index:-10}.z-10{z-index:10}.z-50{z-index:50}.col-span-2{grid-column:span 2 / span 2}.mx-auto{margin-left:auto;margin-right:auto}.-mr-2{margin-right:-0.5rem}.mb-0{margin-bottom:0px}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-20{margin-bottom:5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-3{margin-left:0.75rem}.mr-1{margin-right:0.25rem}.mr-3{margin-right:0.75rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}.mt-20{margin-top:5rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-3{height:0.75rem}.h-32{height:8rem}.h-4{height:1rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-\[120\%\]{height:120%}.h-\[550px\]{height:550px}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-16{width:4rem}.w-3{width:0.75rem}.w-32{width:8rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-72{width:18rem}.w-8{width:2rem}.w-\[120\%\]{width:120%}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-7xl{max-width:80rem}.max-w-\[220px\]{max-width:220px}.max-w-xl{max-width:36rem}.flex-shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-4{--tw-translate-y:1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.rotate-45{--tw-rotate:45deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[2\.5rem\]{border-radius:2.5rem}.rounded-\[3\.5rem\]{border-radius:3.5rem}.rounded-\[3rem\]{border-radius:3rem}.rounded-\[4rem\]{border-radius:4rem}.rounded-full{border-radius:9999px}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-8{border-width:8px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l-4{border-left-width:4px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(30 64 175 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-50{--tw-border-opacity:1;border-color:rgb(248 250 252 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-100\/50{background-color:rgb(219 234 254 / 0.5)}.bg-blue-400{--tw-bg-opacity:1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600\/5{background-color:rgb(37 99 235 / 0.05)}.bg-blue-900{--tw-bg-opacity:1;background-color:rgb(30 58 138 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/75{background-color:rgb(15 23 42 / 0.75)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-\[url\(\'https\:\/\/www\.transparenttextures\.com\/patterns\/cubes\.png\'\)\]{background-image:url('https://www.transparenttextures.com/patterns/cubes.png')}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-100{--tw-gradient-from:#dbeafe var(--tw-gradient-from-position);--tw-gradient-to:rgb(219 234 254 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-blue-200{--tw-gradient-from:#bfdbfe var(--tw-gradient-from-position);--tw-gradient-to:rgb(191 219 254 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-blue-300{--tw-gradient-from:#93c5fd var(--tw-gradient-from-position);--tw-gradient-to:rgb(147 197 253 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-blue-900{--tw-gradient-from:#1e3a8a var(--tw-gradient-from-position);--tw-gradient-to:rgb(30 58 138 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-200{--tw-gradient-from:#c7d2fe var(--tw-gradient-from-position);--tw-gradient-to:rgb(199 210 254 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-200{--tw-gradient-from:#e2e8f0 var(--tw-gradient-from-position);--tw-gradient-to:rgb(226 232 240 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-indigo-50{--tw-gradient-to:rgb(238 242 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #eef2ff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-blue-200{--tw-gradient-to:#bfdbfe var(--tw-gradient-to-position)}.to-cyan-200{--tw-gradient-to:#a5f3fc var(--tw-gradient-to-position)}.to-indigo-300{--tw-gradient-to:#a5b4fc var(--tw-gradient-to-position)}.to-indigo-600{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.to-indigo-900{--tw-gradient-to:#312e81 var(--tw-gradient-to-position)}.to-purple-300{--tw-gradient-to:#d8b4fe var(--tw-gradient-to-position)}.to-slate-100{--tw-gradient-to:#f1f5f9 var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-10{padding:2.5rem}.p-12{padding:3rem}.p-2{padding:0.5rem}.p-20{padding:5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-12{padding-left:3rem;padding-right:3rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-32{padding-top:8rem;padding-bottom:8rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-24{padding-bottom:6rem}.pb-3{padding-bottom:0.75rem}.pl-3{padding-left:0.75rem}.pr-4{padding-right:1rem}.pt-1{padding-top:0.25rem}.pt-12{padding-top:3rem}.pt-2{padding-top:0.5rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-sans{font-family:Inter, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-5{line-height:1.25rem}.leading-\[1\]{line-height:1}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-tight{letter-spacing:-0.025em}.tracking-tighter{letter-spacing:-0.05em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-blue-900{--tw-text-opacity:1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.text-blue-900\/20{color:rgb(30 58 138 / 0.2)}.text-blue-900\/40{color:rgb(30 58 138 / 0.4)}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/50{color:rgb(255 255 255 / 0.5)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-20{opacity:0.2}.opacity-60{opacity:0.6}.opacity-70{opacity:0.7}.opacity-75{opacity:0.75}.opacity-80{opacity:0.8}.opacity-100{opacity:1}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-blue-900\/10{--tw-shadow-color:rgb(30 58 138 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-\[100px\]{--tw-blur:blur(100px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-150{transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-gray-300:hover{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.hover\:border-transparent:hover{border-color:transparent}.hover\:bg-blue-50:hover{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-800:hover{--tw-bg-opacity:1;background-color:rgb(30 64 175 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-gray-500:hover{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.hover\:text-gray-800:hover{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-\[0_40px_80px_-20px_rgba\(15\2c 23\2c 42\2c 0\.12\)\]:hover{--tw-shadow:0 40px 80px -20px rgba(15,23,42,0.12);--tw-shadow-colored:0 40px 80px -20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-blue-900\/5:hover{--tw-shadow-color:rgb(30 58 138 / 0.05);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-blue-900\/50:hover{--tw-shadow-color:rgb(30 58 138 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.focus\:border-blue-900:focus{--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity, 1))}.focus\:border-gray-300:focus{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.focus\:border-primary:focus{--tw-border-opacity:1;border-color:rgb(30 64 175 / var(--tw-border-opacity, 1))}.focus\:bg-gray-100:focus{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.focus\:bg-gray-50:focus{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.focus\:bg-indigo-100:focus{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:text-gray-500:focus{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.focus\:text-gray-700:focus{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.focus\:text-gray-800:focus{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.focus\:text-primary:focus{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:border-blue-900{--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity, 1))}.group:hover .group-hover\:bg-blue-900{--tw-bg-opacity:1;background-color:rgb(30 58 138 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-blue-900{--tw-text-opacity:1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:ml-6{margin-left:1.5rem}.sm\:flex{display:flex}.sm\:hidden{display:none}.sm\:flex-row{flex-direction:row}.sm\:space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:mx-0{margin-left:0px;margin-right:0px}.lg\:mt-0{margin-top:0px}.lg\:grid{display:grid}.lg\:w-\[40\%\]{width:40%}.lg\:w-\[60\%\]{width:60%}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:justify-start{justify-content:flex-start}.lg\:gap-20{gap:5rem}.lg\:gap-24{gap:6rem}.lg\:p-16{padding:4rem}.lg\:p-32{padding:8rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:pb-44{padding-bottom:11rem}.lg\:pt-32{padding-top:8rem}.lg\:text-left{text-align:left}.lg\:text-5xl{font-size:3rem;line-height:1}.lg\:text-6xl{font-size:3.75rem;line-height:1}.lg\:text-7xl{font-size:4.5rem;line-height:1}.lg\:text-\[5\.5rem\]{font-size:5.5rem}}</style></head>
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Header/Navbar -->
+    <nav class="bg-white shadow-sm" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="https://bankrestu.com/careers">
+                            <img class="h-8 w-auto" src="https://bpr-ram.com/assets/logos/logo.png" alt="BPR Restu">
+                        </a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="https://bankrestu.com/careers" class="inline-flex items-center px-1 pt-1 border-b-2 border-primary text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-primary transition duration-150 ease-in-out">
+                            Beranda
+                        </a>
+                        <a href="https://bankrestu.com/lowongan" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            Lowongan
+                        </a>
+                        <a href="https://bankrestu.com/tentang" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            Tentang Kami
+                        </a>
+                        <a href="https://bankrestu.com/faq" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            FAQ
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path :class="{'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path :class="{'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div :class="{'block': mobileMenuOpen, 'hidden': !mobileMenuOpen}" class="hidden sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="https://bankrestu.com/careers" class="block pl-3 pr-4 py-2 border-l-4 border-primary text-base font-medium text-primary bg-indigo-50 focus:outline-none focus:text-primary focus:bg-indigo-100 focus:border-primary transition duration-150 ease-in-out">
+                    Beranda
+                </a>
+                <a href="https://bankrestu.com/lowongan" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">
+                    Lowongan
+                </a>
+                <a href="https://bankrestu.com/tentang" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">
+                    Tentang Kami
+                </a>
+                <a href="https://bankrestu.com/faq" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">
+                    FAQ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+<section class="relative pt-20 pb-24 lg:pt-32 lg:pb-44 overflow-hidden mesh-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-20 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-100/50 border border-blue-200 mb-8">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-900 text-[10px] font-black text-white uppercase tracking-tighter">New</span>
+                    <span class="text-xs font-bold text-blue-900">2 Lowongan Aktif Minggu Ini</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-[5.5rem] font-black text-slate-900 leading-[1] mb-8 tracking-tight">
+                    Build the <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-indigo-600">Future of Finance</span>
+                </h1>
+                
+                <p class="text-xl text-slate-600 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                    Bergabunglah dengan BPR Restu untuk mengakselerasi potensi karir Anda dalam lingkungan perbankan yang modern, inklusif, dan penuh inovasi.
+                </p>
+
+                <!-- Modern Search Bar -->
+                <div class="max-w-2xl mx-auto lg:mx-0 p-2 bg-white rounded-2xl shadow-2xl shadow-blue-900/10 border border-slate-100 flex flex-col sm:flex-row gap-2">
+                    <div class="flex-grow flex items-center px-4 py-3">
+                        <svg class="w-5 h-5 text-slate-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" placeholder="Cari posisi impian anda..." class="w-full outline-none text-slate-700 font-medium">
+                    </div>
+                    <a href="https://bankrestu.com/lowongan" class="bg-blue-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-800 transition-all text-center">
+                        Cari Kerja
+                    </a>
+                </div>
+
+                <div class="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-8 opacity-70">
+                    <p class="text-xs font-black uppercase tracking-widest text-slate-400">Trusted By Professionals From</p>
+                    <div class="flex gap-6 grayscale font-bold text-slate-800">
+                        <span>OJK</span>
+                        <span>LPS</span>
+                        <span>BI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 mt-20 lg:mt-0 relative">
+                <div class="relative z-10 animate-float">
+                    <div class="rounded-[3rem] shadow-3xl h-[550px] w-full border-8 border-white bg-gradient-to-br from-blue-100 via-indigo-50 to-slate-100 flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <svg class="w-32 h-32 mx-auto mb-4 text-blue-900/20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                            </svg>
+                            <p class="text-blue-900/40 font-bold text-lg">BPR Restu Team</p>
+                        </div>
+                    </div>
+                    <!-- Floating UI Elements -->
+                    <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-2xl border border-slate-50 max-w-[220px]">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <p class="text-xs font-black text-slate-400 uppercase tracking-tighter">Success Apply</p>
+                        </div>
+                        <p class="text-sm font-bold text-slate-800">120 Pelamar diproses hari ini</p>
+                    </div>
+                    
+                    <div class="absolute top-10 -right-8 bg-blue-900 p-4 rounded-2xl shadow-2xl text-white">
+                        <p class="text-xl font-black">4.9/5</p>
+                        <p class="text-[10px] font-bold uppercase opacity-60">Glassdoor Rating</p>
+                    </div>
+                </div>
+                
+                <!-- Decorative background shapes -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/5 rounded-full blur-[100px] -z-10"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Featured Jobs Section -->
+<section id="lowongan" class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row justify-between items-end gap-8 mb-20">
+            <div class="max-w-xl">
+                <span class="text-blue-900 font-black uppercase tracking-widest text-xs mb-4 block">Opportunity awaits</span>
+                <h2 class="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">Peluang Karir Unggulan</h2>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://bankrestu.com/lowongan" class="px-6 py-3 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all">Lihat Semua</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:border-transparent transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.12)]">
+                <!-- Card Badge -->
+                <div class="absolute top-8 right-8 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    2 minggu yang lalu
+                </div>
+
+                <div class="mb-10">
+                    <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-900 transition-all duration-500 mb-8">
+                        <svg class="w-8 h-8 text-blue-900 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-bold text-blue-900 mb-2 uppercase tracking-widest">BPR Restu</p>
+                    <h4 class="text-2xl font-black text-slate-900 mb-4 leading-tight group-hover:text-blue-900 transition-colors">MARKETING KREDIT</h4>
+                    
+                    <div class="flex items-center space-x-4 text-slate-500 font-semibold text-sm">
+                        <span class="flex items-center">
+                            <span class="mr-1 text-slate-300">?</span> SEMARANG
+                        </span>
+                        <span class="flex items-center">
+                            <span class="mr-1 text-slate-300">?</span> Full-time
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-8 border-t border-slate-50">
+                    <span class="text-blue-900 font-black text-sm uppercase tracking-tighter">View Details</span>
+                    <a href="https://bankrestu.com/lowongan/marketing-kredit" class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-blue-900 group-hover:border-blue-900 group-hover:text-white transition-all">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+                        <div class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:border-transparent transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.12)]">
+                <!-- Card Badge -->
+                <div class="absolute top-8 right-8 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    4 bulan yang lalu
+                </div>
+
+                <div class="mb-10">
+                    <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-900 transition-all duration-500 mb-8">
+                        <svg class="w-8 h-8 text-blue-900 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-xs font-bold text-blue-900 mb-2 uppercase tracking-widest">BPR Restu</p>
+                    <h4 class="text-2xl font-black text-slate-900 mb-4 leading-tight group-hover:text-blue-900 transition-colors">FRONTLINER</h4>
+                    
+                    <div class="flex items-center space-x-4 text-slate-500 font-semibold text-sm">
+                        <span class="flex items-center">
+                            <span class="mr-1 text-slate-300">?</span> SEMARANG
+                        </span>
+                        <span class="flex items-center">
+                            <span class="mr-1 text-slate-300">?</span> Full-time
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-8 border-t border-slate-50">
+                    <span class="text-blue-900 font-black text-sm uppercase tracking-tighter">View Details</span>
+                    <a href="https://bankrestu.com/lowongan/frontliner" class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-blue-900 group-hover:border-blue-900 group-hover:text-white transition-all">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<!-- Life at BPR Section -->
+<section class="py-32 overflow-hidden bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-24 items-center">
+            <div>
+                <span class="text-blue-900 font-black uppercase tracking-[0.3em] text-[10px] mb-6 block">Our Culture</span>
+                <h2 class="text-4xl lg:text-6xl font-black text-slate-900 tracking-tight leading-none mb-10">Beyond Just <br> A Workplace.</h2>
+                <p class="text-xl text-slate-600 font-medium leading-relaxed mb-12">
+                    Kami percaya bahwa kolaborasi dan inovasi lahir dari lingkungan yang mendukung kebebasan berekspresi dan pertumbuhan pribadi.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                        <p class="text-2xl font-black text-blue-900 mb-2">98%</p>
+                        <p class="text-xs font-bold text-slate-500">Employee Retention Rate</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                        <p class="text-2xl font-black text-blue-900 mb-2">200+</p>
+                        <p class="text-xs font-bold text-slate-500">Training Sessions/Year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 lg:mt-0 grid grid-cols-2 gap-6 relative">
+                <div class="space-y-6 pt-12">
+                    <div class="rounded-3xl shadow-xl w-full h-64 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white/50" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="rounded-3xl shadow-xl w-full h-48 bg-gradient-to-br from-slate-200 to-blue-200 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/50" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="rounded-3xl shadow-xl w-full h-48 bg-gradient-to-br from-indigo-200 to-purple-300 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/50" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                            <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                        </svg>
+                    </div>
+                    <div class="rounded-3xl shadow-xl w-full h-64 bg-gradient-to-br from-blue-300 to-cyan-200 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white/50" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-blue-900 rounded-full flex items-center justify-center border-8 border-slate-50 text-white font-black text-xs text-center p-2 leading-tight">
+                    LIFE AT BPR RESTU
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Track Button -->
+<div class="fixed bottom-8 right-8 z-50">
+    <!-- Welcome Popup Tooltip -->
+    <div id="trackingTooltip" class="absolute bottom-full right-0 mb-4 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 transform transition-all duration-500 opacity-0 translate-y-4 pointer-events-none">
+        <button id="closeTooltip" class="absolute -top-2 -right-2 w-6 h-6 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors pointer-events-auto">
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <div>
+                <p class="font-bold text-slate-900 text-sm mb-1">Sudah Melamar?</p>
+                <p class="text-slate-500 text-xs leading-relaxed">Klik tombol ini untuk melacak status lamaran Anda secara real-time!</p>
+            </div>
+        </div>
+        <div class="absolute -bottom-2 right-8 w-4 h-4 bg-white border-r border-b border-slate-100 transform rotate-45"></div>
+    </div>
+    
+    <button id="openTrackingModal" class="group relative bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-5 rounded-full shadow-2xl hover:shadow-blue-900/50 transition-all duration-300 hover:scale-110">
+        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+        </svg>
+        <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-900 text-white px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            Lacak Lamaran Anda
+        </span>
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-blue-500"></span>
+        </span>
+    </button>
+</div>
+
+<!-- Tracking Modal -->
+<div id="trackingModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!-- Background overlay -->
+    <div class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity" id="modalBackdrop"></div>
+    
+    <div class="flex min-h-screen items-center justify-center p-4">
+        <!-- Modal panel -->
+        <div class="relative bg-white rounded-[3.5rem] shadow-2xl transform transition-all w-full max-w-5xl overflow-hidden">
+            <!-- Close button -->
+            <button id="closeTrackingModal" class="absolute top-8 right-8 z-10 w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-all group">
+                <svg class="w-6 h-6 text-slate-600 group-hover:text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <div class="flex flex-col lg:flex-row">
+                <!-- Left side - Dark -->
+                <div class="lg:w-[40%] bg-slate-900 p-12 lg:p-16 text-white flex flex-col justify-center">
+                    <h3 class="text-4xl lg:text-5xl font-black mb-8 leading-tight tracking-tight">Track Your Journey</h3>
+                    <p class="text-slate-400 text-lg mb-0 font-medium leading-relaxed">Masukkan nomor telepon untuk mendapatkan update status terbaru lamaran Anda.</p>
+                    
+                    <div class="mt-16 space-y-6">
+                        <div class="flex items-center gap-4 text-sm font-bold opacity-60">
+                            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">1</div>
+                            <span>Input Nomor Telepon</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm font-bold opacity-60">
+                            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">2</div>
+                            <span>Verifikasi Data</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm font-bold opacity-60">
+                            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">3</div>
+                            <span>Lihat Status Real-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side - Form -->
+                <div class="lg:w-[60%] p-12 lg:p-16">
+                    <form id="application-tracking-form-modal" action="https://bankrestu.com/track-application" method="POST" class="mb-12">
+                        <input type="hidden" name="_token" value="lQiLMSBsWdEiMHFAx3r3bmX0lwFnmd8sVVwD1ql3">                        <div class="mb-10">
+                            <label class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4 block">Candidate Phone Number</label>
+                            <input type="tel" name="phone" id="phone-modal" placeholder="0812 3456 7890" class="w-full px-8 py-6 bg-slate-50 border border-slate-200 rounded-3xl outline-none focus:border-blue-900 focus:bg-white transition-all text-xl font-bold" required="">
+                        </div>
+                        <button type="submit" class="w-full py-6 px-10 bg-blue-900 text-white font-black rounded-3xl hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/10">
+                            Lacak Lamaran
+                        </button>
+                    </form>
+
+                    <div id="tracking-result-modal" class="hidden space-y-6">
+                        <!-- Results will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Benefits Section -->
+<section id="benefits" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-blue-900 font-bold uppercase tracking-widest text-sm mb-4">Value Proposisi</h2>
+            <h3 class="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Keuntungan Berkarir Bersama BPR Restu</h3>
+            <p class="text-lg text-slate-500 font-medium">Bukan sekadar pekerjaan, kami menawarkan ekosistem pertumbuhan yang memungkinkan Anda mencapai potensi terbaik Anda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Benefit 1 -->
+            <div class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/5 transition-all group">
+                <div class="w-16 h-16 bg-blue-50 text-blue-900 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-2xl font-extrabold text-slate-900 mb-4">Pengembangan Karir</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">Kami memberikan jalur karir yang transparan dan program pelatihan berkelanjutan untuk meningkatkan kompetensi Anda.</p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/5 transition-all group">
+                <div class="w-16 h-16 bg-blue-50 text-blue-900 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-2xl font-extrabold text-slate-900 mb-4">Kompensasi Kompetitif</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">Nikmati paket gaji menarik, asuransi kesehatan, dan berbagai bonus performa sebagai apresiasi kerja keras Anda.</p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/5 transition-all group">
+                <div class="w-16 h-16 bg-blue-50 text-blue-900 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-2xl font-extrabold text-slate-900 mb-4">Lingkungan Positif</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">Budaya kerja kolaboratif, inklusif, dan didukung oleh fasilitas kantor yang modern untuk produktivitas maksimal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Premium CTA Section -->
+<section class="py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-[4rem] bg-blue-900 p-20 lg:p-32 overflow-hidden">
+            <div class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            <div class="relative z-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-10">
+                    The Perfect Time <br> To Start.
+                </h2>
+                <p class="text-xl text-blue-100 font-medium mb-12 opacity-80">
+                    Jangan lewatkan kesempatan untuk menjadi bagian dari institusi finansial yang sedang bertumbuh pesat.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="https://bankrestu.com/lowongan" class="px-12 py-6 bg-white text-blue-900 font-black rounded-3xl hover:bg-blue-50 transition-all shadow-2xl">
+                        Join The Team Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <a href="https://bankrestu.com/careers">
+                        <img class="h-10 w-auto" src="https://bpr-ram.com/assets/logos/logo.png" alt="BPR Restu">
+                    </a>
+                    <p class="mt-4 text-gray-600 text-sm">
+                        BPR Restu adalah Bank Perekonomian Rakyat yang berkomitmen untuk memberikan pelayanan terbaik kepada nasabah dan mengembangkan SDM yang berkualitas.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">Tautan</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="https://bankrestu.com/lowongan" class="text-base text-gray-600 hover:text-gray-900">
+                                Lowongan Kerja
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://bankrestu.com/tentang" class="text-base text-gray-600 hover:text-gray-900">
+                                Tentang Kami
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://bankrestu.com/faq" class="text-base text-gray-600 hover:text-gray-900">
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">Kontak</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li class="flex">
+                            <svg class="flex-shrink-0 h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="ml-3 text-gray-600">
+                                (024) 6721721
+                            </span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="ml-3 text-gray-600">
+                                karir@restubpr.com
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    © 2026 BPR Restu. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tooltip popup elements
+        const tooltip = document.getElementById('trackingTooltip');
+        const closeTooltipBtn = document.getElementById('closeTooltip');
+        
+        // Show tooltip popup after 1.5 seconds (always on page load)
+        if (tooltip) {
+            setTimeout(function() {
+                tooltip.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                tooltip.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }, 1500);
+            
+            // Auto hide after 8 seconds
+            setTimeout(function() {
+                hideTooltip();
+            }, 9500);
+        }
+        
+        function hideTooltip() {
+            if (tooltip) {
+                tooltip.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                tooltip.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }
+        }
+        
+        if (closeTooltipBtn) {
+            closeTooltipBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                hideTooltip();
+            });
+        }
+        
+        // Modal elements
+        const modal = document.getElementById('trackingModal');
+        const openBtn = document.getElementById('openTrackingModal');
+        const closeBtn = document.getElementById('closeTrackingModal');
+        const backdrop = document.getElementById('modalBackdrop');
+        const trackingForm = document.getElementById('application-tracking-form-modal');
+        const trackingResult = document.getElementById('tracking-result-modal');
+
+        // Open modal
+        openBtn.addEventListener('click', function() {
+            hideTooltip(); // Hide tooltip when opening modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            trackingResult.classList.add('hidden');
+            trackingForm.reset();
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Form submission
+        if (trackingForm) {
+            trackingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(trackingForm);
+                const submitBtn = trackingForm.querySelector('button[type="submit"]');
+                
+                // Tampilkan loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+                
+                fetch('https://bankrestu.com/track-application', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': 'lQiLMSBsWdEiMHFAx3r3bmX0lwFnmd8sVVwD1ql3'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Reset loading state
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Lacak Lamaran';
+                    
+                    trackingResult.classList.remove('hidden');
+                    
+                    if (data.status === 'success' && data.applications.length > 0) {
+                        let resultsHtml = '';
+                        data.applications.forEach(app => {
+                            resultsHtml += `
+                                <div class="p-10 rounded-[2.5rem] bg-blue-50/50 border border-blue-100 animate-in fade-in slide-in-from-top-4 duration-500">
+                                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
+                                        <div>
+                                            <p class="text-[10px] font-black text-blue-900 uppercase tracking-widest mb-1">ID: ${app.id || 'N/A'}</p>
+                                            <h4 class="text-2xl font-black text-slate-900">${app.job_title}</h4>
+                                        </div>
+                                        <div class="px-6 py-2 bg-blue-900 text-white text-[10px] font-black rounded-full uppercase tracking-widest">
+                                            ${app.status}
+                                        </div>
+                                    </div>
+                                    <div class="p-6 bg-white rounded-2xl border border-blue-50">
+                                        <p class="text-sm font-bold text-slate-400 uppercase tracking-tighter mb-2 italic">Status Details:</p>
+                                        <p class="text-slate-800 font-semibold">${app.status_text}</p>
+                                        <p class="text-slate-500 text-sm mt-2">Tanggal Melamar: ${app.applied_at}</p>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        trackingResult.innerHTML = resultsHtml;
+                    } else {
+                        trackingResult.innerHTML = `
+                            <div class="text-center py-12 px-8 border-2 border-dashed border-slate-200 rounded-[2.5rem]">
+                                <svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="text-slate-400 font-bold uppercase tracking-widest text-xs">${data.message || 'No records found for this number'}</p>
+                                <p class="text-slate-300 text-sm mt-2">Pastikan nomor telepon yang Anda masukkan benar</p>
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Lacak Lamaran';
+                    
+                    trackingResult.classList.remove('hidden');
+                    trackingResult.innerHTML = `
+                        <div class="text-center py-12 px-8 border-2 border-dashed border-red-200 rounded-[2.5rem] bg-red-50">
+                            <svg class="w-16 h-16 mx-auto mb-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-red-600 font-bold uppercase tracking-widest text-xs">Terjadi kesalahan. Silakan coba lagi.</p>
+                        </div>
+                    `;
+                });
+            });
+        }
+    });
+</script>
+
+ </body></html>

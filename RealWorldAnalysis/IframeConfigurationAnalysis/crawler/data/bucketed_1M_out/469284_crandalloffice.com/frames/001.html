@@ -1,0 +1,102 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Crandall Office Furniture - Affordable Premium Ergonomic Office Chairs</title>
+    <script src="https://www.redditstatic.com/ads/pixel.js" async=""></script><script src="https://crandalloffice.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+
+// Step 1. Initialize the JavaScript pixel SDK (make sure to exclude HTML)
+
+
+// Step 2. Subscribe to customer events with analytics.subscribe(), and add tracking
+//  analytics.subscribe("all_standard_events", function (event) {
+//    console.log("Event data ", event?.data);
+//  });
+!function(w,d){
+  if(!w.rdt){
+      var p=w.rdt=function(){
+      p.sendEvent ? p.sendEvent.apply(p,arguments) : p.callQueue.push(arguments)
+    };
+    p.callQueue=[];
+    var t=d.createElement("script");
+    t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;
+    var s=d.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(t,s)
+  }
+}(window,document);
+
+rdt('init', 'a2_hsnf9mu4tj0r', {
+  optOut: false,
+  useDecimalCurrencyValues: true,
+  partner: "SHOPIFY_PIXEL",
+  partner_version: "0.0.1"
+});
+
+analytics.subscribe("page_viewed", function listen(event) {
+  rdt('track', 'PageVisit', {
+    conversionId: event.id,
+    email: (init.data.customer || {}).email,
+    phoneNumber: (init.data.customer || {}).phone,
+    externalId: (init.data.customer || {}).id || event.clientId,
+  });
+});
+
+analytics.subscribe("product_viewed", function listen(event) {
+  rdt('track', 'ViewContent', {
+    conversionId: event.id,
+    products: [{
+      id:  event.data.productVariant.sku,
+      category:  event.data.productVariant.product.type,
+      name:  event.data.productVariant.product.title
+    }],
+    email: (init.data.customer || {}).email,
+    phoneNumber: (init.data.customer || {}).phone,
+    externalId: (init.data.customer || {}).id || event.clientId,
+  });
+});
+
+analytics.subscribe("product_added_to_cart", function listen(event) {
+  rdt('track', 'AddToCart', {
+    value: event.data.cartLine.cost.totalAmount.amount,
+    currency: event.data.cartLine.merchandise.price.currencyCode,
+    itemCount: event.data.cartLine.quantity,
+    conversionId: event.id,
+    products: [{
+      id:  event.data.cartLine.merchandise.sku,
+      category:  event.data.cartLine.merchandise.product.type,
+      name:  event.data.cartLine.merchandise.product.title
+    }],
+    email: (init.data.customer || {}).email,
+    phoneNumber: (init.data.customer || {}).phone,
+    externalId: (init.data.customer || {}).id || event.clientId,
+  });
+});
+
+analytics.subscribe("checkout_completed", function listen(event) {
+  rdt('track', 'Purchase', {
+    value: event.data.checkout.totalPrice.amount,
+    currency: event.data.checkout.currencyCode,
+    itemCount: event.data.checkout.lineItems.reduce(function clampItemsQuantity(total, item) { return total + item.quantity }, 0),
+    conversionId: event.id,
+    products: event.data.checkout.lineItems.map(function mapLineItem(item) {
+      return {
+        id: item.variant.sku,
+        category: item.variant.product.type,
+        name: item.title
+      };
+    }),
+    email: event.data.checkout.email || (init.data.customer || {}).email,
+    phoneNumber: event.data.checkout.phone || (init.data.customer || {}).phone,
+    externalId: (init.data.customer || {}).id || event.clientId,
+  });
+});
+});})(self.webPixelsManager.createShopifyExtend('157286766', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

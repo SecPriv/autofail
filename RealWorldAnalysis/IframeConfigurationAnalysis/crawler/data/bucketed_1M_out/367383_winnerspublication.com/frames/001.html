@@ -1,0 +1,168 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Winners Publication – Govt Exam Books for MPPSC, SSC, Banking &amp; More. – WINNERS ONLINE EDUTECH PRIVATE LIMITED</title>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script src="https://winnerspublication.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+const trackingId = "UA-91079667-2";
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+window.ga = function() {
+  window.ga.q.push(arguments);
+}
+window.ga.q = [];
+window.GoogleAnalyticsObject = "ga",
+window.ga.l = (new Date).getTime();
+
+const script = document.createElement("script");
+script.async = true;
+script.src = "https://www.google-analytics.com/analytics.js";
+document.head.appendChild(script);
+
+window.ga("create", trackingId, {
+  allowLinker: true
+});
+window.ga("require", "displayfeatures");
+window.ga("require", "linker")
+window.ga("require", "ec");
+
+(window.gaDevIds = window.gaDevIds || []).push("dNzdjND");
+
+function updateConsentSettings(customerPrivacy) {
+  gtag('consent', 'update', {
+    'ad_storage': customerPrivacy?.marketingAllowed ? 'granted' : 'denied',
+    'ad_user_data': customerPrivacy?.marketingAllowed ? 'granted' : 'denied',
+    'ad_personalization': customerPrivacy?.marketingAllowed ? 'granted' : 'denied',
+    'analytics_storage':
+        customerPrivacy?.analyticsProcessingAllowed ? 'granted' : 'denied'
+  });
+}
+
+updateConsentSettings(init?.customerPrivacy);
+
+api.customerPrivacy.subscribe('visitorConsentCollected', (event) => {
+  updateConsentSettings(event?.customerPrivacy);
+});
+
+analytics.subscribe("checkout_completed", (event) => {
+  const currency = event?.data?.checkout?.currencyCode;
+  window.ga("set", "&cu", currency);
+
+  event?.data?.checkout?.lineItems?.forEach((item) =>  {
+    window.ga("ec:addProduct",  {
+      id: item?.variant?.product?.id,
+      name: item?.title,
+      category: item?.variant?.product?.type,
+      brand: item?.variant?.product?.vendor,
+      variant: item?.variant?.title,
+      price: item?.price?.amount,
+      currency: currency,
+      quantity: item?.quantity
+    });
+  });
+
+  window.ga("ec:setAction", "purchase", {
+    id: event?.data?.checkout?.order?.id,
+    revenue: event?.data?.checkout?.totalPrice?.amount,
+    tax: event?.data?.checkout?.totalTax?.amount,
+    shipping: event?.data?.checkout?.shippingLine?.price?.amount
+  });
+
+  window.ga("send", "event", {
+    eventCategory: "EnhancedEcommerce",
+    eventAction: "Completed Order",
+    nonInteraction: true
+  });
+});
+
+analytics.subscribe("checkout_started", (event) => {
+  const currency = event?.data?.checkout?.currencyCode;
+  window.ga("set", "&cu", currency);
+
+  event?.data?.checkout?.lineItems?.forEach((item) =>  {
+    window.ga("ec:addProduct",  {
+      id: item?.variant?.product?.id,
+      name: item?.title,
+      category: item?.variant?.product?.type,
+      brand: item?.variant?.product?.vendor,
+      variant: item?.variant?.title,
+      price: item?.price?.amount,
+      currency: currency,
+      quantity: item?.quantity
+    });
+  });
+
+  window.ga("ec:setAction", "checkout");
+  window.ga("send", "event", {
+    eventCategory: "EnhancedEcommerce",
+    eventAction: "Started Order",
+    nonInteraction: true
+  });
+});
+
+analytics.subscribe("product_added_to_cart", (event) => {
+  const currency = event?.data?.cartLine?.cost?.totalAmount?.currencyCode;
+  window.ga("set", "&cu", currency);
+
+  window.ga("ec:addProduct", {
+    id: event?.data?.cartLine?.merchandise?.product?.id,
+    name: event?.data?.cartLine?.merchandise?.product?.title,
+    category: event?.data?.cartLine?.merchandise?.product?.type,
+    brand: event?.data?.cartLine?.merchandise?.product?.vendor,
+    variant: event?.data?.cartLine?.merchandise?.title,
+    price: event?.data?.cartLine?.merchandise?.price?.amount,
+    currency: currency,
+    quantity: event?.data?.cartLine?.quantity});
+
+  window.ga("ec:setAction", "add");
+  window.ga("send", "event", {
+    eventCategory: "EnhancedEcommerce",
+    eventAction: "Added Product",
+    nonInteraction: true
+  });
+});
+
+analytics.subscribe("product_viewed", (event) => {
+  const data = event?.data || {};
+  const currency = data?.productVariant?.price?.currencyCode;
+
+  window.ga("set", "&cu", currency);
+
+  window.ga("ec:addProduct", {
+    id: event?.data?.productVariant?.product?.id,
+    name: data?.productVariant?.product?.title,
+    category: data?.product?.type,
+    brand: data?.productVariant?.product?.vendor,
+    variant: data?.productVariant?.title,
+    price: data?.productVariant?.price?.amount,
+    currency: currency,
+    quantity: 1});
+  window.ga("ec:setAction", "detail");
+  window.ga("send", "event", {
+    eventCategory: "EnhancedEcommerce",
+    eventAction: "Viewed Product",
+    nonInteraction: true
+  });
+});
+
+analytics.subscribe("page_viewed", (event) => {
+  const page_context =  {
+    page: event?.context?.document?.location?.pathname,
+    title: event?.context?.document?.title
+  };
+  window.ga("set", page_context);
+  page_context.location = event?.context?.document?.location?.href;
+  window.ga("send", "pageview", page_context);
+});
+});})(self.webPixelsManager.createShopifyExtend('85491929', 'custom'));
+
+</script>
+
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script></head>
+  <body>
+
+</body></html>

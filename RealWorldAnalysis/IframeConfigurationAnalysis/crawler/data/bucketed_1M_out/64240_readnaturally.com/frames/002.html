@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+	  <meta charset="UTF-8">
+	  	  <script>
+			var getCookie = function(name) {
+				var getCookieValues = function(cookie) {
+					if(cookie.indexOf('=') !== -1)
+					{
+						var cookieArray = cookie.split('=');					
+						return cookieArray[1].trim();
+					}
+				};
+
+				var getCookieNames = function(cookie) {
+					if(cookie.indexOf('=') !== -1)
+					{
+						var cookieArray = cookie.split('=');
+						return cookieArray[0].trim();
+					}
+				};
+
+				var cookies = document.cookie.split(';');
+				var cookieValue = cookies.map(getCookieValues)[cookies.map(getCookieNames).indexOf(name)];
+
+				return (cookieValue === undefined) ? null : cookieValue;
+			};		  
+		function displayMessage (evt) {
+		
+			var message = evt.data;			
+			document.getElementById("received-message").innerHTML = message;
+			
+			var d = new Date();
+			d.setTime(d.getTime() + (180*24*60*60*1000));
+			var expires = "expires="+ d.toUTCString();
+			
+			message.split(";").forEach(function(part) {  
+				if(part !== "")
+				{
+					document.cookie = part + ";" + expires + ";path=/;";			
+				}
+			});
+		}
+
+		window.parent.postMessage(document.cookie, "*");
+		
+		if (window.addEventListener) {
+			// For standards-compliant web browsers
+			window.addEventListener("message", displayMessage, false);
+		}
+		else {
+			window.attachEvent("onmessage", displayMessage);
+		}
+	  </script>
+	</head>
+	<body>
+clickback track frame
+	  <label id="received-message">
+	
+
+
+</label></body></html>

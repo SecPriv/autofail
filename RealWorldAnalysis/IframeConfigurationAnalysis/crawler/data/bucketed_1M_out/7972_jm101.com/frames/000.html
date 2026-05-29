@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>JioMart</title>
+  <link rel="icon" type="image/x-icon" href="https://relianceretail.com/img/faviconJM.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/css/jmk.css?V13" rel="stylesheet">
+  <meta name="Keywords" content="JioMart Quick">
+  <meta property="description" content="JioMart">
+  <meta property="og:site_name" content="JioMart">
+  <meta property="og:title" content="JioMart">
+  <meta property="og:type" content="JioMart">
+  <meta property="og:url" content="www.jiomart.com">
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <style>
+    @import url('https://relianceretail.com/img/arialroundedmtbold.ttf');
+
+    @font-face {
+      font-family: Arial Rounded MT Bold;
+      src: url(https://relianceretail.com/img/arialroundedmtbold.ttf);
+    }
+
+    body {
+      font-family: "Arial Rounded", Arial, Helvetica, sans-serif;
+      margin: 0 auto;
+    }
+
+    .p1head {
+      padding: 0px 0px;
+    }
+
+    .jmlogo {
+      background: #1077b1;
+      text-align: center;
+      padding: 6px;
+    }
+
+    .jmlogo img {
+      height: 80px;
+      width: unset !important;
+    }
+
+    .jmquick {
+      text-align: center;
+    }
+
+    .jmquick img {
+      height: 38px;
+      width: unset !important;
+    }
+
+    .p1head img {
+      width: 100%;
+    }
+
+    .p1body {}
+
+    .p1body img {
+      width: 100%;
+    }
+
+    .p1body h3 {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px 10px;
+      margin: 10px 0px 0px 0px;
+    }
+
+    .p1body p {
+      font-size: 34px;
+      /* font-family: Arial, Helvetica, sans-serif; */
+      /* line-height: 44px; */
+      font-weight: 600;
+      text-align: center;
+      margin: 10px 0px 0px 0px;
+      color: #000000;
+    }
+
+    .p1body p span {
+      font-size: 48px;
+    }
+
+    .p1body ul li {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      text-align: left;
+      padding: 0px 0px;
+      margin: 0px 20px 12px 0px;
+      color: #000000;
+    }
+
+
+    #showmortxt {
+      display: none;
+    }
+
+    .smbtn {
+      background: #fff;
+      color: #00adff;
+      font-size: 14px;
+      line-height: 32px;
+      border: none;
+      margin: 0 auto;
+      width: 160px;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .btncon {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0px 10px;
+    }
+
+    .btncon button {
+      font-family: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
+      margin: 0 auto;
+      background: #1077b1;
+      border-radius: 4px;
+      color: #ffffff;
+      padding: 0px 12px;
+      font-size: 16px;
+      line-height: 32px;
+      border: 1px solid #1077b1;
+      margin: 8px 8px;
+      min-width: 78px;
+      box-shadow: rgb(0 0 0 / 36%) 0px 14px 20px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
+
+    .cbtxt {
+      text-align: center;
+    }
+
+    .cbtxt h3 {
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px 40px;
+      margin: 10px 0px 10px 0px;
+    }
+
+    .cbtxt h3 span {
+      font-size: 38px;
+    }
+
+    .cbtxt img {
+      width: 80%;
+    }
+
+    .cbfooter {}
+
+    .cbfooter h3 {
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px 20px;
+      margin: 20px 0px 0px 0px;
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+    .rcsimg {
+      max-width: 320px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .rcsimg img {
+      width: 100%;
+      max-width: 320px;
+      display: block;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .rcsimg {
+        max-width: 100%;
+        margin: 0px auto;
+        display: block;
+      }
+
+      .rcsimg img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+      }
+    }
+  </style>
+  <!-- Copy Coupon CSS -->
+  <style>
+    .couponbody {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .coupon-box {
+      background: #fff;
+      border: 2px dashed #1077b1;
+      border-radius: 10px;
+      padding: 20px 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .coupon-code {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      letter-spacing: 2px;
+      padding: 10px 14px;
+      border: 1px dashed #aaa;
+      border-radius: 6px;
+      background: #f4f4f4;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .copy-btn {
+      background: #1077b1;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 auto;
+    }
+
+    .copy-btn:hover {
+      background: #45a049;
+      transform: scale(1.05);
+    }
+
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+
+    .message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #4CAF50;
+      display: none;
+      /* hidden by default */
+    }
+
+    .message.show {
+      display: block;
+      /* shown when active */
+    }
+
+    .footertxt {
+      display: block;
+      padding: 30px 20px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .header {
+      text-align: center;
+      margin: 0px 0px 2px 0px;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      margin: 0px 0px 4px 0px;
+    }
+
+    .header-text {
+      font-size: 13px;
+      font-weight: 400;
+      /* color: var(--accent); */
+      color: #3e3e3e;
+      margin: 8px 10px 4px 10px;
+    }
+
+    .validity {
+      font-size: 13px;
+      color: #3e3e3e;
+      font-weight: 600;
+    }
+
+    .headerm {
+      font-size: 14px;
+      color: #3e3e3e;
+      font-weight: 400;
+      margin: 3px 10px 8px 10px;
+    }
+
+    .bodytxt {
+      font-size: 18px;
+      /* color: #3e3e3e; */
+      /* font-weight: 600; */
+      margin: 20px 20px 0px 20px;
+      text-align: center;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  
+    <div class="header">
+      <img src="https://relianceretail.com/img/JioMartQuickLogo1.png" alt="Quick Order Offer">
+      <!-- <div class="header-text">Your Super discount membership is valid till 31.08.2025</div>
+      <div class="validity">Coupons available to you today (<%=formattedDate%>)</div>
+      <div class="headerm">One coupon per bill. T&CA.</div> -->
+      <!-- <a href="https://www.jiomart.com" class="order-btn">Go to JioMart </a> -->
+
+    </div>
+
+
+
+    <div class="p1head">
+
+      <span style="display: none;"><img src="https://relianceretail.com/img/JioMartQuickLogo.png" alt="JMK"></span>
+    </div>
+
+
+
+    <span id="spnDiv2">
+      <div class="p1body">
+
+        <p style=" font-size: 25px;text-align: center;margin: 26px;padding: 0px; color: #1077b1;">Today's Happy Hour Message for you</p>
+
+        
+        <!-- <div style=" font-size: 12px;text-align: center;margin: 26px;padding: 0px;"> 
+        
+        </div> -->
+        <!-- <b>Order Now!</b> <br> -->
+        <!-- <div style="font-size: 24px !important;"> </div> -->
+        <!-- (T&CA.)  -->
+		<!--With Coupon Code: <b style="font-size: 22px;"> NEW100 </b>-->
+        <!-- Use Coupon Code given below to get Flat Rs. 100 Off on your next One JioMart Quick Order. T&CA -->
+		
+		<!-- <div class="bodytxt">Use Coupon Code <b> CASHBACK25  </b>to get 25% cashback.<br></div> -->
+        
+        <!-- <div class="bodytxt"> Maximum cashback Rs. 50 per bill. Cashback will be credited in JioMart wallet. Exclusions, T&CA</div> -->
+        
+		<div class="bodytxt">
+		<!--Use Coupon Code <b>R2A5V1E4H0T</b> to get 25%* Off -->
+		Get additional <b> 25%* Off </b> on your <b>JioMart Quick </b> order by using Coupon Code <b>O2T5U1R4A0N</b>
+
+		<br><br>
+
+		*Exclusion, T&amp;CA. Maximum off amount Rs.50 Per order.
+		
+		</div>
+		
+		<p>&nbsp;</p>
+      </div>
+      <div class="btncon">
+        <!-- <button type="button" id="btnKnow2" class="" onclick="callApi('Know More 2', 'Jiomart-Proceed')">Close</button> -->
+      </div>
+    </span>
+    <div class="couponbody">
+      <div class="coupon-box">
+       
+
+          <div id="couponCode" class="coupon-code">
+           O2T5U1R4A0N
+          </div>
+          <br>
+          <button class="copy-btn" onclick="copyCoupon()">
+            📋 Copy Code
+          </button>
+          <div id="copyMessage" class="message">✅ Coupon copied!</div>
+         
+           
+           
+      </div>
+
+    </div>
+
+
+
+    <br>
+    <button type="button" class="copy-btn" onclick="redirectTo()">Next</button>
+
+    <div class="footertxt" style="display: none;">Apply coupon on cart page. Offer not applicable on Fresh milk, baby
+      food oil and ghee. T&amp;C
+      apply</div>
+
+
+    <script type="text/javascript">
+
+      $(document).ready(() => {
+        const code = getQueryParam('code');
+
+        $('#lblMobile').text(maskString(code));
+
+        setTimeout(() => {
+          $('#spnDiv1').hide();
+          $('#spnDiv2').show();
+
+          // setTimeout(() => {
+          //   let url = "https://www.jiomart.com";
+          //   window.location.href = url;
+          // }, 50000)
+        }, 0);
+      });
+
+      function redirectTo() {
+        let url = "https://www.jiomart.com";
+        window.location.href = url;
+      }
+
+      function maskString(str) {
+        return str.slice(0, -4).replace(/./g, '*') + str.slice(-4);
+      }
+
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+    </script>
+
+    <script>
+      function copyCoupon() {
+        const coupon = document.getElementById("couponCode").innerText;
+        navigator.clipboard.writeText(coupon).then(() => {
+          const msg = document.getElementById("copyMessage");
+          msg.classList.add("show");
+          setTimeout(() => msg.classList.remove("show"), 2000);
+        });
+      }
+    </script>
+
+    <script type="text/javascript">
+      function showmortxt() {
+        var x = document.getElementById("showmortxt");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+        callApi('readmore', 'Jiomart-More', false)
+      }
+    </script>
+
+
+
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Page ›  Priyom.org</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:regular,bold">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/priyom-20220716.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#020411">
+  <style>#clock-container {
+  text-align: center;
+}
+
+#viewer-container {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Needed to enable absolute positioning for .help */
+}
+
+.calendar-top {
+  display: flex;
+  padding: 4px 16px 4px 16px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid #101010;
+  color: #9d9d9d;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.calendar-top .calendar-frequency,
+.calendar-top .calendar-mode {
+  color: inherit; /* Do not copy the yellow color over from entries */
+}
+
+.calendar-bottom {
+  display: flex;
+  padding: 4px 16px 4px 16px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid #101010;
+}
+
+.calendar-bottom .calendar-time-zone {
+  flex: auto;
+}
+
+.calendar-bottom .calendar-help-link {
+  display: block;
+}
+
+.calendar-help {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 29px; /* Do not cover up the bottom bar containing the "Close" button */
+  left: 0;
+  right: 0;
+  padding: 4px 16px 4px 16px;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow-y: auto;
+}
+
+.calendar-body {
+  flex: auto;
+  overflow-y: auto;
+}
+
+.calendar-day:first-child {
+  margin-top: 32px; /* Enable backwards scrolling without first scrolling down and then up */
+}
+
+.calendar-date {
+  padding: 4px 16px 4px 16px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid #101010;
+  font-weight: bold;
+}
+
+.calendar-event {
+  display: flex;
+  padding: 4px 16px 4px 16px;
+  border-bottom: 1px solid #101010;
+}
+
+.calendar-time,
+.calendar-station {
+  flex: 0 0 48px;
+}
+
+.calendar-frequency {
+  flex: 0 0 72px;
+  color: yellow;
+}
+
+.calendar-mode {
+  flex: 0 0 64px;
+  color: yellow;
+}
+
+.calendar-remarks {
+  flex: auto;
+}
+
+.calendar-voice {
+  color: lime !important; /* Color-coding for analog voice modes (E, G, S, V) */
+}
+
+.calendar-morse {
+  color: magenta !important; /* Color-coding for Morse code modes (M) */
+}
+
+.calendar-digital {
+  color: red !important; /* Color-coding for digital modes (F, P, XP, HM) */
+}
+
+.calendar-search {
+  font-weight: bold;
+  color: inherit;
+}
+</style><script charset="utf-8" src="https://platform.twitter.com/js/button.2276a045429f6681b56da5eb1dcfa53c.js"></script></head>
+  
+  <body>
+    <div class="wrapper">
+      
+      <header>
+        <div class="text-center"><a href="/"><img src="/media/231396/hurdur.svg" alt="priyom.org" width="300"></a></div>
+  
+        <nav class="navbar navbar-inverse navbar-priyom" role="navigation">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="visible-xs navbar-brand" href="/">Priyom.org</a>
+            </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav"><li class="home active"><a href="/">Home</a></li><li><a href="/blog"><span>Blog</span></a></li><li><a href="/number-stations"><span>Number Stations</span></a></li><li><a href="/military-stations"><span>Military Stations</span></a></li><li><a href="/diplomatic-stations"><span>Diplomatic Stations</span></a></li><li><a href="/about"><span>About</span></a></li></ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container -->
+        </nav>
+        
+      </header>
+            
+      <div class="main container">
+          
+          <!-- Page last updated: 2/13/2016 3:39:49 PM -->
+          
+
+<!--
+    SOME OF THIS STUFF IS BY
+    PRESENTEDIN4D
+    GIVE HIM A HUG!
+-->
+  
+<!-- “Everybody spies on everybody, I mean, that’s just a fact.” — Sen. Marco Rubio (R-Fla.) on CNN, Oct. 25 2013 -->
+  
+  <main class="row">
+    
+    <section class="col-sm-8">
+      <h3>приём-priyom: ru. "reception -  Conversion of transmitted radio waves or electric signals into perceptible forms, such as sound or light, by means of antennas and electronic equipment."</h3>
+      
+      <h3><a href="https://priyom.org/number-stations/station-schedule">Number Station Schedule</a></h3>
+      <div id="clock-container"><!----><h3>UTC time</h3><div>13:59:14</div></div><div id="events"><h3>Next station in a minute</h3><ul><li><a href="http://s.printf.cc/#a/20095usb">V13 20095kHz USB/AM [Target: East Asia]</a></li></ul></div><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script src="/scripts/nextevents-20201105.js"><!----></script><div id="viewer-container" style="width: 100%; height: 450px;"><!----><div class="calendar-top"><div class="calendar-time">Time</div><div class="calendar-station"><abbr title="Station">Stn.</abbr></div><div class="calendar-frequency"><abbr title="Frequency">Freq.</abbr></div><div class="calendar-mode">Mode</div><div class="calendar-remarks">Remarks</div></div><div class="calendar-body"><div class="calendar-day"><div class="calendar-date">Saturday, 23 May</div><div class="calendar-event"><div class="calendar-time">00:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">15388kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">00:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">15890kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">00:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">18040kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">01:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">18040kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">01:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">19052kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">01:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20025kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">02:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v32">V32</a></div><div class="calendar-frequency">7910kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">02:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">8169kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">02:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">8300kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">03:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">9276kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">03:00</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">9299kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">03:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">11430kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">03:15</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">11623kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">03:30</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">13411kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">06:00</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">12210kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">06:15</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">11122kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">06:30</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/operators/polish-11/digital-modes">P03k</a></div><div class="calendar-frequency">9371kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">06:30</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">10243kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">07:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e11">E11</a></div><div class="calendar-frequency">7377kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">07:15</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m01">M01</a></div><div class="calendar-frequency">9736kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">08:30</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/slavic/s11a">S11a</a></div><div class="calendar-frequency">5149kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">09:00</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/xpa2">XPA2</a></div><div class="calendar-frequency">20158kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">09:20</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/xpa2">XPA2</a></div><div class="calendar-frequency">19246kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">09:40</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/xpa2">XPA2</a></div><div class="calendar-frequency">18479kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">10:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e07">E07</a></div><div class="calendar-frequency">17468kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">10:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">19052kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">10:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20025kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">10:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20095kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">10:20</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/operators/polish-11/digital-modes">P03</a></div><div class="calendar-frequency">7449kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">10:20</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e07">E07</a></div><div class="calendar-frequency">16292kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">10:40</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e07">E07</a></div><div class="calendar-frequency">14876kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks">(In case of traffic)</div></div><div class="calendar-event"><div class="calendar-time">11:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">15388kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">11:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20025kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">11:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20095kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">12:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">13974kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">12:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">14944kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">12:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">15388kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">12:30</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/operators/polish-11/digital-modes">P03k</a></div><div class="calendar-frequency">19972kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">12:45</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/operators/polish-11/digital-modes">P03</a></div><div class="calendar-frequency">5371kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">13:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">11430kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">13:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">14944kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">13:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">15388kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">13:10</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/operators/polish-11/digital-modes">P03</a></div><div class="calendar-frequency">10513kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">14:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20095kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">14:30</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e11">E11</a></div><div class="calendar-frequency">12984kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">15:00</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m01">M01</a></div><div class="calendar-frequency">6435kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">15:00</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/xpa2">XPA2</a></div><div class="calendar-frequency">18326kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">15:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v13">V13</a></div><div class="calendar-frequency">20095kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">[Target: East Asia]</div></div><div class="calendar-event"><div class="calendar-time">15:20</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/xpa2">XPA2</a></div><div class="calendar-frequency">17411kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">15:40</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/xpa2">XPA2</a></div><div class="calendar-frequency">16031kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">16:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e06">E06</a></div><div class="calendar-frequency">13547kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">(Fake messages)</div></div><div class="calendar-event"><div class="calendar-time">16:00</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">24680kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">16:10</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e11">E11</a></div><div class="calendar-frequency">4783kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">16:15</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">20987kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">16:30</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e06">E06</a></div><div class="calendar-frequency">11567kHz</div><div class="calendar-mode">USB/AM</div><div class="calendar-remarks">(Fake messages)</div></div><div class="calendar-event"><div class="calendar-time">16:30</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06a">F06a</a></div><div class="calendar-frequency">18477kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">16:45</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/english/e11">E11</a></div><div class="calendar-frequency">5082kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">17:00</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06">F06</a></div><div class="calendar-frequency">13532kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks">(Fake messages)</div></div><div class="calendar-event"><div class="calendar-time">17:10</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06">F06</a></div><div class="calendar-frequency">11611kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks">(Fake messages)</div></div><div class="calendar-event"><div class="calendar-time">17:20</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/digital/f06">F06</a></div><div class="calendar-frequency">9481kHz</div><div class="calendar-mode">RTTY</div><div class="calendar-remarks">(Fake messages)</div></div><div class="calendar-event"><div class="calendar-time">17:30</div><div class="calendar-station"><a class="calendar-digital" href="http://priyom.org/number-stations/operators/polish-11/digital-modes">P03k</a></div><div class="calendar-frequency">7984kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">18:00</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/other/v32">V32</a></div><div class="calendar-frequency">7910kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">18:50</div><div class="calendar-station"><a class="calendar-voice" href="http://priyom.org/number-stations/slavic/s11a">S11a</a></div><div class="calendar-frequency">12457kHz</div><div class="calendar-mode">USB</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">19:00</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">11564kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">19:00</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">12135kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">19:20</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">10487kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">19:20</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">11452kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">19:40</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">9319kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">19:40</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">10627kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">21:00</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">17458kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">21:20</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">16234kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks"></div></div><div class="calendar-event"><div class="calendar-time">21:40</div><div class="calendar-station"><a class="calendar-morse" href="http://priyom.org/number-stations/morse/m12">M12</a></div><div class="calendar-frequency">15814kHz</div><div class="calendar-mode">CW</div><div class="calendar-remarks">(In case of traffic)</div></div></div></div><div class="calendar-help"><p>This calendar displays all known <a href="http://priyom.org/number-stations">number station</a> broadcasts in an accessible fashion. All events are displayed in the <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a> time zone; the current UTC time may be found above the viewer.</p> <p>The color scheme for stations is as follows:</p> <ul> <li><span class="calendar-voice">E06</span>: Analog voice </li><li><span class="calendar-morse">M12</span>: Morse code </li><li><span class="calendar-digital">F01</span>: Digital modes </li></ul> <p>Clicking on a station name leads to the Priyom page about the said station, where you may learn about its transmission format, habits, and recent activity.</p> <p><b>[Target: ...]</b> is used to note broadcasts that are unlikely to be heard in Western Europe. Instead, they might be heard on <a href="http://rx.linkfanel.net">one of many receivers</a> in the area mentioned. </p><p><span class="calendar-search">Search</span> is used to note broadcasts whose frequencies are not currently known. It is common for stations to move only a few hundred kilohertz to a few megahertz away from the last used frequency.</p> </div><div class="calendar-bottom"><div class="calendar-time-zone">Time zone: UTC</div><a class="calendar-help-link" href="#">Help</a></div></div><script src="/scripts/viewer-20201105.js"><!----></script>
+      
+      <h3 style="margin-top: 20px;"><a href="https://web.libera.chat/#priyom">Priyom IRC channel</a><!--<a href="https://kiwiirc.com/client/irc.libera.chat/#priyom">Priyom IRC channel</a>--> / <a href="https://discord.gg/788JPdSgsd">Discord server</a></h3>
+      <p>Meet the Priyom team in our IRC chatroom! If you have your own client, connect to the Libera network and join the #priyom channel. If you are on Discord, you can find us <a href="https://discord.gg/788JPdSgsd">there</a> as well.
+        Both chat rooms are bridged together and have the same content, you're not missing out anything by being in one rather than the other.</p>    
+      <p>However, you <em>are</em> missing out if you're not joining the chat at all. Priyom without IRC is like shortwave without sound :-)</p>    
+      <iframe src="https://web.libera.chat/?theme=nightswatch#priyom" style="border:0; width:100%; height:450px;"></iframe>
+      <!--<iframe src="https://kiwiirc.com/client/irc.libera.chat:+6697/?theme=cli#priyom" style="border:0; width:100%; height:450px;"></iframe>-->
+    </section>
+   
+    <aside class="col-sm-4">
+      
+      <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.1227a5674072e080ffb1ba14ac0c1079.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=priyom_org&amp;show_count=false&amp;show_screen_name=true&amp;size=m&amp;time=1779544744906" style="position: static; visibility: visible; width: 152px; height: 20px;" data-screen-name="priyom_org"></iframe>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      
+      <h3><a href="https://discord.gg/788JPdSgsd">Discord server</a></h3>
+      
+      <h3><a href="http://rx.linkfanel.net/">Worldwide receiver map</a></h3>
+      
+      <h3><a href="https://priyom.org/numbers-oddities">N&amp;O newsletter</a></h3>
+
+      <h3><a href="https://priyom.org/enigma-2000">ENIGMA 2000 newsletter</a></h3>
+                    
+      <h3>Wait-what is this?</h3>
+      <p>Priyom is an international organization intending to research and bring to light the mysterious reality of intelligence, military and diplomatic communication via shortwave radio: number stations.</p>
+      
+      <h3>Join the show!</h3>
+      <p>Can I join the Priyom team?</p>
+      <!--<p>Wait for your invitation. -Enigma 3000</p>-->
+      <p>We love new members! There are more stations than we are able to cover, and we always need more ears,
+      covering the gaps. If you're interested, have a listen online, join in on our IRC channel, and get to know the team.
+      Don't be afraid to ask questions -  we're more than happy to explain.
+      If you decide to get into shortwave as a hobby, and would like to contribute to Priyom, join in and send us recordings and
+      transcriptions, and we will be welcoming you as a new member. </p>
+
+      <img class="center-block" src="/media/68220/macaroni4lyf.png" alt="macaroni" title="i'll transmit my love to you, baby">
+
+    </aside>
+    
+  </main>
+
+      </div> 
+    
+      <div class="push"></div>
+
+    </div>
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row text-center vertical-align-sm">
+          <div class="col-md-1">
+            <p>
+              <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" width="88" height="31">
+              </a>
+            </p>
+          </div>
+          <div class="col-md-10 text-muted">
+            <p>Priyom.org is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+          </div>
+          <div class="col-md-1">
+            <p>
+              <a href="https://github.com/priyom">
+                <img src="/media/162808/find-on-github.png" alt="Find us on GitHub" width="88" height="31">
+              </a>
+            </p>
+          </div>
+         </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/scripts/audioplayer.min.js"></script>
+  
+ 
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.1227a5674072e080ffb1ba14ac0c1079.html?origin=https%3A%2F%2Fpriyom.org" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial;" title="Twitter analytics iframe"></iframe></body></html>

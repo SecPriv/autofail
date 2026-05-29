@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Men's &amp; Women's Clothing | The Couture Club</title>
+    <script src="https://www.thecoutureclub.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+const GA4_ID = "G-SGF0MK0ZEZ";
+
+// 1) Load GA4 gtag.js
+(function loadGA4() {
+  if (self.gtag) return; // already loaded
+
+  // Create dataLayer in pixel sandbox
+  self.dataLayer = self.dataLayer || [];
+
+  // Define gtag
+  self.gtag = function () {
+    self.dataLayer.push(arguments);
+  };
+
+  // Inject script
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+  document.head.appendChild(script);
+
+  // Init GA4
+  self.gtag("js", new Date());
+  self.gtag("config", GA4_ID, {
+    send_page_view: false,
+  });
+})();
+
+analytics.subscribe('checkout_completed', (event) => {
+  const cartLines =
+    event.data?.checkout?.lineItems ||
+    event.data?.cart?.lines ||
+    [];
+
+  cartLines.forEach((line) => {
+    const attributes = line?.attributes || line?.properties || [];
+
+    const cartUpsellAttr = attributes.find((attr) => {
+      const key = (attr?.key || "").toLowerCase();
+      return key === "_cart_upsell";
+    });
+
+    if (!cartUpsellAttr) return;
+    
+    console.log(line.finalLinePrice);
+    
+    const lineValue = Number(line.finalLinePrice?.amount) || 0;
+
+    if (typeof gtag !== "function") {
+  console.warn("⚠️ Cart Upsell GTAG NOT fired (gtag is undefined)");
+} else {
+
+  gtag("event", "Cart Upsell - Conversion", {
+    title: line.title,
+    type: cartUpsellAttr.value,
+    value: lineValue,
+    currency: line.finalLinePrice?.currencyCode || "GBP",
+  });
+}
+  });
+});
+});})(self.webPixelsManager.createShopifyExtend('238551416', 'custom'));
+
+</script>
+
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGF0MK0ZEZ"></script></head>
+  <body>
+
+</body></html>

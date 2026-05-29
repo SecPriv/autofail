@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"><head>
+                  <meta charset="utf-8">
+                  <meta name="robots" content="noindex, nofollow">
+                  <meta name="referrer" content="always">
+                  <meta name="googlebot" content="noindex, nofollow">
+                  <title>clickfusion</title>
+                  
+      
+      <script>
+         var CONSTANTS = {
+            imageAnimation: {"mode":"none","animSpeed":300,"delay":0,"interval":10000},
+            contentWidth: 320,
+            itemSpacingX: 0,
+            itemPaddingX: 5,
+            contentPaddingX: 8,
+         };
+      </script>
+      <script src="/inner.js?t=3"></script>
+      <style>
+         .wrapper {
+    position: relative;
+}
+.btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    background: #fff;
+    cursor: pointer;
+}
+.btn.next {
+    left: auto;
+    right: 0;
+}
+.btn span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-25%, -50%) rotate(135deg);
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 4px;
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.25s;
+}
+.btn:hover span {
+    opacity: 1;
+}
+.btn.inactive span {
+    opacity: 0 !important;
+}
+.btn.next span {
+    transform: translate(-75%, -50%) rotate(315deg);
+}
+         @keyframes highlight-sale {
+            0% { background-color: #d87109ff; }
+            50% { background-color: #ef9235FF; }
+            100% { background-color: #d87109ff; }
+         }
+         * {
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+            line-height: 1;
+            box-sizing: border-box;
+            vertical-align: top;
+         }
+         body {
+            background: #ffffff;
+            width: 336px;
+            height: 1000px;
+            padding: 5px 8px;
+            overflow: hidden;
+         }
+         .header {
+            display: block;
+            height: 34px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: 1.2;
+            box-sizing: border-box;
+            padding: 5px 10px;
+            margin: 0px 48px 6px 0px;
+            font-family: Arial;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+            text-align: left;
+            background: #000000;
+         }
+         .row {
+            display: block;
+            white-space: nowrap;
+            width: 100%;
+            height: 237px;
+            margin-bottom: 0px;
+         }
+         .row:last-child {
+            margin-bottom: 0;
+         }
+         .item {
+            display: inline-block;
+            background: #ffffff;
+            width: 320px;
+            margin-right: 0px;
+            height: 237px;
+            padding: 0px 5px;
+            white-space: normal;
+            box-shadow: none;
+            cursor: pointer;
+            transition: all 0.2s;
+         }
+         .item:last-child {
+            margin-right: 0;
+         }
+         .img-container {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 67%;
+         }
+         .sale {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 58px 18px 18px 58px;
+            border-radius: 50%;
+            background-color: #eb851c;
+            color: #fff;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 16px;
+            text-align: right;
+            transform: translate(-50%, -50%);
+            animation: highlight-sale;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+         }
+         .price {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 6px 8px;
+            line-height: 1.2;
+            background-color: #eb851c;
+            color: #fff;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 16px;
+            text-align: center;
+         }
+         .price_old {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 100%;
+            padding: 4px 6px;
+            line-height: 1.2;
+            text-decoration: line-through;
+            background-color: #eb851c;
+            color: #fff;
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 14px;
+            text-align: center;
+            animation: highlight-sale;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+         }
+         img, video {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s;
+         }
+         .text-container {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 33%;
+         }
+         .text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            padding: 6px 6px 9px 5px;
+            bottom: unset;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #000000;
+            font-family: Arial;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+            text-align: left;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            transition: color 0.2s;
+         }
+         .text * {
+            display: inline;
+            font-size: inherit !important;
+            line-height: normal;
+         }
+         .item:hover {
+            background: #ffffff;
+            box-shadow: none;
+         }
+         .item:hover img, video {
+            transform: translate(-50%, -50%) scale(1);
+         }
+         .item:hover .text {
+            color: #000000;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: underline;
+         }
+
+         body.responsive {
+            width: 100%;
+            height: auto !important;
+         }
+         body.responsive .item:last-child {
+            margin-right: 0px;
+         }
+         body.responsive .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: auto !important;
+            justify-content: space-evenly;
+         }
+         body.responsive .row .item {
+            max-width: 416px;
+            flex: 1 1 auto;
+         }
+         .main-logo {
+            cursor: pointer;
+            display: inline-block;
+            box-sizing: border-box;
+            height: 18px;
+            line-height: 18px;
+            color: #000;
+            text-decoration: none;
+            white-space: nowrap;
+            text-align: right;
+            background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+            opacity: 1;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+         }
+         .main-logo span {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 13px;
+            color: #000;
+            text-decoration: none;
+            margin: 0 4px 0 0;
+         }
+         .main-logo img {
+            position: static;
+            height: 12px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 6px 0 0;
+            padding: 0;
+            transform: none;
+            transition: none;
+         }
+         
+         
+         
+      </style>
+               </head>
+               <body class="responsive" marginwidth="0" marginheight="0">
+                  <div class="header">Népszerű tartalmak:</div>
+                  <div class="row"><a target="_blank" rel="nofollow noopener noreferrer" href="https://cfusion-internet.com/clicks/4w2fvt_gxzylfrBurC50xA:WE8eKhhw8jsOHqkL4GuEiXlCFVBR8jwuqBxbsWipzVxg6jZ1hmzcEAiVPYz2eQKxfA-7XX2_5ESy5r5871D7LkQ6hRdLP71b9Nr3X4nN6Yg76YZCm_Fbgj6Qma_Vqvn6f4666jHa-BFvyHMryYtGGg?ref=aHR0cHM6Ly93d3cubG90dG9zemFtb2submV0Lw" title="Férfiak figyelem! A potencia problémák percek alatt megszűnnek, ha megnyomja erősen a.." onclick="" class="item"><div class="img-container">
+<img alt="clickfusion" style="object-fit:cover;object-position: center center" src="/images/ef769e3d19130a9a400b901f6fd1c550.jpg">
+</div><div class="text-container"><div class="text" data-font-size="16" style="font-size: 16px;">Férfiak figyelem! A potencia problémák percek alatt megszűnnek, ha megnyomja erősen a..</div></div></a></div><div class="row"><a target="_blank" rel="nofollow noopener noreferrer" href="https://cfusion-internet.com/clicks/jaWUd6JzMl1Kgd26ba_IWw:k4b_0aoeaFoBN1H0PBJuga1w1iLY0Xnjc27DXcMr3_B1d51mGvMAh36yb8PVZV429VQAkMs36CVHqDUVJubAjlZY2CDMJdXfKSBXv6oQX7X5sz7QZtsdDk9I0i0GJCEHdQxNi36Kbc6ETL_TlMts7g?ref=aHR0cHM6Ly93d3cubG90dG9zemFtb2submV0Lw" title="Helyezd a köldöködbe és leolvad a zsír! 1 hónap alatt, 14 kilótól szabadultam meg.. Részletek&gt;&gt;" onclick="" class="item"><div class="img-container">
+<img alt="clickfusion" style="object-fit:cover;object-position: center center" src="/images/64e20224e6a29c512ef7d036105b65a6.jpg">
+</div><div class="text-container"><div class="text" data-font-size="16" style="font-size: 16px;">Helyezd a köldöködbe és leolvad a zsír! 1 hónap alatt, 14 kilótól szabadultam meg.. Részletek&gt;&gt;</div></div></a></div><div class="row"><a target="_blank" rel="nofollow noopener noreferrer" href="https://cfusion-internet.com/clicks/uT9mLqf9A_9-xpmMaASMSw:yncydLLhZgd444p9IljE_3F5l61K32WjN084XB2wbuJ_DYUAKgbSJ29IMjx51jchIZVT0vg-k7xtxjyuJBuKDkFmUAQURygN3suGHD6k3LOy5M9bvbbw2X05CVtExyPI08OMBYTTwyDTzu389y2raw?ref=aHR0cHM6Ly93d3cubG90dG9zemFtb2submV0Lw" title="Rég elfeledett házi kenőcs, ami minden ízületi fájdalmat eltüntet! A recept:" onclick="" class="item"><div class="img-container">
+<img alt="clickfusion" style="object-fit:cover;object-position: center center" src="/images/26df557b6fc1c1f60cfe8dd343969468.jpg">
+</div><div class="text-container"><div class="text" data-font-size="16" style="font-size: 16px;">Rég elfeledett házi kenőcs, ami minden ízületi fájdalmat eltüntet! A recept:</div></div></a></div><div class="row"><a target="_blank" rel="nofollow noopener noreferrer" href="https://cfusion-internet.com/clicks/ef0JVGswzrOr5M3ouiDOqg:u279VXGA6ZTHYJcQUhIG1KI0JSB5KMaV3d1PoyUH1AmF8IJQOzt0nRXehu2dARJKGB5DShfd46CqTapaxpLmVtkNvlI5pEeHoVmOMUYZC09yqMab6pcvwvL7ysNNrPoygNjfAgH1f-ZeqUgXK6A4kg?ref=aHR0cHM6Ly93d3cubG90dG9zemFtb2submV0Lw" title="Férfiak figyelem! Egyszerű trükk és a fiatalkori potencia visszatér! A recept:" onclick="" class="item"><div class="img-container">
+<img alt="clickfusion" style="object-fit:cover;object-position: center center" src="/images/374ffc38bb76fe2755ebec27236caa0d.jpg">
+</div><div class="text-container"><div class="text" data-font-size="16" style="font-size: 16px;">Férfiak figyelem! Egyszerű trükk és a fiatalkori potencia visszatér! A recept:</div></div></a></div>
+               
+            </body></html>

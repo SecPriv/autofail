@@ -1,0 +1,24 @@
+<html><head><script>
+(function () {
+    window.addEventListener('message', function (event) {
+        switch (event.data.action) {
+            case 'get':
+                const storageData = localStorage.getItem(event.data.localStorageKey);
+                event.source.postMessage({
+                    action: "getReturn",
+                    body: storageData,
+                    syncStorageKey: event.data.syncStorageKey
+                }, event.origin);
+                break;
+            case 'save':
+                localStorage.setItem(event.data.localStorageKey, event.data.body);
+                break;
+            case 'clear':
+                localStorage.clear();
+                break;
+        }
+    });
+})();
+</script>
+</head><body>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+    <script>
+      function receiveMessage(event) {
+        try {
+          var data = JSON.parse(event.data);
+          if (!data) {
+            throw new Error('Event data is empty.');
+          }
+
+          var key = data.key;
+          if (!key) {
+            throw new Error('No key provided.');
+          }
+
+          var mode = data.mode;
+          var session_token = null;
+          switch (mode) {
+            case 'get':
+              session_token = window.localStorage.getItem(key);
+              break;
+            case 'set':
+              session_token = data && data.session_token;
+              window.localStorage.setItem(key, session_token);
+              break;
+            case 'remove':
+              window.localStorage.removeItem(key);
+              break;
+            default:
+              throw new Error('Invalid mode given: ' + mode);
+              break;
+          }
+
+          var message = JSON.stringify({
+            mode: mode,
+            session_token: session_token,
+          });
+
+          event.source.postMessage(message, event.origin);
+        } catch (error) {
+          var message = JSON.stringify({
+            error: '[AiDeal] Cross-domain tracking failed: ' + error,
+          });
+
+          event.source.postMessage(message, event.origin);
+        }
+      }
+
+      window.addEventListener('message', receiveMessage, false);
+    </script>
+  </head>
+<body>
+</body></html>

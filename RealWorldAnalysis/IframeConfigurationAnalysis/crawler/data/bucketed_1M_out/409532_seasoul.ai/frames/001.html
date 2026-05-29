@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Seaart Auth Bridge</title>
+
+</head>
+
+<body>
+
+  <script src="../auth-sdk/client.js"></script>
+  <script>
+    async function init () {
+      // await SeaartAuthSDK.auth.init({ logPrefix: 'Bridge' })
+      await SeaartAuthSDK.auth.initBridge(true)
+    }
+
+    init()
+  </script>
+
+
+</body></html>

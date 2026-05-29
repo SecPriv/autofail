@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Under Development</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+		margin:20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body style="background:#311528">
+    <img src="ll-logo.png" alt="Logo" class="logo">
+    <div class="container">
+        <div class="message">
+            <p>The app is under maintenance.</p>
+        </div>
+    </div>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+    var referrer = document.referrer;
+
+    if (!referrer) {
+        console.log("Direct visit (no referrer)");
+    } else if (referrer.includes("google.")) {
+        console.log("User came from Google");
+    } else {
+        console.log("User came from: " + referrer);
+    }
+});
+
+	</script>
+
+
+</body></html>

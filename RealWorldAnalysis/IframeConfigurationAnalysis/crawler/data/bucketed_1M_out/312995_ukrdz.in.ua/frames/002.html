@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eskimi</title>
+    <script type="text/javascript">
+        function isFn(func) {
+            return typeof func === "function";
+        }
+
+        function waitForElementToLoad(element, timeout) {
+            let timer = null;
+            return new Promise((resolve) => {
+                const onLoad = function () {
+                    element.removeEventListener('load', onLoad);
+                    element.removeEventListener('error', onLoad);
+                    if (timer != null) {
+                        window.clearTimeout(timer);
+                    }
+                    resolve();
+                };
+                element.addEventListener('load', onLoad);
+                element.addEventListener('error', onLoad);
+                if (timeout != null) {
+                    timer = window.setTimeout(onLoad, timeout);
+                }
+            });
+        }
+
+        function triggerPixel(url, done, timeout) {
+            const img = new Image();
+            if (done && isFn(done)) {
+                waitForElementToLoad(img, timeout).then(done);
+            }
+            img.src = url;
+        }
+
+        var getIncrementalInteger = (function () {
+            var count = 0;
+            return function () {
+                count++;
+                return count;
+            };
+        })();
+
+        function getUniqueIdentifierStr() {
+            return getIncrementalInteger() + Math.random().toString(16).substr(2);
+        }
+
+        function createTrackPixelIframeHtml(url, encodeUri = true, sandbox = '') {
+            if (!url) {
+                return '';
+            }
+            if (encodeUri) {
+                url = encodeURI(url);
+            }
+            if (sandbox) {
+                sandbox = `sandbox="${sandbox}"`;
+            }
+
+            return `<iframe ${sandbox} id="${getUniqueIdentifierStr()}"
+              frameborder="0"
+              allowtransparency="true"
+              marginheight="0" marginwidth="0"
+              width="0" hspace="0" vspace="0" height="0"
+              style="height:0px;width:0px;display:none;"
+              scrolling="no"
+              src="${url}">
+            </iframe>`;
+        }
+
+        function insertElement(elm, doc, target, asLastChildChild) {
+            doc = doc || document;
+            let parentEl;
+            if (target) {
+                parentEl = doc.getElementsByTagName(target);
+            } else {
+                parentEl = doc.getElementsByTagName('head');
+            }
+            try {
+                parentEl = parentEl.length ? parentEl : doc.getElementsByTagName('body');
+                if (parentEl.length) {
+                    parentEl = parentEl[0];
+                    let insertBeforeEl = asLastChildChild ? null : parentEl.firstChild;
+                    return parentEl.insertBefore(elm, insertBeforeEl);
+                }
+            } catch (e) {}
+        }
+
+        function insertUserSyncIframe(url, done, timeout) {
+            let iframeHtml = createTrackPixelIframeHtml(url, false, 'allow-scripts allow-same-origin');
+            let div = document.createElement('div');
+            div.innerHTML = iframeHtml;
+            let iframe = div.firstChild;
+            if (done && isFn(done)) {
+                waitForElementToLoad(iframe, timeout).then(done);
+            }
+            insertElement(iframe, document, 'html', true);
+        }
+
+        const cookieSyncPixelUrls = ["https://id5-sync.com/s/1854/9.gif?puid=22ed1da4-ccde-4a2e-a7a1-c24ceacdd9c3&gdpr=0&gdpr_consent=&gpp=&gpp_sid=&us_privacy="];
+        cookieSyncPixelUrls.forEach(url => triggerPixel(url));
+
+        const cookieSyncIframeUrls = [];
+        cookieSyncIframeUrls.forEach(url => insertUserSyncIframe(url));
+    </script>
+</head>
+<body>
+
+</body></html>

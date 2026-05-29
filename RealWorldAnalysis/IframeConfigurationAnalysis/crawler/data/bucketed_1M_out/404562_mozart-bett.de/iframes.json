@@ -1,0 +1,169 @@
+[
+  {
+    "frameId": "000",
+    "url": "https://mozart-bett.de/home-new-design",
+    "name": null,
+    "isMainFrame": true,
+    "adFrameStatus": {
+      "adFrameType": "none"
+    },
+    "iframes": [
+      {
+        "childFrameId": "001",
+        "allow": "fullscreen; autoplay",
+        "allowfullscreen": "",
+        "src": "https://streamable.com/e/gb7f03?autoplay=1&muted=1&nocontrols=1",
+        "style": "border: none; position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vh;\n               transform: translate(-50%, -50%) scale(1.3);"
+      },
+      {
+        "childFrameId": "002",
+        "style": "width:100%;height:100%;border:none",
+        "srcdoc": "\n<html>\n    <head>\n        <style>\n            html, body {\n                margin: 0;\n                padding: 0;\n            }\n\n            body {\n                display: flex;\n                justify-content: center;\n                align-items: center;\n            }\n\n            :root {\n                -webkit-font-smoothing: antialiased;\n                -moz-osx-font-smoothing: grayscale;\n            }\n\n            * {\n                box-sizing: border-box;\n                -webkit-font-smoothing: inherit;\n            }\n\n            h1, h2, h3, h4, h5, h6, p, figure {\n                margin: 0;\n            }\n\n            body, input, textarea, select, button {\n                font-size: 12px;\n                font-family: sans-serif;\n            }\n        </style>\n    </head>\n    <body>\n        <!DOCTYPE html>\n<html lang=\"de\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Countdown</title>\n  <link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap\" rel=\"stylesheet\">\n  <style>\n    html, body {\n      margin: 0;\n      padding: 0;\n      display: inline-block;\n      width: fit-content;\n      height: fit-content;\n      font-family: \"Outfit\", sans-serif;\n      font-weight: 400;\n      font-size: 20px;\n      color: #000;\n      white-space: nowrap;\n    }\n  </style>\n</head>\n<body>\n  <span id=\"countdown\"></span>\n\n  <script>\n    const countdown = document.getElementById(\"countdown\");\n\n    function updateCountdown() {\n      const now = new Date();\n      const endOfDay = new Date();\n      endOfDay.setHours(23, 59, 59, 999);\n\n      const diff = endOfDay - now;\n\n      if (diff <= 0) {\n        countdown.textContent = \"0 Std. 0 Min. 0 Sek.\";\n        return;\n      }\n\n      const hours = Math.floor(diff / (1000 * 60 * 60));\n      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));\n      const seconds = Math.floor((diff % (1000 * 60)) / 1000);\n\n      countdown.textContent =\n        hours + \" Std. \" + minutes + \" Min. \" + seconds + \" Sek.\";\n    }\n\n    setInterval(updateCountdown, 1000);\n    updateCountdown();\n  </script>\n</body>\n</html>\n        <script type=\"module\">\n            let height = 0\n\n            function sendEmbedHeight() {\n                window.parent.postMessage({\n                    embedHeight: height\n                }, \"*\")\n            }\n\n            const observer = new ResizeObserver((entries) => {\n                if (entries.length !== 1) return\n                const entry = entries[0]\n                if (entry.target !== document.body) return\n\n                height = entry.contentRect.height\n                sendEmbedHeight()\n            })\n\n            observer.observe(document.body)\n\n            window.addEventListener(\"message\", (event) => {\n                if (event.source !== window.parent) return\n                if (event.data !== \"getEmbedHeight\") return\n                sendEmbedHeight()\n            })\n        </script>\n    <body>\n</html>\n"
+      },
+      {
+        "childFrameId": "003",
+        "allow": "fullscreen;autoplay",
+        "allowfullscreen": "",
+        "height": "100%",
+        "src": "https://streamable.com/e/etppow?autoplay=1&muted=1&nocontrols=1",
+        "width": "100%",
+        "style": "border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"
+      },
+      {
+        "childFrameId": "004",
+        "height": "0",
+        "width": "0",
+        "style": "display: none; visibility: hidden;"
+      },
+      {
+        "childFrameId": "006",
+        "id": "_hjSafeContext_23936178",
+        "title": "_hjSafeContext",
+        "tabindex": "-1",
+        "aria-hidden": "true",
+        "src": "about:blank",
+        "style": "display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"
+      },
+      {
+        "childFrameId": "007",
+        "allow": "microphone",
+        "style": "height: 100%; width: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; display: flex; visibility: hidden; position: absolute;",
+        "title": "Lea, virtuelle Beraterin bei Mozart"
+      },
+      {
+        "childFrameId": "008",
+        "id": "trustbadge-iframe",
+        "tabindex": "-1",
+        "title": "Trustbadge",
+        "style": "display: none;"
+      },
+      {
+        "childFrameId": "009",
+        "id": "__framer-editorbar",
+        "src": "https://framer.com/edit?framerSiteId=9ede1ef6226504ecf9d4cdeb893e3cf12eb3b6054bf302d99607955552cb8dcb&source=mozart-bett.de&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&loadStart=1779544848042",
+        "aria-hidden": "true",
+        "allow": "autoplay",
+        "tabindex": "-1",
+        "class": "status_hidden"
+      }
+    ]
+  },
+  {
+    "frameId": "001",
+    "url": "https://streamable.com/e/gb7f03?autoplay=1&muted=1&nocontrols=1",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": []
+  },
+  {
+    "frameId": "002",
+    "url": "about:srcdoc",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "003",
+    "url": "https://streamable.com/e/etppow?autoplay=1&muted=1&nocontrols=1",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": []
+  },
+  {
+    "frameId": "004",
+    "url": "about:blank",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": [
+      {
+        "childFrameId": "005",
+        "height": "0",
+        "width": "0",
+        "src": "https://collect.mozart-bett.de/_/service_worker/65d0/sw_iframe.html?origin=https%3A%2F%2Fmozart-bett.de&1p=1",
+        "style": "display: none; visibility: hidden;"
+      }
+    ]
+  },
+  {
+    "frameId": "005",
+    "url": "https://collect.mozart-bett.de/_/service_worker/65d0/sw_iframe.html?origin=https%3A%2F%2Fmozart-bett.de&1p=1",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "006",
+    "url": "about:blank",
+    "name": "_hjSafeContext_23936178",
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "007",
+    "url": "about:blank",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "008",
+    "url": "about:blank",
+    "name": "trustbadge-iframe",
+    "isMainFrame": false,
+    "adFrameStatus": {
+      "adFrameType": "none",
+      "explanations": []
+    },
+    "iframes": []
+  },
+  {
+    "frameId": "009",
+    "url": "https://framer.com/edit?framerSiteId=9ede1ef6226504ecf9d4cdeb893e3cf12eb3b6054bf302d99607955552cb8dcb&source=mozart-bett.de&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&loadStart=1779544848042",
+    "name": null,
+    "isMainFrame": false,
+    "adFrameStatus": null,
+    "iframes": []
+  }
+]

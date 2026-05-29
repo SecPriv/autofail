@@ -1,0 +1,71 @@
+<!DOCTYPE html><html id="adAdform3m9btwb9oi0" class=" adform-domevents-click-4ie7fdjkb14 adform-domevents-hover-4rf2d2b8f5s adform-domevents-click-25cyizbtv9j"><head><title>ad</title><base href="https://s1.adform.net/Banners/Elements/Files/2213393/20242272/bvpath_258/"><script>try{parent.AdformWin3rnm300xh1g(window)}catch(ex){new Image().src='https://a1.adform.net/serving/jslog/?src=htmlcb&msg='+encodeURIComponent(''+(ex.stack||ex))}</script><script src="https://s1.adform.net/Banners/Elements/Files/2213393/20242272/20242272.js?ADFassetID=20242272&amp;bv=258" charset="UTF-8"></script>
+
+
+
+    <title>BannerFlow</title>
+    <script src="//track.adform.net/banners/scripts/rmb/Adform.DHTML.js"></script>
+<link rel="preload" as="script" href="https://c.bannerflow.net/scripts/text.4dc1038ce0ea14de2531.js" type="text/javascript"><script charset="utf-8" type="application/javascript" src="https://c.bannerflow.net/accounts/soft2bet/63342dd5fa7af45e76e2ad4e/published/16553428/18576395/data.000000B5DEC9D9.js"></script><script charset="utf-8" type="application/javascript" src="https://c.bannerflow.net/scripts/animated-creative.8e6cf326a8b13d5d257d.js"></script></head>
+<body style="background: transparent; color: #FFF; font-family: arial; font-size: 11px; margin: 0; padding: 0;" marginwidth="0" marginheight="0">
+<div id="banner" style="position: absolute; width: 100%; height: 100%; z-index: 10; cursor: pointer; background-color: rgba(255, 255, 255, 0); opacity: 0; display: none;" onclick="window.open(dhtml.getVar('clickTAG', 'http://www.adform.com'), dhtml.getVar('landingPageTarget', '_blank'));">
+</div>
+<script>
+	const overlay = document.querySelector('#banner');
+	if (overlay) {
+		overlay.style.display = 'none';
+	};
+
+	let pageLoadComplete = false;
+    let awaitingAd;
+    dhtml.sharedEvents.once('pageLoadComplete', function() {
+        pageLoadComplete = true;
+        if (awaitingAd) {
+            awaitingAd.emit('ready');
+        };
+    });
+    dhtml.external.initPoliteMode();
+	const AdScript = (function() {
+        function AdScript(ad) {
+        	let clickTag = dhtml.getVar('clickTAG', '%ad_target_url%');
+            ad.parameters.redirecturl = clickTag;
+            ad.parameters.targetwindow = dhtml.getVar('landingPageTarget', '_blank');
+        }
+        AdScript.prototype.overridePreload = function (ad) {
+            if (pageLoadComplete) {
+                return false;
+            } else {
+                awaitingAd = ad;
+                return true;
+            };
+        };
+        return AdScript;
+    }());
+	window._bannerflow = window._bannerflow || {};
+	window._bannerflow.adScripts = window._bannerflow.adScripts || [];
+	window._bannerflow.adScripts.push(AdScript);
+
+	const tag = document.createElement('script');
+	const domain = window._Adform && _Adform.ADFBannerData && _Adform.ADFBannerData.CREFURL ? _Adform.ADFBannerData.CREFURL : '';
+	tag.src = `https://c.bannerflow.net/a/69b41ece4ed4f0c7789f3092?did=5ced02fe0fd60d000186f5ac&deeplink=off&domain=${domain}`;
+	document.body.appendChild(tag);
+</script><script src="https://c.bannerflow.net/a/69b41ece4ed4f0c7789f3092?did=5ced02fe0fd60d000186f5ac&amp;deeplink=off&amp;domain=https%3a%2f%2feu.sportradarserving.com%2f" data-rendered="true"></script><div style="display: inline-block; width: 300px; height: 100px; position: relative; padding: 0px; margin: 0px;"><iframe scrolling="no" src="about:blank" style="height: 1px; width: 1px; min-height: 100%; max-width: 100%; min-width: 100%; filter: none; transform: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; outline: none; display: block; position: absolute; opacity: 0; top: 0px; left: 0px; transform-origin: 0px 0px; transition: opacity 0.2s;"></iframe></div>
+<script>
+    window.addEventListener('message',
+        function(e) {
+            try {
+                if (e.data.indexOf('{') == 0) {
+                    var data = JSON.parse(e.data);
+                    if (data.type == 'AdformCustomEvent') {
+                        if (!isNaN(data.value)) {
+                            dhtml.sendEvent(data.value, 'scratched');
+                        } else {
+                            var evData = JSON.parse(data.value);
+                            dhtml.sendEvent(evData.eventId.toString(), evData.eventName);
+                        };
+                    };
+                };
+            } catch (e) {
+            }
+        });
+</script>
+
+<script>document._finish();</script><script>if (!window.dhtml&&window.mraid) document.write('<script src=\''+ window.API_URL+'\'><\/script>');</script><div class="chrome_render"></div><style>.chrome_render{animation:loopchrome 100s linear infinite;width:1px;height:1px;position:absolute;left:-100px;}@keyframes loopchrome{50%{opacity:0;}}</style><iframe style="position: absolute; pointer-events: none; left: 0px; top: 0px; opacity: 0; height: 0px; width: 0px;"></iframe></body></html>

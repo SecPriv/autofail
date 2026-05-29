@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Clarip Do Not Sell Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="https://cdn.clarip.com/resources/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.clarip.com/academy/donotsell/assets/css/donotsell-manager.min.css?1763046852">
+
+    <!-- Custom CSS -->
+    <!--    <link rel="stylesheet" href="https://cdn.clarip.com/academy/donotsell/assets/css/custom.min.css?1763046852">-->
+    <link rel="stylesheet" href="?1763046852">
+</head>
+<body>
+<div id="do-not-sell-manager-title">
+    <div id="dns-manager-title">
+        <h1>Request to Opt-Out of Sale/Share/Targeted Advertising</h1>
+    </div>
+    <button id="close-dns-manager" class="dns-manager-closer" role="button" data-dismiss="modal" aria-label="close"></button>
+</div>
+
+<div id="popup-success-message-container" style="display: none;">
+    <h4 id="popup-success-message">We have received your request to opt out of sale/sharing/targeted advertising. Your request will be processed automatically on or around the next two business days. If you have any questions or concerns, please feel free to reach out to our Customer Care team.</h4>
+</div>
+
+<div id="popup-opt-in-success-message-container" style="display: none;">
+    <h4 id="popup-opt-in-success-message">Thank you. We have received your request to opt-in for sharing of personal information.</h4>
+</div>
+
+<div id="popup-failure-message-container" style="display: none; background-color: #fc727a;">
+    <h4 id="popup-failure-message">Something went wrong. Please contact customer support.</h4>
+    <div id="techMessage" style="display: none;">Technical Original Message: </div>
+</div>
+
+<div id="popup-opt-in-failure-message-container" style="display: none;">
+    <h4 id="popup-opt-in-failure-message">Something went wrong. Please contact customer support.</h4>
+</div>
+
+
+
+<div id="right-to-opt-out-container">
+    <h2><b>OPT OUT OF SALE / SHARE / TARGETED ADVERTISING</b></h2>
+    <p id="right-to-opt-out-notice">Colorado, Connecticut, Delaware, Montana, Nebraska, New Hampshire, New Jersey, Oregon and Virginia residents: You may opt out of the sale of your personal data and the use of your personal data for targeted advertising by completing and submitting the form below.<br>
+<br>
+If you do not provide the information requested below, we may not be able to identify you and process your request. <br>
+<br>
+For more information about our privacy practices, please review our <a href="https://www.academy.com/privacy-policy" target="_blank">Privacy Policy</a>.</p>
+    <h2 id="dns-denial-message-container" style="display: none; color: #cf112c;">
+        You have been opted out of sale/sharing.
+    </h2>
+</div>
+
+
+
+<div id="dns-manager-details">
+    <div id="accordion" class="panel-group" style="display: none;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">
+                    <a href="javascript:void(0)" class="toggle-third-party-cookies-section">
+                        <b></b>
+                    </a>
+                </h2>
+                <p class="cookie-description" style="margin-top: 8px;">
+                    
+                    <a href="javascript:void(0)" class="toggle-third-party-cookies-section">
+                        View / Hide Cookies
+                    </a>
+                </p>
+            </div>
+
+            <div id="collapse-third-party-cookies" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div id="third-party-cookies-grid" class="data-grid third-party-cookies-grid">
+                        <table>
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="third-party-cookies-grid-pagination-block"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="gpc-signal-container">
+    <h2><b>OPT-OUT PREFERENCE SIGNAL (GLOBAL PRIVACY CONTROL)</b></h2>
+    <p id="gpc-signal-notice">
+        You may also use an opt-out preference signal to opt-out of the online sale/share of your personal information or use of your personal data for targeted advertising. An opt-out preference signal sets your opt-out preferences only for the particular browser you are using. At present, the Global Privacy Control is the only opt-out preference signal our site detects. For information about how to use the Global Privacy Control, please visit <a href="https://globalprivacycontrol.org/" target="_blank">https://globalprivacycontrol.org/</a>. You will see a note below indicating whether we have detected an opt-out preference signal from your browser.<br>
+<br>
+If we have detected an opt-out preference signal from your browser, you will automatically be opted out of online sale/share and targeted advertising for the particular browser you are using.<br>
+<br>
+If you would like to make a do not sell or share request on behalf of a consumer, please click <a href="https://academy.clarip.com/dsr/create" target="_blank">here</a>.<br>
+<br>
+Once you have opted out of sale, share, and targeted advertising, you will not be able to opt back in to these preferences.
+    </p>
+    <h2 id="gpc-signal-indicator" style="color: #cf112c;"></h2>
+</div>
+
+
+
+<div id="customer-input" style="margin-top: 20px;">
+    <p><b>Please provide the following details:</b></p>
+</div>
+
+<form id="dsar-form">
+    <div id="form-loader" class="flex-container" style="justify-content: center; display: flex;">
+        <svg id="loading-circles" width="100px" height="100px" aria-label="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="uil-ripple">
+            <rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+            <g>
+                <animate attributeName="opacity" dur="4s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+                <circle cx="50" cy="50" r="40" stroke="#00b3ee" fill="none" stroke-width="2" stroke-linecap="round">
+                    <animate attributeName="r" dur="4s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+                </circle>
+            </g>
+            <g>
+                <animate attributeName="opacity" dur="4s" repeatCount="indefinite" begin="2s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+                <circle cx="50" cy="50" r="40" stroke="#00b3ee" fill="none" stroke-width="2" stroke-linecap="round">
+                    <animate attributeName="r" dur="4s" repeatCount="indefinite" begin="2s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+                </circle>
+            </g>
+        </svg>
+    </div>
+    <div id="form-fields" class="flex-container" style="display: none">
+        <div class="flex-item test">
+        <div class="form-group">
+            <input id="first-name" name="firstName" maxlength="100" type="text" class="form-control" data-special-char-validation="1" placeholder="First Name" aria-label="first name">
+            <small></small>
+        </div>
+    </div><div class="flex-item test">
+        <div class="form-group">
+            <input id="last-name" name="lastName" maxlength="100" type="text" class="form-control" data-special-char-validation="1" placeholder="Last Name" aria-label="last name">
+            <small></small>
+        </div>
+    </div><div class="flex-item test">
+        <div class="form-group">
+            <input id="email" name="email" maxlength="100" type="text" class="form-control" data-special-char-validation="1" placeholder="Email Address" aria-label="email address">
+            <small></small>
+        </div>
+    </div><div class="flex-item test">
+        <div class="form-group">
+            <input id="phone-number" name="phoneNumber" maxlength="20" type="text" class="form-control" data-special-char-validation="1" placeholder="Phone Number" aria-label="phone number">
+            <small></small>
+        </div>
+    </div>
+        
+        <div class="flex-item test">
+        <div class="form-group">
+            <select id="form-state" name="state" maxlength="20" type="text" class="form-control input-large bfh-states" placeholder="Select State" aria-label="dropdown" tabindex="0"><option value="" disabled="" hidden="">Select State</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="N/A">N/A</option></select>
+            <small></small>
+        </div>
+    </div>
+        
+        
+    </div>
+    <div id="do-not-sell-manager-footer">
+        <a id="powered-by" href="https://clarip.com" target="__blank" rel="noopener" aria-label="The most powerful enterprise privacy governance platform"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="84.917px" height="11.563px" viewBox="0 0 84.917 11.563" enable-background="new 0 0 84.917 11.563" xml:space="preserve">
+<path fill="#00b3ee" d="M58.039,6.554c-0.244,0-0.448-0.081-0.612-0.246c-0.165-0.164-0.247-0.366-0.247-0.609
+	c0-0.237,0.077-0.437,0.231-0.593c0.156-0.156,0.353-0.234,0.595-0.234c0.281,0,0.515,0.119,0.699,0.358l2.142-0.079
+	c-0.132-0.682-0.467-1.243-1.005-1.684c-0.539-0.439-1.161-0.66-1.864-0.66c-0.806,0-1.497,0.279-2.074,0.839
+	c-0.577,0.56-0.864,1.232-0.864,2.02c0,0.828,0.285,1.526,0.856,2.097c0.57,0.571,1.27,0.856,2.098,0.856
+	c0.784,0,1.448-0.26,1.995-0.777c0.546-0.519,0.85-1.181,0.91-1.985l-2.096,0.077C58.652,6.347,58.398,6.554,58.039,6.554
+	L58.039,6.554L58.039,6.554z M61.82,0.866V8.5h2.112V0.866H61.82L61.82,0.866z M67.786,6.554c-0.227,0-0.413-0.073-0.559-0.224
+	c-0.147-0.148-0.222-0.339-0.222-0.569c0-0.221,0.082-0.411,0.244-0.571c0.162-0.161,0.354-0.24,0.576-0.24
+	c0.244,0,0.439,0.087,0.585,0.263c0.144,0.176,0.217,0.41,0.217,0.704V8.5h2.113V5.766c0-0.913-0.263-1.635-0.788-2.161
+	c-0.525-0.527-1.244-0.792-2.156-0.792c-0.817,0-1.51,0.281-2.083,0.846c-0.569,0.562-0.855,1.248-0.855,2.058
+	c0,0.831,0.283,1.522,0.848,2.074c0.564,0.552,1.271,0.828,2.119,0.828c0.143,0,0.301-0.015,0.474-0.046V6.409
+	C68.142,6.505,67.971,6.554,67.786,6.554L67.786,6.554L67.786,6.554z M74.419,2.807c-0.743,0-1.336,0.24-1.78,0.719
+	c-0.444,0.479-0.666,1.122-0.666,1.927V8.5h2.112V5.855c0-0.582,0.193-0.873,0.577-0.873c0.121,0,0.254,0.042,0.401,0.123V2.869
+	C74.798,2.828,74.585,2.807,74.419,2.807L74.419,2.807L74.419,2.807z M75.685,2.925V8.5h2.113V2.925H75.685L75.685,2.925z
+	 M76.003,0.735C75.794,0.934,75.69,1.17,75.69,1.441c0,0.292,0.1,0.531,0.296,0.717c0.197,0.187,0.452,0.279,0.759,0.279
+	c0.309,0,0.563-0.093,0.76-0.279c0.198-0.186,0.296-0.425,0.296-0.717c0-0.271-0.104-0.508-0.313-0.706
+	c-0.21-0.199-0.457-0.3-0.744-0.3C76.461,0.436,76.212,0.536,76.003,0.735L76.003,0.735z"></path>
+<path fill="#00b3ee" d="M81.063,5.989c0-0.741,0.271-1.113,0.813-1.113c0.227,0,0.421,0.078,0.583,0.232
+	c0.161,0.154,0.243,0.342,0.243,0.563c0,0.22-0.078,0.41-0.234,0.57s-0.344,0.241-0.562,0.241c-0.173,0-0.347-0.069-0.52-0.208
+	v2.304c0.249,0.027,0.437,0.04,0.564,0.04c0.783,0,1.462-0.287,2.034-0.862c0.572-0.574,0.859-1.255,0.859-2.046
+	c0-0.813-0.288-1.498-0.865-2.059c-0.577-0.56-1.284-0.839-2.124-0.839c-0.422,0-0.834,0.091-1.234,0.273
+	c-0.401,0.183-0.732,0.43-0.991,0.738c-0.453,0.537-0.678,1.233-0.678,2.087v4.653h2.112V5.989L81.063,5.989z"></path>
+<path fill="#00b3ee" d="M84.712,2.951c0.031-0.026,0.047-0.061,0.047-0.103c0-0.102-0.056-0.213-0.167-0.337
+	c-0.112-0.122-0.286-0.267-0.523-0.431c-0.347-0.236-0.708-0.413-1.081-0.531s-0.763-0.178-1.17-0.178
+	c-0.447,0-0.875,0.069-1.285,0.211c-0.408,0.14-0.796,0.353-1.163,0.637c-0.172,0.132-0.297,0.248-0.375,0.348
+	c-0.079,0.1-0.118,0.192-0.118,0.281c0,0.042,0.015,0.076,0.045,0.103c0.031,0.027,0.069,0.04,0.118,0.04
+	c0.054,0,0.188-0.057,0.404-0.171c0.216-0.113,0.405-0.205,0.564-0.274c0.3-0.133,0.599-0.231,0.897-0.296
+	c0.299-0.065,0.603-0.098,0.913-0.098c0.34,0,0.671,0.038,0.991,0.115c0.321,0.076,0.674,0.204,1.061,0.382
+	c0.1,0.047,0.231,0.116,0.397,0.206c0.165,0.09,0.272,0.136,0.32,0.136C84.64,2.991,84.68,2.979,84.712,2.951L84.712,2.951z"></path>
+<g>
+	<path fill="#00b3ee" d="M6.042,3.799c0,0.585-0.228,1.039-0.679,1.355C4.905,5.472,4.259,5.628,3.413,5.628H2.641v2.283H1.877
+		V2.109h1.7C5.222,2.109,6.042,2.669,6.042,3.799z M2.641,5.049h0.687c0.677,0,1.166-0.098,1.47-0.292
+		c0.301-0.193,0.451-0.502,0.451-0.929c0-0.381-0.143-0.669-0.426-0.856C4.541,2.786,4.097,2.691,3.496,2.691H2.641V5.049z"></path>
+    <path fill="#00b3ee" d="M11.552,5.729c0,0.711-0.202,1.266-0.606,1.662c-0.403,0.4-0.964,0.597-1.678,0.597
+		c-0.439,0-0.83-0.09-1.171-0.273C7.758,7.533,7.494,7.27,7.307,6.93C7.122,6.587,7.029,6.189,7.029,5.729
+		c0-0.707,0.202-1.261,0.603-1.657c0.399-0.393,0.958-0.593,1.67-0.593c0.689,0,1.235,0.204,1.64,0.608
+		C11.348,4.494,11.552,5.042,11.552,5.729z M7.801,5.729c0,0.556,0.127,0.979,0.378,1.273C8.43,7.293,8.801,7.436,9.29,7.436
+		c0.486,0,0.855-0.143,1.111-0.432c0.251-0.291,0.375-0.715,0.375-1.274c0-0.552-0.124-0.972-0.375-1.259
+		c-0.256-0.286-0.628-0.43-1.123-0.43c-0.488,0-0.857,0.143-1.104,0.424C7.928,4.747,7.801,5.173,7.801,5.729z"></path>
+    <path fill="#00b3ee" d="M16.877,7.911l-0.904-2.554c-0.056-0.156-0.163-0.511-0.316-1.063h-0.039
+		c-0.118,0.462-0.222,0.82-0.312,1.07l-0.932,2.546h-0.859l-1.346-4.351h0.783c0.317,1.093,0.56,1.924,0.722,2.497
+		c0.169,0.572,0.266,0.955,0.287,1.154H14c0.03-0.149,0.083-0.345,0.157-0.583c0.075-0.24,0.136-0.429,0.193-0.571l0.904-2.497
+		h0.807l0.88,2.497c0.17,0.457,0.281,0.835,0.34,1.146h0.038c0.013-0.093,0.043-0.242,0.094-0.441
+		c0.055-0.196,0.365-1.266,0.94-3.201h0.771l-1.362,4.351H16.877z"></path>
+    <path fill="#00b3ee" d="M22.093,7.989c-0.729,0-1.304-0.193-1.723-0.587c-0.42-0.393-0.631-0.937-0.631-1.63
+		c0-0.703,0.194-1.261,0.583-1.673c0.395-0.413,0.917-0.62,1.576-0.62c0.619,0,1.105,0.18,1.463,0.537
+		C23.72,4.378,23.9,4.85,23.9,5.438v0.416h-3.389c0.014,0.511,0.159,0.899,0.437,1.162c0.277,0.266,0.668,0.399,1.169,0.399
+		c0.531,0,1.054-0.099,1.573-0.293v0.587c-0.265,0.098-0.513,0.172-0.751,0.214C22.708,7.969,22.425,7.989,22.093,7.989z
+		 M21.892,4.031c-0.398,0-0.712,0.114-0.948,0.343c-0.233,0.226-0.371,0.542-0.415,0.943h2.572c0-0.415-0.102-0.732-0.313-0.954
+		C22.579,4.142,22.278,4.031,21.892,4.031z"></path>
+    <path fill="#00b3ee" d="M27.418,3.479c0.217,0,0.416,0.016,0.587,0.047l-0.102,0.612c-0.204-0.04-0.384-0.061-0.542-0.061
+		c-0.397,0-0.738,0.144-1.021,0.429c-0.283,0.29-0.426,0.645-0.426,1.07v2.334H25.17V3.561h0.616l0.087,0.807h0.035
+		c0.185-0.286,0.405-0.502,0.661-0.66C26.825,3.559,27.109,3.479,27.418,3.479z"></path>
+    <path fill="#00b3ee" d="M31.006,7.989c-0.73,0-1.301-0.193-1.721-0.587c-0.422-0.393-0.633-0.937-0.633-1.63
+		c0-0.703,0.195-1.261,0.584-1.673c0.394-0.413,0.917-0.62,1.576-0.62c0.617,0,1.106,0.18,1.463,0.537
+		c0.358,0.362,0.541,0.834,0.541,1.421v0.416h-3.39c0.012,0.511,0.158,0.899,0.436,1.162c0.276,0.266,0.669,0.399,1.169,0.399
+		c0.533,0,1.055-0.099,1.574-0.293v0.587c-0.266,0.098-0.514,0.172-0.75,0.214C31.623,7.969,31.339,7.989,31.006,7.989z
+		 M30.805,4.031c-0.397,0-0.711,0.114-0.949,0.343c-0.231,0.226-0.372,0.542-0.416,0.943h2.576c0-0.415-0.104-0.732-0.313-0.954
+		C31.493,4.142,31.191,4.031,30.805,4.031z"></path>
+    <path fill="#00b3ee" d="M37.438,7.326h-0.043c-0.345,0.442-0.856,0.663-1.542,0.663c-0.644,0-1.146-0.191-1.505-0.583
+		c-0.354-0.391-0.536-0.943-0.536-1.661c0-0.715,0.182-1.273,0.539-1.671c0.359-0.395,0.861-0.595,1.503-0.595
+		c0.665,0,1.18,0.217,1.532,0.645h0.062l-0.033-0.314l-0.019-0.305V1.735h0.748v6.176h-0.609L37.438,7.326z M35.944,7.436
+		c0.51,0,0.882-0.123,1.106-0.369c0.231-0.243,0.345-0.636,0.345-1.181V5.746c0-0.616-0.116-1.055-0.348-1.318
+		c-0.229-0.264-0.602-0.396-1.113-0.396c-0.433,0-0.766,0.152-1.001,0.453c-0.233,0.3-0.347,0.723-0.347,1.271
+		c0,0.556,0.114,0.976,0.346,1.257C35.162,7.297,35.501,7.436,35.944,7.436z"></path>
+    <path fill="#00b3ee" d="M44.402,3.488c0.647,0,1.147,0.196,1.507,0.584c0.357,0.392,0.536,0.943,0.536,1.657
+		c0,0.718-0.18,1.272-0.541,1.666c-0.361,0.397-0.86,0.593-1.501,0.593c-0.32,0-0.611-0.052-0.878-0.155
+		c-0.264-0.104-0.486-0.267-0.669-0.482h-0.052l-0.158,0.56h-0.533V1.735h0.743v1.498c0,0.338-0.008,0.64-0.033,0.905h0.033
+		C43.202,3.706,43.72,3.488,44.402,3.488z M44.295,4.041c-0.509,0-0.879,0.13-1.104,0.387c-0.222,0.256-0.337,0.691-0.337,1.302
+		c0,0.612,0.119,1.049,0.347,1.314c0.232,0.264,0.603,0.393,1.109,0.393c0.461,0,0.802-0.146,1.025-0.438
+		c0.224-0.297,0.339-0.724,0.339-1.275c0-0.565-0.115-0.986-0.339-1.267C45.113,4.181,44.763,4.041,44.295,4.041z"></path>
+    <path fill="#00b3ee" d="M46.968,3.561h0.796l1.08,2.479c0.235,0.568,0.382,0.976,0.437,1.227h0.04
+		c0.037-0.135,0.119-0.366,0.243-0.69c0.127-0.328,0.532-1.334,1.221-3.015h0.798l-2.114,4.953
+		c-0.209,0.489-0.456,0.835-0.736,1.043c-0.28,0.203-0.624,0.308-1.03,0.308c-0.225,0-0.45-0.024-0.672-0.068V9.269
+		c0.166,0.03,0.348,0.048,0.552,0.048c0.514,0,0.876-0.255,1.095-0.764l0.274-0.621L46.968,3.561z"></path>
+</g>
+</svg></a>
+        <div class="footer-btn-group">
+            <button id="proceed-to-dsr-request" type="submit" class="btn footer-btn " style="display: none;">Submit</button>
+            
+        </div>
+    </div>
+</form>
+
+<!-- Configuration flags -->
+<script>
+    var enableTpcSection = false;
+    var showDenialMessageIfDSRSubmitted = true;
+    var redirectToSuccessPage = false;
+    var showSuccessMessageInPopup = true;
+    var hidePrefilledDSRFormFields = false;
+    var enableGPCProcessing = true;
+    var enableGPCSection = true;
+    var processGPCRequestForAnonymousUser = false;
+    var gpcSignalDetectedMessage = "Your Opt-Out Preference Signal has been honored.";
+    var gpcSignalUndetectedMessage = "No Opt-Out Preference Signal has been detected.";
+    var allowDNSSFormSubmissionWithBlankName = false;
+    var enableOptInWorkflow = false;
+    var showAddressFields = false;
+    var makeFieldsOptionalForAnonymousNonGpcUser = false;
+    var enableEnforcementScope = false;
+    var enforcementScopeCountryList = [];
+    var enforcementScopeRegionList = [];
+    var enableGlobalAddressFieldValidation = true;
+
+    var firstNameErrEmpty = "Please enter first name";
+    var firstNameErrLength = "Please enter value between 1 and 100 characters long";
+    var firstNameErrValid = "Please enter a valid first name";
+    var lastNameErrEmpty = "Please enter last name";
+    var lastNameErrLength = "Please enter value between 1 and 100 characters long";
+    var lastNameErrValid = "Please enter a valid last name";
+    var emailErrEmpty = "Please enter email";
+    var emailErrLength = "Please enter value between 2 and 100 characters long";
+    var emailErrValid = "Please enter a valid email";
+    var phoneNumberErrEmpty = "Please enter phone number";
+    var phoneNumberErrLength = "Please enter value between 10 and 20 characters long";
+    var phoneNumberErrValid = "Please enter a valid phone number";
+    var stateErrRequired = "Please enter state";
+    var streetAddressErrEmpty = "Please enter street address";
+    var streetAddressErrLength = "Please enter value from 4 characters long";
+    var streetAddressErrValid = "Please enter a valid street address";
+    var cityNameErrEmpty = "Please enter city name";
+    var cityNameErrLength = "Please enter value between 2 and 50 characters long";
+    var cityNameErrValid = "Please enter a valid city name";
+    var zipErrEmpty = "Please enter ZIP code";
+    var zipErrLength = "Value must be at least 4 characters long";
+    var zipErrValid = "Please enter a valid ZIP code";
+    var domainLabel = "Domain";
+    var parentLabel = "Parent Company";
+    var noCookiesInfoAvailable = "No cookies information available. Please contact us.";
+    var pagesLabel = "Pages";
+    var prevLabel = "Prev";
+    var nextLabel = "Next";
+    var techMessage = "Technical Original Message: ";
+    var thanksMessageTitle = "Thank+you+for+your+DO+NOT+SELL+request.";
+    var thanksMessage = "You+have+exercised+your+right+to+opt-out+of+sale+of+personal+information+and+opt-out+of+third-party+cookies+and+tracking+technologies.+All+third-party+cookies+that+are+related+to+our+site+or+that+are+triggered+from+our+site+have+been+blocked+in+your+browser.+Please+note%2C+since+opt-outs+are+limited+to+your+current+browser%2C+if+you+use+a+different+browser+to+visit+our+site%2C+you+will+need+to+opt-out+again.+Also%2C+if+you+are+in+private+browsing+or+incognito+mode%2C+or+if+your+clear+your+cache%2C+you+will+need+to+opt-out+again%2C+due+to+current+limitations+in+browser+technologies.++Please+note%2C+as+a+result+of+this+opt-out+you+may+lose+some+personalized+content+and+targeted+messaging+and%2For+offers.";
+    var lang = "en";
+    var captchaErrEmpty = "Please enter the code in the image above";
+    var captchaErrLength = "Please enter exactly 6 characters";
+    var captchaErrInvalid = "Invalid Captcha. Please Retry.";
+    var cacheClear = "1763046852";
+    var useCaptchaOnForm = "none";
+    var captchaPublicKey = "";
+</script>
+
+<!-- Scripts -->
+<script src="https://cdn.clarip.com/academy/donotsell/assets/js/donotsell-manager-extended.min.js?1763046852"></script>
+
+
+</body></html>

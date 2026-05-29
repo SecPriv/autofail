@@ -1,0 +1,1096 @@
+<!DOCTYPE html><html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.tamildhool.tech/xmlrpc.php">
+
+    <script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=i.length;r<a;r++)ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"))}for(var n=document.querySelectorAll("video"),r=0,a=n.length;r<a;r++)ewwwAttr(n[r],"poster",e?n[r].getAttribute("data-poster-webp"):n[r].getAttribute("data-poster-image"));for(var o,l=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=l.length;r<a;r++)e&&(ewwwAttr(l[r],"data-lazy-srcset",l[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(l[r],"data-srcset",l[r].getAttribute("data-srcset-webp")),ewwwAttr(l[r],"data-lazy-src",l[r].getAttribute("data-lazy-src-webp")),ewwwAttr(l[r],"data-src",l[r].getAttribute("data-src-webp")),ewwwAttr(l[r],"data-orig-file",l[r].getAttribute("data-webp-orig-file")),ewwwAttr(l[r],"data-medium-file",l[r].getAttribute("data-webp-medium-file")),ewwwAttr(l[r],"data-large-file",l[r].getAttribute("data-webp-large-file")),null!=(o=l[r].getAttribute("srcset"))&&!1!==o&&o.includes("R0lGOD")&&ewwwAttr(l[r],"src",l[r].getAttribute("data-lazy-src-webp"))),l[r].className=l[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var s=document.querySelectorAll(".ewww_webp"),r=0,a=s.length;r<a;r++)e?(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-webp")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-webp")),ewwwAttr(s[r],"data-orig-file",s[r].getAttribute("data-webp-orig-file")),ewwwAttr(s[r],"data-medium-file",s[r].getAttribute("data-webp-medium-file")),ewwwAttr(s[r],"data-large-file",s[r].getAttribute("data-webp-large-file")),ewwwAttr(s[r],"data-large_image",s[r].getAttribute("data-webp-large_image")),ewwwAttr(s[r],"data-src",s[r].getAttribute("data-webp-src"))):(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-img")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-img"))),s[r].className=s[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.6 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>TamilDhool – Watch Latest Tamil Serials &amp; Shows Online</title>
+	<meta name="description" content="Watch latest Tamil Tv serials &amp; shows online in HD. Daily updates from Sun TV, Vijay TV, Zee Tamil and more on TamilDhool.">
+	<link rel="canonical" href="https://www.tamildhool.tech/">
+	<link rel="next" href="https://www.tamildhool.tech/page/2/">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":"https:\/\/www.tamildhool.tech\/","url":"https:\/\/www.tamildhool.tech\/","name":"TamilDhool – Watch Latest Tamil Serials & Shows Online","isPartOf":{"@id":"https:\/\/www.tamildhool.tech\/#website"},"about":{"@id":"https:\/\/www.tamildhool.tech\/#organization"},"description":"Watch latest Tamil Tv serials & shows online in HD. Daily updates from Sun TV, Vijay TV, Zee Tamil and more on TamilDhool.","breadcrumb":{"@id":"https:\/\/www.tamildhool.tech\/#breadcrumb"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https:\/\/www.tamildhool.tech\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/www.tamildhool.tech\/#website","url":"https:\/\/www.tamildhool.tech\/","name":"TamilDhool","description":"Cool Collection of Tamil Serials &amp; Shows","publisher":{"@id":"https:\/\/www.tamildhool.tech\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.tamildhool.tech\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.tamildhool.tech\/#organization","name":"TamilDhool","url":"https:\/\/www.tamildhool.tech\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.tamildhool.tech\/#\/schema\/logo\/image\/","url":"https:\/\/www.tamildhool.tech\/wp-content\/uploads\/2021\/12\/tdtrans-1.png","contentUrl":"https:\/\/www.tamildhool.tech\/wp-content\/uploads\/2021\/12\/tdtrans-1.png","width":200,"height":200,"caption":"TamilDhool"},"image":{"@id":"https:\/\/www.tamildhool.tech\/#\/schema\/logo\/image\/"}}]}</script>
+	<meta name="msvalidate.01" content="80116A9749C50EFA357778622D814E50">
+	<meta name="google-site-verification" content="6uc5ItCp8t655K5_ARnFN-7SpZeYV-tN4W5slJNb1As">
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<!-- www.tamildhool.tech is managing ads with Advanced Ads 2.0.21 – https://wpadvancedads.com/ --><script id="tamil-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--libre-baskerville: 'Libre Baskerville', serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 900px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{font-family: 'Libre Baskerville', serif;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-libre-baskerville-font-family{font-family: var(--wp--preset--font-family--libre-baskerville) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="zoom-theme-utils-css-css" href="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/functions/wpzoom/assets/css/theme-utils.css?ver=2.2.1" media="all">
+<style id="eclipse-google-fonts-css" media="all">/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWx8QDO-WyrubOA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWx8QDO-WyrubOA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMaC82U-ro.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMaC82U-ro.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMaC82U-ro.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="stylesheet" id="eclipse-style-css" href="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/style.css?ver=1.0.13" media="all">
+<link rel="stylesheet" id="media-queries-css" href="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/css/media-queries.css?ver=1.0.13" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://www.tamildhool.tech/wp-includes/css/dashicons.min.css?ver=7.0" media="all">
+<script id="jquery-core-js" src="https://www.tamildhool.tech/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://www.tamildhool.tech/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-W6N23KMR" async=""></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.tamildhool.tech"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-W6N23KMR");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }; 
+//# sourceURL=google_gtagjs-js-after
+</script>
+<meta name="generator" content="Site Kit by Google 1.179.0"><!-- WPZOOM Theme / Framework -->
+<meta name="generator" content="Eclipse 1.0.13">
+<meta name="generator" content="WPZOOM Framework 2.2.1">
+<style>.wp-block-gallery.is-cropped .blocks-gallery-item picture{height:100%;width:100%;}</style><style class="wpcode-css-snippet">/* Card wrapper */
+.td-featured-thumb {
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 22px 0;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Responsive image */
+.td-featured-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Button snippet */
+.td-safe-note {
+    display: block;
+    background: #f7f7f7;
+    color: #333;
+    text-align: center;
+    padding: 12px 14px;
+    margin-top: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    position: relative;
+    font-weight: 600;
+}
+
+/* Finger icon */
+.td-safe-note:before {
+    content: "☝️  ";
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* Hover effect */
+.td-featured-thumb:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.td-featured-thumb {
+    position: relative;
+}
+
+/* Source label badge */
+.td-source-label {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    opacity: 0.9;
+    font-weight: 600;
+    z-index: 20;
+}
+</style><link rel="icon" href="https://www.tamildhool.tech/wp-content/uploads/2019/03/cropped-tdtrans-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.tamildhool.tech/wp-content/uploads/2019/03/cropped-tdtrans-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.tamildhool.tech/wp-content/uploads/2019/03/cropped-tdtrans-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.tamildhool.tech/wp-content/uploads/2019/03/cropped-tdtrans-270x270.png">
+<style id="wp-custom-css">
+.designed-by {
+display: none;
+}
+
+.td-video-unavailable {
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    padding: 24px 18px;
+    text-align: center;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+}
+
+</style>
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+<body class="home blog wp-theme-wpzoom-eclipse aa-prefix-tamil-">
+
+    <div class="inner-wrap">
+
+        <header class="site-header">
+
+            <div class="navbar-brand-wpz">
+
+                <h1><a href="https://www.tamildhool.tech" title="Cool Collection of Tamil Serials &amp; Shows">TamilDhool</a></h1>
+                <p class="tagline">Cool Collection of Tamil Serials &amp; Shows</p>
+
+            </div><!-- .navbar-brand -->
+
+
+            <div class="header_social">
+                
+            </div>
+
+
+            <nav class="main-navbar" role="navigation">
+
+                <div id="sb-search" class="sb-search">
+                    <form method="get" id="searchform" action="https://www.tamildhool.tech/">
+	<input type="search" class="sb-search-input" placeholder="Enter your keywords..." name="s" id="s">
+    <input type="submit" id="searchsubmit" class="sb-search-submit" value="Search">
+    <span class="sb-icon-search"></span>
+</form>                </div>
+
+
+                <div class="navbar-header-main"><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><div class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu"><ul class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4498"><a href="https://tamildhool.tech/" role="menuitem">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353256 slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row"><a href="https://www.tamildhool.tech/sun-tv/">Sun Tv</a>
+<span class="slicknav_arrow"></span></a><ul class="sub-menu slicknav_hidden" role="menu" style="display: none;" aria-hidden="true">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353254"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/" role="menuitem" tabindex="-1">Sun Tv Serial</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353255"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-show/" role="menuitem" tabindex="-1">Sun Tv Show</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260200"><a href="https://www.tamildhool.tech/sun-tv-programs/" role="menuitem" tabindex="-1">Sun Tv Programs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353251 slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row"><a href="https://www.tamildhool.tech/vijay-tv/">Vijay Tv</a>
+<span class="slicknav_arrow"></span></a><ul class="sub-menu slicknav_hidden" role="menu" style="display: none;" aria-hidden="true">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1437"><a href="https://www.tamildhool.tech/vijay-tv/vijay-tv-serial/" role="menuitem" tabindex="-1">Vijay Tv Serial</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1438"><a href="https://www.tamildhool.tech/vijay-tv/vijay-tv-show/" role="menuitem" tabindex="-1">Vijay Tv Show</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260199"><a href="https://www.tamildhool.tech/vijay-tv-programs/" role="menuitem" tabindex="-1">Vijay Tv Programs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353252 slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row"><a href="https://www.tamildhool.tech/zee-tamil/">Zee Tamil</a>
+<span class="slicknav_arrow"></span></a><ul class="sub-menu slicknav_hidden" role="menu" style="display: none;" aria-hidden="true">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1439"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/" role="menuitem" tabindex="-1">Zee Tamil Serial</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1440"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-show/" role="menuitem" tabindex="-1">Zee Tamil Show</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260198"><a href="https://www.tamildhool.tech/zee-tamil-programs/" role="menuitem" tabindex="-1">Zee Tamil Programs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-468079"><a href="https://www.tamildhool.tech/kalaignar-tv/" role="menuitem">Kalaignar Tv</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-430"><a href="https://www.tamildhool.tech/news-gossips/" role="menuitem">News &amp; Gossips</a></li>
+</ul></div></div>
+                    
+                       <div id="menu-main-slide" class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-4498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4498"><a href="https://tamildhool.tech/">Home</a></li>
+<li id="menu-item-353256" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353256"><a href="https://www.tamildhool.tech/sun-tv/">Sun Tv</a>
+<ul class="sub-menu">
+	<li id="menu-item-353254" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353254"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/">Sun Tv Serial</a></li>
+	<li id="menu-item-353255" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353255"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-show/">Sun Tv Show</a></li>
+	<li id="menu-item-260200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260200"><a href="https://www.tamildhool.tech/sun-tv-programs/">Sun Tv Programs</a></li>
+</ul>
+</li>
+<li id="menu-item-353251" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353251"><a href="https://www.tamildhool.tech/vijay-tv/">Vijay Tv</a>
+<ul class="sub-menu">
+	<li id="menu-item-1437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1437"><a href="https://www.tamildhool.tech/vijay-tv/vijay-tv-serial/">Vijay Tv Serial</a></li>
+	<li id="menu-item-1438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1438"><a href="https://www.tamildhool.tech/vijay-tv/vijay-tv-show/">Vijay Tv Show</a></li>
+	<li id="menu-item-260199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260199"><a href="https://www.tamildhool.tech/vijay-tv-programs/">Vijay Tv Programs</a></li>
+</ul>
+</li>
+<li id="menu-item-353252" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353252"><a href="https://www.tamildhool.tech/zee-tamil/">Zee Tamil</a>
+<ul class="sub-menu">
+	<li id="menu-item-1439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1439"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/">Zee Tamil Serial</a></li>
+	<li id="menu-item-1440" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1440"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-show/">Zee Tamil Show</a></li>
+	<li id="menu-item-260198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260198"><a href="https://www.tamildhool.tech/zee-tamil-programs/">Zee Tamil Programs</a></li>
+</ul>
+</li>
+<li id="menu-item-468079" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-468079"><a href="https://www.tamildhool.tech/kalaignar-tv/">Kalaignar Tv</a></li>
+<li id="menu-item-430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-430"><a href="https://www.tamildhool.tech/news-gossips/">News &amp; Gossips</a></li>
+</ul></div>
+                </div>
+
+                <div id="navbar-main">
+
+                    <div class="menu-main-menu-container"><ul id="menu-main-menu-1" class="navbar-wpz dropdown sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4498"><a href="https://tamildhool.tech/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353256"><a href="https://www.tamildhool.tech/sun-tv/" class="sf-with-ul">Sun Tv</a>
+<ul class="sub-menu" style="display: none;">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353254"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/">Sun Tv Serial</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353255"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-show/">Sun Tv Show</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260200"><a href="https://www.tamildhool.tech/sun-tv-programs/">Sun Tv Programs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353251"><a href="https://www.tamildhool.tech/vijay-tv/" class="sf-with-ul">Vijay Tv</a>
+<ul class="sub-menu" style="display: none;">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1437"><a href="https://www.tamildhool.tech/vijay-tv/vijay-tv-serial/">Vijay Tv Serial</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1438"><a href="https://www.tamildhool.tech/vijay-tv/vijay-tv-show/">Vijay Tv Show</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260199"><a href="https://www.tamildhool.tech/vijay-tv-programs/">Vijay Tv Programs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-353252"><a href="https://www.tamildhool.tech/zee-tamil/" class="sf-with-ul">Zee Tamil</a>
+<ul class="sub-menu" style="display: none;">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1439"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/">Zee Tamil Serial</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1440"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-show/">Zee Tamil Show</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260198"><a href="https://www.tamildhool.tech/zee-tamil-programs/">Zee Tamil Programs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-468079"><a href="https://www.tamildhool.tech/kalaignar-tv/">Kalaignar Tv</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-430"><a href="https://www.tamildhool.tech/news-gossips/">News &amp; Gossips</a></li>
+</ul></div>
+                </div><!-- #navbar-main -->
+
+            </nav><!-- .navbar -->
+
+            <div class="clear"></div>
+
+        </header><!-- .site-header -->
+
+
+    
+    <div id="slider" class="eclipse_slider">
+
+        
+            <ul class="slides clearfix flickity-enabled is-draggable">
+
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                            <div class="flickity-viewport" style="height: 212.219px; touch-action: pan-y;"><div class="flickity-slider" style="left: 0px; transform: translate3d(-585px, 0px, 0px);"><li class="slide" style="position: absolute; left: 0px;" aria-hidden="true">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-23th-24th-may-2026-promo-3/" title="Permalink to Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 3" rel="bookmark">Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 3</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-23th-24th-may-2026-promo-3/" title="Permalink to Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 3" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-23th-2.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-23th-2.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" fetchpriority="high" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" style="position: absolute; left: 377px;" aria-hidden="true">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-23th-24th-may-2026-promo-2/" title="Permalink to Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 2" rel="bookmark">Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 2</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-23th-24th-may-2026-promo-2/" title="Permalink to Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 2" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-23th-1.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-23th-1.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide is-selected" style="position: absolute; left: 755px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-23th-24th-may-2026-promo-1/" title="Permalink to Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 1" rel="bookmark">Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 1</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-23th-24th-may-2026-promo-1/" title="Permalink to Cooku with Comali Season 7 | 23th &amp; 24th May 2026 – Promo 1" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-23th.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-23th.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 1132px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/sindhu-bairavi-kacheri-arambam-18th-to-22nd-may-2026-promo/" title="Permalink to Sindhu Bairavi Kacheri Arambam | 18th to 22nd May 2026 – Promo" rel="bookmark">Sindhu Bairavi Kacheri Arambam | 18th to 22nd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/sindhu-bairavi-kacheri-arambam-18th-to-22nd-may-2026-promo/" title="Permalink to Sindhu Bairavi Kacheri Arambam | 18th to 22nd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/sindhu-bairavi-kacheri-arambam-1.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/sindhu-bairavi-kacheri-arambam-1.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 1509px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/mahanadhi-18th-to-22nd-may-2026-promo/" title="Permalink to Mahanadhi | 18th to 22nd May 2026 – Promo" rel="bookmark">Mahanadhi | 18th to 22nd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/mahanadhi-18th-to-22nd-may-2026-promo/" title="Permalink to Mahanadhi | 18th to 22nd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/mahanadhi-18th-to-22nd-may-2026.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/mahanadhi-18th-to-22nd-may-2026.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 1886px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/ayyanar-thunai-18th-to-23rd-may-2026-promo/" title="Permalink to Ayyanar Thunai | 18th to 23rd May 2026 – Promo" rel="bookmark">Ayyanar Thunai | 18th to 23rd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/ayyanar-thunai-18th-to-23rd-may-2026-promo/" title="Permalink to Ayyanar Thunai | 18th to 23rd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/ayyanar-thunai-18th-to-23rd-may.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/ayyanar-thunai-18th-to-23rd-may.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 2264px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/kanmani-anbudan-18th-to-23rd-may-2026-promo/" title="Permalink to Kanmani Anbudan | 18th to 23rd May 2026 – Promo" rel="bookmark">Kanmani Anbudan | 18th to 23rd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/kanmani-anbudan-18th-to-23rd-may-2026-promo/" title="Permalink to Kanmani Anbudan | 18th to 23rd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/kanmani-anbudan-18th-to-23rd-may.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/kanmani-anbudan-18th-to-23rd-may.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 2641px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/thendrale-mella-pesu-18th-to-23rd-may-2026-promo/" title="Permalink to Thendrale Mella Pesu | 18th to 23rd May 2026 – Promo" rel="bookmark">Thendrale Mella Pesu | 18th to 23rd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/thendrale-mella-pesu-18th-to-23rd-may-2026-promo/" title="Permalink to Thendrale Mella Pesu | 18th to 23rd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/thendrale-mella-pesu-18th-to-23r.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/thendrale-mella-pesu-18th-to-23r.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 3018px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/kana-kandenadi-18th-to-22nd-may-2026-promo/" title="Permalink to Kana Kandenadi | 18th to 22nd May 2026 – Promo" rel="bookmark">Kana Kandenadi | 18th to 22nd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/kana-kandenadi-18th-to-22nd-may-2026-promo/" title="Permalink to Kana Kandenadi | 18th to 22nd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/kana-kandenadi-18th-to-22nd-may.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/kana-kandenadi-18th-to-22nd-may.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 3396px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/uncategorized/thaai-maaman-18th-to-22nd-may-2026-promo/" title="Permalink to Thaai Maaman | 18th to 22nd May 2026 – Promo" rel="bookmark">Thaai Maaman | 18th to 22nd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/uncategorized/thaai-maaman-18th-to-22nd-may-2026-promo/" title="Permalink to Thaai Maaman | 18th to 22nd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/thaai-maaman-18th-to-22nd-may-20.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/thaai-maaman-18th-to-22nd-may-20.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 3773px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/suttum-vizhi-sudare-18th-to-23rd-may-2026-promo/" title="Permalink to Suttum Vizhi Sudare | 18th to 23rd May 2026 – Promo" rel="bookmark">Suttum Vizhi Sudare | 18th to 23rd May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/suttum-vizhi-sudare-18th-to-23rd-may-2026-promo/" title="Permalink to Suttum Vizhi Sudare | 18th to 23rd May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/suttum-vizhi-sudare-18th-to-23rd.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/suttum-vizhi-sudare-18th-to-23rd.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 4150px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-16th-17th-may-2026-promo-3/" title="Permalink to Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 3" rel="bookmark">Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 3</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-16th-17th-may-2026-promo-3/" title="Permalink to Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 3" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-16th-2.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-16th-2.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 4527px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-16th-17th-may-2026-promo-1-2/" title="Permalink to Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 2" rel="bookmark">Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 2</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-16th-17th-may-2026-promo-1-2/" title="Permalink to Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 2" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-16th-1.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-16th-1.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 4905px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-16th-17th-may-2026-promo-1/" title="Permalink to Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 1" rel="bookmark">Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 1</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-16th-17th-may-2026-promo-1/" title="Permalink to Cooku with Comali Season 7 | 16th &amp; 17th May 2026 – Promo 1" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-16th.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-16th.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 5282px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/saregamapa-lil-champs-season5-%e0%ae%a8%e0%af%86%e0%ae%9e%e0%af%8d%e0%ae%9a%e0%ae%ae%e0%af%8d-%e0%ae%ae%e0%ae%b1%e0%ae%aa%e0%af%8d%e0%ae%aa%e0%ae%a4%e0%ae%bf%e0%ae%b2%e0%af%8d%e0%ae%b2%e0%af%88-3/" title="Permalink to Saregamapa Lil Champs Season5 | நெஞ்சம் மறப்பதில்லை சுற்று | 9 &amp; 10 May | ZeeTamil" rel="bookmark">Saregamapa Lil Champs Season5 | நெஞ்சம் மறப்பதில்லை சுற்று | 9 &amp; 10 May | ZeeTamil</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/saregamapa-lil-champs-season5-%e0%ae%a8%e0%af%86%e0%ae%9e%e0%af%8d%e0%ae%9a%e0%ae%ae%e0%af%8d-%e0%ae%ae%e0%ae%b1%e0%ae%aa%e0%af%8d%e0%ae%aa%e0%ae%a4%e0%ae%bf%e0%ae%b2%e0%af%8d%e0%ae%b2%e0%af%88-3/" title="Permalink to Saregamapa Lil Champs Season5 | நெஞ்சம் மறப்பதில்லை சுற்று | 9 &amp; 10 May | ZeeTamil" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/saregamapa-lil-champs-season5-2.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/saregamapa-lil-champs-season5-2.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 5659px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-9th-10th-may-2026-promo-1/" title="Permalink to Cooku with Comali Season 7 | 9th &amp; 10th May 2026 – Promo 1" rel="bookmark">Cooku with Comali Season 7 | 9th &amp; 10th May 2026 – Promo 1</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/cooku-with-comali-season-7-9th-10th-may-2026-promo-1/" title="Permalink to Cooku with Comali Season 7 | 9th &amp; 10th May 2026 – Promo 1" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-9th-1.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/cooku-with-comali-season-7-9th-1.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 6036px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/super-singer-junior-11-grand-launch-from-9th-may-2026-promo-4/" title="Permalink to Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 4" rel="bookmark">Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 4</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/super-singer-junior-11-grand-launch-from-9th-may-2026-promo-4/" title="Permalink to Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 4" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/super-singer-junior-11-grand-lau-3.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/super-singer-junior-11-grand-lau-3.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 6414px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/super-singer-junior-11-grand-launch-from-9th-may-2026-promo-3/" title="Permalink to Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 3" rel="bookmark">Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 3</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/super-singer-junior-11-grand-launch-from-9th-may-2026-promo-3/" title="Permalink to Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 3" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/super-singer-junior-11-grand-lau-2.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/super-singer-junior-11-grand-lau-2.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 6791px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/super-singer-junior-11-grand-launch-from-9th-may-2026-promo-2/" title="Permalink to Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 2" rel="bookmark">Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 2</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/super-singer-junior-11-grand-launch-from-9th-may-2026-promo-2/" title="Permalink to Super Singer Junior 11 | Grand Launch | From 9th May 2026 – Promo 2" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/super-singer-junior-11-grand-lau-1.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/super-singer-junior-11-grand-lau-1.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li><li class="slide" aria-hidden="true" style="position: absolute; left: 7168px;">
+                        <div class="slide-overlay">
+
+                            <h3><a href="https://www.tamildhool.tech/news-gossips/sindhu-bairavi-kacheri-arambam-7th-8th-may-2026-promo/" title="Permalink to Sindhu Bairavi Kacheri Arambam | 7th &amp; 8th May 2026 – Promo" rel="bookmark">Sindhu Bairavi Kacheri Arambam | 7th &amp; 8th May 2026 – Promo</a></h3>
+
+                        </div><!--/.slide-overlay-->
+
+                        <div class="slide-background">
+                            <a href="https://www.tamildhool.tech/news-gossips/sindhu-bairavi-kacheri-arambam-7th-8th-may-2026-promo/" title="Permalink to Sindhu Bairavi Kacheri Arambam | 7th &amp; 8th May 2026 – Promo" rel="bookmark"><picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/sindhu-bairavi-kacheri-arambam-7.jpg.webp" type="image/webp"><img width="480" height="270" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/sindhu-bairavi-kacheri-arambam-7.jpg" class="attachment-slider size-slider wp-post-image" alt="" decoding="async" data-eio="p"></picture></a>
+                        </div>
+                    </li></div></div><button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 60,95 L 15,50  L 60,5 L 60,0 Z" class="arrow"></path></svg></button><button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 60,95 L 15,50  L 60,5 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button><ol class="flickity-page-dots"><li class="dot" aria-label="Page dot 1"></li><li class="dot" aria-label="Page dot 2"></li><li class="dot is-selected" aria-label="Page dot 3" aria-current="step"></li><li class="dot" aria-label="Page dot 4"></li><li class="dot" aria-label="Page dot 5"></li><li class="dot" aria-label="Page dot 6"></li><li class="dot" aria-label="Page dot 7"></li><li class="dot" aria-label="Page dot 8"></li><li class="dot" aria-label="Page dot 9"></li><li class="dot" aria-label="Page dot 10"></li><li class="dot" aria-label="Page dot 11"></li><li class="dot" aria-label="Page dot 12"></li><li class="dot" aria-label="Page dot 13"></li><li class="dot" aria-label="Page dot 14"></li><li class="dot" aria-label="Page dot 15"></li><li class="dot" aria-label="Page dot 16"></li><li class="dot" aria-label="Page dot 17"></li><li class="dot" aria-label="Page dot 18"></li><li class="dot" aria-label="Page dot 19"></li><li class="dot" aria-label="Page dot 20"></li></ol></ul>
+
+        
+    </div><!--/#slider -->
+
+<main id="main" class="site-main" role="main">
+
+    
+                    <div class="column-widgets">
+
+                                    <div class="widget-column">
+                        <div class="widget wpzoom-media-widget" id="wpzoom-media-widget-3"><div class="post_thumb_withbg" style="background-image:url('https://www.tamildhool.tech/wp-content/uploads/2026/01/suntv.jpg')"><a href="https://www.tamildhool.tech/sun-tv-programs/"><div class="featured_page_content"><h3 class="title">Sun Tv Programs Listing</h3></div></a></div><div class="clear"></div></div>                    </div><!-- .column -->
+                
+                                    <div class="widget-column">
+                        <div class="widget wpzoom-media-widget" id="wpzoom-media-widget-2"><div class="post_thumb_withbg" style="background-image:url('https://www.tamildhool.tech/wp-content/uploads/2026/01/vijay.jpg')"><a href="https://www.tamildhool.tech/vijay-tv-programs/"><div class="featured_page_content"><h3 class="title">Vijay Tv Programs Listing</h3></div></a></div><div class="clear"></div></div>                    </div><!-- .column -->
+                
+                                    <div class="widget-column">
+                        <div class="widget wpzoom-media-widget" id="wpzoom-media-widget-4"><div class="post_thumb_withbg" style="background-image:url('https://www.tamildhool.tech/wp-content/uploads/2026/01/zeetamil.jpg')"><a href="https://www.tamildhool.tech/zee-tamil-programs/"><div class="featured_page_content"><h3 class="title">Zee Tamil Programs Listing</h3></div></a></div><div class="clear"></div></div>                    </div><!-- .column -->
+                
+            </div>
+
+        
+    
+    
+        <h2 class="section-title">
+
+            Recent Posts
+            
+         </h2>
+
+
+
+        
+            <section id="recent-posts" class="recent-posts">
+
+                
+                    <article id="post-716910" class="regular-post post-716910 post type-post status-publish format-standard has-post-thumbnail hentry category-salangai-oli">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/salangai-oli/salangai-oli-23-05-2026-zee-tamil-serial/" title="Salangai Oli 23-05-2026 Zee Tamil Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/08/so.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/08/so.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/salangai-oli/" rel="category tag">Salangai Oli</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/salangai-oli/salangai-oli-23-05-2026-zee-tamil-serial/" rel="bookmark">Salangai Oli 23-05-2026 Zee Tamil Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716910 -->
+                
+                    <article id="post-716932" class="regular-post post-716932 post type-post status-publish format-standard has-post-thumbnail hentry category-iru-malargal">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/iru-malargal/iru-malargal-23-05-2026-sun-tv-serial/" title="Iru Malargal 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/01/im2.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2026/01/im2.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/iru-malargal/" rel="category tag">Iru Malargal</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/iru-malargal/iru-malargal-23-05-2026-sun-tv-serial/" rel="bookmark">Iru Malargal 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716932 -->
+                
+                    <article id="post-716933" class="regular-post post-716933 post type-post status-publish format-standard has-post-thumbnail hentry category-lakshmi">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/lakshmi/lakshmi-23-05-2026-sun-tv-serial/" title="Lakshmi 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/Lakshmi.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/Lakshmi.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/lakshmi/" rel="category tag">Lakshmi</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/lakshmi/lakshmi-23-05-2026-sun-tv-serial/" rel="bookmark">Lakshmi 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716933 -->
+                
+                    <article id="post-716909" class="regular-post post-716909 post type-post status-publish format-standard has-post-thumbnail hentry category-annamalai-kudumbam">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/annamalai-kudumbam/annamalai-kudumbam-23-05-2026-zee-tamil-serial/" title="Annamalai Kudumbam 23-05-2026 Zee Tamil Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/11/anku.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/11/anku.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/annamalai-kudumbam/" rel="category tag">Annamalai Kudumbam</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/annamalai-kudumbam/annamalai-kudumbam-23-05-2026-zee-tamil-serial/" rel="bookmark">Annamalai Kudumbam 23-05-2026 Zee Tamil Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716909 -->
+                
+                    <article id="post-716943" class="regular-post post-716943 post type-post status-publish format-standard has-post-thumbnail hentry category-pudhu-vasantham">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/pudhu-vasantham/puthu-vasantham-23-05-2026-sun-tv-serial/" title="Puthu Vasantham 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/Puthu.jpg.webp" type="image/webp"><img width="360" height="202" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/Puthu.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/pudhu-vasantham/" rel="category tag">Pudhu Vasantham</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/pudhu-vasantham/puthu-vasantham-23-05-2026-sun-tv-serial/" rel="bookmark">Puthu Vasantham 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716943 -->
+                
+                    <article id="post-716908" class="regular-post post-716908 post type-post status-publish format-standard has-post-thumbnail hentry category-idhayam">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/idhayam/idhayam-23-05-2026-zee-tamil-serial/" title="Idhayam 23-05-2026 Zee Tamil Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/id1.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/id1.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/idhayam/" rel="category tag">Idhayam</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/idhayam/idhayam-23-05-2026-zee-tamil-serial/" rel="bookmark">Idhayam 23-05-2026 Zee Tamil Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716908 -->
+                
+                    <article id="post-716907" class="regular-post post-716907 post type-post status-publish format-standard has-post-thumbnail hentry category-varisu">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/varisu/varisu-23-05-2026-zee-tamil-serial/" title="Varisu 23-05-2026 Zee Tamil Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/vari.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/vari.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/varisu/" rel="category tag">Varisu</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/zee-tamil/zee-tamil-serial/varisu/varisu-23-05-2026-zee-tamil-serial/" rel="bookmark">Varisu 23-05-2026 Zee Tamil Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716907 -->
+                
+                    <article id="post-716939" class="regular-post post-716939 post type-post status-publish format-standard has-post-thumbnail hentry category-thulasi">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/thulasi/thulasi-23-05-2026-sun-tv-serial/" title="Thulasi 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/thu.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/thu.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/thulasi/" rel="category tag">Thulasi</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/thulasi/thulasi-23-05-2026-sun-tv-serial/" rel="bookmark">Thulasi 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716939 -->
+                
+                    <article id="post-716944" class="regular-post post-716944 post type-post status-publish format-standard has-post-thumbnail hentry category-pudhu-vasantham category-vinodhini">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/vinodhini/vinodhini-23-05-2026-sun-tv-serial/" title="Vinodhini 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/Vinodhi.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/Vinodhi.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/pudhu-vasantham/" rel="category tag">Pudhu Vasantham</a>, <a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/vinodhini/" rel="category tag">Vinodhini</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/vinodhini/vinodhini-23-05-2026-sun-tv-serial/" rel="bookmark">Vinodhini 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716944 -->
+                
+                    <article id="post-716940" class="regular-post post-716940 post type-post status-publish format-standard has-post-thumbnail hentry category-poongodi">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/poongodi/poongodi-23-05-2026-sun-tv-serial/" title="Poongodi 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/pk.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/pk.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/poongodi/" rel="category tag">Poongodi</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/poongodi/poongodi-23-05-2026-sun-tv-serial/" rel="bookmark">Poongodi 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716940 -->
+                
+                    <article id="post-716992" class="regular-post post-716992 post type-post status-publish format-standard has-post-thumbnail hentry category-kitchen-galatta">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-show/kitchen-galatta/kitchen-galatta-23-05-2025-sun-tv-show/" title="Kitchen Galatta 23-05-2025 Sun Tv Show">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2026/05/kg2.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2026/05/kg2.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-show/kitchen-galatta/" rel="category tag">Kitchen Galatta</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-show/kitchen-galatta/kitchen-galatta-23-05-2025-sun-tv-show/" rel="bookmark">Kitchen Galatta 23-05-2025 Sun Tv Show</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716992 -->
+                
+                    <article id="post-716935" class="regular-post post-716935 post type-post status-publish format-standard has-post-thumbnail hentry category-singappenne">
+
+                <div class="post-thumb"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/singappenne/singapenne-23-05-2026-sun-tv-serial/" title="Singapenne 23-05-2026 Sun Tv Serial">
+                <picture><source srcset="https://www.tamildhool.tech/wp-content/uploads/2025/07/Singappenn.jpg.webp" type="image/webp"><img width="360" height="203" src="https://www.tamildhool.tech/wp-content/uploads/2025/07/Singappenn.jpg" class="attachment-loop-crop size-loop-crop wp-post-image" alt="" decoding="async" loading="lazy" data-eio="p"></picture>            </a></div>
+        
+    <section class="entry-body">
+
+        <span class="cat-links"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/singappenne/" rel="category tag">Singappenne</a></span>
+        <h3 class="entry-title"><a href="https://www.tamildhool.tech/sun-tv/sun-tv-serial/singappenne/singapenne-23-05-2026-sun-tv-serial/" rel="bookmark">Singapenne 23-05-2026 Sun Tv Serial</a></h3>
+        <div class="entry-meta">
+                                    
+
+                    </div>
+
+        <div class="entry-content">
+                    </div>
+
+
+        
+
+    </section>
+
+    <div class="clearfix"></div>
+</article><!-- #post-716935 -->
+                
+            </section>
+
+            <div class="navigation"><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://www.tamildhool.tech/page/2/">2</a>
+<a class="page-numbers" href="https://www.tamildhool.tech/page/3/">3</a>
+<span class="page-numbers dots">…</span>
+<a class="page-numbers" href="https://www.tamildhool.tech/page/441/">441</a>
+<a class="next page-numbers" href="https://www.tamildhool.tech/page/2/">Next</a></div>
+        
+    
+</main><!-- .site-main -->
+
+
+
+</div>
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+
+    
+
+    
+        <div class="inner-wrap">
+
+            <div class="footer-widgets widgets widget-columns-3">
+                
+                    <div class="column">
+                        <div class="widget widget_text" id="text-4"><h3 class="title">About Us</h3>			<div class="textwidget"><p><a href="https://tamildhool.tech/"><img loading="lazy" decoding="async" class="aligncenter wp-image-81169" src="https://tamildhool.tech/wp-content/uploads/2019/03/tdtrans.png" alt="" width="100" height="100" srcset="https://www.tamildhool.tech/wp-content/uploads/2019/03/tdtrans.png 200w, https://www.tamildhool.tech/wp-content/uploads/2019/03/tdtrans-150x150.png 150w, https://www.tamildhool.tech/wp-content/uploads/2019/03/tdtrans-48x48.png 48w, https://www.tamildhool.tech/wp-content/uploads/2019/03/tdtrans-180x180.png 180w" sizes="auto, (max-width: 100px) 100vw, 100px"></a></p>
+<p>TamilDhool is your home for Tamil serials and entertainment. We are passionate about bringing fans closer to the latest Tamil serials and shows. Our platform is designed to share updates, highlights, and community discussions that celebrate Tamil television.</p>
+<p>We believe in the power of storytelling and the cultural richness of Tamil entertainment. If you want to stay connected with your favorite Tamil serials and shows, you’ll find it here at Tamildhool.</p>
+</div>
+		<div class="clear"></div></div>                    </div><!-- .column -->
+
+                
+                    <div class="column">
+                        <div class="widget widget_text" id="text-7"><h3 class="title">Channels</h3>			<div class="textwidget"><p><a style="display: inline-block; text-align: center; line-height: 19px;" href="https://tamildhool.tech/sun-tv-programs/"><img loading="lazy" decoding="async" class="wp-image-82200 alignnone" style="vertical-align: middle;" src="https://tamildhool.tech/wp-content/uploads/2019/03/sun-tv.jpg" alt="" width="140" height="79" srcset="https://www.tamildhool.tech/wp-content/uploads/2019/03/sun-tv.jpg 480w, https://www.tamildhool.tech/wp-content/uploads/2019/03/sun-tv-250x141.jpg 250w, https://www.tamildhool.tech/wp-content/uploads/2019/03/sun-tv-320x180.jpg 320w" sizes="auto, (max-width: 140px) 100vw, 140px"><br>
+</a></p>
+<p><a style="display: inline-block; text-align: center; line-height: 19px;" href="https://tamildhool.tech/vijay-tv-programs/"><img loading="lazy" decoding="async" class="wp-image-82200 alignnone" style="vertical-align: middle;" src="https://tamildhool.tech/wp-content/uploads/2021/07/vijay.jpg" alt="" width="140" height="79"><br>
+</a></p>
+<p><a style="display: inline-block; text-align: center; line-height: 79px;" href="https://tamildhool.tech/zee-tamil-programs/"><img loading="lazy" decoding="async" class="wp-image-82200 alignnone" style="vertical-align: middle;" src="https://tamildhool.tech/wp-content/uploads/2021/07/ZEE.jpg" alt="" width="140" height="79"><br>
+</a></p>
+</div>
+		<div class="clear"></div></div>                    </div><!-- .column -->
+
+                
+                    <div class="column">
+                        <div class="widget widget_text" id="text-5"><h3 class="title">General</h3>			<div class="textwidget"><style>
+.footer-links a {
+  display: block;
+  text-align: center;       /* centers the text */
+  border: 1px solid #ccc;   /* border around each link */
+  border-radius: 6px;       /* rounded corners */
+  padding: 10px;            /* space inside each box */
+  margin-bottom: 8px;       /* spacing between boxes */
+  text-decoration: none;
+  color: #333;              /* text color */
+  background: #f9f9f9;      /* optional: light background */
+}</p>
+<p>.footer-links a:hover {
+  background: #eee;         /* hover effect */
+}</p>
+<p>.footer-links a:last-child {
+  margin-bottom: 0;
+}
+</style>
+<div class="footer-links">
+  <a href="https://tamildhool.tech/about-us/" target="_blank" rel="noopener">About Us</a><br>
+  <a href="https://tamildhool.tech/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a><br>
+  <a href="https://tamildhool.tech/content-policy/" target="_blank" rel="noopener">Content Policy</a><br>
+  <a href="https://tamildhool.tech/terms-conditions/" target="_blank" rel="noopener">Terms &amp; Conditions</a><br>
+  <a href="https://tamildhool.tech/contact-us/" target="_blank" rel="noopener">Contact Us</a>
+</div>
+</div>
+		<div class="clear"></div></div><div class="widget widget_text" id="text-6">			<div class="textwidget"><p>© 2025 TamilDhool Tech<br>
+All Rights Reserved.</p>
+</div>
+		<div class="clear"></div></div>                    </div><!-- .column -->
+
+                
+                <div class="clear"></div>
+
+            </div><!-- .footer-widgets -->
+
+        </div>
+
+
+    
+
+    <div class="site-info">
+
+        <div class="inner-wrap">
+
+            <p class="copyright"></p>
+
+            <p class="designed-by">Designed by <a href="https://www.wpzoom.com/" target="_blank" rel="designer">WPZOOM</a></p>
+
+        </div>
+
+    </div><!-- .site-info -->
+
+</footer><!-- #colophon -->
+
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/wpzoom-eclipse/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="slicknav-js" src="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/js/jquery.slicknav.min.js?ver=1.0.13"></script>
+<script id="flickity-js" src="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/js/flickity.pkgd.min.js?ver=1.0.13"></script>
+<script id="fitvids-js" src="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/js/jquery.fitvids.js?ver=1.0.13"></script>
+<script id="superfish-js" src="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/js/superfish.min.js?ver=1.0.13"></script>
+<script id="search_button-js" src="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/js/search_button.js?ver=1.0.13"></script>
+<script id="eclipse-script-js-extra">
+var zoomOptions = {"slideshow_auto":"1","slideshow_speed":"5000"};
+//# sourceURL=eclipse-script-js-extra
+</script>
+<script id="eclipse-script-js" src="https://www.tamildhool.tech/wp-content/themes/wpzoom-eclipse/js/functions.js?ver=1.0.13"></script>
+<script id="advanced-ads-find-adblocker-js" src="https://www.tamildhool.tech/wp-content/plugins/advanced-ads/admin/assets/js/advertisement.js"></script>
+<script id="googlesitekit-events-provider-wpforms-js" src="https://www.tamildhool.tech/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-wpforms-087b09462076035a76b2.js" defer=""></script>
+<script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a003567c3d11c30f',t:'MTc3OTUzMTcyOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;674a557a25864e8488fe5d593d7f5752&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html><!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 5429 objects (3 MB) from Redis using PhpRedis (v6.3.0).
+-->

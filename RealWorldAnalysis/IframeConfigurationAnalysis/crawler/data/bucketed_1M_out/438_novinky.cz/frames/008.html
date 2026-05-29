@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>+</title>
+</head>
+<body>
+<h3>::LOG::</h3>
+<div id="log">
+
+</div>
+
+
+<script>
+    var c = false;
+    var messageReceived = false;
+
+    function getVendorConsents() {
+        //Clear log output
+        /**
+         Get vendor consent object from CMP
+         Param1 : 'getVendorConsents': String - name of the method to be invoked on the CMP
+         Param2 : vendorIds: Uint16Array - as identified in https://vendorlist.consensu.org/vendorlist.json.
+         Every registered vendor would be assigned a vendor id.
+         Param3 : Callback(VendorConsents object, success: boolean): A callback function that CMP would invoke once response is ready
+         */
+            //A list of vender ids for which user consent needs to be fetched
+        var vendorIds = new Uint16Array([205]); // This list contains random vendor ids
+
+        // call CMP to get consent data
+        var messageToCMPWindow = {
+            __tcfapiCall: {
+                command: 'getTCData',
+                parameter: vendorIds,
+                callId: 205,
+            }
+        };
+
+        parent.postMessage(messageToCMPWindow, '*');
+        setTimeout(function (){ if(!messageReceived){c=false;AdssCookies.consent(c);AdssCookies.init();}},1000);
+    }
+
+
+    // Event handler for response
+    window.addEventListener("message", function (event) {
+        if (messageReceived) { return };
+
+        if (event.data === '' || !event.data.__tcfapiReturn) {
+            return;
+        }
+
+        if (event.data.__tcfapiReturn.callId !== 205) {
+            return;
+        }
+        processResponse(event);
+    }, false);
+
+    function processResponse(event) {
+        var resp = {};
+        if (typeof event.data !== "object") {
+            resp = JSON.parse(event.data);
+        } else {
+            resp = event.data;
+        }
+        if (resp.__tcfapiReturn) {
+            if(resp.__tcfapiReturn.returnValue == undefined || resp.__tcfapiReturn.success == false ){
+                return;
+            }
+            messageReceived = true;
+
+            var VendorConsents = resp.__tcfapiReturn.returnValue;
+            //Read vendor consent booleans against each vendor id
+            //<consentBoolean false="No Consent", true="Consent">
+            if(VendorConsents["purpose"]["consents"][1] && VendorConsents["purpose"]["consents"][3] && VendorConsents["purpose"]["consents"][5] ){
+                c = true;
+                AdssCookies.consent(c);
+                AdssCookies.init(true);
+            } else {
+                c = false;
+                AdssCookies.consent(c);
+                AdssCookies.init();
+            }
+
+        }
+    }
+
+    getVendorConsents();
+
+    //noinspection JSLint
+    AdssCookies = (function () {
+        var localCookieCache = {},
+                vector = {},
+                con = false;
+
+        var init = function (param) {
+                    if(!con){return}
+                    if(param!= undefined && param==true){
+                        // Merge new cookies if any
+                        Object.keys(localCookieCache).forEach(function (key){
+                            AdssCookies.create(key,localCookieCache[key],10);
+                        });
+
+                    }
+                    var allCookies = document.cookie.split('; '),
+                            i,
+                            cookiePair;
+                    localCookieCache = {},
+                    vector = {};
+                    for (i = 0; i < allCookies.length; i++) {
+                        cookiePair = allCookies[i].split('=');
+                        vector[cookiePair[0]] = cookiePair[1];
+                        localCookieCache[cookiePair[0]] = cookiePair[1];
+                    }
+                },
+        // Create Funct ion: Pass name of cookie, value, and days to expire
+                create = function (name, value, days) {
+                    var date,
+                        expires;
+                    if (days) {
+                        date = new Date();
+                        /*var offsetutc = date.getTimezoneOffset();*/
+                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                        date.setHours(0);
+                        date.setMinutes(0);
+                        date.setSeconds(0);
+                        /*date.setTime(date.getTime() - (offsetutc * 60 *1000));*/
+                        expires = "; expires=" + date.toGMTString();
+                    } else {
+                        expires = "";
+                    }
+
+                    vector[name] = value;
+                    localCookieCache[name] = value;
+                    if(!con){return}
+                    document.cookie = name + "=" + value + expires + "; path=/";
+
+
+                },
+                consent = function (value){
+                    con = value;
+                },
+        // Erase cookie by name
+                erase = function (name) {
+                    create(name, '', -1);
+                    vector[name] = undefined;
+                    localCookieCache[name] = undefined;
+                },
+                get = function (name) {
+                    if(!con){return -1}
+                    var c_start = document.cookie.indexOf(name),
+                            c_end;
+                    if (c_start !== -1) {
+                        c_start = c_start + name.length + 1;
+                        c_end = document.cookie.indexOf(";", c_start);
+                        if (c_end === -1) {
+                            c_end = document.cookie.length;
+                        }
+                        return decodeURI(document.cookie.substring(c_start, c_end));
+                    }
+                    return -1;
+                },
+                getCookieCache = function () {
+                    return localCookieCache;
+                },
+                optOutCookies = function () {
+                    var cookies = document.cookie.split(";");
+                    for (var i = 0; i < cookies.length; i++) {
+                        erase(cookies[i].split("=")[0].trim());
+                    }
+                }
+                ;
+
+
+        return {
+            init: init,
+            create: create,
+            erase: erase,
+            get: get,
+            getCookieCache: getCookieCache,
+            optOutCookies: optOutCookies,
+            consent: consent
+        };
+    })();
+
+
+    var AdssBucketApi = (function () {
+
+
+        AdssCookies.init();
+
+        var magicNumber = 0,
+                lastSync = {};
+        //var ifr = document.getElementById("tagetad");
+
+
+        function setCookie(key, value, expire) {
+            /* optout case*/
+            if (key === "R" && value === "1") {
+                AdssCookies.optOutCookies();
+            }
+
+            if (!_isOptOut() || (_isOptOut() && key === "R")) {
+                AdssCookies.create(key, value, expire)
+            }
+
+            if (key === "R" && value === "1") {
+                _sync();
+            }
+            //document.cookie = text;
+        }
+
+        function remCookie(key) {
+            /* optout case*/
+            if (key !== "R") {
+                AdssCookies.optOutCookies();
+
+            }else{
+                AdssCookies.erase(key);
+                _sync();
+            }
+
+        }
+
+        setInterval(
+                function () {
+
+                    /* Check if resync is needed */
+                    var vector = {};
+                    if(c){
+                        var allCookies = document.cookie.split('; '),
+                            cookiePair;
+                        for (i = 0; i < allCookies.length; i++) {
+                            cookiePair = allCookies[i].split('=');
+                            vector[cookiePair[0]] = cookiePair[1];
+                        }
+                    }else{
+                        vector = AdssCookies.getCookieCache()
+                    }
+
+                    if (JSON.stringify(vector) !== JSON.stringify(lastSync)) {
+                        _resync();
+                    }
+
+                }
+                , 1000);
+
+        function _resync() {
+            AdssCookies.init();
+            _sync();
+        }
+
+        function _sync() {
+            lastSync = AdssCookies.getCookieCache();
+            window.parent.postMessage(JSON.stringify({
+                'type': 'loaded_bucket',
+                'sync': AdssCookies.getCookieCache(),
+                'mn': magicNumber
+            }), "*");
+        }
+
+        function _isOptOut() {
+            return (!c || (AdssCookies.getCookieCache())["R"] === "1");
+        }
+
+
+        var messageHandler = function (m) {
+            try {
+            var data = JSON.parse(m.data);
+            wtf = m;
+
+            switch (data.type) {
+                case "remCookie":
+
+                    remCookie(data.key);
+                    break;
+                case "setCookie":
+                    setCookie(data.key, data.value, data.expire);
+                    break;
+                case "setMagicNumber":
+                    magicNumber = data.value;
+                    _sync();
+                    break;
+                default:
+                    break;
+            }
+
+            } catch (e) {
+            }
+        };
+
+        addEventListener("message", messageHandler);
+
+
+        return {
+            sync: _sync
+        };
+    })();
+
+
+</script>
+
+
+
+</body></html>

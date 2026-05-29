@@ -1,0 +1,968 @@
+<!DOCTYPE html><html lang="en" style="font-size: 100%;"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="google-site-verification" content="8Z0e7tBs0riCja6Sj75iJ7peP5ppx3bRhiZ_ImJFNiM">
+
+            <meta name="description" content="Plătește taxe și servicii publice simplu, rapid și sigur! Alătură-te celor peste 1 milion de români care au cont Ghișeul.ro.">
+        <meta name="keywords" content="plătește, taxe, impozite, amenzi, servicii, publice, simplu, rapid, sigur, cont, români, ghișeul">
+    	<!-- Fb meta tags BEGIN -->
+	<meta property="og:url" content="https://www.ghiseul.ro/ghiseul/public/">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Plătește online impozite şi taxe">
+	<meta property="og:description" content="Am plătit online taxele și impozitele prin ghișeul.ro. Fără timp pierdut în trafic și cozi la ghișeu. Încearcă și tu să vezi ce simplu este!">
+	<meta property="og:image" content="https://www.ghiseul.ro/ghiseul/public/img/ghiseulFB-share.png">
+	<meta property="og:image:width" content="525"> 
+	<meta property="og:image:height" content="275">
+	<!-- Fb meta tags END -->
+
+	<title>Ghiseul.ro - Sistemul National Electronic de Plata Online</title>
+
+    <!-- Bootstrap -->
+    <link href="/ghiseul/public/css/plugins/bootstrap/5.3.3/bootstrap.min.css" rel="stylesheet">
+	<link href="/ghiseul/public/css/plugins/bootstrap/5.3.3/bootstrap-theme.css" rel="stylesheet">
+	<link href="/ghiseul/public/css/simple-line-icons.css" rel="stylesheet">
+
+	<!-- Font awseome -->
+	<link href="/ghiseul/public/css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="/ghiseul/public/img/ghiseu.ico" rel="shortcut icon">
+	<link rel="apple-touch-icon" href="/ghiseul/public/img/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/ghiseul/public/img/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/ghiseul/public/img/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/ghiseul/public/img/touch-icon-ipad-retina.png">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<link rel="stylesheet" href="/ghiseul/public/css/jquery-ui.structure.min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/ghiseul/public/css/jquery-ui.theme.min.css" type="text/css" media="screen">
+
+<script type="text/javascript" src="/ghiseul/public/js/plugins/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/ghiseul/public/js/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/ghiseul/public/css/style.css?915">
+	<script language="javascript" src="/ghiseul/public/js/commonv2.js?915"></script>
+    <script language="javascript" src="/ghiseul/public/js/plugins/bootstrap/5.3.3/bootstrap.bundle.min.js"></script>
+    <script language="javascript" src="/ghiseul/public/js/plugins/accessibility/dist/main.bundle.js"></script>
+    <script language="javascript" src="/ghiseul/public/js/plugins/accessibility-tool/accessibility-tool.js?915" defer=""></script>
+    <script language="javascript" src="/ghiseul/public/js/plugins/ua/ua-parser.min.js"></script>
+    <script language="javascript" src="/ghiseul/public/js/plugins/ua/ua-setter.js?915" defer=""></script>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" class="_access-font-icon-0"></head>
+
+<body style="font-size: 0.9375em;">
+
+<script>
+
+function openDiv(dname, top, left)
+{
+	var div = document.getElementById(dname);
+	div.style.display = 'block';
+
+	div.style.top = (typeof(top)=="undefined" ? '5%': top+'%');
+	div.style.left = (typeof(left)=="undefined" ? '5%': left+'%');
+	div.focus();
+}
+function closeDiv(dname)
+{
+	var div = document.getElementById(dname);
+	if(div) {
+		$('#'+dname).html('');
+		div.style.display = 'none';
+	}
+}
+
+function homeButtonClick()
+{
+	var url = "/ghiseul/public/index/este-logat";
+   	$.ajax({
+            type: "POST",
+            url: url,
+            success: function(eLogat)
+            {
+             	var logout = true;
+            	if (eLogat == 1){
+	            	if (!window.confirm('Atentie! Veti fi deconectat! Doriti sa continuati?')) {
+	            		logout = false;
+	            	}
+	            }
+	            if (logout)
+            	{
+            		window.location='/ghiseul/public/login/logout';
+            	}
+             }
+         });
+}
+</script>
+
+<nav class="navbar navbar-expand-md fixed-top">
+	<div class="container-md">
+        <a class="navbar-brand" href="/ghiseul/public/"><img style="height: 50px;" src="/ghiseul/public/img/logo_ghiseul_orizontal.svg" alt="Ghiseul.ro"></a>
+        <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+		<div id="navbar" class="collapse navbar-collapse justify-content-end">
+			<ul class="navbar-nav text-nowrap app-navbar-right">
+				<li class="nav-item"><a class="nav-link text-decoration-none" href="/ghiseul/public/">Acasă</a></li>
+				<li class="nav-item"><a class="nav-link text-decoration-none" href="/ghiseul/public/institutii/harta">Instituții înrolate</a></li>
+				<li class="nav-item"><a class="nav-link text-decoration-none" href="/ghiseul/public/informatii/legislatie">Legislație</a></li>
+				<li class="nav-item"><a class="nav-link text-decoration-none" href="/ghiseul/public/informatii/intrebari-frecvente">Întrebări frecvente</a></li>
+				<li class="nav-item"><a class="nav-link text-decoration-none" href="/ghiseul/public/informatii/contact">Contact</a></li>
+						<!--ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-user icons"></i> Contul meu <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/ghiseul/public/">Autentificare</a></li>
+						<li><a href="/ghiseul/public/credentiale">Creare cont</a></li>
+						<li><a href="/ghiseul/public/login/regenerare">Regenerare parola</a></li>
+					</ul>
+				</li>
+			</ul-->
+						</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>
+<main id="home-main">
+    <div class="container-md">
+        <div class="row">
+            <div class="col-12 col-md-7 col-lg-7">
+                <div class="hero" id="title_auth">
+                    <h1>Plătește online impozite şi taxe</h1>
+                    <h3>către instituţiile publice înrolate în sistem</h3>
+                </div>
+                
+                <div class="row login-form" id="login_form" style="margin-bottom:0px">
+                    <div class="col-12 col-md-10 col-lg-7">
+                        <form id="login" name="login" method="post">
+                            <div class="form-group">
+                                <input type="text" placeholder="Utilizator" id="username" name="username" class="form-control input-lg" value="">
+                            </div>
+                            <div class="form-group">
+                                <div id="divT" height="43" colspan="3" class="input_login mt-3" align="center" style="">
+                                    <input placeholder="Parola" type="text" id="passwordT" name="passwordT" class="form-control input-lg" onfocus="changeBox()" autocomplete="off">
+                                </div>
+                                <div id="divP" height="43" colspan="3" class="input_login mt-3" align="center" style="display: none">
+                                    <input placeholder="Parola" type="password" class="form-control input-lg" value="" id="passwordP" name="passwordP" onblur="restoreBox()" autocomplete="new-password">
+                                    <i class="fa fa-eye" aria-hidden="true" id="togglePassword"></i>
+                                </div>
+                            </div>
+                            <div id="twoAuthBox" class="mt-3 d-none"></div>
+                            <div class="form-group mt-3" id="err">
+                                                            </div>
+                            <div class="form-group mt-3">
+                                <input type="submit" class="btn btn-lg btn-primary" value="Autentificare">
+                                <a class="secondary-action" href="/ghiseul/public/credentiale">Creare cont</a>
+                                <a class="secondary-action" style="white-space: nowrap;" onclick="regenerareParola();" href="#reset-pass">Ai uitat parola?</a>
+                            </div>
+                            <div class="form-group mt-3">
+                                                                     <a class="secondary-action" href="/ghiseul/public/login-pscid"><img style="width: 25px" src="/ghiseul/public/img/roeid_logo_primary.png"> Autentificare cu ROeID</a>
+                                                                                                    <a class="secondary-action" href="/ghiseul/public/login-eidas"><img style="width: 20px; vertical-align: bottom" src="/ghiseul/public/img/eIDAS_logo.png"> Autentificare eIDAS</a>
+                                                            </div>
+                        </form>
+                    </div>
+                </div>
+                                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <div class="alert alert-info" role="alert">
+                                Atenție la Phishing! Ghișeul.ro nu anunță prin SMS sau e-mail apariția unei obligații de plată. Nu da click pe link-uri suspecte, verifică întotdeauna expeditorul și adresa URL înainte de a acționa. Fii vigilent, protejează-ți datele!                            </div>
+                        </div>
+                    </div>
+                            </div>
+            <div class="col-12 col-md-5 col-lg-5" id="nrUsers">	<div class="counter">
+        <p class="number"><i class="icon-people icons"></i><b class="pad-number-adjustment">3407816</b></p>
+		<p class="number-meaning"> Utilizatori activi</p>
+        <p class="counter-p-custom"> Din 1 Ianuarie 2026</p>
+        <p class="number"><i class="icon-chart icons"></i><b class="number-adjustment">3620782</b></p>
+        <p class="number-meaning"> TRANZACȚII</p>
+        <p class="number"><i class="icon-wallet icons"></i><b class="number-adjustment">5.433.319.272,22</b></p>
+        <p class="number-meaning"> LEI COLECTAȚI</p>
+<!--  <p><b></b> plati în valoare de <b></b> lei</p> -->
+		
+	</div>
+	
+</div>
+        </div>
+
+        
+        <div class="home-options">
+            <div class="container-md">
+                <div class="row">
+                                            <div class="col-12 col-md-6 col-lg-3 home-item">
+                            <h1><i class="icon-key icons"></i></h1>
+                            <h3>Solicitare date de acces</h3>
+                            <p>Datele de acces pot fi solicitate online, folosind cardul bancar, doar de către persoane fizice.</p>
+                            <a href="/ghiseul/public/credentiale" class="btn text-decoration-none btn-link p-0">Solicită date de acces »</a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 home-item">
+                            <h1><i class="icon-note icons"></i></h1>
+                            <h3>Plată amenzi</h3>
+                            <p>Pentru plata amenzilor nu sunt necesare date de acces (utilizator și parolă).</p>
+                            <a href="/ghiseul/public/amenzi" class="btn text-decoration-none btn-link p-0">Plătește amenzi »</a>
+                                                    </div>
+                                        <div class="col-12 col-md-6 col-lg-6 home-item">
+                        <h1><i class="icon-wallet icons"></i></h1>
+                        <h3>Plată fără autentificare</h3>
+                        <p style="padding-right: 15px">Puteți plăti fără autentificare taxe și impozite al căror cuantum vă este deja cunoscut.</p>
+                        <a href="/ghiseul/public/taxe" class="btn text-decoration-none btn-link p-0">Plătește fără autentificare »</a><br>
+                        <a href="https://registratura.rejust.ro/plata-taxei-judiciare-de-timbru-intr-un-dosar-existent/" target="_blank" rel="noopener noreferrer" class="btn text-decoration-none btn-link p-0">Plătește taxă judiciară de timbru »</a><br>
+                        <a href="/ghiseul/public/taxe/taxe-speciale/id/eyJpZEluc3QiOiA3MjEyLCAidGlwUGVycyI6MSwgInZhbGlkYXJpIjogImZhbHNlIiwgInRpdGx1IjogIlBsYXTEgyBjb250cmF2YWxvYXJlIHBhyJlhcG9ydCJ9" class="btn text-decoration-none btn-link p-0 btn-left-white-space-normal">Plătește contravaloare pașaport »</a>
+                        <a href="/ghiseul/public/taxe/taxe-speciale/id/eyJpZEluc3QiOiA3MjExLCAidGlwUGVycyI6MCwgInZhbGlkYXJpIjogImZhbHNlIiwgInRpdGx1IjogIlBlcm1pc2UgYXV0by8gQ2VydGlmaWNhdGUgZGUgw65ubWF0cmljdWxhcmUvIEF1dG9yaXphyJtpZSBwcm92aXpvcmllIn0%3D" class="btn text-decoration-none btn-link p-0 btn-left-white-space-normal">Permise auto/ Certificate de înmatriculare/ Autorizație provizorie »</a>
+                           
+                            <a href="/ghiseul/public/taxe/taxe-speciale/id/Y29uZmlnX3RheGVfcGxhY3V0ZQ%3D%3D" class="btn text-decoration-none btn-link p-0 btn-left-white-space-normal">Plătește contravaloare plăcuțe de înmatriculare »</a>
+                                               <br>
+                    </div>
+                </div>
+                <div class="row">
+                                            <div class="col-12 col-md-3 col-lg-3 home-item">
+                            <h1><i class="icons icon-location-pin"></i></h1>
+                            <h3>Rovinieta <br></h3>
+                            <p>Pentru achizitionarea Rovinietei trebuie să vă autentificați. </p>
+                            <a href="#" class="btn btn-link p-0 text-decoration-none" onclick="showPopupRovinieta()">&nbsp;Achizitie Rovinieta »</a>
+                        </div>
+                                                                <div class="col-12 col-md-3 col-lg-3 home-item">
+                            <h1><i class="icons icon-briefcase"></i></h1>
+                            <h3>Titluri de stat <br></h3>
+                            <p>Pentru achizitionarea titlurilor de stat trebuie să vă autentificați. </p>
+                            <a href="#" class="btn btn-link p-0 text-decoration-none" onclick="showPopupTitluri()">&nbsp;Achizitie titluri de stat »</a>
+                        </div>
+                    
+                                            <div class="col-12 col-md-6 col-lg-6 home-item">
+                            <h1><i class="icon-book-open icons"></i></h1>
+                            <h3>Plată parcare</h3>
+                            <p>Aici poți să achiți tariful pentru loc de parcare nenominal.</p>
+                            <a href="/ghiseul/public/parcare/plata" class="btn text-decoration-none btn-link p-0">Plătește taxă parcare »</a>
+                        </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-6 home-item">
+                        <h1><i class="icon-home icons"></i></h1>
+                        <h3>Pool-ul de Asigurare Împotriva Dezastrelor Naturale</h3>
+                        <p>Puteți verifica fără autentificare dacă dețineți o poliță obligatorie de asigurare împotriva dezastrelor naturale. </p>
+                        <img style="height: 30px" src="/ghiseul/public/img/icon-online-paid.png">
+                        <a href="/ghiseul/public/paid" class="btn btn-link p-0 text-decoration-none">&nbsp;Asigurarea obligatorie a locuinței »</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div id="myModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title float-start">
+                    <translate>Termeni și condiții</translate>
+                </h4>
+                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close" onclick="location.reload();"></button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9" style="-webkit-overflow-scrolling: visible; overflow-y:auto;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" onclick="acceptaTermeni('')">Accepta</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalRovinieta" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <p>Pentru achizitionarea Rovinietei trebuie să vă autentificați.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href = &quot;/ghiseul/public/rovinieta&quot;">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalTitluri" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <p>Pentru achizitionarea de titluri de stat trebuie să vă autentificați.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" onclick="window.location.href = &quot;/ghiseul/public/titluri-stat&quot;">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iframe width="800" height="600" style="position: absolute; display: none; left: 16%; top: 90%; z-index: 1; overflow: auto; border: 1px solid #888;background-color:white" id="video" frameborder="0" allowfullscreen=""></iframe>
+<div id="div_plata"></div>
+<script src="/ghiseul/public/js/CryptoJS/core-min.js"></script>
+<script src="/ghiseul/public/js/CryptoJS/md5-min.js"></script>
+<script src="/ghiseul/public/js/CryptoJS/hmac-min.js"></script>
+<script src="/ghiseul/public/js/CryptoJS/sha1-min.js"></script>
+<script>
+    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        $('.modal').bind('shown.bs.modal resize', function () {
+            // Position modal absolute and bump it down to the scrollPosition
+            $(this).css({
+                position: 'absolute',
+                marginTop: $(window).scrollTop() + 'px',
+                bottom: 'auto'
+            });
+
+            setTimeout(function () {
+                $('.modal-backdrop').css({
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: Math.max(
+                        document.body.scrollHeight, document.documentElement.scrollHeight,
+                        document.body.offsetHeight, document.documentElement.offsetHeight,
+                        document.body.clientHeight, document.documentElement.clientHeight
+                    ) + 'px'
+                });
+            }, 0);
+        });
+    }
+
+    var parolaHmac;
+    var codeCheck = false;
+    $(document).ready(function () {
+        
+        $.get("/ghiseul/public/index/contor", function (data) {
+            $("#nrUsers").html(data);
+        });
+
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordP = document.querySelector('#passwordP');
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = passwordP.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordP.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
+
+    $("#login").submit(function (event) {
+        if ($("#login").prop("action").indexOf('etax') == -1) {
+            event.preventDefault();
+            if (codeCheck === true) {
+                verificareCod('');
+            } else {
+                verifica();
+            }
+        }
+    });
+
+    function verifica() {
+        var username = $.trim($('#username').val());
+        if (!usernameValid(username)) {
+            $('#err').html(generate_alert("Numele utilizatorului trebuie să conțină doar litere (fără diacritice), cifre și caracterele speciale: _ - și .",'danger'));
+            return false;
+        }
+
+        if (username == '' || $.trim($('#passwordP').val()) == '') {
+            $('#err').html(generate_alert('Introduceti utilizatorul si parola', 'danger'));
+            return false;
+        }
+
+        if (!parolaHmac) parolaHmac = '37312b1729b0cfb934415cde22892092';
+        autentifica(username, CryptoJS.HmacSHA1(CryptoJS.MD5($('#passwordP').val()).toString(CryptoJS.enc.Hex), parolaHmac).toString(CryptoJS.enc.Hex));
+    }
+
+    function autentifica(user, pass) {
+        var url = "/ghiseul/public/login/process";
+        var params = {"username": user, "password": pass};
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: params,
+            success: function (data) {
+                try {
+                    var raspuns = $.parseJSON(data);
+                    if (raspuns.cod == 1) {
+                        if (raspuns.urlRedirect != '' && typeof(raspuns.urlRedirect) != 'undefined')
+                           document.location.href = raspuns.urlRedirect;
+                        else  
+                           document.location.href = '/ghiseul/public/debite'; 
+                    } else if (raspuns.cod == 5) {
+                        $("#login").attr('action', raspuns.url);
+                        $('#passwordP').val(CryptoJS.HmacSHA1(CryptoJS.MD5($('#passwordP').val()).toString(CryptoJS.enc.Hex), '37312b1729b0cfb934415cde22892092'));
+                        $('<input>').attr({
+                            type: 'hidden',
+                            value: raspuns.token,
+                            name: 'token'
+                        }).appendTo('#login');
+                        $("#login").submit();
+                    } else if (raspuns.cod == 6) {
+                        showPopupAcceptareTermeni();
+                    } else if (raspuns.cod == 10) {
+                        requireAuthCode(raspuns.operator);
+                    } else if (raspuns.cod != '') {
+                        parolaHmac = raspuns.parolaHmac;
+                        try {
+                            $('#err').html(generate_alert(raspuns.msg, 'danger'));
+                        } catch (e) {
+                            $('#err').html(raspuns.msg);
+                        }
+                    } else {
+                        location.reload();
+                    }
+                } catch (e) {
+                    $('#login_form').html(data);
+                }
+            }
+        });
+        return false;
+    }
+
+    function regenerareParola() {
+        var url = "/ghiseul/public/login/regenerare";
+        window.location.href = url + '/user/' + $('#username').val();
+    }
+
+    function changeBox() {
+        document.getElementById('divT').style.display = 'none';
+        document.getElementById('divP').style.display = '';
+        document.getElementById('passwordP').focus();
+    }
+
+    function restoreBox() {
+        if (document.getElementById('passwordP').value == '') {
+            document.getElementById('divT').style.display = '';
+            document.getElementById('divP').style.display = 'none';
+        }
+    }
+
+    function showPopupAcceptareTermeni() {
+        $('#myModal .embed-responsive').load('/ghiseul/public/informatii/termenisiconditii/popup/1 #terms-content');
+        $("#myModal").modal('show');
+    }
+
+    function acceptaTermeni(urlRedirect) {
+        $.get("/ghiseul/public/login/accepta-termeni", function (data) {
+            $("#myModal").modal('hide');
+            try {
+                var raspuns = $.parseJSON(data);
+                if (raspuns.cod == 1) {
+                    if (urlRedirect != '' && typeof(urlRedirect) != 'undefined') {
+                        window.location = urlRedirect;
+                    } else {
+                        window.location = "/ghiseul/public/debite";
+                    }
+                } else if (raspuns.cod == 0) {
+                    window.location = "/ghiseul/public/";
+                }
+            } catch (e) {
+                $('#login_form').html(data);
+            }
+        });
+    }
+
+    function showPopupRovinieta() {
+        $("#modalRovinieta").modal('show');
+    }
+
+    function showPopupTitluri() {
+        $("#modalTitluri").modal('show');
+    }
+
+    function requireAuthCode(operator) {
+        var label = 'Introduceti codul de autentificare';
+        label += operator === 'google' ? ' din aplicatia Google Authenticator' : ' primit pe email';
+        codeCheck = true;
+        $("#username").attr('disabled', true);
+        $("#passwordT").attr('disabled', true);
+        $("#passwordP").attr('disabled', true);
+        $("#twoAuthBox").empty().html('<div class="form-group twofa-verification-code-box" id="2faAuthCodeForm">' +
+            '<span>' + label + '</span>' +
+            '<input type="text" name="2faCode" id="2faCode" oninput="validateCode()" class="form-control" autocomplete="off" />' +
+            '</div>'
+        ).removeClass('d-none');
+        $("#2faCode").focus();
+    }
+
+    var validateCode = function() {
+        var value = $("#2faCode").val();
+        if (value !== undefined && value.length > 0) {
+            let newVal = value.replace(/\D/g, '');
+            $("#2faCode").val(newVal.substring(0, 6));
+        } else {
+            $("#2faCode").val('');
+        }
+    }
+
+    function verificareCod(urlRedirect) {
+        var cod = $("#2faCode").val();
+        var urlCheck = "/ghiseul/public/login/verificare-cod";
+        $.ajax({
+            type: "POST",
+            url: urlCheck,
+            data: {"cod": cod},
+            success: function (data) {
+                try {
+                    var raspuns = $.parseJSON(data);
+                    if (raspuns.cod == 1) {
+                        if (urlRedirect != '' && typeof (urlRedirect) != 'undefined') {
+                            window.location = urlRedirect;
+                        } else {
+                            window.location = "/ghiseul/public/debite";
+                        }
+                    } else if (raspuns.cod == 0) {
+                        $('#err').html(generate_alert(raspuns.msg, 'danger'));
+                        if (raspuns.reload == 1) {
+                            window.location.reload();
+                        }
+                    }
+                } catch (e) {
+                    $('#login_form').html(data);
+                }
+            }
+        });
+        return false;
+    }
+</script>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="https://www.adr.gov.ro/" target="_blank" rel="noopener noreferrer"><img src="/ghiseul/public/img/logo_aadr.png" alt="Autoritatea pentru Digitalizarea României"></a>
+			</div>
+			<div class="col-md-8 hidden-print">
+				<ul>
+					<li><a href="/ghiseul/public/informatii/termenisiconditii">Termeni și condiții</a></li>
+					<li><a href="/ghiseul/public/informatii/protectia-datelor-personale">Protecția datelor personale</a></li>
+				</ul>
+				<ul>
+				    <br>
+					<li id="version">
+				   	<span class="hidden">GVP-08 3915</span>
+					<abbr title="Sistemul Național Electronic de Plată Online">SNEP</abbr> este dedicat în acest moment <abbr title="Persoană fizică">PF</abbr>, <abbr title="Persoană fizică autorizată">PFA</abbr> şi <abbr title="Persoană juridică">PJ</abbr>.
+				 	</li>
+				 </ul>
+				 <ul class="aperoLi">
+					<li>Proiect susținut de <a id="apero" href="https://apero.ro/ghiseul-ro/" target="_blank" rel="noopener noreferrer" title="APERO"><img src="/ghiseul/public/img/apero.png" alt="APERO"></a></li>
+				</ul>				
+			</div>
+		</div>
+	</div>
+</footer>
+    <div class="g-consent" id="divCookie">
+        <a href="#" class="what">Cookie-urile ne ajută să vă îmbunătățim experiența pe site-ul nostru. Prin continuarea navigării pe site-ul ghiseul.ro, veți accepta implicit folosirea de cookie-uri pe parcursul vizitei dumneavoastră.</a>
+         <div class="spbtn"> 
+         <a href="/ghiseul/public/informatii/protectia-datelor-personale" class="info">Aflați mai multe</a> 
+         <a href="#" onclick="acceptaCookie()" class="ok">Da, sunt de acord</a> </div>
+    </div>
+    <script>
+    function acceptaCookie(){
+    	$.get( "/ghiseul/public/informatii/set-cookie", function( data ) {
+    		$('#divCookie').hide();
+        });
+    }
+    </script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3cdf950051e249baacec3baf2b7084b9&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0043b087b7d5a9d',t:'MTc3OTU0MTA5MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+<script>
+    const detaliiBrowserUrl = '/ghiseul/public/index/detalii-browser';
+</script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KNZG62E0CR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KNZG62E0CR');
+</script>
+
+<script>
+ $('#nav-select').change(function(){
+	 document.location.href=$(this).val();
+ });
+</script>
+
+<style class="_access-main-css">
+            ._access-scrollbar::-webkit-scrollbar-track, .mat-autocomplete-panel::-webkit-scrollbar-track, .mat-tab-body-content::-webkit-scrollbar-track, .mat-select-panel:not([class*='mat-elevation-z'])::-webkit-scrollbar-track, .mat-menu-panel::-webkit-scrollbar-track {
+                -webkit-box-shadow: var(--_access-scrollbar-track-box-shadow, inset 0 0 6px rgba(0,0,0,0.3));
+                background-color: var(--_access-scrollbar-track-background-color, #F5F5F5);
+            }
+            ._access-scrollbar::-webkit-scrollbar, .mat-autocomplete-panel::-webkit-scrollbar, .mat-tab-body-content::-webkit-scrollbar, .mat-select-panel:not([class*='mat-elevation-z'])::-webkit-scrollbar, .mat-menu-panel::-webkit-scrollbar {
+                width: var(--_access-scrollbar-width, 6px);
+                background-color: var(--_access-scrollbar-background-color, #F5F5F5);
+            }
+            ._access-scrollbar::-webkit-scrollbar-thumb, .mat-autocomplete-panel::-webkit-scrollbar-thumb, .mat-tab-body-content::-webkit-scrollbar-thumb, .mat-select-panel:not([class*='mat-elevation-z'])::-webkit-scrollbar-thumb, .mat-menu-panel::-webkit-scrollbar-thumb {
+                background-color: var(--_access-scrollbar-thumb-background-color, #999999);
+            }
+            ._access-icon {
+                position: var(--_access-icon-position, fixed);
+                width: var(--_access-icon-width, 50px);
+                height: var(--_access-icon-height, 50px);
+                bottom: var(--_access-icon-bottom, 50px);
+                top: var(--_access-icon-top, unset);
+                left: var(--_access-icon-left, unset);
+                right: var(--_access-icon-right, 10px);
+                z-index: var(--_access-icon-z-index, 9999);
+                font: var(--_access-icon-font, 40px / 45px "Material Icons");
+                background: var(--_access-icon-bg, #4054b2);
+                color: var(--_access-icon-color, #fff);
+                background-repeat: no-repeat;
+                background-size: contain;
+                cursor: pointer;
+                opacity: 0;
+                transition-duration: .35s;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+                transform: scale(1);
+                border-radius: var(--_access-icon-border-radius);
+                border: var(--_access-icon-border);
+                text-align: var(--_access-icon-text-align, center);
+            }
+            ._access-icon:hover {
+                transform: var(--_access-icon-transform-hover, scale(1.1));
+                vertical-align: var(--_access-icon-vertical-align-hover);
+            }
+            ._access-menu {
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                position: fixed;
+                width: var(--_access-menu-width, 25vw);
+                height: var(--_access-menu-height, auto);
+                transition-duration: var(--_access-menu-transition-duration, .35s);
+                z-index: var(--_access-menu-z-index, 99991);
+                opacity: 1;
+                background-color: var(--_access-menu-background-color, #fff);
+                color: var(--_access-menu-color, #000);
+                border-radius: var(--_access-menu-border-radius, 3px);
+                border: var(--_access-menu-border, solid 1px #f1f0f1);
+                font-family: var(--_access-menu-font-family, RobotoDraft, Roboto, sans-serif, Arial);
+                min-width: var(--_access-menu-min-width, 300px);
+                box-shadow: var(--_access-menu-box-shadow, 0px 0px 1px #aaa);
+                max-height: calc(100vh - 80px);
+                
+                top: var(--_access-menu-top, unset);
+                left: var(--_access-menu-left, unset);
+                bottom: var(--_access-menu-bottom, 0);
+                right: var(--_access-menu-right, 0);
+            }
+            ._access-menu.close {
+                z-index: -1;
+                width: 0;
+                opacity: 0;
+                background-color: transparent;
+                left: calc(-1 * var(--_access-menu-left), unset);
+                right: calc(-1 * var(--_access-menu-width, 25vw));
+            }
+            ._access-menu ._text-center {
+                font-size: var(--_access-menu-header-font-size, 22px);
+                font-weight: var(--_access-menu-header-font-weight, nornal);
+                margin: var(--_access-menu-header-margin, 20px 0 10px);
+                padding: 0;
+                color: var(--_access-menu-header-color, rgba(0,0,0,.87));
+                letter-spacing: var(--_access-menu-header-letter-spacing, initial);
+                word-spacing: var(--_access-menu-header-word-spacing, initial);
+                text-align: var(--_access-menu-header-text-align, center);
+            }
+            ._access-menu ._menu-close-btn {
+                left: 5px;
+                color: #d63c3c;
+                transition: .3s ease;
+                transform: rotate(0deg);
+                font-style: normal !important;
+            }
+            ._access-menu ._menu-reset-btn:hover,._access-menu ._menu-close-btn:hover {
+                transform: var(--_access-menu-header-btn-hover-rotate, rotate(180deg));
+            }
+            ._access-menu ._menu-reset-btn {
+                right: 5px;
+                color: #4054b2;
+                transition: .3s ease;
+                transform: rotate(0deg);
+                font-style: normal !important;
+            }
+            ._access-menu ._menu-btn {
+                position: absolute;
+                top: 5px;
+                cursor: pointer;
+                font-size: 24px !important;
+                font-weight: bold;
+                background: transparent;
+                border: none;
+            }
+            ._access-menu ul {
+                padding: 0 0 5px;
+                position: relative;
+                font-size: var(--_access-menu-font-size, 18px);
+                margin: 0;
+                overflow: auto;
+                max-height: var(--_access-menu-max-height, calc(100vh - 145px));
+                display: flex;
+                flex-flow: column;
+                gap: 5px;
+            }
+            
+        html._access_cursor * {
+            cursor: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyOS4xODhweCIgaGVpZ2h0PSI0My42MjVweCIgdmlld0JveD0iMCAwIDI5LjE4OCA0My42MjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI5LjE4OCA0My42MjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5REFEOSIgc3Ryb2tlLXdpZHRoPSIxLjE0MDYiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIyLjgsNC41NDkgMjYuODQ3LDE5LjkwMiAxNi45NjQsMjIuNzAxIDI0LjIzOSwzNy43NDkgMTguMjc4LDQyLjAxNyA5Ljc0MSwzMC43MjQgMS4xMzgsMzUuODA5ICIvPjxnPjxnPjxnPjxwYXRoIGZpbGw9IiMyMTI2MjciIGQ9Ik0yOS4xNzUsMjEuMTU1YzAuMDcxLTAuNjEzLTAuMTY1LTEuMjUzLTAuNjM1LTEuNTczTDIuMTY1LDAuMjU4Yy0wLjQyNC0wLjMyLTAuOTg4LTAuMzQ2LTEuNDM1LTAuMDUzQzAuMjgyLDAuNDk3LDAsMS4wMywwLDEuNjE3djM0LjE3MWMwLDAuNjEzLDAuMzA2LDEuMTQ2LDAuNzc2LDEuNDM5YzAuNDcxLDAuMjY3LDEuMDU5LDAuMjEzLDEuNDgyLTAuMTZsNy40ODItNi4zNDRsNi44NDcsMTIuMTU1YzAuMjU5LDAuNDgsMC43MjksMC43NDYsMS4yLDAuNzQ2YzAuMjM1LDAsMC40OTQtMC4wOCwwLjcwNi0wLjIxM2w2Ljk4OC00LjU4NWMwLjMyOS0wLjIxMywwLjU2NS0wLjU4NiwwLjY1OS0xLjAxM2MwLjA5NC0wLjQyNiwwLjAyNC0wLjg4LTAuMTg4LTEuMjI2bC02LjM3Ni0xMS4zODJsOC42MTEtMi43NDVDMjguNzA1LDIyLjI3NCwyOS4xMDUsMjEuNzY4LDI5LjE3NSwyMS4xNTV6IE0xNi45NjQsMjIuNzAxYy0wLjQyNCwwLjEzMy0wLjc3NiwwLjUwNi0wLjk0MSwwLjk2Yy0wLjE2NSwwLjQ4LTAuMTE4LDEuMDEzLDAuMTE4LDEuNDM5bDYuNTg4LDExLjc4MWwtNC41NDEsMi45ODVsLTYuODk0LTEyLjMxNWMtMC4yMTItMC4zNzMtMC41NDEtMC42NC0wLjk0MS0wLjcyYy0wLjA5NC0wLjAyNy0wLjE2NS0wLjAyNy0wLjI1OS0wLjAyN2MtMC4zMDYsMC0wLjU4OCwwLjEwNy0wLjg0NywwLjMyTDIuOCwzMi41OVY0LjU0OWwyMS41OTksMTUuODA2TDE2Ljk2NCwyMi43MDF6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==),auto!important;
+        }
+        @keyframes _access-dialog-backdrop {
+            0% {
+                background: var(--_access-menu-dialog-backdrop-background-start, rgba(0, 0, 0, 0.1))
+            }
+            100% {
+                background: var(--_access-menu-dialog-backdrop-background-end, rgba(0, 0, 0, 0.5))
+            }
+        }
+        dialog._access::backdrop, dialog._access {
+            transition-duration: var(--_access-menu-dialog-backdrop-transition-duration, 0.35s);
+            transition-timing-function: var(--_access-menu-dialog-backdrop-transition-timing-function, ease-in-out);
+        }
+        dialog._access:modal {
+            border-color: transparent;
+            border-width: 0;
+            padding: 0;
+        }
+        dialog._access[open]::backdrop {
+            background: var(--_access-menu-dialog-backdrop-background-end, rgba(0, 0, 0, 0.5));
+            animation: _access-dialog-backdrop var(--_access-menu-dialog-backdrop-transition-duration, 0.35s) ease-in-out;
+        }
+        dialog._access.closing[open]::backdrop {
+            background: var(--_access-menu-dialog-backdrop-background-start, rgba(0, 0, 0, 0.1));
+        }
+        dialog._access.closing[open] {
+            opacity: 0;
+        }
+        .screen-reader-wrapper {
+            margin: 0;
+            position: absolute;
+            bottom: -4px;
+            width: calc(100% - 2px);
+            left: 1px;
+        }
+        .screen-reader-wrapper-step-1, .screen-reader-wrapper-step-2,.screen-reader-wrapper-step-3 {
+            float: left;
+            background: var(--_access-menu-background-color, #fff);
+            width: 33.33%;
+            height: 3px;
+            border-radius: 10px;
+        }
+        .screen-reader-wrapper-step-1.active, .screen-reader-wrapper-step-2.active,.screen-reader-wrapper-step-3.active {
+            background: var(--_access-menu-item-button-background, #f9f9f9);
+        }
+        .access_read_guide_bar {
+            box-sizing: border-box;
+            background: var(--_access-menu-read-guide-bg, #000000);
+            width: 100%!important;
+            min-width: 100%!important;
+            position: fixed!important;
+            height: var(--_access-menu-read-guide-height, 12px) !important;
+            border: var(--_access-menu-read-guide-border, solid 3px #20ff69);
+            border-radius: 5px;
+            top: 15px;
+            z-index: 2147483647;
+        }
+            ._access-menu ul li {
+                position: relative;
+                list-style-type: none;
+                -ms-user-select: none;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+                margin: 0 5px 0 8px;
+                font: { size: 18, units: 'px' }
+                font-size: var(--_access-menu-item-font-size, 18px) !important;
+                line-height: var(--_access-menu-item-line-height, 18px) !important;
+                color: var(--_access-menu-item-color, rgba(0,0,0,.6));
+                letter-spacing: var(--_access-menu-item-letter-spacing, initial);
+                word-spacing: var(--_access-menu-item-word-spacing, initial);
+                width: calc(100% - 17px);
+            }
+            ._access-menu ul li button {
+                background: var(--_access-menu-item-button-background, #f9f9f9);
+                padding: var(--_access-menu-item-button-padding, 10px 0);
+                width: 100%;
+                text-indent: var(--_access-menu-item-button-text-indent, 35px);
+                text-align: start;
+                position: relative;
+                transition-duration: var(--_access-menu-item-button-transition-duration, .35s);
+                transition-timing-function: var(--_access-menu-item-button-transition-timing-function, ease-in-out);
+                border: var(--_access-menu-item-button-border, solid 1px #f1f0f1);
+                border-radius: var(--_access-menu-item-button-border-radius, 4px);
+                cursor: pointer;
+            }
+            ._access-menu ul li.position {
+                display: inline-block;
+                width: auto;
+            }
+            ._access-menu ul.before-collapse li button {
+                opacity: var(--_access-menu-item-button-before-collapse-opacity, 0.05);
+            }
+            ._access-menu ul li button.active, ._access-menu ul li button.active:hover {
+                background-color: var(--_access-menu-item-button-active-background-color, #000);
+            }
+            ._access-menu div.active {
+                color: var(--_access-menu-div-active-color, #fff);
+                background-color: var(--_access-menu-div-active-background-color, #000);
+            }
+            ._access-menu ul li button.active, ._access-menu ul li button.active:hover, ._access-menu ul li button.active:before, ._access-menu ul li button.active:hover:before {
+                color: var(--_access-menu-item-button-active-color, #fff);
+            }
+            ._access-menu ul li button:hover {
+                color: var(--_access-menu-item-button-hover-color, rgba(0,0,0,.8));
+                background-color: var(--_access-menu-item-button-hover-background-color, #eaeaea);
+            }
+            ._access-menu ul li.not-supported {
+                display: none;
+            }
+            ._access-menu ul li button:before {
+                content: ' ';
+                font-family: var(--_access-menu-button-font-family-before, Material Icons);
+                text-rendering: optimizeLegibility;
+                font-feature-settings: "liga" 1;
+                font-style: normal;
+                text-transform: none;
+                line-height: 1;
+                font-size: 24px !important;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                overflow: hidden;
+                -webkit-font-smoothing: antialiased;
+                top: 7px;
+                left: 5px;
+                position: absolute;
+                color: var(--_access-menu-item-icon-color, rgba(0,0,0,.6));
+                direction: ltr;
+                text-indent: 0;
+                transition-duration: .35s;
+                transition-timing-function: ease-in-out;
+            }
+            ._access-menu ul li button svg path {
+                fill: var(--_access-menu-item-icon-color, rgba(0,0,0,.6));
+                transition-duration: .35s;
+                transition-timing-function: ease-in-out;
+            }
+            ._access-menu ul li button:hover svg path {
+                fill: var(--_access-menu-item-hover-icon-color, rgba(0,0,0,.8));
+            }
+            ._access-menu ul li button.active svg path {
+                fill: var(--_access-menu-item-active-icon-color, #fff);
+            }
+            ._access-menu ul li:hover button:before {
+                color: var(--_access-menu-item-hover-icon-color, rgba(0,0,0,.8));
+            }
+            ._access-menu ul li button.active button:before {
+                color: var(--_access-menu-item-active-icon-color, #fff);
+            }
+            ._access-menu ul li button[data-access-action="increaseText"]:before {
+                content: var(--_access-menu-item-icon-increase-text, "zoom_in");
+                transform: var(--_access-menu-item-icon-increase-text-transform, unset);
+                top: var(--_access-menu-item-icon-increase-text-top, 7px);
+                left: var(--_access-menu-item-icon-increase-text-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="decreaseText"]:before {
+                content: var(--_access-menu-item-icon-decrease-text, "zoom_out");
+                transform: var(--_access-menu-item-icon-decrease-text-spacing-transform, unset);
+                top: var(--_access-menu-item-icon-decrease-text-spacing-top, 7px);
+                left: var(--_access-menu-item-icon-decrease-text-spacing-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="increaseTextSpacing"]:before {
+                content: var(--_access-menu-item-icon-increase-text-spacing, "unfold_more");
+                transform: var(--_access-menu-item-icon-increase-text-spacing-transform, rotate(90deg) translate(-7px, 2px));
+                top: var(--_access-menu-item-icon-increase-text-spacing-top, 14px);
+                left: var(--_access-menu-item-icon-increase-text-spacing-left, 0);
+            }
+            ._access-menu ul li button[data-access-action="decreaseTextSpacing"]:before {
+                content: var(--_access-menu-item-icon-decrease-text-spacing, "unfold_less");
+                transform: var(--_access-menu-item-icon-decrease-text-spacing-transform, rotate(90deg) translate(-7px, 2px));
+                top: var(--_access-menu-item-icon-decrease-text-spacing-top, 14px);
+                left: var(--_access-menu-item-icon-decrease-text-spacing-left, 0);
+            }
+            ._access-menu ul li button[data-access-action="invertColors"]:before {
+                content: var(--_access-menu-item-icon-invert-colors, "invert_colors");
+                transform: var(--_access-menu-item-icon-invert-colors-transform, unset);
+                top: var(--_access-menu-item-icon-invert-colors-top, 7px);
+                left: var(--_access-menu-item-icon-invert-colors-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="grayHues"]:before {
+                content: var(--_access-menu-item-icon-gray-hues, "format_color_reset");
+                transform: var(--_access-menu-item-icon-gray-hues-transform, unset);
+                top: var(--_access-menu-item-icon-gray-hues-top, 7px);
+                left: var(--_access-menu-item-icon-gray-hues-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="underlineLinks"]:before {
+                content: var(--_access-menu-item-icon-underline-links, "format_underlined");
+                transform: var(--_access-menu-item-icon-underline-links-transform, unset);
+                top: var(--_access-menu-item-icon-underline-links-top, 7px);
+                left: var(--_access-menu-item-icon-underline-links-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="bigCursor"]:before {
+                /*content: 'touch_app';*/
+                content: var(--_access-menu-item-icon-big-cursor, inherit);
+                transform: var(--_access-menu-item-icon-big-cursor-transform, unset);
+                top: var(--_access-menu-item-icon-big-cursor-top, 7px);
+                left: var(--_access-menu-item-icon-big-cursor-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="readingGuide"]:before {
+                content: var(--_access-menu-item-icon-reading-guide, "border_horizontal");
+                transform: var(--_access-menu-item-icon-reading-guide-transform, unset);
+                top: var(--_access-menu-item-icon-reading-guide-top, 7px);
+                left: var(--_access-menu-item-icon-reading-guide-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="textToSpeech"]:before {
+                content: var(--_access-menu-item-icon-text-to-speech, "record_voice_over");
+                transform: var(--_access-menu-item-icon-text-to-speech-transform, unset);
+                top: var(--_access-menu-item-icon-text-to-speech-top, 7px);
+                left: var(--_access-menu-item-icon-text-to-speech-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="speechToText"]:before {
+                content: var(--_access-menu-item-icon-speech-to-text, "mic");
+                transform: var(--_access-menu-item-icon-speech-to-text-transform, unset);
+                top: var(--_access-menu-item-icon-speech-to-text-top, 7px);
+                left: var(--_access-menu-item-icon-speech-to-text-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="disableAnimations"]:before {
+                content: var(--_access-menu-item-icon-disable-animations, "animation");
+                transform: var(--_access-menu-item-icon-disable-animations-transform, unset);
+                top: var(--_access-menu-item-icon-disable-animations-top, 7px);
+                left: var(--_access-menu-item-icon-disable-animations-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="iframeModals"]:before {
+                content: var(--_access-menu-item-icon-iframe-modals, "policy");
+                transform: var(--_access-menu-item-icon-iframe-transform, unset);
+                top: var(--_access-menu-item-icon-iframe-top, 7px);
+                left: var(--_access-menu-item-icon-iframe-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="customFunctions"]:before {
+                content: var(--_access-menu-item-icon-custom-functions, "psychology_alt");
+                transform: var(--_access-menu-item-icon-custom-functions-transform, unset);
+                top: var(--_access-menu-item-icon-custom-functions-top, 7px);
+                left: var(--_access-menu-item-icon-custom-functions-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="increaseLineHeight"]:before {
+                content: var(--_access-menu-item-icon-increase-line-height, "unfold_more");
+                transform: var(--_access-menu-item-icon-increase-line-height-transform, unset);
+                top: var(--_access-menu-item-icon-increase-line-height-top, 7px);
+                left: var(--_access-menu-item-icon-increase-line-height-left, 5px);
+            }
+            ._access-menu ul li button[data-access-action="decreaseLineHeight"]:before {
+                content: var(--_access-menu-item-icon-decrease-line-height, "unfold_less");
+                transform: var(--_access-menu-item-icon-decrease-line-height-transform, unset);
+                top: var(--_access-menu-item-icon-decrease-line-height-top, 7px);
+                left: var(--_access-menu-item-icon-decrease-line-height-left, 5px);
+            }</style><i class="_access-icon material-icons _access" title="Meniu accesibilitate" tabindex="0" style="opacity: 1;">accessibility</i><div class="_access-menu close _access"><p class="_text-center" role="presentation"><button class="_menu-close-btn _menu-btn material-icons" style="font-family: var(--_access-menu-close-btn-font-family, Material Icons)" title="Închide">close</button>Meniu accesibilitate<button class="_menu-reset-btn _menu-btn material-icons" style="font-family: var(--_access-menu-reset-btn-font-family, Material Icons)" title="Resetează">refresh</button></p><ul class="before-collapse _access-scrollbar"><li><button data-access-action="increaseText" tabindex="-1">mărește textul</button></li><li><button data-access-action="decreaseText" tabindex="-1">micșorează textul</button></li><li><button data-access-action="increaseTextSpacing" tabindex="-1">mărește spațiul dintre caractere</button></li><li><button data-access-action="decreaseTextSpacing" tabindex="-1">micșorează spațiul dintre caractere</button></li><li><button data-access-action="increaseLineHeight" tabindex="-1">mărește spațiul dintre rânduri</button></li><li><button data-access-action="decreaseLineHeight" tabindex="-1">micșorează spațiul dintre rânduri</button></li><li><button data-access-action="invertColors" title="" tabindex="-1">inversează culorile</button></li><li><button data-access-action="grayHues" title="" tabindex="-1">nuanțe de gri</button></li><li><button data-access-action="bigCursor" title="" tabindex="-1"><svg version="1.1" id="iconBigCursorSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="position: absolute;width: 19px;height: 19px;top: 9px; left: 9px;" xml:space="preserve"><path d="M 423.547 323.115 l -320 -320 c -3.051 -3.051 -7.637 -3.947 -11.627 -2.304 s -6.592 5.547 -6.592 9.856 V 480 c 0 4.501 2.837 8.533 7.083 10.048 c 4.224 1.536 8.981 0.192 11.84 -3.285 l 85.205 -104.128 l 56.853 123.179 c 1.792 3.883 5.653 6.187 9.685 6.187 c 1.408 0 2.837 -0.277 4.203 -0.875 l 74.667 -32 c 2.645 -1.131 4.736 -3.285 5.76 -5.973 c 1.024 -2.688 0.939 -5.675 -0.277 -8.299 l -57.024 -123.52 h 132.672 c 4.309 0 8.213 -2.603 9.856 -6.592 C 427.515 330.752 426.598 326.187 423.547 323.115 Z"></path></svg>cursor mare</button></li><li><button data-access-action="readingGuide" title="" tabindex="-1">linie de ghidaj pentru citire</button></li><li><button data-access-action="underlineLinks" title="" tabindex="-1">subliniază linkurile</button></li><li><button data-access-action="disableAnimations" title="" tabindex="-1">dezactivează animațiile</button></li></ul></div></body></html>

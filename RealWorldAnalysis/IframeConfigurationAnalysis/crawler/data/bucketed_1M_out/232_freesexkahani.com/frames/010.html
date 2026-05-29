@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<title></title>
+</head>
+<body style="margin:0;padding:0;">
+<script>
+    var linkUrl = 'https://s.ad.twinrdengine.com/tag?zone=01DXF6DT0040000000000018ZR&kw=&subid=2495610880';
+    var iframe = document.createElement('iframe');
+    iframe.src = linkUrl;
+    iframe.style.width = '100vw';
+    iframe.style.height = '100vh';
+    iframe.setAttribute('frameborder', 0);
+    iframe.name = 'asg-inter';
+    iframe.onload = function() { window.parent.postMessage(['asgInterReady'], '*'); }
+    iframe.onerror = function(e) { window.parent.postMessage(['asgInterError', e], '*'); }
+    window.addEventListener('message', function(event) {
+        if (event.data === 'asgInterOpen') {
+            iframe.contentWindow.postMessage({ id: iframe.name, type: 'displayCreative' }, '*');
+        }
+    });
+    document.body.appendChild(iframe);
+</script><iframe src="https://s.ad.twinrdengine.com/tag?zone=01DXF6DT0040000000000018ZR&amp;kw=&amp;subid=2495610880" frameborder="0" name="asg-inter" style="width: 100vw; height: 100vh;"></iframe>
+
+
+</body></html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Mini-Solaranlage von solago – Dein Solarenergie-Experte</title>
+    <script src="https://solago.de/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+const event_prefix = 'psy_';
+const formattedItemId = true;
+const GTM_container_url = 'https://data.solago.de';
+const GTM_container_id = 'GTM-PTKX25D5';
+
+let storeCountryCode = window.localStorage.getItem('shopCountryCode');
+storeCountryCode = storeCountryCode || 'DE';
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+function getClientIP() {
+    return localStorage.getItem('clientIP') || undefined;
+}
+
+if (window.location.href.includes('/checkouts/')) {
+
+    // Microsoft Consent Mode Start
+    window.uetq = window.uetq || [];
+    window.uetq.push("consent", "default", { ad_storage: "granted" });
+    window.uetq.push("consent", "update", { ad_storage: "granted" });
+    // Microsoft Consent Mode End
+
+    // Default consent
+    gtag("consent", "default", {
+        ad_personalization: "granted",
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        analytics_storage: "granted",
+        functionality_storage: "granted",
+        personalization_storage: "granted",
+        security_storage: "granted",
+        wait_for_update: 500,
+    });
+
+    gtag("set", "ads_data_redaction", false);
+    gtag("set", "url_passthrough", true);
+    // End - Google Consent Mode v2 
+
+    // Start - Cookiebot - Cookie-Banner (CMP)
+    var script = document.createElement('script');
+    script.id = 'Cookiebot';
+    script.src = 'https://consent.cookiebot.com/uc.js';
+    script.dataset.cbid = 'c030ce82-db58-4a19-a04e-6858af366864';
+    script.type = 'text/javascript';
+    document.head.appendChild(script);
+    // End - Cookiebot - Cookie-Banner (CMP)
+
+    // Tag manager 
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = GTM_container_url + '/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', GTM_container_id);
+    // End tag manager
+  
+    // Subscribe to page viewed event
+    analytics.subscribe('page_viewed', (event) => {
+        const pageLocation = event.context.document.location.href;
+        const eventData = {
+          event: event_prefix + 'page_view',
+          page_location: pageLocation, 
+          pageType: pageLocation.includes('/thank-you') ? 'Transaction' : 'Checkout',
+          client_ip_address: getClientIP()
+        }
+      
+        window.dataLayer.push(eventData);
+        logEventData(event_prefix + 'page_view', eventData);
+    });
+
+    // DataLayer Events
+    analytics.subscribe('checkout_contact_info_submitted', async (event) => {
+        const email = event.data.checkout.email || undefined;
+        const phone = event.data.checkout.phone || undefined;
+        let hashedEmail;
+        let hashedPhone
+
+        if(email) {
+          hashedEmail = await sha256Hash(email);
+        }
+
+        if(phone) {
+          hashedPhone = await sha256Hash(phone);
+        }
+
+        const eventData = {
+            event: event_prefix + 'add_contact_info',
+            email: email,
+            hash_email: hashedEmail,
+            phone: phone,
+            hash_phone: hashedPhone,
+            pageType: 'Checkout',
+            client_ip_address: getClientIP()
+        }
+        
+        dataLayer.push(eventData);
+        logEventData(event_prefix + 'add_contact_info', eventData);
+        
+    });
+  
+    analytics.subscribe('payment_info_submitted', (event) => ecommerceDataLayer('add_payment_info', {...event, pageType: 'Checkout'}));
+
+    analytics.subscribe('checkout_shipping_info_submitted', (event) => ecommerceDataLayer('add_shipping_info', {...event, pageType: 'Checkout'}));
+
+    analytics.subscribe('checkout_completed', (event) => ecommerceDataLayer('purchase', {...event, pageType: 'Transaction'}));
+}
+
+
+function logEventData(eventName, eventData) {
+    const css1 = 'background: red; color: #fff; font-size: normal; border-radius: 3px 0 0 3px; padding: 3px 4px;';
+    const css2 = 'background-color: blue; color: #fff; font-size: normal; border-radius: 0 3px 3px 0; padding: 3px 4px;';
+    
+    console.log(
+      '%cGTM DataLayer Event:%c' + eventName, css1, css2, eventData);
+}
+
+
+async function sha256Hash(value) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(value);
+
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashedValue = hashArray.map(byte => ('00' + byte.toString(16)).slice(-2)).join('');
+    return hashedValue;
+}
+
+function replaceNullOrEmpty(obj) {
+    if (typeof obj !== 'object' || obj === null) {
+        return obj;
+    }
+
+    const updatedObj = Array.isArray(obj) ? [] : {};
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            const value = obj[key];
+            if (value === null || value === '') {
+                updatedObj[key] = undefined;
+            } else if (typeof value === 'object' && value !== null) {
+                updatedObj[key] = replaceNullOrEmpty(value);
+            } else {
+                updatedObj[key] = value;
+            }
+        }
+    }
+    return updatedObj;
+}
+
+async function ecommerceDataLayer(gtm_event_name, event) {  
+    let hash_email;
+    let hash_phone;
+    let purchaseType;
+    const phone = event.data?.checkout?.phone;
+    const email = event.data?.checkout?.email;
+
+    if (phone) {
+        hash_phone = await sha256Hash(phone);
+    }
+
+    if (email) {
+        hash_email = await sha256Hash(email);
+    }
+
+    let customerType;
+    let avs;
+
+    // Get logState, order count and total spent from localStorage
+    const logState = localStorage.getItem('logState') || 'Logged Out'
+    let totalSpent = localStorage.getItem('totalSpent') !== null ? parseFloat(localStorage.getItem('totalSpent')) : undefined;
+    let orderCount = localStorage.getItem('totalOrders') !== null ? parseInt(localStorage.getItem('totalOrders')) : undefined;
+
+    // Store previous order count before increment in purchase event
+    let previousOrderCount = orderCount;
+  
+    // Increment order count and total spend on purchase event
+    if(gtm_event_name === 'purchase' ) {
+      totalSpent = (totalSpent || 0) + event.data?.checkout?.totalPrice?.amount;
+      orderCount = (orderCount || 0) + 1;
+
+      totalSpent = parseFloat(totalSpent.toFixed(2));
+      
+      localStorage.setItem('totalSpent', totalSpent);
+      localStorage.setItem('previousOrders', previousOrderCount);
+      localStorage.setItem('totalOrders', orderCount);
+    }
+
+    // Calculate customer type
+    if(totalSpent !== undefined && orderCount !== undefined) {
+      if(orderCount > 1) {
+        customerType = 'Returning';
+      }else if(orderCount === 1 && previousOrderCount !== undefined) {
+        customerType = 'New';
+      }else if(orderCount === 0) {
+        customerType = 'Non';
+      }
+
+      // Avg spent
+      if(orderCount === 0) {
+        avs = 0;
+      }else {
+        avs = parseFloat((totalSpent/orderCount).toFixed(2));
+      }
+    }
+
+
+    const customerInfo = {
+        customer: {
+            logState: localStorage.getItem('logState') || 'Logged Out',
+            customerType: customerType,
+            user_total_spent: totalSpent,
+            user_order_count: orderCount,
+            user_average_spent: avs,
+            first_name: event.data?.checkout?.billingAddress?.firstName || event.data?.checkout?.shippingAddress?.firstName,
+            last_name: event.data?.checkout?.billingAddress?.lastName || event.data?.checkout?.shippingAddress?.lastName,
+            id: localStorage.getItem('customerId') || undefined,
+            email: email,
+            hash_email: hash_email,
+            phone: phone,
+            hash_phone: hash_phone,
+            address: event.data?.checkout?.billingAddress?.
+address1 ? event.data?.checkout?.billingAddress :  event.data?.checkout?.shippingAddress,
+            client_ip_address: getClientIP()
+        }
+    }
+
+    // If phone number in address, add it to customer
+    if(!customerInfo.customer.phone && customerInfo.customer.address.phone) {
+      customerInfo.customer.phone = customerInfo.customer.address.phone;
+      customerInfo.customer.hash_phone = await sha256Hash(customerInfo.customer.address.phone);
+    }
+  
+    const currentUserLocalData = localStorage.getItem('currentUserLocalData');
+    if(currentUserLocalData) {      
+      const currentUserLocalDataObj = JSON.parse(currentUserLocalData);
+      const localPhone = currentUserLocalDataObj?.phone || currentUserLocalDataObj?.address?.phone;
+      const localCountry = currentUserLocalDataObj?.address?.country;
+      
+      if(!customerInfo.customer.phone && localPhone) {
+        customerInfo.customer.phone = localPhone;
+        customerInfo.customer.address.phone = localPhone;
+        customerInfo.customer.hash_phone = await sha256Hash(localPhone);
+      }
+
+      if(localCountry && customerInfo.customer.address) {
+        customerInfo.customer.address.country = localCountry;
+      }
+      
+      dataLayer.push(replaceNullOrEmpty(customerInfo));
+    }else {
+      localStorage.setItem('currentUserLocalData', JSON.stringify(customerInfo));
+      dataLayer.push(replaceNullOrEmpty(customerInfo));
+    }
+
+    
+    // First purchase and subsequent purchase
+    if(gtm_event_name === 'purchase' && orderCount !== undefined) {
+        if(previousOrderCount === 0) {
+          purchaseType = 'first_purchase';
+        }else if(orderCount > 1) {
+          purchaseType = 'subsequent_purchase';
+        }
+    }
+    
+    const dataLayerInfo = {
+        event: event_prefix + gtm_event_name,
+        pageType: event.pageType,
+        ecommerce: {
+            transaction_id: event.data?.checkout?.order?.id,
+            is_first_order: event?.data?.checkout?.order?.customer?.isFirstOrder ?? undefined,
+            value: event.data?.checkout?.totalPrice?.amount,
+            tax: event.data?.checkout?.totalTax?.amount,
+            shipping: event.data?.checkout?.shippingLine?.price?.amount,
+            currency: event.data?.checkout?.currencyCode,
+            payment_type: event.data?.checkout?.transactions[0]?.paymentMethod?.name,
+            coupon: (event.data?.checkout?.discountApplications || []).map(discount => discount.title).join(','),
+            items: (event.data?.checkout?.lineItems || []).map(item => ({
+                item_id: formattedItemId ? 'shopify_' + storeCountryCode + '_' + (item.variant?.product?.id || '') + '_' + (item.variant?.id || '') : item.variant?.product?.id,
+                product_id: item.variant?.product?.id,
+                variant_id: item.variant?.id,
+                item_name: item.title,
+                coupon: item.discountAllocations?.discountApplication?.title,
+                discount: item.discountAllocations?.amount?.amount,
+                item_variant: item.variant?.title,
+                price: item.variant?.price?.amount,
+                quantity: item.quantity,
+                item_brand: item.variant?.product?.vendor,
+                item_category: item.variant?.product?.type
+            }))
+        },
+        client_ip_address: getClientIP()
+    }
+
+    dataLayer.push({
+        ecommerce: null
+    });
+  
+    if(gtm_event_name === 'purchase' && purchaseType) {
+      dataLayerInfo.purchaseType =  purchaseType
+    }
+    dataLayer.push(dataLayerInfo);
+    logEventData(event_prefix + gtm_event_name, Object.assign({}, dataLayerInfo, replaceNullOrEmpty(customerInfo)));
+
+    // First_purchase, subsequent_purchase events
+    if(gtm_event_name === 'purchase' && purchaseType) {
+        let dataLayerData = {
+            event: event_prefix + purchaseType,
+            pageType: 'Transaction',
+            client_ip_address: getClientIP()
+        }
+      
+        dataLayer.push(dataLayerData);
+        logEventData(event_prefix + purchaseType, dataLayerData);
+    }
+}
+});})(self.webPixelsManager.createShopifyExtend('139526484', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

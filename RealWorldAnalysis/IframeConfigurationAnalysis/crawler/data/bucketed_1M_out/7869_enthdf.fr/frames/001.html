@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Connexion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/connexion_01.v2.css?version=03042025" type="text/css" media="screen">
+<link rel="stylesheet" href="css/640.css?version=03042025" type="text/css" media="screen and (min-width : 640px) and (max-width : 767px)">
+<link rel="stylesheet" href="css/480.css?version=03042025" type="text/css" media="screen and (min-width : 480px) and (max-width : 639px)">
+<link rel="stylesheet" href="css/320.css?version=03042025" type="text/css" media="screen and (max-width : 479px)">
+<!--ODE STYLE-->
+<style>
+	html{
+		overflow: hidden;
+	}
+	body{
+		background: transparent;
+	}
+	body > section.section{
+		position: absolute;
+		left: 50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		overflow: auto;
+		max-height: 80vh;
+		overflow: auto !important;
+		padding: 12px;
+		box-sizing: border-box;
+	}
+	body > section.sectioni{
+		position: absolute;
+		left: 50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		overflow: auto;
+		max-height: 80vh;
+		overflow: auto !important;
+		padding: 12px;
+		box-sizing: border-box;
+	}
+	#cookies-eu-banner .btn-1{
+		min-height: auto;
+    	padding: 10px;
+		float: right;
+	}
+	article.logos{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	article.logos img{
+		width: auto;
+		height: 45px;
+		margin: 15px;
+	}
+	.btn-1.selected{
+		background: #0f4496;
+		box-shadow: 0px 0px 6px 0px #656565;
+	}
+	.btn-2.selected{
+		box-shadow: 0px 0px 6px 0px #656565;
+		transform: scale(0.95);
+	}
+	.btn-3.selected {
+		background: #0f4496;
+		box-shadow: 0px 0px 6px 0px #656565;
+	}
+	.btn-4.selected {
+		box-shadow: 0px 0px 6px 0px #656565;
+	}
+	body.nbinline > section.section{
+		position: initial;
+		max-height: none;
+		transform: none;
+		left: initial;
+		top: initial;
+    	margin-bottom: 30px;
+	}
+	body.nbinline > section.sectioni{
+		position: initial;
+		max-height: none;
+		transform: none;
+		left: initial;
+		top: initial;
+    	margin-bottom: 30px;
+	}
+	.nblogos-title{
+		width: 100%;
+    	text-align: center;
+	}
+	a.nbdisabled{
+		background: rgba(0,0,0,0.4);
+		color: white;
+		pointer-events: none;
+		cursor: default;
+	}
+</style>
+<style type="text/css">
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.nbinline{
+		display: flex;
+	}
+	#nbconnexioncontent{
+		position: static;
+		transform: translate(0px,0px);
+		top: 0px;
+		left:0px;
+		width 100vw;
+		height: 100vh;
+	}
+	html{
+		overflow-y: scroll;
+		height: 100vh;
+	}
+}
+</style>
+<!--/ODE STYLE-->
+</head>
+<body class="nbinline">
+<section class="sectioni scroll">
+	
+	<section class="section" style="" id="nbconnexioncontent">
+		<article class="bloc choix_profil">
+			<p class="normal">Veuillez renseigner quelques informations pour accéder à votre page d'authentification</p>
+			<p class="petit">1. Sélectionner votre profil</p>
+			<button class="btn-1" data-profil="choix3"><i class="fas ele-par"></i>Élève</button>
+			<button class="btn-1" data-profil="choix5"><i class="fas parent"></i>Responsable d'élève</button>
+			<button class="btn-1" data-profil="choix1"><i class="fas teacher"></i>Personnel Education Nationale</button>
+			<button class="btn-1" data-profil="choix4"><i class="fas ens-agr"></i>Enseignement agricole</button>
+			<button class="btn-1" data-profil="choix6"><i class="fas college"></i>Établissements spécialisés</button>
+			<button class="btn-1" data-profil="choix2"><i class="fas col-inv"></i>Personnel collectivité et invité</button>
+		</article>
+
+		<article class="bloc memorisation profil" id="choix6" style="display:none">
+			<div class="zone-connect">
+				<div class="connect-lieu">
+					<p class="normal">Établissements spécialisés</p>
+					<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants ENT.</p>
+				</div>
+				<div class="connect">
+					<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="profil" data-connecturl="choix6" target="_parent">Se connecter</a>
+				</div>
+			</div>
+		</article>
+	
+		<article class="bloc memorisation profil" id="choix5" style="display:none">
+			<div class="zone-connect">
+				<div class="connect-lieu">
+					<p class="normal">Responsable d'élève</p>
+					<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants Éduconnect, le service d'authentification du Ministère de l'Éducation Nationale.</p>
+					<p class="petit"><a href="https://www.education.gouv.fr/educonnect-un-compte-unique-pour-suivre-et-accompagner-la-scolarite-de-mon-enfant-455196" target="_blank">En savoir plus !</a></p>
+				</div>
+				<div class="connect">
+					<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="profil" data-connecturl="choix5" target="_parent">Se connecter</a>
+				</div>
+			</div>
+		</article>
+		
+		<article class="bloc choix-academie profil" id="choix1" style="display:none">
+			<p class="petit">2. Sélectionner votre académie</p>
+			<div class="academies">
+				<button class="btn-2" data-acad="acad1"><img src="images-connexion/ac-lille_01.svg"></button>
+				<button class="btn-2" data-acad="acad2"><img src="images-connexion/ac-amiens_01.svg"></button>
+			</div>
+				
+			<article class="bloc memorisation acad" id="acad1" style="display:none">
+				<div class="zone-connect">
+					<div class="connect-lieu">
+						<p class="normal">Académie de Lille</p>
+						<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants ARENA, le service d'authentification de l'Académie de Lille.</p>
+					</div>
+					<div class="connect">
+						<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="acad" data-connecturl="acad1" target="_parent">Se connecter</a>
+					</div>
+				</div>
+			</article>
+			<article class="bloc memorisation acad" id="acad2" style="display:none">
+				<div class="zone-connect">
+					<div class="connect-lieu">
+						<p class="normal">Académie d'Amiens</p>
+						<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants ARENA, le service d'authentification de l'Académie d'Amiens.</p>
+					</div>
+					<div class="connect">
+						<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="acad" data-connecturl="acad2" target="_parent">Se connecter</a>
+					</div>
+				</div>
+			</article>
+		</article>
+	
+		<article class="bloc memorisation profil" id="choix2" style="display:none">
+			<div class="zone-connect">
+				<div class="connect-lieu">
+					<p class="normal">Personnel collectivité et invité</p>
+					<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants ENT.</p>
+				</div>
+				<div class="connect">
+					<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="profil" data-connecturl="choix2" target="_parent">Se connecter</a>
+				</div>
+			</div>
+		</article>
+	
+		<article class="bloc choix-niveau profil" id="choix3" style="display:none">
+			<p class="petit">2. Sélectionner votre niveau</p>
+			<div class="zone">
+				<button class="btn-3" data-etab="etab1"><i class="fas2 ecole"></i>École</button>
+				<button class="btn-3" data-etab="etab2"><i class="fas2 college"></i>Collège ou lycée</button>
+			</div>
+			
+			<article class="bloc memorisation etab" id="etab1" style="display:none">
+				<div class="zone-connect">
+					<div class="connect-lieu">
+						<p class="normal">École</p>
+						<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants ENT.</p>
+					</div>
+					<div class="connect">
+						<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="etab" data-connecturl="etab1" target="_parent">Se connecter</a>
+					</div>
+				</div>
+			</article>
+			
+			<article class="bloc choix-departement etab" id="etab2" style="display:none">
+				<article class="bloc memorisation lieu" id="lieu6" style="display:block">
+					<div class="zone-connect">
+						<div class="connect-lieu">
+							<p class="normal">Collège ou lycée</p>
+							<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants Éduconnect, le service d'authentification du Ministère de l'Éducation Nationale.</p>
+						</div>
+						<div class="connect">
+							<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="lieu" data-connecturl="lieu6" target="_parent">Se connecter</a>
+						</div>
+					</div>
+				</article>
+			</article>
+		</article>
+	
+		<article class="bloc memorisation profil" id="choix4" style="display:none">
+			<div class="zone-connect">
+				<div class="connect-lieu">
+					<p class="normal">Enseignement agricole</p>
+					<p class="petit">En cliquant sur le bouton "Se connecter", vous serez invité à saisir vos identifiants ENT.</p>
+				</div>
+				<div class="connect">
+					<a class="se-connect nbdisabled" href="javascript:void(0)" data-connectif="profil" data-connecturl="choix4" target="_parent">Se connecter</a>
+				</div>
+			</div>
+		</article>
+	</section>
+	<section class="section">
+		<article class="bloc logos">
+			<h2 class="nblogos-title">Partenaires du projet</h2>
+			<div>
+				<a href="https://www.hautsdefrance.fr" target="_blank"><img src="img/logo-hdf.png"></a>
+				<a href="https://www.aisne.com" target="_blank"><img src="img/logo-aisne.png"></a>
+				<a href="https://nordcolleges.enthdf.fr" target="_blank"><img src="img/logo-nord.jpg"></a>
+				<a href="https://www.oise.fr" target="_blank"><img src="img/logo-oise.jpg"></a>
+				<a href="https://www.pasdecalais.fr/colleges" target="_blank"><img style="width:150px" src="img/logo-pasdecalais.jpg"></a>
+				<a href="https://www.somme.fr" target="_blank"><img src="img/logo-somme.png"></a>
+			</div>
+			<div>
+				<a href="https://www.adica.fr/assistance-conseil-informatique" target="_blank"><img src="img/logo-adica.png"></a>
+				<a href="https://oise-thd.fr" target="_blank"><img src="img/logo-oisehd.jpg"></a>
+				<a href="https://www.lafibrenumerique5962.fr" target="_blank"><img src="img/logo-fibrenum.png"></a>
+				<a href="https://www.sommenumerique.fr" target="_blank"><img src="img/logo-somme-numerique.png"></a>
+			</div>
+			<div>
+				<a href="https://draaf.hauts-de-france.agriculture.gouv.fr" target="_blank"><img src="img/logo-argicole.png"></a>
+				<a href="https://www1.ac-lille.fr/la-region-academique-hauts-de-france-121434" target="_blank"><img src="img/logo_RA_HAUTS-DE-FRANCE.png"></a>
+				<img src="img/logo-ue.jpg">
+			</div>
+		</article>
+	</section>
+</section>
+<script type="text/javascript">
+<!--
+ 	/*@cc_on @if (@_jscript_version > 5.6)
+ 	function bootup(){
+ 	var tds = document.getElementsByTagName("a"); lightbox();
+ 	for( var x=0; x < tds.length; x++ ){tds[x].onclick = function(){setTimeout(lightbox, 1);};}
+ 	}
+ 	function lightbox(){
+ 	var counted = document.getElementsByTagName("div");
+ 	for( var x=0; x < counted.length; x++ ){ if ( counted[x].className == "boxfocus" ) { counted[x].className = "lightbox"; } }
+ 	if (location.hash.substr(1) == "") {} else { document.getElementById(location.hash.substr(1)).className = "boxfocus"; }
+ 	}
+ 	window.onload=bootup;
+ 	@end @*/
+ 	// -->
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/iframeResizer.contentWindow.min.js"></script>
+<script src="js/cookies.v2.js"></script>
+<script src="js/lib.v2.js?version=16042025"></script>
+<script>
+	CookieManager.init();
+	function getQueryVariable(variable)
+	{
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) {
+				var pair = vars[i].split("=");
+				if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+	if(getQueryVariable("theme")=="inline"){
+		jQuery(document).ready(function(){
+			jQuery("body").addClass("nbinline")
+		})
+	}
+</script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7cd6f29d382c4b6b8a9226a6a172c989&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a003aa4a89c422a5',t:'MTc3OTUzNTE2Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+<div style="clear: both; display: block; height: 0px;"></div></body></html>

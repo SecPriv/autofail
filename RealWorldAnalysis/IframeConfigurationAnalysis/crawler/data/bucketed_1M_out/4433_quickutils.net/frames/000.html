@@ -1,0 +1,858 @@
+<!DOCTYPE html><html lang="en"><head>
+  <title>
+    quickutils
+  </title>
+  <meta name="description" content="quickutils">
+  <meta name="keywords" content="quickutils">
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <meta charset="UTF-8"> <!-- 公共css引用 -->
+<style>
+  #content_html {
+    max-width: 100vw;
+    overflow: auto;
+  }
+
+  html {
+    font-family: sans-serif;
+    ;
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    input {
+      font-size: 16px;
+    }
+  }
+
+  .light-beam {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .light-beam::after {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .5) 25%, #fff 50%, hsla(0, 0%, 100%, .5) 75%, hsla(0, 0%, 100%, 0));
+    content: "";
+    -webkit-animation: bright 5.5s infinite;
+    animation: bright 5.5s infinite;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes bright {
+    0% {
+      transform: translateX(-180%) skewX(45deg);
+    }
+
+    100% {
+      transform: translateX(420%) skewX(45deg);
+    }
+  }
+
+
+
+  .trembling {
+    animation: trembling 5s linear infinite backwards;
+    -webkit-animation: trembling 5s linear infinite backwards;
+    -moz-animation: trembling 5s linear infinite backwards
+  }
+
+  @-webkit-keyframes trembling {
+    26% {
+      transform: rotate(0deg) scale(1);
+      -webkit-transform: rotate(0deg) scale(1)
+    }
+
+    28% {
+      transform: rotate(-2deg) scale(1.04);
+      -webkit-transform: rotate(-2deg) scale(1.04)
+    }
+
+    32% {
+      transform: rotate(1deg) scale(1.01);
+      -webkit-transform: rotate(1deg) scale(1.01)
+    }
+
+    34% {
+      transform: rotate(-2deg) scale(1.02);
+      -webkit-transform: rotate(-2deg) scale(1.02)
+    }
+
+    36% {
+      transform: rotate(3deg) scale(1);
+      -webkit-transform: rotate(3deg) scale(1)
+    }
+
+    39% {
+      transform: rotate(-1deg) scale(1);
+      -webkit-transform: rotate(-1deg) scale(1)
+    }
+
+    44% {
+      transform: rotate(0deg) scale(1);
+      -webkit-transform: rotate(0deg) scale(1)
+    }
+  }
+
+  @keyframes trembling {
+    26% {
+      transform: rotate(0deg) scale(1);
+      -webkit-transform: rotate(0deg) scale(1)
+    }
+
+    28% {
+      transform: rotate(-2deg) scale(1.04);
+      -webkit-transform: rotate(-2deg) scale(1.04)
+    }
+
+    32% {
+      transform: rotate(1deg) scale(1.01);
+      -webkit-transform: rotate(1deg) scale(1.01)
+    }
+
+    34% {
+      transform: rotate(-2deg) scale(1.02);
+      -webkit-transform: rotate(-2deg) scale(1.02)
+    }
+
+    36% {
+      transform: rotate(3deg) scale(1);
+      -webkit-transform: rotate(3deg) scale(1)
+    }
+
+    39% {
+      transform: rotate(-1deg) scale(1);
+      -webkit-transform: rotate(-1deg) scale(1)
+    }
+
+    44% {
+      transform: rotate(0deg) scale(1);
+      -webkit-transform: rotate(0deg) scale(1)
+    }
+  }
+</style>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4006584_pfjcr6h4ftd.css">
+  <script async="" src="https://scripts.clarity.ms/0.8.64/clarity.js"></script><script async="" src="https://www.clarity.ms/tag/vcpjzoaz13"></script><script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/tailwind.js"></script>
+  <script src="js/index.js"></script>
+  <style>
+    :root {
+      --primary: #0F5132;
+      --primary-light: #1A7F51;
+      --secondary: #FF6B35;
+      --accent: #00B4D8;
+      --dark: #121212;
+      --light: #F9FAFB;
+      --gray: #6B7280;
+      --gray-light: #F3F4F6;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    .primary-gradient {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    }
+
+    .secondary-gradient {
+      background: linear-gradient(135deg, var(--secondary) 0%, #FF8F65 100%);
+    }
+
+    .card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    .tool-icon {
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .tool-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .step-number {
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover .step-number {
+      transform: scale(1.1);
+      background-color: var(--secondary);
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .desktop-nav {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+    }
+  </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vcpjzoaz13");
+</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J4ES1JG9JT"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4ES1JG9JT');
+</script><style>/* ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.-bottom-10{bottom:-2.5rem}.-left-10{left:-2.5rem}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.bottom-10{bottom:2.5rem}.left-1\/2{left:50%}.left-10{left:2.5rem}.right-10{right:2.5rem}.top-1\/2{top:50%}.top-10{top:2.5rem}.z-50{z-index:50}.z-0{z-index:0}.z-10{z-index:10}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.mr-2{margin-right:0.5rem}.mt-4{margin-top:1rem}.mb-10{margin-bottom:2.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.mt-24{margin-top:6rem}.mt-8{margin-top:2rem}.line-clamp-3{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-1{height:0.25rem}.h-12{height:3rem}.h-16{height:4rem}.h-32{height:8rem}.h-40{height:10rem}.h-60{height:15rem}.h-80{height:20rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-12{width:3rem}.w-16{width:4rem}.w-32{width:8rem}.w-40{width:10rem}.w-60{width:15rem}.w-80{width:20rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-5xl{max-width:64rem}.max-w-xl{max-width:36rem}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-12{gap:3rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-2xl{border-radius:1rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity))}.border-gray-400{--tw-border-opacity:1;border-color:rgb(156 163 175 / var(--tw-border-opacity))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white\/95{background-color:rgb(255 255 255 / 0.95)}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.bg-gray-950{--tw-bg-opacity:1;background-color:rgb(3 7 18 / var(--tw-bg-opacity))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity))}.bg-orange-100{--tw-bg-opacity:1;background-color:rgb(255 237 213 / var(--tw-bg-opacity))}.bg-orange-50{--tw-bg-opacity:1;background-color:rgb(255 247 237 / var(--tw-bg-opacity))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.pb-20{padding-bottom:5rem}.pt-40{padding-top:10rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity))}.text-orange-800{--tw-text-opacity:1;color:rgb(154 52 18 / var(--tw-text-opacity))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity))}.text-purple-800{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity))}.opacity-10{opacity:0.1}.opacity-30{opacity:0.3}.opacity-50{opacity:0.5}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media not all and (min-width: 768px){.max-md\:pt-0{padding-top:0px}.max-md\:pt-20{padding-top:5rem}}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:block{display:block}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:pb-32{padding-bottom:8rem}.md\:pt-52{padding-top:13rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:order-1{order:1}.lg\:order-2{order:2}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:text-6xl{font-size:3.75rem;line-height:1}}</style></head>
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed top-0 left-0 right-0 z-50 shadow-sm bg-white/95 backdrop-blur-sm">
+  <div class="container px-4 mx-auto">
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 shadow-sm bg-white/95 backdrop-blur-sm">
+      <div class="container px-4 mx-auto">
+        <nav class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-10 h-10 rounded-lg primary-gradient">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-gray-800">quickutils</span>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="items-center gap-10 desktop-nav">
+            <a href="./index.html" class="font-medium text-gray-700 nav-link hover:text-gray-900">Home</a>
+            
+            <a href="Text.html" class="font-medium text-gray-700 nav-link hover:text-gray-900">Text</a>
+            
+            <a href="Conversion.html" class="font-medium text-gray-700 nav-link hover:text-gray-900">Conversion</a>
+            
+            <a href="Image.html" class="font-medium text-gray-700 nav-link hover:text-gray-900">Image</a>
+            
+          </div>
+
+          <!-- CTA Button -->
+          <div class="items-center hidden gap-4 md:flex">
+            <a href="./search.html" class="px-5 py-2 font-medium text-gray-700 bg-gray-100 rounded-full btn hover:bg-gray-200">
+              <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              Search
+            </a>
+          </div>
+
+          <!-- Mobile Navigation Toggle -->
+          <div class="items-center mobile-nav">
+            <button class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200" onclick="toggleMobileMenu()">
+              <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden py-4 border-t border-gray-100 md:hidden">
+          <a href="./index.html" class="block py-3 font-medium text-gray-700 hover:text-gray-900">Home</a>
+          
+          <a href="Text.html" class="block py-3 font-medium text-gray-700 hover:text-gray-900">Text</a>
+          
+          <a href="Conversion.html" class="block py-3 font-medium text-gray-700 hover:text-gray-900">Conversion</a>
+          
+          <a href="Image.html" class="block py-3 font-medium text-gray-700 hover:text-gray-900">Image</a>
+          
+          <div class="flex flex-col gap-3 mt-4">
+            <a href="./search.html" class="block py-3 font-medium text-gray-700 hover:text-gray-900">
+              <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              Search
+            </a>
+          </div>
+        </div>
+      </div>
+  </header></div>
+</header>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+  <!-- Hero Section -->
+  <section class="pt-40 pb-20 overflow-hidden md:pt-52 md:pb-32 bg-gray-light max-md:pt-0">
+    <div class="container px-4 mx-auto">
+      <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+        <!-- Hero Content -->
+        <div class="order-2 lg:order-1">
+          <div class="max-w-xl">
+            <span class="inline-block px-4 py-1 mb-6 text-sm font-medium text-green-800 bg-green-100 rounded-full">
+              All-in-One Tool Suite
+            </span>
+            <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
+              Supercharge Your <span class="text-primary">Productivity</span> with Smart Tools
+            </h1>
+            <p class="mb-8 text-lg leading-relaxed text-gray-600">
+              Streamline your workflow with our comprehensive toolkit for text processing, file conversion, data analysis, and more. Designed for professionals who demand efficiency.
+            </p>
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <a href="#tools" class="px-8 py-3 font-semibold text-center text-white rounded-lg btn secondary-gradient hover:shadow-lg">
+                Explore Tools
+              </a>
+              <a href="#how-it-works" class="px-8 py-3 font-semibold text-center text-gray-700 border-2 border-gray-300 rounded-lg btn hover:bg-gray-100">
+                How It Works
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="relative order-1 lg:order-2 max-md:pt-20">
+          <div class="relative z-10">
+            <div class="p-6 bg-white shadow-xl card rounded-2xl">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-blue-50 rounded-xl">
+                  <div class="flex items-center justify-center w-12 h-12 mb-3 bg-blue-100 rounded-lg">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-semibold text-blue-800">Text Tools</h3>
+                </div>
+                <div class="p-4 bg-green-50 rounded-xl">
+                  <div class="flex items-center justify-center w-12 h-12 mb-3 bg-green-100 rounded-lg">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-semibold text-green-800">File Converters</h3>
+                </div>
+                <div class="p-4 bg-orange-50 rounded-xl">
+                  <div class="flex items-center justify-center w-12 h-12 mb-3 bg-orange-100 rounded-lg">
+                    <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-semibold text-orange-800">Data Analysis</h3>
+                </div>
+                <div class="p-4 bg-purple-50 rounded-xl">
+                  <div class="flex items-center justify-center w-12 h-12 mb-3 bg-purple-100 rounded-lg">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-semibold text-purple-800">Utilities</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute w-40 h-40 bg-blue-100 rounded-full opacity-50 -top-10 -right-10 animate-pulse-slow"></div>
+          <div class="absolute w-32 h-32 bg-orange-100 rounded-full opacity-50 -bottom-10 -left-10 animate-pulse-slow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Tools Section -->
+  <section id="tools" class="py-16 md:py-24 bg-gray-light">
+    <div class="container px-4 mx-auto">
+      <div class="mb-16 text-center">
+        <span class="inline-block px-4 py-1 mb-6 text-sm font-medium rounded-full bg-primary/10 text-primary">
+          Powerful Tools
+        </span>
+        <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Our Comprehensive Toolkit</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600">
+          A comprehensive suite of tools designed to handle all your workflow needs efficiently and effectively
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Text Tools -->
+
+
+        
+
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/text-to-html.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Text to HTML</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Convert plain text to HTML entities and vice versa. Perfect for web development and encoding special characters.
+          </p>
+          <a href="./520883.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/text-statistics.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Text Statistics</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Get detailed statistics about your text including character count, word count, line count and more. Perfect for writers and content analysis.
+          </p>
+          <a href="./520882.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/convert-image-to-base64.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Convert Image to Base64</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Convert images to Base64 encoding for use in HTML, CSS and data URIs. Perfect for embedding images in code.
+          </p>
+          <a href="./520874.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/word-frequency-counting-tool.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Word Frequency Counting Tool</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Count word frequency and analyze text patterns. Perfect for SEO, content analysis and keyword research.
+          </p>
+          <a href="./520886.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/text-transform.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Text Transform</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Transform text case including uppercase, lowercase, title case and more. Perfect for formatting and consistency.
+          </p>
+          <a href="./520884.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/url-encryption-and-decryption.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">URL Encryption and Decryption</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Encrypt and decrypt URLs for security and privacy. Perfect for protecting links and secure data transmission.
+          </p>
+          <a href="./520885.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/text-cleanup.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Text Cleanup</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Clean up text by removing extra spaces, line breaks and unwanted characters. Perfect for formatting and data cleaning.
+          </p>
+          <a href="./520881.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/pressure-converter.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Pressure Converter</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Convert between different pressure units including Pascal, Bar, PSI and more. Useful for engineering, physics and industrial applications.
+          </p>
+          <a href="./520860.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/density-converter.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Density Converter</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Convert between different density units including kg/m³, g/cm³, lb/ft³ and more. Useful for physics, engineering and material science applications.
+          </p>
+          <a href="./520856.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/text-dup-check.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Text Duplicate Checker</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Find and remove duplicate lines or text from your content. Perfect for cleaning up lists, removing duplicates and data processing.
+          </p>
+          <a href="./520863.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/rectangular-cuboid-calculator.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Rectangular Cuboid Calculator</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Calculate volume, surface area and diagonal of rectangular cuboids. Perfect for packaging, storage and geometry calculations.
+          </p>
+          <a href="./520861.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/image-compression.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Image Compression</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Compress images to reduce file size while maintaining quality. Perfect for web optimization and faster loading times.
+          </p>
+          <a href="./520867.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="p-8 bg-white border border-gray-100 shadow-lg card rounded-2xl">
+          <div class="flex items-center justify-center w-16 h-16 mb-6 bg-blue-50 rounded-xl">
+            <img class="object-cover w-full h-full rounded-xl" src="images/image-conversion.png">
+          </div>
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Image Conversion</h3>
+          <p class="mb-6 leading-relaxed text-gray-600 line-clamp-3">
+            Convert images between different formats including JPG, PNG, WebP and more. Support batch conversion for multiple files.
+          </p>
+          <a href="./520868.html" class="inline-flex items-center font-semibold transition-colors text-primary hover:text-primary-light">
+            Explore Tools
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+      </div>
+      <!-- Feature Highlights -->
+      <div class="grid grid-cols-1 gap-8 mt-24 md:grid-cols-3">
+        <div class="p-8 bg-white border border-gray-100 shadow-md rounded-2xl">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-green-50">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">Free to Use</h3>
+          <p class="text-gray-600">
+            All our tools are completely free to use without any limitations or hidden charges
+          </p>
+        </div>
+        <div class="p-8 bg-white border border-gray-100 shadow-md rounded-2xl">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-blue-50">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">Secure</h3>
+          <p class="text-gray-600">
+            Your data is processed securely and never stored on our servers
+          </p>
+        </div>
+        <div class="p-8 bg-white border border-gray-100 shadow-md rounded-2xl">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-orange-50">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">Fast</h3>
+          <p class="text-gray-600">
+            Lightning-fast processing with real-time results
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-16 bg-white md:py-24">
+    <div class="container px-4 mx-auto">
+      <div class="mb-16 text-center">
+        <span class="inline-block px-4 py-1 mb-6 text-sm font-medium text-blue-600 rounded-full bg-blue-50">
+          Simple Process
+        </span>
+        <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">How It Works</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600">
+          Simple steps to use our powerful tools and optimize your workflow efficiently
+        </p>
+      </div>
+
+      <div class="relative max-w-5xl mx-auto">
+        <!-- Process Line -->
+        <div class="absolute left-0 right-0 z-0 hidden h-1 transform -translate-y-1/2 bg-gray-200 md:block top-1/2"></div>
+
+        <div class="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <!-- Step 1 -->
+          <div class="p-8 text-center bg-white border border-gray-100 shadow-lg step-card rounded-2xl">
+            <div class="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full step-number primary-gradient">
+              <span class="text-xl font-bold text-white">1</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-gray-900">Choose Your Tool</h3>
+            <p class="leading-relaxed text-gray-600">
+              Select the appropriate tool from our comprehensive toolkit based on your needs
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-8 text-center bg-white border border-gray-100 shadow-lg step-card rounded-2xl">
+            <div class="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full step-number primary-gradient">
+              <span class="text-xl font-bold text-white">2</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-gray-900">Input Your Data</h3>
+            <p class="leading-relaxed text-gray-600">
+              Enter or upload the data you need to process based on the selected tool
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-8 text-center bg-white border border-gray-100 shadow-lg step-card rounded-2xl">
+            <div class="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full step-number primary-gradient">
+              <span class="text-xl font-bold text-white">3</span>
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-gray-900">Get Results</h3>
+            <p class="leading-relaxed text-gray-600">
+              Click the process button to view, download, or copy your results
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA Section -->
+  <section class="relative py-16 overflow-hidden text-white bg-gray-900 md:py-24">
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+      <div class="absolute w-40 h-40 rounded-full top-10 left-10 bg-primary"></div>
+      <div class="absolute rounded-full bottom-10 right-10 w-60 h-60 bg-secondary"></div>
+      <div class="absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full top-1/2 left-1/2 w-80 h-80 bg-accent opacity-30"></div>
+    </div>
+
+    <div class="container relative z-10 px-4 mx-auto text-center">
+      <h2 class="mb-6 text-3xl font-bold leading-tight md:text-5xl">Ready to Simplify Your Workflow?</h2>
+      <p class="max-w-2xl mx-auto mb-10 text-lg leading-relaxed text-gray-300 md:text-xl">
+        Start using our powerful all-in-one tool suite today and experience the difference in your productivity
+      </p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="#tools" class="px-8 py-4 text-lg font-semibold text-center text-white rounded-lg btn secondary-gradient hover:shadow-lg">
+          Get Started Now
+        </a>
+        <a href="#how-it-works" class="px-8 py-4 text-lg font-semibold text-center text-white border-2 border-gray-400 rounded-lg btn hover:bg-white/10">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-16 text-white bg-gray-950">
+  <div class="container px-4 mx-auto">
+    <div class="flex flex-col items-center justify-between md:flex-row">
+      <div class="flex items-center gap-3 mb-6 md:mb-0">
+        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/20">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <span class="text-xl font-bold">quickutils</span>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+        <a href="./PrivacyPolicy.html" class="text-gray-400 transition-colors hover:text-white">Privacy Policy</a>
+        <a href="./TermsofUse.html" class="text-gray-400 transition-colors hover:text-white">Terms of Service</a>
+        <a href="./AboutUs.html" class="text-gray-400 transition-colors hover:text-white">About Us</a>
+      </div>
+    </div>
+
+    <div class="pt-8 mt-8 text-center border-t border-gray-800">
+      <p class="text-gray-400">
+        © 2026 quickutils. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <div>
+    
+
+
+
+
+
+
+
+  </div>
+
+
+</body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Auglio Asset Preloader</title>
+    
+    <!-- Preload the task file -->
+    <link rel="preload" href="https://auglio.pages.dev/facemeshV2/face_landmarker.task" as="fetch" crossorigin="anonymous">
+
+    <!-- Preload the WASM file -->
+    <link rel="preload" href="https://auglio.pages.dev/segment/wsm/vision_wasm_internal.wasm" as="fetch" crossorigin="anonymous">
+
+    <!-- Preload the JavaScript file -->
+    <link rel="modulepreload" href="https://auglio.pages.dev/segment/seg.js" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Optional: Actually load the JavaScript file to ensure it's cached -->
+    <script type="module" src="https://auglio.pages.dev/segment/seg.js" crossorigin="anonymous"></script>
+
+</body></html>

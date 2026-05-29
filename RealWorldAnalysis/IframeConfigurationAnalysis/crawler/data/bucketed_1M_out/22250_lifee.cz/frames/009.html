@@ -1,0 +1,418 @@
+<!DOCTYPE html><html><head><script src="//h.seznam.cz/js/dot-small.js"></script></head><body style="border:0;padding:0;margin:0" id="px2-body"><script>window.log=window.frameElement.log;</script>
+    <style>
+        #px2-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script src="https://ssp.seznam.cz/static/js/ssp.js"></script>
+    <div id="ssp-zone-345949" style="margin: auto; height: 300px;" class="adFull">
+		<div class="sssp-posCont" style="width:100%;height:100%;position:relative;padding:0px;margin:0px">
+			<div class="sssp-resizeCont" data-cy="ad-content" style="width: 300px; height: 300px; padding: 0px; margin: 0px;"><iframe sandbox="allow-scripts allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-forms" frameborder="no" scrolling="no" width="300" height="300" id="sf0" style="
+			display: block;
+      width: 100%;
+			height: 100%;
+		" src="https://53.c-ng.imedia.cz/sklik/imp?k=81200ed6-0a67-4f95-8d7a-9d876fd2c006&amp;pssp2=dT0Y_UWZvoCEmnFXB3q3RTcwrqQnruyGYHFAGKaCCstsU99qTX4l"></iframe></div>
+			
+		<div style="position: absolute; bottom: 0px; right: 0px; padding: 0px; margin: 0px; height: 15px; visibility: visible;" class="packa ssp-handled">
+			<a target="_blank" class="packa-anchor" href="https://ssp.seznam.cz/ad-info#eyJhIjpbeyJpIjoiUy02OTc5NDM3ODUiLCJiIjoiRm9vdHNob3AgYS5zLiIsInAiOiJGb290c2hvcCBhLnMuIiwiciI6WzJdfV0sInMiOjAsImwiOjB9" data-dot-data="{&quot;action&quot;: &quot;showAdInfoPage&quot;}">
+					<div class="packa-icon" style="width: 15px; height: 15px; position: relative;">
+						<img src="https://ssp.seznam.cz/static/img/paw-2.svg" data-cy-paw="sklik" style="
+		width: 13px;
+		height: 13px;
+		padding:0;
+		margin:0;
+		opacity: 1;
+		position: absolute; left: 50%; top: 50%;
+		transform-origin: center center;
+		transform: translate(-50%, -50%) rotate(0deg);
+	" alt="sklik-paw">
+					</div>
+					<img src="https://ssp.seznam.cz/static/img/advert.svg" style="display:none;height:15px;padding:0;margin:0;opacity:1" data-cy-pawinfo="seznam-reklama" alt="seznam-reklama">
+			</a>
+		</div>
+	
+		</div>
+	</div>
+    <script>
+        (function() {
+            try {
+                let log = testPxLog(this?.isFlexoInline && this?.log) || (top!=window && (testPxLog(window.log) || testPxLog(window?.frameElement?.log))) || testPxLog(document.currentScript && document.currentScript.log) || new dummyLog();function testPxLog(obj) { if(obj && obj.extend) { return obj }}function dummyLog() { this.err = () => {}; this.warn = () => {}; this.names = []; this.extend = function() { return this }; return this};
+
+                var crsc_345949 = document.currentScript;
+                sssp.conf.documentWriteOverride = false;
+
+                const currentIframe = window.frameElement;
+                let mainWrapper = null;
+
+                if (currentIframe) {
+                    mainWrapper = (this && this.isFlexoInline && this.wrapper) || (top!=window && window?.frameElement?.wrapper) || (document.currentScript && document.currentScript.wrapper) || currentIframe.closest(".px-w-s24929");
+                } else {
+                    mainWrapper = (this && this.isFlexoInline && this.wrapper) || (top!=window && window?.frameElement?.wrapper) || (document.currentScript && document.currentScript.wrapper) || document.querySelector(".px-w-s24929") || top.document.querySelector(".px-w-s24929") || window.parent.document.querySelector(".px-w-s24929");
+                }
+
+                let pxCreative = mainWrapper.querySelector(".px-creative");
+                let pxIfr = mainWrapper.querySelector(".px2-ifr");
+
+                pxIfr.addEventListener("autoscale:done", (e) => {
+                    log("SHOWING AD");
+
+                    let parentWrappers = [];
+                    try {
+                        parentWrappers = top.document.querySelectorAll(".px-w-s24929");
+                    } catch (err) {
+                        console.warn("No access to top.document (cross-origin)");
+                    }
+
+                    let iframeWrappers = document.querySelectorAll(".px-w-s24929");
+                    let parentIframeWrappers = window.parent.document.querySelectorAll(".px-w-s24929");
+
+                    let allMainWrappers = [...parentWrappers, ...iframeWrappers, ...parentIframeWrappers];
+
+                    allMainWrappers.forEach((mW) => {
+                        mW.classList.add("px_shown")
+                    });
+                });
+
+                if (false) {
+                    try {
+                        preventScroll(mainWrapper)
+                    } catch (e) {
+                        log(e);
+                        if (window.px2 && window.px2.utils && window.px2.utils.reportError) {
+                            window.px2.utils.reportError("Chyba při preventScroll", e, log, {
+                                "template": "Display - All formats in category (iframe) (Sklik) [4358]",
+                                "req_id": "tfhqvw-s24929-1k2exe",
+                                "format": "rectangle",
+                                "slot_id": "24929",
+                                "url": (top || window).location.href
+                            });
+                        }
+                    }
+                }
+
+                if (false) {
+                    mainWrapper.querySelector(".px-creative").style.animation = "safari-fix 0.2s ease 0s infinite";
+                }
+
+                function preventScroll(element) {
+                    log("preventing scrolling v3");
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                log("element is intersecting");
+                                disableScroll();
+                                setTimeout(() => {
+                                    enableScroll();
+                                }, 0.5 * 1000);
+                            }
+                        });
+                    }, {
+                        root: null,
+                        threshold: 1.0
+                    });
+
+                    observer.observe(element);
+                }
+
+                function disableScroll() {
+                    log("disableScroll");
+                    top.document.body.style.overflow = "hidden";
+                }
+
+                function enableScroll() {
+                    log("enableScroll");
+                    top.document.body.style.overflow = '';
+                }
+
+                function callPassback() {
+                    try {
+                        // 1. Zkusíme lokálně
+                        if (window.px2 && typeof window.px2.internalPassback === 'function') {
+                            window.px2.internalPassback(window, crsc_345949);
+                            return;
+                        }
+
+                        // 2. Pokud ne, zkusíme v top window
+                        if (window.top && window.top !== window && window.top.px2 && typeof window.top.px2.internalPassback === 'function') {
+                            window.top.px2.internalPassback(window, crsc_345949);
+                            return;
+                        }
+
+                        // 3. Pokud stále ne, načteme flexo.js
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.performax.cz/px2/flexo.js';
+                        script.async = true;
+
+                        script.onload = function() {
+                            // Po načtení zkontrolujeme znovu
+                            if (window.px2 && typeof window.px2.internalPassback === 'function') {
+                                window.px2.internalPassback(window, crsc_345949);
+                            } else if (window.top && window.top !== window && window.top.px2 && typeof window.top.px2.internalPassback === 'function') {
+                                window.top.px2.internalPassback(window, crsc_345949);
+                            } else {
+                                console.error('px2.internalPassback not found even after loading flexo.js.');
+                            }
+                        };
+
+                        script.onerror = function() {
+                            log('Failed to load flexo.js');
+                        };
+
+                        document.head.appendChild(script);
+
+                    } catch (e) {
+                        log('Error in calling px2.internalPassback:', e);
+                        if (window.px2 && window.px2.utils && window.px2.utils.reportError) {
+                            window.px2.utils.reportError("Chyba při volání px2.internalPassback", e, log, {
+                                "template": "Display - All formats in category (iframe) (Sklik) [4358]",
+                                "req_id": "tfhqvw-s24929-1k2exe",
+                                "format": "rectangle",
+                                "slot_id": "24929",
+                                "url": (top || window).location.href
+                            });
+                        }
+                    }
+                }
+
+                mainWrapper.rendered = false; //pro rozdelennou display pozici na par mensich
+
+                if ("false" != "false") {
+                    sssp.config({
+                        "site": "false"
+                    });
+                }
+                let zoneId = false || 345949;
+                sssp.getAds([{
+                    "zoneId": zoneId,
+                    "id": "ssp-zone-345949",
+                    "width": 300,
+                    "height": 300,
+                    //"ab": { "test_ad_reload" : '0'},
+                    options: {
+                        "reloadCount": 0,
+                        infoCallback: function(ad, data) {
+                            new Image().src = "https://cdn.performax.cz/sssp.gif?" + ad.zoneId + "," + ad.type + "," + new Date().getTime();
+                            if (ad.type == "empty" || ad.type == "error") {
+                                log("Internal Passback called!");
+                                try {
+                                    callPassback();
+                                } catch (err) {
+                                    log(err);
+                                    if (window.px2 && window.px2.utils && window.px2.utils.reportError) {
+                                        window.px2.utils.reportError("Chyba v infoCallback při volání passbacku", err, log, {
+                                            "template": "Display - All formats in category (iframe) (Sklik) [4358]",
+                                            "req_id": "tfhqvw-s24929-1k2exe",
+                                            "format": "rectangle",
+                                            "slot_id": "24929",
+                                            "url": (top || window).location.href
+                                        });
+                                    }
+                                }
+                            } else {
+                                try {
+                                    log("displaying ad");
+                                    mainWrapper.rendered = true;
+                                    const FORMAT = "rectangle";
+                                    if (FORMAT == "halfpage" && window.location.hostname.match("woman.tiscali.cz")) {
+                                        let sidebar = top.document.querySelector(".td-pb-span4.td-main-sidebar");
+                                        if (sidebar) {
+                                            sidebar.style.position = "sticky";
+                                            sidebar.style.top = "30px";
+                                        }
+                                    }
+                                    // pokud přijde velikost pro branding, zkusím reklamu umístit pomocí funkce __placePXBranding
+                                    if (ad.height == 1400 && ad.width == 2000) {
+                                        try {
+                                            (async () => {
+
+                                                //
+                                                // fallback funkce – použije se okamžitě, pokud true = true
+                                                //
+                                                function placePxBrandingFallback() {
+                                                    console.warn("Používám lokální fallback placePxBranding()");
+                                                    mainWrapper.classList.add("px-branding");
+                                                    mainWrapper.parentElement.classList.add("px-type--leaderboard");
+                                                    mainWrapper.parentElement.classList.add("px-type--branding");
+                                                }
+
+
+                                                //
+                                                // funkce pro čekání na __placePXBranding v window/parent/top
+                                                //
+                                                const ensureletIsSet = (name, limit, subname) => new Promise((resolve) => {
+                                                    let count = 0;
+
+                                                    function getVar() {
+                                                        let v = window[name];
+
+                                                        if (!v && window.parent && window.parent !== window) {
+                                                            v = window.parent[name];
+                                                        }
+
+                                                        if (!v && window.top && window.top !== window && window.top !== window.parent) {
+                                                            v = window.top[name];
+                                                        }
+
+                                                        if (subname && v) {
+                                                            v = v[subname];
+                                                        }
+
+                                                        return v;
+                                                    }
+
+                                                    (function waitFn() {
+                                                        const fn = getVar();
+                                                        if (fn) {
+                                                            return resolve(fn);
+                                                        }
+                                                        if (limit && count > limit) {
+                                                            console.warn("Global __placePXBranding nenalezena → použiji fallback");
+                                                            return resolve(null);
+                                                        }
+                                                        count++;
+                                                        setTimeout(waitFn, 1);
+                                                    })();
+                                                });
+
+
+
+                                                mainWrapper.classList.add("px_shown");
+
+
+                                                //
+                                                // VĚTEV 1: AUTOPLACE → okamžitě fallback
+                                                //
+                                                if (true) {
+                                                    placePxBrandingFallback();
+                                                    return;
+                                                }
+
+
+                                                //
+                                                // VĚTEV 2: AUTOPLACE = false → hledej globální funkci 3 sekundy
+                                                //
+                                                const globalFn = await ensureletIsSet("__placePXBranding", 3000);
+
+                                                if (window.top && typeof window.top.__placePXBranding === "function") {
+                                                    window.top.__placePXBranding();
+                                                    return;
+                                                }
+
+                                                if (typeof globalFn === "function") {
+                                                    globalFn();
+                                                    return;
+                                                }
+
+                                                // fallback když nic neexistuje
+                                                placePxBrandingFallback();
+
+                                            })();
+                                        } catch (err) {
+                                            console.log(err);
+                                            if (window.px2 && window.px2.utils && window.px2.utils.reportError) {
+                                                window.px2.utils.reportError("Chyba při umísťování brandingu", err, log, {
+                                                    "template": "Display - All formats in category (iframe) (Sklik) [4358]",
+                                                    "req_id": "tfhqvw-s24929-1k2exe",
+                                                    "format": "rectangle",
+                                                    "slot_id": "24929",
+                                                    "url": (top || window).location.href
+                                                });
+                                            }
+                                        }
+                                    } else {
+                                        resizeAd(ad.width, ad.height);
+                                    }
+                                } catch (e) {
+                                    log("[Sklik] ", e);
+                                    if (window.px2 && window.px2.utils && window.px2.utils.reportError) {
+                                        window.px2.utils.reportError("Chyba v Sklik callback funkci", e, log, {
+                                            "template": "Display - All formats in category (iframe) (Sklik) [4358]",
+                                            "req_id": "tfhqvw-s24929-1k2exe",
+                                            "format": "rectangle",
+                                            "slot_id": "24929",
+                                            "url": (top || window).location.href
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }]);
+
+                function resizeAd(adWidth, adHeight) {
+                    let availableWidth = getAvailableSpace("width");
+                    let availableHeight = getAvailableSpace("height");
+
+                    if (window.px2.utils.autoscale) {
+                        window.px2.utils.autoscale({
+                            elemToScale: pxIfr,
+                            availableWidth,
+                            availableHeight,
+                            adWidth,
+                            adHeight,
+                            ignoreAvailableHeight: false,
+                            adjustParentOfElemToScale: true
+                        });
+                    }
+
+                    if (!true) {
+                        pxIfr.parentElement.style.width = 100 + "%";
+                        pxIfr.parentElement.style.height = availableHeight + "px";
+                        pxIfr.parentElement.style.position = "unset";
+                    }
+                }
+
+                function getAvailableSpace(dimension) {
+                    const maxDimensionProp = 'max' + dimension.charAt(0).toUpperCase() + dimension.slice(1);
+                    const sysDimension = dimension === 'width' ? 300 : 300;
+                    const windowDimension = top.window['inner' + dimension.charAt(0).toUpperCase() + dimension.slice(1)];
+                    const offsetDimension = 'offset' + dimension.charAt(0).toUpperCase() + dimension.slice(1);
+                    const parentDimension = mainWrapper.parentElement[offsetDimension];
+                    const parentParentDimension = mainWrapper["parent" + dimension.charAt(0).toUpperCase() + dimension.slice(1)] ? mainWrapper["parent" + dimension.charAt(0).toUpperCase() + dimension.slice(1)] : mainWrapper.parentElement.parentElement[offsetDimension];
+
+                    log("XXX", 0, 0, mainWrapper.maxWidth, mainWrapper.maxHeight, maxDimensionProp, mainWrapper[maxDimensionProp]);
+
+                    if (mainWrapper[maxDimensionProp]) {
+                        const result = mainWrapper[maxDimensionProp];
+                        if (result === mainWrapper[maxDimensionProp]) {
+                            log("Použito: " + maxDimensionProp + " (" + result + ")");
+                        }
+                        return result;
+                    }
+
+                    // const result = Math.min(sysDimension, parentDimension, windowDimension);
+
+                    var values = [sysDimension, parentDimension, windowDimension, parentParentDimension].filter(function(v) {
+                        return v > 1; // ignoruje 1 i menší hodnoty
+                    });
+
+                    const result = values.length > 0 ? Math.min.apply(Math, values) : 300;
+
+                    if (result === sysDimension) {
+                        log("Použito: system " + dimension + " (" + sysDimension + ")");
+                    } else if (result === parentDimension) {
+                        log("Použito: parent " + dimension + " (" + parentDimension + ")");
+                    } else if (result === windowDimension) {
+                        log("Použito: window " + dimension + " (" + windowDimension + ")");
+                    } else if (result === parentParentDimension) {
+                        log("Použito: parent parent " + dimension + " (" + parentParentDimension + ")");
+                    }
+
+                    return result;
+                }
+            } catch (err) {
+                if (window.px2 && window.px2.utils && window.px2.utils.reportError) {
+                    window.px2.utils.reportError("Chyba v inner scriptu", err, null, {
+                        "template": "Display - All formats in category (iframe) (Sklik) [4358]",
+                        "req_id": "tfhqvw-s24929-1k2exe",
+                        "format": "rectangle",
+                        "slot_id": "24929",
+                        "url": (top || window).location.href
+                    });
+                }
+            }
+        })();
+    </script>
+</body></html>

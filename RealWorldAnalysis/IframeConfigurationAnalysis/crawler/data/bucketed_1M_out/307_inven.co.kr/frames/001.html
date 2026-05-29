@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="ko"><head>
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>인벤</title>
+		<script type="text/javascript">document.domain='inven.co.kr';</script>
+		<script type="text/javascript" src="https://www.inven.co.kr/common/lib/js/store.min.js"></script>
+		<script>
+			self.addEventListener('message', function(event) {
+				if (event.source !== self && /https?:\/\/(\w+\.)?inven\.co\.kr/.test(event.origin)) {
+					var message = {
+						id : event.data.id
+					};
+					switch (event.data.method) {
+						case 'get':
+							message.result = true;
+							message.payload = store.get(event.data.key);
+							break;
+
+						case 'set':
+							message.result = true;
+							store.set(event.data.key, event.data.payload);
+							message.payload = null;
+							break;
+
+						case 'remove':
+							message.result = true;
+							store.remove(event.data.key);
+							message.payload = null;
+							break;
+
+						default:
+							message.result = false;
+							message.reason = 'invalid method';
+					}
+					event.source.postMessage(message, event.origin);
+				}
+			});
+		</script>
+	</head>
+	<body>
+	
+</body></html>

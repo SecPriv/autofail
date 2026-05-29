@@ -1,0 +1,726 @@
+<!DOCTYPE html><html lang="zh-HK"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16"><link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192"><meta name="msapplication-square70x70logo" content="img/smalltile.png"><meta name="msapplication-square150x150logo" content="img/mediumtile.png"><meta name="msapplication-wide310x150logo" content="img/widetile.png"><meta name="msapplication-square310x310logo" content="img/largetile.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/extra.css">
+    <title>t2 Toys App 大玩具交易平台 | 買賣 潮玩 二手玩具 玩具市集</title>
+  <link rel="icon" href="img/t2_logo.png" type="image/gif" sizes="16x16"></head>
+  <body>
+    <nav class="navbar navbar-fixed-top" role="navigation"><meta charset="utf-8">
+<link rel="stylesheet" href="css/layout.css"> 
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+.mega-dropdown {
+  position: static !important;
+}
+.mega-dropdown-menu {
+    padding: 20px 0px;
+    width: 100%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+}
+.mega-dropdown-menu .dropdown-header {
+  font-size: 14px;
+  color: #ff3546;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
+}
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 1200px;
+    overflow-x: hidden;
+}
+@media (max-width: 1200px){
+  .navbar-nav .open .dropdown-menu > li > a,
+  .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 0;
+  }
+}
+@media (max-width: 1200px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
+</style>
+<div id="topColorBar" class="topBar col-md-12">
+</div>
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img class="img-responsive" src="img/logo.png">
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a id="navIndex" href="#" onclick="redirectToIndex()">首頁</a>
+            </li>
+            <li class="category dropdown mega-dropdown">
+              <a id="navItem" class="dropdown-toggle " data-toggle="dropdown" href="#">二手買賣<b class="caret"></b></a>
+              <ul class="dropdown-menu mega-dropdown-menu" id="nav_cat_item" style="height: 4120px;"><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">野戰生存遊戲</span><ul><li><a href="#" onclick="redirectSecCatProductList(86)">氣槍類</a></li><li><a href="#" onclick="redirectSecCatProductList(271)">配件類</a></li><li><a href="#" onclick="redirectSecCatProductList(89)">彈匣類</a></li><li><a href="#" onclick="redirectSecCatProductList(87)">裝備類</a></li><li><a href="#" onclick="redirectSecCatProductList(374)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">模型擺設 ( 超合金 Figure等 )</span><ul><li><a href="#" onclick="redirectSecCatProductList(330)">人像</a></li><li><a href="#" onclick="redirectSecCatProductList(440)">機械</a></li><li><a href="#" onclick="redirectSecCatProductList(441)">怪獸</a></li><li><a href="#" onclick="redirectSecCatProductList(452)">TAMASHII NATION 魂ウェブ</a></li><li><a href="#" onclick="redirectSecCatProductList(331)">軍事 / 武器 擺設</a></li><li><a href="#" onclick="redirectSecCatProductList(327)">海</a></li><li><a href="#" onclick="redirectSecCatProductList(328)">陸</a></li><li><a href="#" onclick="redirectSecCatProductList(329)">空</a></li><li><a href="#" onclick="redirectSecCatProductList(332)">建築物 / 情景</a></li><li><a href="#" onclick="redirectSecCatProductList(379)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">桌遊 / 遊戲卡 TCG / Card Game</span><ul><li><a href="#" onclick="redirectSecCatProductList(460)">桌遊 / 遊戲卡 TCG / Card Game</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">遙控無人機 / 多軸飛行器 / 航拍</span><ul><li><a href="#" onclick="redirectSecCatProductList(105)">飛行器 / 主機</a></li><li><a href="#" onclick="redirectSecCatProductList(343)">零件及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(397)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">車仔模型 (合金車模型)</span><ul><li><a href="#" onclick="redirectSecCatProductList(281)">車仔模型</a></li><li><a href="#" onclick="redirectSecCatProductList(300)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">LEGO 樂高</span><ul><li><a href="#" onclick="redirectSecCatProductList(274)">所有系列</a></li><li><a href="#" onclick="redirectSecCatProductList(296)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">高達模型 GUNPLA</span><ul><li><a href="#" onclick="redirectSecCatProductList(424)">原盒未組裝</a></li><li><a href="#" onclick="redirectSecCatProductList(423)">成品模型及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(298)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">飛鏢</span><ul><li><a href="#" onclick="redirectSecCatProductList(133)">飛鏢及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(443)">鏢咭及鏢袋</a></li><li><a href="#" onclick="redirectSecCatProductList(137)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">NERF</span><ul><li><a href="#" onclick="redirectSecCatProductList(276)">所有系列</a></li><li><a href="#" onclick="redirectSecCatProductList(277)">彈匣及彈藥</a></li><li><a href="#" onclick="redirectSecCatProductList(375)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">遙控車 / 載具 / 電單車</span><ul><li><a href="#" onclick="redirectSecCatProductList(422)">遙控賽車及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(421)">遙控自動車及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(96)">遙控坦克 / 載具及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(100)">遙控電單車及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(390)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">遙控船</span><ul><li><a href="#" onclick="redirectSecCatProductList(341)">遙控船</a></li><li><a href="#" onclick="redirectSecCatProductList(437)">零件及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(393)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">遙控飛機</span><ul><li><a href="#" onclick="redirectSecCatProductList(334)">遙控飛機</a></li><li><a href="#" onclick="redirectSecCatProductList(73)">零件及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(394)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">遙控直昇機</span><ul><li><a href="#" onclick="redirectSecCatProductList(69)">遙控直昇機</a></li><li><a href="#" onclick="redirectSecCatProductList(260)">零件及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(395)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">迷你四驅車</span><ul><li><a href="#" onclick="redirectSecCatProductList(119)">四驅車</a></li><li><a href="#" onclick="redirectSecCatProductList(120)">車殼配件</a></li><li><a href="#" onclick="redirectSecCatProductList(284)">改裝零件</a></li><li><a href="#" onclick="redirectSecCatProductList(122)">賽道</a></li><li><a href="#" onclick="redirectSecCatProductList(285)">工具</a></li><li><a href="#" onclick="redirectSecCatProductList(376)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">珍藏鞋類</span><ul><li><a href="#" onclick="redirectSecCatProductList(187)">所有系列</a></li><li><a href="#" onclick="redirectSecCatProductList(188)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">珍藏球衣</span><ul><li><a href="#" onclick="redirectSecCatProductList(248)">足球</a></li><li><a href="#" onclick="redirectSecCatProductList(249)">籃球</a></li><li><a href="#" onclick="redirectSecCatProductList(419)">美式足球</a></li><li><a href="#" onclick="redirectSecCatProductList(297)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">電玩遊戲</span><ul><li><a href="#" onclick="redirectSecCatProductList(83)">🎮家用電子遊戲</a></li><li><a href="#" onclick="redirectSecCatProductList(309)">⌨️電腦遊戲</a></li><li><a href="#" onclick="redirectSecCatProductList(308)">🕹商用電子遊戲</a></li><li><a href="#" onclick="redirectSecCatProductList(79)">手提遊戲機</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">虛擬實境 VR</span><ul><li><a href="#" onclick="redirectSecCatProductList(346)">虛擬實境及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(347)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">單車</span><ul><li><a href="#" onclick="redirectSecCatProductList(139)">單車及車架</a></li><li><a href="#" onclick="redirectSecCatProductList(446)">零件</a></li><li><a href="#" onclick="redirectSecCatProductList(445)">周邊配件及裝備</a></li><li><a href="#" onclick="redirectSecCatProductList(290)">服飾</a></li><li><a href="#" onclick="redirectSecCatProductList(289)">工具</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">滑板</span><ul><li><a href="#" onclick="redirectSecCatProductList(291)">所有滑板</a></li><li><a href="#" onclick="redirectSecCatProductList(142)">保護裝備</a></li><li><a href="#" onclick="redirectSecCatProductList(143)">服飾</a></li><li><a href="#" onclick="redirectSecCatProductList(144)">滑板袋 / 背包</a></li><li><a href="#" onclick="redirectSecCatProductList(377)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">桌球</span><ul><li><a href="#" onclick="redirectSecCatProductList(432)">球桿及桿盒</a></li><li><a href="#" onclick="redirectSecCatProductList(433)">Tip頭</a></li><li><a href="#" onclick="redirectSecCatProductList(434)">加長器</a></li><li><a href="#" onclick="redirectSecCatProductList(435)">桌球台及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(436)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">戶外用品</span><ul><li><a href="#" onclick="redirectSecCatProductList(430)">裝備及配件</a></li><li><a href="#" onclick="redirectSecCatProductList(418)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">潛水用品</span><ul><li><a href="#" onclick="redirectSecCatProductList(426)">裝備及配件</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">G-Shock</span><ul><li><a href="#" onclick="redirectSecCatProductList(280)">所有系列</a></li><li><a href="#" onclick="redirectSecCatProductList(299)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">ZIPPO</span><ul><li><a href="#" onclick="redirectSecCatProductList(129)">打火機</a></li><li><a href="#" onclick="redirectSecCatProductList(131)">暖手蛋</a></li><li><a href="#" onclick="redirectSecCatProductList(130)">套裝</a></li><li><a href="#" onclick="redirectSecCatProductList(286)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">拼圖</span><ul><li><a href="#" onclick="redirectSecCatProductList(301)">平面拼圖</a></li><li><a href="#" onclick="redirectSecCatProductList(302)">特殊造型</a></li><li><a href="#" onclick="redirectSecCatProductList(303)">實用拼圖</a></li><li><a href="#" onclick="redirectSecCatProductList(304)">兒童拼圖</a></li><li><a href="#" onclick="redirectSecCatProductList(305)">拼圖框</a></li><li><a href="#" onclick="redirectSecCatProductList(306)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">桌上遊戲 (桌遊)</span><ul><li><a href="#" onclick="redirectSecCatProductList(287)">桌上遊戲</a></li><li><a href="#" onclick="redirectSecCatProductList(387)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">鐵道模型</span><ul><li><a href="#" onclick="redirectSecCatProductList(428)">火車及軌道</a></li><li><a href="#" onclick="redirectSecCatProductList(429)">場景</a></li><li><a href="#" onclick="redirectSecCatProductList(378)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">扭蛋</span><ul><li><a href="#" onclick="redirectSecCatProductList(398)">扭蛋</a></li><li><a href="#" onclick="redirectSecCatProductList(399)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">3D 打印</span><ul><li><a href="#" onclick="redirectSecCatProductList(252)">3D打印機</a></li><li><a href="#" onclick="redirectSecCatProductList(254)">機械及電子零件</a></li><li><a href="#" onclick="redirectSecCatProductList(425)">打印物料 / 消耗品</a></li><li><a href="#" onclick="redirectSecCatProductList(388)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">漫畫</span><ul><li><a href="#" onclick="redirectSecCatProductList(400)">漫畫</a></li><li><a href="#" onclick="redirectSecCatProductList(401)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">珍藏 / 古玩</span><ul><li><a href="#" onclick="redirectSecCatProductList(382)">珍藏貨幣 / 紀念鈔</a></li><li><a href="#" onclick="redirectSecCatProductList(384)">郵票</a></li><li><a href="#" onclick="redirectSecCatProductList(383)">古玩</a></li><li><a href="#" onclick="redirectSecCatProductList(385)">畫 / 相片</a></li><li><a href="#" onclick="redirectSecCatProductList(449)">車票 / 八達通</a></li><li><a href="#" onclick="redirectSecCatProductList(454)">閃卡</a></li><li><a href="#" onclick="redirectSecCatProductList(456)">懷舊玩具</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">攜帶電子寵物機</span><ul><li><a href="#" onclick="redirectSecCatProductList(439)">攜帶電子寵物機</a></li><li><a href="#" onclick="redirectSecCatProductList(438)">周邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">搖搖及陀螺</span><ul><li><a href="#" onclick="redirectSecCatProductList(447)">搖搖及陀螺</a></li><li><a href="#" onclick="redirectSecCatProductList(448)">週邊產品</a></li></ul></li><li class="col-md-12 col-lg-2 "><span tabindex="-1" href="#" class="dropdown-toggle dropdown-header" data-toggle="dropdown">餐廳及便利店玩具</span><ul><li><a href="#" onclick="redirectSecCatProductList(455)">餐廳及便利店玩具</a></li></ul></li></ul>
+            </li>             
+            <li>
+                <a id="navArticle" href="#" onclick="redirectToNews()">文章</a>
+            </li>
+            <!--<li>
+                <a id="navShop" href="shop_list.html">Shops</a>
+            </li>           -->
+            <li id="navAboutUs"><a href="webAbout_Us_HK_TW.html">關於我們</a></li>
+            <li class="category dropdown">
+              <a id="nav_register" href="#" onclick="redirectToRegister()">註冊</a>	
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="login_UserDisplayName" style="display: none;"> </a>
+              <ul class="dropdown-menu " id="nav_user_item">
+              </ul>
+            </li>
+            <li>
+                <a href="#" class="login_label">登入</a>
+            </li>
+            <li id="tcMenu" style="display: none;">
+                <a href="#" class="langLang lang tc">繁</a>
+            </li> 
+            <li id="enMenu">
+                <a href="#" class="langLang lang en">EN</a>
+            </li>             
+            
+        </ul>             
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<div id="searchBarHolder">
+  <div class="container">
+    <div class="col-md-8">
+    </div>
+    <div class=" searchbar col-md-4 col-sm-12">
+      <div class="input-group" style="float: right;">
+        <table class="search">
+          <tbody><tr>
+            <td>
+              <select class="form-control" id="searchSelect">
+                <option id="optionItem" value="item">物品</option>
+                <option id="optionNews" value="news">新資訊</option>
+                <option id="optionUser" value="user">用戶</option>
+              </select>                         
+            </td>
+            <td>
+              <input type="text" class="form-control" aria-label="Text input with dropdown button" id="keyword" placeholder="搜尋 / Search ..." onkeydown="if (event.keyCode == 13)handleSearch();">            
+            </td>
+            <td>
+              <button id="searchbtn" class="btn btn-default" onclick="handleSearch()">搜尋</button>            
+            </td>
+          </tr>
+        </tbody></table>     
+      </div>      
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+<script src="js/commondata.js"></script>                                       
+<script>
+  doRequest("GeneralGetDropDownList", {}, "commondata");
+  
+  if(T2isLogin){
+	$(".login_label").text("Logout");
+	
+	$("#nav_register").text("");
+	$("#nav_register").click(function(){});
+	$("#nav_register").hide();
+
+	$("#login_UserDisplayName").html(T2LoginObject["UserDisplayName"]+ '<b class="caret"></b>');
+
+	$(".login_label").click(function(){});
+	
+  } else {
+	$(".login_label").text("Login");
+	
+	$(".login_label").click(function(){redirectToLogin();});
+	$("#login_UserDisplayName").hide();
+
+
+  }  
+  $(".login_label").click(function(){
+  Cookies.remove("T2LoginObject");
+  $(".login_label").text(menuLang.login);
+  $("#nav_user_item").empty();
+  $("#nav_register").text(menuLang.register);
+  $("#nav_register").click(function(){redirectToRegister();});
+  $("#nav_register").show();
+  $("#login_UserDisplayName").empty();
+  $("#login_UserDisplayName").hide();
+  
+  $(".login_label").click(function(){redirectToLogin();});
+  });
+    
+  function redirectToMyProduct (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		window.location = './my_item.html?UID=' + T2LoginObject["UID"];
+ }
+ 
+  function redirectToLogin (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		//window.location = './login.html';
+    window.location = './appdownload.html';
+ }
+ 
+  function redirectToMyRequest (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		window.location = './my_request_item.html?UID=' + T2LoginObject["UID"];
+ }
+ 
+  function redirectToMyFavProduct (){
+		// $.get("item_detail.html", { ProductId: data} );	
+		var loc = window.location;
+		window.location = './my_fav_item.html?UID=' + T2LoginObject["UID"];
+ } 
+   
+   function redirectToCreate (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		window.location = './create_item.html';
+ } 
+
+   function redirectToNews (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		window.location = './news_list.html';
+ }  
+
+  function redirectToFollowing (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		window.location = './following.html';
+ } 
+
+  function redirectToRegister (){
+		// $.get("item_detail.html", { ProductId: data} );		
+		var loc = window.location;
+		//window.location = './register.html';
+    window.location = './appdownload.html';
+ }   
+  function redirectToIndex(){
+		var loc = window.location;
+		window.location = './';  
+  }
+  
+  function redirectToUserProfile(){
+		var loc = window.location;
+		window.location = './my_acc.html?UID=' + T2LoginObject["UID"];
+  }  
+  
+  function redirectToEditProfile(){
+		var loc = window.location;
+		window.location = './edit_user.html'; 
+  }
+  
+  function redirectToDarkZone(){
+		var loc = window.location;
+		window.location = './dark_zone.html';  
+  }
+  
+  function redirectToCreateDarkZone(){
+		var loc = window.location;
+		window.location = './create_dark_zone.html';  
+  }
+  function redirectToEditDarkZone(){
+		var loc = window.location;
+		window.location = './edit_dark_zone.html';  
+  }
+  function redirectToManageDarkZoneUser(){
+		var loc = window.location;
+		window.location = './manage_dark_zone.html';  
+  }
+  function redirectToRemoveDarkZoneUser(){
+		var loc = window.location;
+		window.location = './remove_dark_zone.html';  
+  }
+
+  function redirectToVIP(){
+		var loc = window.location;
+		window.location = './vip.html';  
+  }
+  
+  function redirectToViewDarkZone(){
+		var loc = window.location;
+		window.location = './my_dark_zone.html';  
+  }
+
+  function GetPrivateProductList(){
+		var loc = window.location;
+		window.location = './my_dark_zone.html';  
+  }
+  
+  function redirectToMyFavNews(){
+		var loc = window.location;
+		window.location = './my_fav_news.html';  
+  }
+  
+  function handleSearch(){
+    var searchContent = document.getElementById("keyword").value;
+    var searchOption =  document.getElementById("searchSelect").value;
+    var loc = window.location;
+    if(searchOption == "item"){
+      window.location = './search_item.html?searchContent=' + searchContent + '&searchOption=' + searchOption;  
+    } else if(searchOption == "news"){		
+      window.location = './search_news.html?searchContent=' + searchContent + '&searchOption=' + searchOption;  	
+    } else if(searchOption == "user"){
+      window.location = './search_user.html?searchContent=' + searchContent + '&searchOption=' + searchOption;  	
+    }
+  }
+
+  function doNavClass(){
+    if($( window ).width() < 1200){     
+      $("#nav_cat_item").removeClass("scrollable-menu");
+		var totalHeight = 0;
+		$("#nav_cat_item").children().each(function(){
+			totalHeight = totalHeight + $(this).outerHeight(true);
+		});
+		if(totalHeight == 0){
+			totalHeight = 4100;
+		}
+		totalHeight = totalHeight + 20;
+		$("#nav_cat_item").css({ 'height': totalHeight + "px" });	
+    }else{
+      if(!$("#nav_cat_item").hasClass("scrollable-menu")){
+        $("#nav_cat_item").addClass("scrollable-menu")
+      }
+    }    
+  }
+  
+  doNavClass();
+  
+  $("head").append('<link rel="icon" href="img/t2_logo.png" type="image/gif" sizes="16x16">');
+
+
+  
+  $(window).resize(function(){
+     doNavClass();
+  });
+  
+</script>
+<script src="js/langmatch.js"></script> 
+</nav>
+    <div id="indexPage" class="main_contain">
+      <section id="slider">
+        <div class="container">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators"><li data-target="#myCarousel" class="" data-slide-to="0"></li><li data-target="#myCarousel" class="" data-slide-to="1"></li><li data-target="#myCarousel" class="active" data-slide-to="2"></li></ol>
+ 
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner"><div class="item"><a href="https://t2toys.com/news_detail.html?NewsId=304" target="_blank"><img src="https://t2toys.com/images//T2@AD/85/74cbcf45-d713-4d18-8d00-b6d6a820784b.jpg" style="width:100%;"></a></div><div class="item active left"><a href="https://t2toys.com/news_detail.html?NewsId=295" target="_blank"><img src="https://t2toys.com/images//T2@AD/49/da6c8978-81f7-413d-95b6-afcfe75a9f2d.jpg" style="width:100%;"></a></div><div class="item next left"><a href="https://t2toys.com/news_detail.html?NewsId=300" target="_blank"><img src="https://t2toys.com/images//T2@AD/80/9850a4e1-e1fa-4427-a5eb-df5fccca32dd.jpg" style="width:100%;"></a></div></div>
+ 
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>     
+      </section>
+ 
+      <section id="products">
+        <div class="container">
+        <div class="row">
+         <h2 id="header_secTrade">二手買賣</h2>
+        </div>
+        <div class="row content">
+        <div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404897)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404897/fff43b74-0e45-478f-a2be-80185c66b23b.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Ar9 gbb （vfc system)</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404894)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404894/89575807-a7b4-4146-9cff-0b928aae691f.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">全新TAF Custom GHK SR-16 KAC URX III Ver 1 GBBR</h3></div></div><div class="row"><div class="col-md-12 price">HKD 3980.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404873)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404873/adeb8707-9963-4433-a9f8-dda7da500688.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Wolverine MTW Forged Series Tactical XB 10”</h3></div></div><div class="row"><div class="col-md-12 price">HKD 7800.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404872)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404872/3bb32299-22c1-43f3-9469-66854e440716.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">KSC G34 跟5個正常彈匣+ 2個正版 Glock Kit</h3></div></div><div class="row"><div class="col-md-12 price">HKD 900.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404867)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404867/33779c78-6cbc-4dee-90a7-eac842314197.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">swampfox liberator一代紅點鏡</h3></div></div><div class="row"><div class="col-md-12 price">HKD 200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404862)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404862/03709783-cfce-4c68-8dae-7c8e7c8fb7a2.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">StreamLight TLR-VIR II</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404860)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404860/d33071a1-13bd-4dcd-ad00-828e0af1337a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Marui MWS </h3></div></div><div class="row"><div class="col-md-12 price">HKD 2700.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404853)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404853/711cf8fc-574a-4a7d-9eb0-b14f7b5be40a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">APFG mpx copperhead only</h3></div></div><div class="row"><div class="col-md-12 price">HKD 850.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404852)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404852/abc194a0-8b4a-452c-a610-a80fbcc1affb.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">vfc mp5 hopup adj &amp; magwell</h3></div></div><div class="row"><div class="col-md-12 price">HKD 450.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(402777)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/402777/e55eeede-58e7-4e1e-9d95-0791d2349313.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">全改 Marui VSR One</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404833)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404833/132fc77b-797a-49d1-b56c-671526bec3a7.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">MP443 &amp; VFC USP</h3></div></div><div class="row"><div class="col-md-12 price">HKD 800.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404812)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404812/aee5ef07-d52f-46ac-97b6-22253ae4889a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">一槍兩夾SRC G19 Gen5 MOS 鋼版 WhatsApp 91660958</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404594)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404594/9efc8a68-c52b-4849-bb47-dd89b7271c24.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">RWA Agency&nbsp;Arms&nbsp;NOC&nbsp;X&nbsp;Marui&nbsp;Glock&nbsp;17</h3></div></div><div class="row"><div class="col-md-12 price">HKD 3800.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404831)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404831/6274e354-cf34-4b3a-ab12-ee3a20e39d7e.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Dytac MWS SLR B56</h3></div></div><div class="row"><div class="col-md-12 price">HKD 3200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404830)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404830/84fb39bd-ba6c-4641-9f92-e2f30af5a2e3.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">GE GBB AR清貨優惠</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1100.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404826)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404826/8fd7b91e-0c85-420b-8cde-6f76655559e7.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Nova 全鋼 staccato P 2019version</h3></div></div><div class="row"><div class="col-md-12 price">HKD 10500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404825)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404825/1c928622-8911-496e-ac03-d6edbc657af9.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Nova 全鋼 Colt Officer M1991</h3></div></div><div class="row"><div class="col-md-12 price">HKD 9800.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404710)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404710/711f4072-ba0a-49c9-a38a-b9d10d32860e.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">work tuff gear blackout</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404819)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404819/6a641a17-b304-4d52-9db4-7b35d1159693.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">退役真品 皇家警察 督察級天地線</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404807)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404807/aa15ea30-1cf5-48fb-874c-d2897e81c78b.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">VFC MP5A3 gbb grip</h3></div></div><div class="row"><div class="col-md-12 price">HKD 389.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404803)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404803/e0d357c0-ba04-4f2e-a302-a597f3f6e661.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">WE SCAR-H V3</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404802)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404802/a8a1a6fe-3da8-4d2a-b14e-b0df10ebe351.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">CZ SHADOW 2 GREY</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1900.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404795)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404795/fd113809-6d20-4c7c-9af1-6b36ec61f81d.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Vintage Trijicon Acog Box set</h3></div></div><div class="row"><div class="col-md-12 price">HKD 5500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404794)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404794/6ae5554f-fbf8-4444-b2e9-587c569dcd6c.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">NEW VFC PSG1 with HK Parts &amp; Real Scope</h3></div></div><div class="row"><div class="col-md-12 price">HKD 55000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404793)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404793/f20f82f1-f040-42e2-b054-8579eabaa0fc.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Hensoldt Z24 Mod2 for H&amp;K</h3></div></div><div class="row"><div class="col-md-12 price">HKD 9500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404786)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404786/acad207b-aff4-4785-8779-21050f5c162b.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">PARA BELLIM P365 X-MACRO COMP</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1800.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404785)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404785/483191d7-ad8d-4bef-9ddb-e1709d20c3ed.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">TAPP Airsoft 適用於 Marui TM Hi-Capa GBBP 系列的左右手通用斜角 M4 彈匣hpa轉接器</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404784)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404784/20d2b19d-a909-40a7-8931-b736aee6e230.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">鋼GHK G45 V2 + 3 匣</h3></div></div><div class="row"><div class="col-md-12 price">HKD 3200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404774)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404774/c607ea6a-b215-4dee-8d0d-09e124a67ca0.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">GM Scar MWS GBB</h3></div></div><div class="row"><div class="col-md-12 price">HKD 3200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404771)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404771/398d8508-1737-483a-a269-e395d1d9c7ab.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">VFC MP5A5 NAVY 下身</h3></div></div><div class="row"><div class="col-md-12 price">HKD 500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404770)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404770/6d34e54b-39c4-4976-a1b1-26b3f03973e1.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">APS CAM870 MK3零件</h3></div></div><div class="row"><div class="col-md-12 price">HKD 400.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404769)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404769/6150b5c5-56c3-4803-ac65-5c06a542435a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">VFC M16a1 handguard</h3></div></div><div class="row"><div class="col-md-12 price">HKD 200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404768)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404768/461e4dd5-65ba-4389-87b7-386e41622e2a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">真珍品 Daniel Defense DD enhanced furniture set</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404767)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404767/1a745acb-9d1a-4032-847b-909a8dee146a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">tm馬記 1911a1</h3></div></div><div class="row"><div class="col-md-12 price">HKD 700.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404756)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404756/d0cf589f-7204-4360-8543-f09d722b7d3d.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">正品OAKLEY 黑色背囊</h3></div></div><div class="row"><div class="col-md-12 price">HKD 600.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404738)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404738/eb5417d1-3f2d-43d8-8503-b2c8c2d20420.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">RHT M10 SV Dummy</h3></div></div><div class="row"><div class="col-md-12 price">HKD 12000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404737)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404737/92efc5d0-6260-4fc4-ba1b-1898d6e8fd28.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">珍品M870 木forend + Surefire 618 (9P)</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404735)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404735/440d6ffe-79b3-4444-812b-13ac324e2372.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">美軍TAPS chest rig 大改</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1200.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404732)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404732/dabe183c-a2b6-46ce-bf35-0387cd1a39db.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Marui mp7 (7 mag / 2 bolt)</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1800.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404722)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404722/5e805f79-ac1d-4560-bf14-6719ece3b636.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Holosun red dot 2MOA H510C (連防爆鏡)</h3></div></div><div class="row"><div class="col-md-12 price">HKD 2000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404717)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404717/0bccf2d0-ecb7-4a2f-b314-631b53fb3bd7.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">MWS MK18 MODO GBB</h3></div></div><div class="row"><div class="col-md-12 price">HKD 4000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404708)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404708/0db8f1d5-9e4c-41e1-9c0b-b8c4a3eb737a.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">VFC MP5K V2 GBB</h3></div></div><div class="row"><div class="col-md-12 price">HKD 3000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404692)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404692/db34ba7f-7c8f-4ffe-a656-2c4a9931aac7.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #FFFFF">CYBERGUN / WE Desert Eagle L6.50AE GBB Airsoft ( Gold )</h3></div></div><div class="row"><div class="col-md-12 price">HKD 1000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404690)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404690/f6d7d5cc-4865-4764-836d-edb64552e736.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #FFFFF">VFC Glock G18C GBB</h3></div></div><div class="row"><div class="col-md-12 price">HKD 650.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404689)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404689/eb9c6548-4e28-4549-b3aa-af961d498107.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">EOTECH reddot</h3></div></div><div class="row"><div class="col-md-12 price">HKD 400.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404688)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404688/ee668b55-395c-4780-b1dc-29ecf4d64b62.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">replica tactical halmat set</h3></div></div><div class="row"><div class="col-md-12 price">HKD 700.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404686)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404686/b66d41c8-a8c3-4a0f-b185-1dda9114f9f7.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">Eagle Industries 3-Day Assault Backpack</h3></div></div><div class="row"><div class="col-md-12 price">HKD 700.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404680)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404680/800ba92f-aa6f-47f8-a612-e8f008a4a63f.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">ghk m4 全鋼 加密管 八隻蛋夾 可議價 電話9539137</h3></div></div><div class="row"><div class="col-md-12 price">HKD 7000.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(404678)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/404678/a3533a97-7f7f-46c3-8cd0-2640ebb201fe.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">ghk ak105 全鋼件 九匣 可議 電話：95391137</h3></div></div><div class="row"><div class="col-md-12 price">HKD 7500.0</div></div></div></div><div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail(389368)"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@PRODUCT/389368/34854274-f35a-47e8-b91f-d78eace50e08.jpg) no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #000000">BJTAC M4 geissele buffer tube for Marui MWS</h3></div></div><div class="row"><div class="col-md-12 price">HKD 200.0</div></div></div></div></div>
+        <div id="loadMore" class="row d-flex justify-content-center text-center">
+          <button id="loadMoreBtn" type="button" class="btn btn-primary">載入更多</button>
+        </div>
+        </div>   
+      </section>   
+      <section id="news">
+        <div class="container">
+        <div class="row">
+          <h2 id="header_article">文章</h2>
+        </div>
+        <div class="row content"><div class="col-md-6 col-sm-6 col-xs-12 newsHolder" onclick="toNewsDetail(304)"><div class="row newsGrid"><div class="col-md-6 col-sm-6 col-xs-12 img" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@NEWS/304/f5026e38-8a65-496e-8154-38f46c831a82.jpg) no-repeat center center; border:0 !Important; height: 180px"></div><div class="col-md-6 col-sm-6 col-xs-12 newsContent"><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 header"><h3>Std &amp; Plus值簡易說明，充值是為了走更長的路。</h3></div></div><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 content">Std &amp; Plus值簡易說明
+
+‧ 當Std值使用完後，可到充值頁面購買Plus值 或 等待每月系統發放。
+‧ Std值每月系統發放25值，Std是每月更新重置，不能累積。如當月沒有使用，便會...</div></div></div></div></div><div class="col-md-6 col-sm-6 col-xs-12 newsHolder" onclick="toNewsDetail(303)"><div class="row newsGrid"><div class="col-md-6 col-sm-6 col-xs-12 img" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@NEWS/303/01e51cd8-1d07-4771-9de3-5a6c4c72ca42.jpg) no-repeat center center; border:0 !Important; height: 180px"></div><div class="col-md-6 col-sm-6 col-xs-12 newsContent"><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 header"><h3>t2 Toys WEB版本已暫停註冊/登入功能 請下載APP版本使用</h3></div></div><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 content">t2 Toys WEB 網頁版本已暫停註冊/登入功能，請下載APP版本使用。...</div></div></div></div></div><div class="col-md-6 col-sm-6 col-xs-12 newsHolder" onclick="toNewsDetail(302)"><div class="row newsGrid"><div class="col-md-6 col-sm-6 col-xs-12 img" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@NEWS/302/591a73b3-6f57-4de4-b424-4450e2d6c8fd.jpg) no-repeat center center; border:0 !Important; height: 180px"></div><div class="col-md-6 col-sm-6 col-xs-12 newsContent"><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 header"><h3>提防網騙 加倍注意 騙徒手法</h3></div></div><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 content">🔔溫馨提示：二手買賣，要留神！！
+
+小心網上騙案！切勿輕信對方 先過數付款 後出貨！
+
+如受騙財物損失，建議請報案處理！ 
+
+騙徒手法層出不窮！切勿讓騙徒有機可乘！
+
+
+
+如在本...</div></div></div></div></div><div class="col-md-6 col-sm-6 col-xs-12 newsHolder" onclick="toNewsDetail(300)"><div class="row newsGrid"><div class="col-md-6 col-sm-6 col-xs-12 img" style="background:#F2F2F2 url(https://t2toys.com/images//___T2@NEWS/300/263a08e8-dad7-46cf-9163-eacd8598bd57.jpeg) no-repeat center center; border:0 !Important; height: 180px"></div><div class="col-md-6 col-sm-6 col-xs-12 newsContent"><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 header"><h3>t2 Toys App 用戶守則更新及注意事項</h3></div></div><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 content">用戶守則更新及注意事項
+t2 Toys 對以下違規的行為及物品將會作出加強處理，請各用家遵守用戶守則。
+營建一個公平良好氣氛的玩具交易平台！
+
+物品移除並重新刊登 （簡稱重登）
+重登限制次數...</div></div></div></div></div></div>
+        </div>
+      </section>
+      <!-- <section id="shops">
+        <div class="container">
+        <div class="row">
+          <h2 id="header_shop">Shop</h2>
+        </div>
+        <div class="row content">
+        </div>
+        </div>   
+      </section> -->
+      <div id="modelHolder"></div>
+    </div>
+    <footer><meta charset="utf-8">
+<style type="text/css">
+  #footer a {color: white; text-decoration: none}
+  #footer a:hover {color: black; text-decoration: none}
+  
+  footer .container{
+    background: #3f4db8;
+  }
+  
+  .menu_link{
+    padding: 20px 0;
+  }
+  
+  .copyright{
+    padding: 0;
+  }
+  
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .menu_link {
+      text-align: center;
+    }
+    .app_icon{
+      text-align: center;
+    }
+    .copyright{
+      text-align: center;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .menu_link {
+      text-align: left;
+    }
+    .app_icon{
+      text-align: right;
+    }
+    .copyright{
+      text-align: left;
+    }    
+}
+
+</style>
+<div id="footer" class="container">
+  <div class="row">
+    <div class="col-md-8 menu_link">
+      <span id="footer_aboutus"><a href="webAbout_Us_HK_TW.html">關於我們</a></span>
+      <span class="footer_separator">
+       || 
+      </span>
+      <!--<span id="footer_media">
+        <a href="Code_of_Practice_HK_EN.html">Media</a>
+      </span> -->
+      <span id="footer_vip">
+        <a href="vip.html">VIP</a>
+      </span>	  
+      <span class="footer_separator">
+       || 
+      </span>
+      <span id="footer_RulesOfUsers"><a href="webCode_of_Practice_HK_TW.html">用戶守則</a></span>
+      <span class="footer_separator">
+       || 
+      </span>
+      <span id="footer_FAQ"><a href="webFAQ_HK_TW.html">常見問題</a></span>      
+      <span class="footer_separator">
+       || 
+      </span>      
+      <span id="footer_disclaimer"><a href="webDisclaimer_HK_TW.html">免責聲明</a></span>
+      <span class="footer_separator">
+       || 
+      </span>
+      <span id="footer_PrivacyPolicy"><a href="webPrivacy_Policy_HK_TW.html">私隱政策</a></span>
+      <span class="footer_separator">
+       || 
+      </span>
+      <span id="footer_advertis"><a target="_blank" href="https://goo.gl/forms/YLrebBoaHONVLVYc2">廣告查詢</a></span>
+    </div>
+    <div class="col-md-4 col-sm-12 app_icon">
+      <span id="icon_playStore">
+       <a target="_blank" href="https://play.google.com/store/apps/details?id=com.inlooptech.t2toys&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="150" height="59/"></a>
+      </span>
+      <a target="_blank" href="https://itunes.apple.com/hk/app/t2-toys-%E5%A4%A7%E7%8E%A9%E5%85%B7%E4%BA%A4%E6%98%93%E8%B2%B7%E8%B3%A3/id1230338662?l=zh&amp;mt=8"> <img src="img/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="Get it on Apple Store"></a>
+    </div>
+	<div class="col-md-12 copyright"> 
+	 <hr>
+	</div>
+    <div class="col-md-8 copyright">     
+      <p style="color: black">
+        Copyright © 2016-<span id="endyear">2026</span> t2toys.com | t2 Toys International Limited
+		<script>
+		$("#endyear").text((new Date()).getFullYear());
+		</script>
+      </p>     
+    </div>  
+    <div class="col-md-4 col-sm-12 app_icon">
+      <a target="_blank" href="https://www.instagram.com/t2toys/"><i style="font-size: 18pt;padding: 0 5px" class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a target="_blank" href="https://www.facebook.com/t2toys"> <i style="font-size: 18pt;padding: 0 5px" class="fa fa-facebook-square" aria-hidden="true"></i></a>
+    </div>
+	<br>	
+  </div>
+</div></footer>
+   
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/commondata.js"></script>
+    <script>
+      var indexCurPage = 1;
+      $('.navbar').load('nav.html'); 
+      $('footer').load('footer.html');     
+      
+      function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+ 
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+ 
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+ 
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+ 
+        return array;
+      }
+     
+      
+      function randomShop(totalShops){
+        var shopAry = [];
+        for(var i = 1; i <= totalShops; i++){
+          shopAry[i - 1] = i;
+        }       
+        var randomAry = shuffle(shopAry);       
+        var returnAry = [];
+       
+        for(var f=0; f < 4; f++){
+          returnAry[f] = randomAry[f];
+        }
+        return returnAry;
+      }
+           
+      doRequest("GetADList", {}, "indexAdSlider");
+      doRequest("GetNewsList", {FirstCategoryId: "", Language: "TC", Page: "1"}, "indexnews");
+      doRequest("GeneralGetFirstPage", {Page: indexCurPage}, "indexproducts");
+      //doRequest("GetShopListByOrderId", {OrderIdList: randomShop(999)}, "indexshops");
+     
+      function indexFormAdSlider(data){
+        var sliderListContent = "";
+        var sliderPhotoList = "";
+        $.each(data["AdList"]["DEFAULT_PRODUCT"], function(i, item) {
+          var active = "";
+          if(i == 0){
+            active = "active";
+          }
+          sliderListContent += '<li data-target="#myCarousel" class="' +  active + '" data-slide-to="' + i + '"></li>';
+          var photoSmall = item["Photo"].replace("T2@", "___T2@");
+          sliderPhotoList += '<div class="item ' + active + '"><a href="' + item["Content"] + '" target="_blank"><img src="' + item["Photo"] + '" style="width:100%;"></a></div>';
+        });        
+        $(".carousel-indicators").html(sliderListContent);
+        $(".carousel-inner").html(sliderPhotoList);      
+      }
+     
+      function indexFormNewsList(data){
+        var newsContent = "";
+        $.each(data["NewsList"], function(i, item) {
+          if(i > 3){
+            return false;
+          }
+      var photoSmall = item["PhotoList"][0].replace("T2@", "___T2@");
+          newsContent += '<div class="col-md-6 col-sm-6 col-xs-12 newsHolder" onclick="toNewsDetail('+ item['NewsId'] +')" ><div class="row newsGrid"><div class="col-md-6 col-sm-6 col-xs-12 img" style="background:#F2F2F2 url('+ photoSmall +') no-repeat center center; border:0 !Important; height: 180px"></div><div class="col-md-6 col-sm-6 col-xs-12 newsContent"><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 header"><h3>' + item["Title"] + '</h3></div></div><div class="row"><div class="col-md-12 col-sm-12 col-xs-12 content">' + item["Content"].substring(0, 100) + '...</div></div></div></div></div>';
+        });   
+        $("#news .content").html(newsContent);       
+      }
+     
+      function indexFormProduct(data){
+        var productsContent = "";
+        console.log(data["Location"]);
+        $.each(data["ProductList"], function(i, item) {
+          if(i > 49){
+            return false;
+          }
+         
+          var soldStatus = item["Sold"];
+          if(soldStatus == 'Y'){
+            soldStatus = '<span class="soldtag"><span class="soldKeyword">Sold</span></span>';
+          }else{
+            soldStatus = "";
+          }
+      var photoSmall = "img/t2_placeholder.png"
+      if (item["PhotoList"][0] != null){
+      photoSmall = item["PhotoList"][0].replace("T2@", "___T2@");
+      }
+        
+          productsContent += '<div class="col-md-3 col-sm-6 col-xs-6 productHolder" onclick="itemdetailFormDetail('+ item["ProductId"]+')"><div class="row img productGrid"><img class="img-responsive" src="" alt="" style="background:#F2F2F2 url('+ photoSmall +') no-repeat center center; border:0 !Important;"><div class="col-md-12 "></div><div class="row"><div class="col-md-12"><h3 class="title" style="color: #' + item["Color"] + '">' + item["Name"] + '</h3></div></div><div class="row"><div class="col-md-12 price">' + checkCurrency(data["Location"], item["Prices"])  + soldStatus + '</div></div></div></div>';
+        });   
+        $("#products .content").append(productsContent);           
+      }
+     
+      function indexFormShop(data){
+        var shopsContent = ""; 
+        var modelContent = "";
+        $.each(data["ShopList"], function(i, item) {
+          var imgPath = item["PhotoList"][0];
+          if(imgPath == null){
+            imgPath = "/img/star_gray.png";
+          }
+   
+        
+          modelContent += '<div class="modal fade" id="shop' + item["OrderId"] + '" role="dialog"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">' + item["Name"] + '</h4></div><div class="modal-body"><p><table><tr><th class="shop_website" style="text-align: left;">Website</th><td style="padding-left: 15px">' + item["Website"] +'</td></tr><tr><th class="shop_tel" style="text-align: left;">Tel.</th><td style="padding-left: 15px">' + item["Phone"] +'</td></tr><tr><th class="shop_email" style="text-align: left;">Email</th><td style="padding-left: 15px">' + item["Email"] +'</td></tr><tr><th class="shop_place" style="text-align: left;">Address</th><td style="padding-left: 15px">' + item["Address"][0] +'</td></tr></table><iframe width="300" height="170" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='+ item["LocationList"][0]["Latitude"] +','+ item["LocationList"][0]["Longitude"] +'&hl=es;z=14&amp;output=embed"></iframe><br /></p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal"><span class="shop_close">Close</span></button></div></div></div></div>';
+          shopsContent += '<div shopid="shop' + item["OrderId"]  + '" class="col-md-3 col-sm-6 col-xs-6 shopHolder"><div class="row shopGrid"><div class="col-md-12 shopThumb"><img class="img-responsive" src="' + imgPath + '" alt=""><div class="shopcontent"><h3>' + item["Name"] + '</h3></div></div></div></div>';
+        });   
+        $("#shops .content").html(shopsContent);  
+        $("#modelHolder").append(modelContent);
+        $(".shopHolder").click(function(){
+          var shopId = $(this).attr("shopid");
+          $('#' + shopId).modal('show');
+        });
+      }
+   
+    /* function doRequestProductDetail(productId){
+    doRequest("GeneralGetProductDetail", {ProductId: productId}, "itemdetail");
+    } */
+   
+    function itemdetailFormDetail (data){
+    // $.get("item_detail.html", { ProductId: data} );   
+    var loc = window.location;
+    window.location = './item_detail.html?ProductId=' + data;
+    }
+     
+    function toNewsDetail(data){
+    var loc = window.location;
+    window.location = './news_detail.html?NewsId=' + data;
+    }
+     
+    $("#loadMoreBtn").click(function(){
+      indexCurPage++;
+      doRequest("GeneralGetFirstPage", {Page: indexCurPage}, "indexproducts");
+    });
+   
+    </script>
+  
+</body></html>

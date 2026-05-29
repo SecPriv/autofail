@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head>
+  <title>Taboola Topics API</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+    async function getTopics() {
+      try {
+        if (document.featurePolicy.allowsFeature('browsing-topics') && 'browsingTopics' in document) {
+          const topics = await document.browsingTopics();
+          console.log(
+                  "Called iframe:",
+                  window.location.hostname,
+                  topics,
+                  "\nNumber of topics: ",
+                  topics.length
+          );
+          return Promise.resolve(topics);
+        } else {
+          console.log('document.browsingTopics() not supported');
+        }
+      } catch (error) {
+        console.log("Error:", error);
+      }
+    }
+
+    (async function() {
+      const topics = await getTopics();
+      const message = JSON.stringify({
+                                       segment: {
+                                         domain: window.location.hostname,
+                                         bidder: 'taboola',
+                                         topics,
+                                       },
+                                       date: Date.now(),
+                                     });
+      console.log('Message:', message);
+      window.parent.postMessage(message, '*');
+    })();
+  </script>
+</head>
+
+<body>
+
+
+
+</body></html>

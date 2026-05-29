@@ -1,0 +1,522 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="141一世一華人討論區。成年人資訊論壇、性愛風月話題不斷、觀賞短片、圖片等。立即加入並了解更多好玩又刺激的成人活動！">
+    <title>zh141華人討論區 - 多元化成人討論區｜全港最齊全成人娛樂討論平台</title>
+    <link rel="canonical" href="https://zh141.com/">
+	<link rel="stylesheet" href="https://forum.cdn141.com/bootstrap-5.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://forum.cdn141.com/bootstrap-5.3.2/common3.css">
+	<script src="https://forum.cdn141.com/bootstrap-5.3.2/js/bootstrap.bundle.min.js"></script>
+	<script src="https://forum.cdn141.com/bootstrap-5.3.2/js/jquery-3.7.1.min.js"></script>
+	<style>
+		#popupLightbox {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+		}
+		#popupBackdrop {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			cursor: pointer;
+		}
+		#popupContent {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 90%;
+			max-height: 90%;
+			z-index: 10000;
+		}
+		#popupAdImage {
+			display: block;
+			position: relative;
+		}
+		#popupAdImage img {
+			max-width: 90vw;
+			max-height: 90vh;
+			height: auto;
+			display: block;
+			border-radius: 8px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+		}
+		#popupCloseBtn {
+			position: absolute;
+			top: -15px;
+			right: -15px;
+			width: 40px;
+			height: 40px;
+			background-color: #fff;
+			border: 2px solid #333;
+			border-radius: 50%;
+			cursor: pointer;
+			font-size: 24px;
+			font-weight: bold;
+			line-height: 36px;
+			text-align: center;
+			color: #333;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+			z-index: 10001;
+			transition: all 0.2s;
+		}
+		#popupCloseBtn:hover {
+			background-color: #f44336;
+			color: #fff;
+			border-color: #f44336;
+			transform: scale(1.1);
+		}
+	</style>
+	<script>
+	$( document ).ready(function() {
+
+		$.getJSON( "/index.json.php", function( response ) {
+			$('#hotTopicSubject').html(response.hotTopic);
+			$('#hotTopicTime').html(response.hotTopicTime);
+			$('#hotTopicHeats').html(response.hotTopicHeats);
+			$('#hotTopicContent').html(response.hotTopicContent);
+			$('#hotTopicLink').attr('href','/thread-'+response.hotTopicLink);
+			if (response.hotTopicImage!=null) $('#hotTopicImage').html('<img class="img-fluid" src="https://forum.cdn141.com/data/attachment/forum/'+response.hotTopicImage+'">');
+			if (response.announcements!=null) {
+				$('#announcement').removeClass('d-none');
+				if (response.announcements.subject!=null) $('#announcementSubject').html(response.announcements.subject);
+				if (response.announcements.message!=null) $('#announcementMessage').html(response.announcements.message);
+			}
+			$('#heatTopic1 .topicSubject').html(response.heatTopic1);
+			$('#heatTopic1 .heatReplies').html(response.heatReplies1);
+			$('#heatTopic1').attr('onclick','javascript:location.href="/thread-'+response.heatTopicLink1+'"');
+
+			$('#heatTopic2 .topicSubject').html(response.heatTopic2);
+			$('#heatTopic2 .heatReplies').html(response.heatReplies2);
+			$('#heatTopic2').attr('onclick','javascript:location.href="/thread-'+response.heatTopicLink2+'"');
+
+			$('#heatTopic3 .topicSubject').html(response.heatTopic3);
+			$('#heatTopic3 .heatReplies').html(response.heatReplies3);
+			$('#heatTopic3').attr('onclick','javascript:location.href="/thread-'+response.heatTopicLink3+'"');
+
+			$('#heatTopic4 .topicSubject').html(response.heatTopic4);
+			$('#heatTopic4 .heatReplies').html(response.heatReplies4);
+			$('#heatTopic4').attr('onclick','javascript:location.href="/thread-'+response.heatTopicLink4+'"');
+
+			$('#heatTopic5 .topicSubject').html(response.heatTopic5);
+			$('#heatTopic5 .heatReplies').html(response.heatReplies5);
+			$('#heatTopic5').attr('onclick','javascript:location.href="/thread-'+response.heatTopicLink5+'"');
+			
+			$('#todayPosts').html(response.todayPosts);
+			$('#yesterdayPosts').html(response.yesterdayPosts);
+			$('#totalPosts').html(response.totalPosts);
+			$('#totalTopics').html(response.totalTopics);
+			$('#totalMembers').html(response.totalMembers);
+			$('#newestMember').html('<a href="/user-'+response.newestMember+'">'+response.newestMember+'</a>');
+			
+			$('#onlineNum').html(response.onlineNum);
+			$('#onlineMembers').html(response.onlineMembers);
+			$('#onlineMax').html(response.onlineMax);
+			$('#onlineMaxDate').html(response.onlineMaxDate);
+			const groups=[60,273,52,253,51,272,59,369,372,418];
+			groups.forEach((fid)=>{
+				var forums='';
+				response.forums[fid].forEach((forum)=>{forums+='<li><a href="/forum-'+forum['fid']+'"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/'+forum['icon']+'"><div>'+forum['name']+'</div></a></li>';});
+				$('#fid'+fid+' dd ul').html(forums);
+			});
+			for (const [tid, ad] of Object.entries(response.adv)) {
+				$('#text1').append('<a class="col-4 col-md-4 col-lg-3 g-1" target="_blank" href="'+ad['link']+'"><img class="w-100 rounded shadow" alt="'+ad['alt']+'" src="'+ad['url']+'"></a>');
+			}
+			for (const [tid, ad] of Object.entries(response.adv2)) {
+				$('#text2').append('<a class="col-12 g-1" target="_blank" href="'+ad['link']+'"><img class="w-100 rounded shadow" alt="'+ad['alt']+'" src="'+ad['url']+'"></a>');
+			}
+			if (response.adv3.length>0) {
+				for (const [tid, ad] of Object.entries(response.adv3)) {
+					$('#text3').append('<a class="col-12 g-1" target="_blank" href="'+ad['link']+'"><img class="w-100 rounded shadow" alt="'+ad['alt']+'" src="'+ad['url']+'"></a>');
+				}
+			}else{
+				$('#text3').append('<div class="alert alert-info alert-dismissible fade show text-center" role="alert">植入廣告請聯繫 <a target="_blank" href="https://t.me/joke188" class="text-emphasis fw-bold">Telegram @joke188</a><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+			}
+			
+			// Popup Ad Lightbox - Show after 0.5 seconds with fade-in
+			setTimeout(function() {
+				if (response.popup_ad && response.popup_ad.img) {
+					$('#popupAdImage').attr('href', response.popup_ad.link || '#');
+					$('#popupAdImage img').attr('src', response.popup_ad.img);
+					$('#popupLightbox').fadeIn(500);
+				}
+			}, 500);
+		});
+		$('#contactModal').on('hide.bs.modal', function(event){
+			$('#contactVideo').trigger('pause'); 
+		});
+		$('#contactModal').on('shown.bs.modal', function(event){
+			$('#contactVideo source').attr('src','https://forum.cdn141.com/advertising_video_forum_720p.mp4');
+			$('#contactVideo')[0].load();
+		});
+		
+		(function(a){$('#menu3').attr('href',/141hongkong\.com/i.test(a)? 'https://mo.nightlife141.com' : 'https://mo.141-161.com')})(window.location.toString());
+		(function(a){$('#menu4').attr('href',/141hongkong\.com/i.test(a)? 'https://tw.nightlife141.com' : 'https://tw.141-161.com')})(window.location.toString());
+		(function(a){$('#menu8').attr('href',/141hongkong\.com/i.test(a)? 'https://global.sex141.com' : 'https://global.141-161.com')})(window.location.toString());
+		(function(a){$('#menu5').attr('href',/141hongkong\.com/i.test(a)? 'https://global.sex141.com/area/1' : 'https://global.141-161.com/area/1')})(window.location.toString());
+		(function(a){$('#menu6').attr('href',/141hongkong\.com/i.test(a)? 'https://global.sex141.com/area/21' : 'https://global.141-161.com/area/21')})(window.location.toString());
+		(function(a){$('#menu7').attr('href',/141hongkong\.com/i.test(a)? 'https://global.sex141.com/area/52' : 'https://global.141-161.com/area/52')})(window.location.toString());
+	});
+	
+	// Close lightbox on X button click
+	$(document).on('click', '#popupCloseBtn', function(e) {
+		e.stopPropagation();
+		$('#popupLightbox').fadeOut(300);
+	});
+	
+	// Close lightbox on backdrop click
+	$(document).on('click', '#popupBackdrop', function() {
+		$('#popupLightbox').fadeOut(300);
+	});
+	</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G02LH4ZZWX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G02LH4ZZWX');
+</script>
+
+  </head>
+  <body>
+  <!-- Popup Ad Lightbox -->
+  <div id="popupLightbox">
+	<div id="popupBackdrop"></div>
+	<div id="popupContent">
+		<a id="popupAdImage" href="#" target="_blank">
+			<img src="" alt="Popup Ad">
+		</a>
+		<div id="popupCloseBtn">×</div>
+	</div>
+  </div>
+  <div class="sticky-top bg-black">
+  <header class="container-fluid border-bottom lh-1 pb-1">
+    <div class="row p-0 flex-nowrap d-flex justify-content-between align-items-center">
+      <div style="width:141px">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="/" title="141華人討論區">
+			<img src="https://forum.cdn141.com/static/image/common/forumLogo.png" style="max-width:121px" alt="141華人討論區">
+		</a>
+      </div>
+      <div class="col text-center d-flex flex-wrap align-content-around  justify-content-around " style="line-height: 1.41em !important;padding:0">
+        <a class="link-secondary forumMenu" id="menu2" href="https://141club.com/">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">141 Club</text></svg>
+		</a>
+        <a class="link-secondary forumMenu" id="menu1" href="https://141-161.com/zh/">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">囡囡資料庫</text></svg>
+		</a>
+        <a class="link-secondary forumMenu" id="menu3" href="https://mo.141-161.com">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">澳門141</text></svg>
+		</a>
+        <a class="link-secondary forumMenu" id="menu4" href="https://tw.141-161.com">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">台灣141</text></svg>
+		</a>
+		<a class="link-secondary forumMenu" id="menu5" href="https://global.141-161.com/area/1">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">日本141</text></svg>
+		</a>
+		<a class="link-secondary forumMenu" id="menu6" href="https://global.141-161.com/area/21">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">泰國141</text></svg>
+		</a>
+		<a class="link-secondary forumMenu" id="menu7" href="https://global.141-161.com/area/52">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(45 20) scale(0.706)">越南141</text></svg>
+		</a>
+		<a class="link-secondary forumMenu" id="menu8" href="https://global.141-161.com">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 27"><text class="cls-Menu" transform="translate(37 20) scale(0.706)">國際版141</text></svg>
+		</a>
+      </div>
+      <div class="d-flex justify-content-center" style="width:36px">
+        <a class="link-secondary" href="/search.php" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="m-1" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+        </a>
+<!--        <a class="btn btn-sm btn-outline-secondary" href="/member.php?mod=logging&action=login">登入帳號</a> -->
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid nav-scroller py-1 border-bottom w-100" style="background:#0088cc5c;">
+    <nav class="nav nav-underline d-flex flex-wrap justify-content-center align-content-stretch w-100">
+	  <button id="navbarToggler" class="btn btn-secondary dropdown-toggle d-lg-none float-end" type="button" onclick="$('.nav-scroller').css('height',!$(this).data('f')?'auto':'2.75rem');$(this).data('f',!$(this).data('f'));"></button>
+      <a class="nav-item nav-link link-info" href="javascript:;" data-bs-toggle="modal" data-bs-target="#contactModal">客服部</a>
+      <a class="nav-item nav-link link-light" href="/welcome">論壇入口</a>
+      <a class="nav-item nav-link link-light" href="https://forum.141love.com/">Int'l Forum</a>
+      <a class="nav-item nav-link text-danger" href="/HongKong">香港成人台</a>
+      <a class="nav-item nav-link text-danger" href="/Macau">澳門成人台</a>
+      <a class="nav-item nav-link text-danger" href="/China">神州成人台</a>
+      <a class="nav-item nav-link text-danger" href="/Taiwan">臺灣成人台</a>
+      <a class="nav-item nav-link text-danger" href="/Global">寰宇成人台</a>
+      <a class="nav-item nav-link link-warning" href="/tid-918836">贊助會員</a>
+      <a class="nav-item nav-link link-light" href="/home.php?mod=space&amp;do=home&amp;view=all">更新</a>
+      <a class="nav-item nav-link link-light" href="/home.php?mod=space&amp;do=thread&amp;view=all">新帖</a>
+      <a class="nav-item nav-link link-light" href="/home.php?mod=space&amp;do=album&amp;view=all">相冊</a>
+      <a class="nav-item nav-link link-light" href="/home.php?mod=space&amp;do=doing&amp;view=all">點滴</a>
+      <a class="nav-item nav-link link-light" href="/home.php?mod=space&amp;do=poll&amp;view=all">投票</a>
+    </nav>
+  </div>
+</div>
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">客服部</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ratio ratio-16x9">
+        <video id="contactVideo" class="w-100" autoplay="" controls="" loop="">
+		  <source type="video/mp4">
+		</video>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="$('#contactVideo').trigger('pause'); window.open('https://141-hk.com/zh/contact.php', '141CS', '141客服部');">詳情</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<svg class="headBanner d-flex g-0 container-fluid" viewBox="0 0 1024 400">
+	<image x="0" y="0" xlink:href="https://forum.cdn141.com/static/20231201/banner-min.jpg"></image>
+	<a id="contactBtn" href="javascript:;" data-bs-toggle="modal" data-bs-target="#contactModal">
+		<image x="687" y="292" xlink:href="https://forum.cdn141.com/static/20231201/contactBtn.png"></image>
+	</a>
+</svg>
+
+<!--
+<div class="d-block text-center" style="white-space: nowrap; padding: 0; margin: 0; max-width: 100%; max-height: 300px;">
+    <a href="https://cache.141-161.com/banner/ad_click.php?id=159" target="_external"><img src="https://hk-cdn.cdn141.com/noblock/e21fb6d8.webp" style="max-width: 50%; max-height: 300px;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></a><a href="https://cache.141-161.com/banner/ad_click.php?id=160" target="_exnternal"><img src="https://hk-cdn.cdn141.com/noblock/550ccd9f.webp" style="max-width: 50%; max-height: 300px;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></a>
+</div>
+// -->
+
+	<div id="announcement" class="alert alert-info alert-dismissible fade show my-4 d-none" role="alert">
+		<img src="https://forum.cdn141.com/static/20231201/announcement.svg">
+		<span id="announcementSubject">公告:</span>
+	  <strong id="announcementMessage">141在港區沒有任何工作人員，切勿讓騙子有機可乘，如有任何疑問，請立即聯絡客服部。</strong> 
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+
+<main class="py-2 container-fluid rounded" data-bs-spy="scroll" data-bs-target="#navbar" data-offset="141">
+	<section class="mb-2 px-2 w-100 text-center">
+		<div id="text2" class="row"></div>
+		<div id="text1" class="row"><a class="col-4 col-md-4 col-lg-3 g-1" target="_blank" href="https://cache.141-hk.com/banner/ad_click.php?id=129"><img class="w-100 rounded shadow" alt="69lala.com" src="https://hk.cdn141.com/noblock/e7af145e.jpg"></a><a class="col-4 col-md-4 col-lg-3 g-1" target="_blank" href="https://cache.141-hk.com/banner/ad_click.php?id=69"><img class="w-100 rounded shadow" alt="58正宗桑拿" src="https://hk-cdn.cdn141.com/noblock/1118ec2a.gif"></a><a class="col-4 col-md-4 col-lg-3 g-1" target="_blank" href="https://cache.141-hk.com/banner/ad_click.php?id=68"><img class="w-100 rounded shadow" alt="我是歌手" src="https://forum-cdn.cdn141.com/data/attachment/common/151851djbbszxnhtb6saj2.gif"></a></div>
+		<div id="text3" class="row"><div class="alert alert-info alert-dismissible fade show text-center" role="alert">植入廣告請聯繫 <a target="_blank" href="https://t.me/joke188" class="text-emphasis fw-bold">Telegram @joke188</a><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div></div>
+	</section>
+	<!--
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="69LaLa.com 聯繫 Telegram @hanson141" href="https://cache.141-hk.com/banner/ad_click.php?id=127">
+		<img class="w-100 rounded shadow" src="https://hk.cdn141.com/noblock/85438e9f.jpg">
+	</a>
+	// -->
+
+  <div class="g-2 g-xl-3 row mb-2">
+    <div class="col-md-6">
+      <div class="rounded overflow-hidden flex-md-row mb-4 shadow h-272 bg-body-tertiary position-relative align-items-center">
+        <div class="col p-1 p-sm-2 p-xl-3 d-flex flex-column position-static h-100">
+			<strong class="h5 rounded bg-gradient-light d-inline-block p-2 text-center d-inline-block mb-1 text-info-emphasis text-shadow-light fw-bolder">廣播熱帖</strong>
+			<div id="hotTopic" class="rounded p-3 overflow-y-auto position-relative h-100">
+				<h5 class="mb-0" id="hotTopicSubject">AV級數嘅視覺感，反應同表情好肉緊，車牌可考</h5>
+				<div class="mb-1 text-success"><em id="hotTopicTime">2026-05-22 14:43</em><span class="badge bg-badge rounded-pill float-end" id="hotTopicHeats">71</span></div>
+				<div>
+					<div class="float-end" id="hotTopicImage">
+					  <svg class="bd-placeholder-img" width="100" height="133" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="12%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+					</div>
+				  <p class="card-text mb-auto">
+					<span id="hotTopicContent">前几日去銅鑼灣見客時食咗竹星妹小女孩，依家先得閒寫報告。
+
+竹星妹小女孩身材難得係夠fit走肥，瘦得嚟有波路，樣子算係中上級，總之就係第一次見到唔會彈鐘嘅類型。服務一流，吹奏一輪就上套抽插，無論狗仔，女上 ...</span>
+					</p>
+				  <a href="/thread-4459985" class="icon-link gap-1 icon-link-hover stretched-link" id="hotTopicLink">
+					繼續閱讀 ...
+				  </a>
+				</div>
+			</div>
+		</div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div id="heatTopics" class="rounded overflow-hidden flex-md-row mb-4 shadow h-272 bg-body-tertiary position-relative">
+        <div class="col p-1 p-sm-2 p-xl-3 d-flex flex-column position-static h-100">
+          <strong class="h5 rounded bg-gradient-light d-inline-block p-2 text-center d-inline-block mb-1 text-info-emphasis text-shadow-light fw-bolder">人氣熱帖</strong>
+			<ol class="list-group list-group-numbered w-100">
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient shadow bb-dark" id="heatTopic1" onclick="javascript:location.href=&quot;/thread-4459936&quot;">
+				<div class="ms-2 me-auto text-truncate">
+				  <div class="fw-bold topicSubject text-truncate">技術超班，反應自然，最鍾意水多</div>
+				</div>
+				<span class="badge bg-badge rounded-pill heatReplies">70</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient shadow bb-dark" id="heatTopic2" onclick="javascript:location.href=&quot;/thread-4460007&quot;">
+				<div class="ms-2 me-auto text-truncate">
+				  <div class="fw-bold topicSubject text-truncate">對D波美乳，形狀吸引，簡直視覺享受</div>
+				</div>
+				<span class="badge bg-badge rounded-pill heatReplies">69</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient shadow bb-dark" id="heatTopic3" onclick="javascript:location.href=&quot;/thread-4458461&quot;">
+				<div class="ms-2 me-auto text-truncate">
+				  <div class="fw-bold topicSubject text-truncate">到展覽館睇展品有驚喜</div>
+				</div>
+				<span class="badge bg-badge rounded-pill heatReplies">63</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient shadow bb-dark" id="heatTopic4" onclick="javascript:location.href=&quot;/thread-4459557&quot;">
+				<div class="ms-2 me-auto text-truncate">
+				  <div class="fw-bold topicSubject text-truncate">（轉載）用手遮點遮得哂咁大個籮柚呀</div>
+				</div>
+				<span class="badge bg-badge rounded-pill heatReplies">45</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient shadow" id="heatTopic5" onclick="javascript:location.href=&quot;/thread-4459867&quot;">
+				<div class="ms-2 me-auto text-truncate">
+				  <div class="fw-bold topicSubject text-truncate">一直跟到女裝部有驚喜冇失望</div>
+				</div>
+				<span class="badge bg-badge rounded-pill heatReplies">41</span>
+			  </li>
+			</ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="g-2 g-xl-3 row">
+    <div class="col-md-9 col-lg-8">
+      <h3 id="green-section" class="bg-body-tertiary rounded shadow px-3 py-2 mb-1 fst-italic border-bottom text-success text-shadow-light fw-bolder">正經聊天（綠區）</h3>
+      <article id="green_section" class="forumList rounded bg-body-tertiary">
+        <dl id="fid60"><dt><a href="/forum-60" class="bg-success bg-gradient-light d-inline-block h4 text-success-emphasis text-shadow-light py-2 px-4 rounded shadow border border-success fw-bolder">本站事務</a></dt><dd><ul><li><a href="/forum-62"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_62_icon.jpg.thumb.jpg"><div>公告板</div></a></li><li><a href="/forum-66"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_66_icon.jpg.thumb.jpg"><div>論壇使用交流</div></a></li><li><a href="/forum-86"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_86_icon.jpg.thumb.jpg"><div>職位及勳章申請</div></a></li><li><a href="/forum-568"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_568_icon.jpg.thumb.jpg"><div>遊戲發放區</div></a></li><li><a href="/forum-136"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_136_icon.jpg.thumb.jpg"><div>四台客戶推廣</div></a></li><li><a href="/forum-385"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_385_icon.jpg.thumb.jpg"><div>每日簽到記錄</div></a></li></ul></dd></dl>
+
+		<dl id="fid273"><dt><a href="/forum-273" class="bg-success bg-gradient-light d-inline-block h4 text-success-emphasis text-shadow-light py-2 px-4 rounded shadow border border-success fw-bolder">會員交流</a></dt><dd><ul><li><a href="/forum-61"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_61_icon.jpg.thumb.jpg"><div>新手報到</div></a></li><li><a href="/forum-13"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_13_icon.jpg.thumb.jpg"><div>吹水閒聊</div></a></li><li><a href="/forum-54"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_54_icon.jpg.thumb.jpg"><div>瘋人瘋語</div></a></li><li><a href="/forum-142"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_142_icon.jpg.thumb.jpg"><div>會員創作</div></a></li><li><a href="/forum-211"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_211_icon.jpg.thumb.jpg"><div>投資理財</div></a></li><li><a href="/forum-17"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_17_icon.jpg.thumb.jpg"><div>無賭不歡</div></a></li><li><a href="/forum-527"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_527_icon.jpg.thumb.jpg"><div>賭海迷途</div></a></li><li><a href="/forum-521"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_521_icon.jpg.thumb.jpg"><div>學海無涯(升學/進修)</div></a></li><li><a href="/forum-193"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_193_icon.jpg.thumb.jpg"><div>追男追女</div></a></li><li><a href="/forum-522"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_522_icon.jpg.thumb.jpg"><div>婚姻大事</div></a></li><li><a href="/forum-523"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_523_icon.jpg.thumb.jpg"><div>家庭生活/養兒育女</div></a></li><li><a href="/forum-524"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_524_icon.jpg.thumb.jpg"><div>安享晚年(退休閒談)</div></a></li><li><a href="/forum-544"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_544_icon.jpg.thumb.jpg"><div>家居辦工室裝修佈置</div></a></li><li><a href="/forum-301"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_301_icon.jpg.thumb.jpg"><div>旅遊札記</div></a></li><li><a href="/forum-95"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_95_icon.jpg.thumb.jpg"><div>食店品評</div></a></li><li><a href="/forum-98"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_98_icon.jpg.thumb.jpg"><div>宗教信仰</div></a></li><li><a href="/forum-37"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_37_icon.jpg.thumb.jpg"><div>MUSIC窩</div></a></li><li><a href="/forum-64"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_64_icon.jpg.thumb.jpg"><div>網上短片</div></a></li><li><a href="/forum-520"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_520_icon.jpg.thumb.jpg"><div>熱播短劇</div></a></li><li><a href="/forum-46"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_46_icon.jpg.thumb.jpg"><div>有趣笑料</div></a></li><li><a href="/forum-74"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_74_icon.jpg.thumb.jpg"><div>好文共賞</div></a></li><li><a href="/forum-57"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_57_icon.jpg.thumb.jpg"><div>會員轉讓</div></a></li></ul></dd></dl>
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="植入廣告請聯繫 Telegram @joke188" href="https://cache.141-hk.com/banner/ad_click.php?id=69">
+		<img class="w-100 rounded shadow" src="https://forum.cdn141.com/static/20231201/bannerO4.gif">
+	</a>
+<!--
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="" href="">
+		<img class="w-100 rounded shadow" src="">
+	</a>
+// -->
+		<dl id="fid52"><dt><a href="/forum-52" class="bg-success bg-gradient-light d-inline-block h4 text-success-emphasis text-shadow-light py-2 px-4 rounded shadow border border-success fw-bolder">資訊情報</a></dt><dd><ul><li><a href="/forum-24"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_24_icon.jpg.thumb.jpg"><div>城中熱話</div></a></li><li><a href="/forum-576"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_576_icon.jpg.thumb.jpg"><div>移民風</div></a></li><li><a href="/forum-80"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_80_icon.jpg.thumb.jpg"><div>體壇消息</div></a></li><li><a href="/forum-21"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_21_icon.jpg.thumb.jpg"><div>財經資訊</div></a></li><li><a href="/forum-43"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_43_icon.jpg.thumb.jpg"><div>電腦資訊</div></a></li><li><a href="/forum-542"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_542_icon.jpg.thumb.jpg"><div>開箱文匯聚</div></a></li><li><a href="/forum-72"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_72_icon.jpg.thumb.jpg"><div>手機情報交流</div></a></li><li><a href="/forum-545"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_545_icon.jpg.thumb.jpg"><div>iDevice 果迷交流</div></a></li><li><a href="/forum-442"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_442_icon.jpg.thumb.jpg"><div>手機Apps應用</div></a></li><li><a href="/forum-14"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_14_icon.jpg.thumb.jpg"><div>遊戲機情報</div></a></li><li><a href="/forum-15"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_15_icon.jpg.thumb.jpg"><div>車迷天地</div></a></li><li><a href="/forum-27"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_27_icon.jpg.thumb.jpg"><div>飲食健康</div></a></li><li><a href="/forum-16"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_16_icon.jpg.thumb.jpg"><div>睇女講星</div></a></li><li><a href="/forum-382"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_382_icon.jpg.thumb.jpg"><div>潮流時尚</div></a></li><li><a href="/forum-300"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_300_icon.jpg.thumb.jpg"><div>生活小常識</div></a></li><li><a href="/forum-515"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_515_icon.jpg.thumb.jpg"><div>創意生活</div></a></li><li><a href="/forum-577"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_577_icon.jpg.thumb.jpg"><div>短遊大灣區</div></a></li></ul></dd></dl>
+		<dl id="fid253"><dt><a href="/forum-253" class="bg-success bg-gradient-light d-inline-block h4 text-success-emphasis text-shadow-light py-2 px-4 rounded shadow border border-success fw-bolder">各行各業</a></dt><dd><ul><li><a href="/forum-87"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_87_icon.jpg.thumb.jpg"><div>打工指南</div></a></li><li><a href="/forum-212"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_212_icon.jpg.thumb.jpg"><div>政府/社福</div></a></li><li><a href="/forum-197"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_197_icon.jpg.thumb.jpg"><div>地產/物業</div></a></li><li><a href="/forum-210"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_210_icon.jpg.thumb.jpg"><div>銀行/保險</div></a></li><li><a href="/forum-208"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_208_icon.jpg.thumb.jpg"><div>會計/財務</div></a></li><li><a href="/forum-103"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_103_icon.jpg.thumb.jpg"><div>法律資訊</div></a></li><li><a href="/forum-199"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_199_icon.jpg.thumb.jpg"><div>工程/建造</div></a></li><li><a href="/forum-266"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_266_icon.jpg.thumb.jpg"><div>醫藥/護理</div></a></li><li><a href="/forum-202"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_202_icon.jpg.thumb.jpg"><div>教育/出版</div></a></li><li><a href="/forum-198"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_198_icon.jpg.thumb.jpg"><div>廣告/設計</div></a></li><li><a href="/forum-213"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_213_icon.jpg.thumb.jpg"><div>IT/通訊業</div></a></li><li><a href="/forum-207"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_207_icon.jpg.thumb.jpg"><div>旅遊/航空</div></a></li><li><a href="/forum-206"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_206_icon.jpg.thumb.jpg"><div>運輸/物流</div></a></li><li><a href="/forum-203"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_203_icon.jpg.thumb.jpg"><div>製造/包裝</div></a></li><li><a href="/forum-209"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_209_icon.jpg.thumb.jpg"><div>採購/質控</div></a></li><li><a href="/forum-204"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_204_icon.jpg.thumb.jpg"><div>酒店/飲食</div></a></li><li><a href="/forum-214"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_214_icon.jpg.thumb.jpg"><div>零售/推銷</div></a></li><li><a href="/forum-205"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_205_icon.jpg.thumb.jpg"><div>化妝/美容</div></a></li><li><a href="/forum-200"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_200_icon.jpg.thumb.jpg"><div>演藝/傳播</div></a></li><li><a href="/forum-351"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_351_icon.jpg.thumb.jpg"><div>殯儀/傳統</div></a></li><li><a href="/forum-216"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_216_icon.jpg.thumb.jpg"><div>新興行業</div></a></li><li><a href="/forum-519"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_519_icon.jpg.thumb.jpg"><div>搶錢一族</div></a></li></ul></dd></dl>
+
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="植入廣告請聯繫 Telegram @joke188" href="https://cache.141-hk.com/banner/ad_click.php?id=69">
+		<img class="w-100 rounded shadow" src="https://forum.cdn141.com/static/20231201/bannerO4.gif">
+	</a>
+<!--
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="" href="">
+		<img class="w-100 rounded shadow" src="">
+	</a>
+// -->
+
+	<dl id="fid51"><dt><a href="/forum-51" class="bg-success bg-gradient-light d-inline-block h4 text-success-emphasis text-shadow-light py-2 px-4 rounded shadow border border-success fw-bolder">消閒興趣</a></dt><dd><ul><li><a href="/forum-99"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_99_icon.jpg.thumb.jpg"><div>軍事研究</div></a></li><li><a href="/forum-129"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_129_icon.jpg.thumb.jpg"><div>自然奇觀</div></a></li><li><a href="/forum-102"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_102_icon.jpg.thumb.jpg"><div>歷史研究</div></a></li><li><a href="/forum-77"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_77_icon.jpg.thumb.jpg"><div>玩具模型</div></a></li><li><a href="/forum-55"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_55_icon.jpg.thumb.jpg"><div>攝影研究</div></a></li><li><a href="/forum-23"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_23_icon.jpg.thumb.jpg"><div>影音HiFi</div></a></li><li><a href="/forum-81"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_81_icon.jpg.thumb.jpg"><div>武術搏擊</div></a></li><li><a href="/forum-85"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_85_icon.jpg.thumb.jpg"><div>魔術教室</div></a></li><li><a href="/forum-26"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_26_icon.jpg.thumb.jpg"><div>恐怖熱線</div></a></li><li><a href="/forum-70"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_70_icon.jpg.thumb.jpg"><div>占星命理</div></a></li><li><a href="/forum-25"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_25_icon.jpg.thumb.jpg"><div>廚師食譜</div></a></li><li><a href="/forum-47"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_47_icon.jpg.thumb.jpg"><div>寵物世界</div></a></li><li><a href="/forum-92"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_92_icon.jpg.thumb.jpg"><div>花鳥蟲魚</div></a></li><li><a href="/forum-302"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_302_icon.jpg.thumb.jpg"><div>爬山遠足</div></a></li><li><a href="/forum-307"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_307_icon.jpg.thumb.jpg"><div>珍品收藏</div></a></li><li><a href="/forum-347"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_347_icon.jpg.thumb.jpg"><div>單車交流</div></a></li><li><a href="/forum-350"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_350_icon.jpg.thumb.jpg"><div>煙酒茶座</div></a></li><li><a href="/forum-443"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_443_icon.jpg.thumb.jpg"><div>潛水/水上活動</div></a></li><li><a href="/forum-444"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_444_icon.jpg.thumb.jpg"><div>泰國佛牌隨緣</div></a></li><li><a href="/forum-91"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_91_icon.jpg.thumb.jpg"><div>悠閒嗜好</div></a></li></ul></dd></dl>
+		<dl id="fid272"><dt><a href="/forum-272" class="bg-success bg-gradient-light d-inline-block h4 text-success-emphasis text-shadow-light py-2 px-4 rounded shadow border border-success fw-bolder">🔞資源分享</a></dt><dd><ul><li><a href="/forum-528"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_528_icon.jpg.thumb.jpg"><div>情趣用品交流</div></a></li><li><a href="/forum-65"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_65_icon.jpg.thumb.jpg"><div>唯美貼圖</div></a></li><li><a href="/forum-363"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_363_icon.jpg.thumb.jpg"><div>日本女優相集</div></a></li><li><a href="/forum-7"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_7_icon.jpg.thumb.jpg"><div>成人貼圖</div></a></li><li><a href="/forum-549"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_549_icon.jpg.thumb.jpg"><div>個人專拍分享</div></a></li><li><a href="/forum-353"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_353_icon.jpg.thumb.jpg"><div>打Ｊ短片</div></a></li><li><a href="/forum-94"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_94_icon.jpg.thumb.jpg"><div>成人笑料</div></a></li><li><a href="/forum-68"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_68_icon.jpg.thumb.jpg"><div>性愛技巧</div></a></li><li><a href="/forum-20"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_20_icon.jpg.thumb.jpg"><div>情色文學</div></a></li><li><a href="/forum-543"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_543_icon.jpg.thumb.jpg"><div>有聲讀物</div></a></li><li><a href="/forum-288"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_288_icon.jpg.thumb.jpg"><div>章回長篇</div></a></li><li><a href="/forum-289"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_289_icon.jpg.thumb.jpg"><div>原創小說</div></a></li><li><a href="/forum-82"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_82_icon.jpg.thumb.jpg"><div>成人漫畫</div></a></li><li><a href="/forum-271"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_271_icon.jpg.thumb.jpg"><div>成人動畫</div></a></li><li><a href="/forum-220"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_220_icon.jpg.thumb.jpg"><div>成人遊戲</div></a></li><li><a href="/forum-551"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_551_icon.jpg.thumb.jpg"><div>寫真套圖下載</div></a></li><li><a href="/forum-79"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_79_icon.jpg.thumb.jpg"><div>AV通訊情報</div></a></li><li><a href="/forum-265"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_265_icon.jpg.thumb.jpg"><div>AV在線放送</div></a></li><li><a href="/forum-550"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_550_icon.jpg.thumb.jpg"><div>成人藝術電影</div></a></li><li><a href="/forum-552"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_552_icon.jpg.thumb.jpg"><div>合家歡電影/劇集</div></a></li></ul></dd></dl>
+      </article>
+      <h3 id="red-section" class="bg-body-tertiary rounded shadow px-3 py-2 mb-1 mt-4 fst-italic border-bottom text-danger text-shadow-dark fw-bolder">成人專區（紅區）</h3>
+      <article id="red_section" class="forumList rounded bg-body-tertiary">
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="植入廣告請聯繫 Telegram @joke188" href="https://cache.141-hk.com/banner/ad_click.php?id=69">
+		<img class="w-100 rounded shadow" src="https://forum.cdn141.com/static/20231201/bannerO4.gif">
+	</a>
+        <dl id="fid59"><dt><a href="/forum-59" class="bg-danger bg-gradient-light d-inline-block h4 text-danger-emphasis text-shadow-light fw-bolder py-2 px-4 rounded shadow border border-danger fw-bolder">香港夜生活</a></dt><dd><ul><li><a href="/forum-413"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_413_icon.jpg.thumb.jpg"><div>姊妹交流</div></a></li><li><a href="/forum-4"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_4_icon.jpg.thumb.jpg"><div>一樓一</div></a></li><li><a href="/forum-435"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_435_icon.jpg.thumb.jpg"><div>樓上骨</div></a></li><li><a href="/forum-100"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_100_icon.jpg.thumb.jpg"><div>Hotel G.</div></a></li><li><a href="/forum-517"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_517_icon.jpg.thumb.jpg"><div>七日女郎</div></a></li><li><a href="/forum-262"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_262_icon.jpg.thumb.jpg"><div>足浴保健</div></a></li><li><a href="/forum-416"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_416_icon.jpg.thumb.jpg"><div>水療SPA賽後果</div></a></li><li><a href="/forum-417"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_417_icon.jpg.thumb.jpg"><div>上門推拿及PD交流</div></a></li><li><a href="/forum-518"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_518_icon.jpg.thumb.jpg"><div>泰式/中醫保健專區</div></a></li><li><a href="/forum-531"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_531_icon.jpg.thumb.jpg"><div>援交所／走地G（實況交流）</div></a></li><li><a href="/forum-111"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_111_icon.jpg.thumb.jpg"><div>唱K-GF/指壓囡囡/賓賓印印</div></a></li><li><a href="/forum-572"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_572_icon.jpg.thumb.jpg"><div>桑拿/私竇/酒吧/時鐘酒店</div></a></li><li><a href="/forum-505"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_505_icon.jpg.thumb.jpg"><div>搵囡(尋人租務頂讓)啟示專區</div></a></li><li><a href="/forum-529"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_529_icon.jpg.thumb.jpg"><div>任UP任講</div></a></li><li><a href="/forum-570"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/a8/common_570_icon.jpg"><div>TS妖/男同志/女同志/牛郎cowboy/自組Party</div></a></li><li><a href="/forum-5"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_5_icon.jpg.thumb.jpg"><div>搵囡手冊</div></a></li></ul></dd></dl>
+		 <dl id="fid369"><dt><a href="/forum-369" class="bg-danger bg-gradient-light d-inline-block h4 text-danger-emphasis text-shadow-light fw-bolder py-2 px-4 rounded shadow border border-danger fw-bolder">澳門夜生活</a></dt><dd><ul><li><a href="/forum-377"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_377_icon.jpg.thumb.jpg"><div>澳門‧飲食住行及活動推廣指南</div></a></li><li><a href="/forum-340"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_340_icon.jpg.thumb.jpg"><div>澳門博彩娛樂</div></a></li><li><a href="/forum-402"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_402_icon.jpg.thumb.jpg"><div>橫琴、珠海、拱北交流區</div></a></li><li><a href="/forum-9"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_9_icon.jpg.thumb.jpg"><div>搵囡手冊/新手交流/組團過海</div></a></li><li><a href="/forum-368"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_368_icon.jpg.thumb.jpg"><div>酒店/沙圈囡囡</div></a></li><li><a href="/forum-376"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_376_icon.jpg.thumb.jpg"><div>澳門桑拿/足浴</div></a></li><li><a href="/forum-514"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_514_icon.jpg.thumb.jpg"><div>澳門夜總會/高級會所</div></a></li></ul></dd></dl>
+
+<!--
+	<a class="d-inline-block w-100 mt-1 mb-3" target="_blank" title="植入廣告請聯繫 Telegram @joke188" href="https://cache.141-hk.com/banner/ad_click.php?id=97">
+		<img class="w-100 rounded shadow" src="https://forum.cdn141.com/static/20231201/bannerO3.gif">
+	</a>
+// -->
+		 <dl id="fid372"><dt><a href="/forum-372" class="bg-danger bg-gradient-light d-inline-block h4 text-danger-emphasis text-shadow-light fw-bolder py-2 px-4 rounded shadow border border-danger fw-bolder">神州夜生活</a></dt><dd><ul><li><a href="/forum-346"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_346_icon.jpg.thumb.jpg"><div>新手愛嫖愛浦</div></a></li><li><a href="/forum-539"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_539_icon.jpg.thumb.jpg"><div>正規DUP骨按摩</div></a></li><li><a href="/forum-583"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/9a/common_583_icon.jpg"><div>TS妖/男同志/女同志/牛郎舞男</div></a></li><li><a href="/forum-438"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_438_icon.jpg.thumb.jpg"><div>酒吧/DISCO/K場</div></a></li><li><a href="/forum-533"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_533_icon.jpg.thumb.jpg"><div>神州搵女艷遇</div></a></li><li><a href="/forum-530"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_530_icon.jpg.thumb.jpg"><div>網交玩伴一夜情</div></a></li><li><a href="/forum-441"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_441_icon.jpg.thumb.jpg"><div>神州北上組團</div></a></li><li><a href="/forum-344"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_344_icon.jpg.thumb.jpg"><div>神州飲食交流</div></a></li><li><a href="/forum-345"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_345_icon.jpg.thumb.jpg"><div>神州旅遊</div></a></li><li><a href="/forum-343"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_343_icon.jpg.thumb.jpg"><div>神州時事</div></a></li></ul></dd></dl>
+		 <dl id="fid418"><dt><a href="/forum-418" class="bg-danger bg-gradient-light d-inline-block h4 text-danger-emphasis text-shadow-light fw-bolder py-2 px-4 rounded shadow border border-danger fw-bolder">寰宇夜生活</a></dt><dd><ul><li><a href="/forum-569"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_569_icon.jpg.thumb.jpg"><div>國際版 SEX141</div></a></li><li><a href="/forum-575"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_575_icon.jpg.thumb.jpg"><div>台灣夜遊</div></a></li><li><a href="/forum-424"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_424_icon.jpg.thumb.jpg"><div>日本夜遊</div></a></li><li><a href="/forum-421"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_421_icon.jpg.thumb.jpg"><div>新加坡夜遊</div></a></li><li><a href="/forum-422"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_422_icon.jpg.thumb.jpg"><div>馬來西亞夜遊</div></a></li><li><a href="/forum-112"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_112_icon.jpg.thumb.jpg"><div>泰國夜遊</div></a></li><li><a href="/forum-425"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_425_icon.jpg.thumb.jpg"><div>韓國夜遊</div></a></li><li><a href="/forum-562"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_562_icon.jpg.thumb.jpg"><div>越南偷跳</div></a></li><li><a href="/forum-429"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_429_icon.jpg.thumb.jpg"><div>美加夜遊</div></a></li><li><a href="/forum-428"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_428_icon.jpg.thumb.jpg"><div>歐洲夜遊</div></a></li><li><a href="/forum-427"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_427_icon.jpg.thumb.jpg"><div>澳紐夜遊</div></a></li><li><a href="/forum-31"><img class="rounded" src="https://forum.cdn141.com/data/attachment/common/common_31_icon.jpg.thumb.jpg"><div>寰宇世界</div></a></li></ul></dd></dl>
+      </article>
+		
+    </div>
+
+    <div class="col-md-3 col-lg-4">
+      <div class="position-sticky" style="top: 121px;">
+
+	  <div class="p-1 p-sm-2 p-xl-3 mb-3 rounded bg-body-tertiary text-nowrap">
+		<nav id="navbar" class="flex-column align-items-stretch border-end rounded">
+		  <div class="p-2 d-block rounded" style="background: var(--bs-body-bg);">
+			<a class="d-block bg-body-tertiary p-2 text-center m-2 text-success fw-bolder text-shadow-light h5" href="#green-section">正經聊天（綠區）</a>
+			<div class="mb-1 flex-wrap d-flex justify-content-evenly">
+			  <a class="bg-gradient-light text-success-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid60">本站事務</a>
+			  <a class="bg-gradient-light text-success-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid273">會員交流</a>
+			  <a class="bg-gradient-light text-success-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid52">資訊情報</a>
+			  <a class="bg-gradient-light text-success-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid253">各行各業</a>
+			  <a class="bg-gradient-light text-success-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid51">消閒興趣</a>
+			  <a class="bg-gradient-light text-success-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid272">🔞資源分享</a>
+			</div>
+			<a class="d-block bg-body-tertiary p-2 text-center m-2 text-danger-emphasis text-shadow-light fw-bolder h5" href="#red-section">成人專區（紅區）</a>
+			<div class="flex-wrap d-flex justify-content-evenly">
+			  <a class="bg-gradient-light text-danger-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid59">香港夜生活</a>
+			  <a class="bg-gradient-light text-danger-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid369">澳門夜生活</a>
+			  <a class="bg-gradient-light text-danger-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid372">神州夜生活</a>
+			  <a class="bg-gradient-light text-danger-emphasis text-shadow-light border border-secondary fw-bolder shadow nav-link my-1 px-3 py-2 rounded" href="#fid418">寰宇夜生活</a>
+			</div>
+		  </div>
+		</nav>
+	  </div>
+
+
+        <div class="p-1 p-sm-2 p-xl-3 mb-3 bg-body-tertiary rounded">
+          <ul class="list-unstyled list-group" id="forumStat">
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient-light shadow bb-dark">
+				<small class="col text-center text-primary-emphasis">今日帖數</small>
+				<span class="col fw-bold" id="todayPosts">2411</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient-light shadow bb-dark">
+				<small class="col text-center text-primary-emphasis">昨日帖數</small>
+				<span class="col fw-bold" id="yesterdayPosts">4203</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient-light shadow bb-dark">
+				<small class="col text-center text-primary-emphasis">帖子總數</small>
+				<span class="col fw-bold" id="totalPosts">47228479</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient-light shadow bb-dark">
+				<small class="col text-center text-primary-emphasis">會員總數</small>
+				<span class="col fw-bold" id="totalMembers">1035568</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient-light shadow">
+				<small class="col text-center text-primary-emphasis">最新會員</small>
+				<span class="col fw-bold" id="newestMember"><a href="/user-s8d4d7yr">s8d4d7yr</a></span>
+			  </li>
+			</ul>
+        </div>
+
+
+        <div class="p-1 p-sm-2 p-xl-3 mb-3 bg-body-tertiary rounded">
+			<div class="bg-body-tertiary ratio ratio-16x9">
+			<iframe width="100%" src="https://www.youtube-nocookie.com/embed/6g6OZWJExIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+			</div>
+        </div>
+
+		
+        <div class="p-1 p-sm-2 p-xl-3 mb-3 bg-body-tertiary rounded">
+          <ul class="list-unstyled list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient bg-gradient-light shadow bb-dark"><a target="_blank" href="https://t.me/The141HK">141@Telegram</a></li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient bg-gradient-light shadow bb-dark"><a target="_blank" href="https://cache.141-hk.com/banner/popup.php?lang=cn">誠聘KTV燈頭搵銀大攻略</a></li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient bg-gradient-light shadow bb-dark"><a target="_blank" href="https://imsinger.com/">imSinger.com</a></li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-gradient bg-gradient-light shadow"><a target="_blank" href="https://58sauna.com/">58Sauna.com</a></li>
+          </ul>
+        </div>
+		
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="p-3 container-fluid text-center text-body-secondary" style="--bs-secondary-color:rgba(189,181,138, 0.75)">
+	<span class="m-2 text-nowrap">在線人數 -  <b id="onlineMembers">244</b> 會員 / <b id="onlineNum">5251</b> 遊客</span>
+	<span class="m-2 text-nowrap">最高記錄是 <b id="onlineMax">48521</b> 於 <b id="onlineMaxDate">2026-05-16 23:34</b></span>
+
+  <p class="my-3"><svg xmlns="http://www.w3.org/2000/svg" id="Notice" data-name="Notice" width="100%" viewBox="0 0 1050 83" style="background: #000;">
+  <text data-name="重要聲明：本網站是以即時上載留言的方式運作，141LOVE.NET 對所有留言的真實性、完整性及立場等，不負任何法律責任。" class="cls-Footer" transform="matrix(1.099, 0, 0, 1.099, 64.517, 12.42)" x="0" y="0"><tspan font-weight="bold">重要聲明：</tspan>本網站是以即時上載留言的方式運作，141LOVE.NET 對所有留言的真實性、完整性及立場等，不負任何法律責任。而一切留言之言論只代表
+  <tspan x="0" dy="18">留言者個人意見，並非本網站之立場，用戶不應該信賴內容，並應自行判斷內容之真實性。於有關情形下，用戶應尋求專業意見 (如涉及醫療、法律或投資等問題)。</tspan>
+  <tspan x="0" dy="18"> 由於本討論區受到「即時上載留言」運作方式所規限，故不能完全監察所有留言，若讀者發現有留言出現問題，請聯絡我們。141LOVE.NET 有權刪除任何</tspan>
+  <tspan x="0" dy="18">留言及拒絕任何人士上載留言，同時亦有不刪除留言的權利。切勿撰寫粗言穢語、誹謗、渲染色情暴力或人身攻擊的言論，敬請自律。本網站保留一切法律權利。</tspan></text>
+  <image id="Vector_Smart_Object" data-name="Vector Smart Object" y="0" width="49" height="68" href="https://forum.cdn141.com/static/20231201/Notive.png"></image>
+</svg></p>
+  <p class="mb-3"><a href="javascript:window.scrollTo('0','0');">回到頂部</a></p>
+</footer>
+
+    
+
+</body></html>

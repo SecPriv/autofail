@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>CuDeToate.ro - Magazinul Tău pentru Orice Ai Nevoie</title>
+    <script src="https://www.cudetoate.ro/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+(function(shopifyId ,scriptSrc) {
+    let p = init?.context?.document?.location?.pathname; 
+    if (p && (p.indexOf('/' + shopifyId) === 0 || p.indexOf('/checkout') === 0)) {
+        window.dataReshape={shopify:{0:init,1:browser,2:analytics,3:api.customerPrivacy
+}};
+        let f = document.getElementsByTagName('script')[0],
+            j = document.createElement('script');
+        j.async = true;
+        j.src = scriptSrc;
+        f.parentNode.insertBefore(j, f);
+    } else {
+        analytics.subscribe("all_events", (function(i) {
+          try { parent.postMessage(i,"*");}
+          catch(a){window.console&&window.console.log(a)}
+        }));
+    }
+})('57253560505', 'https://dre2.cudetoate.ro/main.js?id=CV0L06VS');
+});})(self.webPixelsManager.createShopifyExtend('36208966', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

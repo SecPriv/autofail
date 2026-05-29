@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just a moment...</title>
+    <style>:root {
+  color-scheme: light;
+  --bg-top: #fff4ea;
+  --bg-bottom: #f4e3d2;
+  --ink: #221d18;
+  --muted: #72685f;
+  --accent: #e67b1e;
+  --accent-soft: rgba(211, 109, 47, 0.14);
+  --accent-strong: #ffd09d;
+  --shadow: 0 24px 80px rgba(100, 70, 49, 0.16);
+  --page-width: 1120px;
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(255, 171, 112, 0.24), transparent 24rem),
+    radial-gradient(circle at 86% 18%, rgba(255, 210, 151, 0.2), transparent 20rem),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.page-glow {
+  position: fixed;
+  inset: auto;
+  border-radius: 999px;
+  filter: blur(44px);
+  pointer-events: none;
+  opacity: 0.74;
+}
+
+.page-glow-one {
+  top: 4rem;
+  left: -5rem;
+  width: 19rem;
+  height: 19rem;
+  background: rgba(248, 146, 72, 0.22);
+}
+
+.page-glow-two {
+  right: -4rem;
+  bottom: 4rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(255, 205, 133, 0.18);
+}
+
+.page-shell {
+  width: min(calc(100% - 2rem), var(--page-width));
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(252, 247, 242, 0.8));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 15rem;
+  height: 15rem;
+  background: radial-gradient(circle, rgba(255, 205, 167, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 1.1rem;
+  color: #bf6a22;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.84fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.hero-copy {
+  padding: 0.35rem 0 0.25rem;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  max-width: 10ch;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(3rem, 6.7vw, 5rem);
+  line-height: 0.93;
+  letter-spacing: -0.07em;
+  overflow-wrap: anywhere;
+}
+
+.hero-text {
+  margin: 1.2rem 0 0;
+  max-width: 35rem;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.55rem;
+}
+
+.action-button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.92rem 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background-color 140ms ease;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+.action-button:focus-visible,
+.ip-toggle:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.action-button-primary {
+  background: var(--ink);
+  color: #fffaf6;
+  box-shadow: 0 12px 30px rgba(34, 29, 24, 0.18);
+}
+
+.action-button-primary:hover {
+  box-shadow: 0 18px 36px rgba(34, 29, 24, 0.22);
+}
+
+.action-button-secondary {
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  border: 1px solid rgba(34, 29, 24, 0.08);
+}
+
+.challenge-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  min-height: 21rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 242, 232, 0.92), rgba(250, 231, 216, 0.86));
+  border: 1px solid rgba(211, 109, 47, 0.08);
+}
+
+.challenge-label {
+  margin: 0;
+  color: #9d653d;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.challenge-box {
+  min-height: 12rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(34, 29, 24, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.challenge-box > * {
+  max-width: 100%;
+}
+
+.challenge-box iframe {
+  max-width: 100%;
+}
+
+.request-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.35rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(34, 29, 24, 0.06);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.meta-item {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.meta-item dt {
+  color: #ba8457;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.meta-item dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.ip-toggle {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ip-value {
+  margin-left: 0.55rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .request-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-card {
+    min-height: 16rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(calc(100% - 1rem), var(--page-width));
+    padding: 1rem 0;
+  }
+
+  .hero-card {
+    padding: 1.15rem;
+  }
+
+  .hero-copy h1 {
+    max-width: 8ch;
+    font-size: clamp(2.4rem, 12vw, 3.55rem);
+  }
+
+  .hero-text {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .action-row {
+    gap: 0.75rem;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+
+  .challenge-card {
+    min-height: 14rem;
+    padding: 1.1rem;
+  }
+
+  .challenge-box {
+    min-height: 10.5rem;
+    padding: 0.85rem;
+  }
+}
+</style>
+  <meta http-equiv="refresh" content="360"><script src="/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a00496524faf84ce"></script><script src="https://challenges.cloudflare.com/turnstile/v0/b/1eec422858ff/api.js?onload=fvJqb8&amp;render=explicit" async="" defer="" crossorigin="anonymous"></script></head>
+  <body>
+    <div class="page-glow page-glow-one" aria-hidden="true"></div>
+    <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <section class="hero-card" aria-labelledby="challenge-title">
+        <p class="eyebrow">Managed challenge / I'm Under Attack Mode</p>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 id="challenge-title">We are checking this request before access is allowed.</h1>
+            <p class="hero-text">
+              This site is currently using Cloudflare managed protection. The
+              next challenge may vary depending on your request and the active
+              security settings.
+            </p>
+
+            <div class="action-row">
+              <button class="action-button action-button-primary" data-action="retry" type="button">
+                Try again
+              </button>
+              <button class="action-button action-button-secondary" data-action="back" type="button">
+                Go back
+              </button>
+            </div>
+          </div>
+
+          <aside class="challenge-card">
+            <p class="challenge-label">Challenge in progress</p>
+            <div class="challenge-box" data-challenge-box="">
+              <div class="main-wrapper" role="main"><div class="main-content"><h2 id="RREuc7"></h2><p id="sYLb1"></p><div id="GZIfP3" style="display: grid;"><div><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-9x95f_response"><input type="hidden" name="cf_challenge_response" id="cf-chl-widget-9x95f_legacy_response"></div></div></div><div id="ijUz0" style="display: none;"><div>Verification successful. Waiting for juaexch.com to respond</div></div><div id="wmre7" class="spacer loading-verifying" style="display: none; visibility: hidden;"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cFPWv: 'b',cH: 'dx4n1d9GQZLGx27WzDKbbBUwgj.eOamTjhhT1fIdFeY-1779544829-1.2.1.1-2w8EglBP8Kj0yUpjRMPcR7gc4Eh.k8OOCwyKYJ78iUD7NHjMYyQwiRQfPUQjzmdo',cITimeS: '1779544829',cRay: 'a00496524faf84ce',cTplB: '0',cTplC:1,cTplO:0,cTplV:5,cType: 'interactive',cUPMDTk:"/?__cf_chl_tk=rs6Yd5U8T4410xL7q6L3_0tT6le4Dci4INUlFSIJsU8-1779544829-1.0.1.1-_VckdB2UuNQkX90P59G92bxi8U0M0GwZSMgN9VVPlHo",cvId: '3',cZone: 'juaexch.com',fa:"/?__cf_chl_f_tk=rs6Yd5U8T4410xL7q6L3_0tT6le4Dci4INUlFSIJsU8-1779544829-1.0.1.1-_VckdB2UuNQkX90P59G92bxi8U0M0GwZSMgN9VVPlHo",md: '11jEhcZozRvyNKeY3yRjVYHv1AVVQ9EPKXRVJpluVWU-1779544829-1.2.1.1-5T1lQFDRDCg2n68Vg_huZyI.92.eCSrPSOva67y7PHpuPS9xyu2JHQB7gjW3cqPG7bMxNva9AgsqeDbdIOvnpoRl_7kF7wZnz8U_b_faSd0woKXFqDWJNdwqv.mCWUnAITteykDR43jrrmwmtClWhRnzdn2oZdvKqlW9S.OjJLGTY_bmOwhDvWYAeMsV772UG6zTsPGu0VI_BukggKDr1PVLZfn5Sc5MR7Y9O1GifmOTgWrIq.sDInR2nK8Z2NUZ_67_CylGsWI4aVzFM9x5TtNgcb99yrGkuIgV7ZlEyAFuzd3BTFGZozKfE501hom1Wra9324RXzed9HYuvkuAgGg83AL6w.gQ6uIYanz6t3sb1bOTpoJbtOsh5Wns928tfS9.VKgmLdlGgsMsT_LTgdwF9bs67md6pi6Df_ZQ4E5FlWbNMkbeDcILzDDLrvh1N6lWhh0q6LtN53p7ZduY3kS1khdOtZKckd2D4JDq9Ps_yS3fvNkPi.60zYqbogF.b7TdaBz9iT86sfYaBXCXI3Gp_j9NV5fkdYZ7LKHuXIgQBvGuaAIHSPkYBQhGp303gkuJZxawoLnyGaD_QHaalKXMxAe.HbFZ8temaLYFtOI7S3Ta69ECqEa9EERZPx6QIbPRy0EKPPNSgnu8O0owZXJRy2AD4yCsGX1xvTyRO8imXJOybXvZDqHkq4dOJUMvE2eVetR_FIzau1dA4dNNTl.dfadBydRdKr_OibrinuPilBawynpTMbgZe25wK_zGNxPXNTW.rhBn1p9qs52XN8fYoTRIpFq0cjON.FfpexMZj4NbEfqJ5KDTcp8Ql_tKOErwXlEG8nzIIZXEPQ_g6PMfgEyxZjxRldCMAMeCAxoTs8jGOXWVAeue0TYgce_X6MifMZZBlPfRUFtNrI7Kd2NxcXAXA2z1rjU1vzsw2hf3yiTE14pFgy8L746Dlc.Ip_Z8dRZlEPFmXgRivXW0rzAGfWkkDYp2eBSINyeXmXln6C7X0qnNI2MOzsBMZCqrNga4FGNk1GKw6jpLjdy1zRrrnjpWl3CZkjbEXgqQG30s3QkZb8IlDpdODjPlVCSx5YfOiSjkzii71NIQGlElhl_QZJ220_ONuWsvaN3BBoOTm_Ectl6nbmo_C12z5wBIgUAZcfQh1q6pRw03dBlVpdYBYEK609Z9paS.gfyGshBqcNJSbFfDiun4XNpnXVSmOdg5dPoUmaON2C.05kGq_g',mdrd: 'Io.A2FOh.UPO9lwSwyt6nhNJjhudwJk4Clu74RrZhuc-1779544829-1.2.1.1-Vk0oixK0KD22XPVhIR_uQlzSpxKFiL9En37_F9y9GmNEKG8.Y0pX.unVavdE34Dd_wsJQGGJccY2IVEpTwVWWguFgD4UkLmouWc9jpz1UQ1iNHREC2bvHHUKINoYVsu9ybrL0G.5mxCw1xvfqi8.Z8iA1QZ96zKZDxXSQw09JHxOZwFY6BxoamtsJI8uscA2wegZ79IN664mcajR2hhnyKyFzv9GOA1edMW8Gk0JPc5BgP_k1jB9ujQHOrWmf1esbr.cqJa4qWNCv9FfBoDbr.1WmnJPkTGHMWBV5BuW_B1to0JqrVQ4ZR1aAf.Lw6.DLVKeB3AdK6mIlN0.ZUsJus4gmcD..aWPE9hzOLtAY5iM5hlPw7KSuK1K.uFKRMdU_jbAyAbLsjrLJUReLl.tAxwXXlEUZWdSyYz5sWqo5L7p_yohRWLbDXk4_eYIXDt3UdUkhzeV.oIi.DBXl4wrNAWzQHDD_7fZMtCU0ZwgWxscPzlkMo3v0GzqAPL4SknsoHMhwKlG9cBgYbVqFX6qYfwx78RVD85tR0h_SKcYDrkiuDrqdwsLYOo_APopy1fH',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a00496524faf84ce';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/?__cf_chl_rt_tk=rs6Yd5U8T4410xL7q6L3_0tT6le4Dci4INUlFSIJsU8-1779544829-1.0.1.1-_VckdB2UuNQkX90P59G92bxi8U0M0GwZSMgN9VVPlHo"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script>
+            </div>
+          </aside>
+        </div>
+
+        <dl class="request-meta">
+          <div class="meta-item">
+            <dt>Status</dt>
+            <dd>403 Forbidden</dd>
+          </div>
+          <div class="meta-item">
+            <dt>Region</dt>
+            <dd data-field="geo">AT</dd>
+          </div>
+          <div class="meta-item">
+            <dt>Visitor IP</dt>
+            <dd>
+              <button class="ip-toggle" type="button" aria-expanded="false" aria-controls="visitor-ip">
+                Reveal
+              </button>
+              <span id="visitor-ip" class="ip-value" data-field="ip" hidden="">
+                128.130.112.81
+              </span>
+            </dd>
+          </div>
+          <div class="meta-item">
+            <dt>Ray ID</dt>
+            <dd data-field="rayId">a00496524faf84ce</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <script>(function () {
+  const ipTarget = document.querySelector('[data-field="ip"]');
+  const ipToggle = document.querySelector(".ip-toggle");
+  const retryButton = document.querySelector('[data-action="retry"]');
+  const backButton = document.querySelector('[data-action="back"]');
+
+  if (retryButton) {
+    retryButton.addEventListener("click", function () {
+      window.location.reload();
+    });
+  }
+
+  if (backButton) {
+    backButton.addEventListener("click", function () {
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+
+      window.location.reload();
+    });
+  }
+
+  if (!ipToggle || !ipTarget) {
+    return;
+  }
+
+  ipToggle.addEventListener("click", function () {
+    const isExpanded = ipToggle.getAttribute("aria-expanded") === "true";
+    const shouldExpand = !isExpanded;
+
+    ipTarget.hidden = !shouldExpand;
+    ipToggle.setAttribute("aria-expanded", shouldExpand ? "true" : "false");
+    ipToggle.textContent = shouldExpand ? "Hide" : "Reveal";
+  });
+})();
+</script>
+  
+
+</body></html>

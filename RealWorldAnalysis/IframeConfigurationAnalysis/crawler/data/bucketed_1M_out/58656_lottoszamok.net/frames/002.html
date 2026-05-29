@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="hu"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/x-icon">
+    <title>Banner Zóna</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .banner {position: relative; overflow: hidden;}
+        .banner img{display: block;}
+
+        .poly-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-size: 10px;
+            padding: 2px 6px;
+            text-decoration: none;
+            border-bottom-right-radius: 4px;
+            font-family: sans-serif;
+            line-height: 1.2;
+        }
+        .poly-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
+    </style>
+    <script>
+        "use strict"
+        const config = {
+            'weight' : {
+                'json_group_irsz' : 1,
+                'json_retarget_ad_ids' : 3,
+                'json_retarget_adpage_ids' : 3,
+                'json_retarget_edm_ids' : 3,
+                'json_erdeklodesi_korok': 1,
+                'json_ceges_irsz_preferalt': 2,
+                'kategoriak' : 2,
+                'adpage_id' : 3
+            },
+            'url' : {
+                'zone_json' : '/zone_data/',
+                'fingerprint' : '/fingerprint.php?zone_view=',
+                'geoip' : '/geoip.php',
+                'collector': '/collector.php',
+            },
+            'timer' : {
+                'min' : 1,
+                'max' : 6
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const zonaId = params.get('zona_id').replace(/^\D+/g, '');
+        const oldal_id = params.get('adpage_id').replace(/^\D+/g, '');
+        const fp = params.get('fp');
+        const referrer = params.get('parent_url') || document.referrer;
+        const referrer_host = params.get('parent_host') || (new URL(parent_url || document.referrer || '')).host || null;
+
+
+        let geo=[];
+        let zone=[];    //aktuális zóna adatai
+        let fpdata=[]   //fingerprint adatok
+        let dads=[];    //alapértelmezetten megjelenített hirdetések
+        let hads=[];    //alapértelmezetten meg nem jelenített hirdetések
+        let pointer=0;  //aktuális hirdetés pointer
+
+        let current_advert_id = 0;  //az éppen megjelenített hirdetés
+
+        const get = function(name){
+            if( name === (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search) )
+                return decodeURIComponent(name[1]);
+        }
+
+        const getJson = async function(url = "") {
+            const response = await fetch(url, {
+                method: "GET",
+                cache: "no-cache",
+                credentials: "same-origin"
+            });
+            return response.json();
+        }
+
+        if (zonaId) {
+            getJson(`${config.url.zone_json}${encodeURIComponent(zonaId)}.json`).then((data) => {
+                getJson(config.url.geoip).then((tgeo) => {
+                    getJson(`${config.url.fingerprint}${encodeURIComponent(zonaId)}`).then((tfp) => {
+                        geo = tgeo;
+                        zone = data.zone;
+                        fpdata = tfp;
+                        data.adverts.forEach((ad) => {
+                            if (ad.b2b === 'f')
+                            {
+                                if (!ad.location && !ad.json_location){
+                                    addToResultArray(ad);
+                                }
+                                else
+                                {
+                                    if (ad.location && (JSON.parse(ad.location)).indexOf((geo.regio).normalize("NFD").replace(/[\u0300-\u036f]/g, "")) !== -1){
+                                        addToResultArray(ad);
+                                    }
+                                    else if (ad.json_location && ((JSON.parse(ad.json_location)).indexOf(geo.postal_code) !== -1 || (JSON.parse(ad.json_location)).indexOf(parseInt(geo.postal_code)) !== -1))
+                                    {
+                                        addToResultArray(ad);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (!ad.json_ceges_irsz){
+                                    addToResultArray(ad);
+                                }
+                                else
+                                {
+                                    if (ad.json_ceges_irsz && ((JSON.parse(ad.json_ceges_irsz)).indexOf(geo.postal_code) !== -1 || (JSON.parse(ad.json_ceges_irsz)).indexOf(parseInt(geo.postal_code)) !== -1))
+                                    {
+                                        addToResultArray(ad);
+                                    }
+                                }
+                            }
+                        });
+
+                        dads.sort((a, b) => { return b.order_by - a.order_by; });
+                        hads.sort((a, b) => { return b.order_by - a.order_by; });
+                        if (dads.length>0 || hads.length>0)
+                        {
+                            if (dads.length>0)
+                                console.log('Netadclick adverts loaded:',dads);
+                            else
+                                console.log('Netadclick fallback adverts loaded:',hads);
+
+                            displayAdvert();
+                        }
+                        else
+                            console.error('Netadclick error: no advert found');
+
+                    })
+                })
+            });
+        } else {
+            document.getElementById('banner').innerText = 'Missiong zona_id parameter';
+        }
+
+
+        let addToResultArray = function (_ad){
+            let superuser = (!_ad['default_suly'] || parseInt(_ad['default_suly']) === 0);
+
+            let parsedWeight = parseInt(_ad['default_suly']);
+
+            _ad['default_suly'] = Number.isFinite(parsedWeight) ? parsedWeight : 3;
+
+            if (_ad.b2b === 'f')
+            {
+                if (_ad['json_group_irsz'] && ((JSON.parse(_ad['json_group_irsz'])).indexOf(geo.postal_code) !== -1 || (JSON.parse(_ad['json_group_irsz'])).indexOf(parseInt(geo.postal_code)) !== -1)){
+                    _ad['default_suly'] += config.weight.json_group_irsz;
+                }
+
+                const localRetads = fpdata.adpage??false;
+                //const localRetads = false;
+                if (_ad['json_retarget_adpage_ids'] && localRetads !== false){
+                    const currentRetads = JSON.parse(_ad['json_retarget_adpage_ids']);
+                    let s = 0;
+                    for (var key in localRetads){
+                        if(currentRetads.indexOf(localRetads[key].id) !== -1 || currentRetads.indexOf(parseInt(localRetads[key].id)) !== -1) s = config.weight.json_retarget_adpage_ids;
+                    }
+                    _ad['default_suly'] += s;
+                }
+                // Hírlevél kattintások
+                const localNlClicks = fpdata.nlcick??false;
+                if (_ad['adpage_id'] && localNlClicks !== false)
+                {
+                    for (var nlKey in localNlClicks){
+                        if (localNlClicks[nlKey].adpage_id === parseInt(_ad['adpage_id'])) _ad['default_suly'] += config.weight.adpage_id;
+                    }
+                }
+                //}
+
+                if (zone.tags && _ad['json_erdeklodesi_korok'])
+                    Object.values(zone.tags).forEach((tag) => {
+                        if (_ad['json_erdeklodesi_korok'].indexOf(tag) !== -1) _ad['default_suly'] += config.weight.json_erdeklodesi_korok;
+                    });
+
+                if (zone.tags && _ad['kategoriak'])
+                    Object.values(zone.tags).forEach((tag) => {
+                        if (_ad['kategoriak'].indexOf(tag) !== -1) _ad['default_suly'] += config.weight.kategoriak;
+                    });
+
+                _ad['order_by'] = _ad['default_suly'] + Math.random();
+
+            }
+            else
+            {
+                //const localRetads = fingerprint.getItem('adview')??false;
+                const localRetads = false;
+                if (_ad['json_retarget_ad_ids'] && localRetads !== false){
+                    const currentRetads = JSON.parse(_ad['json_retarget_ad_ids']);
+                    let s = 0;
+                    for (var key in localRetads){
+                        if(currentRetads.indexOf(localRetads[key].id) !== -1 || currentRetads.indexOf(parseInt(localRetads[key].id)) !== -1) s = config.weight.json_retarget_ad_ids;
+                    }
+                    _ad['default_suly'] += s;
+                }
+
+                //const localNlClicks = fingerprint.getItem('nlclick')??false;
+                const localNlClicks = false;
+                if (_ad['json_retarget_edm_ids'] && localNlClicks !== false){
+                    const currentEdmRetads = JSON.parse(_ad['json_retarget_edm_ids']);
+                    let s = 0;
+                    for (var key in localNlClicks){
+                        if(currentEdmRetads.indexOf(localNlClicks[key].id) !== -1 || currentEdmRetads.indexOf(parseInt(localNlClicks[key].id)) !== -1) s = config.weight.json_retarget_edm_ids;
+                    }
+                    _ad['default_suly'] += s;
+                }
+
+                if (_ad['json_ceges_irsz_preferalt'] && ((JSON.parse(_ad['json_ceges_irsz_preferalt'])).indexOf(geo.postal_code) !== -1 || (JSON.parse(_ad['json_ceges_irsz_preferalt'])).indexOf(parseInt(geo.postal_code)) !== -1)){
+                    _ad['default_suly'] += config.weight.json_ceges_irsz_preferalt;
+                }
+                _ad['order_by'] = _ad['default_suly'] + Math.random();
+            }
+
+            if (superuser)
+                hads.push(_ad);
+            else
+                dads.push(_ad);
+        }
+
+        let displayAdvert = function (){
+            let _ad;
+            let cads = (dads.length > 0) ? dads : hads;
+            if (cads.length>0&&cads.length>pointer){
+                _ad = cads[pointer];
+                pointer++;
+            }
+            else{
+                _ad = cads[0];
+                pointer = 1;
+            }
+
+            var a = document.querySelector('.banner');
+            a.style.width = zone.szelesseg + 'px';
+            a.style.height = zone.magassag + 'px';
+            a.innerHTML = _ad.banner_html;
+
+            if (_ad.politikai_megfeleloseg_link && _ad.politikai_megfeleloseg_link.trim() !== "") {
+                let polyBtn = document.createElement('a');
+                polyBtn.className = 'poly-btn';
+                polyBtn.href = _ad.politikai_megfeleloseg_link;
+                polyBtn.target = '_blank';
+                polyBtn.innerText = 'politikai hirdetés';
+
+                a.appendChild(polyBtn);
+            }
+
+            (function patchBannerLinks() {
+                if (!referrer) return;
+
+                try {
+                    const anchors = a.querySelectorAll('a[href]:not(.poly-btn)');
+                    anchors.forEach((el) => {
+                        try {
+                            const origHref = el.getAttribute('href');
+                            if (!origHref) return;
+
+                            if (/^(javascript:|mailto:|tel:)/i.test(origHref)) return;
+
+                            const url = new URL(origHref, window.location.href);
+
+                            if (!url.searchParams.has('referrer')) {
+                                url.searchParams.set('referrer', referrer);
+                            }
+                            if (referrer_host && !url.searchParams.has('referrer_host')) {
+                                url.searchParams.set('referrer_host', referrer_host);
+                            }
+
+                            el.setAttribute('href', url.toString());
+                        } catch (err) {
+                            console.warn('patchBannerLinks: unable to update anchor href', err);
+                        }
+                    });
+
+                    anchors.forEach((el) => {
+                        el.addEventListener('click', function (ev) {
+                            try {
+                                const href = el.getAttribute('href') || '';
+                                if (href && !href.includes('referrer=')) {
+                                    const url = new URL(href, window.location.href);
+                                    if (!url.searchParams.has('referrer')) url.searchParams.set('referrer', referrer);
+                                    if (referrer_host && !url.searchParams.has('referrer_host')) url.searchParams.set('referrer_host', referrer_host);
+                                    el.setAttribute('href', url.toString());
+                                }
+                            } catch (e) {}
+                        }, { passive: true });
+                    });
+
+                } catch (e) {
+                    console.warn('patchBannerLinks overall error', e);
+                }
+            })();
+
+            let timer = parseInt(_ad.futasi_masodperc);
+            if (current_advert_id !== _ad.adv_id) {
+                storeAdView(_ad.adv_id);
+            }
+            current_advert_id = _ad.adv_id;
+            timer = Number.isFinite(timer) && timer > 0 ? timer : config.timer.max;
+            
+            console.info(`Netadclick advert ${cads.length}/${pointer} (#${_ad.adv_id}) displayed on zone #${zonaId} for ${timer} seconds.`);
+            setTimeout(displayAdvert, timer*1000);
+        }
+
+        let storeAdView = function(adsId) {
+            if (!adsId) return;
+
+            const ip = window.user_ip || '';
+            const ua = navigator.userAgent;
+
+            const payload = {
+                event: true,
+                oldal_id,
+                session_id: localStorage.getItem('indi_session_id') || Math.random().toString(36).slice(2),
+                timestamp: Math.floor(Date.now() / 1000),
+                event_name: "ad_view",
+                event_value: adsId,
+                items: {
+                    fingerprint: fp,
+                    user_agent: ua,
+                    zone_id: zonaId,
+                    ip: ip,
+                    referrer: referrer,
+                    referrer_host: referrer_host
+                }
+            };
+
+            navigator.sendBeacon(config.url.collector, JSON.stringify(payload));
+        }
+    </script>
+</head>
+<body>
+<div id="banner" class="banner"><a href="https://apiv2.indidata.com/adclick.php?d=eyJ1cmwiOiJodHRwczpcL1wvd3d3LnNrb2RhLmh1XC9kXC80MTcxLWF1dG8tZGVyemJhY2hcL2FrY2lva1wvam95LW1vZGVsbGVrIiwiem9uZV9pZCI6IjEwODQ4IiwiYWR2X2lkIjoiMTE0NjkyIn0%3D&amp;referrer=https%3A%2F%2Fwww.lottoszamok.net%2F&amp;referrer_host=www.lottoszamok.net" target="_blank"><img src="https://netadclick.com/media/kep/114692_394_300x250.jpeg" alt="Reklám" width="300" height="250"></a></div>
+
+
+</body></html>

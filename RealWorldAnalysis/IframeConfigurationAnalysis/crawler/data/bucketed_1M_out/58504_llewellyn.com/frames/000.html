@@ -1,0 +1,2722 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head>
+	<!-- Bootstrap Required meta tags -->
+    <!--<meta charset="utf-8">-->
+	<meta http-equic="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<!-- Turn off blue phone number formatting on mobile devices -->
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Since 1901 | Body, Mind &amp; Spirit | Llewellyn Worldwide, Ltd.</title>
+	
+	<meta name="Keywords" content="llewellyn, llewellyn worldwide, llewellyn books, llewellyn publishing, books from llewellyn, books llewellyn publishes">
+	<meta name="Description" content="As the world's oldest and largest independent publisher of books for body, mind, and spirit, Llewellyn has been dedicated to bringing our readers the very best in metaphysical books and resources since 1901.
+">
+	
+	<!-- Facebook meta tag -->
+	<meta property="fb:pages" content="57526231713">
+	
+		
+	
+	
+	<!-- Bootstrap -->
+	<link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- font-awesome -->
+	<!--<link rel="stylesheet" href="/js/font-awesome/css/all.css" integrity="sha384-87DrmpqHRiY8hPLIr7ByqhPIywuSsjuQAfMXAE0sMUpY3BM7nXjf+mLIUSvhDArs" crossorigin="anonymous">-->
+	<link rel="stylesheet" href="/js/fontawesome-pro-6.6.0-web/css/all.css">
+	
+	
+	
+	<!-- hero menu -->
+	<link href="/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+	<link href="/js/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+	<link href="/js/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+	
+	<link href="/css/solid-menu.css" rel="stylesheet" type="text/css">
+	
+	<!-- FONTS ------------------------------ -->
+	<!--<link rel='stylesheet' id='googleFonts-css'  href='https://fonts.googleapis.com/css?family=Karla%3A400%2C700%7CLora%3A400%2C700%2C400italic%7CKarla%3A400%2C700%7CPlayfair+Display%3A400%2C400italic&#038;ver=4.8.4' type='text/css' media='all' />-->
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
+	
+		
+	<!-- STYLESHEETS ------------------------ -->
+	<!-- custom styles -->
+	<link rel="stylesheet" href="/style.css?v=1779542117">
+	<link rel="stylesheet" href="/_theme/javascript/search/search_llewellyn_new.css">
+	
+	<!-- Multiple Carousels stylesheet-->
+	<link rel="stylesheet" href="/js/multiple-carousel-responsive/assets/css/multiple_llewellyn.css?v=1779542117" type="text/css">
+	
+	<!-- Shopping cart popup code -->
+		<link href="/_theme/javascript/llewellyn/style_cart.css" rel="stylesheet" type="text/css">
+
+	<!-- Wishlist popup code -->
+	<link href="/_theme/javascript/llewellyn/style_wishlist.css" rel="stylesheet" type="text/css">
+
+	<!-- Cookie Consent -->
+	<!-- PureCookie -->
+	<link rel="stylesheet" type="text/css" href="/_theme/javascript/PureCookie-master/purecookie.css" async="">
+	<script src="/_theme/javascript/PureCookie-master/purecookie.js" async=""></script>
+	
+	<!-- Back to top button -->
+	<link href="/js/jquery-backToTop/jquery-backToTop.min.css" type="text/css" rel="stylesheet" media="screen">
+
+	
+		
+		
+</head>
+<body>
+	
+
+<div style="display: none; visibility: hidden;" aria-hidden="true">
+    Contact our <a href="/donttouch/">robots department</a> if you really want a nice long ban.
+</div>
+
+
+<!-- add a first image for sharing so that default image isn't the loading gif. -->
+<div class="default-image"><img src="/images/SocialMedia_DefaultImage_1200x630.jpg" border="0"></div>
+
+<!-- Shopping cart hidden popup DIVs ------------------------------------------------------------ -->
+
+<!-- clear background div -->
+<div class="cart-popup-added-clear" onclick="cartPopupAddClose();" id="popup-cleardiv">
+</div>
+	
+	
+<!--this is the blackout div that blacks out the rest of the page when popup is popped:-->
+<div class="cart-popup-added-blackout" onclick="cartPopupAddClose();" id="blackoutdiv">
+</div>
+
+<!--Add to Cart: this is the loading GIF div when add-to-cart is slow -->
+<div class="cart-popup-added-loading" id="loadingdiv">
+	<img src="/_theme/images/loading.gif" border="0">
+</div>
+
+<!--Add to Cart: this is the WARNING popup html:-->
+<div class="cart-popup-added-container" id="cart-popup-warning-id">
+	
+	<span onclick="cartPopupAddClose();" class="cart-popup-added-close" title="Close">X</span>
+	
+	<div class="cart-popup-added-header" id="cart-popup-added-header">
+		OOPS!
+	</div>
+	<div class="cart-popup-added-warning" id="cart-popup-added-warning">
+	</div>
+	
+	<a href="/cart.php"><div class="cart-popup-added-cart-btn">VIEW CART</div></a>
+	<div class="cart-popup-added-continue-btn" onclick="cartPopupAddClose();">CONTINUE SHOPPING</div>
+
+</div>
+
+<!--Add to Cart: this is the popup html:-->
+<div class="cart-popup-added-container" id="thepopup">
+	
+	<span onclick="cartPopupAddClose();" class="cart-popup-added-close" title="Close">X</span>
+	
+	<div class="cart-popup-added-header" id="cart-popup-added-header">
+		ADDED!
+	</div>
+	<div class="cart-popup-added-content" id="cart-popup-added-content">
+		<img class="cover cart-popup-added-cover" id="cart-popup-added-cover" align="left" src="/_theme/images/clear.gif" border="0">
+		<h6 class="cart-popup-added-title" id="cart-popup-added-title"></h6>
+		<span class="cart-popup-added-qty" id="cart-popup-added-qty"></span>
+		<div style="clear: both"></div>	
+	</div>
+	
+	<a href="/cart.php"><div class="cart-popup-added-cart-btn">VIEW CART</div></a>
+	<div class="cart-popup-added-continue-btn" onclick="cartPopupAddClose();">CONTINUE SHOPPING</div>
+
+</div>
+
+<!-- End popups for the add-to-cart functionality -->
+
+
+<!-- Wishlist hidden popup DIVs ------------------------------------------------------------ -->
+
+<!--this is the blackout div that blacks out the rest of the page when popup is popped:-->
+<div class="wish-popup-added-blackout" onclick="wishPopupAddClose();" id="wish_blackoutdiv">
+</div>
+	
+<!--this is the blackout div that blacks out the rest of the page but will redirect to shopping cart when clicked:-->
+<div class="wish-popup-added-blackout" onclick="wishPopupCloseToCart();" id="wish_blackoutdiv_cart">
+</div>
+
+<!--Add to Wishlist: this is the loading GIF div when add-to-wishlist is slow -->
+<div class="wish-popup-added-loading" id="wish_loadingdiv">
+	<img src="/_theme/images/loading.gif" border="0">
+</div>
+
+<!--Add to Cart: this is the WARNING popup html:-->
+<div class="wish-popup-added-container" id="wish-popup-warning-id">
+	
+	<span onclick="wishPopupAddClose();" class="wish-popup-added-close" title="Close">X</span>
+	
+	<div class="wish-popup-added-header" id="wish-popup-oops-header">
+		OOPS!
+	</div>
+	<div class="wish-popup-added-warning" id="wish-popup-added-warning">
+	</div>
+	
+	<a href="/account_wishlist.php" id="wishlist-btn-a"><div class="wish-popup-added-wish-btn" id="wishlist-btn-text">MANAGE WISHLISTS</div></a>
+	<div class="wish-popup-added-continue-btn" onclick="wishPopupAddClose();">CONTINUE SHOPPING</div>
+
+</div>
+
+<!--Add to Wishlist: this is the popup html:-->
+<div class="wish-popup-added-container" id="wish_popup">
+	
+	<span onclick="wishPopupAddClose();" class="wish-popup-added-close" title="Close">X</span>
+	
+	<div class="wish-popup-added-header" id="wish-popup-added-header">
+		ADDED!
+	</div>
+	<div class="wish-popup-added-content" id="wish-popup-added-content">
+		<img class="cover wish-popup-added-cover" id="wish-popup-added-cover" align="left" src="/_theme/images/clear.gif" border="0">
+		<h6 class="wish-popup-added-title" id="wish-popup-added-title"></h6>
+		<span class="wish-popup-added-qty" id="wish-popup-added-qty"></span>
+		<div style="clear: both"></div>	
+	</div>
+	<div class="wish-popup-added-content" id="wish-popup-added-lists"></div>
+	
+	<div id="wish-popup-added-btn-container">
+		<div class="wish-popup-added-continue-btn" id="wish-popup-added-continue-btn" onclick="wishPopupAddClose();">CANCEL</div>
+	</div>
+
+</div>
+
+<!-- this is the loading GIF div when process is slow -->
+<div class="popup-loading" id="wishitems_loadingdiv">
+	<div style="font-size: 1.1em;">Please wait while we add the items to your shopping cart...</div>
+	<div><img src="/_theme/images/loading.gif" border="0"></div>
+</div>
+
+<!-- End popups for the add-to-wishlist functionality -->
+
+	
+	
+
+
+<!-- Begin Header ------------------------------------------ -->
+
+<div class="container-fluid ll-container">
+
+<div class="row" style="padding: 10px; border-bottom: 1px solid #eeeeee;">
+	<div class="hidden-xs col-xs-5 col-sm-5 col-md-6 col-lg-6" style="padding-left: 20px; padding-right: 0px;">
+		<!-- social media icons -->
+		<a href="https://www.facebook.com/LlewellynBooks/" target="_blank" class="ll-header-soc-media"><i class="fa-brands fa-facebook-f"></i></a>&nbsp;&nbsp;
+		<a href="https://twitter.com/llewellynbooks" target="_blank" class="ll-header-soc-media"><i class="fa-brands fa-x-twitter"></i></a>&nbsp;&nbsp;
+		<a href="https://www.instagram.com/llewellynbooks/" target="_blank" class="ll-header-soc-media"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;
+		<a href="https://www.youtube.com/c/LlewellynWorldwide" target="_blank" class="ll-header-soc-media"><i class="fa-brands fa-youtube"></i></a>&nbsp;&nbsp;
+		<a href="/journal/RSS_FEEDS.php" class="ll-header-soc-media"><i class="fa-solid fa-rss"></i></a>
+	</div>
+	
+	<div class="col-xs-12 col-sm-7 col-md-6 col-lg-6 ll-header-right" style="text-align: right; padding-left: 0px; ">
+	
+		<div style="float: right; border-left: 1px solid #ddd; padding-left: 20px; margin-left: 10px;">
+			<a href="/account.php" class="ll-header-soc-media" onclick="togglePopups('account'); return false;" title="My Account"><i class="fas fa-user-circle"></i></a> 
+			<span style="margin-left: 5px; margin-right:5px;"> </span>  
+			<a href="/account_wishlist.php" class="ll-header-soc-media" onclick="togglePopups('wishlist'); return false;" title="My Wishlists"><span style="font-size: .8em"><i class="fas fa-heart"></i></span></a> 
+			<span style="margin-left: 5px; margin-right:5px;"> </span> 
+			<a href="/cart.php" class="ll-header-soc-media" onclick="togglePopups('cart'); return false;" style="margin-right: 0px !important;" title="My Cart"><span style="font-size: .9em"><i class="fas fa-shopping-cart"></i> (<span id="cartQty">0</span>)</span></a>
+		</div>
+	
+		<!-- Begin search results popup --------------------------------------------------------- -->
+		<div class="search_form_container" style="">
+			<div id="search_form">
+
+				<form method="get" id="searchform" style="" action="/search_results.php">
+				<input type="text" value="SEARCH BY KEYWORD..." onfocus="clearSearchPlaceholder(this);" onblur="showSearchPlaceholder(this);" name="search_topic" id="search_box" autocomplete="off" style="border: 0px; font-size: .8em; color: #222; margin-right: 0px;" onkeyup="document.getElementById('search_type').value='in Products'; doSearch(this.value);">
+				<input type="hidden" name="search_type" id="search_type" value="in Products">
+				<input type="hidden" name="search_category" id="search_category" value="products">
+				<input type="hidden" name="wid" id="wid" value="1">
+					
+				<i class="far fa-search search-desktop"></i>
+				<div class="search_container" id="search_container" style="display: none;">
+					<div class="search_container_header">
+						<div class="search_container_header_title">
+							<h7 style="margin: 0px;">Search Results</h7>
+						</div>
+						<div class="search_container_header_close">
+							<a class="ll-grey" href="#" onclick="document.getElementById('search_container').style.display = 'none';"><i class="far fa-times"></i></a>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+					<div class="search_nav">
+						<ul class="search_nav_list" id="search_nav">
+						</ul>
+					</div>
+					<div class="search_content">
+						<div class="search_product_row clearfix" id="search_products"></div>
+						<div class="search_more_results" id="search_more_results">
+							<a href="search_results.php?search_title=" class="search_more_results_url">more results »</a>
+						</div>
+					
+					</div>
+					<div style="clear: both"></div>
+				</div>
+	
+				</form>
+			</div><!-- end search_form -->
+		</div>
+		<!-- end search results popup --------------------------------------------------------- -->
+		
+		
+		
+		<!-- begin account popup -------------------------------------------------------- -->
+		<div class="account_container" id="account_container" style="display: none;">
+			<div class="account_container_header">
+				<div class="account_container_header_title">
+					<h7 style="margin: 0px;">Your Account</h7>
+				</div>
+				<div class="account_container_header_close">
+					<a class="ll-grey" href="#" onclick="document.getElementById('account_container').style.display = 'none';"><i class="far fa-times"></i></a>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="account_contents" style="line-height: 1.8em; text-align: left;">
+								
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<a href="/account.php" class="ll-grey-dark-uc">Account Overview</a><br>
+						<a href="/account_orders.php" class="ll-grey-dark-uc">Orders: In Process</a><br>
+						<a href="/account_orders_complete.php" class="ll-grey-dark-uc">Orders: Shipped</a><br>
+						<a href="/account_backorders.php" class="ll-grey-dark-uc">Backorders</a><br>
+						<a href="/account_returns.php" class="ll-grey-dark-uc">Returns</a><br>
+											</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-transform:uppercase;">
+						<a href="/account_contact.php" class="ll-grey-dark-uc">Contact Info</a><br>
+						<a href="/account_delivery_addresses.php" class="ll-grey-dark-uc">Delivery Addresses</a><br>
+						<a href="/account_invoices_unpaid.php" class="ll-grey-dark-uc">Invoices: Unpaid</a><br>
+						<a href="/account_invoices_paid.php" class="ll-grey-dark-uc">Invoices: Paid</a><br>
+						<a href="/account_change_password.php" class="ll-grey-dark-uc">Your Password</a><br>
+					</div>
+				</div>
+				
+			</div>
+			<div class="account_footer"><a href="/login.php" class="btn btn-primary btn-sm" role="button">SIGN IN</a><a href="/account_create.php" class="btn btn-default btn-sm" role="button" style="margin-left: 10px;">CREATE NEW ACCOUNT</a>			</div>
+		</div>
+		<!-- end account popup -------------------------------------------------------- -->
+		
+
+
+		<!-- begin wishlists popup -------------------------------------------------------- -->
+		
+		<!-- View wishlists: this is the loading GIF div when view-cart is slow -->
+		<div class="wish-popup-view-loading" id="view-wish-loadingdiv">
+			<img src="/_theme/images/loading.gif" border="0">
+		</div>
+		
+		<!-- wishlist popup -->
+		<div class="wishlist_container" id="wishlist_container" style="display: none;">
+			<div class="wishlist_container_header">
+				<div class="wishlist_container_header_title">
+					<h7 style="margin: 0px;">Your Wishlists</h7>
+				</div>
+				<div class="wishlist_container_header_close">
+					<a class="ll-grey" href="#" onclick="document.getElementById('wishlist_container').style.display = 'none';"><i class="far fa-times"></i></a>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="wishlist_contents wishlist-scroll-style" id="wishlist_contents">
+				<div class="wishlist_nav">
+					<ul class="wishlist_nav_list" id="wishlist-nav-li">
+						<li class="wishlist_nav_list_li_selected">Wishlist (4)</li>
+						<li class="wishlist_nav_list_li">My List (1)</li>
+						<li class="wishlist_nav_list_li">Another List (2)</li>
+					</ul>
+				</div>
+				<div class="wishlist_items" id="wishlist-items-table" style="border-left: solid 1px #d7d7d7; ">
+					<table border="0" cellpadding="4" cellspacing="0" width="210" style="">
+					<tbody><tr>
+						<td valign="top" width="60" style="padding: 5px;"><img src="/_theme/product_images/60/9780738746074.jpg" class="cover" border="0"></td>
+						<td valign="top" style="padding: 5px; text-align: left;"><a href="ll-grey-uc">Llewellyn's 2019 Daily Planetary Guide</a><br>
+							<span class="">ITEM # <i>9780738746074</i></span></td>
+					</tr>
+					<tr>
+						<td valign="top" width="60" style="padding: 5px;"><img src="/_theme/product_images/60/9780738752181.jpg" class="cover" border="0"></td>
+						<td valign="top" style="padding: 5px; text-align: left;"><a href="ll-grey-uc">Yoga for the Creative Soul</a><br>
+							<span class="">ITEM # <i>9780738752181</i></span></td>
+					</tr>
+					<tr>
+						<td valign="top" width="60" style="padding: 5px;"><img src="/_theme/product_images/60/9780738714875.jpg" class="cover" border="0"></td>
+						<td valign="top" style="padding: 5px; text-align: left;"><a href="ll-grey-uc">The Pure Heart of Yoga</a><br>
+							<span class="">ITEM # <i>9780738714875</i></span></td>
+					</tr>
+					</tbody></table>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="wishlist_footer" id="wishlist_footer"><a href="/account_wishlist.php" class="btn btn-primary btn-sm" id="manage-lists-button">MANAGE WISHLISTS</a></div>
+		</div>
+		<!-- end wishlists popup ---------------------------------------------------------------->
+		
+		
+		
+
+		<!-- begin shopping cart popup -------------------------------------------------------- -->
+		
+		<!-- View Cart: this is the loading GIF div when view-cart is slow -->
+		<div class="cart-popup-view-loading" id="view-cart-loadingdiv">
+			<img src="/_theme/images/loading.gif" border="0">
+		</div>
+		
+		<!-- View Cart: shopping cart div -->
+		<div class="cart_container" id="cart_container" style="display: none;">
+			<div class="cart_container_header">
+				<div class="cart_container_header_title">
+					<h7 style="margin: 0px;">Shopping Cart</h7>
+				</div>
+				<div class="cart_container_header_close">
+					<a class="ll-grey" href="#" onclick="document.getElementById('cart_container').style.display = 'none';"><i class="far fa-times"></i></a>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="cart_contents cart-scroll-style" id="cart-contents">
+				
+			</div>
+			<div class="cart_footer">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="cart-button"><a href="/cart.php" class="btn btn-primary btn-sm" role="button">VIEW SHOPPING CART</a></div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="cart-subtotal" style="text-align: right; padding-top: 6px;">Subtotal: &nbsp;<b>$52.93 US</b></div>
+				</div>
+			</div>
+		</div>
+		<!-- end shopping cart popup ---------------------------------------------------------------->
+		
+	</div>
+</div><!-- end social media row -->
+
+
+
+
+<style type="text/css">
+.message_box_blue {
+	color: #525452;
+	background-color: #e9f0fc;
+	border: solid 1px #d8e0f0; /*dce4f3;*/
+	padding: 8px;
+	margin: 0px 0px 15px 0px;
+	
+	/* Safari 3-4, iOS 1-3.2, Android 1.6- */
+	-webkit-border-radius: 4px; 
+	
+	/* Firefox 1-3.6 */
+	-moz-border-radius: 4px; 
+	
+	/* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+	border-radius: 4px;	
+}
+</style>
+
+
+
+
+
+
+
+
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center; padding: 35px;">
+		<center>
+		<a href="/index.php"><img src="/images/llewellyn_logo_blue.gif" border="0" class="img-responsive" style="margin-bottom: 6px"></a>
+		<span class="hidden-xs" style="font-size: 1.2em; font-style: italic; font-family: Lora, 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif; color: #c5c5c5;">New Worlds of Body, Mind &amp; Spirit Since 1901</span>
+				</center>
+	</div>
+</div>
+
+	<!-- Benefits Bar ---------------------------------->
+	<style type="text/css">
+
+		.benefits_bar_row {
+			background-color: #769ed3;
+		}
+
+		.benefits_bar_column {
+			font-size: .9em; 
+			color: #ffffff; 
+			font-weight: bold; 
+			padding: 8px 20px 0px 20px; 
+			text-align: center;
+		}
+
+		.benefits_bar_content {
+			text-align: center; 
+			color: #ffffff
+		}
+
+		.benefits_bar {
+			height: 28px;
+			overflow: hidden;
+			margin-bottom: 0px;
+			padding-left: 0px;
+			list-style-type: none;
+		}
+
+		.benefits_bar li {
+			height: 28px;
+			overflow: hidden;
+			white-space: nowrap;
+			box-sizing: border-box;
+			color: #ffffff;
+		}
+
+		.benefits_bar li a {
+			color: #ffffff;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+	</style>
+
+			<div class="row benefits_bar_row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 benefits_bar_column">
+				<div class="row">
+					<div class="col-xs-1 col-sm-2 col-md-3 col-lg-3" style="text-align: right"><a href="" class="ll-white" id="benefits_bar_left" onclick="benefits_bar_tickback(); return false;"><i class="fas fa-chevron-left"></i></a></div>
+					<div class="col-xs-10 col-sm-8 col-md-6 col-lg-6 benefits_bar_content">
+						<ul class="benefits_bar" id="benefits_bar" onmouseover="benefits_bar_over();" onmouseout="benefits_bar_out();">
+							
+<li>Empowering Minds &amp; Spirits Since 1901</li>
+						<li style="opacity: 1;"><a href="https://www.llewellyn.com/about/faq.php#shipping">FREE SHIPPING ON US ORDERS OVER $35*</a></li></ul>
+					</div>
+					<div class="col-xs-1 col-sm-2 col-md-3 col-lg-3" style="text-align: left"><a href="" class="ll-white" id="benefits_bar_right" onclick="benefits_bar_tick(); return false;"><i class="fas fa-chevron-right"></i></a></div>
+				</div>
+			</div>
+		</div>
+			<!-- Navbar  --------------------------------- -->
+	<div class="row">
+	
+		<!-- padding-top: 0px; -->
+		<div id="wrapper" style="padding: 0px;">
+			<section id="nav-section">
+				<!--   border-top: 1px solid #f4f4f4; border-bottom: 1px solid #f4f4f4;  -->
+				<div class="container-fluid solid-menus" id="solidMenus" style="border-top: solid 1px #f4f4f4; padding-left: 0px; padding-right: 0px;">
+				
+										<nav class="navbar navbar-default navbar-default-light navbar-static-top no-border-radius no-margin navbar-click" style="">
+						<div class="container-fluid" id="navbar-inner-container">
+						
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle navbar-toggle-left" data-toggle="collapse" data-target="#solidMenu">
+									<font color="white"><span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span></font>
+								</button>
+								
+								<a class="navbar-brand ll-navbar-brand" style="padding-left: 0px;" href="#">Main Menu</a>
+							</div>
+							
+							<div class="collapse navbar-collapse mynavbar" id="solidMenu">
+							
+								<ul class="nav navbar-nav">
+								
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn">
+										
+										<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+										<a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="PRODUCTS" style="padding-left: 10px !important; padding-right: 5px !important;">PRODUCTS</a>
+									
+										<!-- begin PRODUCTS side tabs menu -->
+										<ul class="dropdown-menu  no-border-radius" style="z-index: 100 !important;">
+											<li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-left-0 pad-right-0">
+					
+												<div class="tabs side-tabs clearfix">
+												  
+													<ul class="tab-nav clearfix">
+														
+														<li style="display: list-item;" class="ui-tabs-active"><a href="/browse.php" data-tabs="s-tab-1" class="">Browse</a></li>
+														<li style="display: list-item;"><a href="/browse_annuals.php" data-tabs="s-tab-2" class="">Almanacs &amp; Calendars</a></li>
+														<li style="display: list-item;"><a href="/browse_astrology.php" data-tabs="s-tab-3" class="">Astrology</a></li>
+														<li style="display: list-item;"><a href="/browse_body_and_soul.php" data-tabs="s-tab-4" class="">Body &amp; Soul</a></li>
+														<li style="display: list-item;"><a href="/browse_espanol.php" data-tabs="s-tab-5" class="">Español</a></li>
+																												<li style="display: list-item;"><a href="/browse_category.php?product_category_id=605" data-tabs="s-tab-7" class="">Gifts &amp; Accessories</a></li>
+														<li style="display: list-item;"><a href="/browse_magick.php" data-tabs="s-tab-8" class="">Magick</a></li>
+														<li style="display: list-item;"><a href="/browse_nature_and_pagan.php" data-tabs="s-tab-9" class="">Nature-Based &amp; Pagan</a></li>
+														<li style="display: list-item;"><a href="/browse_paranormal.php" data-tabs="s-tab-10" class="">Supernatural &amp; Parapsychology </a></li>
+														<li style="display: list-item;"><a href="/browse_tarot_and_divination.php" data-tabs="s-tab-11" class="">Tarot</a></li>
+														<li style="display: list-item;"><a href="/browse_category.php?product_category_id=214" data-tabs="s-tab-12" class="">Young Adult</a></li>
+														
+													</ul>
+												  
+													<!-- start tab container -->
+													<div class="tab-container hidden-xs">
+													
+														<!-- start tab 1: BROWSE -->
+														<div class="s-tab-content clearfix l-block" id="s-tab-1">
+															<div class="row">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																	<div class="row">
+																		<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2" style="line-height: 2">
+																			<a href="/browse_new_releases.php">New Releases</a><br>
+																			<a href="/browse_coming_soon.php">Coming Soon</a><br>
+																			<a href="/browse_best_sellers.php">Best Sellers</a><br>
+																			<a href="/browse_special_offers.php">Special Offers</a><br>
+																			
+																			<span class="hidden-md hidden-lg"><a href="/newworlds.php">New Worlds Catalog</a><br></span>
+																			
+																		</div>
+																		<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2" style="line-height: 2">
+																			<a href="/browse.php">Browse</a><br>
+																			<a href="/browse_by_category.php">By Category</a><br>
+																			<a href="/browse_by_series.php">By Series</a><br>
+																		</div>
+																		
+																																				<div class="hidden-xs hidden-sm col-md-8 col-lg-8">
+																			<a href="/newworlds.php"><img src="https://gaia.llewellyn.com/llewellyn/newworlds/covers/97_1777668141.jpg" border="0" class="cover-shadow" alt="New Worlds Catalog" width="80" hspace="20" align="left"></a>
+																			<h6 style="margin: 0px;"><a href="/newworlds.php" class="ll-grey-dark">New Worlds Catalog</a></h6>
+																			<div style="margin-top: 6px; ">
+																				New Worlds of Body, Mind &amp; Spirit is Llewellyn Worldwide's consumer catalog. 
+																				Each issue offers valuable resources in a diverse range of subject material, 
+																				including Witchcraft &amp; Paganism, Tarot &amp; Divination, Magick &amp; Shamanism, 
+																				Alternative Health &amp; Self-Help, and more <a href="/newworlds.php" class="ll-blue-uc">» read more</a>
+																			</div>
+																		</div>
+																		
+																	</div>
+																																		<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 20px;">
+																		
+																			<div class="ll-grey-dark-uc" style="background-color: #f7f7f7; 
+																						border-top: solid 1px #dcdcdc; 
+																						font-size: 1.1em; 
+																						margin-top: 15px; 
+																						margin-bottom: 10px; 
+																						text-align: center;
+																						padding: 4px;">
+																				On Sale Now!
+																			</div>
+																			<div style="max-height: 160px; overflow-y: hidden;">
+																				<center>
+																					<a href="/product.php?ean=9780738763514"><img src="https://gaia.llewellyn.com/product_images/80/9780738763514.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px; vertical-align: top;"></a><a href="/product.php?ean=9780738775487"><img src="https://gaia.llewellyn.com/product_images/80/9780738775487.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px; vertical-align: top;"></a><a href="/product.php?ean=9780738775272"><img src="https://gaia.llewellyn.com/product_images/80/9780738775272.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px; vertical-align: top;"></a><a href="/product.php?ean=9780738756158"><img src="https://gaia.llewellyn.com/product_images/80/9780738756158.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px; vertical-align: top;"></a><a href="/product.php?ean=9780738769479"><img src="https://gaia.llewellyn.com/product_images/80/9780738769479.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px; vertical-align: top;"></a>																				</center>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!--<div class="hidden-xs hidden-sm col-md-5 col-lg-5" style="border-left: 1px solid #dcdcdc">
+	
+																	
+																</div>-->
+															</div><!-- end row -->
+														</div><!-- end tab 1 -->
+																								
+														
+														<!-- start tab 2:  -->
+														<div class="s-tab-content clearfix" id="s-tab-2">
+															<div class="row">
+																<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="line-height: 2">
+																			<a href="/browse_annuals.php">About Our Annuals</a><br>
+																			<a href="/browse_annuals_all.php">Browse All</a><br>
+																			<a href="/browse_annuals_by_year.php?year=2026" class="nav_link">Annuals For 2026</a><br>
+<a href="/browse_annuals_by_year.php?year=2027" class="nav_link">Annuals For 2027</a><br>
+
+																		</div>
+																		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="line-height: 2">
+																			
+																			<a href="/browse_type.php?type=2&amp;product_category_id=100">Almanacs</a><br>
+																			<a href="/browse_type.php?type=3&amp;product_category_id=100">Calendars</a><br>
+																			<a href="/browse_type.php?type=62&amp;product_category_id=100">Datebooks</a><br>
+																			<a href="/browse_type.php?type=1&amp;product_category_id=100">Other Annuals</a><br>
+		
+																		</div>
+																		
+																		<div class="hidden-xs hidden-sm col-md-6 col-lg-6" style="padding-top: 4px;">
+																			Discover gorgeously illustrated annuals with all sorts 
+																			of helpful information to guide you through your year. 
+																			Horoscopes, Moon phases, weekly forecasts, herbal tips, 
+																			and more all wrapped up in easy-to-use guides!
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																		
+																			<div class="ll-grey-dark-uc" style="background-color: #f7f7f7; 
+																						border-top: solid 1px #dcdcdc; 
+																						font-size: 1.1em; 
+																						margin-top: 15px; 
+																						margin-bottom: 10px; 
+																						text-align: center;
+																						padding: 4px;">
+																				Fill every day with a touch of magic!
+																			</div>
+																		</div>
+																	</div>
+																																		<div class="row">
+																		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+																			<a href="/spell.php?spell_id=10032"><img src="https://gaia.llewellyn.com/product_images/100/9780738775326.jpg" border="0" class="cover-shadow" hspace="10" vspace="10"></a>
+																		</div>
+																		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding-top: 10px;">
+																			<div style="font-size: 1.2em; margin-bottom: 10px;"><span class="ll-grey-uc">Today's SPELL - </span><a href="/spell.php?spell_id=10032" class="ll-blue-uc">Calming Water Spell</a></div>
+																			<div>
+																				Utilize this charm to stay soothed and hydrated throughout your day. You'll need a reusable water bottle, some bendable copper wire, and a selection of small pieces of carnelian, amethyst, clear quartz, or aquamarine. Wrap each stone or crystal with the wire, surrounding it from the top to the bottom and around the... <a href="/spell.php?spell_id=10032" class="ll-blue-uc">» read more</a>																			</div>
+																			
+																		</div>
+																	</div>
+																</div>
+																																<div class="hidden-xs hidden-sm col-sm-4 col-md-4 col-lg-4" style="border-left: 1px solid #dcdcdc">
+																	<center><h6 style="margin: 0px 0px 15px 0px;"><a href="/browse_new_releases.php" class="ll-grey-dark">A full year of guidance<br>and stunning imagery!</a></h6></center>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+																			<center>
+																				<a href="/product.php?ean=9780738778211"><img src="https://gaia.llewellyn.com/product_images/100/9780738778211.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																				<a href="/product.php?ean=9780738778181"><img src="https://gaia.llewellyn.com/product_images/100/9780738778181.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																			</center>
+																		</div>
+																		<div class="hidden-sm hidden-md col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-left: 0px;">
+																			<a href="/product.php?ean=9780738778198"><img src="https://gaia.llewellyn.com/product_images/200/9780738778198.jpg" width="120" border="0" class="cover-shadow" vspace="10" style="vertical-align: top;"></a>																				
+																		</div>
+																	</div><!-- end row -->
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<!--<center style="margin: 10px 15px 10px 15px;">A full year of guidance<br>and stunning imagery!</center>-->
+																			<center style="margin-top: 15px;">
+																				<a href="/browse_new_releases.php" class="btn btn-default" role="button">SHOP NOW</a>
+																			</center>
+																		</div>
+																	</div><!-- end row -->
+																</div>
+															</div><!-- end row -->
+														</div><!-- end tab 2 -->
+														
+														
+														
+														<!-- start tab 3:  -->
+														<div class="s-tab-content clearfix" id="s-tab-3">
+															<div class="row">
+																<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+																	<div class="row">
+																		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="line-height: 2">
+																			<a href="/browse_astrology.php">About Astrology</a><br>
+																			<a href="/browse_category.php?product_category_id=101">Browse All</a><br>
+																			<a href="/browse_category.php?product_category_id=102">Almanacs &amp; Calendars</a><br>
+																			<a href="/browse_category.php?product_category_id=103">Getting Started</a><br>
+																			<a href="/browse_category.php?product_category_id=104">Houses &amp; Aspects</a><br>
+																			
+																			
+																			
+																		</div>
+																		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=105">Interpretive Techniques</a><br>
+																			<a href="/browse_category.php?product_category_id=106">Karmic Astrology</a><br>
+																			<a href="/browse_category.php?product_category_id=107">Planets &amp; Signs</a><br>
+																			<a href="/browse_category.php?product_category_id=108">Predictive Astrology</a><br>
+																			
+																		</div>
+																		
+																		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=109">Professional &amp; Counseling</a><br>
+																			<a href="/browse_category.php?product_category_id=110">Relationships</a><br>
+																			<a href="/browse_category.php?product_category_id=111">Reports &amp; Charts</a><br>
+																			<a href="/browse_category.php?product_category_id=112">Spirituality</a><br>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<div class="row">
+																				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																					<div class="ll-grey-dark-uc" style="background-color: #f7f7f7; 
+																								border-top: solid 1px #dcdcdc; 
+																								font-size: 1.1em; 
+																								margin-top: 15px; 
+																								margin-bottom: 20px; 
+																								text-align: center;
+																								padding: 4px;">
+																						In Our Astrology Blog
+																					</div>
+																				</div>
+																			</div>
+																																						<div class="row">
+																				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+																					<a href="/blog/2026/5/join-us-for-llewellyncon-2026/"><img src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" width="89" height="86" border="0"></a>
+																				</div>
+																				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+																					<h6 style="margin: 0px;"><a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-grey-dark">Join Us for LlewellynCon 2026</a></h6>
+																					<div style="margin-top: 4px;"><span class="ll-grey-uc">by </span><a href="/blog/author/annal/" class="ll-blue-uc">Anna</a></div>
+																					<div style="margin-top: 6px;">
+																						
+ LlewellynCon 2026: June 08 - 17, 2026
+Join us for LlewellynCon 2026, Llewellyn’s annual, free, virtual gathering—come for 10 enchanted days, 40 visionary teachers…and you at the center of the circle!
+
+Designed for spiritual seekers of every path and experience level, from the newly... <a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-blue-uc">» Read More</a>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																																<div class="hidden-xs hidden-sm col-sm-4 col-md-4 col-lg-4" style="border-left: 1px solid #dcdcdc">
+																	<center><h6 style="margin: 0px;"><a href="/browse_astrology.php" class="ll-grey-dark">What's New</a></h6></center>
+																	<center>
+																		<a href="/product.php?ean=9780738775258"><img src="https://gaia.llewellyn.com/product_images/100/9780738775258.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																		<span class="hidden-xs hidden-sm hidden-md"><a href="/product.php?ean=9780738775159"><img src="https://gaia.llewellyn.com/product_images/100/9780738775159.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a></span>																	</center>
+																	<br>
+																	<center style="margin: 0px 15px 15px 15px;">Order Your Copies Today!</center>
+																	<center>
+																		<a href="/browse_new_releases.php" class="btn btn-default" role="button">SHOP NOW</a>
+																																			</center>
+																</div>
+															</div><!-- end row -->
+														</div><!-- end tab 3 -->
+														
+													
+													
+													
+													
+														
+														<!-- start tab 4:  -->
+														<div class="s-tab-content clearfix" id="s-tab-4">
+															<div class="row">
+																<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="">
+																			<div style="padding-bottom: 10px; line-height: 2;">
+																				<a href="/browse_body_and_soul.php">About Body &amp; Soul</a><br>
+																				<a href="/browse_category.php?product_category_id=113">Browse All</a><br>
+																			</div>
+																		
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=114" class="ll-grey-dark">Health &amp; Healing</a></h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="line-height: 2; border-top: dotted 1px #dcdcdc; padding-top: 4px;">
+																			<a href="/browse_category.php?product_category_id=116">Alternative Therapies</a><br>
+																			<a href="/browse_category.php?product_category_id=115">Auras</a><br>
+																			<a href="/browse_category.php?product_category_id=117">Chakras</a><br>
+																			<a href="/browse_category.php?product_category_id=118">Crystals &amp; Gems</a><br>
+																			<a href="/browse_category.php?product_category_id=119">Eastern Paths</a><br>
+																			<a href="/browse_category.php?product_category_id=120">Energy Work</a><br>
+																			<a href="/browse_category.php?product_category_id=121">Herbalism</a><br>
+																			<a href="/browse_category.php?product_category_id=122">Meditation</a><br>
+																			<a href="/browse_category.php?product_category_id=123">Yoga</a><br>
+																		</div>
+																		
+																	</div>
+																</div>
+																
+																
+																<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" style="border-right: solid 1px #dcdcdc;">
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="">
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=124" class="ll-grey-dark">Self-Help</a></h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="line-height: 2; border-top: dotted 1px #dcdcdc; padding-top: 4px;">
+																			<a href="/browse_category.php?product_category_id=125">Angels &amp; Spirit Guides</a><br>
+																			<a href="/browse_category.php?product_category_id=645">Animals</a><br>
+																			<a href="/browse_category.php?product_category_id=126">Creative Visualization</a><br>
+																			<a href="/browse_category.php?product_category_id=128">Death &amp; the Afterlife</a><br>
+																			<a href="/browse_category.php?product_category_id=129">Dreams</a><br>
+																			<a href="/browse_category.php?product_category_id=130">Empowerment &amp; Inspiration</a><br>
+																			<a href="/browse_category.php?product_category_id=127">Feng Shui</a><br>
+																			<a href="/browse_category.php?product_category_id=132">Meditation</a><br>
+																			<a href="/browse_category.php?product_category_id=133">Psychic Development</a><br>
+																			<a href="/browse_category.php?product_category_id=134">Relationships</a><br>
+																			<a href="/browse_category.php?product_category_id=131">Self-Hypnosis</a><br>
+																			<a href="/browse_category.php?product_category_id=135">Sexuality</a><br>
+																			<a href="/browse_category.php?product_category_id=136">Spirituality</a><br>
+																		</div>
+																		
+																	</div>
+																</div>
+																
+																<div class="hidden-xs hidden-sm col-md-6 col-lg-6" style="padding: 0px;">
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<div class="ll-grey-dark-uc" style="background-color: #f7f7f7; 
+																						border-top: solid 1px #dcdcdc; 
+																						font-size: 1.1em;
+																						margin-bottom: 20px; 
+																						text-align: center;
+																						padding: 4px;">
+																				In Our Body &amp; Soul Blog
+																			</div>
+																		</div>
+																	</div>
+																		
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">	
+																			<div>
+																				<div><a href="/blog/2026/5/join-us-for-llewellyncon-2026/"><img align="left" src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" width="89" height="86" border="0" hspace="15"></a></div>
+																				
+																				<h6 style="margin: 0px;"><a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-grey-dark">Join Us for LlewellynCon 2026</a></h6>
+																				<div style="margin-top: 4px;"><span class="ll-grey-uc">by </span><a href="/blog/author/annal/" class="ll-blue-uc">Anna</a></div>
+																				
+																				<div style="margin-top: 6px; margin-bottom: 15px; padding-left: 10px;">
+																					
+ LlewellynCon 2026: June 08 - 17, 2026
+Join us for LlewellynCon 2026, Llewellyn’s annual, free, virtual gathering—come for 10 enchanted days, 40 visionary teachers…and you at the center of the circle!
+
+Designed for spiritual... <a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-blue-uc">» Read More</a>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																																		<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 15px; border-top: 1px solid #dcdcdc; padding-top: 5px;">
+																			<center>
+																				<a href="/product.php?ean=9780738779058"><img src="https://gaia.llewellyn.com/product_images/100/9780738779058.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																				<a href="/product.php?ean=9780738779294"><img src="https://gaia.llewellyn.com/product_images/100/9780738779294.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																				
+																			</center>
+																			
+																		</div>
+																	</div><!-- end row -->
+																
+																</div>
+																
+																
+															</div><!-- end row -->
+														</div><!-- end tab 4 -->
+														
+														
+													
+													
+													
+														<!-- start tab 5: Espanol  -->
+														<div class="s-tab-content clearfix" id="s-tab-5">
+															<div class="row">
+																<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+																	
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style=" border-bottom: dotted 1px #dcdcdc;">
+																			<div style="padding-bottom: 10px;">
+																				<a href="/browse_espanol.php">Browse All</a>
+																			</div>
+																			<h6 style="margin-bottom: 4px;">Find Your Favorite Titles in Spanish</h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="line-height: 2; padding-top: 4px;">
+																			<a href="/browse_espanol.php?filter_cat=100&amp;sort_by=pubdate">Almanacs &amp; Calendars</a><br>
+																			<a href="/browse_espanol.php?filter_cat=101&amp;sort_by=pubdate">Astrology</a><br>
+																			<a href="/browse_espanol.php?filter_cat=113&amp;sort_by=pubdate">Body &amp; Soul</a><br>
+																			<a href="/browse_espanol.php?filter_cat=165&amp;sort_by=pubdate">Fiction</a><br>
+																			<a href="/browse_espanol.php?filter_cat=605&amp;sort_by=pubdate">Gifts &amp; Accessories</a><br>
+																		</div>
+																		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="line-height: 2; padding-top: 4px;">
+																			<a href="/browse_espanol.php?filter_cat=166&amp;sort_by=pubdate">Magick</a><br>
+																			<a href="/browse_espanol.php?filter_cat=137&amp;sort_by=pubdate">Nature-Based &amp; Pagan</a><br>
+																			<a href="/browse_espanol.php?filter_cat=178&amp;sort_by=pubdate">Supernatural &amp; Parapsychology</a><br>
+																			<a href="/browse_espanol.php?filter_cat=189&amp;sort_by=pubdate">Tarot &amp; Divination</a><br>
+																			<a href="/browse_espanol.php?filter_cat=214&amp;sort_by=pubdate">Young Adult</a><br>
+																		</div>
+																		
+																	</div>
+																</div>
+																																<div class="hidden-xs col-sm-4 col-md-4 col-lg-4" style="border-left: 1px solid #dcdcdc">
+																	<center><h6>Many Topics to Choose From</h6></center>
+																	<center>
+																		<a href="/product.php?ean=9780738701905"><img src="https://gaia.llewellyn.com/product_images/100/9780738701905.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																		<a href="/product.php?ean=9781567181890"><img src="https://gaia.llewellyn.com/product_images/100/9781567181890.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a>																	</center>
+																	<br>
+																	<center>
+																		<a href="/browse_espanol.php" class="btn btn-default" role="button">SHOP NOW</a>
+																	</center>
+																
+																</div>
+		
+															</div><!-- end row -->
+														</div><!-- end tab 5 -->
+														
+													
+																										
+												
+														<!-- start tab 7:  -->
+														<div class="s-tab-content clearfix" id="s-tab-7">
+															<div class="row">
+																<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" style="line-height: 2;">
+																		<a href="/browse_category.php?product_category_id=605">Browse All</a><br>
+																		<a href="/browse_category.php?product_category_id=648">Amulets &amp; Talismans</a><br>
+																		<a href="/browse_category.php?product_category_id=606">Bags</a><br>
+																		<a href="/browse_category.php?product_category_id=631">CDs</a><br>
+																		<a href="/browse_category.php?product_category_id=607">Cloths</a><br>
+																		<a href="/browse_category.php?product_category_id=636">Coloring Books</a><br>
+																		<a href="/browse_category.php?product_category_id=640">Dreamcatchers</a><br>
+																		<a href="/browse_category.php?product_category_id=633">Glass Spheres</a><br>
+																		<a href="/browse_category.php?product_category_id=608">Greeting Cards</a><br>
+																		<a href="/browse_category.php?product_category_id=649">Jewelry</a><br>
+																</div>
+																<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" style="line-height: 2;">
+																		<a href="/browse_category.php?product_category_id=609">Journals</a><br>
+																		<a href="/browse_category.php?product_category_id=637">Magnets</a><br>
+																		<a href="/browse_category.php?product_category_id=610">Mousepads</a><br>
+																		<a href="/browse_category.php?product_category_id=611">Pendulums</a><br>
+																		<a href="/browse_category.php?product_category_id=612">Pens</a><br>		
+																		<a href="/browse_category.php?product_category_id=614">Runes</a><br>
+																		<a href="/browse_category.php?product_category_id=615">Salt Lamps</a><br>
+																		<a href="/browse_category.php?product_category_id=616">Sealing Waxes</a><br>
+																		<a href="/browse_category.php?product_category_id=617">Wrapping Paper</a><br>
+																</div>
+																
+																																<div class="hidden-xs col-sm-4 col-md-6 col-lg-6" style="border-left: 1px solid #dcdcdc">
+																	<center><h6>Something For Everyone</h6><h6></h6></center>
+																	
+																	<center>
+																		<a href="/product.php?ean=9780738782805"><img src="https://gaia.llewellyn.com/product_images/100/9780738782805.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px;"></a>																		<a href="/product.php?ean=9780738782263"><img src="https://gaia.llewellyn.com/product_images/100/9780738782263.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px;"></a>																		<span class="hidden-sm"><a href="/product.php?ean=9780738782300"><img src="https://gaia.llewellyn.com/product_images/100/9780738782300.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px;"></a></span>																		
+																		<span class="hidden-sm"><a href="/product.php?ean=9780738782270"><img src="https://gaia.llewellyn.com/product_images/100/9780738782270.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px;"></a></span>																		<span class="hidden-sm hidden-md"><a href="/product.php?ean=9780738781426"><img src="https://gaia.llewellyn.com/product_images/100/9780738781426.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px;"></a></span>																		<span class="hidden-sm hidden-md"><a href="/product.php?ean=9780738783055"><img src="https://gaia.llewellyn.com/product_images/100/9780738783055.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="max-height: 170px;"></a></span>																		
+																																																						
+																	</center>
+																
+																	<br>
+																	<center>
+																		<a href="/browse_category.php?product_category_id=605" class="btn btn-default" role="button">SHOP NOW</a>
+																	</center>
+																	
+																</div>	
+																
+																
+															</div><!-- end row -->
+														</div><!-- end tab 7 -->
+														
+														<!-- start tab 8:  -->
+														<div class="s-tab-content clearfix" id="s-tab-8">
+															<div class="row">
+																
+																<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+																	<div class="row">
+																		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="line-height: 2">
+																			<a href="/browse_magick.php">About Magick</a><br>
+																			<a href="/browse_category.php?product_category_id=166">Browse All Magick</a><br>
+																			
+																			<a href="/browse_category.php?product_category_id=167">Alchemy</a><br>
+																			<a href="/browse_category.php?product_category_id=168">Animals &amp; Mythical Creatures</a><br>
+																			<a href="/browse_category.php?product_category_id=169">Enochian</a><br>
+																			<a href="/browse_category.php?product_category_id=170">Gnosticism</a><br>
+																			<a href="/browse_category.php?product_category_id=171">Golden Dawn</a><br>
+																			
+																			
+																		</div>
+																		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=172">Grimoire</a><br>
+																			<a href="/browse_category.php?product_category_id=173">History &amp; Biographies</a><br>
+																			<a href="/browse_category.php?product_category_id=174">Kabbalah</a><br>
+																			<a href="/browse_category.php?product_category_id=229">Quantum</a><br>
+																			<a href="/browse_category.php?product_category_id=175">Reference</a><br>
+																			<a href="/browse_category.php?product_category_id=176">Ritual</a><br>
+																			<a href="/browse_category.php?product_category_id=177">Theory &amp; Technique</a><br>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<div class="row">
+																				<div class="ll-grey-dark-uc">
+																					<div style="background-color: #f7f7f7; 
+																								border-top: solid 1px #dcdcdc; 
+																								font-size: 1.1em; 
+																								margin-top: 15px; 
+																								margin-bottom: 20px; 
+																								text-align: center;
+																								padding: 4px;">
+																						In Our Magick Blog
+																					</div>
+																				</div>
+																			</div>
+																			
+																																						<div class="row">
+																				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+																					<a href="/blog/2026/5/join-us-for-llewellyncon-2026/"><img src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" width="89" height="86" border="0"></a>
+																				</div>
+																				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+																					<h6 style="margin: 0px;"><a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-grey-dark">Join Us for LlewellynCon 2026</a></h6>
+																					<span class="ll-grey-uc">by </span><a href="/blog/author/annal/" class="ll-blue-uc">Anna</a>
+																					<div style="margin-top: 6px;">
+																						
+ LlewellynCon 2026: June 08 - 17, 2026
+Join us for LlewellynCon 2026, Llewellyn’s annual, free, virtual gathering—come for 10 enchanted days, 40 visionary teachers…and you at the center of the circle!
+
+Designed for spiritual... <a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-blue-uc">» Read More</a>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																																<div class="hidden-xs hidden-sm col-sm-4 col-md-4 col-lg-4" style="border-left: 1px solid #dcdcdc">
+																	<center><h6>What's New</h6></center>
+																	<center>
+																		<a href="/product.php?ean=9780738776330"><img src="https://gaia.llewellyn.com/product_images/100/9780738776330.jpg" border="0" class="cover-shadow" hspace="10" vspace="10/"></a>																		<span class="hidden-xs hidden-sm hidden-md"><a href="/product.php?ean=9780738781365"><img src="https://gaia.llewellyn.com/product_images/100/9780738781365.jpg" border="0" class="cover-shadow" hspace="10" vspace="10"></a></span>																	</center>
+																	<br>
+																	<center style="margin: 0px 15px 15px 15px;">Order Your Copies Today!</center>
+																	<center>
+																		<a href="/browse_magick.php" class="btn btn-default" role="button">SHOP NOW</a>
+																	</center>
+																</div>
+		
+															</div><!-- end row -->
+														</div><!-- end tab 8 -->
+														
+														<!-- start tab 9:  -->
+														<div class="s-tab-content clearfix" id="s-tab-9">
+															<div class="row">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+																	<div class="row">
+																		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="line-height: 2">
+																			<a href="/browse_nature_and_pagan.php">About Nature-Based &amp; Pagan</a><br>
+																			<a href="/browse_category.php?product_category_id=137">Browse All</a><br>
+																			
+																			<a href="/browse_category.php?product_category_id=138">Almanacs &amp; Calendars</a><br>
+																			<a href="/browse_category.php?product_category_id=646">Ancestors &amp; Ancestor Work</a><br>
+																			<a href="/browse_category.php?product_category_id=139">Animals &amp; Mythical Creatures</a><br>
+																			<a href="/browse_category.php?product_category_id=140">Book of Shadows</a><br>
+																			<a href="/browse_category.php?product_category_id=141">Celtic &amp; Druid</a><br>
+																			<a href="/browse_category.php?product_category_id=142">Cooking &amp; Crafts</a><br>
+																			<a href="/browse_category.php?product_category_id=143">Coven</a><br>
+																			<a href="/browse_category.php?product_category_id=144">Faeries &amp; Elementals</a><br>
+																			
+																		</div>
+																		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=145">Family</a><br>
+																			<a href="/browse_category.php?product_category_id=146">Folklore &amp; Natural Magic</a><br>
+																			<a href="/browse_category.php?product_category_id=147">Goddess &amp; God Worship</a><br>
+																			<a href="/browse_category.php?product_category_id=148">Green Spirituality</a><br>
+																			<a href="/browse_category.php?product_category_id=149">Healing</a><br>
+																			<a href="/browse_category.php?product_category_id=150">Herbalism</a><br>
+																			<a href="/browse_category.php?product_category_id=151">History &amp; Biographies</a><br>
+																			<a href="/browse_category.php?product_category_id=152">Home &amp; Garden</a><br>
+																			<a href="/browse_category.php?product_category_id=153">Pagan</a><br>
+																			<a href="/browse_category.php?product_category_id=160">Practical Techniques</a><br>
+																			<a href="/browse_category.php?product_category_id=154">Rites of Passage</a><br>
+																		</div>
+																		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=155">Ritual</a><br>
+																			<a href="/browse_category.php?product_category_id=156">Sabbats &amp; Seasons</a><br>
+																			<a href="/browse_category.php?product_category_id=241">Santeria</a><br>
+																			<a href="/browse_category.php?product_category_id=157">Shamanism</a><br>
+																			<a href="/browse_category.php?product_category_id=158">Solitary Path</a><br>
+																			<a href="/browse_category.php?product_category_id=159">Spells</a><br>
+																			<a href="/browse_category.php?product_category_id=161">Wicca</a><br>
+																			<a href="/browse_category.php?product_category_id=162">Witchcraft</a><br>
+																			<a href="/browse_category.php?product_category_id=163">World Paganism</a><br>
+																			<div class="hidden-md hidden-lg" style="margin-top: 20px;">
+																				» <a href="/spell.php">FREE Spell-A-Day</a>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<div class="row">
+																				<div class="ll-grey-dark-uc">
+																					<div style="background-color: #f7f7f7; 
+																								border-top: solid 1px #dcdcdc; 
+																								font-size: 1.1em; 
+																								margin-top: 15px; 
+																								margin-bottom: 20px; 
+																								text-align: center;
+																								padding: 4px;">
+																						In Our Paganism Blog
+																					</div>
+																				</div>
+																			</div>
+																				
+																			<div class="row">
+																				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+																					<a href="/blog/2026/5/join-us-for-llewellyncon-2026/"><img src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" width="89" height="86" border="0"></a>
+																				</div>
+																				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+																					<h6 style="margin: 0px;"><a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-grey-dark">Join Us for LlewellynCon 2026</a></h6>
+																					<span class="ll-grey-uc">by </span><a href="/blog/author/annal/" class="ll-blue-uc">Anna</a>
+																					<div style="margin-top: 6px;">
+																						
+ LlewellynCon 2026: June 08 - 17, 2026
+Join us for LlewellynCon 2026, Llewellyn’s annual, free, virtual... <a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-blue-uc">» Read More</a>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		
+																		
+																	
+																	</div>
+																</div>
+																																<div class="hidden-xs hidden-sm hidden-md col-lg-3" style="border-left: 1px solid #dcdcdc">
+																	<center><h6>New Releases</h6></center>
+																	<div class="row" style="padding-bottom: 8px;">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			
+																			<center><a href="/product.php?ean=9780738778051"><img src="https://gaia.llewellyn.com/product_images/100/9780738778051.jpg" border="0" class="cover-shadow" hspace="10" vspace="8/"></a></center>																																						
+																		</div>
+																		
+																	</div><!-- end row -->
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<center>
+																				<a href="/browse_nature_and_pagan.php" class="btn btn-default" role="button">SHOP NOW</a>
+																			</center>
+																		</div>
+																	</div><!-- end row -->
+																	<div class="row" style="margin-top: 10px;">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ll-border-top ll-border-bottom no-padding" style="margin-top: 15px; 
+																					min-height: 160px;
+																					background-image: url(/images/block_bg_spelladay_light.jpg);
+																					overflow: hidden;
+																					background-size: 100% 100%;
+																					text-align: center;
+																					background-position: center;">
+																			<a href="/spell.php">
+																			<div style="position: relative; top: 10px; text-align: center">
+																				<h6 class="ll-grey-dark-no-ul" style="margin-bottom: 4px;">FREE SPELL-A-DAY</h6>
+																				<span class="ll-grey-dark-uc">Everyday spells for everyone!</span>
+																			</div>
+																			</a>
+																		</div>
+																	</div><!-- end row -->
+																	
+																</div>
+																
+															</div><!-- end row -->
+														</div><!-- end tab 9 -->
+														
+														<!-- start tab 10:  -->
+														<div class="s-tab-content clearfix" id="s-tab-10">
+															<div class="row">
+																<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+																			<div style="padding-bottom: 10px; line-height: 2;">
+																				<a href="/browse_paranormal.php">About Supernatural &amp; Parapsychology</a><br>
+																				<a href="/browse_category.php?product_category_id=178">Browse All</a><br>
+																			</div>
+																		
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=418" class="ll-grey-dark">Paranormal</a></h6>
+
+																			<div class="" style="line-height: 2; border-top: dotted 1px #dcdcdc; padding-top: 4px;">
+																				<a href="/browse_category.php?product_category_id=180">Ancient &amp; Lost Civilizations</a><br>
+																				<a href="/browse_category.php?product_category_id=183">Ghosts &amp; Hauntings</a><br>
+																				<a href="/browse_category.php?product_category_id=187">UFO &amp; Alien Encounters</a><br>
+																				<a href="/browse_category.php?product_category_id=188">Vampires &amp; Mythical Creatures</a><br>
+																			</div>
+																		</div>
+																		
+																		
+																		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=184" class="ll-grey-dark">Parapsychology</a></h6>
+																			
+																			<div class="" style="line-height: 2; border-top: dotted 1px #dcdcdc; padding-top: 4px;">
+																				<a href="/browse_category.php?product_category_id=182">Astral Projection</a><br>
+																				<a href="/browse_category.php?product_category_id=419">Auras</a><br>
+																				<a href="/browse_category.php?product_category_id=179">Past Lives &amp; Afterlife</a><br>
+																				<a href="/browse_category.php?product_category_id=420">Psychic Development</a><br>
+																				<a href="/browse_category.php?product_category_id=421">Reincarnation</a><br>
+																				<a href="/browse_category.php?product_category_id=186">Spirit Communication</a><br>
+																			</div>
+																		</div>
+																			
+																	</div><!-- end row links -->
+																		
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<div class="row">
+																				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																					<div class="ll-grey-dark-uc" style="background-color: #f7f7f7; 
+																								border-top: solid 1px #dcdcdc; 
+																								font-size: 1.1em; 
+																								margin-top: 15px; 
+																								margin-bottom: 20px; 
+																								text-align: center;
+																								padding: 4px;">
+																						In Our Paranormal Blog
+																					</div>
+																				</div>
+																			</div>
+																																						<div class="row">
+																				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+																					<a href="/blog/2026/5/join-us-for-llewellyncon-2026/"><img src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" width="89" height="86" border="0"></a>
+																				</div>
+																				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+																					<h6 style="margin: 0px;"><a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-grey-dark">Join Us for LlewellynCon 2026</a></h6>
+																					<span class="ll-grey-uc">by </span><a href="/blog/author/annal/" class="ll-blue-uc">Anna</a>
+																					<div style="margin-top: 6px;">
+																						
+ LlewellynCon 2026: June 08 - 17, 2026
+Join us for LlewellynCon 2026, Llewellyn’s annual, free, virtual gathering—come for 10 enchanted days, 40 visionary teachers…and you at the center of the circle!
+
+Designed for spiritual... <a href="/blog/2026/5/join-us-for-llewellyncon-2026/" class="ll-blue-uc">» Read More</a>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	
+																	</div><!-- end row blog entry -->
+																	
+																	
+																</div><!-- end left column -->
+																	
+																	
+	
+																
+																																<div class="hidden-xs hidden-sm col-sm-4 col-md-4 col-lg-4" style="border-left: 1px solid #dcdcdc">
+																	<center><h6>New Releases</h6></center>
+																	<center>
+																		<span><a href="/product.php?ean=9780738777481"><img src="https://gaia.llewellyn.com/product_images/100/9780738777481.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a></span>																		<span class="hidden-xs hidden-sm hidden-md"><a href="/product.php?ean=9780738779904"><img src="https://gaia.llewellyn.com/product_images/100/9780738779904.jpg" border="0" class="cover-shadow" hspace="10" vspace="10" style="vertical-align: top;"></a></span>																	</center>
+																	<br>
+																	<center style="margin: 0px 15px 15px 15px;">Order Your Copies Today!</center>
+																	<center>
+																		<a href="/browse_paranormal.php" class="btn btn-default" role="button">SHOP NOW</a>
+																	</center>
+																</div>
+																
+																
+																
+																
+															</div><!-- end row -->
+														</div><!-- end tab 10 -->
+														
+														<!-- start tab 11:  -->
+														<div class="s-tab-content clearfix" id="s-tab-11">
+															<div class="row">
+																<div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+																	
+																	<div class="row">
+																		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="border-bottom: solid 1px #dcdcdc;">
+																			<div style="padding-bottom: 10px; line-height: 2;">
+																				<a href="/browse_tarot_and_divination.php">About Tarot &amp; Divination</a><br>
+																				<a href="/browse_category.php?product_category_id=189">Browse All</a><br>
+																				» <a href="/tarot_reading.php">FREE Tarot Reading</a><br>
+																				
+																			</div>
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=190" class="ll-grey-dark">Tarot Books</a></h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=417">Advanced</a><br>
+																			<a href="/browse_category.php?product_category_id=191">Getting Started</a><br>
+																			<a href="/browse_category.php?product_category_id=193">Magic &amp; Spells</a><br>
+																			<a href="/browse_category.php?product_category_id=194">Professional</a><br>
+																			<a href="/browse_category.php?product_category_id=195">Reference</a><br>
+																			<a href="/browse_category.php?product_category_id=196">Relationships</a><br>
+																			<a href="/browse_category.php?product_category_id=198">Theory &amp; Practice</a><br>
+																		</div>
+																	</div>
+																</div>
+																
+																
+																<div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+																	
+																	<div class="row">
+																		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="border-bottom: solid 1px #dcdcdc;">
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=199" class="ll-grey-dark">Decks &amp; Kits</a></h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=200">Celtic &amp; Pagan</a><br>
+																			<a href="/browse_category.php?product_category_id=201">Classical</a><br>
+																			<a href="/browse_category.php?product_category_id=202">Contemporary</a><br>
+																			<a href="/browse_category.php?product_category_id=231">Egyptian</a><br>
+																			<a href="/browse_category.php?product_category_id=203">Fairies &amp; Elves</a><br>
+																			<a href="/browse_category.php?product_category_id=233">For Lovers</a><br>
+																			<a href="/browse_category.php?product_category_id=230">Goddess</a><br>
+																			<a href="/browse_category.php?product_category_id=204">Gold &amp; Silver Foil</a><br>
+																			<a href="/browse_category.php?product_category_id=232">Historical</a><br>
+																			<a href="/browse_category.php?product_category_id=234">Mini Tarots</a><br>
+																			<a href="/browse_category.php?product_category_id=238">Oracles</a><br>
+																			<a href="/browse_category.php?product_category_id=206">World Cultures</a><br>
+																		</div>
+																	</div>
+		
+																</div>
+															
+																<div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+																	
+																	<div class="row">
+																		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="border-bottom: solid 1px #dcdcdc;">
+																			<div style="line-height: 2">
+																				<a href="/browse_category.php?product_category_id=192">Lo Scarabeo</a><br>
+																				<a href="/browse_category.php?product_category_id=650">Blue Angel</a><br>
+																			</div>
+																			
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=207" class="ll-grey-dark">Divination</a></h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=208">I Ching</a><br>
+																			<a href="/browse_category.php?product_category_id=209">Numerology</a><br>
+																			<a href="/browse_category.php?product_category_id=423">Other Divination</a><br>
+	
+																			<a href="/browse_category.php?product_category_id=211">Palmistry</a><br>
+																			<a href="/browse_category.php?product_category_id=212">Pendulum</a><br>
+																			<a href="/browse_category.php?product_category_id=213">Runes</a><br>
+																		</div>
+																	</div>
+																	
+																	<div class="row">
+																		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="border-bottom: solid 1px #dcdcdc;">
+																			<h6 style="margin-bottom: 4px;"><a href="/browse_category.php?product_category_id=235" class="ll-grey-dark">Tarot Accessories</a></h6>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="line-height: 2">
+																			<a href="/browse_category.php?product_category_id=416">Journals &amp; Note Boxes</a><br>
+																			<a href="/browse_category.php?product_category_id=236">Tarot Bags</a><br>
+																			<a href="/browse_category.php?product_category_id=237">Tarot Cloths</a><br>
+																		</div>
+																	</div>
+																</div>
+																
+																
+																
+																																<div class="hidden-xs hidden-sm col-md-3 col-lg-3 no-padding" style="border-left: 1px solid #dcdcdc">
+																	<center><h6>New Releases</h6></center>
+																	<center>
+																		<span><a href="/product.php?ean=9780738782430"><img src="https://gaia.llewellyn.com/product_images/100/9780738782430.jpg" border="0" class="cover-shadow" hspace="10" vspace="10/"></a></span>																		<!-- class="hidden-xs hidden-sm hidden-md" -->
+																		<span><a href="/product.php?ean=9780738783420"><img src="https://gaia.llewellyn.com/product_images/100/9780738783420.jpg" border="0" class="cover-shadow" hspace="10" vspace="10"></a></span>																	</center>
+																	<br>
+																	
+																	<center>
+																		<a href="/browse_tarot_and_divination.php" class="btn btn-default" role="button">SHOP NOW</a>
+																	</center>
+																	
+																																	</div>
+																
+															</div><!-- end row -->
+														</div><!-- end tab 11 -->
+														
+														
+														<!-- start tab 12:  -->
+														<div class="s-tab-content clearfix" id="s-tab-12">
+															<div class="row">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<center><h6>Young Adult Titles Available Now</h6></center>
+																		</div>
+																	</div>
+																																		<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<center>
+																				<a href="/product.php?ean=9780875427911"><img src="https://gaia.llewellyn.com/product_images/100/9780875427911.jpg" border="0" class="cover-shadow" hspace="10" vspace="10"></a>																				<a href="/product.php?ean=9781567187250"><img src="https://gaia.llewellyn.com/product_images/100/9781567187250.jpg" border="0" class="cover-shadow" hspace="10" vspace="10"></a>																																																											</center>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																			<br>
+																			<center style="margin: 0px 15px 15px 15px;">Order Your Copies Today!</center>
+																			<center>
+																				<a href="/browse_category.php?product_category_id=214" class="btn btn-default" role="button">SHOP NOW</a>
+																			</center>
+																		</div>
+																	</div>
+																</div>
+															</div><!-- end row -->
+														</div><!-- end tab 12 -->
+														
+														
+													</div><!-- end tab container -->
+												</div>
+											</li>
+										</ul>
+										<!-- end PRODUCTS side tabs menu -->
+									</li>
+									<!-- end products dropdown -->
+								
+								
+									<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="AUTHORS" style="padding-left: 10px !important; padding-right: 5px !important;">AUTHORS</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="line-height: 2em">
+													<div style="padding-bottom: 6px;"><a href="/authors.php">Authors Home</a></div>
+													<div style="padding-bottom: 6px;"><a href="/authors_az.php">Browse Authors A-Z</a></div>
+													<div style="padding-bottom: 6px;"><a href="/author_events.php">Authors on Tour</a></div>
+													<div style="padding-bottom: 6px;"><a href="/authors_interviews.php">Author Interviews</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/index.php">Author Articles</a></div>
+													
+												</div>
+																									<div class="col-lg-5 col-md-5 col-sm-10 col-xs-12" style="padding-bottom: 10px;">
+														
+															<div style="margin-top: 15px;">
+															<a href="/author_interview.php?author_id=6991&amp;interview_id=188"><img src="/_theme/images/clear.gif" border="0" style="background: url(https://gaia.llewellyn.com/author_images/75/6991.jpg) no-repeat; margin-bottom: 10px;" class="llew-img-circle-shadow" width="75" hspace="8" align="left"></a>
+															</div>														<h6 style=""><a href="/author_interview.php?author_id=6991&amp;interview_id=188" class="ll-grey-dark">An Interview with Author Ben Stimpson</a></h6>
+														<div style=""> 
+															Ancestor work is powerful work, but often we can have a disconnect to who we see as our ancestors or how we work with them. Here, Ancestral Whispers author Ben Stimpson delves into why and how we can do this powerful work. ... 
+														</div>
+														<div style="margin-top: 5px;">
+															<div style="float: left; padding-right: 5px;"><a href="/author_interview.php?author_id=6991&amp;interview_id=188" class="ll-blue-uc">READ MORE</a> </div>
+															<div style="float: left;"><i class="far fa-long-arrow-right ll-grey"></i></div>
+															<div class="clearfix"></div>
+														</div>
+													</div>
+																									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 hidden-xs hidden-sm" style="line-height: 1em !important;">
+													<h6 style="margin-left: 15px; margin-bottom: 15px;">On Tour Now</h6>
+													
+														<div style="padding-bottom: 10px;">
+															
+															<div style="margin-top: 5px; margin-left: 4px; line-height: 1.3em;">
+																<a href="/author_events_detail.php?event_id=8410"><img src="https://gaia.llewellyn.com/author_images/75/6640.jpg" class="img-shadow-tight" style="margin-bottom: 10px;" hspace="10" border="0" width="50" align="left"></a>
+																<a href="/author_events_detail.php?event_id=8410" class="ll-blue-uc">Presentation &amp; Booksigning </a><br> 
+																<span style="">with Jiulio Consiglio</span><br>
+																<span class="ll-grey">May 23, 2026</span>
+															</div>
+														</div>
+														<div style="clear: both;"></div>
+														<div style="padding-bottom: 10px;">
+															
+															<div style="margin-top: 5px; margin-left: 4px; line-height: 1.3em;">
+																
+																<a href="/author_events_detail.php?event_id=8428" class="ll-blue-uc">Our Sorcery Hour</a><br> 
+																<span style="">with Laura González </span><br>
+																<span class="ll-grey">May 23, 2026</span>
+															</div>
+														</div>
+														<div style="clear: both;"></div>													<div style="margin: 15px 10px 10px 15px;"><a href="/author_events.php" class="ll-blue-uc">More Events</a> <i class="far fa-long-arrow-right ll-grey"></i></div>
+												</div>
+											</div>
+										</div>							
+									
+									</li>
+									
+									<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+									
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="ARTICLES" style="padding-left: 10px !important; padding-right: 5px !important;">ARTICLES</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+												<div class="col-lg-2 col-md-3 col-sm-3 col-xs-12" style="line-height: 2em">
+													<div style="padding-bottom: 6px;"><a href="/journal/index.php">The Llewellyn Journal</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/all_articles.php">Browse All Articles</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/article_topics.php">Article Topics</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/popular_articles.php">Most Popular Articles</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/RSS_FEEDS.php">RSS Data Feeds</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/mission.php">Mission Statement</a></div>
+													<div style="padding-bottom: 6px;"><a href="/journal/article_use.php">Use of Our Articles</a></div>
+												</div>
+																								<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12" style="padding-bottom: 10px;">
+													
+													<div class="row">
+													
+														<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+															
+															<div style="margin-top: 15px;"><a href="/journal/article/3333"><img src="/_theme/images/clear.gif" border="0" style="background: url(https://gaia.llewellyn.com/author_images/75/7257.jpg) no-repeat; margin-bottom: 10px;" class="llew-img-circle-shadow" width="75" hspace="8" align="left"></a></div>															
+															<h6 style="margin-bottom: 2px;"><a href="/journal/article/3333" class="ll-grey-dark">A Quick Overview of Thelemic Holidays</a></h6>
+															<span class="ll-grey-uc">by </span><a href="/author.php?author_id=7257" class="ll-blue-uc">Maevius Lynn</a>															<div style="margin-top: 6px;">
+																Many witches, pagans, occultists, and magical practitioners find great meaning and value in celebrating holidays throughout the year, and these holidays are as diverse as the people who observe them....
+															</div>
+															<div style="margin-top: 5px;">
+																<div style="float: left; padding-right: 5px;"><a href="/journal/article/3333" class="ll-blue-uc">READ MORE</a> </div>
+																<div style="float: left;"><i class="far fa-long-arrow-right ll-grey"></i></div>
+																<div class="clearfix"></div>
+															</div>
+														</div>
+														
+																												
+														<div class="hidden-lg hidden-md col-sm-12 hidden-xs" style="padding-bottom: 10px; border-bottom: dotted 1px #dcdcdc">
+														</div>
+														<div class="col-lg-6 col-md-6 col-sm-12 hidden-xs" style="">
+															<h6><a href="/journal/index.php" class="ll-grey-dark">More Articles</a></h6>
+															<div style="padding-bottom: 6px;"><a href="/journal/article/3329">8 Types of Mermaids and Merfolk</a></div><div style="padding-bottom: 6px;"><a href="/journal/article/3331">5 Ways Professional Tarot Readers Are Able to Read Faster and More Clearly than Beginners</a></div><div style="padding-bottom: 6px;"><a href="/journal/article/3338">Dreaming with the Moon</a></div><div style="padding-bottom: 6px;"><a href="/journal/article/3328">7 Ways to Reclaim Your Health Through Ancestral Wisdom</a></div><div style="padding-bottom: 6px;"><a href="/journal/article/3332">How to Read Like a Magician and Unlock the Hidden Power of Magical Texts</a></div>																													</div>
+														
+													</div>
+													
+												</div>
+												
+											</div>
+										</div>							
+									
+									</li>
+							
+							
+							
+							
+									<!-- MAIN MENU TAB - VIDEOS ----------------------------------------------------------------------------------->
+									
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="VIDEOS" style="padding-left: 10px !important; padding-right: 5px !important;">VIDEOS</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+												<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="line-height: 1.5em">
+													<div style="padding-bottom: 6px;"><a href="/videos/index.php">About Llewellyn's Videos</a></div>
+													<div style="padding-bottom: 6px;"><a href="/videos/all_videos.php">Browse All Videos</a></div>
+													<div style="padding-bottom: 6px;" class="hidden-lg hidden-md hidden-sm"><a href="/videos/video_categories.php">Browse Videos by Category</a></div>
+													<div style="padding-bottom: 6px;"><a href="/videos/videos_by_product.php">Browse Videos by Product</a></div>
+													<div style="padding-bottom: 6px;"><a href="https://www.youtube.com/c/LlewellynWorldwide" target="_blank">Visit Our YouTube Channel</a></div>
+													
+													<div class="hidden-xs">
+														<div><h6>Videos by Category</h6></div>
+														<div>
+														<!--<div class="row">
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">-->
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=100">Almanacs &amp; Calendars</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=101">Astrology</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=113">Body &amp; Soul</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=164">Español</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=165">Fiction</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=605">Gifts &amp; Accessories</a></div>
+															<!--</div>
+															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">-->
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=166">Magick</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=137">Nature-Based &amp; Pagan</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=178">Supernatural &amp; Parapsychology</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=189">Tarot &amp; Divination</a></div>
+																<div style="padding-bottom: 6px;"><a href="/videos/videos_by_category.php?category=214">Young Adult</a></div>
+														</div>
+														<!--</div>--> <!-- end categories row -->
+													</div>
+												</div><!-- end left column of video categories -->
+												
+																								<!-- begin center column with featured video -->
+												<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="padding-bottom: 10px;">
+													<div class="row">
+														<div class="col-lg-6 col-md-7 col-sm-12 col-xs-12">
+															
+															<div>
+																<div style="margin-top: 15px;"><a href="/videos/video/338"><img src="/_theme/images/clear.gif" border="0" style="background: url(https://gaia.llewellyn.com/author_images/75/6890.jpg) no-repeat; margin-bottom: 10px;" class="llew-img-circle-shadow" width="75" hspace="8" align="left"></a></div>
+																<h6 style="margin-bottom: 4px;"><a href="/videos/video/338" class="ll-grey-dark">Flip Through the Cards of the Haunted Cottage Oracle</a></h6>
+																<span class="ll-grey-uc">by </span><a href="/author.php?author_id=6890" class="ll-blue-uc" style="display: inline !important;">Sirian Shadow</a>																<div class="ll-grey-uc" style="">Runtime: &nbsp;2:23</div>
+															
+															</div>
+																														<div style="margin-top: 6px;">
+																Cross the Threshold into Your Own Soul and Meet the Cards of the HAUNTED COTTAGE ORACLE....
+															</div>
+																														<div style="padding-top: 8px;">
+																<span class="ll-grey"><i class="fas fa-play-circle"></i></span> &nbsp;<a href="/videos/video/338" class="ll-blue-uc" style="display: inline">WATCH NOW</a> &nbsp;<i class="far fa-long-arrow-right ll-grey"></i>
+															</div>
+															
+														</div>
+														
+																												
+														<div class="hidden-lg hidden-md col-sm-12 col-xs-12" style="padding-top: 10px; padding-bottom: 10px; border-bottom: dotted 1px #dcdcdc">
+														</div>
+														<div class="col-lg-6 col-md-5 hidden-sm hidden-xs" style="">
+															<h6><a href="/videos/index.php" class="ll-grey-dark">More Videos</a></h6>
+															<div style="padding-bottom: 6px;"><span class="ll-grey"><i class="fas fa-play-circle"></i></span> &nbsp;<a href="/videos/video/337"> Burn &amp; Brew: A Simple Ritual Template to Keep the Magic Alive </a></div><div style="padding-bottom: 6px;"><span class="ll-grey"><i class="fas fa-play-circle"></i></span> &nbsp;<a href="/videos/video/336">Flip Through the Cards of the Witch Whispers Oracle</a></div><div style="padding-bottom: 6px;"><span class="ll-grey"><i class="fas fa-play-circle"></i></span> &nbsp;<a href="/videos/video/335">Flip Through the Cards of A Witch's Ally Oracle</a></div>														</div>
+														
+													</div><!-- end row of other videos -->
+												
+												
+													<div class="row">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<div class="ll-grey-dark-uc" style="background-color: #f7f7f7; 
+																		border-top: solid 1px #dcdcdc; 
+																		font-size: 1.1em; 
+																		margin-top: 15px; 
+																		margin-bottom: 20px; 
+																		text-align: center;
+																		padding: 4px;">
+																Videos by Product
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+															<div class="row">
+															<div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+																				<div style="text-align: center"><a href="/videos/video/338"><img src="https://gaia.llewellyn.com/product_images/100/9780738783048.jpg" class="cover" border="0" style="margin-bottom: 4px;"></a></div>
+																				<div class="ll-grey-uc" style="text-align: center">RUNTIME: 2:23</div>
+																			</div><div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+																				<div style="text-align: center"><a href="/videos/video/337"><img src="https://gaia.llewellyn.com/product_images/100/9780738782362.jpg" class="cover" border="0" style="margin-bottom: 4px;"></a></div>
+																				<div class="ll-grey-uc" style="text-align: center">RUNTIME: 3:45</div>
+																			</div><div class="col-lg-2 col-md-3 col-sm-3 hidden-xs">
+																				<div style="text-align: center"><a href="/videos/video/336"><img src="https://gaia.llewellyn.com/product_images/100/9780738782775.jpg" class="cover" border="0" style="margin-bottom: 4px;"></a></div>
+																				<div class="ll-grey-uc" style="text-align: center">RUNTIME: 2:24</div>
+																			</div><div class="col-lg-2 col-md-3 hidden-sm hidden-xs">
+																				<div style="text-align: center"><a href="/videos/video/335"><img src="https://gaia.llewellyn.com/product_images/100/9780738770116.jpg" class="cover" border="0" style="margin-bottom: 4px;"></a></div>
+																				<div class="ll-grey-uc" style="text-align: center">RUNTIME: 2:32</div>
+																			</div>															</div>
+														</div>
+													</div><!-- end row videos by product -->
+													
+												</div><!-- end other videos column -->
+												
+											</div><!-- end VIDEOS columns -->
+										</div><!-- end VIDEOS row -->							
+									
+									</li>
+							
+							
+							
+							
+									<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+									
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="BLOGS" style="padding-left: 10px !important; padding-right: 5px !important;">BLOGS</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+											
+												<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
+											
+													<div style=""><h6>Browse Blogs by Subject</h6></div>
+													<div class="row">
+														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+															<div style="padding-bottom: 6px;"><a href="/blog/astrology/">Astrology</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/author_news/">Author News</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/body_and_soul/">Body &amp; Soul</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/magick/">Magick</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/paganism/">Paganism</a></div>
+														</div>
+														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+															<div style="padding-bottom: 6px;"><a href="/blog/paranormal/">Paranormal</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/roundtable/">Roundtable</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/tarot/">Tarot</a></div>
+															<div style="padding-bottom: 6px;"><a href="/blog/uncategorized/">Other</a></div>
+														</div>
+													</div>
+												
+												</div>
+																								<div class="col-lg-5 col-md-5 col-sm-7 col-xs-12" style="padding-bottom: 10px;">
+												
+													<div style="margin-top: 15px;"><a href="/blog/2026/5/congratulations-to-our-2026-covr-award-finalists/"><img src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" border="0" width="89" height="86" align="left"></a></div>
+													
+													<h6 style="margin-bottom: 2px;"><a href="/blog/2026/5/congratulations-to-our-2026-covr-award-finalists/" class="ll-grey-dark">Congratulations to Our 2026 COVR Award Finalists!</a></h6>
+													<span class="ll-grey-uc">by </span><a href="/blog/author/annal/" class="ll-blue-uc">Anna</a>
+													<div style="margin-top: 6px;">
+														Congratulations to our 2026 COVR Awards finalists!
+
+
+ 	Tarot Journal and Coloring Book, by Jake Baddeley (Book Cover Design)
+ 	Wondrous Folk Coloring Book, by Christine Karron (Coloring Books)
+ 	A Psychic's Handbook, by Michelle Welch...
+													</div>											
+													<div style="margin-top: 5px;">
+														<div style="float: left; padding-right: 5px;"><a href="/blog/2026/5/congratulations-to-our-2026-covr-award-finalists/" class="ll-blue-uc">READ MORE</a> </div>
+														<div style="float: left;"><i class="far fa-long-arrow-right ll-grey"></i></div>
+														<div class="clearfix"></div>
+													</div>
+												
+												</div>
+																								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-xs hidden-sm" style="">
+													<a href="/blog/" class="ll-grey-dark-no-ul"><h6>And There's More!</h6></a>
+													
+													<div style="padding-bottom: 6px;"><a href="/blog/2026/4/vote-now-for-our-2026-covr-award-nominees">Vote Now for Our 2026 COVR Award Nominees!</a></div><div style="padding-bottom: 6px;"><a href="/blog/2026/1/remembering-dolores-ashcroft-nowicki">Remembering Dolores Ashcroft-Nowicki</a></div><div style="padding-bottom: 6px;"><a href="/blog/2025/6/llewellyncon-2025-day-ten-did-you-miss-any-of-todays-live-presentations-watch-them-on-demand-now">LlewellynCon 2025 Day Ten: Did You Miss Any of Today's Live Presentations? Watch Them On-Demand Now!</a></div><div style="padding-bottom: 6px;"><a href="/blog/2025/6/llewellyncon-2025-day-nine-did-you-miss-any-of-todays-live-presentations-watch-them-on-demand-now">LlewellynCon 2025 Day Nine: Did You Miss Any of Today's Live Presentations? Watch Them On-Demand Now!</a></div><div style="padding-bottom: 6px;"><a href="/blog/2025/6/llewellyncon-2025-day-eight-did-you-miss-any-of-todays-live-presentations-watch-them-on-demand-now-2">LlewellynCon 2025 Day Eight: Did You Miss Any of Today's Live Presentations? Watch Them On-Demand Now!</a></div>													
+												</div>
+												
+											</div>
+										</div>							
+									
+									</li>
+							
+									<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+										
+									<li class="dropdown dropdown-full-width-g hidden-sm" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="ENCYCLOPEDIA" style="padding-left: 10px !important; padding-right: 5px !important;">ENCYCLOPEDIA</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="padding-bottom: 10px; line-height: 2em">
+													<div style="padding-bottom: 6px;"><a href="/encyclopedia/index.php">Encyclopedia Home</a></div>
+													<div style="padding-bottom: 6px;"><a href="/encyclopedia/glossary.php">All Terms A - Z</a></div>
+													<div style="padding-bottom: 6px;"><a href="/encyclopedia/index.php">Subjects</a></div>
+													<div style="padding-bottom: 6px;"><a href="/encyclopedia/top_terms.php">Popular Terms</a></div>
+													<div style="padding-bottom: 6px;"><a href="/encyclopedia/article_list.php">Encyclopedia Articles</a></div>
+													<div style="padding-bottom: 6px;"><a href="/encyclopedia/top_articles.php">Popular Articles</a></div>
+													
+												</div>
+												<!--width: 50px; height: 50px; -->
+												<div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+													<div style="float: left; margin-right: 60px;">
+														<div style="padding-bottom: 20px;">
+															<div style="border: solid 1px #999999; 
+																	font-family: 'Source Serif Pro', serif;
+																	font-weight: bold;
+																	font-size: 22px;
+																	-moz-border-radius: 5px;
+																	-webkit-border-radius: 5px;
+																	border-radius: 5px;
+																	width: 35px;
+																	text-align: center;
+																	float: left;
+															">Aa</div>
+															<div style="float: left; padding-left: 10px;">
+																<div><a href="/encyclopedia/term/Agni">Agni</a></div><div><a href="/encyclopedia/term/Ananda">Ananda</a></div><div><a href="/encyclopedia/term/Archangel">Archangel</a></div>																
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+														
+														<div style="padding-bottom: 20px;">
+															<div style="border: solid 1px #999999; 
+																	font-family: 'Source Serif Pro', serif;
+																	font-weight: bold;
+																	font-size: 22px;
+																	-moz-border-radius: 5px;
+																	-webkit-border-radius: 5px;
+																	border-radius: 5px;
+																	width: 35px;
+																	text-align: center;
+																	float: left;
+															">Bb</div>
+															<div style="float: left; padding-left: 10px;">
+																<div><a href="/encyclopedia/term/Backmasking">Backmasking</a></div><div><a href="/encyclopedia/term/Beyond+the+Veil">Beyond the Veil</a></div><div><a href="/encyclopedia/term/Bri-yah">Bri-yah</a></div>																
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+													</div>
+													<div class="hidden-sm hidden-xs" style="float: left;">
+														<div style="padding-bottom: 20px;">
+															<div style="border: solid 1px #999999; 
+																	font-family: 'Source Serif Pro', serif;
+																	font-weight: bold;
+																	font-size: 22px;
+																	-moz-border-radius: 5px;
+																	-webkit-border-radius: 5px;
+																	border-radius: 5px;
+																	width: 35px;
+																	text-align: center;
+																	float: left;
+															">Cc</div>
+															<div style="float: left; padding-left: 10px;">
+																<div><a href="/encyclopedia/term/Chakras">Chakras</a></div><div><a href="/encyclopedia/term/Claw">Claw</a></div><div><a href="/encyclopedia/term/Crossing+the+Bridge">Crossing the Bridge</a></div>																
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+														
+														<div style="padding-bottom: 20px;">
+															<div style="border: solid 1px #999999; 
+																	font-family: 'Source Serif Pro', serif;
+																	font-weight: bold;
+																	font-size: 22px;
+																	-moz-border-radius: 5px;
+																	-webkit-border-radius: 5px;
+																	border-radius: 5px;
+																	width: 35px;
+																	text-align: center;
+																	float: left;
+															">Dd</div>
+															<div style="float: left; padding-left: 10px;">
+																<div><a href="/encyclopedia/term/Damaru">Damaru</a></div><div><a href="/encyclopedia/term/Decanate">Decanate</a></div><div><a href="/encyclopedia/term/Direct+Writing">Direct Writing</a></div>																
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+													</div>
+													<div style="clear: both;"></div>
+													
+												</div>
+												<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 hidden-xs" style="font-size: .9em">
+													<div style="margin-bottom: 14px;">
+														<h6 style="margin: 0px 0px 4px 0px;"><a href="/encyclopedia/term/Reading" class="ll-grey-dark">Reading</a></h6>
+														<div>The process wherein a psychic, medium, or reader gives information to a person.... </div>
+														<div style="padding-top: 2px;"><a href="/encyclopedia/term/Reading" class="ll-blue-uc">READ MORE</a> <i class="far fa-long-arrow-right ll-grey"></i></div>
+													</div><div style="margin-bottom: 14px;">
+														<h6 style="margin: 0px 0px 4px 0px;"><a href="/encyclopedia/term/Transcendent" class="ll-grey-dark">Transcendent</a></h6>
+														<div>A spiritual belief that God (or Gods) exist outside of the physical world and that humans cannot have a direct interaction with the deity or deities. To communicate with a transcendent deity requires... </div>
+														<div style="padding-top: 2px;"><a href="/encyclopedia/term/Transcendent" class="ll-blue-uc">READ MORE</a> <i class="far fa-long-arrow-right ll-grey"></i></div>
+													</div>													
+												</div>
+											</div>
+										</div>							
+									
+									</li>
+									
+									<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+										
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav" data-toggle="dropdown" data-title="SUBSCRIBE" style="padding-left: 10px !important; padding-right: 5px !important;">SUBSCRIBE</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="padding-bottom: 20px;">
+													<div style="padding-bottom: 6px;"><a href="/newsletters.php">Subscribe</a></div>
+													<div style="padding-bottom: 6px;"><a href="/newsletters_current.php">Current Issues</a></div>
+													<div style="padding-bottom: 6px;"><a href="/newsletters_archive.php">Archives</a></div>
+													
+												</div>
+												<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs">
+													<h6 style="margin-top: 0px; margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Astro Update</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Monthly newsletter featuring informative astrology articles, useful tips, how new releases, and special sales offers.</div>
+													
+													<h6 style="margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">e-Magazine</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Newsletter featuring informative Llewellyn Journal articles, author interviews, useful tips, hot new releases, and special sales offers on all topics covered by Llewellyn.</div>
+													
+													<h6 style="margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Magick Update</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Monthly newsletter featuring hot new releases, special sales offers, and informative articles and tips on all things magical, both high and low.</div>
+													
+													<h6 style="margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Paranormal Update</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Monthly newsletter featuring informative paranormal articles, useful tips, hot new releases, and special sales offers.</div>
+												
+												</div>
+												<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs">
+													<h6 style="margin-top: 0px; margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Sales Alert</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Sign up to receive announcements, information on the latest Llewellyn titles, and be notified when there is a website sale or special promotion.</div>
+													
+													<h6 style="margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Tarot Update</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Monthly newsletter featuring informative tarot articles, useful tips, hot new releases, and special sales offers.</div>
+													
+													<h6 style="margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Wellness Update</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Monthly newsletter featuring hot new releases, special sales offers, and informative articles and tips on emotional and physical wellness, holistic living and healing, and personal growth.</div>
+													
+													<h6 style="margin-bottom: 4px;"><a href="/newsletters.php" class="ll-grey-dark">Witchy Update</a></h6>
+													<div class="hidden-xs hidden-sm" style="margin-bottom: 12px; font-size: .9em">Monthly newsletter featuring informative Wicca articles, useful tips, hot new releases, and special sales offers.</div>
+												</div>
+												<!-- show only on phone size -->
+												<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+													We have a newsletter for everyone! From Astrology to Witchcraft, we've got you covered with 
+													monthly newsletters with articles, sales, new releases, and more. Click above links to subscribe 
+													and browse our archives.
+												</div>
+											</div>
+										</div>							
+									
+									</li>
+									
+									
+									<!-- MAIN MENU TAB ----------------------------------------------------------------------------------->
+										
+									<li class="dropdown dropdown-full-width-g" data-animation="fadeIn"><a href="#" class="dropdown-toggle mainnav-noafter" data-toggle="dropdown" data-title="CONTACT" style="padding-left: 10px !important; padding-right: 5px !important;">CONTACT</a>
+										<div class="dropdown-menu no-border-radius">								
+											<div class="row">
+												<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding-bottom: 10px;">
+													<div style="padding-bottom: 4px;"><a href="/about/contact_us.php">Contact Us</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/index.php">About Llewellyn</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/era.php?id=3">Llewellyn History</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/careers.php">Careers at Llewellyn</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/faq.php">Frequently Asked Questions</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/imprints.php">Imprints</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/review_copies.php">Review Copies</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/subrights.php">Subsidiary Rights</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/cookie_policy.php">Cookie Policy</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/privacy_policy.php">Privacy Policy</a></div>
+													<div style="padding-bottom: 4px;"><a href="/about/report_piracy.php">Report Piracy</a></div>
+													<div class="hidden-md hidden-lg">
+														<div style="padding-bottom: 4px;"><a href="/about/permissions.php">Permissions</a></div>
+														<div style="padding-bottom: 4px;"><a href="/about/submissions.php">Submissions</a></div>
+													</div>
+													<div class="hidden-sm hidden-md hidden-lg">
+														<div style="padding-bottom: 4px;"><a href="/booksellers/index.php">For Booksellers</a></div>
+													</div>
+		
+												</div>
+												<div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+													<div style="padding-bottom: 10px;">
+														<h6 style="margin-top: 0px;">Permissions</h6>
+														<div style="padding-bottom: 4px;"><a href="/about/permissions.php">General</a></div>
+														<div style="padding-bottom: 4px;"><a href="/journal/article_use.php">Journal Article Usage</a></div>
+														<div style="padding-bottom: 4px;"><a href="/about/permissions_tarot.php">Tarot Card Image Usage</a></div>
+													</div>
+													<div style="padding-bottom: 10px;">
+														<h6 style="">Submissions</h6>
+														<div style="padding-bottom: 4px;"><a href="/about/submissions.php">Information</a></div>
+														<div style="padding-bottom: 4px;"><a href="/about/art_submissions.php">Art Submissions</a></div>
+														<div style="padding-bottom: 4px;"><a href="/about/author_submissions.php">Author Submissions</a></div>
+														<div style="padding-bottom: 4px;"><a href="/about/tarot_submissions.php">Tarot Deck Submissions</a></div>
+													</div>
+		
+												</div>
+												<div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+													<h6 style="margin-top: 0px;">For Booksellers</h6>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/index.php">Welcome Booksellers!</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/reps.php">Who's My Sales Rep?</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/international.php">International Sales</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/tradeshows.php">Trade Shows</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/remainders.php">Hurts/Remainders</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/coop_program.php">Our Co-op Program</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/edi.php">Our EDI Program</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/onix.php">Our ONIX Title Feed</a></div>
+													<div style="padding-bottom: 4px;"><a href="/booksellers/newsletters.php">Bookseller Newsletters</a></div>
+												</div>
+												
+												<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="line-height: 1.5em">
+													<div style="">
+														<div class="hidden-xs"><b>Phone Numbers:</b></div>
+														<div>1-877-NEW-WRLD</div>
+														<div class="hidden-xs">
+															1-877-639-9753<br>
+															Local:	(651) 291-1970<br>
+															Fax:	(651) 291-1908
+														</div>
+													</div>
+													<div class="hidden-xs" style="padding-top: 10px; padding-bottom: 10px;">
+														<b>Address:</b><br>
+														Llewellyn Worldwide, LTD.<br>
+														2143 Wooddale Drive<br>
+														Woodbury, MN 55125<br>
+													</div>
+													<div>
+														<i class="fal fa-envelope hidden-xs"></i> <a href="mailto:CustomerService@Llewellyn.com"><span style="word-wrap: break-word;">CustomerService@Llewellyn.com</span></a>
+													</div>
+												</div>
+												
+											</div>
+										</div>							
+									
+									</li><!-- end contact us menu item -->
+									
+																	</ul>
+							</div><!-- end collapse -->
+						</div><!-- end inner container-fluid -->
+					</nav>
+			</div><!-- end container-fluid -->
+			</section>
+		</div><!-- end navigation wrapper -->
+				
+	</div><!-- end navigation row -->
+	
+
+
+<!-- End Header ------------------------------------------ -->
+		
+
+<!-- BEGIN PAGE CONTENT ---------------------------------- -->
+
+
+<!-- begin HERO banner ---->
+			
+			<!-- large banner ad hidden-xs  ------------------------------------------------------- -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding" style="border-top: solid 1px #f4f4f4; border-bottom: solid 1px #d7d7d7;">
+					<div id="row-carousel">
+						<div id="main-carousel" class="owl-carousel owl-animate owl-theme owl-custom-nav " data-single-item="true" data-navigation="true" data-autoplay="6000" data-transition="fade" style="overflow: hidden; opacity: 1; display: block;">
+							
+							<div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 6256px; left: 0px; display: block;"><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/LlewellynCon2026/?llewbid=2753&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2753_1777665066_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738781280&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=bigbookofplanetaryaspects0526&amp;llewbid=2742&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2742_1774973867_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738779355&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=holyyearofthelema0526&amp;llewbid=2743&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2743_1774974053_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738776071&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=seekersguidegrimoiremagic0526&amp;llewbid=2744&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2744_1774974159_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738782751&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=yourtarotguide0526&amp;llewbid=2745&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2745_1774974348_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738780399&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=ancestralroots0526&amp;llewbid=2746&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2746_1774974439_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738783048&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=hauntedcottageoracle0526&amp;llewbid=2747&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2747_1774974539_small.jpg" style="width: 100%">
+						</div>
+						</a></div><div class="owl-item" style="width: 391px;"><a href="https://www.llewellyn.com/product.php?ean=9780738783147&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=miscellanyoffairyfolk0526&amp;llewbid=2748&amp;llewzid=342">
+						<div class="item text-center">
+							<img src="https://gaia.llewellyn.com/images/ads/2748_1774974636_small.jpg" style="width: 100%">
+						</div>
+						</a></div></div></div>						<div class="owl-controls" style="display: block;"><div class="owl-buttons"><div class="owl-prev"><i class="icon-angle-left"></i></div><div class="owl-next"><i class="icon-angle-right"></i></div></div></div></div>	
+					</div>
+				</div>
+			</div>
+			
+
+<!-- begin new releases ----------------------------------------- -->
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style=" padding-top: 20px; ">
+		<div class="ll-grey-uc" style="font-size: 1.2em;">
+			Shop Our <a class="ll-blue-uc" href="/browse_new_releases.php">New Releases</a>
+		</div>
+	</div>
+</div><!-- end row -->
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="">
+		
+	<!--START WRAPPER CONTAINER-->
+  <div class="all-container">
+    <!-- START CONTENT -->
+    <div id="content">
+
+      <!-- START MONO CAROUSEL CENTRALIZED (.multiple) -->
+      <div class="multiple m-mono m-autoplay m-topnav m-slide-bg-custom m-no-overlay m-reponsive-except" id="m1b" style="background-image: url(&quot;&quot;);">
+       
+        <!-- START MONO SLIDER -->
+        
+        <!-- END MONO SLIDER -->
+      <div class="m-recipient" style="height: 342px; opacity: 0.985359; top: 0px;"><div class="m-content m-1-1" style="height: 298px;"><div class="m-block m-initialized m-slider" style="width: 100%;"><button type="button" data-role="none" class="m-prev m-arrow" aria-label="Previous" role="button" style="display: inline-block;">Previous</button>
+          
+		  
+		<div aria-live="polite" class="m-list" style="left: -151.5px;"><div class="m-track ui-draggable ui-draggable-handle" role="listbox" style="opacity: 1; width: 80000px; transform: translate3d(-2173px, 0px, 0px);"><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-12" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738757643" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738757643.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738757643" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Faery Wheel Tarot</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=5663" class="ll-blue-uc" style="" tabindex="-1">Leeza Robertson</a>, <a href="/author.php?author_id=6164" class="ll-blue-uc" style="" tabindex="-1">Emily Fiegenschuh</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-11" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783772" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783772.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783772" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Frigg's Twelvefold Flame</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7494" class="ll-blue-uc" style="" tabindex="-1">Máire Durkan</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-10" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784731" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784731.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784731" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Messages of the Saints</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7579" class="ll-blue-uc" style="" tabindex="-1">Teresa Carano</a>, <a href="/author.php?author_id=7587" class="ll-blue-uc" style="" tabindex="-1">Jessica Huber</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-9" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784809" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784809.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784809" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Path of Wicca</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7550" class="ll-blue-uc" style="" tabindex="-1">Lisa Chamberlain</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-8" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738781297" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738781297.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738781297" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Swamp Sorcery</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7361" class="ll-blue-uc" style="" tabindex="-1">Mystic  Dylan</a>, <a href="/author.php?author_id=7534" class="ll-blue-uc" style="" tabindex="-1">Savannah Pogue</a>, <a href="/author.php?author_id=7543" class="ll-blue-uc" style="" tabindex="-1">Denise Alvarado</a>, <a href="/author.php?author_id=7590" class="ll-blue-uc" style="" tabindex="-1">WH Kemp</a>, <a href="/author.php?author_id=7611" class="ll-blue-uc" style="" tabindex="-1">Voodoo Queen  Bloody Mary</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-7" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738780399" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738780399.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738780399" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Ancestral Roots</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7316" class="ll-blue-uc" style="" tabindex="-1">Arletha Donnyale Lizana</a>, <a href="/author.php?author_id=7544" class="ll-blue-uc" style="" tabindex="-1">Cheryl Grills</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-6" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784717" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784717.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784717" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Avalon Visions Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6592" class="ll-blue-uc" style="" tabindex="-1">Cheryl Yambrach Rose</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-5" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738781280" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738781280.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738781280" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Big Book of Planetary Aspects</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7356" class="ll-blue-uc" style="" tabindex="-1">Stormie Grace</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-4" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738785127" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738785127.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738785127" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Enchanted Garden Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6642" class="ll-blue-uc" style="" tabindex="-1">Suzy Cherub</a>, <a href="/author.php?author_id=6799" class="ll-blue-uc" style="" tabindex="-1">Christine Karron</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-3" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783048" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783048.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783048" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Haunted Cottage Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6890" class="ll-blue-uc" style="" tabindex="-1">Sirian Shadow</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-2" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738779355" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738779355.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738779355" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Holy Year of Thelema</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7257" class="ll-blue-uc" style="" tabindex="-1">Maevius Lynn</a>, <a href="/author.php?author_id=7542" class="ll-blue-uc" style="" tabindex="-1">Richard Kaczynski</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="-1" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783147" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783147.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783147" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">A Miscellany of Fairy Folk, Myths, and Magic</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=3649" class="ll-blue-uc" style="" tabindex="-1">Sandra Kynes</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide" style="width: 163px; height: 290px;" data-m-index="0" aria-hidden="true" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784861" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784861.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784861" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Aurora Rising</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7553" class="ll-blue-uc" style="" tabindex="-1">Katrina Smith</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-current m-active" style="width: 163px; height: 290px;" data-m-index="1" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738773285" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738773285.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738773285" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Crown Chakra</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=638" class="ll-blue-uc" style="" tabindex="0">Cyndi Dale</a>, <a href="/author.php?author_id=6934" class="ll-blue-uc" style="" tabindex="0">Anthony J.W. Benson</a>, <a href="/author.php?author_id=6931" class="ll-blue-uc" style="" tabindex="0">Jo-Anne Brown</a>, <a href="/author.php?author_id=6806" class="ll-blue-uc" style="" tabindex="0">Lindsay Fauntleroy</a>, <a href="/author.php?author_id=6563" class="ll-blue-uc" style="" tabindex="0">Amanda Huggins</a>, <a href="/author.php?author_id=4203" class="ll-blue-uc" style="" tabindex="0">Margaret Ann Lembo</a>, <a href="/author.php?author_id=6933" class="ll-blue-uc" style="" tabindex="0">Gina Nicole</a>, <a href="/author.php?author_id=7220" class="ll-blue-uc" style="" tabindex="0">Blake  Tedder</a>, <a href="/author.php?author_id=6935" class="ll-blue-uc" style="" tabindex="0">Amelia Vogler</a>, <a href="/author.php?author_id=6929" class="ll-blue-uc" style="" tabindex="0">Susan Weis-Bohlen</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="2" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738779041" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738779041.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738779041" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Crystal Divination</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=5842" class="ll-blue-uc" style="" tabindex="0">Devin Hunter</a>, <a href="/author.php?author_id=7106" class="ll-blue-uc" style="" tabindex="0">Nicholas Pearson</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="3" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738782430" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738782430.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738782430" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">The Diviner's Path</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7416" class="ll-blue-uc" style="" tabindex="0">JoAnna Farrer</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="4" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738757643" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738757643.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738757643" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Faery Wheel Tarot</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=5663" class="ll-blue-uc" style="" tabindex="0">Leeza Robertson</a>, <a href="/author.php?author_id=6164" class="ll-blue-uc" style="" tabindex="0">Emily Fiegenschuh</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="5" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783772" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783772.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783772" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Frigg's Twelvefold Flame</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7494" class="ll-blue-uc" style="" tabindex="0">Máire Durkan</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="6" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784731" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784731.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784731" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Messages of the Saints</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7579" class="ll-blue-uc" style="" tabindex="0">Teresa Carano</a>, <a href="/author.php?author_id=7587" class="ll-blue-uc" style="" tabindex="0">Jessica Huber</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="7" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784809" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784809.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784809" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">The Path of Wicca</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7550" class="ll-blue-uc" style="" tabindex="0">Lisa Chamberlain</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="8" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738781297" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738781297.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738781297" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Swamp Sorcery</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7361" class="ll-blue-uc" style="" tabindex="0">Mystic  Dylan</a>, <a href="/author.php?author_id=7534" class="ll-blue-uc" style="" tabindex="0">Savannah Pogue</a>, <a href="/author.php?author_id=7543" class="ll-blue-uc" style="" tabindex="0">Denise Alvarado</a>, <a href="/author.php?author_id=7590" class="ll-blue-uc" style="" tabindex="0">WH Kemp</a>, <a href="/author.php?author_id=7611" class="ll-blue-uc" style="" tabindex="0">Voodoo Queen  Bloody Mary</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="9" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738780399" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738780399.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738780399" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Ancestral Roots</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7316" class="ll-blue-uc" style="" tabindex="0">Arletha Donnyale Lizana</a>, <a href="/author.php?author_id=7544" class="ll-blue-uc" style="" tabindex="0">Cheryl Grills</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="10" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784717" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784717.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784717" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Avalon Visions Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6592" class="ll-blue-uc" style="" tabindex="0">Cheryl Yambrach Rose</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="11" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738781280" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738781280.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738781280" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">The Big Book of Planetary Aspects</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7356" class="ll-blue-uc" style="" tabindex="0">Stormie Grace</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-active" style="width: 163px; height: 290px;" data-m-index="12" aria-hidden="false" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738785127" tabindex="0"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738785127.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738785127" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="0">Enchanted Garden Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6642" class="ll-blue-uc" style="" tabindex="0">Suzy Cherub</a>, <a href="/author.php?author_id=6799" class="ll-blue-uc" style="" tabindex="0">Christine Karron</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide" style="width: 163px; height: 290px;" data-m-index="13" aria-hidden="true" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783048" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783048.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783048" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Haunted Cottage Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6890" class="ll-blue-uc" style="" tabindex="-1">Sirian Shadow</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide" style="width: 163px; height: 290px;" data-m-index="14" aria-hidden="true" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738779355" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738779355.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738779355" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Holy Year of Thelema</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7257" class="ll-blue-uc" style="" tabindex="-1">Maevius Lynn</a>, <a href="/author.php?author_id=7542" class="ll-blue-uc" style="" tabindex="-1">Richard Kaczynski</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide" style="width: 163px; height: 290px;" data-m-index="15" aria-hidden="true" tabindex="-1" role="option">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783147" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783147.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783147" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">A Miscellany of Fairy Folk, Myths, and Magic</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=3649" class="ll-blue-uc" style="" tabindex="-1">Sandra Kynes</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="16" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784861" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784861.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784861" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Aurora Rising</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7553" class="ll-blue-uc" style="" tabindex="-1">Katrina Smith</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="17" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738773285" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738773285.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738773285" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Crown Chakra</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=638" class="ll-blue-uc" style="" tabindex="-1">Cyndi Dale</a>, <a href="/author.php?author_id=6934" class="ll-blue-uc" style="" tabindex="-1">Anthony J.W. Benson</a>, <a href="/author.php?author_id=6931" class="ll-blue-uc" style="" tabindex="-1">Jo-Anne Brown</a>, <a href="/author.php?author_id=6806" class="ll-blue-uc" style="" tabindex="-1">Lindsay Fauntleroy</a>, <a href="/author.php?author_id=6563" class="ll-blue-uc" style="" tabindex="-1">Amanda Huggins</a>, <a href="/author.php?author_id=4203" class="ll-blue-uc" style="" tabindex="-1">Margaret Ann Lembo</a>, <a href="/author.php?author_id=6933" class="ll-blue-uc" style="" tabindex="-1">Gina Nicole</a>, <a href="/author.php?author_id=7220" class="ll-blue-uc" style="" tabindex="-1">Blake  Tedder</a>, <a href="/author.php?author_id=6935" class="ll-blue-uc" style="" tabindex="-1">Amelia Vogler</a>, <a href="/author.php?author_id=6929" class="ll-blue-uc" style="" tabindex="-1">Susan Weis-Bohlen</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="18" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738779041" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738779041.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738779041" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Crystal Divination</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=5842" class="ll-blue-uc" style="" tabindex="-1">Devin Hunter</a>, <a href="/author.php?author_id=7106" class="ll-blue-uc" style="" tabindex="-1">Nicholas Pearson</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="19" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738782430" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738782430.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738782430" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Diviner's Path</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7416" class="ll-blue-uc" style="" tabindex="-1">JoAnna Farrer</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="20" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738757643" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738757643.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738757643" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Faery Wheel Tarot</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=5663" class="ll-blue-uc" style="" tabindex="-1">Leeza Robertson</a>, <a href="/author.php?author_id=6164" class="ll-blue-uc" style="" tabindex="-1">Emily Fiegenschuh</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="21" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738783772" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738783772.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738783772" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Frigg's Twelvefold Flame</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7494" class="ll-blue-uc" style="" tabindex="-1">Máire Durkan</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="22" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784731" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784731.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784731" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Messages of the Saints</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7579" class="ll-blue-uc" style="" tabindex="-1">Teresa Carano</a>, <a href="/author.php?author_id=7587" class="ll-blue-uc" style="" tabindex="-1">Jessica Huber</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="23" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784809" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784809.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784809" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Path of Wicca</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7550" class="ll-blue-uc" style="" tabindex="-1">Lisa Chamberlain</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="24" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738781297" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738781297.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738781297" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Swamp Sorcery</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7361" class="ll-blue-uc" style="" tabindex="-1">Mystic  Dylan</a>, <a href="/author.php?author_id=7534" class="ll-blue-uc" style="" tabindex="-1">Savannah Pogue</a>, <a href="/author.php?author_id=7543" class="ll-blue-uc" style="" tabindex="-1">Denise Alvarado</a>, <a href="/author.php?author_id=7590" class="ll-blue-uc" style="" tabindex="-1">WH Kemp</a>, <a href="/author.php?author_id=7611" class="ll-blue-uc" style="" tabindex="-1">Voodoo Queen  Bloody Mary</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="25" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738780399" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738780399.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738780399" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Ancestral Roots</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7316" class="ll-blue-uc" style="" tabindex="-1">Arletha Donnyale Lizana</a>, <a href="/author.php?author_id=7544" class="ll-blue-uc" style="" tabindex="-1">Cheryl Grills</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="26" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738784717" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738784717.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738784717" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">Avalon Visions Oracle</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=6592" class="ll-blue-uc" style="" tabindex="-1">Cheryl Yambrach Rose</a></span></div>
+					</div>
+				 </div><div class="m-item m-slide m-cloned" style="width: 163px; height: 290px;" data-m-index="27" aria-hidden="true" tabindex="-1">
+					<div class="m-item-content" style="">
+						<div style="height: 186px; overflow: hidden; padding-top: 12px; padding-left: 28px; background-color: #e9e9e9; text-align: center"><a href="product.php?ean=9780738781280" tabindex="-1"><img alt="" width="100" src="https://gaia.llewellyn.com/product_images/100/9780738781280.jpg" class="cover"></a></div>
+						<div class="m-item-product-name"><a href="product.php?ean=9780738781280" style="text-transform:uppercase; color:#525452; text-decoration: none;" tabindex="-1">The Big Book of Planetary Aspects</a></div>
+						<div class="m-item-aliases"><span style="text-transform:uppercase; color:#aaa; text-decoration: none; font-size: .9em;">BY </span><span style="text-transform:uppercase;"><a href="/author.php?author_id=7356" class="ll-blue-uc" style="" tabindex="-1">Stormie Grace</a></span></div>
+					</div>
+				 </div></div></div>		  
+        <button type="button" data-role="none" class="m-next m-arrow" aria-label="Next" role="button" style="display: inline-block;">Next</button></div></div><div class="m-nav"><div class="up"><i class="fa fa-chevron-up"></i></div><div class="player"><i class="far fa-pause-circle"></i></div><div class="down"><i class="fa fa-chevron-down"></i></div></div></div></div>
+      <!-- END MONO CAROUSEL CENTRALIZED (.multiple) -->
+
+    </div>
+    <!-- END CONTENT -->
+  </div>
+
+		
+		
+		
+		
+		
+	</div>
+</div><!-- end row -->
+<!-- end new releases ----------------------------------------- -->
+
+
+	
+
+
+
+<!-- begin Journal, Coming Soon, Free Tarot, Spell-A-Day ------------------- -->
+<div class="row" style="margin-top: 30px;">
+
+			<!-- begin featured article block -->
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 no-padding">
+			<div class="ll-border-top ll-border-right" style="padding: 20px 15px 0px 15px; ">
+				<div class="ll-grey-uc-spaced" style="padding-top: 20px; padding-bottom: 20px; font-size: .9em;"><!-- blog-category -->
+					FEATURED <a class="ll-blue-uc-spaced" href="/journal/article/3333">ARTICLE</a>
+				</div>
+				<div>
+					<div><a href="/journal/article/3333"><img src="/_theme/images/clear.gif" border="0" style="background: url(https://www.llewellyn.com/_theme/author_images/75/7257.jpg) no-repeat; margin-bottom: 10px; margin-top: 6px;" class="llew-img-circle-shadow" width="75" hspace="8" align="left"></a></div>					
+					<h5 class="llew-block-title"><a href="/journal/article/3333" class="dark-link">A Quick Overview of Thelemic Holidays</a></h5>
+					<div class="ll-grey-uc">by <span class="ll-blue-uc">Maevius Lynn</span></div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="llew-block-content" style="padding-top: 10px;">
+					Many witches, pagans, occultists, and magical practitioners find great meaning and value in celebrating holidays throughout the year, and these holidays are as diverse as the people who observe them.... 
+				</div>
+				<div class="llew-block-read-more"><a href="/journal/article/3333" class="black-link">READ MORE</a> <span style="color: #ccc"><i class="far fa-long-arrow-right"></i></span></div>
+			</div>
+		</div>
+		<!-- end featured article block -->
+		
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ll-border-top ll-border-right no-padding" style="">
+					<a href="https://www.llewellyn.com/browse_collection.php?collection=44&amp;utm_source=homepage&amp;utm_medium=banner&amp;utm_campaign=folkmagic&amp;llewbid=2550&amp;llewzid=357"><img src="https://gaia.llewellyn.com/images/ads/2550_1739225510.jpg" style="max-width: 100%; height: auto; " border="0" class="img-responsive"></a>
+				</div>	
+	
+	<!-- begin whitespace added for phones because the free tarot butting up against the coming soon row doesn't look good -->
+	<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+		<img src="/images/clear.gif" width="5" height="5">
+	</div>
+	<!-- end whitespace -->
+	
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 no-padding">
+		
+			<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding ll-border-top">
+		<a href="/spell.php?utm_medium=banner&amp;utm_campaign=zone1bannerspelladay&amp;llewbid=1&amp;llewzid=270" style="text-decoration: none;">
+		<div class=" no-padding">
+			<div class="llew-block-spelladay">
+				<div class="llew-block-spelladay-title" style="padding-top: 10px;"><h4 style="margin-bottom: 0px;">FREE SPELL-A-DAY</h4></div>
+			</div>
+		</div>
+		</a>
+	</div>
+
+
+		
+
+		<!-- begin whitespace added for phones because the free tarot butting up against the coming soon row doesn't look good -->
+		<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+			<img src="/images/clear.gif" width="5" height="5">
+		</div>
+	
+			<!-- begin free tarot block -->
+	<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding ll-border-top ll-border-bottom" style="">
+		<div class=" no-padding" style="">
+			<a href="/tarot_reading.php?llewbid=37&amp;llewzid=258" style="text-decoration: none;">
+			<div class="llew-block-free-tarot">
+				<div class="llew-block-free-tarot-title" style="padding-top: 10px;"><h4 style="margin-bottom: 0px;">FREE TAROT READING</h4></div>
+			</div>
+			</a>
+		</div>
+	</div>
+
+			
+		
+	</div>
+	<!-- end spell-a-day block -->
+	
+</div>
+<!-- end Journal, Coming Soon, Free Tarot, Spell-A-Day ------------------- -->
+
+
+
+
+<!-- begin Instagram posts ----------------------------------------------- -->
+
+
+
+
+
+<!-- begin shop by category ----------------------------------------- -->
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="ll-grey-uc" style="padding-top: 30px; padding-bottom: 10px; font-size: 1.2em;">
+			Shop By <a class="ll-blue-uc" href="/browse_by_category.php">Category</a>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- load category box styles -->
+<link href="style_catbox.css" rel="stylesheet">
+
+<div class="row cat-box-bg" style="margin-bottom: 60px">
+	
+	<a href="/browse_astrology.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Astrology</h5>
+			<div class="cat-box-content">Calendars, Almanacs, Karma, Planets, Signs, Relationships, Charts, Spirituality &amp; More</div>
+		</div>
+	</div>
+	</a>
+	<a href="/browse_tarot_and_divination.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Tarot &amp; Divination</h5>
+			<div class="cat-box-content">Tarot Decks, Kits, Practice, Numerology, Palmistry, Divination, Bags, Books &amp; More</div>
+		</div>
+	</div>
+	</a>
+	<a href="/browse_nature_and_pagan.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Nature-Based &amp; Pagan</h5>
+			<div class="cat-box-content">Paganism, Herbalism, Celtic, Druid, Home &amp; Garden, Goddess &amp; God, Witchcraft &amp; More</div>
+		</div>
+	</div>
+	</a>
+	<a href="/browse_body_and_soul.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Body &amp; Soul</h5>
+			<div class="cat-box-content">Health, Healing, Auras, Chakras, Hypnosis, Yoga, Meditation, Angels, Afterlife, Sexuality &amp; More</div>
+		</div>
+	</div>
+	</a>
+	<a href="/browse_magick.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Magick</h5>
+			<div class="cat-box-content">Alchemy, Golden Dawn, Grimoire, Reference, Ritual, Enochian, Gnosticism &amp; More</div>
+		</div>
+	</div>
+	</a>
+	<a href="/browse_paranormal.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Supernatural &amp; Parapsychology</h5>
+			<div class="cat-box-content">Paranormal, Ghosts, Reincarnation, Auras, Mythical Creatures &amp; More</div>
+		</div>
+	</div>
+	</a>
+	
+		
+	<a href="/browse_category.php?product_category_id=605">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Gifts &amp; Accessories</h5>
+			<div class="cat-box-content">Coloring Books, Runes, Pendulums, Journals, Bags, CDs, Cloths, Sealing Wax &amp; More</div>
+		</div>
+	</div>
+	</a>
+	
+	<a href="/browse_annuals.php">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 cat-box1 cat-box-border">
+		<div class="cat-box-inner">
+			<h5 class="cat-box-title" style="">Calendars &amp; Datebooks</h5>
+			<div class="cat-box-content">Almanacs, Calendars, Datebooks, Horoscopes, Moon Phases &amp; More</div>
+		</div>
+	</div>
+	</a>
+	
+	
+	
+	
+</div>
+
+
+<div class="row ll-border-top" style="margin-top: 20px; margin-bottom: 20px;">
+
+		
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 no-padding">
+		<div class=" ll-border-right ll-border-bottom" style="padding: 0px 20px 0px 20px;">
+			<div class="ll-grey-uc-spaced" style="padding-top: 20px; padding-bottom: 20px; font-size: .9em;">
+				IN OUR <a class="ll-blue-uc-spaced" href="/blog/index.php">BLOGS</a>
+			</div>
+			
+			<div>
+				<a href="/blog/2026/5/congratulations-to-our-2026-covr-award-finalists/"><img src="https://www.llewellyn.com/blog/wp-content/themes/everly/images/author_photos/annal_circle.png" border="0" width="89" height="86" align="left"></a>				<h5 class="llew-block-title"><a href="/blog/2026/5/congratulations-to-our-2026-covr-award-finalists/" class="dark-link">Congratulations to Our 2026 COVR Award Finalists!</a></h5>
+				<div class="llew-block-alias">by <a href="/blog/author/annal/" class="black-link">Anna</a></div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="llew-block-content" style="padding-top: 10px;">
+				Congratulations to our 2026 COVR Awards finalists!
+
+
+ 	Tarot Journal and Coloring Book, by Jake Baddeley (Book Cover Design)
+ 	Wondrous Folk Coloring Book, by Christine Karron (Coloring Books)
+ 	A Psychic's Handbook, by Michelle Welch...
+			</div>
+			<div class="llew-block-read-more"><a href="/blog/2026/5/congratulations-to-our-2026-covr-award-finalists/" class="black-link">READ MORE</a> <span style="color: #ccc"><i class="far fa-long-arrow-right"></i></span></div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+		<!-- begin catalog block -->
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ll-border-bottom gradient-bg-block" style="margin-bottom: 15px;">
+		<div class="row">
+			<div class="ll-grey-dark-uc-spaced" style="padding-left: 15px; padding-top: 20px; padding-bottom: 15px; font-size: .9em;"><!-- blog-category -->
+				NEW WORLDS <a class="ll-blue-uc-spaced" href="/newworlds.php">CATALOG</a>			</div>
+		</div>
+		
+		<div class="row" style="padding-bottom: 20px">
+			<div class="col-xs-6 col-sm-5 col-md-5 col-lg-5" style="padding-top: 16px;">
+				<a href="/newworlds.php"><img align="left" src="https://gaia.llewellyn.com/llewellyn/newworlds/covers/97_1777668141.jpg" class="img-responsive" border="0" style="border: solid 1px #626262;"></a>
+			</div>
+			
+			<div class="col-xs-6 col-sm-7 col-md-7 col-lg-7">
+				<h4 class="llew-block-title"><a href="/newworlds.php" class="dark-link">The Latest Issue</a></h4>
+				<div style="">Get the FREE app for your tablet or mobile device.  Now available in the iTunes 
+				Store and the Google Play Store.  Also available as a PDF file.</div>
+				<div class="llew-block-read-more" style="margin-top: 20px;">
+					<a href="/newworlds.php" class="btn btn-default btn-banner-green">GET YOUR COPY NOW</a>
+				</div>
+			</div>
+		</div><!-- end row -->
+		<div style="clear: both;"></div>
+	</div>
+	<!-- end catalog block -->
+			<!-- Featured Video --------------------------------------------------------------- -->
+		<style type="text/css">
+			.running_time_overlay_container {
+				position: relative;
+			}
+			.running_time_overlay {
+				position: absolute;
+				bottom: 8px;
+				right: 8px;
+				/* width: 46px; */
+				text-align: center;
+				padding: 2px;
+				margin: 0px;
+				background-color: #333;
+
+				z-index: 4;
+				border-radius: 4px;
+
+			}
+			.running_time_overlay_text {
+				font-size: .9em;
+				color: #ffffff;
+				opacity: 1 !important;
+				margin: 0px;
+			}
+		</style>
+
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ll-border-left ll-border-right ll-border-bottom no-padding" style="margin-bottom: 15px;">
+			<div class="" style="padding: 0px 20px 0px 20px;">
+				<div class="ll-grey-uc-spaced" style="padding-top: 20px; padding-bottom: 20px; font-size: .9em;"><!-- blog-category -->
+					FEATURED <a class="ll-blue-uc-spaced" href="/videos/video/338">VIDEO</a>
+				</div>
+									<div class="running_time_overlay_container">
+						<a href="/videos/video/338"><img src="https://gaia.llewellyn.com/llewellyn/video/338_1778254954.jpg" class="img-responsive" border="0"></a>
+
+						<div class="running_time_overlay" style="width: 54px;">
+							<div class="running_time_overlay_text">2:23</div>
+						</div>
+					</div>
+									<div style="padding-top: 10px;">
+					<h5 class="llew-block-title"><a href="/videos/video/338" class="dark-link">Flip Through the Cards of the Haunted Cottage Oracle</a></h5>
+					<div class="llew-block-alias">by <span class="ll-blue"><a href="/author.php?author_id=6890">Sirian Shadow</a></span></div>
+
+					<div class="llew-block-content" style="padding: 3px 0px 5px 0px;">
+						Cross the Threshold into Your Own Soul and Meet the Cards of the HAUNTED COTTAGE ORACLE.					</div>
+
+					<div class="ll-grey">May 8, 2026</div>
+				</div>
+
+				<div class="llew-block-read-more"><span class="ll-grey"><i class="fas fa-play-circle"></i></span> &nbsp;<a href="/videos/video/338" class="black-link">WATCH NOW</a> <span style="color: #ccc"><i class="far fa-long-arrow-right"></i></span></div>
+			</div>
+		</div>
+
+			
+</div><!-- end row -->
+
+
+
+<!-- BEGIN FOOTER ---------------------------------------------------------------- -->
+
+<div class="row ll-footer" style="color: #7f8184; font-size: .9em; padding: 30px 30px 15px 30px;">
+
+	<div class="col-xs-12 col-sm-4 col-md-6 col-lg-6">
+		<div style="padding-top: 0px; padding-bottom: 5px">
+			<div style="font-family: Lora; font-size: 1.2em; font-weight: bold">
+				<i>Empowering Minds &amp; Spirits Since 1901</i>
+			</div>
+			<div style="font-family: Karla; font-size: 1.2em;">
+				The world's oldest and largest independent publisher of books, 
+				tarot, and oracle decks
+			</div>
+		</div>
+		<div style="padding-bottom: 20px; font-size: 1.2em; letter-spacing: .5rem; padding-top: 10px">
+			<!-- social media icons -->
+			<a href="https://www.facebook.com/LlewellynBooks/" target="_blank" style="color: #769ed3;"><i class="fa-brands fa-facebook-f"></i></a>&nbsp;
+			<a href="https://twitter.com/llewellynbooks" target="_blank" style="color: #769ed3;"><i class="fa-brands fa-x-twitter"></i></a>&nbsp;
+			<a href="https://www.instagram.com/llewellynbooks/" target="_blank" style="color: #769ed3;"><i class="fa-brands fa-instagram"></i></a>&nbsp;
+			<a href="https://www.youtube.com/c/LlewellynWorldwide" target="_blank" style="color: #769ed3;"><i class="fa-brands fa-youtube"></i></a>&nbsp;
+			<a href="/journal/RSS_FEEDS.php" style="color: #769ed3;"><i class="fa-solid fa-rss"></i></a>
+		</div>
+	</div>
+	
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+		<span class="ll-grey-dark-uc"><b>BROWSE</b></span><br>
+		<a href="/browse.php" class="ll-grey-dark">Products</a><br>
+		<a href="/authors.php" class="ll-grey-dark">Authors</a><br>
+		<a href="/journal/index.php" class="ll-grey-dark">Articles</a><br>
+		<a href="/newsletters.php" class="ll-grey-dark">Subscribe</a><br>
+		&nbsp;
+	</div>
+	
+	<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+		<span class="ll-grey-dark-uc"><b>SHOPPING</b></span><br>
+		<a href="/cart.php" class="ll-grey-dark">Your Shopping Cart</a><br>
+		<a href="/account.php" class="ll-grey-dark">Your Account</a><br>
+		<a href="/about/contact_us.php" class="ll-grey-dark">Contact Us</a><br>
+		<a href="/about/faq.php" class="ll-grey-dark">FAQ</a><br>
+		<a href="/booksellers/index.php" class="ll-grey-dark">For Booksellers &amp; Retailers</a><br>
+		&nbsp;
+	</div>
+	
+	<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+		<span class="ll-grey-dark-uc"><b>CORPORATE</b></span><br>
+		<a href="/about/index.php" class="ll-grey-dark">About Us</a><br>
+		<a href="/about/imprints.php" class="ll-grey-dark">Our Imprints</a><br>
+		<a href="/about/careers.php" class="ll-grey-dark">Careers at Llewellyn</a><br>
+		<a href="/about/diversity.php" class="ll-grey-dark">Dedication to Diversity</a><br>
+		<a href="/about/permissions.php" class="ll-grey-dark">Permissions</a><br>
+		<a href="/about/submissions.php" class="ll-grey-dark">Submissions</a><br>
+		
+	</div>
+
+</div>
+
+
+<div class="row" style="padding: 20px 60px 20px 30px; background-color: #dadadb; color: #7f8184; font-size: .9em;">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ll-grey-dark" style="text-align: left; ">
+		<a href="/about/privacy_policy.php" class="ll-grey-dark">Privacy Policy</a> &nbsp;|&nbsp; 
+        <a href="/about/terms_of_use.php" class="ll-grey-dark">Terms of Use</a> &nbsp;|&nbsp; 
+        <a href="/about/terms_of_sale.php" class="ll-grey-dark">Terms of Sale</a> &nbsp;|&nbsp; 
+        <a href="/about/cookie_policy.php" class="ll-grey-dark">Cookie Policy</a> &nbsp;|&nbsp; 
+		<a href="/about/report_piracy.php" class="ll-grey-dark">Report Piracy</a>
+	</div>
+	<div class="hidden-xs col-sm-6 col-md-6 col-lg-6 ll-grey-dark" style="text-align: right; ">
+		Copyright © 2026 - <span itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">Llewellyn Worldwide, Ltd.</span>
+		<br>
+	</div>
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl ll-grey-dark" style="text-align: left; padding-top: 10px">
+		Copyright © 2026 - <span itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">Llewellyn Worldwide, Ltd.</span>
+		<br>
+	</div>
+</div>
+
+
+</div><!-- end container-fluid -->
+
+
+
+<!-- ================================================================================= -->
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+<!-- To verify if multiple carousel is visible on the screen at moment to autoplay it (if active) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"></script>
+
+
+<!-- Bootstrap bootstrap-3.3.7-dist -->
+<script src="/js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+<!-- Llewellyn's custom javascript functions -->
+<script src="/_theme/javascript/llewellyn/llewellyn_custom.js?t=1779542118" type="text/javascript"></script>
+<script src="/_theme/javascript/search/search_llewellyn_new.js" type="text/javascript"></script>
+
+<!-- Back to top button -->
+<script src="/js/jquery-backToTop/jquery-backToTop.min.js"></script>
+<script type="text/javascript">
+	var $button = $.backToTop({
+
+    // width/height of the back to top button
+    height: 40,  
+    width: 40,
+
+});
+</script><div id="8201c289-5ab8-46c0-ace6-e6d74ceab30c" class="jquery-back-to-top jquery-back-to-top-theme-default" style="background-color: rgb(93, 93, 93); color: rgb(255, 255, 255); float: right; width: 40px; z-index: 999; height: 40px; line-height: 40px; right: 20px; bottom: 20px; position: fixed;"><i class="fas fa-chevron-up"></i></div>
+
+
+
+	<!-- Benefits Bar script ----------------------------------->
+	<script type="text/javascript">
+
+		function benefits_bar_tick()
+		{
+			$('#benefits_bar li:first').animate({'opacity':0}, 900, function () {
+				$(this).appendTo($('#benefits_bar')).css('opacity', 1); 
+			});
+		}
+
+		function benefits_bar_tickback()
+		{
+			$('#benefits_bar li:last').animate({'opacity':0}, 900, function () { $(this).prependTo($('#benefits_bar')).css('opacity', 1); });
+		}
+
+		var t = setInterval(benefits_bar_tick, 7000);
+
+		function benefits_bar_over(obj)
+		{
+			clearInterval(t)
+		}
+
+		function benefits_bar_out(obj)
+		{
+			t = setInterval(benefits_bar_tick, 7000);
+		}
+
+	</script>
+
+	
+
+
+
+
+
+
+
+
+<script src="/js/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/js/jquery-easing/jquery.easing.js" type="text/javascript"></script>
+<script src="/js/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="/js/solid-menu.js" type="text/javascript"></script>
+
+<!-- Touch Swipe JS File Version - 1.6.18 -->
+<script src="/js/paradise/js/jquery.touchSwipe.min.js" type="text/javascript"></script>
+
+<!-- Multiple Carousel Responsive slider -->
+<script src="/js/multiple-carousel-responsive/assets/js/multiple_llewellyn.js" type="text/javascript"></script>
+<script src="/js/multiple-carousel-responsive/assets/js/m-init-mono-2_llewellyn.js" type="text/javascript"></script>
+
+
+<!-- Bootstrap plugin for plus/minus quantity box for add to cart form -->
+<script src="/js/bootstrap/BootstrapPlugin_PlusMinus.js" type="text/javascript"></script>
+
+
+<script src="/js/multiple-carousel-responsive/assets/js/main.js"></script><div class="cookieConsentContainer" id="cookieConsentContainer" style="opacity: 1; display: block;"><div class="cookieTitle"><a>Cookies.</a></div><div class="cookieDesc"><p>Your use of this website indicates that you accept our cookies and terms of use. Read our <a href="/about/cookie_policy.php" target="_blank">Cookie Policy</a>.  Or order by phone: 1-877-NEW-WRLD</p></div><div class="cookieButton"><a onclick="purecookieDismiss();">Understood</a></div></div></body><!-- SolidMenu+ required files --></html>

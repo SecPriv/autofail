@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/dichngay.ico">
+    <title>Dịch Ngay</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/css/utils/materialize-wiki.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="/static/css/utils/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-X4V20XVLXL&amp;cx=c&amp;gtm=4e65k1"></script><script src="/static/js/utils/jquery-2.2.4.min.js"></script>
+    <link href="/static/css/retranslate/style-0.0.1.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    
+    <style>
+        body {
+            background-color: #d3dcd4;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="materialize-container" style="z-index: 10">
+    <nav class="nav-desk" role="navigation">
+        <div class="nav-wrapper container" style="display: flex">
+            <div class="" style="margin-right: 20px; height: 64px">
+                <a href="#" data-activates="nav-mobile" class="button-collapse" style="margin-right: 1rem">
+                    <i class="material-icons" style="font-size: 2em">menu</i></a>
+                <a href="/" target="_self"><img src="https://dichngay.com/static/img/logo-dichngay.gif" height="50" style="margin-top: 7px;"></a>
+            </div>
+            <div class="valign-wrapper valign" style="flex: 1">
+                <form class="form-search" action="/translate">
+                    <div>
+                        <div id="divSearch" class="input-field">
+                            <input type="hidden" name="bid" value="">
+                            <input type="hidden" name="tl" value="">
+                            <input class="left" placeholder="Nhập trang web cần dịch" id="search" type="search" name="u" required="" style="margin-bottom: 0;">
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-lang-group">
+                    <div>
+                        <a class="btn-flat " href="#!" data-action="translate" data-value="vi">Việt</a>
+                    </div>
+                    <div>
+                        <a class="btn-flat " href="#!" data-action="translate" data-value="hv">Hán Việt</a>
+                    </div>
+                    <div>
+                        <a class="btn-flat " href="#!" data-action="translate" data-value="og">Gốc</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a class="dropdown-button btn-flat small-btn btn-options" data-alignment="right" style="height: auto" data-hover="false" data-beloworigin="true" data-closeonclick="true" data-constrainwidth="false" data-activates="ddOptions"><i style="font-size: 1.7rem" class="material-icons">more_vert</i></a>
+                <a class="dropdown-button btn-flat small-btn btn-reader hide" data-alignment="right" style="height: auto" data-hover="false" data-beloworigin="true" data-closeonclick="true" data-constrainwidth="false" data-activates="ddReader"><i style="font-size: 1.7rem" class="material-icons">more_vert</i></a>
+                <a class="dropdown-button btn-flat small-btn btn-simplified hide" data-alignment="right" style="height: auto" data-hover="false" data-beloworigin="true" data-closeonclick="true" data-constrainwidth="false" data-activates="ddSimplified"><i style="font-size: 1.7rem" class="material-icons">more_vert</i></a>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav-mobile" role="navigation">
+        <div class="nav-wrapper">
+            <div>
+                <form class="form-search" action="/translate">
+                    <div>
+                        <div id="divSearch" class="input-field">
+                            <input type="hidden" name="bid" value="">
+                            <input type="hidden" name="tl" value="">
+                            <input class="left" placeholder="Nhập trang web cần dịch" id="search" type="search" name="u" required="" style="margin-bottom: 0;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="display: flex; padding: 8px">
+                <div>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons" style="font-size: 2rem">menu</i></a>
+                </div>
+                <div class="valign-wrapper" style="margin-left: auto">
+                    <div class="btn-lang-group valign">
+                        <div>
+                            <a class="btn-flat " href="#!" data-action="translate" data-value="vi">Việt</a>
+                        </div>
+                        <div>
+                            <a class="btn-flat " href="#!" data-action="translate" data-value="hv">Hán Việt</a>
+                        </div>
+                        <div>
+                            <a class="btn-flat " href="#!" data-action="translate" data-value="og">Gốc</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="dropdown-button btn-flat small-btn btn-options" data-alignment="right" style="height: auto" data-hover="false" data-beloworigin="true" data-closeonclick="true" data-constrainwidth="false" data-activates="ddOptions"><i style="font-size: 1.7rem" class="material-icons">more_vert</i></a>
+                        <a class="dropdown-button btn-flat small-btn btn-reader hide" data-alignment="right" style="height: auto" data-hover="false" data-beloworigin="true" data-closeonclick="true" data-constrainwidth="false" data-activates="ddReader"><i style="font-size: 1.7rem" class="material-icons">more_vert</i></a>
+                        <a class="dropdown-button btn-flat small-btn btn-simplified hide" data-alignment="right" style="height: auto" data-hover="false" data-beloworigin="true" data-closeonclick="true" data-constrainwidth="false" data-activates="ddSimplified"><i style="font-size: 1.7rem" class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <ul id="ddOptions" class="dropdown-content" style="width: 155px">
+        <li>
+            <a class="btn-enable-js active" data-action="enableJS">
+                <span class="book-list-name">Chặn JS</span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-simplified-mode" data-action="enableSimplifiedMode">
+                <span class="book-list-name">Rút gọn</span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-reader-mode" data-action="enableReaderMode">
+                <span class="book-list-name">Chế độ READER</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul id="ddReader" class="dropdown-content">
+        <li>
+            <a class="btn-reader-mode" data-action="enableReaderMode">
+                <span class="book-list-name"><i class="material-icons">arrow_back</i></span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-reader-mode" data-action="enableReaderMode">
+                <span class="book-list-name">Chế độ READER</span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-style" data-action="openPageStyle">
+                <span class="book-list-name">Chọn STYLE</span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-edit-name " data-action="activateEditName">
+                <span class="book-list-name">Bật EDIT NAME</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul id="ddSimplified" class="dropdown-content">
+        <li>
+            <a class="btn-reader-mode" data-action="enableSimplifiedMode">
+                <span class="book-list-name"><i class="material-icons">arrow_back</i></span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-simplified-mode" data-action="enableSimplifiedMode">
+                <span class="book-list-name">Rút gọn</span>
+            </a>
+        </li>
+        <li>
+            <a class="btn-enable-js active" data-action="enableJS">
+                <span class="book-list-name">Chặn JS</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+    <li><a href="/privacy-policy">Chính sách bảo mật</a></li>
+    <li><a href="/terms">Điều khoản sử dụng</a></li>
+    
+        <li><a href="#!" data-action="login">Đăng nhập</a></li>
+    
+</ul>
+<main>
+    
+    
+
+    <div class="container section">
+        
+    <div>
+        <form>
+            <div class="row translate-box">
+                <div class="input-field col l6 s12">
+                    <div>
+                        <a class="btn-flat white gray-border no-border-bottom" href="#!">Văn bản tiếng Trung</a>
+                    </div>
+                    <div>
+                        <textarea id="txtOriginal" class="autoheight-textarea white gray-border" style="height:498px;overflow-y:hidden;"></textarea>
+                    </div>
+                </div>
+                <div class="input-field col l6 s12">
+                    <div class="flexbox">
+                        <a class="btn-flat gray-border no-border-bottom" href="#!" data-action="translateText" data-value="vi">Việt</a>
+                        <a class="btn-flat gray-border no-border-bottom" href="#!" data-action="translateText" data-value="hv">Hán Việt</a>
+                        <a class="btn-flat gray-border no-border-bottom" href="#!" data-action="translateText" data-value="si">Phồn - Giản</a>
+                        <a class="btn-flat gray-border no-border-bottom" href="#!" data-action="translateText" data-value="tr">Giản - Phồn</a>
+                    </div>
+                    <div>
+                        <textarea id="txtTranslation" class="autoheight-textarea white gray-border" readonly="readonly" style="height:498px;overflow-y:hidden;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </div>
+</main>
+
+
+<!--  Scripts-->
+
+
+
+
+
+
+
+
+<script src="/static/js/utils/materialize-wiki.min.js"></script>
+<script src="/static/js/utils/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/static/js/utils/perfect-scrollbar.jquery.min.js"></script>
+<script src="/static/js/utils/js.cookie-2.1.2.min.js"></script>
+<script src="/static/js/common/translator_types.min.js"></script>
+<script src="/static/js/retranslate/base-0.0.2.min.js"></script>
+<script src="/static/js/retranslate/translate.min.js"></script>
+<script>
+    $('.autoheight-textarea').each(function () {
+      this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+    }).on('input', function () {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+    });
+</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139705599-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-139705599-1');
+</script>
+
+<div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div></body></html>

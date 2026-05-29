@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<title></title>
+</head>
+<body style="margin:0;padding:0;">
+<script>
+    var url = 'https://s.pemsrv.com/splash.php?idzone=3906238&sub=2644508672&tags=default+site+keywords';
+
+    var renderer = {
+        "iframe": function(data) {
+            var iframe = document.createElement('iframe');
+            iframe.src = data.content;
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.setAttribute('frameborder', 0)
+            document.body.appendChild(iframe);
+        },
+        "image": function(data) {
+            var container = document.createElement('div');
+            var html = "<a target='_blank' style='display: inline-block' href='" + data.click + "'>";
+            html += "<img class='ex-over-img' style='height: 100vh' src='" + data.content + "' alt='image'>";
+            html += "</a>";
+            container.innerHTML = html;
+            container.style.textAlign = 'center';
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('a')) {
+                    window.parent.postMessage(['asgInterError', 'Link clicked'], '*');
+                }
+            })
+            document.body.appendChild(container);
+        },
+        "video": function(data) {
+            var container = document.createElement('div');
+            var html = "<a target='_blank' href='" + data.click + "'>";
+            html += "<video class='ex-over-video' autoplay muted preload='auto' loop playsinline style='width: 100vw; max-width: 900px'>" + "<source src='" + data.content + "' type='video/mp4'>" + "</video>";
+            html += "</a>"
+            container.innerHTML = html;
+            container.style.textAlign = 'center';
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('a')) {
+                    window.parent.postMessage(['asgInterError', 'Link clicked'], '*');
+                }
+            });
+            document.body.appendChild(container);
+        }
+    }
+
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            var data = null;
+
+            try {
+                data = JSON.parse(request.responseText)
+            } catch {
+                window.parent.postMessage(['asgInterError'], '*');
+                console.warn('Failed to parse Exo response');
+                return;
+            }
+
+            if (typeof data.type === "undefined" || typeof data.content === "undefined" || !["image", "video", "iframe"].includes(data.type)) {
+                window.parent.postMessage(['asgInterError'], '*');
+                console.warn('Unknown Exo data type', data.type);
+                return;
+            }
+            if ((data.type === "image" || data.type === "video") && typeof data.click === "undefined") {
+                window.parent.postMessage(['asgInterError'], '*');
+                console.warn('No Exo click url for ', data.type);
+                return;
+            }
+
+            renderer[data.type](data);
+
+            window.parent.postMessage(['asgInterReady'], '*');
+
+            window.addEventListener('message', function(event) {
+                console.warn('Received asgInterOpen');
+                if (event.data === 'asgInterOpen') {
+                    var imgElement = document.createElement("img");
+                    imgElement.style.width = "1px";
+                    imgElement.style.height = "1px";
+                    imgElement.src = data.tracker;
+                    imgElement.style.display = 'none';
+                    document.body.appendChild(imgElement);
+                }
+            });
+        } else {
+            window.parent.postMessage(['asgInterError'], '*');
+            console.warn('Failed to fetch data from ', url);
+        }
+    };
+
+    request.onerror = function() {
+        window.parent.postMessage(['asgInterError'], '*');
+        console.warn('Failed to fetch data from ', url);
+    };
+
+    request.send();
+
+</script>
+
+
+
+</body></html>

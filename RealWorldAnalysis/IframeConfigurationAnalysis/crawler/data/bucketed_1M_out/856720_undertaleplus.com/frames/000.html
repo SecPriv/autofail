@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Undertale Plus</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="gallery" class="z-2 position-fixed">
+      <button class="btn z-3 position-absolute top-0 end-0" type="button" aria-label="Close" onclick="showImg()">
+        <div id="large">x</div>
+      </button>
+      <div id="carousel" class="carousel slide top-50 start-50 translate-middle">
+        <div class="carousel-inner text-center">
+          <div id="image1" class="carousel-item">
+            <img src="titlescreencore.png" class="d-block w-100" alt="The title screen for the CORE">
+          </div>
+          <div id="image2" class="carousel-item">
+            <img src="settings.png" class="d-block w-100" alt="A section of the settings page">
+          </div>
+          <div id="image3" class="carousel-item">
+            <img src="casino.png" class="d-block w-100" alt="Sans in the Xbox Casino, with a gambling-related border around the game window">
+          </div>
+          <div id="image4" class="carousel-item">
+            <img src="burgerpants.png" class="d-block w-100" alt="widescreen bugerpant">
+          </div>
+          <div id="image5" class="carousel-item">
+            <img src="deltabattle.png" class="d-block w-100" alt="A first look of Deltarune-style Battles">
+          </div>
+        </div>
+        <button class="btn position-absolute top-50 translate-middle-y" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+          <div id="larger">&lt;</div>
+        </button>
+        <button class="btn position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-target="#carousel" data-bs-slide="next">
+          <div id="larger">&gt;</div>
+        </button>
+      </div>
+    </div>
+    <div class="z-0 position-relative">
+      <nav class="navbar sticky-top" id="navbar"><div>
+        <a href="index.html"><img id="navbarends" src="splash2.png"></a>
+    </div>
+    <div id="navbarlinks" class="container justify-content-around">
+        <a href="download.html">DOWNLOAD</a>
+        <a href="addons.html">ADDONS</a>
+        <a href="devlogs.html">DEVLOGS</a>
+        <a href="faq.html">FAQ</a>
+        <a href="credits.html">CREDITS</a>
+    </div>
+    <div id="navbarends" class="text-end">
+      <a href="index.html" title="English" class="mx-1"><img id="flag" src="englishflag.png"></a>
+      <a href="index.ja.html" title="日本語" class="mx-1"><img id="flag" src="japaneseflag.png"></a>
+    </div></nav>
+      <img id="message" class="position-fixed z-1 my-1" src="noticeforbacktohome.gif">
+      <div id="indexsplash" class="d-flex text-center align-items-center">
+        <a href="index.html" class="container">
+          <img id="logo" class="mt-3 mb-5" src="splash2.png">
+        </a>
+      </div>
+      <div id="fadein">
+        <div id="header" class="text-center py-3">Play Undertale the way you want to!</div>
+        <div class="container-md mt-3 mb-5">
+            Undertale Plus is a fan-made mod for <a href="https://undertale.com" target="_blank"><u>Undertale</u></a> that adds lots of settings, ranging from functional, aesthetic, quality-of-life, and many more! Examples include:
+            <ul class="my-4">
+              <li class="my-1">60 FPS and Widescreen support</li>
+              <li class="my-1">Visible Armor in the Overworld</li>
+              <li class="my-1">All Console-Exclusive Content</li>
+              <li class="my-1">Bug Fixes</li>
+              <li class="my-1">Colored Sprites and Battle Backgrounds</li>
+              <li class="my-1">Reimagined Soundtrack</li>
+            </ul>
+            All of which are optional, and can be toggled however you'd like!
+        </div>
+        <div class="container-lg">
+          Screenshots:
+          <div class="row text-center my-4">
+            <div class="col">
+              <img src="titlescreencore.png" id="galleryitem" class="border border-2 img-fluid" onclick="showImg(1)">
+            </div>
+            <div class="col">
+              <img src="settings.png" id="galleryitem" class="border border-2 img-fluid" onclick="showImg(2)">
+            </div>
+            <div class="col">
+              <img src="casino.png" id="galleryitem" class="border border-2 img-fluid" onclick="showImg(3)">
+            </div>
+            <div class="col">
+              <img src="burgerpants.png" id="galleryitem" class="border border-2 img-fluid" onclick="showImg(4)">
+            </div>
+            <div class="col">
+              <img src="deltabattle.png" id="galleryitem" class="border border-2 img-fluid" onclick="showImg(5)">
+            </div>
+          </div>
+        </div>
+        <div class="container-md">
+          <div class="my-5 text-center">
+            <img id="frisk" class="mx-3" src="frisk.png"><a href="https://discord.gg/mCXzB44sNd">Join the official Discord server!</a>
+          </div>
+          <div id="former"></div>
+        </div>
+      </div>
+    </div>
+  
+</body></html>

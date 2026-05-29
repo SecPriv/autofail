@@ -1,0 +1,172 @@
+<!DOCTYPE html><html><head>
+    <title>BannerFlow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript">var clickTag = '';</script>
+    <style type="text/css" media="screen">
+        html, body, div {
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+
+        body {
+            overflow: hidden
+        }
+    </style>
+<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    var isNewtonTokenSet = false;
+    var isTurtleXAdClick = false;
+    var reportingIds = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+
+            if (clkTag.eTldPlusOne) {
+              eTldPlusOnes[clkTag.url] = clkTag.eTldPlusOne;
+            }
+            if (clkTag.reportingId) {
+              reportingIds[clkTag.url] = clkTag.reportingId;
+            }
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+      if (isNewtonEnabled(eventData) && !isNewtonTokenSet) {
+        var newtonOt2Token = eventData.newtonOt2Token;
+        enableAttributionReportingApi(newtonOt2Token);
+      }
+      if (eventData.isTurtleXAdClick) {
+        isTurtleXAdClick = true;
+      }
+    };
+
+    var isNewtonEnabled = function(eventData) {
+      return 'newtonOt2Token' in eventData;
+    }
+
+    var enableAttributionReportingApi = function(originTrialToken) {
+      if (/Chrome/.test(window.navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.httpEquiv = 'origin-trial';
+        meta.content = String(originTrialToken);
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        isNewtonTokenSet = true;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          if (isTurtleXAdClick && !!reportingIds[url]) {
+            var message = {
+              'reportingId': reportingIds[url],
+              'clickX': urlParamMap[CLICK_X_URL_KEY],
+              'clickY': urlParamMap[CLICK_Y_URL_KEY],
+              'creativeDims': getCreativeDimensions()
+              };
+            parent.postMessage(JSON.stringify(message), '*');
+          }
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            var windowFeatures = '';
+
+            if (features) {
+              windowFeatures = windowFeatures.concat(features);
+            }
+            if (isNewtonTokenSet &&
+                !!document.featurePolicy?.allowedFeatures().includes(
+                  'attribution-reporting')) {
+              if (features) {
+                if (!features.includes('attributionsrc')) {
+                  windowFeatures = windowFeatures.concat(features, ', attributionsrc');
+                }
+              } else {
+                windowFeatures = windowFeatures.concat('attributionsrc');
+              }
+            }
+
+            if (windowFeatures) {
+              args.push(windowFeatures);
+            }
+            open.apply(window,args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script><link rel="preload" as="script" href="https://c.bannerflow.net/scripts/text.a54b81074e2fe16c36b7.js" type="text/javascript"><link rel="preload" as="script" href="https://c.bannerflow.net/scripts/widget.5fa711b54e903bc697da.js" type="text/javascript"><script charset="utf-8" type="application/javascript" src="https://c.bannerflow.net/accounts/unibet/5fbe1d1cce75243c1011f472/published/16868408/18938703/data.000000D6B04191.js"></script><script charset="utf-8" type="application/javascript" src="https://c.bannerflow.net/scripts/animated-creative.d66e2cdf41e6c7e30eb9.js"></script></head>
+<body>
+    <script>var onClickTag=window.setInterval(function (){if (window.clickTag){clearInterval(onClickTag); var c=document.createElement('div'); c.setAttribute('id', 'bannerflow'); document.body.appendChild(c); var s=document.createElement('script'); var scriptUri='https://c.bannerflow.net/a/69de2c364df73773528e8fbc?did=5ced17d285b1c200019c3fe1&preload=off&deeplink=on&'; s.setAttribute('src', scriptUri + '&redirecturl=' + encodeURIComponent(window.clickTag)); document.body.appendChild(s);}}, 50);</script>
+
+<div id="bannerflow"></div><script src="https://c.bannerflow.net/a/69de2c364df73773528e8fbc?did=5ced17d285b1c200019c3fe1&amp;preload=off&amp;deeplink=on&amp;&amp;redirecturl=https%3A%2F%2Fpagead2.googlesyndication.com%2Fpcs%2Fclick%3Fxai%3DAKAOjsv15rglyDAHElGIN6Rgp6JnlIHDytFmbmFwrxGHua5biZ4M5kNMH1tgN7yG_erjp-DDXlAkGksqalj48IKnIvwS4fAwabRpc4aTAntdM905B2TEXCAMrbv9k8nh1r7P85xDLEU9C99R1eLjoi-X-_VFXDMOGAD2rvSc3t9FMhbl_BcijqrwizpMVJYXXP8keL4AUjbXxBvLfnZTW_lAO-2EhPVRPaFPX-n2T5VlKcojNX8b4-td0Ggmcv2Hzl-7RnsbkhnzayzWQmh57MfKMo_sR-t_jgZYPQ%26sig%3DCg0ArKJSzBt-RsHeovcCEAE%26cry%3D1%26fbs_aeid%3D%255Bgw_fbsaeid%255D%26urlfix%3D1%26rm_eid%3D%255Brm_exit_id%255D%26adurl%3Dhttps%3A%2F%2Fpagead2.googlesyndication.com%2Fpcs%2Fclick%253Fxai%253DAKAOjstna2V9-nw0Nuf_Myf8y_vImfOwZN3udpLYb8-D_T0JlkhkaqHjUMrcC7IJHlj-1vHxo9t396QdnCw2BhhuYVF8dqbiZtEserea83MXQ2Fe2Jd1rLZIHULMoSYx8Gjm_sttyEpoJ1Ks1OBp0FRkmV1La1fdvarZ0U0Zn8e76s2Rjkj97a62jzvX1mh52CmMLVB9miUULk2TI2ags0vX2psSY-KIN01sImQduIMXrsGfo0pemC4eGffCPMwYblb-nRr-oYLTKSTWN2Ca1pH4OJ4846KyZd85EmY8EFY5VCBa5wToOeurpSBUqGwD9LmDZbegERZjjsQr-wi877vi3GFHU3Yhm8IadP6m08AivYKj18WLUeOSZZkbuTH1JpPBrQPvtCq2s-rqYRBwprn6-upXLN5XpEYiBmGJPwBny-bklp5MytM-5uDPijqerE0c%2526sig%253DCg0ArKJSzFaxrDxvXI6iEAE%2526fbs_aeid%253D%25255Bgw_fbsaeid%25255D%2526urlfix%253D1%2526adurl%253Dhttps%253A%252F%252Fwww.mariacasino.se%252F%253Fdclid%253D%2525edclid!%2526gad_source%253D7" data-rendered="true"></script><div style="display: inline-block; width: 320px; height: 320px; position: relative; padding: 0px; margin: 0px;"><iframe scrolling="no" src="about:blank" style="height: 1px; width: 1px; min-height: 100%; max-width: 100%; min-width: 100%; filter: none; transform: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; outline: none; display: block; position: absolute; opacity: 1; top: 0px; left: 0px; transform-origin: 0px 0px; transition: opacity 0.2s;"></iframe></div><iframe style="position: absolute; pointer-events: none; left: 0px; top: 0px; opacity: 0; height: 0px; width: 0px;"></iframe></body></html>

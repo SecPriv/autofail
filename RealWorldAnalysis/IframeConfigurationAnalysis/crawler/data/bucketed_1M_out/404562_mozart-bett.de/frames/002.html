@@ -1,0 +1,115 @@
+<html lang="de"><head>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            :root {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            * {
+                box-sizing: border-box;
+                -webkit-font-smoothing: inherit;
+            }
+
+            h1, h2, h3, h4, h5, h6, p, figure {
+                margin: 0;
+            }
+
+            body, input, textarea, select, button {
+                font-size: 12px;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        
+
+
+  <meta charset="UTF-8">
+  <title>Countdown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      width: fit-content;
+      height: fit-content;
+      font-family: "Outfit", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #000;
+      white-space: nowrap;
+    }
+  </style>
+
+
+  <span id="countdown">7 Std. 59 Min. 0 Sek.</span>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date();
+      const endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
+
+      const diff = endOfDay - now;
+
+      if (diff <= 0) {
+        countdown.textContent = "0 Std. 0 Min. 0 Sek.";
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdown.textContent =
+        hours + " Std. " + minutes + " Min. " + seconds + " Sek.";
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+
+        <script type="module">
+            let height = 0
+
+            function sendEmbedHeight() {
+                window.parent.postMessage({
+                    embedHeight: height
+                }, "*")
+            }
+
+            const observer = new ResizeObserver((entries) => {
+                if (entries.length !== 1) return
+                const entry = entries[0]
+                if (entry.target !== document.body) return
+
+                height = entry.contentRect.height
+                sendEmbedHeight()
+            })
+
+            observer.observe(document.body)
+
+            window.addEventListener("message", (event) => {
+                if (event.source !== window.parent) return
+                if (event.data !== "getEmbedHeight") return
+                sendEmbedHeight()
+            })
+        </script>
+    
+
+</body></html>

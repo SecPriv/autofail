@@ -1,0 +1,967 @@
+<!DOCTYPE html><html lang="ru-RU" prefix="og: https://ogp.me/ns#" class="" style=""><head>
+		<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google" content="notranslate">
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon.svg?ver=2.29">
+	<link rel="icon" type="image/ico" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon.ico?ver=2.29">
+	<link rel="apple-touch-icon" sizes="57x57" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-57x57.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-60x60.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-72x72.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-76x76.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-114x114.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-120x120.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-144x144.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-152x152.png?ver=2.29">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/apple-icon-180x180.png?ver=2.29">
+	<link rel="icon" type="image/png" sizes="192x192" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/android-icon-192x192.png?ver=2.29">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon-32x32.png?ver=2.29">
+	<link rel="icon" type="image/png" sizes="96x96" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon-96x96.png?ver=2.29">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon-16x16.png?ver=2.29">
+	<link rel="manifest" href="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/manifest.json?ver=2.29">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/ms-icon-144x144.png?ver=2.29">
+	<meta name="theme-color" content="#f1e9d6">
+	
+	<link rel="alternate" type="application/rss+xml" title="Православный портал «Азбука веры» RSS Feed" href="https://azbyka.ru/feed/rss">
+	<link rel="alternate" type="application/atom+xml" title="Православный портал «Азбука веры» Atom Feed" href="https://azbyka.ru/feed/atom">
+	<link rel="pingback" href="https://azbyka.ru/xmlrpc.php">
+		<script async="" src="https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"></script><script id="az_settings_js">
+		var AZ = window.AZ || {};
+		AZ.theme_path = 'https://azbyka.ru/wp-content/themes/azbyka-av';
+		AZ.ajax_path = 'https://azbyka.ru/wp-admin/admin-ajax.php';
+		AZ.post_id = '189229';
+		AZ.logged_in = false;
+		AZ.sso_logged_in = !!localStorage.getItem('az_sso_email');
+		AZ.tooltip_selector = '.az-tip, abbr, [data-tip-text]';
+					localStorage.setItem('az_sso_reflink', location.href);
+				/*
+		if(localStorage.getItem('az_sso_email') && !AZ.logged_in){
+			let tries = parseInt(localStorage.getItem('login_refresh_tries'));
+			if(isNaN(tries)) tries = 0;
+			if(tries < 2){
+				tries++;
+				localStorage.setItem('login_refresh_tries', tries);
+				location.reload();
+			}else
+				console.log('tried to login too much');
+		}else{
+			localStorage.removeItem('login_refresh_tries');
+		}
+		*/
+		
+		AZ.project = 'https://azbyka.ru';
+		AZ.settingVars = { "theme" : 0, "body-bg": 0, "side-bg" : 0, "widget-bg" : 0, "text-color" : 0, "link-color" : 0, "accent-color" : 0, "backdrop-color":0, "font-base-size" : 0, "text-font" : 0, "title-font" : 0, "text-align" : 0, "pagination-autoload" : 0 }; //0 - cross-site; 1 - local
+		AZ.sessionToggles = ["sidebar-hide"];
+		AZ.settings = {};
+		
+		AZ.nameSetting = name => 'az_' + (AZ.settingVars[name] ? AZ.project + '_' : '' ) + name;
+		AZ.getSetting = name => localStorage.getItem(AZ.nameSetting(name));
+		AZ.setSetting = (name, val) => {localStorage.setItem(AZ.nameSetting(name), val); AZ.applySettings();};
+		
+		AZ.applySettings = ()=>{
+			let docStyle = '', docClasses = document.documentElement.classList;
+
+			if(!AZ.settings.length){
+				docClasses.remove('sidebar-show');
+				docClasses.remove('sidebar-hide');
+			}
+
+			let gf_loaded = false;
+
+			for(let name in AZ.settingVars){
+				let val = AZ.getSetting(name);
+				if(val && val !== 'undefined'){
+					//google fonts
+					if (name.includes('-font') && !val.includes(',')) {
+						let head = document.getElementsByTagName('head')[0];
+						if (!gf_loaded) {
+							let pre_lnk = document.createElement('link');
+							pre_lnk.rel = 'preconnect';
+							pre_lnk.href = 'https://fonts.gstatic.com';
+							head.appendChild(pre_lnk);
+							gf_loaded = true;
+							console.log(pre_lnk);
+						}
+						let link = document.createElement('link');
+						link.href = 'https://fonts.googleapis.com/css2?family=' + val.replace(' ', '+') + ':wght@400;700&display=swap';
+						link.rel = 'stylesheet';
+						link.type = 'text/css';
+						head.appendChild(link);
+						console.log(link);
+					}
+
+					AZ.settings[name] = val;
+					docStyle+='--'+name+':'+ val+';';
+					
+					if(name === 'theme')	//todo: other?
+						document.documentElement.setAttribute('data-'+name.replace('--',''), val);
+				}
+			}
+			
+			for(let name of AZ.sessionToggles){
+				if(sessionStorage.getItem(name) === 'true')
+					document.documentElement.classList.add(name);
+			}
+
+			document.documentElement.style.cssText = docStyle;
+		};
+
+		AZ.applySettings();
+	</script>
+	
+<!-- SEO от Rank Math - https://rankmath.com/ -->
+<title>Православный портал «Азбука веры» | Православный сайт</title>
+<link data-rocket-prefetch="" href="https://cdn.jsdelivr.net" rel="dns-prefetch">
+<meta name="description" content="«Азбука веры» – ведущий религиозный интернет-портал: 40 сайтов, включающих библиотеку, молитвослов, календарь, аудио, видео, викторины...">
+<meta name="robots" content="follow, index">
+<link rel="canonical" href="https://azbyka.ru/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Православный портал «Азбука веры» | Православный сайт">
+<meta property="og:description" content="«Азбука веры» – ведущий религиозный интернет-портал: 40 сайтов, включающих библиотеку, молитвослов, календарь, аудио, видео, викторины...">
+<meta property="og:url" content="https://azbyka.ru/">
+<meta property="og:site_name" content="Православный портал «Азбука веры»">
+<meta property="og:image" content="https://azbyka.ru/wp-content/uploads/2021/10/av_social_white.png">
+<meta property="og:image:secure_url" content="https://azbyka.ru/wp-content/uploads/2021/10/av_social_white.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Православный портал «Азбука веры» | Православный сайт">
+<meta name="twitter:description" content="«Азбука веры» – ведущий религиозный интернет-портал: 40 сайтов, включающих библиотеку, молитвослов, календарь, аудио, видео, викторины...">
+<meta name="twitter:image" content="https://azbyka.ru/wp-content/uploads/2021/10/av_social_white.png">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Library","@id":"https://azbyka.ru/#organization","name":"\u041f\u0440\u0430\u0432\u043e\u0441\u043b\u0430\u0432\u043d\u0430\u044f \u044d\u043d\u0446\u0438\u043a\u043b\u043e\u043f\u0435\u0434\u0438\u044f \u0410\u0437\u0431\u0443\u043a\u0430 \u0432\u0435\u0440\u044b","url":"https://azbyka.ru","logo":{"@type":"ImageObject","@id":"https://azbyka.ru/#logo","url":"https://azbyka.ru/wp-content/uploads/2021/05/og-image.png","contentUrl":"https://azbyka.ru/wp-content/uploads/2021/05/og-image.png","caption":"\u041f\u0440\u0430\u0432\u043e\u0441\u043b\u0430\u0432\u043d\u044b\u0439 \u043f\u043e\u0440\u0442\u0430\u043b \u00ab\u0410\u0437\u0431\u0443\u043a\u0430 \u0432\u0435\u0440\u044b\u00bb","inLanguage":"ru-RU"},"openingHours":["Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"],"image":{"@id":"https://azbyka.ru/#logo"}},{"@type":"WebSite","@id":"https://azbyka.ru/#website","url":"https://azbyka.ru","name":"\u041f\u0440\u0430\u0432\u043e\u0441\u043b\u0430\u0432\u043d\u044b\u0439 \u043f\u043e\u0440\u0442\u0430\u043b \u00ab\u0410\u0437\u0431\u0443\u043a\u0430 \u0432\u0435\u0440\u044b\u00bb","publisher":{"@id":"https://azbyka.ru/#organization"},"inLanguage":"ru-RU","potentialAction":{"@type":"SearchAction","target":"https://azbyka.ru/sear/?searchid=1639178&amp;text={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"CollectionPage","@id":"https://azbyka.ru/#webpage","url":"https://azbyka.ru/","name":"\u041f\u0440\u0430\u0432\u043e\u0441\u043b\u0430\u0432\u043d\u044b\u0439 \u043f\u043e\u0440\u0442\u0430\u043b \u00ab\u0410\u0437\u0431\u0443\u043a\u0430 \u0432\u0435\u0440\u044b\u00bb | \u041f\u0440\u0430\u0432\u043e\u0441\u043b\u0430\u0432\u043d\u044b\u0439 \u0441\u0430\u0439\u0442","about":{"@id":"https://azbyka.ru/#organization"},"isPartOf":{"@id":"https://azbyka.ru/#website"},"inLanguage":"ru-RU"}]}</script>
+<!-- /Rank Math WordPress SEO плагин -->
+
+<link rel="dns-prefetch" href="//azbyka.ru">
+
+<link rel="alternate" type="application/rss+xml" title="Православный портал «Азбука веры» » Лента" href="https://azbyka.ru/feed">
+<link rel="alternate" type="application/rss+xml" title="Православный портал «Азбука веры» » Лента комментариев" href="https://azbyka.ru/comments/feed">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+
+			<link data-minify="1" rel="preload" as="style" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/styles.css?ver=1779084249" media="all">
+			<link data-minify="1" rel="stylesheet" id="azbyka-styles" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/styles.css?ver=1779084249" media="all">
+			
+			<link data-minify="1" rel="preload" as="style" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka-av/style.css?ver=1779084249" media="all">
+			<link data-minify="1" rel="stylesheet" id="azbyka-style" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka-av/style.css?ver=1779084249" media="all">
+			
+			<link data-minify="1" rel="preload" as="style" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/archive.css?ver=1779084249" media="all">
+			<link data-minify="1" rel="stylesheet" id="az-archive" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/archive.css?ver=1779084249" media="all">
+			
+			<link data-minify="1" rel="preload" as="style" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/top-menu.css?ver=1779084249" media="all">
+			<link data-minify="1" rel="stylesheet" id="top-menu" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/top-menu.css?ver=1779084249" media="all">
+			
+			<link data-minify="1" rel="preload" as="style" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/link-pics.css?ver=1779084249" media="all">
+			<link data-minify="1" rel="stylesheet" id="az-link-pics" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/css/link-pics.css?ver=1779084249" media="all">
+			<script data-minify="1" id="jquery-js" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/js/vendor/azjeycuery.js?ver=1779084249"></script>
+<link rel="https://api.w.org/" href="https://azbyka.ru/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://azbyka.ru/xmlrpc.php?rsd">
+	<script>
+		window.selectorToMetrikaTarget = {
+			'.av-footer-list .help-btn' : 'donate-main',
+		};
+	</script>
+		<style>
+		main{
+			margin-bottom: 2rem;
+		}
+		.main-area-content a[href*='/azbyka.'][href*='/ikona']:before {
+			content: "\f0fe"
+		}
+		.main-area-content ul a[href*='/biblia/']:before {
+			content: "\f02d"
+		}
+		
+		.main-area-content .index-list a{
+			text-decoration: none;
+		}
+		.main-area-content .index-list a:hover{
+			text-decoration: underline;
+		}
+		
+		.index-list{
+			margin-left:0;
+			text-align:left!important;
+		}
+		.index-list .sub-heading{
+			position:relative;
+			margin: 0 0 0.25em;
+			letter-spacing: .5px;
+		}
+		.index-list .sub-heading .fa{
+			position:absolute;
+			left:-1.5em;
+			top:.1em;
+			color:#ab343a
+		}
+
+		.index-list .sub-heading .fa.fa-globe{
+			left:-1.2em;
+			font-size:1.2em;
+		}
+
+	
+		.index-list ul {
+			margin-bottom: 1em;
+			display: flex;
+			flex-wrap: wrap;
+			gap: .25em .75em;
+			flex-direction: column;
+			break-before: avoid;
+			break-inside: avoid;
+		}
+		
+		.index-list ul,
+		.foreign-links{
+			padding-left: 0;
+		}
+		.foreign-links img{
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			object-fit: cover;
+		}
+		
+		.foreign-links{
+			max-width: 13em;
+			column-count: 2;
+		}
+		.foreign-links .flag{
+			display: none;
+		}
+		.index-list ul a:before {
+			display: none;
+		}
+		.index-list ul.linear{
+			flex-direction: column; /* row; */
+		}
+		.index-list ul li{
+		display: block;
+			white-space: nowrap;
+			max-height: 1.333em;
+		}
+
+		.foreign-links a:before{
+			content:none!important;
+		}
+
+		.index-list a.new-link{
+			margin-left: -10px;
+		}
+		
+		.index-list .sub-p{
+			margin-top: -.75rem;
+		}
+		
+		.total-posts-counter{
+			font-size: 80%;
+			margin-left: .5em;
+			color: var(--text-color);
+			opacity: 0.5;
+		}
+		
+		.home .alphabet-widget{
+			column-count: 1!important;
+		}
+
+		@media(min-width: 620px){
+			.index-list{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+			
+			.index-list .span-2{
+				grid-row: span 2;
+			}
+			
+			.index-list .span-3{
+				grid-row: span 3;
+			}
+			.index-list .span-4{
+				grid-row: span 4;
+			}
+			
+			.index-list ul.linear{
+				flex-direction: column;
+			}
+		}
+	</style>
+	
+	<script type="text/javascript">
+	    var templateURI = 'https://azbyka.ru/wp-content/themes/azbyka';
+	</script>
+<meta name="generator" content="WP Rocket 3.21.3" data-wpr-features="wpr_minify_js wpr_preconnect_external_domains wpr_image_dimensions wpr_minify_css"><style>.code-copy-btn{position:absolute;top:0;right:0;font-size:12px}[data-code-wrapper]{position:relative;display:block}</style></head>
+
+<body class="home blog wp-theme-azbyka wp-child-theme-azbyka-av ready" id="main-body">
+	
+	<noscript><div><img src="https://mc.yandex.ru/watch/5565880" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- Mobile Top menu -->
+		<div class="main-nav-list">
+			<ul>
+			<li><span id="main-nav-0" data-target="#nav-box"><img width="152" height="152" src="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon.svg" loading="lazy"></span></li><li><a id="main-nav-1" href="#header" class="selected-button"><i class="fa fa-bars" aria-hidden="true"></i></a></li><li><span id="main-nav-3" data-target="#widgets"><i class="fa fa-info-circle" aria-hidden="true"></i></span></li><li><span id="main-nav-2" data-target="#header_search"><i class="fa fa-search" aria-hidden="true"></i></span></li><li><a id="main-nav-6" href="https://azbyka.ru/personal"><i class="fa fa-user user-only" aria-hidden="true"></i><i class="fa fa-sign-in guest-only" aria-hidden="true"></i></a></li>			</ul>
+		</div>
+		<!-- End of Mobile Top menu -->
+			
+	<nav id="nav-box" class="top-panel">
+		<div class="main-box">
+			<div class="pre-header-nav m-show">Разделы портала «Азбука&nbsp;веры»</div>
+			<ul id="main-nav" class="nav">
+			<li class="menu-item current-menu-item"><a href="https://azbyka.ru/"><img width="152" height="152" class="nav-logo" src="https://azbyka.ru/wp-content/themes/azbyka-av/assets/images/favicons/favicon.svg" loading="lazy"><span class="nav-home-label"> Главная</span></a></li><li class="menu-item menu-item-has-children"><span class="link">Гид <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/gid"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Гид по порталу</a></li><li class="menu-item"><a href="https://azbyka.ru/drevo-sajta"><i class="fa fa-sitemap" aria-hidden="true"></i> Древо портала</a></li><li class="menu-item"><a href="https://azbyka.ru/s-chego-nachat"><i class="fa fa-user-plus" aria-hidden="true"></i> С чего начать</a></li><li class="menu-item"><a href="https://t.me/AzbykaruBot"><i class="fa fa-search" aria-hidden="true"></i> TG бот</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Библиотеки <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/biblia/"><i class="fa fa-book" aria-hidden="true"></i> Библия</a></li><li class="menu-item"><a href="https://azbyka.ru/otechnik/"><i class="fa fa-files-o" aria-hidden="true"></i> «Отечник»</a></li><li class="menu-item"><a href="https://azbyka.ru/fiction/"><i class="fa fa-copyright" aria-hidden="true"></i> Художественная литература</a></li><li class="menu-item"><a href="https://azbyka.ru/pravo/"><i class="fa fa-balance-scale" aria-hidden="true"></i> Церковное право</a></li><li class="menu-item"><a href="https://azbyka.ru/dictionary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Энциклопедия</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Календарь <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/days/"><i class="fa fa-calendar" aria-hidden="true"></i> Церковный календарь</a></li><li class="menu-item"><a href="https://azbyka.ru/days/p-audio-calendar"><i class="fa fa-headphones" aria-hidden="true"></i> Аудиокалендарь</a></li><li class="menu-item m-hide"><a href="https://azbyka.ru/extension"><i class="fa fa-chrome" aria-hidden="true"></i> Расширение Chrome</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Молитва <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/palomnik/"><i class="fa fa-globe" aria-hidden="true"></i> Азбука паломника</a></li><li class="menu-item"><a href="https://azbyka.ru/kliros/"><i class="fa fa-music" aria-hidden="true"></i> Азбука певческая</a></li><li class="menu-item"><a href="https://azbyka.ru/worships/"><i class="fa fa-file-text" aria-hidden="true"></i> Богослужение сегодня</a></li><li class="menu-item"><a href="https://azbyka.ru/chaso-slov/"><i class="fa fa-clock-o" aria-hidden="true"></i> Молимся по часам</a></li><li class="menu-item"><a href="https://azbyka.ru/molitvoslov/"><i class="fa fa-fire" aria-hidden="true"></i> Молитвослов</a></li><li class="menu-item"><a href="https://azbyka.ru/bogosluzhenie/"><i class="fa fa-bell" aria-hidden="true"></i> Переводы Богослужений</a></li><li class="menu-item"><a href="https://azbyka.ru/psalms/"><i class="fa fa-group" aria-hidden="true"></i> Читаем Псалтирь</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Медиа <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/news"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Азбука новостей</a></li><li class="menu-item"><a href="https://azbyka.ru/foto/"><i class="fa fa-camera-retro" aria-hidden="true"></i> Азбука фото</a></li><li class="menu-item"><a href="https://azbyka.ru/audio/"><i class="fa fa-volume-up" aria-hidden="true"></i> Аудио</a></li><li class="menu-item"><a href="https://azbyka.ru/video/"><i class="fa fa-video-camera" aria-hidden="true"></i> Видео</a></li><li class="menu-item"><a href="https://azbyka.ru/bozhestvennaja-liturgija"><i class="fa fa-bell" aria-hidden="true"></i> Литургия</a></li><li class="menu-item"><a href="https://azbyka.ru/audio/radio.html"><i class="fa fa-volume-up" aria-hidden="true"></i> Радио</a></li><li class="menu-item"><a href="https://azbyka.ru/bogosluzhenie-online"><i class="fa fa-video-camera" aria-hidden="true"></i> Трансляция из храма</a></li><li class="menu-item"><a href="https://azbyka.ru/parkhomenko/foto/"><i class="fa fa-camera" aria-hidden="true"></i> Фоторассказы</a></li><li class="menu-item"><a href="https://azbyka.ru/life/"><i class="fa fa-road" aria-hidden="true"></i> Христианская жизнь</a></li><li class="menu-item"><a href="https://azbyka.ru/telegram-kanaly"><i class="fa fa-telegram" aria-hidden="true"></i> TG-каналы</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Проверь себя <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/quiz/"><i class="fa fa-code-fork" aria-hidden="true"></i> Квизы</a></li><li class="menu-item"><a href="https://azbyka.ru/crosswords/"><i class="fa fa-pencil" aria-hidden="true"></i> Кроссворды</a></li><li class="menu-item"><a href="https://azbyka.ru/test/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Тесты</a></li><li class="menu-item"><a href="https://azbyka.ru/viktorina/"><i class="fa fa-image" aria-hidden="true"></i> Фотовикторины</a></li><li class="menu-item"><a href="https://azbyka.ru/games/"><i class="fa fa-gamepad" aria-hidden="true"></i> Игры</a></li><li class="menu-item"><a href="https://azbyka.ru/memo/"><i class="fa fa-refresh" aria-hidden="true"></i> Учим Писания</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Тематическое <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/death/"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Азбука бессмертия</a></li><li class="menu-item"><a href="https://azbyka.ru/art/"><i class="fa fa-paint-brush" aria-hidden="true"></i> Азбука искусства</a></li><li class="menu-item"><a href="https://azbyka.ru/apokalipsis/"><i class="fa fa-font" aria-hidden="true"></i> Апокалипсис</a></li><li class="menu-item"><a href="https://azbyka.ru/vopros/"><i class="fa fa-question-circle" aria-hidden="true"></i> Вопросы и ответы</a></li><li class="menu-item"><a href="https://azbyka.ru/ikona/"><i class="fa fa-plus-square" aria-hidden="true"></i> Иконы</a></li><li class="menu-item"><a href="https://azbyka.ru/katehizacija/"><i class="fa fa-bullhorn" aria-hidden="true"></i> Катехизация</a></li><li class="menu-item"><a href="https://azbyka.ru/way/"><i class="fa fa-location-arrow" aria-hidden="true"></i> Мой путь к Богу</a></li><li class="menu-item"><a href="https://azbyka.ru/opros/"><i class="fa fa-bar-chart" aria-hidden="true"></i> Опросы</a></li><li class="menu-item"><a href="https://azbyka.ru/shemy/"><i class="fa fa-table" aria-hidden="true"></i> Пособия</a></li><li class="menu-item"><a href="https://azbyka.ru/propovedi/"><i class="fa fa-pencil" aria-hidden="true"></i> Проповеди</a></li><li class="menu-item"><a href="https://azbyka.ru/sueverie/"><i class="fa fa-street-view" aria-hidden="true"></i> Суевериям.нет</a></li><li class="menu-item"><a href="https://azbyka.ru/forum/"><i class="fa fa-comments-o" aria-hidden="true"></i> Форум</a></li><li class="menu-item"><a href="https://azbyka.ru/quotes"><i class="fa fa-bookmark" aria-hidden="true"></i> Цитаты Св. отцов</a></li><li class="menu-item"><a href="https://azbyka.ru/chinaorthodox/"><i class="fa fa-handshake-o" aria-hidden="true"></i> 东正教信仰入门</a></li><li class="menu-item"><a href="https://azbyka.ru/japanorthodox/"><i class="fa fa-circle" aria-hidden="true"></i> 正教の本</a></li></ul></li><li class="menu-item menu-item-has-children"><span class="link">Семья и здоровье <i class="fa fa-angle-down"></i></span><ul class="sub-menu"><li class="menu-item"><a href="https://azbyka.ru/znakomstva/"><i class="fa fa-link" aria-hidden="true"></i> Азбука верности</a></li><li class="menu-item"><a href="https://azbyka.ru/deti/"><i class="fa fa-child" aria-hidden="true"></i> Азбука воспитания</a></li><li class="menu-item"><a href="https://azbyka.ru/zdorovie/"><i class="fa fa-medkit" aria-hidden="true"></i> Азбука здоровья</a></li><li class="menu-item"><a href="https://azbyka.ru/recept/"><i class="fa fa-cutlery" aria-hidden="true"></i> Азбука рецептов</a></li><li class="menu-item"><a href="https://azbyka.ru/garden/"><i class="fa fa-envira" aria-hidden="true"></i> Азбука садовода</a></li><li class="menu-item"><a href="https://azbyka.ru/semya/"><i class="fa fa-home" aria-hidden="true"></i> Азбука супружества</a></li></ul></li>			</ul>
+		</div>
+	</nav>
+
+<!-- Header -->
+<div class="main-box">
+	<header class="header" id="header"> 
+		<div class="header-top">
+			<div class="header-breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+				<a itemprop="item" href="https://azbyka.ru/" title="Азбука веры">
+					<span itemprop="name">Азбука веры</span>
+				</a>
+				<meta itemprop="position" content="1">
+			</li></ul></div>		<!-- Вход в личный кабинет, если установлен плагин Profile Builder --> 
+						<div class="header-login m-hide">
+				<a href="https://azbyka.ru/personal" rel="nofollow" title="Войти в личный кабинет" class="user-only"><i class="fa fa-user" aria-hidden="true"></i></a>
+				<a href="//azbyka.ru/auth" rel="nofollow" title="Войти в личный кабинет" class="guest-only">Вход <i class="fa fa-sign-in"></i></a>
+			</div>
+						<!-- End ¬ход в личный кабинет -->
+	<!-- Settings -->
+<!--noindex-->
+<div class="settings" id="settings" data-nosnippet="">
+<a class="settings-button btn-settings" id="settings-button" title="Настройки">
+		<i class="fa fa-gear"></i>
+	</a>
+</div>
+<!--/noindex-->
+<!-- End Settings -->
+	<div id="header_search" class="header-search" style="display: none;">
+	<form id="labnol" class="search-form" action="//azbyka.ru/sear/" method="get" target="_blank">
+		<input type="hidden" name="searchid" value="1639178">
+		<input type="search" name="text" id="transcript" class="search-form-field">
+		<div class="speech start-dictation visible"><i class="fa fa-microphone"></i></div>
+		<button type="submit" class="search-form-button"><i class="fa fa-search"></i></button>
+	</form>
+	</div>
+			</div>
+		<div class="header-main header-wrap"> 	
+			<div class="logo"><div class="main-title">Азбука веры</div><p class="header-subtitle">с 2005 года</p></div><a class="button btn-start" href="/1/s-chego-nachat">С чего начать</a>		</div>
+
+		
+	</header>
+</div>
+<!-- End Header -->
+<!-- Main area -->
+<div class="main-box">
+	<main class="main-area" id="main-area">
+		<!-- Sidebar -->
+		<section class="main-area-sidebar">
+			<div class="sidebar-header header-wrap"><div class="logo"><h1><div class="main-title">Азбука веры</div></h1><p class="header-subtitle">с 2005 года</p></div><a class="button header-help-btn" href="//azbyka.ru/kak-pomoch">Пожертвовать</a><a class="button btn-start" href="/1/s-chego-nachat">С чего начать</a></div>
+<!-- Main sidebar area-->
+<aside class="widgets-area">
+
+<!-- Специальный блок -->
+	<!-- End Специальный блок -->
+	
+<!-- Left menu -->
+<div class="widget-navi">
+
+	<!-- Специальное меню -->
+			<!-- End Специальное меню -->
+	<div class="widget">
+		<div class="widget-title widget-title--top"><a href="//azbyka.ru/1/5-stupenej-very">5 ступеней веры</a></div>
+		<div class="widget-item  menu-expand opened_child"><div class="menu-levoe-menyu-container"><ul id="left-navigation" class="left-nav"><li id="menu-item-60303" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60303"><a href="https://azbyka.ru/1/tserkov"><span class="fstep-id">5</span> Церковь – практика веры</a></li>
+<li id="menu-item-60314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60314"><a href="https://azbyka.ru/1/hristianstvo"><span class="fstep-id">4</span> Христианство</a></li>
+<li id="menu-item-60331" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60331"><a href="https://azbyka.ru/1/religii"><span class="fstep-id">3</span> Чем отличаются религии</a></li>
+<li id="menu-item-60339" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60339"><a href="https://azbyka.ru/1/nravstvennost_i_duhovnost"><span class="fstep-id">2</span> Мораль и духовность</a></li>
+<li id="menu-item-60345" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60345"><a href="https://azbyka.ru/1/o_smysle_zhizni"><span class="fstep-id">1</span> Смысл жизни</a></li>
+</ul></div></div>
+	</div>
+	<!-- Хук для дополнительных действий -->
+		<div class="widget">
+	<div class="widget-title"><a href="/dictionary">Энциклопедия</a></div>
+	<div class="widget-item alphabet-widget">
+		<div class="blockABCtags">
+			<a href="https://azbyka.ru/dictionary/01">А</a><a href="https://azbyka.ru/dictionary/02">Б</a><a href="https://azbyka.ru/dictionary/03">В</a><a href="https://azbyka.ru/dictionary/04">Г</a><a href="https://azbyka.ru/dictionary/05">Д</a><a href="https://azbyka.ru/dictionary/06">Е</a><a href="https://azbyka.ru/dictionary/07">Ж</a><a href="https://azbyka.ru/dictionary/08">З</a><a href="https://azbyka.ru/dictionary/09">И</a><a href="https://azbyka.ru/dictionary/10">К</a><a href="https://azbyka.ru/dictionary/11">Л</a><a href="https://azbyka.ru/dictionary/12">М</a><a href="https://azbyka.ru/dictionary/13">Н</a><a href="https://azbyka.ru/dictionary/14">О</a><a href="https://azbyka.ru/dictionary/15">П</a><a href="https://azbyka.ru/dictionary/16">Р</a><a href="https://azbyka.ru/dictionary/17">С</a><a href="https://azbyka.ru/dictionary/18">Т</a><a href="https://azbyka.ru/dictionary/19">У</a><a href="https://azbyka.ru/dictionary/20">Ф</a><a href="https://azbyka.ru/dictionary/21">Х</a><a href="https://azbyka.ru/dictionary/22">Ц</a><a href="https://azbyka.ru/dictionary/23">Ч</a><a href="https://azbyka.ru/dictionary/24">Ш</a><a href="https://azbyka.ru/dictionary/28">Щ</a><a href="https://azbyka.ru/dictionary/25">Э</a><a href="https://azbyka.ru/dictionary/26">Ю</a><a href="https://azbyka.ru/dictionary/27">Я</a>		</div>
+	</div>
+</div>
+	</div>
+<!-- End Left menu -->
+
+	<div class="widgets" id="widgets">
+<!-- Dynamic menus -->
+		<div class="widgets-sidebar" id="widgets-sidebar">
+			<div id="text-4" class="widget widget_text"><p class="widget-title">Цитата из Библии</p>
+			<div class="textwidget"><p class="text-center">Всё сие Иисус говорил народу притчами, и без притчи не говорил им, да сбудется реченное через пророка, который говорит: отверзу в притчах уста Мои; изреку сокровенное от создания мира. (<span class="bg_data_title bg_bibrefs" data-title="?title=Mt&amp;chapter=13:34-35&amp;type=t_verses&amp;lang=ru" title="Евангелие от Матфея гл. 13:34-35"><span class="bg_data_tooltip"></span><a href="https://azbyka.ru/biblia/?Mt.13:34-35" target="_self">Мф.13:34-35</a></span>)</p>
+</div>
+		</div>
+<div id="text-3" class="widget widget_text"><p class="widget-title">Изучаем терминологию</p>
+			<div class="textwidget"><p class="text-center"><a class="az-tod-link" href="https://azbyka.ru/proobraz" target="_blank">Прообраз</a></p>
+</div>
+		</div>
+<div id="text-2" class="widget widget_text"><p class="widget-title">Вопрос дня</p>
+			<div class="textwidget"><p class="text-center"><a class="az-qod-link" href="https://azbyka.ru/vopros/kak-pravilno-podavat-milostynju-za-samoubiennogo/" target="_blank">Как правильно подавать милостыню за самоубиенного?</a></p>
+</div>
+		</div>
+<div id="text-5" class="widget widget_text"><p class="widget-title">Опрос</p>
+			<div class="textwidget"><p><a class="opros-widget-link" href="https://azbyka.ru/opros/chto-chitayut-pravoslavnye/">Что читают православные?</a></p>
+</div>
+		</div>
+<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="footer-widget">
+<ul class="av-footer-list">
+	<li><a href="//azbyka.ru/drevo-sajta">Древо</a></li>
+	<li><a class="help-btn" href="//azbyka.ru/kak-pomoch">Пожертвовать</a></li>
+<li><a href="https://azbyka.ru/about-all">О нас</a></li>
+</ul>
+<ul class="sidebar-contacts">
+<li><a title="Обратная связь" href="//azbyka.ru/obratnaja-svjaz"><i class="fa fa-envelope-o" style="font-weight:bold;" aria-hidden="true"></i></a>
+</li>
+<li><a title="Телефон" href="https://azbyka.ru/svjazat-s-administraciej"><i class="fa fa-phone-square" aria-hidden="true"></i></a></li>
+<li><a title="Наши медиа" href="https://azbyka.ru/social-media"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+</ul>
+<ul class="footer-links">
+	<li><a href="/job">Вакансии</a></li>
+	<li><a href="/azbuka-very-na-vashem-sajte">Вебмастеру</a></li>
+</ul>
+</div></div></div>
+<div id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget">
+<a href="https://azbyka.ru/allprojects"><div class="bg-az-online-now"><i style="margin-left: -10px;" class="fa fa-user-o" aria-hidden="true"></i> <span class="bg-az-counter" data-project="" data-type="" data-id=""><span class="bg-az-counter-now">19&nbsp;663</span> online</span></div>
+</a>
+</div></div>
+		</div>
+	<!-- Хук для дополнительных действий -->
+				<div class="widgets-sidebar" id="widgets-sidebar2">
+					</div>
+<!-- End Dynamic menus -->
+	
+<!-- Footer --> 
+<!-- End Footer -->
+	</div>
+</aside>
+		</section>
+		<!-- End Sidebar -->
+
+		<!-- Content -->
+
+		<section class="main-area-content index-content" style="hyphens:none">
+			<p class="top-info">45 сайтов портала</p>
+			<div class="article-single-content index-list">
+				<div class="category span-1">
+				<p class="sub-heading"><strong>БИБЛИОТЕКИ</strong></p>
+				<ul class="linear">
+					<li><a href="/biblia/">Библия</a></li>
+					<li><a href="/otechnik/">Отечник<span class="total-posts-counter">(25164 труда)</span></a></li>
+					<li><a href="/pravo/">Церковное право</a></li>
+					<li><a href="/fiction/">Худлит<span class="total-posts-counter">(3020)</span></a></li>
+				</ul>
+				</div>
+				<div class="category span-1">
+				<p class="sub-heading"><strong>ПРОВЕРЬ СЕБЯ</strong></p>
+				<ul class="linear">
+					<li><a href="/test/">Тесты<span class="total-posts-counter">(495)</span></a></li>
+					<li><a href="/quiz/">Квизы<span class="total-posts-counter">(40)</span></a></li>
+					<li><a href="/viktorina/">Фотовикторины<span class="total-posts-counter">(114)</span></a></li>
+					<li><a href="/crosswords/">Кроссворды<span class="total-posts-counter">(213)</span></a></li>
+					<li><a href="/memo/">Учим&nbsp;Писания</a></li>
+				</ul>
+				</div>
+				<div class="category span-1">
+				<p class="sub-heading"><strong>МОЛИТВА</strong></p>
+				<ul class="linear">
+					<li><a href="/molitvoslov/">Молитвы<span class="total-posts-counter">(2010)</span></a></li>
+					<li><a href="/psalms/">Читаем&nbsp;Псалтирь</a></li>
+					<li><a href="/chaso-slov/">Молимся&nbsp;по&nbsp;часам</a></li>
+					<li><a href="https://azbyka.ru/worships/">Богослужение&nbsp;сегодня</a></li>
+					<li><a href="/kliros/">Ноты для клироса<span class="total-posts-counter">(17470)</span></a></li>
+				</ul>
+				</div>
+				<div class="category span-4">
+				<p class="sub-heading"><strong>ТЕМАТИЧЕСКОЕ</strong></p>
+				<ul class="linear">
+					<li><a href="/way/">Мой путь к&nbsp;Богу</a></li>
+					<li><a href="/katehizacija/">Катехизация</a></li>
+					<li><a href="/vopros/">Вопросы<span class="total-posts-counter">(7613)</span></a></li>
+					<li><a href="/opros/">Опросы<span class="total-posts-counter">(27)</span></a></li>
+					<li><a href="/shemy/">Пособия<span class="total-posts-counter">(253)</span></a></li>
+					<li><a href="/propovedi/">Проповеди</a></li>
+					<li><a href="https://azbyka.ru/ikona/">Иконы</a></li>
+					<li><a href="https://azbyka.ru/quotes/">Цитаты<span class="total-posts-counter">(25571)</span></a></li>
+					<li><a href="https://azbyka.ru/sueverie/">Суевериям.нет</a></li>
+					<li><a href="https://azbyka.ru/death/">Азбука бессмертия</a></li>
+					<li><a href="https://azbyka.ru/art/">Азбука искусства</a></li>
+					<li><a href="https://azbyka.ru/apokalipsis/">Апокалипсис</a></li>
+					<li><a href="https://azbyka.ru/forum/">Форум</a></li>
+				</ul>
+				<p class="sub-heading"><strong>КАРТА ПРАВОСЛАВИЯ</strong></p>
+				<ul>
+					<li><a href="https://azbyka.ru/palomnik/%D0%90%D0%B7%D0%B1%D1%83%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BB%D0%BE%D0%BC%D0%BD%D0%B8%D0%BA%D0%B0">Азбука
+						паломника</a></li>
+				</ul>
+				</div>
+				<div class="category span-3">
+				<p class="sub-heading"><strong>МЕДИА</strong></p>
+				<ul class="linear">
+					<li><a href="/foto/">Азбука фотоискусства</a></li>
+					<li><a href="/audio/">Аудио<span class="total-posts-counter">(1136)</span></a></li>
+					<li><a href="/video/">Видео<span class="total-posts-counter">(1454)</span></a></li>
+					<li><a href="/audio/radio.html">Радио<span class="total-posts-counter">(18)</span></a></li>
+					<li><a href="/bogosluzhenie-online">Трансляция</a></li>
+					<li><a href="/parkhomenko/foto/">Фоторассказы</a></li>
+					<li><a href="/life/">Христианская жизнь</a></li>
+					<li><a href="/news/">Азбука новостей</a></li>
+					<li><a href="/social-media">Социальные медиа</a></li>
+				</ul>
+				</div>
+				<div class="category span-1">
+				<p class="sub-heading"><strong>КАЛЕНДАРЬ</strong></p>
+				<ul class="linear">
+					<li><a href="/days/">Церковный&nbsp;календарь</a></li>
+					<li><a href="/days/p-audio-calendar">Аудиокалендарь</a></li>
+					<li class="m-hide"><a href="/extension">Расширение&nbsp;браузера</a>
+				</li>
+				</ul>
+				</div>
+				<div class="category span-2">
+				<p class="sub-heading"><strong>СЕМЬЯ И ЗДОРОВЬЕ</strong>
+				</p>
+				<ul>
+					<li><a href="/znakomstva/">Азбука верности</a></li>
+					<li><a href="/semya/">Азбука&nbsp;супружества</a></li>
+					<li><a href="/deti/">Азбука&nbsp;воспитания</a></li>
+					<li><a href="/zdorovie/">Азбука&nbsp;здоровья</a></li>
+					<li><a href="/garden/">Азбука&nbsp;садовода</a></li>
+					<li><a href="/recept/">Азбука&nbsp;рецептов<span class="total-posts-counter">(8213)</span></a></li>
+				</ul>
+				</div>
+				<div class="category span-1">
+				<p class="sub-heading"><strong>FOREIGN BOOKS</strong></p>
+				<p class="foreign-links">
+					<a href="//azbyka.ru/otechnik/world/"><span class="flag flag-eng"></span> English</a><br>
+					<a href="//azbyka.ru/otechnik/serbian/"><span class="flag flag-serb"></span> Српски</a><br>
+					<a href="//azbyka.ru/otechnik/greek/"><span class="flag flag-greek"></span> Ελληνικά</a><br>
+					<a href="//azbyka.ru/otechnik/arabian/"><span class="flag flag-arab"></span> العربية </a><br>
+					<a href="//azbyka.ru/chinaorthodox/"><span class="flag flag-chn"></span> 中&nbsp;文</a><br>
+					<a href="https://azbyka.ru/japanorthodox/"><span class="flag flag-japan"></span> 日本語</a><br>
+					<a href="https://azbyka.ru/otechnik/azerbaijani/"><span class="flag flag-azr"></span> Azərb.</a><br>
+					<a href="https://azbyka.ru/otechnik/spanish/"><span class="flag flag-esp"></span> Español</a><br>
+				</p>
+				<p class="sub-p"><a href="https://azbyka.ru/otechnik/otherlang/">Other</a></p>
+				</div>
+			</div>
+		</section>
+						
+		<!-- End Content -->
+			</main>
+
+</div>
+<!-- End Main area -->
+
+
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/azbyka-av/*","/wp-content/themes/azbyka/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<!-- Freesoul Deactivate Plugins has disabled 5 plugins on this page. -->
+		<style type="text/css"> 
+         /* Hide reCAPTCHA V3 badge */
+        .grecaptcha-badge {
+        
+            visibility: hidden !important;
+        
+        }
+    </style>		<script id="az-post-list-loader-js">
+			(function(){
+				//logic
+				let pagination = document.querySelector('.az-pagination');
+				if(!pagination){
+					console.log('no pagination found');
+					return;
+				}
+				let current = 1;//parseInt(document.querySelector('.pagination .page-numbers.current').textContent);
+				let last = 4;//parseInt(document.querySelector('.pagination .page-numbers.dots+.page-numbers').textContent);
+				let loading = false;
+			
+				const observer = new IntersectionObserver(
+				(entries, observer) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting && (localStorage.getItem('az_pagination-autoload') === 'true') && !loading) {
+							loadNext();
+						}
+					});
+				}, {
+					root: null,
+					rootMargin: '0px',
+					threshold: 0
+				});
+			
+				let finalize = ()=>{
+					pagination.classList.remove('loading');
+					observer.disconnect();
+					console.log('no more posts');
+				}
+			
+				let loadNext = ()=>{
+					current ++;
+					if(current <= last){
+						console.log('loading page '+current);
+						pagination.classList.add('loading');
+						loading = true;
+						let pageUrl = location.href.split('#')[0].split('/page/')[0].replace(/\/$/, "") + '/page/' + current, 
+							url = pageUrl + '/?content_only=1';
+						window.history.pushState("", "Страница "+current, pageUrl);
+						asyncLoad(url);
+					}else{
+						finalize();
+					}
+				};
+			
+				async function asyncLoad(url) {
+					const response = await fetch(url);
+					let body = await response.text();
+					body = body.replaceAll('?content_only=1', '');
+					pagination.insertAdjacentHTML('beforebegin', body);
+					if(body.includes('az-pagination')){
+						observer.unobserve(pagination)
+						pagination.remove();
+						initLoadMore();
+					}
+					loading = false;
+					if(current == last) finalize();
+					console.log('loaded page '+current);
+					
+					if(window.scrollY + window.innerHeight > pagination.offsetTop)
+						loadNext();
+				}
+				
+				
+				//load more
+				function initLoadMore(){
+					let loadMore = document.querySelector('.pagination-load-more');
+					if(loadMore)
+						loadMore.onclick = loadNext;
+					
+					pagination = document.querySelector('.az-pagination');
+					if(pagination)
+						observer.observe(pagination);
+				}
+				initLoadMore();
+			})();
+		</script>
+				<div id="notification_container"></div>
+		<aside id="az_toolbox">
+			<i class="fa fa-cog btn-settings"></i>		<i class="scroll-top fa fa-arrow-up active invert" id="scroll-top" title="Вверх"></i>
+			</aside>
+		<div class="az-sso-messages" style="position:fixed;bottom:0;left:0;z-index:200;display:none"><p class="az-content-echo">Входим...</p><p class="az-content-echo">Куки не обнаружены, не ЛК</p></div>	<div class="settings-wrap" id="settings_wrap" style="display: none;">
+		<div class="settings-box" id="settings-box">
+			<div class="settings-item" data-setting="font-base-size">
+				<span class="settings-caption">Размер шрифта: </span>
+				<span class="settings-field letter-button" id="decrease_letter" title="Уменьшить шрифт">A-</span>
+				<span class="settings-field letter-size" id="size_letter" title="Размер шрифта основного текста">15</span>
+				<span class="settings-field letter-button" id="increase_letter" title="Увеличить шрифт">A+</span>
+			</div>
+
+			<div class="settings-item theme-settings-item" data-setting="theme">
+				<span class="settings-caption">Тёмная тема:</span>
+				<span data-id="1" data-value="light" class="settings-field selectedBox" title="Светлая"><i class="fa fa-lightbulb-o"></i></span>
+				<span data-id="2" data-value="dark" class="settings-field" title="Тёмная"><i class="fa fa-moon-o"></i></span>
+				</div>
+
+			<details class="settings-colors-wrap">
+				<summary>Цвета</summary>
+
+				<div class="settings-item" data-setting="body-bg">
+					<span class="settings-caption">Цвет фона: </span>
+					<span data-id="1" class="settings-field settings-color-box"></span>
+					<span data-id="3" class="settings-field settings-color-box"></span>
+					<span data-id="4" class="settings-field settings-color-box selectedBox"></span>
+					<input type="color" data-id="0" value="#999999" class="settings-field settings-color-box">
+				</div>
+				
+				<div class="settings-item" data-setting="text-color">
+					<span class="settings-caption">Цвет текста: </span>
+					<span data-id="1" class="settings-field settings-color-box"></span>
+					<span data-id="3" class="settings-field settings-color-box"></span>
+					<span data-id="4" class="settings-field settings-color-box selectedBox"></span>
+					<input type="color" data-id="0" value="#999999" class="settings-field settings-color-box">
+				</div>
+				
+				<div class="settings-item" data-setting="link-color">
+					<span class="settings-caption">Цвет ссылок: </span>
+					<span data-id="1" class="settings-field settings-color-box"></span>
+					<span data-id="3" class="settings-field settings-color-box"></span>
+					<span data-id="4" class="settings-field settings-color-box selectedBox"></span>
+					<input type="color" data-id="0" value="#999999" class="settings-field settings-color-box">
+				</div>
+				
+				<div class="settings-item" data-setting="accent-color">
+					<span class="settings-caption">Цвет акцентов <i class="fa fa-question-circle btn-details" title="Особо выделяемые цветом элементы"></i></span>
+					<span data-id="1" class="settings-field settings-color-box"></span>
+					<span data-id="3" class="settings-field settings-color-box"></span>
+					<span data-id="4" class="settings-field settings-color-box selectedBox"></span>
+					<input type="color" data-id="0" value="#999999" class="settings-field settings-color-box">
+				</div>
+
+				<div class="settings-item m-hide" data-setting="side-bg">
+					<span class="settings-caption">Цвет полей <i class="fa fa-question-circle btn-details" title="Боковые области экрана"></i></span>
+					<span data-id="1" class="settings-field settings-color-box"></span>
+					<span data-id="3" class="settings-field settings-color-box"></span>
+					<span data-id="4" class="settings-field settings-color-box selectedBox"></span>
+					<input type="color" data-id="0" value="#999999" class="settings-field settings-color-box">
+				</div>
+				
+				<div class="settings-item" data-setting="widget-bg">
+					<span class="settings-caption">Фон подложек <i class="fa fa-question-circle btn-details" title="Цвет фона окон и панелей"></i></span>
+					<span data-id="1" class="settings-field settings-color-box"></span>
+					<span data-id="3" class="settings-field settings-color-box"></span>
+					<span data-id="4" class="settings-field settings-color-box selectedBox"></span>
+					<input type="color" data-id="0" value="#999999" class="settings-field settings-color-box">
+				</div>
+
+			</details>
+
+			<div class="settings-item font-settings-item" data-setting="title-font">
+				<span class="settings-caption">Заголовки:</span>
+				<select class="settings-field settings-field-select" data-id="0">
+					<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Прямой (Lucida)</option>
+					<option value="'Times New Roman', sans">С засечками (Times)</option>
+					<option value="Georgia-my, sans">Georgia</option>
+					<option value="Courier, mono">Моноширинный</option>
+					<option value="Roboto Condensed">Сжатый</option>
+					<option value="Caveat">Рукописный</option>
+					<option value="IBM Plex Serif">IBM Plex Serif</option>
+					<option value="Vollkorn">Vollkorn</option>
+					<option value="Oranienbaum">Oranienbaum</option>
+				</select>
+			</div>
+
+			<div class="settings-item font-settings-item" data-setting="text-font">
+				<span class="settings-caption">Текст:</span>
+				<select class="settings-field settings-field-select" data-id="0">
+					<option value="system-ui, sans-serif">Прямой (Системный)</option>
+					<option value="'Times New Roman', sans">С засечками (Times)</option>
+					<option value="Georgia-my, sans">Georgia</option>
+					<option value="Courier, mono">Моноширинный</option>
+					<option value="Roboto Condensed">Сжатый</option>
+					<option value="Caveat">Рукописный</option>
+					<option value="IBM Plex Serif">IBM Plex Serif</option>
+					<option value="Vollkorn">Vollkorn</option>
+					<option value="Oranienbaum">Oranienbaum</option>
+				</select>
+			</div>
+
+			<div class="settings-item" data-setting="text-align">
+				<span class="settings-caption">Выравнивание:</span>
+				<span data-id="1" data-value="left" class="settings-field selectedBox" title="по левому краю"><i class="fa fa-align-left"></i></span>
+				<span data-id="2" data-value="justify" class="settings-field" title="по ширине"><i class="fa fa-align-justify"></i></span>
+			</div>
+			
+			<div class="settings-item" data-setting="pagination-autoload">
+				<span class="settings-caption">Загрузка страниц:</span>
+				<span data-id="1" data-value="false" class="settings-field selectedBox" title="вручную"><i class="fa fa-hand-o-down"></i></span>
+				<span data-id="2" data-value="true" class="settings-field" title="автоматически"><i class="fa fa-refresh"></i></span>
+			</div>
+
+			<span class="settings-reset" id="settings-reset"><i class="fa fa-undo"></i> Сбросить настройки</span>
+			<span class="settings-close" id="settings-close"></span>
+		</div>
+	</div>
+	<style>body div .wpcf7-form .fit-the-fullspace{position:absolute;margin-left:-999em;}</style><script id="bg_counter_websocket-js" defer="defer" src="https://azbyka.ru/wp-content/plugins/Bg-Az-Counter-GitHub/js/reconnecting-websocket.min.js?ver=2.9.4"></script>
+<script id="bg_counter_proc-js-extra">
+var bg_counter = {"counterurl":"https://stat.azbyka.ru/counters","rateurl":"https://stat.azbyka.ru/rate","scoreurl":"https://stat.azbyka.ru/item-score","batch":"https://stat.azbyka.ru/batch-query","batch_rating":"https://stat.azbyka.ru/batch-rating","websocket":"wss://stat.azbyka.ru/realtime-view","updatesocket":"wss://stat.azbyka.ru/updates","updatetime":"3000","maxreconnect":"5","project":"/project/main","type":"index","ID":"1","countviews":"on","votes5":"\u0433\u043e\u043b\u043e\u0441\u043e\u0432","votes2":"\u0433\u043e\u043b\u043ec\u0430","vote1":"\u0433\u043e\u043b\u043e\u0441","short_num":{"K":" \u0442\u044b\u0441.","M":" \u043c\u043b\u043d.","MM":" \u043c\u043b\u0440\u0434."},"voted":"\u0423\u0436\u0435 \u0433\u043e\u043b\u043e\u0441\u043e\u0432\u0430\u043b\u0438","price":["\u0445\u0443\u0434\u043e","\u0441\u043b\u0430\u0431\u043e","\u0441\u043d\u043e\u0441\u043d\u043e","\u0434\u043e\u0441\u0442\u043e\u0439\u043d\u043e","\u0447\u0443\u0434\u0435\u0441\u043d\u043e"],"debug":""};
+//# sourceURL=bg_counter_proc-js-extra
+</script>
+<script data-minify="1" id="bg_counter_proc-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/Bg-Az-Counter-GitHub/js/counter.js?ver=1779084249"></script>
+<script id="myBooks-js-extra">
+var myBooks = {"ajaxurl":"https://azbyka.ru/wp-admin/admin-ajax.php","nonce":"2ecf39865c","rest_nonce":"8f6d86b152","siteurl":"https://azbyka.ru","pageurl":"/","post_id":"189229","is_logged_in":"","page":"1","is_single":"","is_personal":"","template":"https://azbyka.ru/wp-content/plugins/Bg-Personal/","allow_bookmarks":"1"};
+//# sourceURL=myBooks-js-extra
+</script>
+<script data-minify="1" id="myBooks-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/Bg-Personal/js/myBooks.js?ver=1779084249"></script>
+<script id="bg_bibrefs_proc-js-extra">
+var bg_bibrefs = {"main_script":"https://azbyka.ru/wp-content/plugins/bg-biblie-references/js/bg_bibrefs.js","ajaxurl":"https://azbyka.ru/wp-admin/admin-ajax.php","content":"#content","preq":"0"};
+//# sourceURL=bg_bibrefs_proc-js-extra
+</script>
+<script id="az-settings-js-extra">
+var azbyka = {"root_url":"https://azbyka.ru","project":null,"darktheme":"https://azbyka.ru/wp-content/themes/azbyka/settings/js/darktheme.css?ver=3.7.13.2.29","yellowtheme":"https://azbyka.ru/wp-content/themes/azbyka/settings/js/yellowtheme.css?ver=3.7.13.2.29","is_home":"1"};
+//# sourceURL=az-settings-js-extra
+</script>
+<script data-minify="1" id="az-settings-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/settings/js/az-settings.js?ver=1779084249"></script>
+<script data-minify="1" id="azbyka-dl-core-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka-av/assets/js/core.js?ver=1779084249"></script>
+<script data-minify="1" id="speech-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/js/speech.js?ver=1779084249"></script>
+<script data-minify="1" id="azbyka-social-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/js/social.js?ver=1779084249"></script>
+<script data-minify="1" id="azbyka-main-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/js/main.js?ver=1779084249"></script>
+<script data-minify="1" id="az-seo-js" defer="defer" src="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/js/seo.js?ver=1779084249"></script>
+<script id="cf7-antispam-js-extra">
+var cf7a_settings = {"prefix":"_cf7a_","disableReload":"1","version":"Y73EgdPz6vWbyvdFxcEv6w==","restUrl":"https://azbyka.ru/wp-json/cf7-antispam/v1"};
+//# sourceURL=cf7-antispam-js-extra
+</script>
+<script id="heartbeat-js" defer="defer" src="https://azbyka.ru/wp-content/plugins/wp-rocket/assets/js/heartbeat.js?ver=3.21.3"></script>
+<script>if(!window.bz_custom_code_loaded){(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
+
+   ym(5565880, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        trackHash:true
+   });}
+			window.bz_custom_code_loaded = true;</script><noscript data-load="defer"><link data-minify="1" rel='stylesheet' id='bg_counter_styles-css' href='https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/Bg-Az-Counter-GitHub/css/styles.css?ver=1779084249' media='all' />
+<link data-minify="1" rel='stylesheet' id='retypos_styles-css' href='https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/Bg-ReTypos/css/styles.css?ver=1779084249' media='all' />
+<link data-minify="1" rel='stylesheet' id='bg_bibrefs_styles-css' href='https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/bg-biblie-references/css/styles.css?ver=1779084249' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-css' href='https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/font-awesome/css/font-awesome.min.css?ver=1779084249' media='all' />
+</noscript><script>window.bz_opt_deferred_scripts = {"bg_bibrefs_proc":"https://azbyka.ru/wp-content/plugins/bg-biblie-references/js/bg_bibrefs_loader.js?ver=3.18.11","top-menu":"https://azbyka.ru/wp-content/themes/azbyka/assets/js/top-menu.js?ver=3.7.13.2.29",}; window.bz_opt_defer_all_scripts = false;</script>		
+		<script>
+		let doc = document;
+		let addScript = (src, attrs, append = true)=>{
+			console.log('addScript -> ', src, attrs);
+			el = doc.createElement("script");
+			el.src = src;
+			for(at in attrs)
+				el.setAttribute(at, attrs[at]);
+			
+			if(append)
+				doc.body.append(el);
+			
+			return el;
+		};
+		let addScriptNode = (n)=>{
+			console.log('addScriptNode -> ', n);
+			let src = n.getAttribute('data-src');
+			let el = doc.createElement("script");
+			if(src)
+				el.src = src;
+			else{
+				let s = doc.createTextNode(n.textContent);
+				el.appendChild(s);
+			}
+			
+			if(n && n.parentNode)
+				n.parentNode.insertBefore(el,n);
+			else
+				doc.body.append(el);
+			
+			if(!src && n){
+				n.remove();
+			}
+		}
+		let addStyleNode = (el, par)=>{
+			let val = el.textContent;
+			console.log('deferred -> ', val);
+			//if(el.parentNode)
+				//el.parentNode.removeChild(el);
+			par.innerHTML += val;
+		}
+		
+		let nNode = doc.createElement('div');
+			nNode.classList.add('bz-defer-loaded');
+		
+		let deferredLoaded = false;
+		let loadDeferredStyles = function() {
+			if(deferredLoaded)
+				return;
+			
+			deferredLoaded = true;
+			
+			let nds = doc.querySelectorAll("noscript[data-load='defer']");
+			nds.forEach(
+			(el)=>{
+				let func = (el.getAttribute('data-type') === 'script') ? addScriptNode : addStyleNode;
+				let timer = el.getAttribute('data-delay');
+				if(timer)
+					setTimeout(func, timer, el, nNode)
+				else
+					func(el, nNode);
+			});
+			doc.body.append(nNode);
+			
+			//deferred scripts SRC
+			if(window.bz_opt_deferred_scripts && !window.bz_opt_defer_all_scripts){
+				console.log('deferred scripts: ', window.bz_opt_deferred_scripts);
+				for(id in bz_opt_deferred_scripts){
+					addScript(bz_opt_deferred_scripts[id], {id, 'defer':'defer'});
+				}
+			}
+			
+			//custom code
+			ccode = doc.getElementById('bz_custom_code');
+			if(ccode){
+				let timer = ccode.getAttribute('data-delay') || 0;
+				setTimeout(addScriptNode, timer, ccode);
+			}
+		};
+		
+		let goNext = (f)=>{
+			if(typeof window.requestAnimationFrame !== undefined)
+				requestAnimationFrame(f);
+			else
+				setTimeout(f, 10); 
+		}
+		
+		window.addEventListener('load', function() {
+			goNext(loadDeferredStyles);
+		});
+		
+		//on scroll/click/touch
+		let addScrollNodes = () => {
+			console.log('on scroll load -> ');
+			let sn = doc.querySelectorAll("noscript[data-load='scroll']");
+			sn.forEach((el)=>{
+				console.log(el.id);
+				addScriptNode(el);
+			});
+			
+			//deferred scripts SRC
+			if(window.bz_opt_deferred_scripts && window.bz_opt_defer_all_scripts){
+				console.log('deferred scripts: ', window.bz_opt_deferred_scripts);
+				for(id in bz_opt_deferred_scripts){
+					addScript(bz_opt_deferred_scripts[id], {id, 'defer':'defer'});
+				}
+			}
+		}
+		
+		let bz_first_scroll = true;
+		let on_fst_scroll = (e) => {
+			if (bz_first_scroll) {
+				if(e && e.screenX === 0 && e.screenY === 0) return;
+				console.log('first interaction ',e);
+				bz_first_scroll = false;
+				goNext(addScrollNodes);
+				//window.removeEventListener('scroll', on_fst_scroll);
+				doc.removeEventListener('mousemove', on_fst_scroll);
+				doc.removeEventListener('touchstart', on_fst_scroll);
+				doc.dispatchEvent(new Event('firstInteraction'));
+			}
+		};
+		//window.addEventListener('scroll', on_fst_scroll);
+		doc.addEventListener('mousemove', on_fst_scroll);
+		doc.addEventListener('touchstart', on_fst_scroll);
+		
+		window.BZOPT = {addScript};
+		</script>
+	
+
+
+
+
+
+<div class="bz-defer-loaded"><link data-minify="1" rel="stylesheet" id="bg_counter_styles-css" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/Bg-Az-Counter-GitHub/css/styles.css?ver=1779084249" media="all">
+<link data-minify="1" rel="stylesheet" id="retypos_styles-css" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/Bg-ReTypos/css/styles.css?ver=1779084249" media="all">
+<link data-minify="1" rel="stylesheet" id="bg_bibrefs_styles-css" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/plugins/bg-biblie-references/css/styles.css?ver=1779084249" media="all">
+<link data-minify="1" rel="stylesheet" id="font-awesome-css" href="https://azbyka.ru/wp-content/cache/min/1/wp-content/themes/azbyka/assets/font-awesome/css/font-awesome.min.css?ver=1779084249" media="all">
+</div><script src="https://azbyka.ru/wp-content/plugins/bg-biblie-references/js/bg_bibrefs_loader.js?ver=3.18.11" id="bg_bibrefs_proc" defer="defer"></script><script src="https://azbyka.ru/wp-content/themes/azbyka/assets/js/top-menu.js?ver=3.7.13.2.29" id="top-menu" defer="defer"></script></body></html><!-- Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com --><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1779449493 -->

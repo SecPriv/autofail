@@ -1,0 +1,1017 @@
+<!DOCTYPE html><html lang="hu"><head><script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MagyarBrands</title>
+<meta name="ad.size" content="width=300,height=250">
+<script src="mb202603-sizebb-1-snabbt.min.js"></script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	border: none;
+	overflow: hidden;
+	background-color: #EEEEEE;
+}
+#container {
+	position: relative;
+	width: 300px;
+	height: 250px;
+	margin: auto;
+	background: #5e7f63;
+	background-image: 
+        url(mb202603-sizebb-1-bg-sizebb-corner-rb-1.png),
+        url(mb202603-sizebb-1-bg-sizebb-corner-rb-2.png),
+        url(mb202603-sizebb-1-bg-sizebb-corner-rb-3.png),
+        url(mb202603-sizebb-1-bg-sizebb.webp);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 100% bottom, 96% bottom, 88% bottom, center;
+	transition: background-position 0.75s ease-in-out;
+	overflow: hidden;
+	margin-left: calc((100vw - 300px)/2);
+}
+body.corner-rb-out #container {
+	background-position: 300px bottom, 300px bottom, 300px bottom, center;
+}
+.square, .logo {
+	position: absolute;
+	width:80%;
+	height:80%;
+	margin-top: 5%;
+	margin-left: 10%;
+	background-size: contain;
+}
+	#logok {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	.square {
+		position: absolute;
+		display: none;
+		top: 70px;
+		left: 48px;
+		width: 253px;
+/*		height: 148px; JS-ben */
+	}
+	.square .bg {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#title {
+		top: 0px;
+		display: block;
+		width: 135px;
+		height: 190px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#title img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	#slogen {
+		display: block;
+		height: 31px;
+		position: absolute;
+/*		top: 205px; JS-ben*/
+/*		left: 91px; JS-ben*/
+/*		transition: top 0.6s, left 0.52s; JS-ben*/
+		transition-timing-function: cubic-bezier(0.630, 0.010, 0.330, 0.985);
+		transition-timing-function: cubic-bezier(0.465, 0.005, 0.285, 0.995);
+	}
+	#slogen img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.logo {
+	background: url();
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#mblogo {
+	background-color: #FFF;
+			display: block;
+		padding: 20px 0px;
+		width: 100%;
+			text-align: center;
+	position: absolute;
+	bottom: 0px;
+}
+.containbg {
+	background-size: contain;
+}
+.square {
+	
+}
+#square_4 { z-index: 50; }
+#square_3 { z-index: 40; }
+#square_2 { z-index: 30; }
+#square_1 { z-index: 20; }
+#square_0 { z-index: 10; }
+/*.square_shadow {*/
+	/*-webkit-filter: drop-shadow(-12px 12px 20px rgba(0,0,0,0.3));*/
+    /*filter: url(#drop-shadow);*/
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";*/
+    /*filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')"; */
+/*}*/
+</style>
+	<script type="text/javascript">
+	var clickTag = "https://magyarbrands.hu/link/mb202603-sizebb-1-G0";
+	var clickTag1 = "https://magyarbrands.hu/link/mb202603-sizebb-1-G1";
+	var clickTag2 = "https://magyarbrands.hu/link/mb202603-sizebb-1-G2";
+	var clickTag3 = "https://magyarbrands.hu/link/mb202603-sizebb-1-G3";
+	var clickTag4 = "https://magyarbrands.hu/link/mb202603-sizebb-1-G4";
+	var clickTag5 = "https://magyarbrands.hu/link/mb202603-sizebb-1-G5";
+	</script>
+	
+<script>
+var parsed = (document.location.href.split('#')[1]||'').split('&');
+var params = parsed.reduce(function (params, param) {
+	var param = param.split('=');
+	params[param[0]] = decodeURIComponent(param.slice(1).join('='));
+	return params;
+}, {});
+</script>
+
+</head><body class="corner-rb-out">
+<div id="container">
+	<a href="javascript:window.open(clickTag)" id="title" style="display: block; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -10, 0, 1); opacity: 0;"><img src="mb202603-sizebb-1-title.min.svg" alt=""></a>
+	<a href="javascript:window.open(clickTag)" id="slogen" style="top: 205px; left: 91px; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -67, -187, 0, 1);"><img src="mb202603-sizebb-1-slogen.min.svg" alt=""></a><div id="logok" style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1;">
+		<a href="javascript:window.open(clickTag5)" id="square_4" class="square " style="height: 148px; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1; display: block;"><img class="bg" src="mb202603-sizebb-1-square.webp"><div id="logo_4" class="logo" style="background-image: url(&quot;mb202603-sizebb-1-mb202603_logo-1-5-210.png&quot;);"></div></a>
+		<a href="javascript:window.open(clickTag4)" id="square_3" class="square " style="height: 148px; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 0.768333; display: block;"><img class="bg" src="mb202603-sizebb-1-square.webp"><div id="logo_3" class="logo" style="background-image: url(&quot;mb202603-sizebb-1-mb202603_logo-1-4-210.png&quot;);"></div></a>
+		<a href="javascript:window.open(clickTag3)" id="square_2" class="square " style="height: 148px; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 0; display: block;"><img class="bg" src="mb202603-sizebb-1-square.webp"><div id="logo_2" class="logo" style="background-image: url(&quot;mb202603-sizebb-1-mb202603_logo-1-3-210.png&quot;);"></div></a>
+		<a href="javascript:window.open(clickTag2)" id="square_1" class="square " style="height: 148px; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 0; display: block;"><img class="bg" src="mb202603-sizebb-1-square.webp"><div id="logo_1" class="logo" style="background-image: url(&quot;mb202603-sizebb-1-mb202603_logo-1-2-210.png&quot;);"></div></a>
+		<a href="javascript:window.open(clickTag1)" id="square_0" class="square " style="height: 148px; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 0; display: block;"><img class="bg" src="mb202603-sizebb-1-square.webp"><div id="logo_0" class="logo" style="background-image: url(&quot;mb202603-sizebb-1-mb202603_logo-1-1-210.png&quot;);"></div></a>
+	</div>
+</div>
+<script>
+var speed = 1200;
+var testAt = '';
+var size_name = 'sizebb';
+// speed = 5; // gyors teszt
+title = document.getElementById('title');
+title_img = document.querySelector('#title img');
+is_title2 = 14;
+slogen = document.getElementById('slogen');
+mblogo = document.getElementById('mblogo');
+mblogo_img = document.getElementById('mblogo_img');
+logok = document.getElementById('logok');
+squares = {};
+logos = {};
+squares['0'] = document.getElementById('square_0');
+squares['1'] = document.getElementById('square_1');
+squares['2'] = document.getElementById('square_2');
+squares['3'] = document.getElementById('square_3');
+squares['4'] = document.getElementById('square_4');
+logos['0'] = document.getElementById('logo_0');
+logos['1'] = document.getElementById('logo_1');
+logos['2'] = document.getElementById('logo_2');
+logos['3'] = document.getElementById('logo_3');
+logos['4'] = document.getElementById('logo_4');
+
+data ={
+	url: '',
+	squares: [
+		{logo: 'mb202603-sizebb-1-mb202603_logo-1-1-210.png', indx: '0', clicktag: 'clickTAG1', url: 'https://magyarbrands.hu/link/mb202603-sizebb-1-G1', logoclass: ''},
+		{logo: 'mb202603-sizebb-1-mb202603_logo-1-2-210.png', indx: '1', clicktag: 'clickTAG2', url: 'https://magyarbrands.hu/link/mb202603-sizebb-1-G2', logoclass: ''},
+		{logo: 'mb202603-sizebb-1-mb202603_logo-1-3-210.png', indx: '2', clicktag: 'clickTAG3', url: 'https://magyarbrands.hu/link/mb202603-sizebb-1-G3', logoclass: ''},
+		{logo: 'mb202603-sizebb-1-mb202603_logo-1-4-210.png', indx: '3', clicktag: 'clickTAG4', url: 'https://magyarbrands.hu/link/mb202603-sizebb-1-G4', logoclass: ''},
+		{logo: 'mb202603-sizebb-1-mb202603_logo-1-5-210.png', indx: '4', clicktag: 'clickTAG5', url: 'https://magyarbrands.hu/link/mb202603-sizebb-1-G5', logoclass: ''},
+	]
+}
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+data.squares = shuffle(data.squares);
+for( i in data.squares )
+{
+	indx = data.squares[i].indx;
+	logos[indx].style['background-image'] = "url("+data.squares[i].logo+")";
+	squares[indx].className += ' '+data.squares[i].logoclass;
+		
+}
+	banner_start();
+
+	function banner_start (restart)
+	{
+		console.log( 'banner_start()' );
+
+		if (restart)
+			 slogen.style.transition = 'top 0.62s, left 0.72s';
+
+		square_0.style.height = "148px";
+		square_1.style.height = "148px";
+		square_2.style.height = "148px";
+		square_3.style.height = "148px";
+		square_4.style.height = "148px";
+
+		if (is_title2) {
+			title_img.src = "mb202603-sizebb-1-title.min.svg";
+		}
+		
+		if (testAt == 'all_squares'){ show_all_squares(); return ''; }
+		if (testAt == 'one_square'){  show_squares_one_by_one(); return ''; }
+
+		switch (size_name) {
+			case '970x90':  titlepos = [0, -15, 0]; fPos = null; /*scale = [0.6, 0.6];*/ break;
+			case '970x100': titlepos = [0, -13, 0]; fPos = null; /*scale = [0.6, 0.6];*/ break;
+			case '970x250': titlepos = [0,  25, 0]; fPos = null; /*scale = [0.6, 0.6];*/ break;
+			case '320x100': titlepos = [0, -13, 0]; fPos = null; /*scale = [0.6, 0.6];*/ break;
+			case 'sizeis': 
+			case '640x360': titlepos = [0, 0, 0]; fPos = null; /*scale = [0.6, 0.6];*/ break;
+			case 'sizehp': 
+			case '300x600': titlepos = [0, 0, 0]; fPos = null; /*scale = [0.6, 0.6];*/ break;
+			case 'sizert': 
+			case '300x300': 
+				slogen.style.top =  '205px';
+				slogen.style.left =  '91px';
+				titlepos = [0, 0, 0]; 
+				fPos = null; /*scale = [0.46, 0.46];*/
+			break;
+			case 'sizebb': 
+			case '300x250': 
+			default:        
+				slogen.style.top =  '205px';
+				slogen.style.left =  '91px';
+				titlepos = [0, -10, 0]; 
+				fPos = null; /*scale = [0.46, 0.46];*/
+			break;
+		}
+		switch (size_name) {
+			case 'sizert': 
+			case '300x300': 
+				slogen.style.top =  '225px';
+			break;
+		}
+
+		if (title) {
+			title.style.display = "block";
+			snabbt(title, {
+                delay: (restart) ? speed*0.0 : 0,
+				// duration: speed*0.5,
+                duration: speed*0.40,
+				fromOpacity: 0,
+				opacity: 1,
+									fromPosition: [0, -33, 0],
+									position: titlepos,
+				fromScale: [0.75, 0.75],
+				scale: [1, 1],
+				easing: 'easeOut',
+			})
+			.snabbt({
+				delay: speed*1.70
+			})
+			.snabbt({
+				fromOpacity: 1,
+				opacity: 0,
+				duration: speed*0.30,
+				complete: function () {
+					if (!mblogo_img)
+					// show_all_squares();
+					show_squares_one_by_one();
+				}
+			})
+		}
+		if (mblogo_img) 
+		snabbt(mblogo_img, {
+			delay: speed*1.70,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+			complete: function () {
+				// show_all_squares();
+				show_squares_one_by_one();
+			}
+		})
+		if (mblogo) 
+		snabbt(mblogo, {
+			delay: speed*1.70,
+							position: [0, 100, 0],
+							duration: speed*0.40,
+			easing: 'easeOut',
+		})
+
+	}
+
+	function banner_restart()
+	{
+		console.log( 'banner_restart()' );
+		title.style.display = "block";
+		if (title) 
+		snabbt(title, {
+			fromOpacity: 0,
+			opacity: 1,
+			duration: speed*0.30,
+			complete: function () {
+				if (!mblogo && !mblogo_img) 
+				banner_start();
+			}
+		})
+		if (mblogo_img) 
+		snabbt(mblogo_img, {
+			// delay: speed*0.20,
+			fromOpacity: 0,
+			opacity: 1,
+			duration: speed*0.30,
+			complete: function () {
+				if (!mblogo) 
+				banner_start();
+			}
+		})
+		if (mblogo) 
+		snabbt(mblogo, {
+			// delay: speed*0.50,
+			position: [0, 0, 0],
+			fromOpacity: 0,
+			opacity: 1,
+			duration: speed*0.40,
+			easing: 'easeOut',
+			complete: function () {
+				banner_start();
+			}
+		})
+	}
+
+	function show_all_squares()
+	{
+		console.log( 'show_all_squares()' );
+
+        // document.body.classList.add('corner-rb-out');
+        document.body.classList.remove('corner-rb-out');
+
+		title.style.display = "block";
+		square_0.style.display = "block";
+		square_1.style.display = "block";
+		square_2.style.display = "block";
+		square_3.style.display = "block";
+		square_4.style.display = "block";
+		square_0.style.height = "175px";
+		square_1.style.height = "175px";
+		square_2.style.height = "175px";
+		square_3.style.height = "175px";
+		square_4.style.height = "175px";
+		if (is_title2) {
+			title_img.src = "mb202603-sizebb-1-title2.min.svg";
+		}
+		// 
+		switch (size_name) {
+			// case '320x100': pos = _____; fPos = null; scale = _____; break;
+			case '970x250': 
+                pos = [
+                    [-395, 23, 0],
+                    [155, 25, 0],
+                    [313, 25, 0],
+                    [471, 25, 0],
+                    [629, 25, 0],
+                    [787, 25, 0]]; 
+                fPos = null; 
+                scale = [
+                    [0.94, 0.94],
+                    [0.94, 0.94],
+                    [0.94, 0.94],
+                    [0.94, 0.94],
+                    [0.94, 0.94],
+                    [0.94, 0.94],
+                ]; 
+                break;
+			case '970x90':  
+                pos = [
+                    [-430, -15, 0],
+                    [160, -10, 0],
+                    [310, -10, 0],
+                    [470, -10, 0],
+                    [635, -10, 0],
+                    [800, -10, 0]]; 
+                fPos = null; 
+                scale = [
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                ]; 
+                break;
+			case '970x100': 
+                pos = [
+                    [-430, -15, 0],
+                    [160, -10, 0],
+                    [310, -10, 0],
+                    [470, -10, 0],
+                    [635, -10, 0],
+                    [800, -10, 0]]; 
+                fPos = null; 
+                scale = [
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                    [1, 1],
+                ]; 
+                break;
+			case '320x100': 
+                pos = [
+                    [-125, -15, 0],
+                    [33, -9, 0],
+                    [83, -9, 0],
+                    [133, -9, 0],
+                    [183, -9, 0],
+                    [233, -9, 0]]; 
+                fPos = null; 
+                scale = [
+                    [0.59, 0.59],
+                    [0.51, 0.51],
+                    [0.51, 0.51],
+                    [0.51, 0.51],
+                    [0.51, 0.51],
+                    [0.51, 0.51],
+                ]; 
+                break;
+			case 'sizeis': 
+			case '640x360': 
+                pos = [
+                    [-195,-88, 0],
+                    [157, -68, 0],
+                    [355, -68, 0],
+                    [-41, 100, 0],
+                    [157, 100, 0],
+                    [355, 100, 0]]; 
+                fPos = null; 
+                scale = [
+                    [0.50, 0.50],
+                    [0.52, 0.52],
+                    [0.52, 0.52],
+                    [0.52, 0.52],
+                    [0.52, 0.52],
+                    [0.52, 0.52],
+                ]; 
+                break;
+			case 'sizehp': 
+			case '300x600': 
+                pos = [
+                    [ -24,  -24, 0],
+                    [-30, 100, 0],
+                    [115, 180, 0],
+                    [-30, 255, 0],
+                    [115, 340, 0],
+                    [-30, 410, 0]]; 
+                fPos = null; 
+                scale = [
+                    [0.73, 0.73],
+                    [0.61, 0.61],
+                    [0.61, 0.61],
+                    [0.61, 0.61],
+                    [0.61, 0.61],
+                    [0.61, 0.61],
+                ]; 
+                break;
+			case 'sizert': 
+			case '300x300': 
+                pos = [
+                    [-80, -60, 0],
+                    [-126, -73, 0],
+                    [-24.5, -73, 0],
+                    [ 77,  -73, 0],
+                    [-76, 25, 0],
+                    [ 26, 25, 0],
+                    [63, -206, 0]
+                ]; 
+                fPos = null; 
+                scale = [
+                    [0.70, 0.70],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                ]; 
+                break;
+			case 'sizebb': 
+			case '300x250': 
+			default:
+                pos = [
+                    [-80, -63, 0],
+                    [-126, -58, 0],
+                    [-24.5, -58, 0],
+                    [ 77,  -58, 0],
+                    [-76, 25, 0],
+                    [ 26, 25, 0],
+                    [63, -187, 0]
+                ]; 
+                fPos = null; 
+                scale = [
+                    [0.70, 0.70],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                    [0.385, 0.385],
+                ]; 
+                break;
+		}
+        
+        
+		slogen.style.transition = 'top 0.7s, left 0.52s';
+		// slogen.style.top = '20px';
+		// slogen.style.left = '168px';
+		// slogen.style.width = 'auto';
+		// slogen.style.height = '24px';
+
+        snabbt(slogen, {delay: 0, position: pos[6], scale: [0.76, 0.76], opacity: 1, easing: 'easeOut', duration: speed*0.70,})
+
+		snabbt(title, {delay: speed*0, fromPosition: pos[0], position: pos[0], fromScale: scale[0], scale: scale[0], fromOpacity: 0, opacity: 1, /*easing: 'easeOut',*/ duration: speed*0.60,})
+		snabbt(square_0, {delay: speed*0.15, position: pos[1], scale: scale[1], fromOpacity: 0, opacity: 1, easing: 'easeOut', duration: speed*0.40,})
+		snabbt(square_1, {delay: speed*0.25, position: pos[2], scale: scale[2], fromOpacity: 0, opacity: 1, easing: 'easeOut', duration: speed*0.40,})
+		snabbt(square_2, {delay: speed*0.35, position: pos[3], scale: scale[3], fromOpacity: 0, opacity: 1, easing: 'easeOut', duration: speed*0.40,})
+		snabbt(square_3, {delay: speed*0.45, position: pos[4], scale: scale[4], fromOpacity: 0, opacity: 1, easing: 'easeOut', duration: speed*0.40,})
+		snabbt(square_4, {delay: speed*0.55, position: pos[5], scale: scale[5], fromOpacity: 0, opacity: 1, easing: 'easeOut', duration: speed*0.40,})
+		.snabbt({
+			delay: speed*0.60
+		})
+		.snabbt({
+			complete: function () {
+				// show_squares_delay();
+				// banner_restart();
+				hide_squares();
+			}
+		})
+	}
+	
+	function show_squares_one_by_one()
+	{
+		console.log( 'show_squares_one_by_one()' );
+		// square_0.style.display = "block";
+		// square_1.style.display = "block";
+		// square_2.style.display = "block";
+		// square_3.style.display = "block";
+		// square_4.style.display = "block";
+
+        // add body class .corner-rb-out
+        document.body.classList.add('corner-rb-out');
+
+		switch (size_name) {
+			case 'sizert': 
+			case '300x300': 
+				// slogen.style.top =  '28px';
+			break;
+		}
+
+		switch (size_name) {
+			// case '320x100': pos = _____; fPos = null; scale = _____; break;
+			case '970x250': pos = [
+								// [55, 20, 0],
+								[385, 20, 0],
+								[385, 20, 0],
+								[385, 20, 0],
+								[385, 20, 0],
+								[385, 20, 0]
+								[0, 0, 0]]; fPos = pos; /*scale = [0.26, 0.26]*/; break;
+			case '970x90':  pos = [
+								// [55, 20, 0],
+								[430, -10, 0],
+								[430, -10, 0],
+								[430, -10, 0],
+								[430, -10, 0],
+								[430, -10, 0]
+								[0, 0, 0]]; fPos = pos; /*scale = [0.26, 0.26]*/; break;
+			case '970x100': pos = [
+								// [55, 20, 0],
+								[430, -7, 0],
+								[430, -7, 0],
+								[430, -7, 0],
+								[430, -7, 0],
+								[430, -7, 0]
+								[0, 0, 0]]; fPos = pos; /*scale = [0.26, 0.26]*/; break;
+			case '320x100': pos = [
+								// [55, 20, 0],
+								[103, -7, 0],
+								[103, -7, 0],
+								[103, -7, 0],
+								[103, -7, 0],
+								[103, -7, 0]
+								[0, 0, 0]]; fPos = pos; /*scale = [0.26, 0.26]*/; break;
+			case 'sizeis': 
+			case '640x360': pos = [
+								// [55, 20, 0],
+								[150, 8, 0],
+								[150, 8, 0],
+								[150, 8, 0],
+								[150, 8, 0],
+								[150, 8, 0]
+								[0, 0, 0]]; fPos = pos; /*scale = [0.46, 0.46]*/; break;
+			case 'sizehp': 
+			case '300x600': pos = [
+								// [55, 0, 0],
+								[45, 160, 0],
+								[45, 160, 0],
+								[45, 160, 0],
+								[45, 160, 0],
+								[45, 160, 0],
+								[0, 0, 0]]; fPos = pos; /*scale = [0.6, 0.6]*/; break;
+			case 'sizert': 
+			case '300x300': 
+			                pos = [
+								// [55, 20, 0],
+								[0, -16, 0],
+								[0, -16, 0],
+								[0, -16, 0],
+								[0, -16, 0],
+								[0, -16, 0],
+								[-67, -203, 0]]; fPos = pos; /*scale = [0.46, 0.46]*/; break;
+			case 'sizebb': 
+			case '300x250': 
+			default:        pos = [
+								// [55, 20, 0],
+								[0, 0, 0],
+								[0, 0, 0],
+								[0, 0, 0],
+								[0, 0, 0],
+								[0, 0, 0],
+								[-67, -187, 0]]; fPos = pos; /*scale = [0.46, 0.46]*/; break;
+		}
+
+		// slogen.style.transition = 'top 0.6s, left 0.52s';
+
+        snabbt(slogen, {
+            delay: speed*0.10,
+            fromPosition: [0, 0, 0],
+            position: pos[5],
+			scale: [1, 1],
+            easing: 'easeOut',
+            duration: speed*0.45,
+        })
+        
+        snabbt(logok, {
+            delay: speed*0.0,
+            // scale origin center
+            fromScale: [0.70, 0.70],
+            scale: [1, 1],
+            fromPosition: [80, 80, 0],
+            position: [0, 0, 0],
+            fromOpacity: 0,
+            opacity: 1,
+            easing: 'easeOut',
+            duration: speed*0.60,
+        })
+
+		snabbt(square_0, {
+			position: pos[0],
+			scale: [1, 1],
+			// scale: [0.9, 0.9],
+			// easing: 'easeOut',
+			// duration: speed*0.30,
+			fromOpacity: 0, // az elsőnél a logok opacity adja az fade-t
+			opacity: 0,
+			complete: function () {
+				square_0.style.display = "block";
+			}
+		})
+		.snabbt({
+			// scale: [1, 1],
+			fromOpacity: 0, // az elsőnél a logok opacity adja az fade-t
+			opacity: 1,
+			duration: speed*0.30,
+			// easing: 'easeOut',
+		})
+		.snabbt({
+			delay: speed*1.70
+		})
+		.snabbt({
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30
+		})
+
+		snabbt(square_1, {
+			fromOpacity: 1,
+			fromOpacity: 0,
+			opacity: 0,
+			duration: speed*0.30,
+			complete: function () {
+				square_1.style.display = "none";
+			}
+		})
+		.snabbt({
+			delay: speed*1.5,
+			complete: function () {
+				square_1.style.display = "block";
+			}
+		})
+		.snabbt({
+			fromOpacity: 0,
+			opacity: 1,
+			fromPosition: fPos[1],
+			fromScale: [1, 1],
+			duration: speed*0.30,
+		})
+		.snabbt({
+			delay: speed*1.70
+		})
+		.snabbt({
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30
+		})
+
+		snabbt(square_2, {
+			fromOpacity: 1,
+			fromOpacity: 0,
+			opacity: 0,
+			duration: speed*0.20,
+			complete: function () {
+				square_2.style.display = "none";
+			}
+		})
+		.snabbt({
+			delay: speed*3.50,
+			complete: function () {
+				square_2.style.display = "block";
+			}
+		})
+		.snabbt({
+			fromOpacity: 0,
+			opacity: 1,
+			fromPosition: fPos[2],
+			fromScale: [1, 1],
+			duration: speed*0.30,
+		})
+		.snabbt({
+			delay: speed*1.70
+		})
+		.snabbt({
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30
+		})
+
+		snabbt(square_3, {
+			fromOpacity: 1,
+			fromOpacity: 0,
+			opacity: 0,
+			duration: speed*0.20,
+			complete: function () {
+				square_3.style.display = "none";
+			}
+		})
+		.snabbt({
+			delay: speed*5.75,
+			complete: function () {
+				square_3.style.display = "block";
+			}
+		})
+		.snabbt({
+			fromOpacity: 0,
+			opacity: 1,
+			fromPosition: fPos[3],
+			fromScale: [1, 1],
+			duration: speed*0.30,
+		})
+		.snabbt({
+			delay: speed*1.70
+		})
+		.snabbt({
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30
+		})
+
+		snabbt(square_4, {
+			fromOpacity: 1,
+			fromOpacity: 0,
+			opacity: 0,
+			duration: speed*0.20,
+			complete: function () {
+				square_4.style.display = "none";
+			}
+		})
+		.snabbt({
+			delay: speed*7.75,
+			complete: function () {
+				square_4.style.display = "block";
+			}
+		})
+		.snabbt({
+			fromOpacity: 0,
+			opacity: 1,
+			fromPosition: fPos[4],
+			fromScale: [1, 1],
+			duration: speed*0.30,
+		})
+		.snabbt({
+			delay: speed*1.70,
+			delay: speed*1.2,
+			// delay: 0,
+		})
+		.snabbt({
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+			complete: function () {
+                // document.body.classList.remove('corner-rb-out');
+				// slogen.style.transition = 'top 0.7s, left 0.52s';
+				// slogen.style.top = '33px';
+				// slogen.style.left = '160px';
+				show_all_squares();
+			}
+		})
+		// .snabbt({
+        //     delay: speed*0,
+		// 	complete: function () {
+        //         // hide_squares();
+		// 		// banner_restart();
+		// 	}
+		// })
+	}
+
+	function hide_squares() {
+		console.log( 'hide_squares()' );
+        
+        snabbt(slogen, {
+            delay: speed*0.80,
+            // fromPosition: [0, 0, 0],
+            position: [0, 0, 0],
+			scale: [1, 1],
+            easing: 'easeOut',
+            duration: speed*0.50,
+        })
+
+		// 
+		snabbt(title, {
+			delay: speed*0,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+		})
+		// 
+		snabbt(square_0, {
+			delay: speed*0.20,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+		})
+		snabbt(square_1, {
+			delay: speed*0.30,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+		})
+		snabbt(square_2, {
+			delay: speed*0.40,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+		})
+		snabbt(square_3, {
+			delay: speed*0.50,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+		})
+		snabbt(square_4, {
+			delay: speed*0.60,
+			fromOpacity: 1,
+			opacity: 0,
+			duration: speed*0.30,
+			complete: function () {
+				slogen.style.transition = 'top 0.62s, left 0.72s';
+				slogen.style.top =  '205px';
+				slogen.style.left =  '91px';
+				switch (size_name) {
+					case 'sizert': 
+					case '300x300': 
+						slogen.style.top =  '225px';
+					break;
+				}
+				banner_start(1);
+			}
+		})
+		.snabbt({
+            delay: 0,
+			complete: function () {
+			}
+		})
+	}
+
+	
+</script>
+<img src="https://magyarbrands.hu/link/view/magyarbrands/banner-sizebb-1/202104" width="1" height="1" alt="">
+</body></html>

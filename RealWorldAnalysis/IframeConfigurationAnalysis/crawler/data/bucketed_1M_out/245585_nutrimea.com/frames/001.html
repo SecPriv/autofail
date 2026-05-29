@@ -1,0 +1,430 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Nutrimea - Compléments alimentaires &amp; Huiles essentielles</title>
+    <script src="https://www.nutrimea.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+window.shopifyAnalytics = analytics;
+window.shopifyInit = init;
+window.shopifyBrowser = browser;
+// Define dataLayer and the gtag function.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+fetch('https://spawapp.addingwell.com/pixel?shopId=97129660764')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Something went wrong!');
+    }
+    let customerPrivacyStatus = init.customerPrivacy;
+      gtag('consent', 'update', {
+        'ad_storage': customerPrivacyStatus.marketingAllowed ? 'granted' : 'denied',
+        'ad_user_data': customerPrivacyStatus.marketingAllowed ? 'granted' : 'denied',
+        'ad_personalization': customerPrivacyStatus.marketingAllowed ? 'granted' : 'denied',
+        'analytics_storage': customerPrivacyStatus.analyticsProcessingAllowed ? 'granted' : 'denied'
+      });
+    return response.text();
+  })
+  .then(snippet => {
+    const scriptElement = document.createElement('script');
+    scriptElement.textContent = snippet;
+    document.head.appendChild(scriptElement);
+  })
+  .catch(error => {
+    console.error('Something wrong', error);
+  });
+});})(self.webPixelsManager.createShopifyExtend('298615132', 'custom'));
+
+</script>
+
+  <script>const logData = (message, data) => {
+            const isLoggingEnabled = true;
+            if(isLoggingEnabled) {
+                if(data !== undefined) {
+                    console.log("Addingwell ~ " + message + ":", data);
+                } else {
+                    console.log("Addingwell ~ " + message);
+                }
+            }
+        };
+
+        
+            const gtmSnippet = (w,d,s,l,i) => {
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;j.src='https://zp6noe.nutrimea.com/44uqecsi5rvniy8.js?awl='+i.replace(/^GTM-/, '')+dl;f.parentNode.insertBefore(j,f);
+            }
+            let gtmLoaded = false;
+            const initGTM = () => {
+                if(!gtmLoaded) {
+                    logData("The GTM loading begins!");
+                    gtmSnippet(window, document, 'script', 'dataLayer', 'GTM-T7BT6L5T');
+                    gtmLoaded = true;
+                }
+            }
+            
+        
+        
+            let pageViewLoaded = false;
+            window["dataLayer"] = window["dataLayer"] || [];
+            const eventMapping = {
+                "checkout_started": "begin_checkout",
+                "checkout_shipping_info_submitted": "add_shipping_info",
+                "payment_info_submitted": "add_payment_info",
+                "checkout_contact_info_submitted": "add_contact_info",
+                "checkout_address_info_submitted": "add_address_info",
+                "checkout_completed": "purchase"
+            };
+            const eventList = Object.keys(eventMapping);
+
+            const getEventNameWithSuffix = (eventName) => {
+                return (eventName === "page_view" ? "page_view" : eventMapping[eventName]) + "_aw";
+            }
+
+            const filterNullOrEmpty = (obj, limitSubElement = 5) => {
+                let filteredObj = {};
+                if(limitSubElement <= 0) {
+                    return obj;
+                }
+                for (let key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        let value = obj[key];
+
+                        // If value is an object (and not null), recursively filter sub-elements
+                        if (typeof value === "object" && value !== null && value !== undefined) {
+                            let filteredSubObject = filterNullOrEmpty(value, limitSubElement - 1);
+
+                            // Add the filtered sub-object only if it's not empty
+                            if (Object.keys(filteredSubObject).length > 0) {
+                                filteredObj[key] = filteredSubObject;
+                            }
+                        } else {
+                            // Add the value only if it's neither null nor an empty string
+                            if (value !== null && value !== "" && value !== undefined) {
+                                filteredObj[key] = value;
+                            }
+                        }
+                    }
+                }
+                return filteredObj;
+            };
+
+            const transformNumberToString = (value) => {
+                if (value !== null && value !== undefined && typeof value === 'number') {
+                  return value.toString();
+                }
+                /** By Default return the current value */
+                return value;
+            };
+
+            // Fonction utilitaire SHA256 robuste
+            async function sha256(str) {
+              if (!str) return undefined;
+              if (!(window.crypto && window.crypto.subtle)) {
+                console.error('Crypto.subtle non supporté, hash impossible pour :', str);
+                return undefined;
+              }
+              try {
+                const buf = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+                return Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, '0')).join('');
+              } catch (e) {
+                console.error('Erreur lors du hash SHA256 pour', str, e);
+                return undefined;
+              }
+            }
+            // Fonction de hash user_data robuste
+            async function getUserDataHash(user_data) {
+              const hashObj = {};
+              if (!user_data) return hashObj;
+              try {
+                if (user_data.email_address) hashObj.email_address = await sha256(user_data.email_address);
+                if (user_data.phone_number) hashObj.phone_number = await sha256(user_data.phone_number);
+                if (user_data.address && typeof user_data.address === 'object') {
+                  hashObj.address = {};
+                  if (user_data.address.first_name) hashObj.address.first_name = await sha256(user_data.address.first_name);
+                  if (user_data.address.last_name) hashObj.address.last_name = await sha256(user_data.address.last_name);
+                  if (user_data.address.street) hashObj.address.street = await sha256(user_data.address.street);
+                  if (user_data.address.city) hashObj.address.city = await sha256(user_data.address.city);
+                  if (user_data.address.region) hashObj.address.region = await sha256(user_data.address.region);
+                  if (user_data.address.postal_code) hashObj.address.postal_code = await sha256(user_data.address.postal_code);
+                  if (user_data.address.country) hashObj.address.country = await sha256(user_data.address.country);
+                }
+              } catch (e) {
+                console.error('Erreur lors du hash user_data_hashed', e);
+              }
+            return filterNullOrEmpty(hashObj);
+            }
+
+            const getCommonData = async (event) => {
+                const pageType = event.name === "checkout_completed" ? "purchase" : "checkout";
+                const ordersCount = window.shopifyInit?.data?.customer?.ordersCount;
+                const isFirstOrder = event?.data?.checkout?.order?.customer?.isFirstOrder;
+
+                let commonData = {
+                    master_id: event?.clientId,
+                    shopify_y: event?.clientId,
+                    user_id: window.shopifyInit?.data?.customer?.id,
+                    country: event?.data?.checkout?.localization?.country?.isoCode,
+                    language: event?.data?.checkout?.localization?.language?.isoCode,                    
+                    user_data: {
+                        email_address: event?.data?.checkout?.email || window.shopifyInit?.data?.customer?.email,
+                        orders_count: ordersCount ?? null,
+                        new_customer: (ordersCount || 0) > 0 || (isFirstOrder === false) ? false : true,
+                        phone_number: window.shopifyInit?.data?.customer?.phone || event?.data?.checkout?.shippingAddress?.phone,
+                        address: {
+                            first_name: window.shopifyInit?.data?.customer?.firstName || event?.data?.checkout?.shippingAddress?.firstName || event?.data?.checkout?.billingAddress?.firstName,
+                            last_name: window.shopifyInit?.data?.customer?.lastName || event?.data?.checkout?.shippingAddress?.lastName,
+                            street: event?.data?.checkout?.shippingAddress?.address1,
+                            city: event?.data?.checkout?.shippingAddress?.city,
+                            region: event?.data?.checkout?.shippingAddress?.province,
+                            postal_code: event?.data?.checkout?.shippingAddress?.zip,
+                            country: event?.data?.checkout?.shippingAddress?.countryCode
+                        }
+                    },
+                    page_type: pageType,
+                    page_location: event?.context?.document?.location?.href,
+                    page_referrer: event?.context?.document?.referrer
+                };
+
+                if (pageType === 'purchase' && isFirstOrder !== null) {
+                    commonData.is_first_order = isFirstOrder ? true : false;
+                }
+
+                commonData = filterNullOrEmpty(commonData);
+                // Ajout du hash des données utilisateur
+                commonData.user_data_hashed = await getUserDataHash(commonData.user_data);
+                return commonData;
+            };
+
+            const pushCommonDataLayer = (event, commonData) => {
+                window["dataLayer"].push(commonData);
+
+                logData("The common data has been pushed in dataLayer", commonData);
+
+                if(!pageViewLoaded) {
+                    const pageViewName = getEventNameWithSuffix("page_view");
+                    window["dataLayer"].push({'event': pageViewName});
+                    pageViewLoaded = true;
+                    logData("The '"+ pageViewName + "' event has been pushed in dataLayer");
+                }
+            }
+
+            const getProductDiscounts = (discounts) => {
+                if(!discounts || !Array.isArray(discounts)) {
+                    return 0;
+                }
+                let totalDiscounts = 0;
+                for (let discount of discounts) {
+                    if (discount?.amount?.amount) {
+                        totalDiscounts += discount.amount.amount;
+                    }
+                }
+                return totalDiscounts;
+            }
+
+
+            const getProductDiscountTitles = (discounts) => {
+                if(!discounts || !Array.isArray(discounts)) {
+                    return "";
+                }
+                let discountTitles = [];
+                for (let discount of discounts) {
+                    discountTitles.push(discount?.discountApplication?.title);
+                }
+                return discountTitles.join(" ");
+            };
+
+            const getProductsItem = (items) => {
+                if(!items || !Array.isArray(items)) {
+                    return null;
+                }
+                return items
+                    .filter(item => item?.quantity >= 1)
+                    .map(item => {
+                        const discountPrice = getProductDiscounts(item?.discountAllocations) / item.quantity;
+                        const discountTitle = getProductDiscountTitles(item?.discountAllocations);
+                        const price = (item?.variant?.price?.amount - discountPrice);
+                        return {
+                            item_id: transformNumberToString(item?.variant?.product?.id),
+                            item_variant: item?.variant?.title || "Default Variant",
+                            item_variant_id: transformNumberToString(item?.variant?.id),
+                            item_variant_title: item?.variant?.title || "Default Variant",
+                            item_product_id: transformNumberToString(item?.variant?.product?.id),
+                            item_product_title: item?.variant?.product?.title,
+                            item_name: item?.variant?.product?.title,
+                            item_brand: item?.variant?.product?.vendor,
+                            item_category: item?.variant?.product?.type,
+                            price: price,
+                            quantity: item.quantity,
+                            sku: transformNumberToString(item?.variant?.sku),
+                            discount: discountPrice,
+                            coupon: discountTitle,
+                            url: item?.variant?.product?.url
+                        };
+                    });
+            };
+
+            const getTotalDiscount = (items) => {
+                if(!items || !Array.isArray(items)) {
+                    return 0;
+                }
+
+                let totalDiscount = 0;
+                for (let item of items) {
+                    totalDiscount += getProductDiscounts(item?.discountAllocations);
+                }
+                return totalDiscount;
+            };
+
+            const getDiscountTitles = (discounts) => {
+                if(!discounts || !Array.isArray(discounts)) {
+                    return "";
+                }
+                let discountTitles = [];
+                for (let discount of discounts) {
+                    discountTitles.push(discount.title);
+                }
+
+                return discountTitles.join(" ");
+            };
+
+            
+            const pushDataLayerOnGTMReady = (event, commonData, retries = 5) => {
+                if(typeof gtmLoaded !== "undefined" && gtmLoaded === true) {
+                    logData("The GTM has been loaded, data is being sent to the dataLayer");
+                    setTimeout(() => {
+                        pushCommonDataLayer(event, commonData);
+                        pushEventDataLayer(event);
+                    }, 500);
+                } else if (retries > 0) {
+                    logData("GTM not ready, retrying... (" + retries + " attempts left)");
+                    setTimeout(() => {
+                        pushDataLayerOnGTMReady(event, commonData, retries - 1);
+                    }, 100);
+                } else {
+                    logData("GTM failed to load after multiple retries.", {event, retries});
+                }
+            }
+        
+
+            const pushEventDataLayer = (event) => {
+                const items = getProductsItem(event?.data?.checkout?.lineItems);
+                const coupon = getDiscountTitles(event?.data?.checkout?.discountApplications);
+                const totalDiscount = getTotalDiscount(event?.data?.checkout?.lineItems);
+                const eventData = {
+                    event: getEventNameWithSuffix(event.name),
+                    ecommerce: {
+                        transaction_id: event.data.checkout.order.id,
+                        currency: event?.data?.checkout?.totalPrice?.currencyCode,
+                        value: event?.data?.checkout?.totalPrice?.amount,
+                        coupon: coupon,
+                        discount: totalDiscount,
+                        shipping: event?.data?.checkout?.shippingLine?.price?.amount,
+                        tax: event?.data?.checkout?.totalTax?.amount,
+                        gateway: event?.data?.checkout?.transactions?.[0]?.gateway,
+                        payment_type: event?.data?.checkout?.transactions?.[0]?.paymentMethod?.type,
+                        payment_name: event?.data?.checkout?.transactions?.[0]?.paymentMethod?.name,
+                        shipping_tier: event?.data?.checkout?.delivery?.selectedDeliveryOptions?.[0]?.title,
+                        items: items
+                    }
+                };
+
+               window["dataLayer"].push({ ecommerce: null });
+               window["dataLayer"].push(eventData);
+
+               logData("The event data has been pushed in dataLayer", eventData);
+            }           
+            
+            function getRootDomain(event) {
+                const hostname = event?.context?.location?.hostname?.replace(/^www\./, '');
+                const parts = hostname.split('.');
+                
+                const secondLevelTLDs = [
+                    'myshopify.com',
+                    'co.uk','org.uk','gov.uk','ac.uk','sch.uk','ltd.uk','plc.uk','me.uk','net.uk','nhs.uk','police.uk',
+                    'com.au','net.au','org.au','edu.au','gov.au','id.au','asn.au',
+                    'co.nz','net.nz','org.nz','govt.nz','ac.nz',
+                    'co.za','net.za','org.za','gov.za',
+                    'co.in','net.in','org.in','ac.in','res.in','gov.in','nic.in',
+                    'co.jp','ne.jp','or.jp','ac.jp','go.jp',
+                    'com.sg','net.sg','org.sg','edu.sg','gov.sg',
+                    'com.my','net.my','org.my','edu.my','gov.my',
+                    'com.hk','net.hk','org.hk','edu.hk','gov.hk',
+                    'com.tw','net.tw','org.tw','edu.tw','gov.tw',
+                    'com.cn','net.cn','org.cn','gov.cn','edu.cn','ac.cn',
+                    'co.kr','ne.kr','or.kr','go.kr','ac.kr',
+                    'com.fr','asso.fr','nom.fr','prd.fr','presse.fr','tm.fr','gov.fr','gouv.fr',
+                    'com.de','com.it','com.es','com.pt','com.be','com.nl','com.se','com.no','com.fi','com.dk','com.ch','com.at','com.ie',
+                    'co.hu','co.pl','co.cz','co.ro','co.rs','co.bg','co.gr',
+                    'com.br','net.br','org.br','gov.br','edu.br',
+                    'com.ar','net.ar','org.ar','gov.ar',
+                    'com.mx','net.mx','org.mx','gob.mx',
+                    'com.co','net.co','org.co','gov.co',
+                    'com.pe','net.pe','org.pe','gob.pe',
+                    'com.cl','net.cl','gov.cl',
+                    'com.ve','net.ve','gov.ve',
+                    'com.sa','net.sa','org.sa','edu.sa','gov.sa',
+                    'com.eg','net.eg','org.eg','gov.eg',
+                    'com.il','net.il','org.il','gov.il','co.il',
+                    'com.tr','net.tr','org.tr','edu.tr','gov.tr',
+                    'co.ke','or.ke','ne.ke','go.ke','ac.ke',
+                    'co.tz','or.tz','go.tz','ac.tz',
+                    'co.ug','or.ug','go.ug','ac.ug',
+                    'com.ru','net.ru','org.ru','gov.ru',
+                    'com.ua','net.ua','org.ua','gov.ua',
+                    'com.ph','net.ph','org.ph','gov.ph',
+                    'com.vn','net.vn','org.vn','gov.vn',
+                ];
+                
+                const lastTwo = parts.slice(-2).join('.');
+                const lastThree = parts.slice(-3).join('.');
+                
+                if (secondLevelTLDs.some(tld => lastThree.endsWith(tld))) {
+                    return lastThree;
+                }
+                return lastTwo;
+            }
+            
+            const handleShopifyCookie = (event) => {
+                if(event?.clientId && window.shopifyBrowser && window.shopifyBrowser.cookie) {
+                    window.shopifyBrowser.cookie.get('_shopify_y').then((shopify_y) => {
+                        if(!shopify_y && event?.context?.location?.hostname) {
+                            const domain = getRootDomain(event);
+                            if(domain) {
+                                const expires = new Date();
+                                expires.setMonth(expires.getMonth() + 13);
+                            
+                                const expiresToString = expires.toUTCString();
+                                window.shopifyBrowser.cookie.set('_shopify_y='+encodeURIComponent(event.clientId)+'; expires='+expiresToString+'; path=/; domain=.' + domain + '; SameSite=Lax; Secure');
+                            }     
+                        }
+                    });
+                }
+            }
+                    
+            window.shopifyAnalytics.subscribe('all_standard_events', async (event) => {
+                handleShopifyCookie(event);
+                
+                let commonData = {};
+                if(eventList.includes(event.name) || event.name === "checkout_completed") {
+                    logData("The original pixel data", event);
+                    commonData = await getCommonData(event);
+                    if (window.shopifyBrowser && window.shopifyBrowser.sessionStorage) {
+                        const sessionKeyUserData = 'aw_user_data';
+                        window.shopifyBrowser.sessionStorage.setItem(sessionKeyUserData, JSON.stringify(commonData));
+                    }
+                }
+
+                if(eventList.includes(event.name)) {
+                    
+            initGTM();
+            pushDataLayerOnGTMReady(event, commonData);
+        
+                }
+            });</script></head>
+  <body>
+
+</body></html>

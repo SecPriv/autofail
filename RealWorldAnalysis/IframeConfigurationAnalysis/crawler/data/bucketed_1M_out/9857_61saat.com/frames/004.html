@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="tr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .saat61-dh-wrap {
+      width: 400px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .saat61-dh-box {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    }
+
+    .saat61-dh-link {
+      display: block;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .saat61-dh-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 0;
+      transition: opacity .35s ease;
+    }
+
+    .saat61-dh-label {
+      position: absolute;
+      z-index: 5;
+      background: #d40000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      animation: saat61DhKayma 2.2s infinite ease-in-out;
+      overflow: hidden;
+      display: none;
+      white-space: nowrap;
+    }
+
+    .saat61-dh-label::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.75), transparent);
+      animation: saat61DhParlama 2.2s infinite ease-in-out;
+    }
+
+    @keyframes saat61DhKayma {
+      0% { margin-left: 0; }
+      50% { margin-left: -6px; }
+      100% { margin-left: 0; }
+    }
+
+    @keyframes saat61DhParlama {
+      0% { left: -60%; }
+      45% { left: 120%; }
+      100% { left: 120%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="saat61-dh-wrap">
+    <div class="saat61-dh-box">
+      <a class="saat61-dh-link" href="https://www.61saat.com/trabzonsporun-kupa-zaferi-trabzonu-ayaga-kaldirdi-muhtesem-anlar" target="_blank" rel="noopener">
+        <img class="saat61-dh-img" src="https://61saatcom.teimg.com/crop/860x504/61saat-com/uploads/2026/05/23-may-2026-08-45-20.png" alt="" aria-hidden="true" style="opacity: 1;">
+        <span class="saat61-dh-label" style="background: rgb(212, 0, 0); animation: 2.2s ease-in-out 0s infinite normal none running saat61DhKayma; display: inline-block; top: 10px; right: 10px;">TIKLA İZLE</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const zone = "manset-alti";
+    const interval = parseInt("5000", 10) || 5000;
+    let items = [];
+    let current = 0;
+
+    const link = document.querySelector(".saat61-dh-link");
+    const img = document.querySelector(".saat61-dh-img");
+    const label = document.querySelector(".saat61-dh-label");
+
+    function applyLabelPosition(position) {
+      label.style.top = "";
+      label.style.right = "";
+      label.style.bottom = "";
+      label.style.left = "";
+      label.style.transform = "";
+      label.style.animation = "saat61DhKayma 2.2s infinite ease-in-out";
+
+      if (position === "top-right") {
+        label.style.top = "10px";
+        label.style.right = "10px";
+      } else if (position === "top-left") {
+        label.style.top = "10px";
+        label.style.left = "10px";
+      } else if (position === "bottom-left") {
+        label.style.bottom = "10px";
+        label.style.left = "10px";
+      } else if (position === "top-center") {
+        label.style.top = "10px";
+        label.style.left = "50%";
+        label.style.transform = "translateX(-50%)";
+        label.style.animation = "none";
+      } else if (position === "bottom-center") {
+        label.style.bottom = "10px";
+        label.style.left = "50%";
+        label.style.transform = "translateX(-50%)";
+        label.style.animation = "none";
+      } else {
+        label.style.bottom = "10px";
+        label.style.right = "10px";
+      }
+    }
+
+    function showItem(index) {
+      if (!items.length) {
+        document.body.innerHTML = "";
+        return;
+      }
+
+      const item = items[index];
+      img.style.opacity = "0";
+
+      setTimeout(function () {
+        link.href = item.link_url;
+        img.src = item.image_url;
+
+        if (item.label && item.label.trim() !== "") {
+          label.textContent = item.label;
+          label.style.background = item.label_color || "#d40000";
+          applyLabelPosition(item.label_position || "bottom-right");
+          label.style.display = "inline-block";
+        } else {
+          label.textContent = "";
+          label.style.display = "none";
+        }
+
+        img.style.opacity = "1";
+      }, 150);
+    }
+
+    fetch("/dinamikhaber/api/items?zone=" + encodeURIComponent(zone) + "&v=live-priority")
+      .then(res => res.json())
+      .then(data => {
+        items = data || [];
+
+        if (!items.length) {
+          document.body.innerHTML = "";
+          return;
+        }
+
+        showItem(current);
+
+        if (items.length > 1) {
+          setInterval(function () {
+            current = (current + 1) % items.length;
+            showItem(current);
+          }, interval);
+        }
+      })
+      .catch(function () {
+        document.body.innerHTML = "";
+      });
+  </script>
+
+</body></html>

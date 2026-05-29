@@ -1,0 +1,981 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru"><head><style>/* Basic styles for the entire pagination container */
+.blog-pager {
+  text-align: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the page numbers */
+.showpageNum a {
+  text-decoration: none;
+  color: #0066cc;
+  margin: 0 5px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.showpageNum a:hover {
+  color: #ff6600;
+}
+
+/* Styling for the current page (active) */
+.showpagePoint {
+  font-weight: bold;
+  color: #333;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+/* Styling for ellipsis (..) */
+.showpageNum span {
+  font-size: 14px;
+  color: #333;
+  margin: 0 5px;
+}
+
+/* Styling for the first and last page navigation */
+.showpageNum a:first-child, .showpageNum a:last-child {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Styling for the left and right arrow buttons */
+.showpageNum a[href*="page=1"], .showpageNum a[href*="page=end"] {
+  font-size: 18px;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.showpageNum a[href*="page=1"]:hover, .showpageNum a[href*="page=end"]:hover {
+  background-color: #ff6600;
+  color: white;
+}
+</style>
+<style>.heart {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+      font-size: 20px;
+
+}
+
+.heart-effect {
+    position: absolute;
+    pointer-events: none;
+      font-size: 20px;
+    animation: floatHeart 1.5s ease-out forwards;
+    opacity: 1;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translate(0, 0) scale(var(--scale));
+        opacity: 1;
+    }
+    50% {
+        transform: translate(var(--x1), var(--y1)) scale(calc(var(--scale)*1.2));
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(var(--x2), var(--y2)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.heart-animate {
+    display: inline-block;
+    cursor: pointer;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    25%  { transform: scale(1.2) rotate(-10deg); }
+    50%  { transform: scale(1); }
+    75%  { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1); }
+}
+
+</style><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202605190101/show_ads_impl_fy2021.js"></script><script>
+function createHearts(target) {
+    const count = 20; // რამდენი პატარა გულები
+    const colors = ['#ff3860','#ff6b6b','#ff8c42','#ffcd3c','#ff6f91','#ff9cee','#ff4d6d'];
+
+    for (let i = 0; i < count; i++) {
+        const heart = document.createElement('span');
+        heart.classList.add('heart-effect');
+        heart.innerText = '❤';
+
+        // შემთხვევითი ფერი
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+        // შემთხვევითი მიმართულება
+        const x1 = (Math.random() * 100 - 50) + 'px';
+        const y1 = (-Math.random() * 80 - 20) + 'px';
+        const x2 = (Math.random() * 150 - 75) + 'px';
+        const y2 = (-Math.random() * 150 - 50) + 'px';
+
+        heart.style.setProperty('--x1', x1);
+        heart.style.setProperty('--y1', y1);
+        heart.style.setProperty('--x2', x2);
+        heart.style.setProperty('--y2', y2);
+
+        // შემთხვევითი ზომა
+        const scale = (Math.random() * 0.5 + 0.8).toFixed(2);
+        heart.style.setProperty('--scale', scale);
+
+        target.appendChild(heart);
+
+        // წაშლა ანიმაციის დასრულების შემდეგ
+        heart.addEventListener('animationend', () => heart.remove());
+    }
+}
+
+// ავტომატურად ეფექტი ყველა ახალ "auto-heart" ელემენტზე
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.heart.auto-heart').forEach(el => {
+        createHearts(el);
+        // ეფექტი ერთხელ შესრულებულად ნიშნად
+        el.classList.remove('auto-heart');
+    });
+});
+
+// თუ გინდა ასევე კლიკზეც გამოსულიყო, შენთვის დარჩება
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('heart')) {
+        createHearts(e.target);
+    }
+});
+</script>
+
+
+<!--?xml version="1.0" encoding="utf-8"?--><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2044339039004718" crossorigin="anonymous" data-checked-head="true"></script>
+     
+
+<meta name="description" content="WEE.GE - საუკეთესო გაცნობის საიტი! ადგილი სადაც თავისუფლებაა! გაიცანი ახალი პარტნიორი, გაერთე და აზრიანად გაატარე დრო. რეგისტრაცია უფასოა.">
+<meta name="keywords" content="gacnoba , chati, gartoba , Daojaxeba , gogo , bichi ,soc qseli , onilne chat , megobroba , qalebi , gogonebi , online , georgian ,social , network, ჩათი, ჩატი, გართობა, გაცნობა, მეგობრობა, დაოჯახება, სკოლა ,გოგო , ბიჭი , სასწავლებელი, ტექნიკუმი, კოლეჯი, პროფსასწავლებელი, ინსტიტუტი, უნივერსიტეტი, უმაღლესი სასწავლებელი, თანაკლასელი, კლასელი, კურსელი, თანაკურსელი, მოსწავლე, მასწავლებელი, სტუდენტი, გაცნობა, თანაკლასელების ძიება, ყოფილი სტუდენტი, ყოფილი კურსდამთავრებული, ძიება, ძებნა, პოვნა, თანამოსამსახურე, ამხანაგი, კურსდამთავრებულების შეხვედრა, ადამიანების ძიება, კოლეგა, მეგობარი, მეგობრები, ახლობლები, ნათესავები, კურსდამთავრებულები, მეგობრების ძიება, ურთიერთობა, სასიამოვნო ურთიერთობა, ურთიერთობა ინტერესების მიხედვით, განხილვა, შეტყობინებები, ფოტოები, უფასო ზარები, ზარები ინტერნეტში, ინტერნეტ ტელეფონია, საჩუქრები, ჯგუფები, ჯგუფი, ცნობილი ადამიანები, არტისტები, მომღერლები, მსახიობები, სტუმრები, თამაშები">
+
+
+<title>Wee.ge </title><link rel="shortcut icon" href="/images/favicon.ico"><meta name="google-site-verification" content="4HojFDwbLcETk2A08qU56_hvc_KGrTmva9uU-cxFggE">
+<title>Gacnoba | Wee.ge - ქართული გაცნობის საიტი</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Wee.ge - ქართული გაცნობის და ჩატის საიტი. გაიცანი ახალი მეგობრები, იმეგობრე, იჩატავე და გაატარე დრო ონლაინ.">
+<meta name="keywords" content="გაცნობა, ქართული ჩატი, chat, dating, georgia, მეგობრობა, ონლაინ გაცნობა, wee.ge">
+<meta name="robots" content="index, follow">
+<meta name="language" content="Georgian">
+
+<meta property="og:title" content="Wee.ge - ქართული გაცნობის საიტი">
+<meta property="og:description" content="ონლაინ გაცნობის და ჩატის პლატფორმა საქართველოში">
+<meta property="og:url" content="https://wee.ge">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wee.ge/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wee.ge - ქართული გაცნობის საიტი">
+<meta name="twitter:description" content="გაიცანი ახალი ადამიანები Wee.ge-ზე">
+<meta name="twitter:image" content="https://wee.ge/logo.png">
+
+<link rel="canonical" href="https://wee.ge/">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"Wee.ge",
+ "url":"https://wee.ge",
+ "potentialAction":{
+   "@type":"SearchAction",
+   "target":"https://wee.ge/search?q={search_term_string}",
+   "query-input":"required name=search_term_string"
+ }
+}
+</script>
+
+<!-- ✅ GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cinzel+Decorative:wght@400;700&amp;family=UnifrakturMaguntia&amp;family=Black+Ops+One&amp;family=Orbitron:wght@400;700&amp;family=Rajdhani:wght@400;600;700&amp;family=Russo+One&amp;family=Press+Start+2P&amp;family=Righteous&amp;family=Monoton&amp;family=Great+Vibes&amp;family=Allura&amp;display=swap" rel="stylesheet">
+<style>
+
+/* ===== FONT SYSTEM ===== */
+
+/* 1 — premium luxury */
+/* პირველი ფონტი */
+@font-face {
+    font-family: 'Gvirila';
+    src: url('/style/fonts/gvirila.ttf') format('truetype');
+}
+
+/* მეორე ფონტი */
+@font-face {
+    font-family: 'BPG Arial';
+    src: url('/style/fonts/gvirila2.ttf') format('truetype');
+}
+
+/* მესამე ფონტი */
+@font-face {
+    font-family: 'Nusxuri';
+    src: url('/style/fonts/gvirila3.otf') format('truetype');
+}
+
+/* გამოყენება */
+.font1 {
+    font-family: 'Gvirila', serif;
+}
+
+.font2 {
+    font-family: 'BPG Arial', sans-serif;
+}
+
+.font3 {
+    font-family: 'Nusxuri', serif;
+}
+
+
+.font4 { font-family: 'Black Ops One', cursive; }
+.font5 { font-family: 'Orbitron', sans-serif; }
+.font6 { font-family: 'Rajdhani', sans-serif; }
+.font7 { font-family: 'Russo One', sans-serif; }
+.font8 { font-family: 'Press Start 2P', cursive; }
+.font9 { font-family: 'Righteous', cursive; }
+.font10 { font-family: 'Monoton', cursive; }
+.font11 { font-family: 'Great Vibes', cursive; }
+.font12 { font-family: 'Allura', cursive; }
+
+/* gradient nick base */
+.nick-gradient {
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+</style>
+
+
+<style>
+    
+.emoji1 {
+    font-size: 25px;
+}
+
+/* ძირითადი ემოჯი სტილი */
+.emoji {
+    font-size: 25px;          /* ზომა */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* hover ეფექტი - მსუბუქი ზრდა */
+.emoji:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 5px gold);
+}
+
+/* ანიმაცია - პატარა bounce */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.emoji.bounce {
+    animation: bounce 1s infinite;
+}
+
+/* sparkle ეფექტი */
+@keyframes sparkle {
+    0%, 100% { filter: drop-shadow(0 0 0px gold); }
+    50% { filter: drop-shadow(0 0 5px gold); }
+}
+
+.emoji.sparkle {
+    animation: sparkle 1s infinite;
+} 
+/* 1 — Handwriting style */
+.font-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+
+
+  .video-placeholder {
+    width: 320px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+.story-thumb1 {
+  flex: 0 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100px;
+  height: 150px;
+  cursor: pointer;
+  border: 2px solid #1877f2;
+  object-fit: cover;    /* დაამატე ეს! */
+  display: block;       /* ესეც შეიძლება დაეხმაროს */
+}
+.story-progress-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.story-progress-indicators .indicator {
+    width: 30px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.story-progress-indicators .indicator.active {
+    background-color: #1877f2;
+    box-shadow: 0 0 6px 1px #1877f2;
+}
+<style>
+
+
+
+
+.story_fldat1_main > *:last-child {
+margin-bottom:100px;
+}
+
+
+
+.modalOverflowingDatas::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.mdl_clr11zz {
+color:#818181;
+}
+
+
+
+
+/* Modal container */
+.modal {
+  position: fixed;
+  z-index: 1111111999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  overflow: hidden;
+  visibility: hidden; /* Hidden initially */
+  opacity: 0;        /* Fully transparent initially */
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Modal is shown */
+.modal-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal Content Container */
+.modalcontent23 {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  overflow:hidden;
+}
+
+/* Modal Content Box */
+.modalcontent2 {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 0%; /* Initial height */
+  overflow: hidden;
+  bottom: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: height 0.3s ease-in-out; /* Smooth transition for height */
+}
+
+/* Modal Transition for height expansion */
+.modalTransition {
+  height: 80% !important; /* Target height */
+}
+
+/* Close Button */
+.close {
+  color: #000 !important;
+  font-weight:bolder;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.modalOverflowingDatas {
+overflow-y:scroll;
+height:100%;
+}
+
+.story_details {
+align-items: center;
+    gap: 20px;
+    display: inline-flex;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #dddd;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+  .story_details > div {
+   padding:10px;
+   }
+
+
+.story_details_centering {
+flex-basis: 94%;text-align: center;
+}
+
+
+.story_lit1zz {
+	align-items:center;
+display: flex;
+    gap: 12px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+   .story_fldat1_main {
+      	display:block;
+      	width:100%;
+      	padding:10px;
+      	overflow:hidden;
+      }
+      
+      
+
+   .story_fldat1 {
+   	    margin-bottom: 10px;
+        align-items: center;
+      	display:flex;
+      	flex-wrap:nowrap;
+      	overflow:hidden;
+      	width:100%;
+      	gap:15px;
+      }
+      
+      .story_fldat1 img {
+      	widtH:50px;
+      	height:50px;
+      	object-fit:cover;
+      	    border-radius: 50%;
+      }
+      
+      	.story_fldat12 {
+      	display:flex;
+      	flex-direction:column;
+      	flex-wrap:nowrap;
+      	overflow:hidden;
+      	width:100%;row-gap: 5px;
+      }
+      
+
+
+
+
+
+
+#stories {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 15px;
+    
+    
+  
+  height: 150px;
+  margin-bottom:15px;
+    
+  
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    
+}
+
+
+
+
+
+
+
+
+.story-card.add-story {
+	width: 45px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.story-card {
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.story-card.add-story .icon-circle {
+    background-color: #1877f2;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #f0f2f5;
+}
+
+
+
+.story-card.add-story .add-text {
+    color: #fff;
+    font-weight: 600;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.story-card .story-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+        /* Navigation buttons */
+        .nav-button {
+            background-color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s;
+            z-index: 20; /* Ensure buttons are above stories */
+        }
+        .nav-button:hover {
+            background-color: #e4e6eb; /* Light gray on hover */
+        }
+        .nav-button.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Modal for upload feedback */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+
+
+
+   
+  .stories-bar { display: flex; gap: 8px; overflow-x: auto; padding: 10px; } .story-thumb { flex: 0 0 auto; border-radius: 10px; overflow: hidden; width: 80px; height: 140px; cursor: pointer; border: 2px solid #1877f2; } .story-thumb img { width: 100%; height: 100%; object-fit: cover; } .story-modal { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); } .story-modal-content { margin: auto; display: block; max-width: 90%; max-height: 80%; border-radius: 10px; } .story-caption { text-align: center; color: #fff; padding: 10px; } .story-views { text-align: center; color: #ccc; font-size: 14px; margin-bottom: 10px; } .story-close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; } .story-prev, .story-next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; color: white; font-weight: bold; font-size: 30px; transition: 0.3s; user-select: none; border-radius: 0 3px 3px 0; background-color: rgba(0,0,0,0.5); } .story-prev { left: 10px; border-radius: 3px 0 0 3px; } .story-next { right: 10px; border-radius: 0 3px 3px 0; } .story-progress-bar-container { position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: rgba(255,255,255,0.3); } .story-progress-bar { height: 100%; background-color: #1877f2; width: 0%; } .story-form { margin: 20px 0; } .story-upload label { display: block; margin-bottom: 5px; color: #333; } .story-upload input[type="file"], .story-upload input[type="text"] { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc; } .btn, .btn-cancel { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin-right: 10px; } .btn { background-color: #1877f2; color: white; } .btn-cancel { background-color: #ccc; color: #333; }
+/* შრიფტების სტილები */
+
+
+
+</style>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>.line-icon {
+  font-size: 50px;  /* აიკონის ზომა */
+  color: transparent; /* აიკონის ფერი გამჭვირვალე */
+  -webkit-text-stroke: 2px black; /* ტექსტის კონტური */
+  text-stroke: 2px black;  /* კონტურის სისქე და ფერი */
+}
+</style><style>
+
+
+
+.list-menu {
+    border-top: 1px #E2E8EC solid;
+    padding: 10px;
+    color: #3F4549;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    top: -1px;
+    bottom: -1px;
+    overflow-wrap: normal;
+    word-break: normal;
+    line-break: auto;
+    hyphens: manual;
+    word-wrap: break-word;
+}
+.menu-icons-small {
+    overflow: hidden;
+    text-align: center;
+    line-height: 26px;
+    width: 26px;
+    height: 26px;
+    color: white;
+    border-radius: 100%;
+    display: inline-block;
+    margin-bottom: -8px;
+}
+.menu-icons-optimize {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    left: 5px;
+}
+
+
+a {
+    color: #5986AA;
+}
+.icons-circle {
+  background: #5f6a82;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: white;
+
+  display: inline-block;
+  text-align: center;
+  margin-right: 2px;
+  
+}
+
+</style><link rel="stylesheet" href="/assets/css/awesome/all.css" type="text/css"><link rel="stylesheet" href="/assets/css/rest.css" type="text/css"><link rel="stylesheet" href="/assets/css/smiles.css" type="text/css"><link rel="stylesheet" href="/css/Home.css" type="text/css"><link rel="stylesheet" href="/css/Stuff.css" type="text/css"><link rel="stylesheet" href="/css/user_space.css" type="text/css"><link rel="stylesheet" href="/css/Album.css" type="text/css"><link rel="stylesheet" href="/css/new_design.css" type="text/css"><link rel="stylesheet" href="/css/user_story.css" type="text/css"><link rel="stylesheet" href="/assets/css/awesome/all.css" type="text/css"><link rel="stylesheet" href="/assets/css/rest.css" type="text/css"><script src="/assets/javascript/jquery-3.6.0.js"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="/assets/javascript/rest.js"></script><script src="/assets/javascript/axios.min.js"></script><script src="/assets/javascript/emoji.js"></script><script src="/assets/javascript/main.js"></script><link rel="stylesheet" href="/css/mobile.css" type="text/css"><link rel="stylesheet" href="/css/wap.php?style=7E0505" type="text/css"></head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<script async src="https://www.tiktok.com/embed.js"></script>
+-->
+
+
+
+
+
+
+<body><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script><ins class="adsbygoogle adsbygoogle-noablate" data-ad-hi="true" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://pagead2.googlesyndication.com/pagead/ads?client=ca-pub-2044339039004718&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1779544670&amp;plat=3%3A65536%2C4%3A65536%2C9%3A134217728%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C32%3A32%2C41%3A32%2C42%3A32%2C43%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fwee.ge%2Fpage%2Fauth%2F&amp;pra=5&amp;asro=0&amp;itsi=-1&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;abgtt=6&amp;dt=1779544669846&amp;bpp=76&amp;bdt=339&amp;idt=280&amp;shv=r20260520&amp;mjsv=m202605190101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;eoidce=1&amp;nras=1&amp;correlator=3556390674278&amp;frm=20&amp;pv=2&amp;u_tz=120&amp;u_his=2&amp;u_h=851&amp;u_w=393&amp;u_ah=851&amp;u_aw=393&amp;u_cd=24&amp;u_sd=3&amp;dmc=16&amp;adx=-12245933&amp;ady=-12245933&amp;biw=393&amp;bih=851&amp;scr_x=0&amp;scr_y=0&amp;eid=95390667%2C95391801&amp;oid=2&amp;pvsid=6040667201317498&amp;tmod=493794612&amp;uas=3&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C393%2C0%2C393%2C851%2C407%2C882&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=33792&amp;bc=31&amp;bz=0.97&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=391" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script><link rel="stylesheet" href="/style/fonts/font-awesome.css"><style>.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+background: #;
+////background: #007bff;
+  ////background: #;
+    color: #fff;
+    border-radius: 0;           /* კუთხეები სწორი */
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: none;           /* თუ არ გინდა ჩრდილი */
+}</style>
+ <style>.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+background: #;
+////background: #007bff;
+  ////background: #;
+    color: #fff;
+    border-radius: 0;           /* კუთხეები სწორი */
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: none;           /* თუ არ გინდა ჩრდილი */
+}</style>
+ <div class="HDrTTTL2z_fq123z">
+	<a href="/">WEE.GE</a>
+</div><div>
+	
+
+
+<div class="list-menu">	
+<div class="cZRghtmN">
+
+<div>
+	
+
+
+	
+<strong class="mwbst2">კეთლი იყოს თქვენი ფეხი!</strong>
+
+<div class="mwbst1">შესვლსათვის საჭიროა შეიყვანოთ ინფო</div>
+
+
+
+<form method="post" action="?" class="mwbst3">
+
+<div class="form-group">
+	<input type="text" placeholder="მომხმარებლის სახელი" name="nick" maxlength="32">
+</div>
+
+
+<div class="form-group">
+	<input type="password" placeholder="მომხმარებლის პაროლი" name="pass" maxlength="32">
+</div>
+
+
+<div>
+<button type="submit" name="submit" value="submit">შესვლა</button>
+</div>
+
+
+</form> 
+
+
+<style>.HmRGstrDzZCEflex {
+//margin-top:30px;
+display:flex;
+padding:10px;
+width:100%;
+flex-wrap:nowrap;
+justify-content: center;
+column-gap: 8px;
+}
+
+.HmRGstrDzZCEflex div a svg {
+height:30px;
+width:30px;
+}
+  .ltr-16raj3d {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    font-family: Inter, system-ui, -apple-system, system-ui, "Segoe UI", ".SFNSText-Regular", Roboto, Helvetica, "sans-serif";
+    min-width: 64px;
+    color: rgb(38, 130, 213);
+    width: 100%;
+    text-transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 700;
+    height: 48px;
+    outline: 0px;
+    margin: 0px;
+    text-decoration: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(38, 130, 213, 0.5);
+    border-image: initial;
+    padding: 11px 16px;
+    border-radius: 24px !important;
+}
+  .typoSigInSocialite {
+    color: #A4AFBE;
+    width: 100%;
+    margin: 16px 0px 16px 0px !important;
+    display: flex
+;
+    font-size: 0.9375rem;
+    align-items: center;
+    justify-content: center;
+}p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+  .typoSigInSocialite::before {
+    flex: 1;
+    content: '';
+    border-top: 1px solid #A4AFBE;
+    margin-right: 16px;
+}
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+.typoSigInSocialite::after {
+    flex: 1;
+    content: '';
+    border-top: 1px solid #A4AFBE;
+    margin-left: 16px;
+}
+<style>
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+  
+  
+</style>
+<br>
+  <div class="MuiFormControl-root MuiFormControl-marginDense MuiFormControl-fullWidth ltr-47xwek" data-testid="fieldRegister"><a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-fullWidth ltr-16raj3d" tabindex="0" type="button" role="link" data-testid="buttonRegister" href="/registration.php"> რეგისტრაცია<span class="MuiTouchRipple-root ltr-w0pj6f"></span></a></div>
+  
+
+
+<p class="typoSigInSocialite" name="social_login_typo" testid="field social_login_typo"><span class="MuiBox-root ltr-1kxrhf3">ან შედით სისტემაში გამოყენებით</span></p>
+
+
+<div class="HmRGstrDzZCEflex">
+	
+	
+	<div><a href="#"><svg height="512" viewBox="0 0 152 152" width="512" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g id="_01.facebook" data-name="01.facebook"><circle id="background" cx="76" cy="76" fill="#334c8c" r="76"></circle><path id="icon" d="m95.26 68.81-1.26 10.58a2 2 0 0 1 -2 1.78h-11v31.4a1.42 1.42 0 0 1 -1.4 1.43h-11.21a1.42 1.42 0 0 1 -1.4-1.44l.06-31.39h-8.33a2 2 0 0 1 -2-2v-10.58a2 2 0 0 1 2-2h8.28v-10.26c0-11.87 7.06-18.33 17.4-18.33h8.47a2 2 0 0 1 2 2v8.91a2 2 0 0 1 -2 2h-5.19c-5.62.09-6.68 2.78-6.68 6.8v8.85h12.31a2 2 0 0 1 1.95 2.25z" fill="#fff"></path></g></g></svg> </a></div>
+	
+	
+	<div> <a href="#"><svg height="512" viewBox="0 0 152 152" width="512" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g id="_10.linkedin" data-name="10.linkedin"><circle id="background" cx="76" cy="76" fill="#0b69c7" r="76"></circle><g id="icon" fill="#fff"><path d="m59 48.37a10.38 10.38 0 1 1 -10.37-10.37 10.38 10.38 0 0 1 10.37 10.37z"></path><rect height="50.93" rx="2.57" width="16.06" x="40.6" y="63.07"></rect><path d="m113.75 89.47v22.17a2.36 2.36 0 0 1 -2.36 2.36h-11.72a2.36 2.36 0 0 1 -2.36-2.36v-21.48c0-3.21.93-14-8.38-14-7.22 0-8.69 7.42-9 10.75v24.78a2.36 2.36 0 0 1 -2.34 2.31h-11.34a2.35 2.35 0 0 1 -2.36-2.36v-46.2a2.36 2.36 0 0 1 2.36-2.37h11.34a2.37 2.37 0 0 1 2.41 2.37v4c2.68-4 6.66-7.12 15.13-7.12 18.73-.01 18.62 17.52 18.62 27.15z"></path></g></g></g></svg></a></div>
+	
+	
+	<div><a href="#"><svg height="512" viewBox="0 0 152 152" width="512" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g id="_19.vk" data-name="19.vk"><circle id="background" cx="76" cy="76" fill="#4065d6" r="76"></circle><path id="icon" d="m111.05 97.72c-1.78.25-10.43 0-10.88 0a8.51 8.51 0 0 1 -6-2.39c-1.83-1.76-3.48-3.7-5.23-5.53a15.73 15.73 0 0 0 -1.71-1.55c-1.43-1.09-2.84-.84-3.51.84a31.9 31.9 0 0 0 -1.08 5.57 3 3 0 0 1 -3.11 2.88c-1.18.06-2.36.09-3.53.06a27 27 0 0 1 -12.23-3 33.45 33.45 0 0 1 -10.45-9.14 110.55 110.55 0 0 1 -11.58-19c-.17-.34-3.54-7.51-3.62-7.84a2 2 0 0 1 .93-2.6c.6-.23 11.71 0 11.89 0a3.88 3.88 0 0 1 3.73 2.69 58 58 0 0 0 8.33 14.58 7.8 7.8 0 0 0 1.69 1.55 1.28 1.28 0 0 0 2.14-.65 18.29 18.29 0 0 0 .77-4.45c.06-3 0-5-.17-8a3.89 3.89 0 0 0 -3.61-4.11c-.88-.15-1-.87-.39-1.59 1.17-1.49 2.79-1.73 4.55-1.82 2.66-.15 5.33 0 8 0h.58a17.15 17.15 0 0 1 3.49.35 3.18 3.18 0 0 1 2.53 2.84 11.73 11.73 0 0 1 .18 2.29c-.07 3.27-.23 6.54-.27 9.82a17.84 17.84 0 0 0 .35 3.86c.39 1.74 1.58 2.18 2.8.91a44 44 0 0 0 4.17-5.22 52.08 52.08 0 0 0 5.54-10.75c.77-1.94 1.36-2.37 3.45-2.37h11.79a7 7 0 0 1 2.08.28 1.8 1.8 0 0 1 1.24 2.32 19.55 19.55 0 0 1 -3.48 6.9c-2.4 3.39-4.92 6.7-7.38 10a12.72 12.72 0 0 0 -.85 1.35c-.92 1.66-.85 2.6.48 4 2.14 2.2 4.43 4.27 6.49 6.53a38.34 38.34 0 0 1 4.1 5.31c1.52 2.44.59 4.68-2.22 5.08z" fill="#fff"></path></g></g></svg></a></div>
+	
+	<div><a href="#"><svg height="512" viewBox="0 0 152 152" width="512" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g id="_75.discord" data-name="75.discord"><circle id="background" cx="76" cy="76" fill="#5046af" r="76"></circle><g id="icon" fill="#fff"><path d="m49.34 105.12h45.15l-2.16-7 5.16 4.43 4.73 4.23 8.61 7.2v-68.14a8.4 8.4 0 0 0 -8.38-7.84h-53.1a8.08 8.08 0 0 0 -8.18 7.84v51.44a7.92 7.92 0 0 0 8.17 7.84zm33.4-49.12h-.11zm-24.17 4a19.59 19.59 0 0 1 11.19-4l.43.43c-7.1 1.69-10.32 4.87-10.32 4.87s.86-.42 2.36-1.07a36.15 36.15 0 0 1 29.69 1.27s-3.23-3-9.89-4.87l.59-.58a19.48 19.48 0 0 1 11 4 48.9 48.9 0 0 1 5.84 22.23c-.18-.28-3.61 5.27-12.46 5.46 0 0-1.49-1.7-2.56-3.17 5.17-1.48 7.1-4.45 7.1-4.45a47.71 47.71 0 0 1 -4.5 2.34 30.06 30.06 0 0 1 -5.78 1.69c-9.14 1.48-14.26-1-19.11-3l-1.65-.85s1.92 3 6.88 4.45c-1.28 1.53-2.57 3.25-2.57 3.25-8.82-.21-12-5.72-12-5.72a49 49 0 0 1 5.76-22.28z"></path><path d="m83.31 78.44a4.24 4.24 0 0 0 0-8.47 4.23 4.23 0 0 0 0 8.46z"></path><path d="m68.69 78.44a4.24 4.24 0 0 0 0-8.47 4.23 4.23 0 0 0 0 8.46z"></path></g></g></g></svg></a></div>
+	
+	</div>
+
+
+
+
+</div>
+
+
+<style>
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.google-btn, .fb-btn {
+  display: block;
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+.google-btn {
+  background: #db4437;
+}
+.fb-btn {
+  background: #4267B2;
+}
+</style>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a00492671ca68e61',t:'MTc3OTU0NDY2OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></div><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://pagead2.googlesyndication.com/pagead/html/r20260520/r20190131/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd"><html xmlns="http://www.w3.org/1999/xhtml" class="ui-mobile"><head><base href="https://m.beneluxxx.com/">
+    
+    <title></title>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-cache">    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />-->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+
+    <link rel="stylesheet" href="/css/mobile/grid.css?v=252032026">
+
+    <script type="text/javascript" src="/js/mobile/external/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).bind("mobileinit", function(){
+            $.mobile.pushStateEnabled = true;
+        });
+    </script>
+
+    <!--        <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>-->
+    <!--        <script type="text/javascript" src="/js/mobile/default/underscore.js"></script>-->
+    <script type="text/javascript" src="/js/mobile/external/jquery.mobile-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/js/mobile/default/define.js"></script>
+    <script type="text/javascript" src="/js/mobile/default/escorts.js"></script>
+    <script type="text/javascript" src="/js/mobile/default/index.js"></script>
+
+    <script type="text/javascript" src="/js/mobile/external/jquery.form.js"></script>
+    <script src="/js/mobile/plugins/validate/jquery.validate.min.js"></script>
+    <!--        <script type="text/javascript" src="/js/mobile/plugins/jquery.mobile.lazyloader.min.js"></script>-->
+
+    <script>
+        $(document).on("pageshow", function (event) {
+
+            var items = '',
+                ul = $(".mainMenu:empty");
+
+            for (var i = 0; i < menu.length; i++) {
+                items += '<li><a rel="external" href="' + menu[i].url + '">' + menu[i].title + '</a></li>';
+            }
+
+            ul.append(items);
+            ul.listview('refresh');
+
+//                $("img.lazyload").lazyload({
+//                    effect : "fadeIn"
+//                });
+
+        });
+
+        $( "#panel-menu" ).trigger( "updatelayout" );
+
+
+        var menu = [
+                            { title: 'Se connecter', url: '/private/signin' },
+                        { title: 'Nouveau Escortes', url: '/escorts?sort=newest' },
+            { title: 'Tournées de Ville', url: '/escorts/citytours' },
+            { title: 'Évaluations', url: '/evaluations' },
+            { title: 'Videos', url: '/videos-list' },
+            { title: 'Filtre', url: '/search' },
+            { title: 'Changer de vue classique', url: 'http://www.beneluxxx.com/?full_version=1' },
+          { title: 'Derniers Commentaires', url: '/comments' },
+        ];
+
+    </script>
+
+        </head>
+<body class="ui-mobile-viewport ui-overlay-a" style="">
+<!-- == Layout INDEX == -->
+<div class="overlay"></div>
+
+<div id="wrap" data-role="page" data-url="wrap" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 851px;">
+
+
+    <!-- This is the navigation panel that opens to show the menu -->
+    <div data-role="panel" id="panel-menu" data-position="left" data-display="overlay" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-panel-closed ui-body-inherit ui-panel-animate">
+        <div class="ui-panel-inner">
+            <!-- This UL is the menu, where the items will be added -->
+            <!-- Make sure you don't add any <li> or any other content inside it! -->
+            <ul data-role="listview" class="mainMenu ui-listview"><li class="ui-first-child"><a rel="external" href="/private/signin" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Se connecter</a></li><li><a rel="external" href="/escorts?sort=newest" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Nouveau Escortes</a></li><li><a rel="external" href="/escorts/citytours" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Tournées de Ville</a></li><li><a rel="external" href="/evaluations" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Évaluations</a></li><li><a rel="external" href="/videos-list" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Videos</a></li><li><a rel="external" href="/search" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Filtre</a></li><li><a rel="external" href="http://www.beneluxxx.com/?full_version=1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Changer de vue classique</a></li><li class="ui-last-child"><a rel="external" href="/comments" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Derniers Commentaires</a></li></ul>
+        </div>
+        <a class="close-left-panel ui-link" data-rel="close" href="#panel-menu"></a>
+    </div>
+    <!-- /panel -->
+
+    <div id="header" class="h65 ui-header ui-bar-inherit" data-role="header" role="banner">
+        <ul class="list-area">
+            <li class="to-right" style="width: 54px;">
+                <a href="#panel-menu" data-inline="true" class="ui-link">
+                    <img src="/img/mobile/menu-bar.png">
+                </a>
+            </li>
+            <li class="center-left xmas" style="width: auto;">
+                <a rel="external" href="/" class="ui-link">
+                    <img src="/img/mobile/logo.png">
+                </a>
+            </li>
+           <!--  <li class="center-left" style="width: 100px;">
+                <a rel="external" href="/">
+                    <img src="/img/mobile/icons/login.png" />
+                </a>
+            </li> -->
+            <!--<li class="to-left" style="width: 77px;" >
+                
+                                                    <a rel="external" href="/en//" class="flag-en"></a>
+                                    <a rel="external" href="/" class="flag-fr"></a>
+                                    <a rel="external" href="/nl//" class="flag-nl"></a>
+                            </li>-->
+        </ul>
+        <!--				<div class="i h50">-->
+        <!---->
+        <!--                    -->
+        <!---->
+        <!--                    <ul class="flags alr logo-layout">-->
+        <!--                        <li class="logo">-->
+        <!--                            <a href="--><!--">-->
+        <!--                                <img src="/img/mobile/logo.png" />-->
+        <!--                            </a>-->
+        <!--                        </li>-->
+        <!--                        <li class="lang">-->
+        <!--                            -->        <!--                            -->        <!--                                <a href="--><!--" class="flag---><!--"></a>-->
+        <!--                            -->        <!--                        </li>-->
+        <!--                    </ul>-->
+        <!--	-->        <!--				</div>-->
+    </div>
+
+    <div id="page" data-role="content" class="index-page-padding simple-list ui-content" role="main">
+        <div id="page_wrapper" class="page_wrapper">
+            <!-- START Cities block -->
+<style type="text/css">
+    span.ui-btn-inner { padding: 0.5em 3px; }
+</style>
+
+
+<!-- END Cities block -->
+
+
+
+<div id="pageTitle">
+    <h1>Choisissez une ville</h1>
+
+    <div class="countries-block">
+                    <p class="countries-list active-country" data-id="20">
+                <span>Belgique</span>
+                <i class="active-icon" style="opacity: 1;"></i>
+            </p>
+                    <p class="countries-list" data-id="119">
+                <span>Luxembourg</span>
+                <i class="active-icon" style="opacity: 0;"></i>
+            </p>
+                    <p class="countries-list" data-id="145">
+                <span>Hollande</span>
+                <i class="active-icon" style="opacity: 0;"></i>
+            </p>
+            </div>
+    <!--	<p> --><!--</p>-->
+    <!--
+	<a href="http://www.6annonce.com/?full_version=1" class="classic_btn"><span>Changer de vue classique</span></a>
+	-->
+</div>
+
+<div id="cities-list-wrapper">
+    <div class="cities-list-loader"></div>
+    <div class="cities-list">
+
+        <table class="cities-list">
+                    
+            
+                            <tbody><tr class="ui-grid-b">
+            
+                    <td class="ui-block-a">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__anvers" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Anvers <span>(2)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-b">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__bruges" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Bruges <span>(1)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-c">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__bruxelles" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Bruxelles <span>(6)</span>
+                        </a>
+                    </td>
+
+                            </tr>
+            
+                                
+            
+                            <tr class="ui-grid-b">
+            
+                    <td class="ui-block-a">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__bruxelles-centre" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Bruxelles Centre <span>(4)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-b">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__courtrai" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Courtrai <span>(2)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-c">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__elsene" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Elsene <span>(4)</span>
+                        </a>
+                    </td>
+
+                            </tr>
+            
+                                
+            
+                            <tr class="ui-grid-b">
+            
+                    <td class="ui-block-a">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__gand" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Gand <span>(2)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-b">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__ixelles" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Ixelles <span>(1)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-c">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__namur" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Namur <span>(1)</span>
+                        </a>
+                    </td>
+
+                            </tr>
+            
+                                
+            
+                            <tr class="ui-grid-b">
+            
+                    <td class="ui-block-a">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__uccle" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Uccle <span>(1)</span>
+                        </a>
+                    </td>
+
+            
+                                
+            
+            
+                    <td class="ui-block-b">
+                        <a rel="external" style="margin: 0; border-radius: 0;" data-role="button" href="/escorts/city__waterloo" class="ui-link ui-btn ui-shadow ui-corner-all" role="button">
+                            Waterloo <span>(2)</span>
+                        </a>
+                    </td>
+
+            
+                        </tr></tbody></table>
+</div>
+</div>
+
+
+    <!--<a data-role="button" href="--><!--" class="more">--><!--...</a>-->
+<!--    <a href="--><!--" class="more"></a> ORIGINAL -->
+
+        </div>
+
+        <div class="toClear"></div>
+
+            <div rel="search" class="data-search">
+            <div class="ui-input-text ui-body-inherit ui-corner-all ui-mini ui-shadow-inset"><input type="text" data-mini="true" name="m-search" id="m-search" class="m-search" placeholder="Recherche"></div>
+
+            <div class="sugg-area">
+                <span class="close-search">X</span>
+                <ul id="m-suggestions" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
+            </div>
+
+            <input type="hidden" id="ts_type" name="ts_type" value="">
+            <input type="hidden" id="ts_slug" name="ts_slug" value="">
+
+            <div class="right-icon"></div>
+        </div>
+    
+        <div class="toClear"></div>
+    </div>
+
+    <div id="footer_conteiner" data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
+                <div id="footer" style="text-align: center;">
+            © 2026 <a href="/" class="ui-link">beneluxxx.com</a><br>
+<a href="/page/user-terms-and-conditions" onclick="return Cubix.ShowTerms('/page/user-terms-and-conditions')" class="ui-link">User Terms and Conditions</a>,
+<a href="/page/advertiser-terms-and-conditions" onclick="return Cubix.ShowTerms('/page/advertiser-terms-and-conditions')" class="ui-link">Advertiser Terms and conditions</a>,
+<a href="/page/privacy-policy" onclick="return Cubix.ShowTerms('/page/privacy-policy')" class="ui-link">Privacy Policy</a>,
+<a href="/page/cookie-policy" onclick="return Cubix.ShowTerms('/page/cookie-policy')" class="ui-link">Déclaration de Cookies</a>,
+Webologic Solutions Ltd, Central Business Centre 56, Santa Venera, MT SVR 1833, Malte.Contactez-nous à l'adresse tom@beneluxxx.com. Pour vous inscrire sur le site vous devez avoir plus de 18 ans le jour de l’inscription.<div class="images-credit-cards d-flex gap-10" style="margin-top: 10px">
+                <img class="vis-mas-logo" src="/images/371249.svg" height="20px">
+                <img class="vis-mas-logo" src="/images/371614.svg" height="20px">
+                <img class="vis-mas-logo" src="/images/209595.svg" height="20px">
+                <img class="vis-mas-logo" src="/images/183977.svg" height="20px"></div>		</div>
+    </div>
+
+</div>
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-26272467-1');
+</script>
+
+
+
+
+<script>
+    if(typeof MooUpload !== 'undefined'){
+        MooUpload.prototype.options.texts = {
+            error      : 'Error ',
+            file       : 'File',
+            filesize   : 'Filesize',
+            filetype   : 'Filetype',
+            nohtml5    : 'Not support HTML5 file upload!',
+            noflash    : 'Please install Flash 8.5 or highter version (Have you disabled FlashBlock or AdBlock?)',
+            maxselect  : 'You can only select a maximum of {maxfiles} files',
+            sel        : 'Sel.',
+            selectfile : 'Ajouter le fichier',
+            status     : 'Status',
+            startupload: 'commencer le téléchargement',
+            delete     : 'Delete',
+            clearList  : 'Effacer la liste',
+            uploaded   : 'Converting please wait',
+            progress   : 'File Progress'
+        };
+    }
+</script>
+
+<script type="text/javascript">(function(d){var a=d.createElement('script');a.src='https://www.ixspublic.com/deliver.php?websiteID=9&ref='+escape(d.referrer)+'&rand='+Math.floor(Math.random()*99999999999);d.getElementsByTagName("body")[0].appendChild(a);})(document);</script><script src="https://www.ixspublic.com/deliver.php?websiteID=9&amp;ref=&amp;rand=73178415132"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        MCubix.Functions.List.getCities();
+    });
+</script>
+
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div><div class="ui-panel-dismiss"></div></body></html>

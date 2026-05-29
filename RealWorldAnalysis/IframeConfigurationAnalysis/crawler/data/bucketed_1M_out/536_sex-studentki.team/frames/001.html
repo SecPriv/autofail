@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Party Cookie Iframe</title>
+</head>
+<body>
+<script>
+    var storageKey = "_shrdstrg";
+
+    // Функция для получения данных из localStorage
+    function getStorage() {
+        try {
+            return JSON.parse(localStorage.getItem(storageKey) || "{}");
+        } catch (error) {
+            return {};
+        }
+    }
+
+    // Функция для сохранения данных в localStorage
+    function setStorage(data) {
+        localStorage.setItem(storageKey, JSON.stringify(data));
+    }
+
+    // Обработчик сообщений от родительского окна
+    window.addEventListener("message", function (event) {
+        var action = event.data.action;
+        var key = event.data.key;
+        var value = event.data.value;
+        var messageId = event.data.messageId;
+
+        switch (action) {
+            case "SET":
+                var data = getStorage();
+                data[key] = value;
+                setStorage(data);
+                window.parent.postMessage({ key: key, messageId: messageId, value: null }, "*");
+                break;
+            case "GET":
+                var result = getStorage()[key] || null;
+                window.parent.postMessage({ key: key, messageId: messageId, value: result }, "*");
+                break;
+            case "REMOVE":
+                var data = getStorage();
+                delete data[key];
+                setStorage(data);
+                window.parent.postMessage({ key: key, messageId: messageId, value: null }, "*");
+                break;
+            case "CLEAR":
+                localStorage.setItem(storageKey, "{}");
+                window.parent.postMessage({ key: key, messageId: messageId, value: null }, "*");
+                break;
+        }
+    });
+</script>
+
+
+</body></html>

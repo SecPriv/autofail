@@ -1,0 +1,76 @@
+<html><head><script>
+    function a1URLchange(im){
+        if(im=="" || typeof im=="undefined"){return "";}
+        if(im.indexOf("zstatic.inven.co.kr") != im.indexOf("ads.inven.co.kr")){
+            if(im.indexOf('://') != -1){
+                im = im.substring( im.indexOf('://')+1, im.length );
+            }
+            im = im;
+        }else{
+            im = "//zstatic.inven.co.kr/RealMedia/ads/Creatives/"+"INVEN/260520_Outerplane_Mmain/"+im;
+        }
+        return im;
+    }
+
+    function getParaByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec("?ibt=da1490&a1_ppo1=15&a1_ppo2=20");
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    var refreshCheck = true;
+    var curPlayCount = 0;
+    var maxPlaytime = getParaByName("a1_ppo1");
+    (maxPlaytime=="" ? maxPlaytime=15 : maxPlaytime);
+    var replayCount = getParaByName("a1_ppo2");
+    (replayCount=="" ? replayCount=9 : replayCount);
+
+    var clickURL = "//zicf.inven.co.kr/RealMedia/ads/click_lx.ads/minven/webzine/L14/1477377604/x51/INVEN/260520_Outerplane_Mmain/260520_Outerplane_Mmain_1.html/67494a7755576f526651554142587a71?a1_ve=cl";
+    var bgcolorcode = "#060002";
+    var imageFileURL = a1URLchange("https://ads.inven.co.kr/ad/202605/0518_Outerplane_640x200.jpg");
+
+    var setPlayTime = "";
+    if(!isNaN(parseInt(setPlayTime))){
+        maxPlaytime = setPlayTime;
+    }
+
+    var ibt = getParaByName("ibt");
+
+var a1el = '';
+a1el += '<a href="';
+a1el += clickURL;
+a1el += '" target="_blank"><img src="';
+a1el += imageFileURL;
+a1el += '" border="0" style="width:320px;height:100px;"/></a>';
+
+document.domain='inven.co.kr';
+document.write(a1el);
+document.close();
+
+if (bgcolorcode!='') window.parent.postMessage({ slot: 'setMobileAdibtBgColor', bgcolorcode: bgcolorcode, ibt: ibt}, "*");
+
+function nis_reload() {
+__replay();
+}
+
+function __replay() {
+if (refreshCheck) {
+    curPlayCount++;
+    a1Refresh();
+}
+}
+
+function a1Refresh() {
+if(curPlayCount >= replayCount) {
+    document.location.reload();
+}
+}
+
+if (maxPlaytime>0 && refreshCheck){
+setTimeout(function(){
+    curPlayCount = replayCount;
+    a1Refresh();
+}, maxPlaytime * replayCount * 1000);
+}
+</script></head><body marginwidth="0" marginheight="0"><a href="//zicf.inven.co.kr/RealMedia/ads/click_lx.ads/minven/webzine/L14/1477377604/x51/INVEN/260520_Outerplane_Mmain/260520_Outerplane_Mmain_1.html/67494a7755576f526651554142587a71?a1_ve=cl" target="_blank"><img src="//ads.inven.co.kr/ad/202605/0518_Outerplane_640x200.jpg" border="0" style="width:320px;height:100px;"></a></body></html>

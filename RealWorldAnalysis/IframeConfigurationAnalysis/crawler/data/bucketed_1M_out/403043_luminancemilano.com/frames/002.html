@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Luminance Milano | Made for the woman you’ve become</title>
+    <script src="https://luminancemilano.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+analytics.subscribe('cart_viewed', async (event) => { });(function() {  function loadPixelProcessor(siteId) {    if(typeof window.HeatmapProcessor !== 'undefined') {      return false;    }    return new Promise((resolve, reject) => {      const script = document.createElement('script');      script.src ='https://dashboard.heatmap.com/heatmap-pixel.js';      script.async = true;      script.onload = resolve;      script.onerror = reject;      document.head.appendChild(script);    });  }  async function initializePixel(siteId) {    try {      const TRACKED_EVENTS = [ 'product_added_to_cart', 'checkout_started', 'checkout_completed' ];      TRACKED_EVENTS.forEach(eventName => {        analytics.subscribe(eventName, async (event) => {          await loadPixelProcessor(4418);          if (window.HeatmapProcessor) {            window.HeatmapProcessor.handleShopifyEvent(siteId, event, eventName);          }        });      });    } catch (error) { }  }  initializePixel(4418);})();
+});})(self.webPixelsManager.createShopifyExtend('248250711', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

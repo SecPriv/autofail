@@ -1,0 +1,710 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg1:#283B46;
+  --bg2:#1E2731;
+
+  --gold1:#ffd84d;
+  --gold2:#ffbf00;
+  --goldOff:#4a3c0c;
+
+  --red1:#ff5f7f;
+  --red2:#ff2f57;
+  --red3:#d9123d;
+  --redOff:#4a1b25;
+
+  --textMain:#ffffff;
+  --textSoft:rgba(255,255,255,.76);
+
+  --btnText:#342400;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html, body{
+  margin:0;
+  padding:0;
+  background:transparent;
+  font-family:"Google Sans Flex", sans-serif;
+  overflow-x:hidden;
+  border-radius:10px;
+}
+
+body{
+  padding:0;
+}
+
+.widget{
+  width:100%;
+  position:relative;
+  padding:10px;
+  overflow:hidden;
+  background:
+    radial-gradient(560px 170px at 78% 50%, rgba(255,216,77,.10), transparent 55%),
+    radial-gradient(360px 120px at 18% 18%, rgba(255,255,255,.04), transparent 60%),
+    linear-gradient(135deg, #314652 0%, var(--bg1) 25%, var(--bg2) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 8px 18px rgba(0,0,0,.14);
+}
+
+.widget::before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+  pointer-events:none;
+  z-index:0;
+}
+
+.widget::after{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:20px;
+  background:linear-gradient(145deg, #3b4e59, #18222c);
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,.04),
+    inset 0 -3px 8px rgba(0,0,0,.45);
+  pointer-events:none;
+  z-index:1;
+}
+
+.bulbs{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+}
+
+.bulb{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  transform:translate(-50%, -50%);
+  transition:all .18s ease;
+  background:#111;
+  box-shadow:
+    inset 0 2px 3px rgba(255,255,255,.15),
+    inset 0 -2px 4px rgba(0,0,0,.6),
+    0 0 0 2px rgba(0,0,0,.35);
+}
+
+.gold.on{
+  background:radial-gradient(circle at 35% 35%, #fff6b0 0%, var(--gold1) 35%, var(--gold2) 65%, #8c6b00 100%);
+  box-shadow:
+    0 0 0 2px rgba(255,216,77,.20),
+    0 0 5px rgba(255,216,77,.8),
+    0 0 10px rgba(255,216,77,.6),
+    0 0 15px rgba(255,216,77,.24);
+  opacity:1;
+}
+
+.gold.off{
+  background:radial-gradient(circle at 40% 40%, #6b5715, var(--goldOff));
+  opacity:.42;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.06),
+    0 0 0 1px rgba(0,0,0,.28);
+}
+
+.red.on{
+  background:radial-gradient(circle at 35% 35%, #ffe1e7 0%, var(--red1) 25%, var(--red2) 58%, var(--red3) 82%, #6f0e23 100%);
+  box-shadow:
+    0 0 0 2px rgba(255,95,127,.28),
+    0 0 8px rgba(255,95,127,.98),
+    0 0 16px rgba(255,47,87,.82),
+    0 0 24px rgba(255,47,87,.44),
+    0 0 34px rgba(255,47,87,.22);
+  opacity:1;
+}
+
+.red.off{
+  background:radial-gradient(circle at 40% 40%, #5a1c28, var(--redOff));
+  opacity:.42;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.06),
+    0 0 0 1px rgba(0,0,0,.28);
+}
+
+.inner{
+  position:relative;
+  z-index:3;
+  width:100%;
+  min-height:120px;
+  border-radius:16px;
+  display:grid;
+  grid-template-columns:minmax(190px, 270px) minmax(0, 1fr);
+  gap:10px;
+  align-items:center;
+  padding:10px 32px;
+  background:
+    radial-gradient(420px 110px at 80% 50%, rgba(255,216,77,.07), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.left{
+  order:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  min-width:0;
+}
+
+.right{
+  order:2;
+  min-width:0;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.logo-wrap{
+  margin:0 0 10px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  width:100%;
+}
+
+.logo-img{
+  display:block;
+  max-width:150px;
+  width:auto;
+  max-height:40px;
+  object-fit:contain;
+  filter:drop-shadow(0 3px 10px rgba(0,0,0,.16));
+}
+
+.btn-play{
+  border:0;
+  border-radius:999px;
+  padding:8px 14px;
+  min-width:126px;
+  max-width:100%;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.04em;
+  color:var(--btnText);
+  background:linear-gradient(180deg, var(--gold1), var(--gold2));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    0 7px 14px rgba(255,191,0,.14),
+    0 2px 0 rgba(120,82,0,.28);
+  transition:transform .15s ease, filter .15s ease;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.btn-play:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+}
+
+.btn-play:active{
+  transform:translateY(1px);
+}
+
+.value-box{
+  position:relative;
+  width:100%;
+  border-radius:14px;
+  padding:10px 12px 8px;
+  background:
+    radial-gradient(260px 84px at 50% 35%, rgba(255,216,77,.12), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+  border:1px solid rgba(255,255,255,.05);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 6px 14px rgba(0,0,0,.12);
+}
+
+.amount-row{
+  width:100%;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:end;
+  gap:12px;
+}
+
+.value-label{
+  margin:0;
+  font-family:"Bebas Neue", sans-serif;
+
+  /* slightly bigger */
+  font-size:clamp(20px, 2.8vw, 30px);
+
+  line-height:1;
+  font-weight:400;
+  letter-spacing:.06em;
+
+  /* stronger but still subtle */
+  color:rgba(255,255,255,.5);
+
+  text-shadow:
+    0 3px 8px rgba(0,0,0,.22);
+
+  white-space:nowrap;
+  align-self:center;
+}
+
+.amount-group{
+  display:flex;
+  align-items:baseline;
+  justify-content:flex-end;
+  gap:8px;
+  min-width:0;
+}
+
+.currency,
+.amount{
+  font-family:"Bebas Neue", sans-serif;
+  font-size:clamp(34px, 6vw, 66px);
+  line-height:.82;
+  font-weight:400;
+  letter-spacing:.03em;
+  text-shadow:
+    0 0 6px rgba(255,255,255,.08),
+    0 0 14px rgba(255,216,77,.10),
+    0 6px 18px rgba(0,0,0,.22);
+}
+
+.currency{
+  flex:0 0 auto;
+  color:var(--gold1);
+}
+
+.amount{
+  width:auto;
+  flex:0 1 auto;
+  text-align:right;
+  word-break:break-word;
+  color:var(--textMain);
+}
+
+.mobile-bottom-btn{
+  display:none;
+}
+
+@media (max-width:767px){
+  .widget{
+    padding:8px;
+  }
+
+  .widget::before{
+    inset:6px;
+    border-radius:14px;
+  }
+
+  .widget::after{
+    inset:3px;
+    border-radius:15px;
+  }
+
+  .inner{
+    min-height:unset;
+    grid-template-columns:1fr;
+    gap:6px;
+    padding:8px 8px 7px;
+  }
+
+  .left{
+    order:1;
+    align-items:center;
+    text-align:center;
+  }
+
+  .right{
+    order:2;
+    justify-content:center;
+  }
+
+  .logo-wrap{
+    justify-content:center;
+    margin:0 0 6px;
+  }
+
+  .logo-img{
+    max-width:138px;
+    max-height:40px;
+  }
+
+  .value-box{
+    padding:8px 10px 6px;
+    border-radius:12px;
+  }
+
+  .amount-row{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+
+.value-label{
+  text-align:center;
+  font-size:clamp(16px, 4.5vw, 22px);
+  color:rgba(255,255,255,.42);
+}
+
+  .amount-group{
+    justify-content:center;
+    gap:7px;
+  }
+
+  .currency,
+  .amount{
+    font-size:clamp(31px, 11vw, 50px);
+  }
+
+  .left .btn-play{
+    display:none;
+  }
+
+  .mobile-bottom-btn{
+    display:block;
+    width:100%;
+    margin-top:8px;
+  }
+
+  .mobile-bottom-btn .btn-play{
+    display:block;
+    width:100%;
+    margin-top:0;
+  }
+
+  .bulb{
+    width:7px;
+    height:7px;
+  }
+}
+
+@media (max-width:480px){
+  .currency,
+  .amount{
+    font-size:clamp(28px, 12vw, 44px);
+  }
+
+  .logo-img{
+    max-width:124px;
+  }
+
+  .bulb{
+    width:6px;
+    height:6px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="widget" id="widget">
+  <div class="bulbs" id="bulbs"><div class="bulb gold on" style="left: 8px; top: 8px;"></div><div class="bulb gold on" style="left: 8px; top: 186.219px;"></div><div class="bulb red off" style="left: 19.2333px; top: 8px;"></div><div class="bulb red off" style="left: 19.2333px; top: 186.219px;"></div><div class="bulb gold on" style="left: 30.4667px; top: 8px;"></div><div class="bulb gold on" style="left: 30.4667px; top: 186.219px;"></div><div class="bulb red off" style="left: 41.7px; top: 8px;"></div><div class="bulb red off" style="left: 41.7px; top: 186.219px;"></div><div class="bulb gold on" style="left: 52.9333px; top: 8px;"></div><div class="bulb gold on" style="left: 52.9333px; top: 186.219px;"></div><div class="bulb red off" style="left: 64.1667px; top: 8px;"></div><div class="bulb red off" style="left: 64.1667px; top: 186.219px;"></div><div class="bulb gold on" style="left: 75.4px; top: 8px;"></div><div class="bulb gold on" style="left: 75.4px; top: 186.219px;"></div><div class="bulb red off" style="left: 86.6333px; top: 8px;"></div><div class="bulb red off" style="left: 86.6333px; top: 186.219px;"></div><div class="bulb gold on" style="left: 97.8667px; top: 8px;"></div><div class="bulb gold on" style="left: 97.8667px; top: 186.219px;"></div><div class="bulb red off" style="left: 109.1px; top: 8px;"></div><div class="bulb red off" style="left: 109.1px; top: 186.219px;"></div><div class="bulb gold on" style="left: 120.333px; top: 8px;"></div><div class="bulb gold on" style="left: 120.333px; top: 186.219px;"></div><div class="bulb red off" style="left: 131.567px; top: 8px;"></div><div class="bulb red off" style="left: 131.567px; top: 186.219px;"></div><div class="bulb gold on" style="left: 142.8px; top: 8px;"></div><div class="bulb gold on" style="left: 142.8px; top: 186.219px;"></div><div class="bulb red off" style="left: 154.033px; top: 8px;"></div><div class="bulb red off" style="left: 154.033px; top: 186.219px;"></div><div class="bulb gold on" style="left: 165.267px; top: 8px;"></div><div class="bulb gold on" style="left: 165.267px; top: 186.219px;"></div><div class="bulb red off" style="left: 176.5px; top: 8px;"></div><div class="bulb red off" style="left: 176.5px; top: 186.219px;"></div><div class="bulb gold on" style="left: 187.733px; top: 8px;"></div><div class="bulb gold on" style="left: 187.733px; top: 186.219px;"></div><div class="bulb red off" style="left: 198.967px; top: 8px;"></div><div class="bulb red off" style="left: 198.967px; top: 186.219px;"></div><div class="bulb gold on" style="left: 210.2px; top: 8px;"></div><div class="bulb gold on" style="left: 210.2px; top: 186.219px;"></div><div class="bulb red off" style="left: 221.433px; top: 8px;"></div><div class="bulb red off" style="left: 221.433px; top: 186.219px;"></div><div class="bulb gold on" style="left: 232.667px; top: 8px;"></div><div class="bulb gold on" style="left: 232.667px; top: 186.219px;"></div><div class="bulb red off" style="left: 243.9px; top: 8px;"></div><div class="bulb red off" style="left: 243.9px; top: 186.219px;"></div><div class="bulb gold on" style="left: 255.133px; top: 8px;"></div><div class="bulb gold on" style="left: 255.133px; top: 186.219px;"></div><div class="bulb red off" style="left: 266.367px; top: 8px;"></div><div class="bulb red off" style="left: 266.367px; top: 186.219px;"></div><div class="bulb gold on" style="left: 277.6px; top: 8px;"></div><div class="bulb gold on" style="left: 277.6px; top: 186.219px;"></div><div class="bulb red off" style="left: 288.833px; top: 8px;"></div><div class="bulb red off" style="left: 288.833px; top: 186.219px;"></div><div class="bulb gold on" style="left: 300.067px; top: 8px;"></div><div class="bulb gold on" style="left: 300.067px; top: 186.219px;"></div><div class="bulb red off" style="left: 311.3px; top: 8px;"></div><div class="bulb red off" style="left: 311.3px; top: 186.219px;"></div><div class="bulb gold on" style="left: 322.533px; top: 8px;"></div><div class="bulb gold on" style="left: 322.533px; top: 186.219px;"></div><div class="bulb red off" style="left: 333.767px; top: 8px;"></div><div class="bulb red off" style="left: 333.767px; top: 186.219px;"></div><div class="bulb gold on" style="left: 345px; top: 8px;"></div><div class="bulb gold on" style="left: 345px; top: 186.219px;"></div><div class="bulb gold on" style="left: 8px; top: 19.1387px;"></div><div class="bulb gold on" style="left: 345px; top: 19.1387px;"></div><div class="bulb red off" style="left: 8px; top: 30.2773px;"></div><div class="bulb red off" style="left: 345px; top: 30.2773px;"></div><div class="bulb gold on" style="left: 8px; top: 41.416px;"></div><div class="bulb gold on" style="left: 345px; top: 41.416px;"></div><div class="bulb red off" style="left: 8px; top: 52.5547px;"></div><div class="bulb red off" style="left: 345px; top: 52.5547px;"></div><div class="bulb gold on" style="left: 8px; top: 63.6934px;"></div><div class="bulb gold on" style="left: 345px; top: 63.6934px;"></div><div class="bulb red off" style="left: 8px; top: 74.832px;"></div><div class="bulb red off" style="left: 345px; top: 74.832px;"></div><div class="bulb gold on" style="left: 8px; top: 85.9707px;"></div><div class="bulb gold on" style="left: 345px; top: 85.9707px;"></div><div class="bulb red off" style="left: 8px; top: 97.1094px;"></div><div class="bulb red off" style="left: 345px; top: 97.1094px;"></div><div class="bulb gold on" style="left: 8px; top: 108.248px;"></div><div class="bulb gold on" style="left: 345px; top: 108.248px;"></div><div class="bulb red off" style="left: 8px; top: 119.387px;"></div><div class="bulb red off" style="left: 345px; top: 119.387px;"></div><div class="bulb gold on" style="left: 8px; top: 130.525px;"></div><div class="bulb gold on" style="left: 345px; top: 130.525px;"></div><div class="bulb red off" style="left: 8px; top: 141.664px;"></div><div class="bulb red off" style="left: 345px; top: 141.664px;"></div><div class="bulb gold on" style="left: 8px; top: 152.803px;"></div><div class="bulb gold on" style="left: 345px; top: 152.803px;"></div><div class="bulb red off" style="left: 8px; top: 163.941px;"></div><div class="bulb red off" style="left: 345px; top: 163.941px;"></div><div class="bulb gold on" style="left: 8px; top: 175.08px;"></div><div class="bulb gold on" style="left: 345px; top: 175.08px;"></div></div>
+
+  <div class="inner" id="rooms">
+    <div class="left">
+      <div class="logo-wrap">
+        <img src="/images/logo.png" alt="Logo" class="logo-img">
+      </div>
+
+      <button class="btn-play open-room" data-type="daily" data-periode="1204-H1" type="button">
+        Beli Kupon      </button>
+    </div>
+
+    <div class="right">
+      <div style="width:100%;">
+        <div class="value-box">
+          <div class="amount-row">
+            <div class="value-label">TOTAL HADIAH</div>
+
+            <div class="amount-group">
+              <div class="currency">IDR</div>
+
+              <div class="amount jackpot" data-pool="92595600" id="amount">0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-bottom-btn">
+          <button class="btn-play open-room" data-type="daily" data-periode="1204-H1" type="button">
+            Beli Kupon          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  window.__HOME_TIMERS__ = window.__HOME_TIMERS__ || {
+    poolIntervals: [],
+    countdownIntervals: []
+  };
+
+  function clearHomeTimers(){
+    window.__HOME_TIMERS__.poolIntervals.forEach(function(id){
+      clearInterval(id);
+    });
+    window.__HOME_TIMERS__.poolIntervals = [];
+
+    window.__HOME_TIMERS__.countdownIntervals.forEach(function(id){
+      clearInterval(id);
+    });
+    window.__HOME_TIMERS__.countdownIntervals = [];
+  }
+
+  clearHomeTimers();
+
+  var bulbTimer = null;
+  var resizeTimer = null;
+  var poolFetchTimer = null;
+  var isFetchingPool = false;
+  var currentPoolValue = 0;
+  var refreshRateMs = 60000;
+  var amountEl = null;
+  var animationFrameId = null;
+
+  function formatNumber(n){
+    return Number(n || 0).toLocaleString("en-US");
+  }
+
+  function animateValue(el, from, to, durationMs){
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
+
+    var startTime = performance.now();
+
+    function step(now){
+      var p = Math.min((now - startTime) / durationMs, 1);
+      var v = Math.floor(from + (to - from) * p);
+      el.textContent = formatNumber(v);
+
+      if (p < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        animationFrameId = null;
+      }
+    }
+
+    animationFrameId = requestAnimationFrame(step);
+  }
+
+  function initFirstValue(){
+    amountEl = document.getElementById("amount");
+    if (!amountEl) return;
+
+    var target = parseInt(amountEl.getAttribute("data-pool") || "0", 10) || 0;
+    currentPoolValue = target;
+    animateValue(amountEl, 0, target, 1400);
+  }
+
+  function fetchTotalPool(){
+    if (isFetchingPool || !amountEl) return;
+
+    isFetchingPool = true;
+
+    fetch("/api.php?task=getTotalPool", {
+      method: "GET",
+      cache: "no-store"
+    })
+    .then(function(res){
+      return res.json();
+    })
+    .then(function(resp){
+      var code = Number(resp && resp.error && resp.error.code ? resp.error.code : 0);
+
+      if (code !== 200) {
+        throw new Error("getTotalPool failed");
+      }
+
+      var nextValue = parseInt(resp && resp.data && resp.data.total_pool ? resp.data.total_pool : 0, 10) || 0;
+
+      if (nextValue === currentPoolValue) return;
+
+      animateValue(amountEl, currentPoolValue, nextValue, 1200);
+      currentPoolValue = nextValue;
+      amountEl.setAttribute("data-pool", String(nextValue));
+
+      sendHeight();
+    })
+    .catch(function(err){
+      console.warn("Total pool update failed:", err);
+    })
+    .finally(function(){
+      isFetchingPool = false;
+    });
+  }
+
+  function startPoolUpdater(){
+    if (poolFetchTimer) {
+      clearInterval(poolFetchTimer);
+      poolFetchTimer = null;
+    }
+
+    fetchTotalPool();
+
+    poolFetchTimer = setInterval(function(){
+      fetchTotalPool();
+    }, refreshRateMs);
+
+    window.__HOME_TIMERS__.poolIntervals.push(poolFetchTimer);
+  }
+
+  function sendEnterRoom(type, periode){
+    try {
+      window.parent.postMessage(
+        {
+          source: "kupon-widget",
+          action: "enterRoom",
+          type: String(type),
+          periode: String(periode)
+        },
+        "*"
+      );
+    } catch (e) {
+      console.warn("postMessage failed:", e);
+    }
+  }
+
+  document.addEventListener("click", function(e){
+    var btn = e.target.closest(".open-room");
+    if (!btn || btn.disabled) return;
+
+    sendEnterRoom(
+      btn.getAttribute("data-type") || "",
+      btn.getAttribute("data-periode") || ""
+    );
+  });
+
+  function createBulbs(){
+    var box = document.getElementById("widget");
+    var frame = document.getElementById("bulbs");
+
+    frame.innerHTML = "";
+
+    if (bulbTimer) {
+      clearInterval(bulbTimer);
+      bulbTimer = null;
+    }
+
+    var rect = box.getBoundingClientRect();
+    var w = rect.width;
+    var h = rect.height;
+
+    var isSmall = window.innerWidth <= 480;
+    var isMedium = window.innerWidth <= 767;
+    var gap = isSmall ? 11 : (isMedium ? 13 : 15);
+    var pad = isSmall ? 8 : (isMedium ? 9 : 10);
+
+    var c1 = [];
+    var c2 = [];
+
+    function addBulb(x, y, group){
+      var b = document.createElement("div");
+      b.className = "bulb " + (group === 1 ? "gold" : "red");
+      b.style.left = x + "px";
+      b.style.top = y + "px";
+      frame.appendChild(b);
+
+      if (group === 1) c1.push(b);
+      else c2.push(b);
+    }
+
+    var cols = Math.max(8, Math.floor((w - pad * 2) / gap));
+    var rows = Math.max(4, Math.floor((h - pad * 2) / gap));
+
+    for (var i = 0; i <= cols; i++) {
+      var x = pad + i * (w - pad * 2) / cols;
+      addBulb(x, pad, i % 2 === 0 ? 1 : 2);
+      addBulb(x, h - pad, i % 2 === 0 ? 1 : 2);
+    }
+
+    for (var j = 1; j < rows; j++) {
+      var y = pad + j * (h - pad * 2) / rows;
+      addBulb(pad, y, j % 2 === 0 ? 2 : 1);
+      addBulb(w - pad, y, j % 2 === 0 ? 2 : 1);
+    }
+
+    var state = true;
+
+    function switchLights(){
+      c1.forEach(function(b){
+        b.classList.toggle("on", state);
+        b.classList.toggle("off", !state);
+      });
+
+      c2.forEach(function(b){
+        b.classList.toggle("on", !state);
+        b.classList.toggle("off", state);
+      });
+
+      state = !state;
+    }
+
+    switchLights();
+    bulbTimer = setInterval(switchLights, 420);
+    window.__HOME_TIMERS__.countdownIntervals.push(bulbTimer);
+  }
+
+  function sendHeight(){
+    var widget = document.getElementById("widget");
+    var height = widget ? widget.offsetHeight + 16 : document.body.scrollHeight;
+
+    try {
+      window.parent.postMessage(
+        {
+          source: "kupon-widget",
+          action: "resize",
+          height: height
+        },
+        "*"
+      );
+    } catch (e) {
+      console.warn("resize postMessage failed:", e);
+    }
+  }
+
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      createBulbs();
+      sendHeight();
+    }, 120);
+  });
+
+  window.addEventListener("load", function(){
+    initFirstValue();
+    createBulbs();
+    startPoolUpdater();
+    sendHeight();
+  });
+
+  setTimeout(sendHeight, 300);
+
+  if (window.ResizeObserver) {
+    var observer = new ResizeObserver(function(){
+      sendHeight();
+    });
+    observer.observe(document.body);
+  }
+})();
+</script>
+
+
+</body></html>

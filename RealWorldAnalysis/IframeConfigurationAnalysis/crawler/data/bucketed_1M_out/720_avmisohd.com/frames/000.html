@@ -1,0 +1,1329 @@
+<!DOCTYPE html><html lang="th" prefix="og: https://ogp.me/ns#"><head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+
+<meta name="google-site-verification" content="7o7cPbv36aUUNBz_VTB8_g43eD5ZJD3kKbvxh7zUw1c">
+
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="profile" href="//gmpg.org/xfn/11">
+	<!-- Meta social networks -->
+		<!-- Google Analytics -->
+		<!-- Meta Verification -->
+		
+<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+<title>หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan - หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน</title>
+<link crossorigin="" data-rocket-preload="" as="font" href="//avmisohd.to/wp-content/cache/fonts/1/google-fonts/fonts/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2" rel="preload">
+<style id="wpr-usedcss">img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:0 0!important;padding:0!important}:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}:root{--wp--preset--aspect-ratio--square:1;--wp--preset--aspect-ratio--4-3:4/3;--wp--preset--aspect-ratio--3-4:3/4;--wp--preset--aspect-ratio--3-2:3/2;--wp--preset--aspect-ratio--2-3:2/3;--wp--preset--aspect-ratio--16-9:16/9;--wp--preset--aspect-ratio--9-16:9/16;--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#ffffff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgb(6, 147, 227) 0%,rgb(155, 81, 224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122, 220, 180) 0%,rgb(0, 208, 130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgb(252, 185, 0) 0%,rgb(255, 105, 0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgb(255, 105, 0) 0%,rgb(207, 46, 46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238, 238, 238) 0%,rgb(169, 184, 195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74, 234, 220) 0%,rgb(151, 120, 209) 20%,rgb(207, 42, 186) 40%,rgb(238, 44, 130) 60%,rgb(251, 105, 98) 80%,rgb(254, 248, 76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255, 206, 236) 0%,rgb(152, 150, 240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254, 205, 165) 0%,rgb(254, 45, 45) 50%,rgb(107, 0, 62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255, 203, 112) 0%,rgb(199, 81, 192) 50%,rgb(65, 88, 208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255, 245, 203) 0%,rgb(182, 227, 212) 50%,rgb(51, 167, 181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202, 248, 128) 0%,rgb(113, 206, 126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2, 3, 129) 0%,rgb(40, 116, 252) 100%);--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0, 0, 0, .2);--wp--preset--shadow--deep:12px 12px 50px rgba(0, 0, 0, .4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0, 0, 0, .2);--wp--preset--shadow--outlined:6px 6px 0px -3px rgb(255, 255, 255),6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp:6px 6px 0px rgb(0, 0, 0)}:where(.is-layout-flex){gap:.5em}:where(.is-layout-grid){gap:.5em}:where(.wp-block-columns.is-layout-flex){gap:2em}:where(.wp-block-columns.is-layout-grid){gap:2em}:where(.wp-block-post-template.is-layout-flex){gap:1.25em}:where(.wp-block-post-template.is-layout-grid){gap:1.25em}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#5533ff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}footer,main,nav{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus{outline:0!important}h1,h2,h3,h4{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}dt{font-weight:700}strong{font-weight:bolder}a{color:#53f;text-decoration:none;background-color:transparent}a:hover{color:#2600e6;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:dotted 1px;outline:-webkit-focus-ring-color auto 5px}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=datetime-local]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}template{display:none}[hidden]{display:none!important}h1,h2,h3,h4{margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:2.5rem}h2{font-size:2rem}h3{font-size:1.75rem}h4{font-size:1.5rem}.img-fluid{max-width:100%;height:auto}code{font-size:87.5%;color:#e83e8c;word-break:break-word}a>code{color:inherit}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col-12,.col-6,.col-lg-3,.col-lg-6,.col-md-12,.col-md-3,.col-md-6,.col-md-8,.col-xl-2,.col-xl-4{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-6{-webkit-box-flex:0;-webkit-flex:0 0 50%;-moz-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-12{-webkit-box-flex:0;-webkit-flex:0 0 100%;-moz-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.order-1{-webkit-box-ordinal-group:2;-webkit-order:1;-moz-box-ordinal-group:2;-ms-flex-order:1;order:1}@media (min-width:576px){.order-sm-1{-webkit-box-ordinal-group:2;-webkit-order:1;-moz-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media (min-width:768px){.col-md-3{-webkit-box-flex:0;-webkit-flex:0 0 25%;-moz-box-flex:0;-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-6{-webkit-box-flex:0;-webkit-flex:0 0 50%;-moz-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-8{-webkit-box-flex:0;-webkit-flex:0 0 66.66667%;-moz-box-flex:0;-ms-flex:0 0 66.66667%;flex:0 0 66.66667%;max-width:66.66667%}.col-md-12{-webkit-box-flex:0;-webkit-flex:0 0 100%;-moz-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.order-md-1{-webkit-box-ordinal-group:2;-webkit-order:1;-moz-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media (min-width:992px){.col-lg-3{-webkit-box-flex:0;-webkit-flex:0 0 25%;-moz-box-flex:0;-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-lg-6{-webkit-box-flex:0;-webkit-flex:0 0 50%;-moz-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.order-lg-1{-webkit-box-ordinal-group:2;-webkit-order:1;-moz-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media (min-width:1200px){.col-xl-2{-webkit-box-flex:0;-webkit-flex:0 0 16.66667%;-moz-box-flex:0;-ms-flex:0 0 16.66667%;flex:0 0 16.66667%;max-width:16.66667%}.col-xl-4{-webkit-box-flex:0;-webkit-flex:0 0 33.33333%;-moz-box-flex:0;-ms-flex:0 0 33.33333%;flex:0 0 33.33333%;max-width:33.33333%}.order-xl-1{-webkit-box-ordinal-group:2;-webkit-order:1;-moz-box-ordinal-group:2;-ms-flex-order:1;order:1}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;-o-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;-moz-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.btn{-webkit-transition:none;-o-transition:none;-moz-transition:none;transition:none}}.btn:hover{color:#212529;text-decoration:none}.btn.focus,.btn:focus{outline:0;-webkit-box-shadow:0 0 0 .2rem rgba(85,51,255,.25);box-shadow:0 0 0 .2rem rgba(85,51,255,.25)}.btn.disabled,.btn:disabled{opacity:.65}a.btn.disabled,fieldset:disabled a.btn{pointer-events:none}.fade{-webkit-transition:opacity .15s linear;-o-transition:opacity .15s linear;-moz-transition:opacity .15s linear;transition:opacity .15s linear}@media (prefers-reduced-motion:reduce){.fade{-webkit-transition:none;-o-transition:none;-moz-transition:none;transition:none}}.fade:not(.show){opacity:0}.collapse:not(.show){display:none}.collapsing{position:relative;height:0;overflow:hidden;-webkit-transition:height .35s;-o-transition:height .35s;-moz-transition:height .35s;transition:height .35s ease}@media (prefers-reduced-motion:reduce){.collapsing{-webkit-transition:none;-o-transition:none;-moz-transition:none;transition:none}}.dropdown,.dropleft,.dropright,.dropup{position:relative}.dropdown-toggle{white-space:nowrap}.dropdown-toggle::after{display:inline-block;margin-left:.255em;vertical-align:.255em;content:"";border-top:.3em solid;border-right:.3em solid transparent;border-bottom:0;border-left:.3em solid transparent}.dropdown-toggle:empty::after{margin-left:0}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:10rem;padding:.5rem 0;margin:.125rem 0 0;font-size:1rem;color:#212529;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.15);border-radius:.25rem}.dropdown-menu-right{right:0;left:auto}.dropup .dropdown-menu{top:auto;bottom:100%;margin-top:0;margin-bottom:.125rem}.dropup .dropdown-toggle::after{display:inline-block;margin-left:.255em;vertical-align:.255em;content:"";border-top:0;border-right:.3em solid transparent;border-bottom:.3em solid;border-left:.3em solid transparent}.dropup .dropdown-toggle:empty::after{margin-left:0}.dropright .dropdown-menu{top:0;right:auto;left:100%;margin-top:0;margin-left:.125rem}.dropright .dropdown-toggle::after{display:inline-block;margin-left:.255em;vertical-align:.255em;content:"";border-top:.3em solid transparent;border-right:0;border-bottom:.3em solid transparent;border-left:.3em solid}.dropright .dropdown-toggle:empty::after{margin-left:0}.dropright .dropdown-toggle::after{vertical-align:0}.dropleft .dropdown-menu{top:0;right:100%;left:auto;margin-top:0;margin-right:.125rem}.dropleft .dropdown-toggle::after{display:inline-block;margin-left:.255em;vertical-align:.255em;content:""}.dropleft .dropdown-toggle::after{display:none}.dropleft .dropdown-toggle::before{display:inline-block;margin-right:.255em;vertical-align:.255em;content:"";border-top:.3em solid transparent;border-right:.3em solid;border-bottom:.3em solid transparent}.dropleft .dropdown-toggle:empty::after{margin-left:0}.dropleft .dropdown-toggle::before{vertical-align:0}.dropdown-menu[x-placement^=bottom],.dropdown-menu[x-placement^=left],.dropdown-menu[x-placement^=right],.dropdown-menu[x-placement^=top]{right:auto;bottom:auto}.dropdown-item{display:block;width:100%;padding:.25rem 1.5rem;clear:both;font-weight:400;color:#212529;text-align:inherit;white-space:nowrap;background-color:transparent;border:0}.dropdown-item:focus,.dropdown-item:hover{color:#16181b;text-decoration:none;background-color:#f8f9fa}.dropdown-item.active,.dropdown-item:active{color:#fff;text-decoration:none;background-color:#53f}.dropdown-item.disabled,.dropdown-item:disabled{color:#6c757d;pointer-events:none;background-color:transparent}.dropdown-menu.show{display:block}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar>.container{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.navbar-brand{display:inline-block;padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.25rem;line-height:inherit;white-space:nowrap}.navbar-brand:focus,.navbar-brand:hover{text-decoration:none}.navbar-nav{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}.navbar-nav .nav-link{padding-right:0;padding-left:0}.navbar-nav .dropdown-menu{position:static;float:none}.navbar-collapse{-webkit-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:1;-webkit-flex-grow:1;-moz-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.navbar-toggler{padding:.25rem .75rem;font-size:1.25rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:.25rem}.navbar-toggler:focus,.navbar-toggler:hover{text-decoration:none}@media (max-width:767.98px){.navbar-expand-md>.container{padding-right:0;padding-left:0}}@media (min-width:768px){.navbar-expand-md{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-flow:row nowrap;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-moz-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.navbar-expand-md .navbar-nav{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.navbar-expand-md .navbar-nav .dropdown-menu{position:absolute}.navbar-expand-md .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-expand-md>.container{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.navbar-expand-md .navbar-collapse{display:-webkit-box!important;display:-webkit-flex!important;display:-moz-box!important;display:-ms-flexbox!important;display:flex!important;-webkit-flex-basis:auto;-ms-flex-preferred-size:auto;flex-basis:auto}.navbar-expand-md .navbar-toggler{display:none}}.navbar-dark .navbar-brand{color:#fff}.navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover{color:#fff}.navbar-dark .navbar-nav .nav-link{color:rgba(255,255,255,.5)}.navbar-dark .navbar-nav .nav-link:focus,.navbar-dark .navbar-nav .nav-link:hover{color:rgba(255,255,255,.75)}.navbar-dark .navbar-nav .nav-link.disabled{color:rgba(255,255,255,.25)}.navbar-dark .navbar-nav .active>.nav-link,.navbar-dark .navbar-nav .nav-link.active,.navbar-dark .navbar-nav .nav-link.show,.navbar-dark .navbar-nav .show>.nav-link{color:#fff}.navbar-dark .navbar-toggler{color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.1)}.pagination{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;padding-left:0;list-style:none;border-radius:.25rem}.page-link{position:relative;display:block;padding:.5rem .75rem;margin-left:-1px;line-height:1.25;color:#53f;background-color:#fff;border:1px solid #dee2e6}.page-link:hover{z-index:2;color:#2600e6;text-decoration:none;background-color:#e9ecef;border-color:#dee2e6}.page-link:focus{z-index:2;outline:0;-webkit-box-shadow:0 0 0 .2rem rgba(85,51,255,.25);box-shadow:0 0 0 .2rem rgba(85,51,255,.25)}.page-item:first-child .page-link{margin-left:0;border-top-left-radius:.25rem;border-bottom-left-radius:.25rem}.page-item:last-child .page-link{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}.page-item.active .page-link{z-index:1;color:#fff;background-color:#53f;border-color:#53f}.page-item.disabled .page-link{color:#6c757d;pointer-events:none;cursor:auto;background-color:#fff;border-color:#dee2e6}.pagination-lg .page-link{padding:.75rem 1.5rem;font-size:1.25rem;line-height:1.5}.pagination-lg .page-item:first-child .page-link{border-top-left-radius:.3rem;border-bottom-left-radius:.3rem}.pagination-lg .page-item:last-child .page-link{border-top-right-radius:.3rem;border-bottom-right-radius:.3rem}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.progress{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;height:1rem;overflow:hidden;font-size:.75rem;background-color:#e9ecef;border-radius:.25rem}.list-group{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding-left:0;margin-bottom:0}.list-group-item{position:relative;display:block;padding:.75rem 1.25rem;margin-bottom:-1px;background-color:#fff;border:1px solid rgba(0,0,0,.125)}.list-group-item:first-child{border-top-left-radius:.25rem;border-top-right-radius:.25rem}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}.list-group-item.disabled,.list-group-item:disabled{color:#6c757d;pointer-events:none;background-color:#fff}.list-group-item.active{z-index:2;color:#fff;background-color:#53f;border-color:#53f}.close{float:right;font-size:1.5rem;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.5}.close:hover{color:#000;text-decoration:none}.close:not(:disabled):not(.disabled):focus,.close:not(:disabled):not(.disabled):hover{opacity:.75}button.close{padding:0;background-color:transparent;border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}a.close.disabled{pointer-events:none}.toast{max-width:350px;overflow:hidden;font-size:.875rem;background-color:rgba(255,255,255,.85);background-clip:padding-box;border:1px solid rgba(0,0,0,.1);-webkit-box-shadow:0 .25rem .75rem rgba(0,0,0,.1);box-shadow:0 .25rem .75rem rgba(0,0,0,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;border-radius:.25rem}.toast:not(:last-child){margin-bottom:.75rem}.toast.showing{opacity:1}.toast.show{display:block;opacity:1}.toast.hide{display:none}.modal-open{overflow:hidden}.modal-open .modal{overflow-x:hidden;overflow-y:auto}.modal{position:fixed;top:0;left:0;z-index:1050;display:none;width:100%;height:100%;overflow:hidden;outline:0}.modal-dialog{position:relative;width:auto;margin:.5rem;pointer-events:none}.modal.fade .modal-dialog{-webkit-transition:-webkit-transform .3s ease-out;transition:-webkit-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;-moz-transition:transform .3s ease-out,-moz-transform .3s ease-out;transition:transform .3s ease-out;transition:transform .3s ease-out,-webkit-transform .3s ease-out,-moz-transform .3s ease-out,-o-transform .3s ease-out;-webkit-transform:translate(0,-50px);-moz-transform:translate(0,-50px);-ms-transform:translate(0,-50px);-o-transform:translate(0,-50px);transform:translate(0,-50px)}@media (prefers-reduced-motion:reduce){.modal.fade .modal-dialog{-webkit-transition:none;-o-transition:none;-moz-transition:none;transition:none}}.modal.show .modal-dialog{-webkit-transform:none;-moz-transform:none;-ms-transform:none;-o-transform:none;transform:none}.modal-dialog-scrollable{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;max-height:-webkit-calc(100% - 1rem);max-height:-moz-calc(100% - 1rem);max-height:calc(100% - 1rem)}.modal-dialog-scrollable .modal-body{overflow-y:auto}.modal-backdrop{position:fixed;top:0;left:0;z-index:1040;width:100vw;height:100vh;background-color:#000}.modal-backdrop.fade{opacity:0}.modal-backdrop.show{opacity:.5}.modal-body{position:relative;-webkit-box-flex:1;-webkit-flex:1 1 auto;-moz-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;padding:1rem}.modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}@media (min-width:576px){.modal-dialog{max-width:500px;margin:1.75rem auto}.modal-dialog-scrollable{max-height:-webkit-calc(100% - 3.5rem);max-height:-moz-calc(100% - 3.5rem);max-height:calc(100% - 3.5rem)}}.tooltip{position:absolute;z-index:1070;display:block;margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:normal;font-weight:400;line-height:1.5;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;white-space:normal;line-break:auto;font-size:.875rem;word-wrap:break-word;opacity:0}.tooltip.show{opacity:.9}.tooltip .arrow{position:absolute;display:block;width:.8rem;height:.4rem}.tooltip .arrow::before{position:absolute;content:"";border-color:transparent;border-style:solid}.tooltip-inner{max-width:200px;padding:.25rem .5rem;color:#fff;text-align:center;background-color:#000;border-radius:.25rem}.popover{position:absolute;top:0;left:0;z-index:1060;display:block;max-width:276px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:normal;font-weight:400;line-height:1.5;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;white-space:normal;line-break:auto;font-size:.875rem;word-wrap:break-word;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);border-radius:.3rem}.popover .arrow{position:absolute;display:block;width:1rem;height:.5rem;margin:0 .3rem}.popover .arrow::after,.popover .arrow::before{position:absolute;display:block;content:"";border-color:transparent;border-style:solid}.popover-header{padding:.5rem .75rem;margin-bottom:0;font-size:1rem;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-top-left-radius:-webkit-calc(.3rem - 1px);border-top-left-radius:-moz-calc(.3rem - 1px);border-top-left-radius:calc(.3rem - 1px);border-top-right-radius:-webkit-calc(.3rem - 1px);border-top-right-radius:-moz-calc(.3rem - 1px);border-top-right-radius:calc(.3rem - 1px)}.popover-header:empty{display:none}.popover-body{padding:.5rem .75rem;color:#212529}.carousel{position:relative}.carousel.pointer-event{-ms-touch-action:pan-y;touch-action:pan-y}.carousel-item{position:relative;display:none;float:left;width:100%;margin-right:-100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transition:-webkit-transform .6s ease-in-out;transition:-webkit-transform .6s ease-in-out;-o-transition:-o-transform .6s ease-in-out;-moz-transition:transform .6s ease-in-out,-moz-transform .6s ease-in-out;transition:transform .6s ease-in-out;transition:transform .6s ease-in-out,-webkit-transform .6s ease-in-out,-moz-transform .6s ease-in-out,-o-transform .6s ease-in-out}@media (prefers-reduced-motion:reduce){.carousel-item{-webkit-transition:none;-o-transition:none;-moz-transition:none;transition:none}}.carousel-item-next,.carousel-item-prev,.carousel-item.active{display:block}.active.carousel-item-right,.carousel-item-next:not(.carousel-item-left){-webkit-transform:translateX(100%);-moz-transform:translateX(100%);-ms-transform:translateX(100%);-o-transform:translateX(100%);transform:translateX(100%)}.active.carousel-item-left,.carousel-item-prev:not(.carousel-item-right){-webkit-transform:translateX(-100%);-moz-transform:translateX(-100%);-ms-transform:translateX(-100%);-o-transform:translateX(-100%);transform:translateX(-100%)}.carousel-indicators{position:absolute;right:0;bottom:0;left:0;z-index:15;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-left:0;margin-right:15%;margin-left:15%;list-style:none}.carousel-indicators li{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-box-flex:0;-webkit-flex:0 1 auto;-moz-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;width:30px;height:3px;margin-right:3px;margin-left:3px;text-indent:-999px;cursor:pointer;background-color:#fff;background-clip:padding-box;border-top:10px solid transparent;border-bottom:10px solid transparent;opacity:.5;-webkit-transition:opacity .6s;-o-transition:opacity .6s;-moz-transition:opacity .6s;transition:opacity .6s ease}@media (prefers-reduced-motion:reduce){.carousel-indicators li{-webkit-transition:none;-o-transition:none;-moz-transition:none;transition:none}}.carousel-indicators .active{opacity:1}.border{border:1px solid #dee2e6!important}.d-none{display:none!important}.d-block{display:block!important}@media (min-width:768px){.d-md-none{display:none!important}.d-md-block{display:block!important}}.justify-content-center{-webkit-box-pack:center!important;-webkit-justify-content:center!important;-moz-box-pack:center!important;-ms-flex-pack:center!important;justify-content:center!important}.position-static{position:static!important}@supports ((position:-webkit-sticky) or (position:sticky)){.sticky-top{position:-webkit-sticky;position:sticky;top:0;z-index:1020}}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}.my-4{margin-top:1.5rem!important}.my-4{margin-bottom:1.5rem!important}.p-0{padding:0!important}.mx-auto{margin-right:auto!important}.ml-auto,.mx-auto{margin-left:auto!important}.text-center{text-align:center!important}.visible{visibility:visible!important}@media print{*,::after,::before{text-shadow:none!important;-webkit-box-shadow:none!important;box-shadow:none!important}a:not(.btn){text-decoration:underline}img,tr{page-break-inside:avoid}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}@page{size:a3}body{min-width:992px!important}.container{min-width:992px!important}.navbar{display:none}.table{border-collapse:collapse!important}.table td,.table th{background-color:#fff!important}}#secondary img,img{max-width:100%;height:auto}a.skip-link{position:fixed;z-index:1000;top:0;right:0}.navbar-dark .navbar-nav .dropdown-menu .nav-link{display:block;width:100%;padding:.25rem 1.5rem;clear:both;font-weight:400;color:#212529!important;text-align:inherit;white-space:nowrap;background:0 0;border:0}.navbar-dark .navbar-nav .dropdown-menu .nav-link:focus,.navbar-dark .navbar-nav .dropdown-menu .nav-link:hover{color:#16181b!important;text-decoration:none;background-color:#f8f9fa}.navbar-dark .navbar-nav .dropdown-menu .nav-link.active,.navbar-dark .navbar-nav .dropdown-menu .nav-link:active{color:#fff!important;text-decoration:none;background-color:#53f}.navbar-dark .navbar-nav .dropdown-menu .nav-link.disabled,.navbar-dark .navbar-nav .dropdown-menu .nav-link:disabled{color:#6c757d!important;background-color:transparent}.navbar-dark .navbar-brand a{color:#fff}.navbar-dark .navbar-brand a:focus,.navbar-dark .navbar-brand a:hover{color:#fff}.navbar h1{font-weight:400}.fa{display:inline-block;font:14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-check:before{content:""}.fa-chevron-up:before{content:""}.fa-chevron-down:before{content:""}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://avmisohd.to/wp-content/cache/fonts/1/google-fonts/fonts/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(https://avmisohd.to/wp-content/cache/fonts/1/google-fonts/fonts/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://avmisohd.to/wp-content/cache/fonts/1/google-fonts/fonts/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}body{position:relative;color:#fff;font-family:Roboto,sans-serif;letter-spacing:-.005rem}.body-gradient{position:absolute;width:100%;height:100%;z-index:-1}input[type=search]::-ms-clear{display:none;width:0;height:0}input[type=search]::-ms-reveal{display:none;width:0;height:0}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration{display:none}h1,h2,h3,h4{font-size:2rem;margin-bottom:1rem;font-weight:700}h1{line-height:45px;letter-spacing:-.5px}h3{font-size:1.3rem;margin-top:2rem}a{-webkit-transition:.1s ease-in-out;-moz-transition:.1s ease-in-out;-ms-transition:.1s ease-in-out;-o-transition:.1s ease-in-out;transition:all .1s ease-in-out;outline:0}a:hover{text-decoration:none}.page-link.focus,.page-link:focus:focus{box-shadow:none}button:focus{outline:0}input:focus,textarea:focus{-webkit-transition:.15s ease-in-out;-moz-transition:.15s ease-in-out;-ms-transition:.15s ease-in-out;-o-transition:.15s ease-in-out;transition:all .15s ease-in-out}.nav-container{display:flex;justify-content:center}.navbar{padding:.5rem 0;height:70px;max-height:70px}ul.navbar-nav{margin:0!important}.navbar-expand-md .navbar-nav .nav-link{font-weight:500;padding:.5rem .75rem;margin:0 .5rem;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-webkit-transition:.1s ease-in-out;-moz-transition:.1s ease-in-out;-ms-transition:.1s ease-in-out;-o-transition:.1s ease-in-out;transition:all .1s ease-in-out}.navbar a.navbar-brand,.navbar h1{font-weight:700;font-size:1.75rem;letter-spacing:-.5px;text-transform:uppercase;line-height:0}.navbar-dark .navbar-brand,.navbar-dark .navbar-nav,.navbar-dark .navbar-nav .nav-link{z-index:1}.navbar-brand img{width:auto;max-height:35px}.hamburger{padding:15px;display:inline-block;cursor:pointer;transition-property:opacity,filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}.hamburger.is-active .hamburger-inner,.hamburger.is-active .hamburger-inner::after,.hamburger.is-active .hamburger-inner::before{background-color:#000}.hamburger-box{width:32px;height:24px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:-2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:32px;height:4px;background-color:#fff;border-radius:4px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-10px}.hamburger-inner::after{bottom:-10px}.hamburger--slider .hamburger-inner{top:2px}.hamburger--slider .hamburger-inner::before{top:10px;transition-property:transform,opacity;transition-timing-function:ease;transition-duration:.15s}.hamburger--slider .hamburger-inner::after{top:20px}.hamburger--slider.is-active .hamburger-inner{transform:translate3d(0,10px,0) rotate(45deg)}.hamburger--slider.is-active .hamburger-inner::before{transform:rotate(-45deg) translate3d(-5.71429px,-6px,0);opacity:0}.hamburger--slider.is-active .hamburger-inner::after{transform:translate3d(0,-20px,0) rotate(-90deg)}.hero{padding:30px 0;text-align:center}.hero-text{overflow:hidden}.hero h1{font-size:36px;margin-bottom:0}.hero-desc{margin:10px 0 0;display:block;font-size:20px;opacity:.7}.row.no-gutters{margin-right:0;margin-left:0}.row.no-gutters>[class*=" col-"],.row.no-gutters>[class^=col-]{padding-right:0;padding-left:0}.video-block{margin:.25rem}.side-related{overflow:hidden}.slick-arrow{position:absolute;z-index:5;width:91%;border:none;-webkit-transition:.15s ease-in-out;-moz-transition:.15s ease-in-out;-ms-transition:.15s ease-in-out;-o-transition:.15s ease-in-out;transition:all .15s ease-in-out}.slick-arrow.slick-next{bottom:0}.video-block a{display:block}.video-block a.thumb{position:relative;overflow:hidden;height:0;padding-bottom:56.25%}.video-block a.infos{padding:5px}.video-block a.infos span.title{font-size:14px;height:50px;display:block;overflow:hidden;font-weight:500;letter-spacing:.5px;padding:5px;text-align:center}.video-block .video-debounce-bar{position:absolute;z-index:200;top:0;left:0;height:5px;width:0%;background:rgba(255,255,255,.5)}.video-block .video-debounce-bar--wait{animation:.5s ease-in-out .2s forwards debounce-bar-load,.5s ease-in-out .8s forwards debounce-bar-hide}@keyframes debounce-bar-load{0%{width:0%}100%{width:100%}}@keyframes debounce-bar-hide{0%{top:0}100%{top:-100%}}.video-block .video-preview{position:absolute;top:0;left:0;height:100%;width:100%}.video-block .thumbs-rotation{position:absolute;z-index:10;top:0;left:0;height:100%;width:100%}.video-block .video-img{display:block;position:absolute;border:0;opacity:0;min-height:1px;min-width:100%}.video-block .video-img:not(.initial){transition:opacity .3s ease-in-out}.video-block .video-img.error,.video-block .video-img.loaded{opacity:1}.video-block .video-img:not([src]){visibility:hidden}.video-block .video-img--hidden{opacity:0!important;transition:opacity .5s ease-in!important}.video-block .video-name{position:absolute;z-index:100;left:0;bottom:0;background:rgba(0,0,0,.25);width:100%;height:40px;line-height:40px;color:#fff;text-shadow:1px 1px rgba(0,0,0,.38);font-weight:700;padding:0 20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:bottom .5s ease-in-out!important}.video-block .video-duration{position:absolute;top:5px;left:5px;padding:0 5px;height:20px;line-height:20px;background:rgba(0,0,0,.7);color:#fff;z-index:100;font-size:80%}.search-nav{display:flex;align-items:center}.header-search-form{display:none}.header-search-toggle{margin-right:20px}.header-search-toggle svg{cursor:pointer;-webkit-transition:.1s ease-in-out;-moz-transition:.1s ease-in-out;-ms-transition:.1s ease-in-out;-o-transition:.1s ease-in-out;transition:all .1s ease-in-out}.header-search-form input{height:70px;line-height:70px;padding:0 20px;width:100%;border:none;outline:0}.responsive-player{position:relative;aspect-ratio:16/9;box-shadow:0 20px 30px -10px rgba(0,0,0,.5);-moz-box-shadow:0 20px 30px -10px rgba(0,0,0,.5);-webkit-box-shadow:0 20px 30px -10px rgba(0,0,0,.5)}.responsive-player>iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-loop{padding:.5rem;min-height:800px;overflow:hidden}.happy-inside-player{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:400;display:flex;width:100%;justify-content:center;align-items:center;padding-bottom:40px}.happy-inside-player a{display:block;line-height:0}.close-text{position:absolute;bottom:0;left:50%;transform:translate(-50%,0);padding:0 12px;height:40px}.post-like{display:flex;justify-content:center}.post-like a{display:block;padding:5px 10px;text-align:center;outline:0;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}.post-like a i{font-size:35px;-webkit-transition:color .2s ease-in-out;-moz-transition:color .2s ease-in-out;-ms-transition:color .2s ease-in-out;-o-transition:color .2s ease-in-out;transition:color .2s ease-in-out}.rating-bar-meter{height:8px}.rating-bar-meter{width:0%;-webkit-transition:width .3s ease-in-out;-moz-transition:width .3s ease-in-out;-ms-transition:width .3s ease-in-out;-o-transition:width .3s ease-in-out;transition:width .3s ease-in-out}#show-sharing-buttons{display:block;color:inherit}#show-sharing-buttons:hover i{opacity:1;-webkit-transition:.2s ease-in-out;-moz-transition:.2s ease-in-out;-ms-transition:.2s ease-in-out;-o-transition:.2s ease-in-out;transition:all .2s ease-in-out}.video-share-box{display:none;padding:40px;margin:30px 0}.video-share-box span.title{width:130px;font-weight:700;display:inline-block}.video-share-box i#email{background-color:#777}#temptext{position:fixed;left:0;opacity:0}#wrapper-footer{position:relative;padding:20px 0 30px}@media (max-width:767.98px){h1{font-size:22px;line-height:36px}.hero h1{font-size:28px}.hero-desc{font-size:18px}h2{font-size:1.5rem;line-height:35px}.container{max-width:100%}.navbar{padding:0 15px}.navbar a.navbar-brand,.navbar h1{font-size:1.5rem}.navbar-collapse{position:absolute;top:100%;width:100%;left:0;z-index:99999}.navbar-dark .navbar-collapse ul.navbar-nav{padding-bottom:5px}.navbar a.navbar-brand,.navbar h1{font-size:1.25rem;width:60%}.navbar-dark .navbar-collapse .nav-link{padding:0 15px;height:50px;line-height:50px;border-top-style:solid;border-top-width:1px;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.navbar-dark .navbar-toggler{border:none;padding:0}.navbar-dark .navbar-toggler:focus{outline:0}#wrapper-navbar{line-height:0}.dropdown-item{padding:20px 24px}.header-search-form{width:100%;overflow:hidden}.header-search-form input{width:100%;padding:15px;height:70px;line-height:40px;border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;outline:0}.video-loop{padding:1px}.video-block a{margin:1%}.video-block .video-name{display:none}.site-info{line-height:32px}.happy-inside-player{display:none}}@media (min-width:768px) and (max-width:991.98px){h2{font-size:1.75rem}.container{max-width:100%}}@media (min-width:992px) and (max-width:1199.98px){.container{max-width:100%}}@media (min-width:1200px){.container{max-width:1400px}.container-lg{max-width:100%}}.navbar-expand-md .navbar-nav .dropdown-menu,body{color:rgba(255,255,255,.75)!important;background:#00010a!important}.body-gradient{background:-moz-linear-gradient(45deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%);background:-webkit-linear-gradient(45deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%);background:linear-gradient(45deg,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%)}a{color:#ed28b5}a:hover{color:rgba(255,255,255,.95)!important}#show-sharing-buttons:hover i,.required{color:#ed28b5!important}.navbar a,.slick-arrow,.video-block a.infos span.title,h1,h2,h3,h4{color:rgba(255,255,255,.95)!important}.navbar li a:hover,.navbar li.active>a{background-color:#ed28b5;color:#fff!important}.video-block{background:rgba(0,0,0,.25);background:radial-gradient(circle,rgba(0,0,0,.15) 0,rgba(0,0,0,.3) 100%)}.page-link{margin:0;background-color:rgba(0,0,0,.25)!important;color:#fff!important;border:none!important;z-index:1!important}.page-link:not(.dots):hover{background-color:#00010a!important;color:#fff!important;border:none!important}.page-link.dots,.post-like a i{color:rgba(255,255,255,.5)!important}.post-like a:hover i{color:#ed28b5!important}.page-item.active .page-link{border:2px solid #000;background-color:#ed28b5!important;color:#fff!important;border:none!important}.navbar,.navbar-collapse,body{background-color:#00010a}.slick-arrow{background-color:rgba(0,1,10,.8)!important}.slick-arrow:hover{background-color:rgba(237,40,181,.8)}.video-share-box{background-color:rgba(0,1,10,.4)}.hero{background-color:rgba(0,0,0,.15)}#wrapper-footer,.header-search-form input,.rating-bar-meter{background-color:rgba(0,0,0,.25)}.rating-bar-meter{background:-moz-linear-gradient(0deg,rgba(237,40,181,.7) 0,#ed28b5 100%);background:-webkit-linear-gradient(0deg,rgba(237,40,181,.7) 0,#ed28b5 100%);background:linear-gradient(0deg,rgba(237,40,181,.7) 0,#ed28b5 100%)}.header-search-form input,.header-search-form input::placeholder{color:rgba(255,255,255,.9)!important}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before,.hamburger.is-active .hamburger-inner,.hamburger.is-active .hamburger-inner::after,.hamburger.is-active .hamburger-inner::before{background-color:rgba(255,255,255,.9)}.navbar-dark .navbar-collapse .nav-link{border-color:rgba(0,0,0,.15)}input,textarea{background-color:rgba(255,255,255,.3);border-color:rgba(255,255,255,.3)}:root{--swal2-outline:0 0 0 3px rgba(100, 150, 200, .5);--swal2-container-padding:0.625em;--swal2-backdrop:rgba(0, 0, 0, .4);--swal2-backdrop-transition:background-color 0.15s;--swal2-width:32em;--swal2-padding:0 0 1.25em;--swal2-border:none;--swal2-border-radius:0.3125rem;--swal2-background:white;--swal2-color:#545454;--swal2-show-animation:swal2-show 0.3s;--swal2-hide-animation:swal2-hide 0.15s forwards;--swal2-icon-zoom:1;--swal2-icon-animations:true;--swal2-title-padding:0.8em 1em 0;--swal2-html-container-padding:1em 1.6em 0.3em;--swal2-input-border:1px solid #d9d9d9;--swal2-input-border-radius:0.1875em;--swal2-input-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .06),0 0 0 3px transparent;--swal2-input-background:transparent;--swal2-input-transition:border-color 0.2s,box-shadow 0.2s;--swal2-input-hover-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .06),0 0 0 3px transparent;--swal2-input-focus-border:1px solid #b4dbed;--swal2-input-focus-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .06),0 0 0 3px rgba(100, 150, 200, .5);--swal2-progress-step-background:#add8e6;--swal2-validation-message-background:#f0f0f0;--swal2-validation-message-color:#666;--swal2-footer-border-color:#eee;--swal2-footer-background:transparent;--swal2-footer-color:inherit;--swal2-timer-progress-bar-background:rgba(0, 0, 0, .3);--swal2-close-button-position:initial;--swal2-close-button-inset:auto;--swal2-close-button-font-size:2.5em;--swal2-close-button-color:#ccc;--swal2-close-button-transition:color 0.2s,box-shadow 0.2s;--swal2-close-button-outline:initial;--swal2-close-button-box-shadow:inset 0 0 0 3px transparent;--swal2-close-button-focus-box-shadow:inset var(--swal2-outline);--swal2-close-button-hover-transform:none;--swal2-actions-justify-content:center;--swal2-actions-width:auto;--swal2-actions-margin:1.25em auto 0;--swal2-actions-padding:0;--swal2-actions-border-radius:0;--swal2-actions-background:transparent;--swal2-action-button-transition:background-color 0.2s,box-shadow 0.2s;--swal2-action-button-hover:black 10%;--swal2-action-button-active:black 10%;--swal2-confirm-button-box-shadow:none;--swal2-confirm-button-border-radius:0.25em;--swal2-confirm-button-background-color:#7066e0;--swal2-confirm-button-color:#fff;--swal2-deny-button-box-shadow:none;--swal2-deny-button-border-radius:0.25em;--swal2-deny-button-background-color:#dc3741;--swal2-deny-button-color:#fff;--swal2-cancel-button-box-shadow:none;--swal2-cancel-button-border-radius:0.25em;--swal2-cancel-button-background-color:#6e7881;--swal2-cancel-button-color:#fff;--swal2-toast-show-animation:swal2-toast-show 0.5s;--swal2-toast-hide-animation:swal2-toast-hide 0.1s forwards;--swal2-toast-border:none;--swal2-toast-box-shadow:0 0 1px hsl(0deg 0% 0% / 0.075),0 1px 2px hsl(0deg 0% 0% / 0.075),1px 2px 4px hsl(0deg 0% 0% / 0.075),1px 3px 8px hsl(0deg 0% 0% / 0.075),2px 4px 16px hsl(0deg 0% 0% / 0.075)}[data-swal2-theme=dark]{--swal2-dark-theme-black:#19191a;--swal2-dark-theme-white:#e1e1e1;--swal2-background:var(--swal2-dark-theme-black);--swal2-color:var(--swal2-dark-theme-white);--swal2-footer-border-color:#555;--swal2-input-background:color-mix(in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10%);--swal2-validation-message-background:color-mix( in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10% );--swal2-validation-message-color:var(--swal2-dark-theme-white);--swal2-timer-progress-bar-background:rgba(255, 255, 255, .7)}@media(prefers-color-scheme:dark){[data-swal2-theme=auto]{--swal2-dark-theme-black:#19191a;--swal2-dark-theme-white:#e1e1e1;--swal2-background:var(--swal2-dark-theme-black);--swal2-color:var(--swal2-dark-theme-white);--swal2-footer-border-color:#555;--swal2-input-background:color-mix(in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10%);--swal2-validation-message-background:color-mix( in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10% );--swal2-validation-message-color:var(--swal2-dark-theme-white);--swal2-timer-progress-bar-background:rgba(255, 255, 255, .7)}}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}@media print{body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown) .swal2-container{position:static!important}}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:"top-start top top-end" "center-start center center-end" "bottom-start bottom-center bottom-end";grid-template-rows:minmax(min-content,auto) minmax(min-content,auto) minmax(min-content,auto);height:100%;padding:var(--swal2-container-padding);overflow-x:hidden;transition:var(--swal2-backdrop-transition);-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:var(--swal2-backdrop)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0)!important}div:where(.swal2-container).swal2-center{grid-template-columns:auto minmax(0,1fr) auto}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;place-self:center center}div:where(.swal2-container)[popover]{width:auto;border:0}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0,100%);width:var(--swal2-width);max-width:100%;padding:var(--swal2-padding);border:var(--swal2-border);border-radius:var(--swal2-border-radius);background:var(--swal2-background);color:var(--swal2-color);font-family:inherit;font-size:1rem;container-name:swal2-popup}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:0}div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging{cursor:grabbing}div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging div:where(.swal2-icon){cursor:grabbing}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:var(--swal2-title-padding);color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;overflow-wrap:break-word;cursor:initial}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:var(--swal2-actions-justify-content);width:var(--swal2-actions-width);margin:var(--swal2-actions-margin);padding:var(--swal2-actions-padding);border-radius:var(--swal2-actions-border-radius);background:var(--swal2-actions-background)}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:1.5s linear infinite swal2-rotate-loading;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:var(--swal2-action-button-transition);border:none;box-shadow:0 0 0 3px transparent;font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){border-radius:var(--swal2-confirm-button-border-radius);background:initial;background-color:var(--swal2-confirm-button-background-color);box-shadow:var(--swal2-confirm-button-box-shadow);color:var(--swal2-confirm-button-color);font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):hover{background-color:color-mix(in srgb,var(--swal2-confirm-button-background-color),var(--swal2-action-button-hover))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):active{background-color:color-mix(in srgb,var(--swal2-confirm-button-background-color),var(--swal2-action-button-active))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny){border-radius:var(--swal2-deny-button-border-radius);background:initial;background-color:var(--swal2-deny-button-background-color);box-shadow:var(--swal2-deny-button-box-shadow);color:var(--swal2-deny-button-color);font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):hover{background-color:color-mix(in srgb,var(--swal2-deny-button-background-color),var(--swal2-action-button-hover))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):active{background-color:color-mix(in srgb,var(--swal2-deny-button-background-color),var(--swal2-action-button-active))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){border-radius:var(--swal2-cancel-button-border-radius);background:initial;background-color:var(--swal2-cancel-button-background-color);box-shadow:var(--swal2-cancel-button-box-shadow);color:var(--swal2-cancel-button-color);font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):hover{background-color:color-mix(in srgb,var(--swal2-cancel-button-background-color),var(--swal2-action-button-hover))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):active{background-color:color-mix(in srgb,var(--swal2-cancel-button-background-color),var(--swal2-action-button-active))}div:where(.swal2-container) button:where(.swal2-styled):focus-visible{outline:0;box-shadow:var(--swal2-action-button-focus-box-shadow)}div:where(.swal2-container) button:where(.swal2-styled)[disabled]:not(.swal2-loading){opacity:.4}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){margin:1em 0 0;padding:1em 1em 0;border-top:1px solid var(--swal2-footer-border-color);background:var(--swal2-footer-background);color:var(--swal2-footer-color);font-size:1em;text-align:center;cursor:initial}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto!important;overflow:hidden;border-bottom-right-radius:var(--swal2-border-radius);border-bottom-left-radius:var(--swal2-border-radius)}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:var(--swal2-timer-progress-bar-background)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em;cursor:initial}div:where(.swal2-container) button:where(.swal2-close){position:var(--swal2-close-button-position);inset:var(--swal2-close-button-inset);z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:var(--swal2-close-button-transition);border:none;border-radius:var(--swal2-border-radius);outline:var(--swal2-close-button-outline);background:rgba(0,0,0,0);color:var(--swal2-close-button-color);font-family:monospace;font-size:var(--swal2-close-button-font-size);cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:var(--swal2-close-button-hover-transform);background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus-visible{outline:0;box-shadow:var(--swal2-close-button-focus-box-shadow)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-html-container){z-index:1;justify-content:center;margin:0;padding:var(--swal2-html-container-padding);overflow:auto;color:inherit;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;overflow-wrap:break-word;word-break:break-word;cursor:initial}div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) label:where(.swal2-checkbox),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) textarea:where(.swal2-textarea){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:var(--swal2-input-transition);border:var(--swal2-input-border);border-radius:var(--swal2-input-border-radius);background:var(--swal2-input-background);box-shadow:var(--swal2-input-box-shadow);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-file):hover,div:where(.swal2-container) input:where(.swal2-input):hover,div:where(.swal2-container) textarea:where(.swal2-textarea):hover{box-shadow:var(--swal2-input-hover-box-shadow)}div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:var(--swal2-input-focus-border);outline:0;box-shadow:var(--swal2-input-focus-box-shadow)}div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:var(--swal2-background)}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:var(--swal2-input-background);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:var(--swal2-input-background);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-checkbox,div:where(.swal2-container) .swal2-radio{align-items:center;justify-content:center;background:var(--swal2-background);color:inherit}div:where(.swal2-container) .swal2-checkbox label,div:where(.swal2-container) .swal2-radio label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-checkbox input,div:where(.swal2-container) .swal2-radio input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:var(--swal2-validation-message-background);color:var(--swal2-validation-message-color);font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;zoom:var(--swal2-icon-zoom);border:.25em solid transparent;border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-info{border-color:#3fc3ee;color:#3fc3ee}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}@container swal2-popup style(--swal2-icon-animations:true){div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:.5s swal2-animate-error-icon}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:.8s swal2-animate-i-mark}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:.75s swal2-animate-success-line-tip}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:.75s swal2-animate-success-line-long}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:4.25s ease-in swal2-rotate-success-circular-line}}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{animation:var(--swal2-show-animation)}.swal2-hide{animation:var(--swal2-hide-animation)}.swal2-noanimation{transition:none}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}.swal2-title{color:#000!important}</style><link rel="preload" data-rocket-preload="" as="image" href="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-172447-400x226.png.webp" fetchpriority="high">
+<meta name="description" content="หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน">
+<meta name="robots" content="follow, index">
+<link rel="canonical" href="https://avmisohd.to/">
+<link rel="next" href="//avmisohd.to/page/2/">
+<meta property="og:locale" content="th_TH">
+<meta property="og:type" content="website">
+<meta property="og:title" content="หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan - หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน">
+<meta property="og:description" content="หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน">
+<meta property="og:url" content="https://avmisohd.to/">
+<meta property="og:site_name" content="หนังav avjapan xxxญี่ปุ่น avhd sexjapan porn japan หนังโป๊ญี่ปุ่น xxxhd หนังโป๊ฝรั่ง">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan - หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน">
+<meta name="twitter:description" content="หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน">
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://avmisohd.to/#person","name":"\u0e2b\u0e19\u0e31\u0e07av avjapan xxx\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 avhd sexjapan porn japan \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 xxxhd \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e1d\u0e23\u0e31\u0e48\u0e07","image":{"@type":"ImageObject","@id":"https://avmisohd.to/#logo","url":"http://sub.avmisohd.com/wp-content/uploads/2023/07/cropped-AV-1.png","contentUrl":"http://sub.avmisohd.com/wp-content/uploads/2023/07/cropped-AV-1.png","caption":"\u0e2b\u0e19\u0e31\u0e07av avjapan xxx\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 avhd sexjapan porn japan \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 xxxhd \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e1d\u0e23\u0e31\u0e48\u0e07","inLanguage":"th","width":"302","height":"70"}},{"@type":"WebSite","@id":"https://avmisohd.to/#website","url":"https://avmisohd.to","name":"\u0e2b\u0e19\u0e31\u0e07av avjapan xxx\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 avhd sexjapan porn japan \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 xxxhd \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e1d\u0e23\u0e31\u0e48\u0e07","alternateName":"\u0e2b\u0e19\u0e31\u0e07av avjapan xxx\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 avhd sexjapan porn japan \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 xxxhd \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e1d\u0e23\u0e31\u0e48\u0e07","publisher":{"@id":"https://avmisohd.to/#person"},"inLanguage":"th","potentialAction":{"@type":"SearchAction","target":"https://avmisohd.to/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"CollectionPage","@id":"https://avmisohd.to/#webpage","url":"https://avmisohd.to/","name":"\u0e2b\u0e19\u0e31\u0e07av avjapan xxx\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 avhd sexjapan pornjapan - \u0e2b\u0e19\u0e31\u0e07\u0e40\u0e2d\u0e27\u0e35 \u0e2b\u0e19\u0e31\u0e07av av japan \u0e14\u0e39\u0e2b\u0e19\u0e31\u0e07av avjapan javhd avchina porn japan xxx\u0e19\u0e31\u0e01\u0e40\u0e23\u0e35\u0e22\u0e19 \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19 av\u0e42\u0e14\u0e08\u0e34\u0e19 \u0e2b\u0e19\u0e31\u0e07\u0e42\u0e1b\u0e4a\u0e1d\u0e23\u0e31\u0e48\u0e07 av\u0e08\u0e35\u0e19","about":{"@id":"https://avmisohd.to/#person"},"isPartOf":{"@id":"https://avmisohd.to/#website"},"inLanguage":"th"}]}</script>
+<meta name="google-site-verification" content="v9KZlGnlV_pO0aI1dre27O_fRaPAZJpnZn8jbPthCPo">
+<!-- /Rank Math WordPress SEO plugin -->
+
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link href="//fonts.gstatic.com" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan » ฟีด" href="//avmisohd.to/feed/">
+<link rel="alternate" type="application/rss+xml" title="หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan » ฟีดความเห็น" href="//avmisohd.to/comments/feed/">
+<style id="wp-img-auto-sizes-contain-inline-css"></style>
+<style id="wp-emoji-styles-inline-css"></style>
+<style id="wp-block-library-inline-css"></style>
+<style id="classic-theme-styles-inline-css"></style>
+
+<style id="global-styles-inline-css"></style>
+
+
+
+
+<script type="text/rocketlazyloadscript" id="jquery-core-js" data-rocket-src="//avmisohd.to/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-rocket-defer="" defer=""></script>
+<script type="text/rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="//avmisohd.to/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-rocket-defer="" defer=""></script>
+<link rel="https://api.w.org/" href="//avmisohd.to/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="//avmisohd.to/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.0">
+<meta name="generator" content="Site Kit by Google 1.179.0">	<style type="text/css"></style>
+	<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan - หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน">
+<script type="text/rocketlazyloadscript" async="" id="google_gtagjs" data-rocket-src="//www.googletagmanager.com/gtag/js?id=G-NSMP26JSZ2"></script>
+<script type="text/rocketlazyloadscript" id="google_gtagjs-inline">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-NSMP26JSZ2', {} );
+</script>
+<link rel="icon" href="//avmisohd.to/wp-content/uploads/2023/07/cropped-cropped-AV-1-32x32.png" sizes="32x32">
+<link rel="icon" href="//avmisohd.to/wp-content/uploads/2023/07/cropped-cropped-AV-1-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="//avmisohd.to/wp-content/uploads/2023/07/cropped-cropped-AV-1-180x180.png">
+<meta name="msapplication-TileImage" content="https://avmisohd.to/wp-content/uploads/2023/07/cropped-cropped-AV-1-270x270.png">
+<style id="wp-custom-css"></style>
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle"></style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = []; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.21.3" data-wpr-features="wpr_lazyload_css_bg_img wpr_remove_unused_css wpr_delay_js wpr_defer_js wpr_minify_js wpr_auto_preload_fonts wpr_automatic_lazy_rendering wpr_oci wpr_minify_css wpr_preload_links wpr_host_fonts_locally wpr_mobile"><link href="https://www.googletagmanager.com" rel="preconnect"></head>
+
+<body class="home blog wp-custom-logo wp-embed-responsive wp-theme-kolortube hfeed">
+<div class="body-gradient"></div>
+<div class="site" id="page">
+
+	<!-- ******************* The Navbar Area ******************* -->
+	<div id="wrapper-navbar" itemscope="" itemtype="https://schema.org/WebSite">
+
+		<a class="skip-link sr-only sr-only-focusable" href="#content">Skip to content</a>
+
+		<nav class="navbar navbar-expand-md navbar-dark">
+			<div class="bg-darken"></div>
+				<div class="container container-lg nav-container">
+					<!-- Your site title as branding in the menu -->
+					<a href="https://avmisohd.to/" class="navbar-brand custom-logo-link" rel="home" aria-current="page"><picture class="img-fluid" decoding="async">
+<source type="image/webp" srcset="https://avmisohd.to/wp-content/uploads/2023/07/cropped-AV-1.png.webp" sizes="(max-width: 302px) 100vw, 302px">
+<img width="302" height="70" src="//avmisohd.to/wp-content/uploads/2023/07/cropped-AV-1.png" alt="หนังav avjapan xxxญี่ปุ่น avhd sexjapan pornjapan" decoding="async" srcset="//avmisohd.to/wp-content/uploads/2023/07/cropped-AV-1.png 302w, //avmisohd.to/wp-content/uploads/2023/07/cropped-AV-1-300x70.png 300w" sizes="(max-width: 302px) 100vw, 302px" class="loading" data-was-processed="true">
+</picture>
+</a>					<!-- end custom logo -->
+
+				<div class="search-nav">
+					<div class="header-search-toggle">
+						<img src="//avmisohd.to/wp-content/themes/kolortube/img/search.svg" width="28" height="28" style="fill: rgba(255,255,255,0.9)!important;" class="loading" data-was-processed="true">
+					</div>
+					<!-- Menu mobile -->
+					<button class="navbar-toggler hamburger hamburger--slider" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+
+					<!-- The WordPress Menu goes here -->
+					<div id="navbarNavDropdown" class="collapse navbar-collapse"><ul id="menu-miso-xxx" class="navbar-nav ml-auto"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-68" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-68 nav-item"><a title="หน้าหลัก" href="https://avmisohd.to" class="nav-link">หน้าหลัก</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-15543" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15543 nav-item"><a title="หนังav ไม่มีโฆษณา" href="https://avpungxx.com/" class="nav-link">หนังav ไม่มีโฆษณา</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-86" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children dropdown menu-item-86 nav-item"><a title="หนังเอวี" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-86">หนังเอวี</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-86" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-655" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-655 nav-item"><a title="หนังavข่มขืน" href="https://avmisohd.to/category/av-rape/" class="dropdown-item">หนังavข่มขืน</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-658" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-658 nav-item"><a title="หนังavนักเรียน" href="https://avmisohd.to/category/av-student/" class="dropdown-item">หนังavนักเรียน</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-653" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-653 nav-item"><a title="หนังavครอบครัว" href="https://avmisohd.to/category/av-family/" class="dropdown-item">หนังavครอบครัว</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-657" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-657 nav-item"><a title="หนังavคุณครู" href="https://avmisohd.to/category/av-teacher/" class="dropdown-item">หนังavคุณครู</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-656" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-656 nav-item"><a title="หนังavคอสเพลย์" href="https://avmisohd.to/category/av-cosplay/" class="dropdown-item">หนังavคอสเพลย์</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-659" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-659 nav-item"><a title="หนังavพยาบาล" href="https://avmisohd.to/category/av-nurse/" class="dropdown-item">หนังavพยาบาล</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-660" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-660 nav-item"><a title="หนังavเซ็กซ์หมู่" href="https://avmisohd.to/category/av-swinging/" class="dropdown-item">หนังavเซ็กซ์หมู่</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-710" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-710 nav-item"><a title="หนังav ลักหลับ" href="https://avmisohd.to/category/av-stealing-sleeping/" class="dropdown-item">หนังav ลักหลับ</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-707" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-707 nav-item"><a title="หนังav สาวออฟฟิศ" href="https://avmisohd.to/category/av-office/" class="dropdown-item">หนังav สาวออฟฟิศ</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-711" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-711 nav-item"><a title="หนังav แอบเล่นชู้" href="https://avmisohd.to/category/av-xxxav/" class="dropdown-item">หนังav แอบเล่นชู้</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-881" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-881 nav-item"><a title="หนังav หมอนวด" href="https://avmisohd.to/category/av-masseuse/" class="dropdown-item">หนังav หมอนวด</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-748" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-748 nav-item"><a title="หนังavซับไทย" href="https://avmisohd.to/category/av-subthai/" class="nav-link">หนังavซับไทย</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-83" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-83 nav-item"><a title="หนังโป๊จีน" href="https://avmisohd.to/category/av-china/" class="nav-link">หนังโป๊จีน</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-84" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-84 nav-item"><a title="หนังโป๊ญี่ปุ่น" href="https://avmisohd.to/category/sexjapan/" class="nav-link">หนังโป๊ญี่ปุ่น</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-87" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-87 nav-item"><a title="หนังโป๊ฝรั่ง" href="https://avmisohd.to/category/xxxporn/" class="nav-link">หนังโป๊ฝรั่ง</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-90" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-90 nav-item"><a title="คลิปโป๊หลุด" href="https://avmisohd.to/category/xxxhd/" class="nav-link">คลิปโป๊หลุด</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-69" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69 nav-item"><a title="หมวดหมู่" href="https://avmisohd.to/categories/" class="nav-link">หมวดหมู่</a></li>
+</ul></div>				</div>
+			</div><!-- .container -->
+		</nav><!-- .site-navigation -->
+		<div class="header-search-form">
+			
+<form role="search" method="get" class="search-form" action="//avmisohd.to/">
+	<input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+	</form>
+		</div>
+	</div><!-- #wrapper-navbar end -->
+<div id="content">
+			<div class="container container-lg p-0 ">
+				<div class="video-loop">
+			<div class="row no-gutters">
+				<div class="col-12">					
+					<div class="row no-gutters">
+						<div class="order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1 col-12 col-md-6 col-lg-6 col-xl-4">
+													</div>
+						
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19921">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87x%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-fns-208-rara-rara/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-23-170829-400x223.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-23-170829-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-23-170829-400x223.png" alt="หนังxญี่ปุ่น เรื่องราวของพยาบาลกะดึก RARA FNS-208" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-23-170829-400x223.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87x%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-fns-208-rara-rara/" title="หนังxญี่ปุ่น เรื่องราวของพยาบาลกะดึก RARA FNS-208">
+			<span class="title">หนังxญี่ปุ่น เรื่องราวของพยาบาลกะดึก RARA FNS-208</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19913">
+				<a class="thumb" href="https://avmisohd.to/xxx-%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-nact-129-oka-rin/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-194338-400x225.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-194338-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-194338-400x225.png" alt="xxx ญี่ปุ่น ครูสอนพิเศษที่ตกเป็นทาศของพ่อลูกศิษย์ NACT-129" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-194338-400x225.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxx-%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-nact-129-oka-rin/" title="xxx ญี่ปุ่น ครูสอนพิเศษที่ตกเป็นทาศของพ่อลูกศิษย์ NACT-129">
+			<span class="title">xxx ญี่ปุ่น ครูสอนพิเศษที่ตกเป็นทาศของพ่อลูกศิษย์ NACT-129</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19906">
+				<a class="thumb" href="https://avmisohd.to/javxxx-nact-128-onosaka-yuika/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-191208-400x225.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-191208-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-191208-400x225.png" alt="javxxx ภรรยาสาวที่ถูกพ่อสามีสอนมีเพศสัมพันธ์ NACT-128" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-191208-400x225.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/javxxx-nact-128-onosaka-yuika/" title="javxxx ภรรยาสาวที่ถูกพ่อสามีสอนมีเพศสัมพันธ์ NACT-128">
+			<span class="title">javxxx ภรรยาสาวที่ถูกพ่อสามีสอนมีเพศสัมพันธ์ NACT-128</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19899">
+				<a class="thumb" href="https://avmisohd.to/javhd-nact-127-asakaze-yui/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-183728-400x228.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-183728-400x228.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-183728-400x228.png" alt="Javhd หญิงสาวที่เข้าใช้บริการร้านนวดแบบมีความสุข NACT-127" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-22-183728-400x228.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/javhd-nact-127-asakaze-yui/" title="Javhd หญิงสาวที่เข้าใช้บริการร้านนวดแบบมีความสุข NACT-127">
+			<span class="title">Javhd หญิงสาวที่เข้าใช้บริการร้านนวดแบบมีความสุข NACT-127</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19892">
+				<a class="thumb" href="https://avmisohd.to/pornxxx-fc2-ppv-4901422-%e0%b8%9c%e0%b8%a5%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b9%81%e0%b8%99%e0%b8%a7%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b9%80%e0%b8%a5%e0%b9%88%e0%b8%99/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-194005-400x224.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-194005-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-194005-400x224.png" alt="pornxxx ผลงานแนวสมัครเล่นที่น่าสนใจ FC2-PPV-4901422" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-194005-400x224.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/pornxxx-fc2-ppv-4901422-%e0%b8%9c%e0%b8%a5%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b9%81%e0%b8%99%e0%b8%a7%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b9%80%e0%b8%a5%e0%b9%88%e0%b8%99/" title="pornxxx ผลงานแนวสมัครเล่นที่น่าสนใจ FC2-PPV-4901422">
+			<span class="title">pornxxx ผลงานแนวสมัครเล่นที่น่าสนใจ FC2-PPV-4901422</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19885">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87-av-mvsd-687-hibiki-ren/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-181526-400x223.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-181526-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-181526-400x223.png" alt="หนัง av ผู้หญิงที่ตกหลุมรักผู้ชายวัยกลางคน MVSD-687" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-181526-400x223.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87-av-mvsd-687-hibiki-ren/" title="หนัง av ผู้หญิงที่ตกหลุมรักผู้ชายวัยกลางคน MVSD-687">
+			<span class="title">หนัง av ผู้หญิงที่ตกหลุมรักผู้ชายวัยกลางคน MVSD-687</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19876">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5-nact-126-misaki-hikari/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-164048-400x226.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-164048-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-164048-400x226.png" alt="หนังโป้เอวี ภรรยาถูกพ่อสามีข่มขืนจนเสียสติ NACT-126" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-21-164048-400x226.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5-nact-126-misaki-hikari/" title="หนังโป้เอวี ภรรยาถูกพ่อสามีข่มขืนจนเสียสติ NACT-126">
+			<span class="title">หนังโป้เอวี ภรรยาถูกพ่อสามีข่มขืนจนเสียสติ NACT-126</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19866">
+				<a class="thumb" href="https://avmisohd.to/%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-pred-857-%e0%b9%80%e0%b8%a3%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%87%e0%b8%a3%e0%b8%b2%e0%b8%a7%e0%b8%94%e0%b8%a3/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-202511-400x225.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-202511-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-202511-400x225.png" alt="โป๊ญี่ปุ่น เรื่องราวดราม่าของครอบครัวที่ถูกกดดัน  PRED-857" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-202511-400x225.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-pred-857-%e0%b9%80%e0%b8%a3%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%87%e0%b8%a3%e0%b8%b2%e0%b8%a7%e0%b8%94%e0%b8%a3/" title="โป๊ญี่ปุ่น เรื่องราวดราม่าของครอบครัวที่ถูกกดดัน  PRED-857">
+			<span class="title">โป๊ญี่ปุ่น เรื่องราวดราม่าของครอบครัวที่ถูกกดดัน  PRED-857</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19857">
+				<a class="thumb" href="https://avmisohd.to/japanxxx-fns-192-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%a3%e0%b8%b2%e0%b9%80%e0%b8%a1%e0%b9%87%e0%b8%87%e0%b8%81%e0%b8%b1%e0%b8%9a%e0%b9%80%e0%b8%a3%e0%b8%b7%e0%b9%88/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-183442-400x225.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-183442-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-183442-400x225.png" alt="japanxxx สาวร้านราเม็งกับเรื่องราวสุดกดดัน FNS-192" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-183442-400x225.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/japanxxx-fns-192-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%a3%e0%b8%b2%e0%b9%80%e0%b8%a1%e0%b9%87%e0%b8%87%e0%b8%81%e0%b8%b1%e0%b8%9a%e0%b9%80%e0%b8%a3%e0%b8%b7%e0%b9%88/" title="japanxxx สาวร้านราเม็งกับเรื่องราวสุดกดดัน FNS-192">
+			<span class="title">japanxxx สาวร้านราเม็งกับเรื่องราวสุดกดดัน FNS-192</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19847">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5-ksbj-429-%e0%b8%94%e0%b8%a3%e0%b8%b2%e0%b8%a1%e0%b9%88%e0%b8%b2%e0%b8%aa%e0%b8%b8%e0%b8%94%e0%b9%80%e0%b8%82%e0%b9%89%e0%b8%a1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-174519-400x223.png.webp" srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-174519-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-174519-400x223.png" alt="หนังเอวี ดราม่าสุดเข้มข้นและเต็มไปด้วยอารมณ์ KSBJ-429" class="loaded" src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-20-174519-400x223.png" data-was-processed="true">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5-ksbj-429-%e0%b8%94%e0%b8%a3%e0%b8%b2%e0%b8%a1%e0%b9%88%e0%b8%b2%e0%b8%aa%e0%b8%b8%e0%b8%94%e0%b9%80%e0%b8%82%e0%b9%89%e0%b8%a1/" title="หนังเอวี ดราม่าสุดเข้มข้นและเต็มไปด้วยอารมณ์ KSBJ-429">
+			<span class="title">หนังเอวี ดราม่าสุดเข้มข้นและเต็มไปด้วยอารมณ์ KSBJ-429</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19836">
+				<a class="thumb" href="https://avmisohd.to/jav-xxx-ftkd-039-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%95%e0%b8%81%e0%b9%80%e0%b8%9b%e0%b9%87%e0%b8%99%e0%b8%97%e0%b8%b2%e0%b8%aa%e0%b8%82/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-19-194736-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-19-194736-400x226.png" alt="jav xxx ผู้หญิงที่ตกเป็นทาสของเพื่อนตอนสมัยเรียน FTKD-039">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/jav-xxx-ftkd-039-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%95%e0%b8%81%e0%b9%80%e0%b8%9b%e0%b9%87%e0%b8%99%e0%b8%97%e0%b8%b2%e0%b8%aa%e0%b8%82/" title="jav xxx ผู้หญิงที่ตกเป็นทาสของเพื่อนตอนสมัยเรียน FTKD-039">
+			<span class="title">jav xxx ผู้หญิงที่ตกเป็นทาสของเพื่อนตอนสมัยเรียน FTKD-039</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19828">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87r%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-royd-323-%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-19-180432-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-19-180432-400x224.png" alt="หนังrญี่ปุ่น เพื่อนร่วมงานหญิงปากร้ายที่ชอบแกล้ง ROYD-323">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87r%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-royd-323-%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1/" title="หนังrญี่ปุ่น เพื่อนร่วมงานหญิงปากร้ายที่ชอบแกล้ง ROYD-323">
+			<span class="title">หนังrญี่ปุ่น เพื่อนร่วมงานหญิงปากร้ายที่ชอบแกล้ง ROYD-323</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19819">
+				<a class="thumb" href="https://avmisohd.to/javxx-mimk-272-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%a8%e0%b8%b6%e0%b8%81%e0%b8%a9%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a7%e0%b8%b4%e0%b8%a8%e0%b8%a7%e0%b8%b0%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-19-172550-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-19-172550-400x223.png" alt="javxx นักศึกษาสาววิศวะกรรมศาสตร์ที่อวบอั๋น MIMK-272">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/javxx-mimk-272-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%a8%e0%b8%b6%e0%b8%81%e0%b8%a9%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a7%e0%b8%b4%e0%b8%a8%e0%b8%a7%e0%b8%b0%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1/" title="javxx นักศึกษาสาววิศวะกรรมศาสตร์ที่อวบอั๋น MIMK-272">
+			<span class="title">javxx นักศึกษาสาววิศวะกรรมศาสตร์ที่อวบอั๋น MIMK-272</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19810">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av%e0%b8%9d%e0%b8%a3%e0%b8%b1%e0%b9%88%e0%b8%87-iris-rodriguez-xxx/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-18-193719-400x236.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-18-193719-400x236.png" alt="หนังavฝรั่ง Iris Rodriguez xxx มีเซ็กส์กับคนแปลกหน้า xxx18+">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av%e0%b8%9d%e0%b8%a3%e0%b8%b1%e0%b9%88%e0%b8%87-iris-rodriguez-xxx/" title="หนังavฝรั่ง Iris Rodriguez xxx มีเซ็กส์กับคนแปลกหน้า xxx18+">
+			<span class="title">หนังavฝรั่ง Iris Rodriguez xxx มีเซ็กส์กับคนแปลกหน้า xxx18+</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19802">
+				<a class="thumb" href="https://avmisohd.to/av-hd-jjda-016-%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%9a%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a1%e0%b8%b5%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%84/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-18-183857-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-18-183857-400x225.png" alt="av hd แม่บ้านสาวที่มีความคลั่งไคล้ในการนวด JJDA-016">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av-hd-jjda-016-%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%9a%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a1%e0%b8%b5%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%84/" title="av hd แม่บ้านสาวที่มีความคลั่งไคล้ในการนวด JJDA-016">
+			<span class="title">av hd แม่บ้านสาวที่มีความคลั่งไคล้ในการนวด JJDA-016</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19795">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av-meyd-764-%e0%b8%89%e0%b8%b1%e0%b8%99%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%80%e0%b8%88%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%b2%e0%b8%a2%e0%b8%82%e0%b8%ad%e0%b8%87/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-18-174503-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-18-174503-400x225.png" alt="หนังav ฉันถูกเจ้านายของสามีข่มขืนฉันแบบระยำ MEYD-764">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av-meyd-764-%e0%b8%89%e0%b8%b1%e0%b8%99%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%80%e0%b8%88%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%b2%e0%b8%a2%e0%b8%82%e0%b8%ad%e0%b8%87/" title="หนังav ฉันถูกเจ้านายของสามีข่มขืนฉันแบบระยำ MEYD-764">
+			<span class="title">หนังav ฉันถูกเจ้านายของสามีข่มขืนฉันแบบระยำ MEYD-764</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19788">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%84%e0%b8%a5%e0%b8%b4%e0%b8%9b%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-mfyd-142-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-17-202829-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-17-202829-400x226.png" alt="คลิปโป๊ญี่ปุ่น หญิงสาวที่ถูกอวัยวะเพศใหญ่ยาวเสียบ MFYD-142">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%84%e0%b8%a5%e0%b8%b4%e0%b8%9b%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-mfyd-142-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7/" title="คลิปโป๊ญี่ปุ่น หญิงสาวที่ถูกอวัยวะเพศใหญ่ยาวเสียบ MFYD-142">
+			<span class="title">คลิปโป๊ญี่ปุ่น หญิงสาวที่ถูกอวัยวะเพศใหญ่ยาวเสียบ MFYD-142</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19781">
+				<a class="thumb" href="https://avmisohd.to/xxxporn-sone-784-%e0%b9%80%e0%b8%94%e0%b9%87%e0%b8%81%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-17-200503-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-17-200503-400x225.png" alt="xxxporn เด็กนักเรียนหญิงที่แอบมีเซ็กส์จนครูจับได้ SONE-784">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxxporn-sone-784-%e0%b9%80%e0%b8%94%e0%b9%87%e0%b8%81%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81/" title="xxxporn เด็กนักเรียนหญิงที่แอบมีเซ็กส์จนครูจับได้ SONE-784">
+			<span class="title">xxxporn เด็กนักเรียนหญิงที่แอบมีเซ็กส์จนครูจับได้ SONE-784</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19774">
+				<a class="thumb" href="https://avmisohd.to/avporn-mimk-279-%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1%e0%b9%80%e0%b8%9e%e0%b8%a8%e0%b8%81%e0%b8%b1%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%ad%e0%b8%99%e0%b8%b8%e0%b8%9a/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-17-194921-400x227.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-17-194921-400x227.png" alt="avporn การร่วมเพศกับครูอนุบาลสาวผมสั้นนมใหญ่ MIMK-279">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/avporn-mimk-279-%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1%e0%b9%80%e0%b8%9e%e0%b8%a8%e0%b8%81%e0%b8%b1%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%ad%e0%b8%99%e0%b8%b8%e0%b8%9a/" title="avporn การร่วมเพศกับครูอนุบาลสาวผมสั้นนมใหญ่ MIMK-279">
+			<span class="title">avporn การร่วมเพศกับครูอนุบาลสาวผมสั้นนมใหญ่ MIMK-279</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19767">
+				<a class="thumb" href="https://avmisohd.to/av%e0%b8%88%e0%b8%b5%e0%b8%99-cus-1332-%e0%b8%a0%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b9%80%e0%b8%a5%e0%b9%88/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-16-213053-400x236.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-16-213053-400x236.png" alt="avจีน ภรรยาสาวที่แอบเล่นชู้วันละไม่รู้กี่รอบ CUS-1332">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av%e0%b8%88%e0%b8%b5%e0%b8%99-cus-1332-%e0%b8%a0%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b9%80%e0%b8%a5%e0%b9%88/" title="avจีน ภรรยาสาวที่แอบเล่นชู้วันละไม่รู้กี่รอบ CUS-1332">
+			<span class="title">avจีน ภรรยาสาวที่แอบเล่นชู้วันละไม่รู้กี่รอบ CUS-1332</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19760">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xxxav-snos-008-%e0%b8%99%e0%b8%b2%e0%b8%87%e0%b9%81%e0%b8%9a%e0%b8%9a%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b9%80%e0%b8%98%e0%b8%ad%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b8%ab/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-16-210223-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-16-210223-400x226.png" alt="หนังxxxav นางแบบสาวเธอถูกหวังยาโป๊ในแก้วเหล้า SNOS-008">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xxxav-snos-008-%e0%b8%99%e0%b8%b2%e0%b8%87%e0%b9%81%e0%b8%9a%e0%b8%9a%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b9%80%e0%b8%98%e0%b8%ad%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b8%ab/" title="หนังxxxav นางแบบสาวเธอถูกหวังยาโป๊ในแก้วเหล้า SNOS-008">
+			<span class="title">หนังxxxav นางแบบสาวเธอถูกหวังยาโป๊ในแก้วเหล้า SNOS-008</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19753">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-pppe-192-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%82%e0%b8%b5%e0%b9%89%e0%b9%80/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-16-200056-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-16-200056-400x226.png" alt="หนังโป๊ญี่ปุ่น สาวขี้เมาที่ถูกชายหนุ่มคุกคามทางเพศ PPPE-192">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-pppe-192-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%82%e0%b8%b5%e0%b9%89%e0%b9%80/" title="หนังโป๊ญี่ปุ่น สาวขี้เมาที่ถูกชายหนุ่มคุกคามทางเพศ PPPE-192">
+			<span class="title">หนังโป๊ญี่ปุ่น สาวขี้เมาที่ถูกชายหนุ่มคุกคามทางเพศ PPPE-192</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19745">
+				<a class="thumb" href="https://avmisohd.to/av-uncen-fc2-ppv-4900256-%e0%b8%99%e0%b8%b1%e0%b8%94%e0%b9%80%e0%b8%88%e0%b8%ad%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%99%e0%b9%89%e0%b8%ad%e0%b8%a2/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-15-185825-400x222.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-15-185825-400x222.png" alt="av uncen นัดเจอสาวน้อยกับช่องคลอดที่คับแน่น FC2-PPV-4900256">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av-uncen-fc2-ppv-4900256-%e0%b8%99%e0%b8%b1%e0%b8%94%e0%b9%80%e0%b8%88%e0%b8%ad%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%99%e0%b9%89%e0%b8%ad%e0%b8%a2/" title="av uncen นัดเจอสาวน้อยกับช่องคลอดที่คับแน่น FC2-PPV-4900256">
+			<span class="title">av uncen นัดเจอสาวน้อยกับช่องคลอดที่คับแน่น FC2-PPV-4900256</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19738">
+				<a class="thumb" href="https://avmisohd.to/xxx%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-avsa-434-%e0%b8%a3%e0%b8%b2%e0%b8%8a%e0%b8%b4%e0%b8%99%e0%b8%b5%e0%b8%aa%e0%b8%b8%e0%b8%94%e0%b8%a3%e0%b9%88%e0%b8%b2%e0%b8%99/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-15-184227-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-15-184227-400x225.png" alt="xxxญี่ปุ่น ราชินีสุดร่านที่มีความสุขเกินขีดจำกัด AVSA-434">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxx%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-avsa-434-%e0%b8%a3%e0%b8%b2%e0%b8%8a%e0%b8%b4%e0%b8%99%e0%b8%b5%e0%b8%aa%e0%b8%b8%e0%b8%94%e0%b8%a3%e0%b9%88%e0%b8%b2%e0%b8%99/" title="xxxญี่ปุ่น ราชินีสุดร่านที่มีความสุขเกินขีดจำกัด AVSA-434">
+			<span class="title">xxxญี่ปุ่น ราชินีสุดร่านที่มีความสุขเกินขีดจำกัด AVSA-434</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19731">
+				<a class="thumb" href="https://avmisohd.to/av-japan-fns-226-%e0%b8%9e%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a1%e0%b8%b5%e0%b9%80%e0%b8%9e%e0%b8%a8%e0%b8%aa%e0%b8%b1%e0%b8%a1%e0%b8%9e%e0%b8%b1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-15-181348-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-15-181348-400x225.png" alt="av japan พนักงานสาวมีเพศสัมพันธ์โดยไม่ได้ป้องกัน FNS-226">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av-japan-fns-226-%e0%b8%9e%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a1%e0%b8%b5%e0%b9%80%e0%b8%9e%e0%b8%a8%e0%b8%aa%e0%b8%b1%e0%b8%a1%e0%b8%9e%e0%b8%b1/" title="av japan พนักงานสาวมีเพศสัมพันธ์โดยไม่ได้ป้องกัน FNS-226">
+			<span class="title">av japan พนักงานสาวมีเพศสัมพันธ์โดยไม่ได้ป้องกัน FNS-226</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19723">
+				<a class="thumb" href="https://avmisohd.to/porn-av-jur-704-%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b9%81%e0%b8%99%e0%b8%b0%e0%b9%81%e0%b8%99%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%80%e0%b8%9c%e0%b8%a2%e0%b9%81%e0%b8%9e/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-14-185705-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-14-185705-400x224.png" alt="porn av ครูสาวแนะแนวที่เผยแพร่ตัวตนตอนเลิกเรียน JUR-704">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/porn-av-jur-704-%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b9%81%e0%b8%99%e0%b8%b0%e0%b9%81%e0%b8%99%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%80%e0%b8%9c%e0%b8%a2%e0%b9%81%e0%b8%9e/" title="porn av ครูสาวแนะแนวที่เผยแพร่ตัวตนตอนเลิกเรียน JUR-704">
+			<span class="title">porn av ครูสาวแนะแนวที่เผยแพร่ตัวตนตอนเลิกเรียน JUR-704</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19716">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av18-snos-205-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1%e0%b8%a3%e0%b8%b1%e0%b8%81%e0%b8%81%e0%b8%b1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-14-183559-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-14-183559-400x224.png" alt="หนังav18+ หญิงสาวร่วมรักกับชายหนุ่มที่รู้จัก SNOS-205">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av18-snos-205-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1%e0%b8%a3%e0%b8%b1%e0%b8%81%e0%b8%81%e0%b8%b1/" title="หนังav18+ หญิงสาวร่วมรักกับชายหนุ่มที่รู้จัก SNOS-205">
+			<span class="title">หนังav18+ หญิงสาวร่วมรักกับชายหนุ่มที่รู้จัก SNOS-205</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19709">
+				<a class="thumb" href="https://avmisohd.to/japanav-ipzz-847-%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%a7%e0%b8%a2%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a1%e0%b8%b5%e0%b8%a5%e0%b8%b5%e0%b8%a5%e0%b8%b2%e0%b9%80%e0%b8%94/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-14-181625-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-14-181625-400x224.png" alt="japanav ครูสาวสวยที่มีลีลาเด็ดขยับสะโพกที่เย้ายวน IPZZ-847">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/japanav-ipzz-847-%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%a7%e0%b8%a2%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a1%e0%b8%b5%e0%b8%a5%e0%b8%b5%e0%b8%a5%e0%b8%b2%e0%b9%80%e0%b8%94/" title="japanav ครูสาวสวยที่มีลีลาเด็ดขยับสะโพกที่เย้ายวน IPZZ-847">
+			<span class="title">japanav ครูสาวสวยที่มีลีลาเด็ดขยับสะโพกที่เย้ายวน IPZZ-847</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19702">
+				<a class="thumb" href="https://avmisohd.to/sexav-ipzz-866-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%80/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-13-182030-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-13-182030-400x226.png" alt="sexav หญิงสาวที่ถูกใช้ที่เธอเกลียดล่อลวงทางเพศ IPZZ-866">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/sexav-ipzz-866-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%80/" title="sexav หญิงสาวที่ถูกใช้ที่เธอเกลียดล่อลวงทางเพศ IPZZ-866">
+			<span class="title">sexav หญิงสาวที่ถูกใช้ที่เธอเกลียดล่อลวงทางเพศ IPZZ-866</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19695">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b8%ad%e0%b8%b2%e0%b8%a3%e0%b9%8c%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-aldn-585-%e0%b8%a0%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%aa/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-13-174904-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-13-174904-400x226.png" alt="หนังอาร์ญี่ปุ่น ภรรยาสาวที่แอบเล่นชู้ตอนสามีเผลอ ALDN-585">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b8%ad%e0%b8%b2%e0%b8%a3%e0%b9%8c%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-aldn-585-%e0%b8%a0%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%aa/" title="หนังอาร์ญี่ปุ่น ภรรยาสาวที่แอบเล่นชู้ตอนสามีเผลอ ALDN-585">
+			<span class="title">หนังอาร์ญี่ปุ่น ภรรยาสาวที่แอบเล่นชู้ตอนสามีเผลอ ALDN-585</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19688">
+				<a class="thumb" href="https://avmisohd.to/xxx-jav-bacj-180/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-13-165821-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-13-165821-400x223.png" alt="xxx jav หญิงขายบริการที่ลีลาแสนจะซาดิสม์ BACJ-180">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxx-jav-bacj-180/" title="xxx jav หญิงขายบริการที่ลีลาแสนจะซาดิสม์ BACJ-180">
+			<span class="title">xxx jav หญิงขายบริการที่ลีลาแสนจะซาดิสม์ BACJ-180</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19679">
+				<a class="thumb" href="https://avmisohd.to/av-porn-ipzz-853-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%82%e0%b9%88%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%80%e0%b8%88%e0%b9%89%e0%b8%b2/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-12-185549-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-12-185549-400x223.png" alt="av porn นักข่าวสาวที่ถูกเจ้านายล่อไปเย็ด IPZZ-853">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av-porn-ipzz-853-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%82%e0%b9%88%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%80%e0%b8%88%e0%b9%89%e0%b8%b2/" title="av porn นักข่าวสาวที่ถูกเจ้านายล่อไปเย็ด IPZZ-853">
+			<span class="title">av porn นักข่าวสาวที่ถูกเจ้านายล่อไปเย็ด IPZZ-853</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19672">
+				<a class="thumb" href="https://avmisohd.to/xxx%e0%b9%80%e0%b8%88%e0%b9%81%e0%b8%9b%e0%b8%99-gvh-844-%e0%b8%aa%e0%b8%ad%e0%b8%87%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%a5%e0%b8%b9%e0%b8%81%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b8%88%e0%b8%99%e0%b9%80/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-12-182659-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-12-182659-400x226.png" alt="xxxเจแปน สองแม่ลูกถูกจนเข้าบ้านแล้วถูกข่มขืน GVH-844">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxx%e0%b9%80%e0%b8%88%e0%b9%81%e0%b8%9b%e0%b8%99-gvh-844-%e0%b8%aa%e0%b8%ad%e0%b8%87%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%a5%e0%b8%b9%e0%b8%81%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b8%88%e0%b8%99%e0%b9%80/" title="xxxเจแปน สองแม่ลูกถูกจนเข้าบ้านแล้วถูกข่มขืน GVH-844">
+			<span class="title">xxxเจแปน สองแม่ลูกถูกจนเข้าบ้านแล้วถูกข่มขืน GVH-844</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19665">
+				<a class="thumb" href="https://avmisohd.to/avjapan-fns-204-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b8%8a%e0%b8%a7%e0%b8%99%e0%b8%8a%e0%b8%b2%e0%b8%a2%e0%b8%ab/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-12-180512-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-12-180512-400x224.png" alt="avjapan หญิงสาวที่แอบชวนชายหนุ่มเล่นเสียวบนรถ FNS-204">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/avjapan-fns-204-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b8%8a%e0%b8%a7%e0%b8%99%e0%b8%8a%e0%b8%b2%e0%b8%a2%e0%b8%ab/" title="avjapan หญิงสาวที่แอบชวนชายหนุ่มเล่นเสียวบนรถ FNS-204">
+			<span class="title">avjapan หญิงสาวที่แอบชวนชายหนุ่มเล่นเสียวบนรถ FNS-204</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19657">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%88%e0%b8%b5%e0%b8%99-mgl-0011-%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%a5%e0%b8%81%e0%b9%80%e0%b8%9b%e0%b8%a5%e0%b8%b5%e0%b9%88/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-183015-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-183015-400x225.png" alt="หนังโป๊จีน การแลกเปลี่ยนคู่รักระหว่างจีนกับเกาหลี MGL-0011">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%88%e0%b8%b5%e0%b8%99-mgl-0011-%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%a5%e0%b8%81%e0%b9%80%e0%b8%9b%e0%b8%a5%e0%b8%b5%e0%b9%88/" title="หนังโป๊จีน การแลกเปลี่ยนคู่รักระหว่างจีนกับเกาหลี MGL-0011">
+			<span class="title">หนังโป๊จีน การแลกเปลี่ยนคู่รักระหว่างจีนกับเกาหลี MGL-0011</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19650">
+				<a class="thumb" href="https://avmisohd.to/japansex-snos-218-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b9%81%e0%b8%8b%e0%b9%88%e0%b8%9a%e0%b8%81%e0%b8%b1%e0%b8%9a/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-175651-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-175651-400x225.png" alt="japansex หญิงสาวที่แอบแซ่บกับแฟนเพื่อนสนิท SNOS-218">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/japansex-snos-218-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b9%81%e0%b8%8b%e0%b9%88%e0%b8%9a%e0%b8%81%e0%b8%b1%e0%b8%9a/" title="japansex หญิงสาวที่แอบแซ่บกับแฟนเพื่อนสนิท SNOS-218">
+			<span class="title">japansex หญิงสาวที่แอบแซ่บกับแฟนเพื่อนสนิท SNOS-218</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19643">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xjapan-ipzz-840-%e0%b8%9e%e0%b8%b4%e0%b8%98%e0%b8%b5%e0%b8%81%e0%b8%a3%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%a7%e0%b8%a2%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a2/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-172447-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-11-172447-400x226.png" alt="หนังxjapan พิธีกรสาวสวยที่ยอมจำนนการคุกคามทางเพศ IPZZ-840">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xjapan-ipzz-840-%e0%b8%9e%e0%b8%b4%e0%b8%98%e0%b8%b5%e0%b8%81%e0%b8%a3%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%a7%e0%b8%a2%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a2/" title="หนังxjapan พิธีกรสาวสวยที่ยอมจำนนการคุกคามทางเพศ IPZZ-840">
+			<span class="title">หนังxjapan พิธีกรสาวสวยที่ยอมจำนนการคุกคามทางเพศ IPZZ-840</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19636">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99xxx-snos-221-%e0%b8%9e%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5/">
+												<img class=" " data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-10-201205-400x225.png" alt="ญี่ปุ่นxxx พนักงานหญิงที่ถูกลูกค้าปลุกเร้าอารมณ์ SNOS-221">
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99xxx-snos-221-%e0%b8%9e%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5/" title="ญี่ปุ่นxxx พนักงานหญิงที่ถูกลูกค้าปลุกเร้าอารมณ์ SNOS-221">
+			<span class="title">ญี่ปุ่นxxx พนักงานหญิงที่ถูกลูกค้าปลุกเร้าอารมณ์ SNOS-221</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19629">
+				<a class="thumb" href="https://avmisohd.to/xxxjav-dldss-492-%e0%b9%80%e0%b8%88%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%b2%e0%b8%a2%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b8%a5%e0%b9%88%e0%b8%a7%e0%b8%87%e0%b8%a5%e0%b8%b0/">
+												<img class=" " data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-10-195031-400x225.png" alt="xxxjav เจ้านายหญิงถูกล่วงละเมิดในอะพาร์ทเมนต์ DLDSS-492">
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxxjav-dldss-492-%e0%b9%80%e0%b8%88%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%b2%e0%b8%a2%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b8%a5%e0%b9%88%e0%b8%a7%e0%b8%87%e0%b8%a5%e0%b8%b0/" title="xxxjav เจ้านายหญิงถูกล่วงละเมิดในอะพาร์ทเมนต์ DLDSS-492">
+			<span class="title">xxxjav เจ้านายหญิงถูกล่วงละเมิดในอะพาร์ทเมนต์ DLDSS-492</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19622">
+				<a class="thumb" href="https://avmisohd.to/japanxxx-fns-210-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%a8%e0%b8%b6%e0%b8%81%e0%b8%a9%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b8%e0%b8%81%e0%b8%a3%e0%b8%b8%e0%b9%88%e0%b8%99%e0%b8%9e%e0%b8%b5/">
+												<img class=" " data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-10-193331-400x224.png" alt="japanxxx นักศึกษาสาวทุกรุ่นพี่ที่เธอชอบหักหลัง FNS-210">
+									</a>
+		<a class="infos" href="https://avmisohd.to/japanxxx-fns-210-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%a8%e0%b8%b6%e0%b8%81%e0%b8%a9%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b8%e0%b8%81%e0%b8%a3%e0%b8%b8%e0%b9%88%e0%b8%99%e0%b8%9e%e0%b8%b5/" title="japanxxx นักศึกษาสาวทุกรุ่นพี่ที่เธอชอบหักหลัง FNS-210">
+			<span class="title">japanxxx นักศึกษาสาวทุกรุ่นพี่ที่เธอชอบหักหลัง FNS-210</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19615">
+				<a class="thumb" href="https://avmisohd.to/xxx%e0%b9%84%e0%b8%a1%e0%b9%88%e0%b9%80%e0%b8%8b%e0%b9%87%e0%b8%99%e0%b9%80%e0%b8%8b%e0%b8%ad%e0%b8%a3%e0%b9%8c-fc2-ppv-4896878-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%99%e0%b9%89%e0%b8%ad%e0%b8%a2%e0%b9%83/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-09-191352-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-09-191352-400x224.png" alt="xxxไม่เซ็นเซอร์ สาวน้อยใจแตกโดนนัดสปา FC2-PPV-4896878">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxx%e0%b9%84%e0%b8%a1%e0%b9%88%e0%b9%80%e0%b8%8b%e0%b9%87%e0%b8%99%e0%b9%80%e0%b8%8b%e0%b8%ad%e0%b8%a3%e0%b9%8c-fc2-ppv-4896878-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%99%e0%b9%89%e0%b8%ad%e0%b8%a2%e0%b9%83/" title="xxxไม่เซ็นเซอร์ สาวน้อยใจแตกโดนนัดสปา FC2-PPV-4896878">
+			<span class="title">xxxไม่เซ็นเซอร์ สาวน้อยใจแตกโดนนัดสปา FC2-PPV-4896878</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19608">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%94%e0%b8%b9%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-nact-120/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-09-185936-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-09-185936-400x225.png" alt="ดูหนังโป้ญี่ปุ่น ภรรยาที่ใช้ร่างกายชำระหนี้ให้สามี NACT-120">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%94%e0%b8%b9%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-nact-120/" title="ดูหนังโป้ญี่ปุ่น ภรรยาที่ใช้ร่างกายชำระหนี้ให้สามี NACT-120">
+			<span class="title">ดูหนังโป้ญี่ปุ่น ภรรยาที่ใช้ร่างกายชำระหนี้ให้สามี NACT-120</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19601">
+				<a class="thumb" href="https://avmisohd.to/pornav-snos-183-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a1%e0%b8%b5%e0%b9%80%e0%b8%8b%e0%b9%87%e0%b8%81%e0%b8%aa%e0%b9%8c%e0%b8%81%e0%b8%b1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-09-182702-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-09-182702-400x224.png" alt="pornav ผู้หญิงที่มีเซ็กส์กับผู้จัดการร้านยันเช้า SNOS-183">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/pornav-snos-183-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%a1%e0%b8%b5%e0%b9%80%e0%b8%8b%e0%b9%87%e0%b8%81%e0%b8%aa%e0%b9%8c%e0%b8%81%e0%b8%b1/" title="pornav ผู้หญิงที่มีเซ็กส์กับผู้จัดการร้านยันเช้า SNOS-183">
+			<span class="title">pornav ผู้หญิงที่มีเซ็กส์กับผู้จัดการร้านยันเช้า SNOS-183</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19594">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xxx%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-fns-202-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-08-140644-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-08-140644-400x224.png" alt="หนังxxxญี่ปุ่น ผู้หญิงที่ถูกเซอร์ไพรส์ด้วยแรงกระแทก FNS-202">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xxx%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-fns-202-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5/" title="หนังxxxญี่ปุ่น ผู้หญิงที่ถูกเซอร์ไพรส์ด้วยแรงกระแทก FNS-202">
+			<span class="title">หนังxxxญี่ปุ่น ผู้หญิงที่ถูกเซอร์ไพรส์ด้วยแรงกระแทก FNS-202</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19587">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5-mgold-061-%e0%b8%a5%e0%b8%b9%e0%b8%81%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%9a%e0%b8%b8%e0%b8%8d%e0%b8%98/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-08-133943-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-08-133943-400x225.png" alt="หนังโป้เอวี ลูกสาวบุญธรรมที่ตกเป็นที่รักของพ่อ MGOLD-061">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5-mgold-061-%e0%b8%a5%e0%b8%b9%e0%b8%81%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%9a%e0%b8%b8%e0%b8%8d%e0%b8%98/" title="หนังโป้เอวี ลูกสาวบุญธรรมที่ตกเป็นที่รักของพ่อ MGOLD-061">
+			<span class="title">หนังโป้เอวี ลูกสาวบุญธรรมที่ตกเป็นที่รักของพ่อ MGOLD-061</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19580">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av%e0%b8%9d%e0%b8%a3%e0%b8%b1%e0%b9%88%e0%b8%87-gattouz0-x-lunalovekiss-%e0%b8%a5%e0%b8%b9%e0%b8%99%e0%b9%88%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%ab%e0%b8%99/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-08-125922-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-08-125922-400x225.png" alt="หนังavฝรั่ง Gattouz0 x Lunalovekiss ลูน่าสาวหน้าสวย">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87av%e0%b8%9d%e0%b8%a3%e0%b8%b1%e0%b9%88%e0%b8%87-gattouz0-x-lunalovekiss-%e0%b8%a5%e0%b8%b9%e0%b8%99%e0%b9%88%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%ab%e0%b8%99/" title="หนังavฝรั่ง Gattouz0 x Lunalovekiss ลูน่าสาวหน้าสวย">
+			<span class="title">หนังavฝรั่ง Gattouz0 x Lunalovekiss ลูน่าสาวหน้าสวย</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19572">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-start-564-%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%aa%e0%b8%b1/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-07-181924-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-07-181924-400x225.png" alt="หนังเอวีญี่ปุ่น ความสัมพันธ์เร่าร้อนในรถบริษัท START-564">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%80%e0%b8%ad%e0%b8%a7%e0%b8%b5%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-start-564-%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%aa%e0%b8%b1/" title="หนังเอวีญี่ปุ่น ความสัมพันธ์เร่าร้อนในรถบริษัท START-564">
+			<span class="title">หนังเอวีญี่ปุ่น ความสัมพันธ์เร่าร้อนในรถบริษัท START-564</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19565">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-dandya-034-%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-07-163357-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-07-163357-400x223.png" alt="หนังโป๊ญี่ปุ่น ครอบครัวหรรษาที่ชอบผิดศีลธรรม DANDYA-034">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8d%e0%b8%b5%e0%b9%88%e0%b8%9b%e0%b8%b8%e0%b9%88%e0%b8%99-dandya-034-%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3/" title="หนังโป๊ญี่ปุ่น ครอบครัวหรรษาที่ชอบผิดศีลธรรม DANDYA-034">
+			<span class="title">หนังโป๊ญี่ปุ่น ครอบครัวหรรษาที่ชอบผิดศีลธรรม DANDYA-034</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19558">
+				<a class="thumb" href="https://avmisohd.to/av-japan-nact-119-%e0%b8%ab%e0%b9%89%e0%b8%ad%e0%b8%87%e0%b9%81%e0%b8%ab%e0%b9%88%e0%b8%87%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%99%e0%b9%88/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-07-161654-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-07-161654-400x226.png" alt="av japan ห้องแห่งความสุขที่น่าทึ่งของชายชรา NACT-119">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av-japan-nact-119-%e0%b8%ab%e0%b9%89%e0%b8%ad%e0%b8%87%e0%b9%81%e0%b8%ab%e0%b9%88%e0%b8%87%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%99%e0%b9%88/" title="av japan ห้องแห่งความสุขที่น่าทึ่งของชายชรา NACT-119">
+			<span class="title">av japan ห้องแห่งความสุขที่น่าทึ่งของชายชรา NACT-119</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19550">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%a1%e0%b8%b2%e0%b9%83%e0%b8%ab%e0%b8%a1%e0%b9%88-gvh-841-%e0%b8%aa%e0%b8%ad%e0%b8%87%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%a5%e0%b8%b9/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-06-204703-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-06-204703-400x223.png" alt="หนังโป๊มาใหม่ สองแม่ลูกที่ควบคุมตัวเองไม่ได้ GVH-841">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%a1%e0%b8%b2%e0%b9%83%e0%b8%ab%e0%b8%a1%e0%b9%88-gvh-841-%e0%b8%aa%e0%b8%ad%e0%b8%87%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%a5%e0%b8%b9/" title="หนังโป๊มาใหม่ สองแม่ลูกที่ควบคุมตัวเองไม่ได้ GVH-841">
+			<span class="title">หนังโป๊มาใหม่ สองแม่ลูกที่ควบคุมตัวเองไม่ได้ GVH-841</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19543">
+				<a class="thumb" href="https://avmisohd.to/japan-av-fns-203-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%81%e0%b8%a5/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-06-202859-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-06-202859-400x225.png" alt="japan av นักเรียนหญิงที่ใช้กลยุทธ์ล่วงละเมิดทางเพศ FNS-203">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/japan-av-fns-203-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%81%e0%b8%a5/" title="japan av นักเรียนหญิงที่ใช้กลยุทธ์ล่วงละเมิดทางเพศ FNS-203">
+			<span class="title">japan av นักเรียนหญิงที่ใช้กลยุทธ์ล่วงละเมิดทางเพศ FNS-203</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19536">
+				<a class="thumb" href="https://avmisohd.to/xxx20-fjin-136-%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%9a%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%ab%e0%b8%a5%e0%b8%b1%e0%b9%88%e0%b8%87%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%ad%e0%b8%aa/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-06-200139-400x227.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-06-200139-400x227.png" alt="xxx20+ แม่บ้านที่หลั่งน้ำอสุจิให้ชายหนุ่มจนหมดตัว FJIN-136">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/xxx20-fjin-136-%e0%b9%81%e0%b8%a1%e0%b9%88%e0%b8%9a%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%ab%e0%b8%a5%e0%b8%b1%e0%b9%88%e0%b8%87%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%ad%e0%b8%aa/" title="xxx20+ แม่บ้านที่หลั่งน้ำอสุจิให้ชายหนุ่มจนหมดตัว FJIN-136">
+			<span class="title">xxx20+ แม่บ้านที่หลั่งน้ำอสุจิให้ชายหนุ่มจนหมดตัว FJIN-136</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19528">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87avhd-mida-621-%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b8%9c%e0%b8%a1%e0%b8%a1%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%99%e0%b8%84%e0%b9%89%e0%b8%b2/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-05-204759-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-05-204759-400x224.png" alt="หนังavhd เพื่อนผมมานอนค้างที่บ้านโดยไม่ได้ตั้งตัว MIDA-621">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87avhd-mida-621-%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b8%9c%e0%b8%a1%e0%b8%a1%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%99%e0%b8%84%e0%b9%89%e0%b8%b2/" title="หนังavhd เพื่อนผมมานอนค้างที่บ้านโดยไม่ได้ตั้งตัว MIDA-621">
+			<span class="title">หนังavhd เพื่อนผมมานอนค้างที่บ้านโดยไม่ได้ตั้งตัว MIDA-621</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19512">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8b%e0%b8%b1%e0%b8%9a%e0%b9%84%e0%b8%97%e0%b8%a2-fns-166-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-05-153417-400x227.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-05-153417-400x227.png" alt="หนังโป๊ซับไทย หญิงสาวที่แอบมีเซ็กส์หลังเลิกงาน FNS-166">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%8a%e0%b8%8b%e0%b8%b1%e0%b8%9a%e0%b9%84%e0%b8%97%e0%b8%a2-fns-166-%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97/" title="หนังโป๊ซับไทย หญิงสาวที่แอบมีเซ็กส์หลังเลิกงาน FNS-166">
+			<span class="title">หนังโป๊ซับไทย หญิงสาวที่แอบมีเซ็กส์หลังเลิกงาน FNS-166</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19519">
+				<a class="thumb" href="https://avmisohd.to/av-subthai-pfes-131-%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b8%82%e0%b8%ad%e0%b8%87%e0%b8%89%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b8%a1%e0%b8%b5/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-05-155904-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-05-155904-400x225.png" alt="av subthai เพื่อนของฉันที่แอบมีความสัมพันธ์กับพ่อ PFES-131">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/av-subthai-pfes-131-%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b8%82%e0%b8%ad%e0%b8%87%e0%b8%89%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%ad%e0%b8%9a%e0%b8%a1%e0%b8%b5/" title="av subthai เพื่อนของฉันที่แอบมีความสัมพันธ์กับพ่อ PFES-131">
+			<span class="title">av subthai เพื่อนของฉันที่แอบมีความสัมพันธ์กับพ่อ PFES-131</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19504">
+				<a class="thumb" href="https://avmisohd.to/avjav-fjin-140-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%aa%e0%b8%b7%e0%b8%9a%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%ad%e0%b8%a2%e0%b8%b9%e0%b9%88%e0%b9%83/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-04-173351-400x226.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-04-173351-400x226.png" alt="avjav นักสืบสาวที่ติดอยู่ในคุกหนวดเหนียวหนึบ FJIN-140">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/avjav-fjin-140-%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%aa%e0%b8%b7%e0%b8%9a%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%ad%e0%b8%a2%e0%b8%b9%e0%b9%88%e0%b9%83/" title="avjav นักสืบสาวที่ติดอยู่ในคุกหนวดเหนียวหนึบ FJIN-140">
+			<span class="title">avjav นักสืบสาวที่ติดอยู่ในคุกหนวดเหนียวหนึบ FJIN-140</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19496">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87x-ure-135-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%95%e0%b9%88%e0%b8%87%e0%b8%87%e0%b8%b2%e0%b8%99/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-04-161445-400x230.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-04-161445-400x230.png" alt="หนังx ผู้หญิงที่แต่งงานแล้วต้องไปอยู่บ้านกับพ่อสามี URE-135">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87x-ure-135-%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%ab%e0%b8%8d%e0%b8%b4%e0%b8%87%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%81%e0%b8%95%e0%b9%88%e0%b8%87%e0%b8%87%e0%b8%b2%e0%b8%99/" title="หนังx ผู้หญิงที่แต่งงานแล้วต้องไปอยู่บ้านกับพ่อสามี URE-135">
+			<span class="title">หนังx ผู้หญิงที่แต่งงานแล้วต้องไปอยู่บ้านกับพ่อสามี URE-135</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19489">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b9%83%e0%b8%ab%e0%b8%a1%e0%b9%88-same-234%e0%b8%a0%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%82%e0%b8%ad%e0%b8%87%e0%b8%a5%e0%b8%b9/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-04-154838-400x224.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-04-154838-400x224.png" alt="หนังโป้ใหม่ ภรรยาของลูกชายที่ถูกแก๊งยากูซ่ามาราคะ SAME-234">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87%e0%b9%82%e0%b8%9b%e0%b9%89%e0%b9%83%e0%b8%ab%e0%b8%a1%e0%b9%88-same-234%e0%b8%a0%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%82%e0%b8%ad%e0%b8%87%e0%b8%a5%e0%b8%b9/" title="หนังโป้ใหม่ ภรรยาของลูกชายที่ถูกแก๊งยากูซ่ามาราคะ SAME-234">
+			<span class="title">หนังโป้ใหม่ ภรรยาของลูกชายที่ถูกแก๊งยากูซ่ามาราคะ SAME-234</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19470">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xxx-nima-080-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%b8%e0%b8%94%e0%b9%80%e0%b8%8b%e0%b9%87%e0%b8%81%e0%b8%8b%e0%b8%b5%e0%b9%88%e0%b8%97%e0%b8%b5%e0%b9%88/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-03-140950-400x223.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-03-140950-400x223.png" alt="หนังxxx สาวสุดเซ็กซี่ที่ได้ไปคัดเลือกนักพากย์เสียง NIMA-080">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%ab%e0%b8%99%e0%b8%b1%e0%b8%87xxx-nima-080-%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%aa%e0%b8%b8%e0%b8%94%e0%b9%80%e0%b8%8b%e0%b9%87%e0%b8%81%e0%b8%8b%e0%b8%b5%e0%b9%88%e0%b8%97%e0%b8%b5%e0%b9%88/" title="หนังxxx สาวสุดเซ็กซี่ที่ได้ไปคัดเลือกนักพากย์เสียง NIMA-080">
+			<span class="title">หนังxxx สาวสุดเซ็กซี่ที่ได้ไปคัดเลือกนักพากย์เสียง NIMA-080</span>
+			
+		</a>
+	</div>
+</div>
+
+
+
+<div class=" col-6 col-md-3 col-lg-3 col-xl-2">
+	<div class="video-block thumbs-rotation" data-post-id="19477">
+				<a class="thumb" href="https://avmisohd.to/%e0%b8%94%e0%b8%b9av-mimk-267-%e0%b9%84%e0%b8%ad%e0%b8%94%e0%b8%ad%e0%b8%a5%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88/">
+												<picture class="">
+<source type="image/webp" data-srcset="https://avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-03-144213-400x225.png.webp">
+<img data-src="//avmisohd.to/wp-content/uploads/2026/05/Screenshot-2026-05-03-144213-400x225.png" alt="ดูav ไอดอลสาวที่ถูกเพื่อนร่วมชั้นมอมเหล้า MIMK-267">
+</picture>
+
+									</a>
+		<a class="infos" href="https://avmisohd.to/%e0%b8%94%e0%b8%b9av-mimk-267-%e0%b9%84%e0%b8%ad%e0%b8%94%e0%b8%ad%e0%b8%a5%e0%b8%aa%e0%b8%b2%e0%b8%a7%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%96%e0%b8%b9%e0%b8%81%e0%b9%80%e0%b8%9e%e0%b8%b7%e0%b9%88/" title="ดูav ไอดอลสาวที่ถูกเพื่อนร่วมชั้นมอมเหล้า MIMK-267">
+			<span class="title">ดูav ไอดอลสาวที่ถูกเพื่อนร่วมชั้นมอมเหล้า MIMK-267</span>
+			
+		</a>
+	</div>
+</div>
+
+					</div>
+				</div>
+			</div>
+					<nav aria-label="Posts navigation" class="d-none d-md-block col-12">
+			<ul class="pagination pagination-lg my-4 justify-content-center">
+									<li class="page-item active">
+						<span aria-current="page" class="page-link current">1</span>					</li>
+									<li class="page-item ">
+						<a class="page-link" href="https://avmisohd.to/page/2/">2</a>					</li>
+									<li class="page-item ">
+						<a class="page-link" href="https://avmisohd.to/page/3/">3</a>					</li>
+									<li class="page-item ">
+						<span class="page-link dots">…</span>					</li>
+									<li class="page-item ">
+						<a class="page-link" href="https://avmisohd.to/page/43/">43</a>					</li>
+									<li class="page-item ">
+						<a class="next page-link" href="https://avmisohd.to/page/2/">»</a>					</li>
+							</ul>
+		</nav>
+				<nav aria-label="Posts navigation" class="d-block d-md-none col-12">
+			<ul class="pagination pagination-lg my-4 justify-content-center">
+								<li class="page-item active"><span aria-current="page" class="page-link current">1</span></li>
+								<li class="page-item"> <a class="page-link" href="https://avmisohd.to/page/2/">»</a></li>
+							</ul>
+		</nav>
+								
+		</div>
+			</div>
+				<div data-wpr-lazyrender="1" class="hero">
+			<div class="container" tabindex="-1">
+				<div class="row hero-text">
+					<div class="col-12 col-md-8 mx-auto">
+						<h1>หนังเอวี หนังav av japan ดูหนังav avjapan javhd avchina porn japan xxxนักเรียน หนังโป๊ญี่ปุ่น avโดจิน หนังโป๊ฝรั่ง avจีน</h1>
+						<p class="hero-desc">
+							</p><h3>หนังav avjapan xxxญี่ปุ่น avhd sexjapan porn japan หนังโป๊ญี่ปุ่น xxxhd หนังโป๊ฝรั่ง <a href="https://avmisohd.cc/">avmisohd.com</a></h3><h3>&nbsp;</h3>						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div data-wpr-lazyrender="1" id="wrapper-footer">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-12">
+				<footer class="site-footer" id="colophon">
+										<div class="clear"></div>
+					<div class="site-info">
+						<h4><strong>ติดต่อโฆษณา : adsbook3017@gmail.com</strong></h4>					</div><!-- .site-info -->
+				</footer><!-- #colophon -->
+			</div><!--col end -->
+		</div><!-- row end -->
+	</div><!-- container end -->
+</div><!-- wrapper end -->
+</div><!-- #page we need this extra closing tag here -->
+<script>
+function _extends(){return(_extends=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(t[o]=n[o])}return t}).apply(this,arguments)}function _typeof(t){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}!function(t,e){"object"===("undefined"==typeof exports?"undefined":_typeof(exports))&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.LazyLoad=e()}(this,function(){"use strict";var t="undefined"!=typeof window,e=t&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),n=t&&"IntersectionObserver"in window&&"IntersectionObserverEntry"in window&&"intersectionRatio"in window.IntersectionObserverEntry.prototype&&"isIntersecting"in window.IntersectionObserverEntry.prototype,o=t&&"classList"in document.createElement("p"),r={elements_selector:"img",container:e||t?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",class_loading:"loading",class_loaded:"loaded",class_error:"error",load_delay:0,auto_unobserve:!0,callback_enter:null,callback_exit:null,callback_reveal:null,callback_loaded:null,callback_error:null,callback_finish:null,use_native:!1},i=function(t,e){var n,o=new t(e);try{n=new CustomEvent("LazyLoad::Initialized",{detail:{instance:o}})}catch(t){(n=document.createEvent("CustomEvent")).initCustomEvent("LazyLoad::Initialized",!1,!1,{instance:o})}window.dispatchEvent(n)};var a=function(t,e){return t.getAttribute("data-"+e)},s=function(t,e,n){var o="data-"+e;null!==n?t.setAttribute(o,n):t.removeAttribute(o)},c=function(t){return"true"===a(t,"was-processed")},l=function(t,e){return s(t,"ll-timeout",e)},u=function(t){return a(t,"ll-timeout")},d=function(t,e){t&&t(e)},f=function(t,e){t._loadingCount+=e,0===t._elements.length&&0===t._loadingCount&&d(t._settings.callback_finish)},_=function(t){for(var e,n=[],o=0;e=t.children[o];o+=1)"SOURCE"===e.tagName&&n.push(e);return n},v=function(t,e,n){n&&t.setAttribute(e,n)},g=function(t,e){v(t,"sizes",a(t,e.data_sizes)),v(t,"srcset",a(t,e.data_srcset)),v(t,"src",a(t,e.data_src))},b={IMG:function(t,e){var n=t.parentNode;n&&"PICTURE"===n.tagName&&_(n).forEach(function(t){g(t,e)});g(t,e)},IFRAME:function(t,e){v(t,"src",a(t,e.data_src))},VIDEO:function(t,e){_(t).forEach(function(t){v(t,"src",a(t,e.data_src))}),v(t,"src",a(t,e.data_src)),t.load()}},m=function(t,e){var n,o,r=e._settings,i=t.tagName,s=b[i];if(s)return s(t,r),f(e,1),void(e._elements=(n=e._elements,o=t,n.filter(function(t){return t!==o})));!function(t,e){var n=a(t,e.data_src),o=a(t,e.data_bg);n&&(t.style.backgroundImage='url("'.concat(n,'")')),o&&(t.style.backgroundImage=o)}(t,r)},h=function(t,e){o?t.classList.add(e):t.className+=(t.className?" ":"")+e},p=function(t,e,n){t.addEventListener(e,n)},y=function(t,e,n){t.removeEventListener(e,n)},E=function(t,e,n){y(t,"load",e),y(t,"loadeddata",e),y(t,"error",n)},w=function(t,e,n){var r=n._settings,i=e?r.class_loaded:r.class_error,a=e?r.callback_loaded:r.callback_error,s=t.target;!function(t,e){o?t.classList.remove(e):t.className=t.className.replace(new RegExp("(^|\\s+)"+e+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")}(s,r.class_loading),h(s,i),d(a,s),f(n,-1)},I=function(t,e){var n=function n(r){w(r,!0,e),E(t,n,o)},o=function o(r){w(r,!1,e),E(t,n,o)};!function(t,e,n){p(t,"load",e),p(t,"loadeddata",e),p(t,"error",n)}(t,n,o)},k=["IMG","IFRAME","VIDEO"],O=function(t,e){var n=e._observer;x(t,e),n&&e._settings.auto_unobserve&&n.unobserve(t)},A=function(t){var e=u(t);e&&(clearTimeout(e),l(t,null))},L=function(t,e){var n=e._settings.load_delay,o=u(t);o||(o=setTimeout(function(){O(t,e),A(t)},n),l(t,o))},x=function(t,e,n){var o=e._settings;!n&&c(t)||(k.indexOf(t.tagName)>-1&&(I(t,e),h(t,o.class_loading)),m(t,e),function(t){s(t,"was-processed","true")}(t),d(o.callback_reveal,t),d(o.callback_set,t))},z=function(t){return!!n&&(t._observer=new IntersectionObserver(function(e){e.forEach(function(e){return function(t){return t.isIntersecting||t.intersectionRatio>0}(e)?function(t,e){var n=e._settings;d(n.callback_enter,t),n.load_delay?L(t,e):O(t,e)}(e.target,t):function(t,e){var n=e._settings;d(n.callback_exit,t),n.load_delay&&A(t)}(e.target,t)})},{root:(e=t._settings).container===document?null:e.container,rootMargin:e.thresholds||e.threshold+"px"}),!0);var e},N=["IMG","IFRAME"],C=function(t,e){return function(t){return t.filter(function(t){return!c(t)})}((n=t||function(t){return t.container.querySelectorAll(t.elements_selector)}(e),Array.prototype.slice.call(n)));var n},M=function(t,e){this._settings=function(t){return _extends({},r,t)}(t),this._loadingCount=0,z(this),this.update(e)};return M.prototype={update:function(t){var n,o=this,r=this._settings;(this._elements=C(t,r),!e&&this._observer)?(function(t){return t.use_native&&"loading"in HTMLImageElement.prototype}(r)&&((n=this)._elements.forEach(function(t){-1!==N.indexOf(t.tagName)&&(t.setAttribute("loading","lazy"),x(t,n))}),this._elements=C(t,r)),this._elements.forEach(function(t){o._observer.observe(t)})):this.loadAll()},destroy:function(){var t=this;this._observer&&(this._elements.forEach(function(e){t._observer.unobserve(e)}),this._observer=null),this._elements=null,this._settings=null},load:function(t,e){x(t,this,e)},loadAll:function(){var t=this;this._elements.forEach(function(e){O(e,t)})}},t&&function(t,e){if(e)if(e.length)for(var n,o=0;n=e[o];o+=1)i(t,n);else i(t,e)}(M,window.lazyLoadOptions),M});
+//# sourceMappingURL=lazyload.min.js.map
+var lazyLoad=new LazyLoad({threshold:100});
+</script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/kolortube/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://avmisohd.to","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="rocket_lazyload_css-js-extra">
+var rocket_lazyload_css_data = {"threshold":"300"};
+//# sourceURL=rocket_lazyload_css-js-extra
+</script>
+<script id="rocket_lazyload_css-js-after">
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+//# sourceURL=rocket_lazyload_css-js-after
+</script>
+<script type="text/rocketlazyloadscript" id="wpst-scripts-js" data-rocket-src="//avmisohd.to/wp-content/themes/kolortube/js/theme.min.js?ver=1.8.0.1775906333" data-rocket-defer="" defer=""></script>
+<script type="text/rocketlazyloadscript" id="wpst-slick-js-js" data-rocket-src="//avmisohd.to/wp-content/themes/kolortube/js/slick/slick.min.js?ver=1.8.1" data-rocket-defer="" defer=""></script>
+<script id="wpst-main-js-extra">
+var wpst_ajax_var = {"url":"//avmisohd.to/wp-admin/admin-ajax.php","nonce":"2afeedb5f0","ctpl_installed":""};
+//# sourceURL=wpst-main-js-extra
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="wpst-main-js" data-rocket-src="//avmisohd.to/wp-content/cache/min/1/wp-content/themes/kolortube/js/main.js?ver=1779397476" data-rocket-defer="" defer=""></script>
+<!-- Other scripts -->
+
+
+
+<!-- Histats.com avmisohd  (aync)-->
+<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4888871,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4888871&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+
+
+
+
+
+
+
+</body></html><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1779531851 -->

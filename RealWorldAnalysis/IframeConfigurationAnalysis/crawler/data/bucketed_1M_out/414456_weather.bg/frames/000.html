@@ -1,0 +1,393 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<link rel="stylesheet" type="text/css" href="styles/style.Grid.sin.css">
+<link rel="stylesheet" type="text/css" href="styles/style.default.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Department of Weather Forecasts - NIMH</title>
+<script language="JavaScript" type="text/javascript">
+<!-- Copyright 2005, Sandeep Gangadharan -->
+<!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
+<!--
+if (document.getElementById) {
+document.writeln('<style>')
+document.writeln('.texter {display:none} @media print {.texter {display:block;}}')
+document.writeln('</style>') }
+
+function openClose(theID) {
+if (document.getElementById(theID).style.display == "block") { document.getElementById(theID).style.display = "none" }
+else { document.getElementById(theID).style.display = "block" } }
+// -->
+</script><style>
+.texter {display:none} @media print {.texter {display:block;}}
+</style>
+
+
+</head>
+
+<body>
+<div class="wrapper">
+  <header>
+    <logo class="logo"><a href="http://www.meteo.bg" target="_blank"><img src="images/static/NIMH-Logo-color200.png" width="150" height="150"></a></logo>
+
+    <div class="title"><h1> ПРОГНОЗИ ЗА ВРЕМЕТО </h1>
+        <h1>Национален институт по метеорология и хидрология</h1>
+    </div>
+    
+    <div class="lang"> 
+      <a href="index.php?lng=0"><img src="images/static/bg1.jpg" class="zname"></a>&nbsp;<a href="1en/index.php?lng=1"><img src="images/static/gb.jpg" class="zname"></a>
+    </div>
+
+
+    <div class="alarm" datednes="23.05.2026">
+      <img class="alarm kartaOpasniM" src="images/static/opasniSS_0.png">
+      <div class="akcent2" cool-typ="за опасно време"><a class="noline" href="obshtini/" target="_blank">Значителни ВАЛЕЖИ! <img class="alarm icon" src="images/static/6.new.gif"></a></div>
+    </div>
+
+<div class="poj">
+  <div class="subpoj" cool-typ="за пожароопасност">
+    <a href="pojaroopasnostPlus" target="_blank"> <img src="images/static/fireButton.0.png" alt="Препоръчителна готовност за борба с пожари"></a>
+  </div>
+</div>
+
+  </header>
+<!---------------------- Izvanredno - moje i da go niama --------------- -->
+<!--<izvanredno>
+<p><a href="https://storm.cfd.meteo.bg/meteo7/sites/storm.cfd.meteo.bg.meteo7/files/POZICIA_NIMH_Murgash_12032025.pdf" target="_blank">Позиция на Националния институт по метеорология и хидрология относно вероломното нахлуване във високопланинската синоптична станция вр. Мургаш</a></p>
+<p><a href="https://meteo.bg/meteo7/sites/storm.cfd.meteo.bg.meteo7/files/20240805PMS273.pdf" target="_blank">Писмо от НИМХ до държавни институции и до медиите</a> във връзка с ПМС № 273 от 5 август 2024 г.</p>
+</izvanredno>-->
+
+<!-- -------------------  MENU -------------- -->  
+
+<!-- -------------------  MENU -------------- -->  
+    <input type="checkbox" id="toggle">
+<nav>    
+        <label class="navbar-toggler" for="toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+  <menu>
+    <menucard class="tekusht" cool-typ="Начална страница">
+      <a class="submenuhead" href="index.php"><img src="karti/icons/home-blue3-icon.png"></a>
+    </menucard>
+    <menucard cool-typ="Последни данни, спътникови анимации">
+      <a class="submenuhead" href="index.php?koiFail=tekushti&amp;lng=0">Текущи данни</a>
+    </menucard>    
+    <menucard cool-typ="Карти на средните температури и на валежите за минали периоди">
+      <a class="submenuhead" href="index.php?koiFail=analizi&amp;lng=0">Анализи</a>
+    </menucard>
+    <menucard cool-typ="В нов прозорец">
+      <a class="submenuhead" href="obshtini" target="_blank">Прогнози<br><p class="small-italic">Опасни явления</p></a>
+    </menucard>
+    <menucard cool-typ="Карти Бг-3 дена, море, планини, пожароопасност, индекс на комфорт">
+      <a class="submenuhead" href="index.php?koiFail=bg&amp;lng=0">Прогнози<br><p class="small-italic">Краткосрочни за България</p></a>
+    </menucard>
+    <menucard cool-typ=" Седмична, месечна, сезонна">
+      <a class="submenuhead" href="index.php?koiFail=bg2&amp;lng=0">Прогнози<br><p class="small-italic">Средносрочни и дългосрочни за България</p></a>
+    </menucard>
+    <menucard cool-typ="Карти - Европа и Балканите ">
+      <a class="submenuhead" href="index.php?koiFail=eubp&amp;lng=0">Прогнози<br><p class="small-italic">Европа и Балканите</p></a>
+    </menucard>
+    <menucard cool-typ="таблици по градове за България и Европа ">
+      <a class="submenuhead" href="index.php?koiFail=tablitsi&amp;lng=0">  Прогнози<br><p class="small-italic">в точки</p></a>
+    </menucard>
+
+    <menucard cool-typ="ALADIN/AROME, вълнение на морето, комфорт, пожароопасност ">
+      <a class="submenuhead" href="index.php?koiFail=prognChisleni&amp;lng=0"> Числени прогнози<br><p class="small-italic">полета</p></a>
+    </menucard>
+    <menucard cool-typ="Метеограми за 72 часа, морско вълнение">
+      <a class="submenuhead" href="index.php?koiFail=poGradoveAJ&amp;lng=0"> Числени прогнози<br><p class="small-italic">в точки</p></a>
+    </menucard>
+    <menucard class="last" cool-typ="Контакти, продукти, модели">
+      <a class="submenuhead" href="index.php?koiFail=zaNas&amp;lng=0">За нас</a>
+    </menucard>
+  </menu>
+</nav>  
+<!-- End Menu -->
+  
+<!-- End Menu -->
+
+<!-- ----------------Main content --------------- --> 
+
+
+<h2> Измервания и анализи</h2>
+
+<kartichki>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0">
+ <center> <img class="ad" src="m/Observations.png"></center>
+ <p class="nopad">
+    <img src="karti/icons/danni.png" class="ikonki"> Текущи данни
+ </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#satelit">
+ <center> <img class="ad" src="images/IR.gif"></center>
+ <p class="nopad">
+    <img src="karti/icons/satellite.png" class="ikonki">Облачни системи, въздушни маси 
+ </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#valej">
+        	  <center> <img class="ad" src="images/others/nosel.php?imageToShow=prec&amp;karta=prec&amp;coeff=30&amp;chd=12&amp;d=0"> </center>
+ <p class="nopad">
+    <img src="karti/icons/rain.png" class="ikonki">24-часов валеж
+ </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#sniag">
+        	  <center> <img class="ad" src="images/others/nosel.php?imageToShow=snow&amp;karta=snow&amp;coeff=30&amp;chd=12&amp;d=0"> </center>
+ <p class="nopad">
+    <img src="karti/icons/snow.png" class="ikonki">Снежна покривка
+ </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#gramotevitsi">
+        	  <center> <img class="ad" src="m/sferici/vchera.png"> </center>
+ <p class="nopad">
+    <img src="karti/icons/thunder.png" class="ikonki">Гръмотевична дейност през миналото денонощие
+ </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#pojarI">
+   <center> <img class="ad" src="pojar/nosel.new.php?imageToShow=fwi&amp;karta=fwi&amp;coeff=30&amp;chd=3&amp;d=0"></center>
+  <p class="nopad">
+       <img src="karti/icons/fire.png" class="ikonki">Готовност за борба с пожари&nbsp;- анализ.
+  </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#komfort">
+   <center> <img class="ad" src="pojar/nosel.new.php?imageToShow=comfort&amp;karta=wci&amp;coeff=30&amp;chd=3&amp;d=0"></center>
+  <p class="nopad">
+       <img src="karti/icons/Weather-icon.png" class="ikonki">Топлинен комфорт (Т на усещане)&nbsp;- анализ.
+  </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#tSh2">
+   <center> <img class="ad" src="pojar/nosel.new.php?imageToShow=ts&amp;karta=ts&amp;coeff=30&amp;chd=3&amp;d=0"></center>
+  <p class="nopad">
+       <img src="karti/icons/Weather-icon.png" class="ikonki">Температура на земната повърхност&nbsp;- анализ.
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#toziMesets">
+        	  <center> <img class="ad" src="https://info.meteo.bg/obstanovki/month/temp/T_total_202306.png"> </center>
+ <p class="nopad">
+    <img src="karti/icons/Question.png" class="ikonki">Текущия месец - анализ на температура и валежи 
+ </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=analizi&amp;lng=0#minalMesets">
+        	  <center> <img class="ad" src="https://info.meteo.bg/obstanovki/month/temp/T_anomaly_202305.png"> </center>
+ <p class="nopad">
+    <img src="karti/icons/Question.png" class="ikonki">Изминалия месец - анализ на температура и валежи 
+ </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=analizi&amp;lng=0#minalSezon">
+        	  <center> <img class="ad" src="https://info.meteo.bg/season1/prec/R_total_2023_2.png"> </center>
+ <p class="nopad">
+    <img src="karti/icons/Question.png" class="ikonki">Изминалия сезон - анализ на температура и валежи 
+ </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tekushti&amp;lng=0#sst">
+        	  <center> <img class="ad" src="images/png/0/SST.png"> </center>
+ <p class="nopad">
+    <img src="karti/icons/Question.png" class="ikonki">Температура на морската вода
+ </p></a>
+</kartichka>
+
+</kartichki>
+
+<!-- ---------------------- Kratkosrochni prognozi BG    -------------------- -->
+<h2> Прогнози </h2>
+<kartichki>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=bg&amp;lng=0">
+   <center> <img class="ad" src="images/png/0/PrognozaBG_0.png"></center>
+  <p class="nopad">
+       <img src="karti/icons/weatherF.png" class="ikonki">България в следващите три дни; 
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=prognChisleni&amp;lng=0">
+  <img class="ad" src="https://info.meteo.bg/i/meteo/aladinC.gif">
+  <p class="nopad"> <img src="karti/icons/web-server-icon.png" class="ikonki">Числени прогнози от моделите ALADIN и AROME </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=prognChisleni&amp;lng=0#pojarI">
+   <center> <img class="ad" src="pojar/nosel.new.php?imageToShow=fwi&amp;karta=fwi&amp;coeff=30&amp;chd=3&amp;d=0"></center>
+  <p class="nopad">
+       <img src="karti/icons/fire.png" class="ikonki">Готовност за борба с пожари.
+  </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=prognChisleni&amp;lng=0#komfort">
+   <center> <img class="ad" src="pojar/nosel.new.php?imageToShow=comfort&amp;karta=wci&amp;coeff=30&amp;chd=3&amp;d=0"></center>
+  <p class="nopad">
+       <img src="karti/icons/Weather-icon.png" class="ikonki">Топлинен комфорт (Т на усещане).
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=prognChisleni&amp;lng=0#tS">
+   <center> <img class="ad" src="pojar/nosel.new.php?imageToShow=ts&amp;karta=ts&amp;coeff=30&amp;chd=3&amp;d=0"></center>
+  <p class="nopad">
+       <img src="karti/icons/Weather-icon.png" class="ikonki">Температура на земната повърхност.
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=poGradoveAJ&amp;lng=0#swhTabl">
+  <center>  <img class="ad" src="karti/wavesTabl.png"></center>
+  <p class="nopad">  <img src="karti/icons/wave.png" class="ikonki">Вълнение по крайбрежието </p></a>
+</kartichka>
+
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=prognChisleni&amp;lng=0#slana">
+  <center>  <img class="ad" src="images/aladinSlana/flashes_1.png"></center>
+  <p class="nopad"><img src="karti/icons/thunder.png" class="ikonki">Вероятност за мълнии</p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=prognChisleni&amp;lng=0#globus">
+   <center>  <img class="ad" src="karti/globus.png"> </center>
+  <p class="nopad">
+     <img src="karti/icons/weatherF.png" class="ikonki">Въздушни маси - анимация на полукълбо
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=poGradoveAJ&amp;lng=0">
+   <center>  <img class="ad" src="karti/meteogrami.png"> </center>
+  <p class="nopad">
+     <img src="karti/icons/weatherF.png" class="ikonki">Метеограми
+  </p></a>
+</kartichka>
+<kartichka><a class="kartichkaL" href="index.php?koiFail=tablitsi&amp;lng=0">
+   <center>  <img class="ad" src="karti/tabl.png"> </center>
+  <p class="nopad">
+     <img src="karti/icons/weatherF.png" class="ikonki">Синоптични прогнози в точки
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=bg&amp;lng=0#morePlanina">
+   <center> <img src="images/png/0/PrognozaBR_0.png" style="width:110px;height:170px;"> <img src="images/png/0/PrognozaMN_0.png" style="width:110px;height:170px;"></center>
+  <p class="nopad">
+       <img src="karti/icons/beach.png" class="ikonki">морски и 
+       <img src="karti/icons/Mountain-icon.png" class="ikonki">планински курорти; 
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=bg2&amp;lng=0">
+  <center><img class="ad" src="images/png/0/PrognozaD7_BG_1.png"></center>
+  <p class="nopad">
+     <img src="karti/icons/weatherF.png" class="ikonki">Средносрочни прогнози
+  </p></a>
+</kartichka>
+
+<kartichka><a class="kartichkaL" href="index.php?koiFail=eubp&amp;lng=0">
+  <center><img class="ad" src="images/png/0/PrognozaEU_0.png"></center>
+  <p class="nopad">
+     <img src="karti/icons/weatherF.png" class="ikonki">Европа и Балканите
+  </p></a>
+</kartichka>
+
+</kartichki>
+
+
+
+<!-- -------------------  FOOTER -------------- -->  
+
+<footer>
+<div class="vestnik">
+<h2 class="footer">Карта на сайта</h2>
+<a name="karta"></a>
+<h3><a class="footer" href="index.php?koiFail=tekushti&amp;lng=0"> =&gt; Текущи данни и измервания </a></h3>
+  <ul>
+    <li>Температура, вятър и явления в България</li>
+    <li>Минимални и максимални температури за изминалото денонощие</li>
+    <li>Спътникови анимации - температура на горната граница на облаците и въздушни маси</li>
+    <li>Валежи за 24 часа</li>
+    <li>Снежна покривка</li>
+    <li>Гръмотевична дейност</li>
+    <li>Температура на земната повърхност&nbsp;— анализ</li>
+    <li>Условията за борба с пожари&nbsp;— анализ</li>
+    <li>Условията на комфорт&nbsp;— анализ на последните данни</li>
+    <li>Карти-анализ за текущия месец до днес</li>
+    <li>Температура на морската повърхност&nbsp;— Черно и Средиземно море</li>
+ </ul>
+ <h3><a class="footer" href="index.php?koiFail=vecherenBiuletin&amp;lng=0"> =&gt; Вечерен метеорологичен бюлетин </a></h3>
+  <ul>
+    <li>Видео - преглед на времето през изминалото денонощие и прогноза за следващите дни</li>
+  </ul>
+ <h3><a class="footer" href="index.php?koiFail=analizi&amp;lng=0"> =&gt; Анализи </a></h3>
+  <ul>
+    <li>Карти-анализ за текущия месец до днес</li>
+    <li>Минимални и максимални температури за изминалото денонощие</li>
+    <li>Изминалият месец</li>
+    <li>Месечен ход на температурата и валежите м 4 града</li>  
+    <li>Изминалият сезон</li>
+  </ul>
+<h3><a class="footer" href="https://storm.cfd.meteo.bg/weather/obshtini/"> =&gt; Прогнози - опасни явления </a></h3>
+  <ul>
+    <li>Прогноза за опасни метеорологични явления (в нов прозорец)</li>
+ </ul>
+<h3><a class="footer" href="index.php?koiFail=bg&amp;lng=0"> =&gt; Прогнози за България - краткосрочни </a></h3>
+  <ul>
+    <li>Карти за 3 или 4 дена и текст</li>
+    <li>Прогноза по градове</li>
+    <li>Прогноза за планините</li>
+    <li>Прогноза за морето </li>
+    <li>Прогноза на препоръчителна готовност за борба с пожари</li>
+    <li>Прогноза на условията на комфорт</li>
+    <li>Прогноза на температурата на земната повърхност</li>
+    <li>Прогноза на вероятност за гръмотевична дейност</li>
+ </ul>
+<h3><a class="footer" href="index.php?koiFail=bg2&amp;lng=0"> =&gt; Прогнози за България -средносрочни</a></h3>
+  <ul>
+    <li>Седмична</li>
+    <li>15-дневна</li>
+    <li>Месечна</li>
+    <li>Сезонна</li>
+ </ul> 
+<h3><a class="footer" href="index.php?koiFail=eubp&amp;lng=0"> =&gt; Прогнози за Балканите и Европа</a></h3>
+  <ul>
+    <li>За Балканите - карти за 3 дена и текст</li>
+    <li>За Европа - карти за 3 дена и текст</li>
+    <li>Прогноза по градове </li>
+    <li>Продукти от НИМХ на базата на модела GFS</li>
+ </ul> 
+<h3><a class="footer" href="index.php?koiFail=tablitsi&amp;lng=0"> =&gt; Синоптични прогнози в точки</a></h3>
+  <ul>
+    <li>Прогноза по градове в България</li>
+    <li>Прогноза за морските курорти </li>
+    <li>Прогноза за планинските курорти</li>
+    <li>Прогноза по градове - Европа</li>
+ </ul> 
+<h3><a class="footer" href="index.php?koiFail=prognChisleni&amp;lng=0"> =&gt; Числени прогнози за България и Европа</a></h3>
+  <ul>
+    <li>ALADIN - облачност и вятър и температура при земята за 72 часа</li>
+    <li>AROME - облачност и вятър и температура при земята за 48 часа</li>
+    <li>Морско вълнение - височина на вълната и вятър над Черно море</li>
+    <li>Прогноза на вероятността за слана</li>
+    <li>Прогноза на вероятността за гръмотевична дейност</li>
+    <li>Прогноза на условията на комфорт</li>
+    <li>Прогноза на температурата на земната повърхност</li>
+    <li>Прогноза на препоръчителна готовност за борба с пожари</li>
+    <li>Продукти от НИМХ на базата на модела GFS</li>
+ </ul> 
+<h3><a class="footer" href="index.php?koiFail=poGradoveAJ&amp;lng=0"> =&gt; Числени прогнози в точки</a></h3>
+  <ul>
+    <li>Метеограми за 72 часа за всички областни центрове и за всичките ни синоптични станции </li>
+    <li>Морско вълнение за 12 курорта</li>
+ </ul> 
+<h3><a class="footer" href="index.php?koiFail=zaNas&amp;lng=0"> =&gt; За нас</a></h3>
+  <ul>
+    <li>Контакти</li>
+    <li>Предлагани продукти и услуги</li>
+    <li>Повече за прогнозите, които издаваме - краткосрочни, средносрочни, дългосрочни и числени</li>
+    <li>Повече за моделите, които пускаме и поддържаме оперативно в нашия институт</li>
+    <li>Повече за другите модели, които използваме</li>
+ </ul> 
+
+
+</div>
+<hr>
+<b>Copyright © 2026, НИМХ. </b>   Съдържанието на сайта на Националния институт по метеорология и хидрология (НИМХ) и технологиите, използвани в него, са под закрила на Закона за авторското право и сродните му права. Всички текстови и графични изображения, публикувани в сайта, са собственост на НИМХ, освен ако изрично не е посочено друго. Ползвателите на съдържанието на сайта на НИМХ се задължават, ако го разпространяват, да не го променят, изменят, редактират или модифицират и задължително да посочват източника на информация – НИМХ. </footer>
+</div>
+
+
+
+
+</body></html>

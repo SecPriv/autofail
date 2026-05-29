@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="tr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seal – alobet</title>
+</head>
+<body>
+
+<div id="anj-8e3fc0b5-5045-49e1-8dc5-c38892f5125c" data-anj-seal-id="8e3fc0b5-5045-49e1-8dc5-c38892f5125c" data-anj-image-size="92" data-anj-image-type="basic-small"><div style="display: block; position: relative; overflow: hidden; max-width: 92px; min-width: 32px; background-image: url(&quot;/anj-proxy.php?site=alobet&amp;u=https%3A%2F%2F8e3fc0b5-5045-49e1-8dc5-c38892f5125c.snippet.anjcdn.org%2F54f396e0-b046-49b1-9cb3-0c69281d7ea9-beacon.png&quot;);"><a target="_blank" rel="nonoopener" href="https://verification.anjouangamingboard.org/validate?domain=alobetlisans.com&amp;seal_id=49dadd2a4d91eea35d644d463fae94319e94df2c9c16b0599a3cbcf23b5e00d8a45c70ca2b9f290991dd8a8e21de00b7&amp;stamp=02cfb6e22ea57968c953681afc3811cc"><img alt="" style="width: 100%; height: auto" src="/anj-proxy.php?site=alobet&amp;u=https%3A%2F%2F8e3fc0b5-5045-49e1-8dc5-c38892f5125c.snippet.anjcdn.org%2Fsealassets%2F02cfb6e22ea57968c953681afc3811cc-alobetlisans.com-49dadd2a4d91eea35d644d463fae94319e94df2c9c16b0599a3cbcf23b5e00d8a45c70ca2b9f290991dd8a8e21de00b7-c2VhbC5wbmc%253D%3Fstatus%3Dvalid" data-orig-src="https://8e3fc0b5-5045-49e1-8dc5-c38892f5125c.snippet.anjcdn.org/sealassets/02cfb6e22ea57968c953681afc3811cc-alobetlisans.com-49dadd2a4d91eea35d644d463fae94319e94df2c9c16b0599a3cbcf23b5e00d8a45c70ca2b9f290991dd8a8e21de00b7-c2VhbC5wbmc%3D?status=valid"></a></div></div>
+
+<!-- anj-seal.js (site bazlı) -->
+<script src="/anj-js.php?site=alobet&amp;p=anj-seal.js" defer=""></script>
+
+
+<script>
+(function(){
+  const siteName     = "alobet";
+  const CONTAINER_ID = "anj-8e3fc0b5-5045-49e1-8dc5-c38892f5125c";
+  const ORIGIN1      = "https:\/\/8e3fc0b5-5045-49e1-8dc5-c38892f5125c.snippet.anjcdn.org";
+  const px           = (url) => '/anj-proxy.php?site=' + encodeURIComponent(siteName) + '&u=' + encodeURIComponent(url);
+
+  // --- Görsel proxy (href'e dokunma)
+  function fixImg(el){
+    if (!(el instanceof HTMLImageElement)) return;
+    const orig = el.getAttribute('data-orig-src') || el.src;
+    if (!orig || !orig.startsWith(ORIGIN1)) return;
+    if (el.srcset) {
+      el.srcset = el.srcset.split(',').map(p=>{
+        const [u,d]=p.trim().split(/\s+/);
+        return (u&&u.startsWith(ORIGIN1))?(px(u)+(d?' '+d:'')):p.trim();
+      }).join(', ');
+    }
+    el.setAttribute('data-orig-src', orig);
+    el.src = px(orig);
+  }
+  function fixBg(el){
+    const bg = el.style && el.style.backgroundImage;
+    if (!bg || !bg.includes(ORIGIN1)) return;
+    el.style.backgroundImage = bg.replace(/url\((['"]?)(https?:\/\/[^)'""]+)\1\)/g,(m,q,u)=>u.startsWith(ORIGIN1)?`url(${px(u)})`:m);
+  }
+  function fixNode(node){
+    if (!node || node.nodeType!==1) return;
+    if (node.tagName==='IMG') fixImg(node);
+    fixBg(node);
+    node.querySelectorAll && node.querySelectorAll('img,source[srcset],[style]').forEach(n=>{
+      if (n.tagName==='IMG') fixImg(n);
+      else if (n.hasAttribute('srcset')) {
+        const set=n.getAttribute('srcset')||'';
+        const ns=set.split(',').map(p=>{
+          const [u,d]=p.trim().split(/\s+/);
+          return (u&&u.startsWith(ORIGIN1))?(px(u)+(d?' '+d:'')):p.trim();
+        }).join(', ');
+        if (ns!==set) n.setAttribute('srcset', ns);
+      } else fixBg(n);
+    });
+  }
+  function runOnce(){ const el=document.getElementById(CONTAINER_ID); if (el) fixNode(el); }
+  if (document.readyState!=='loading') setTimeout(runOnce,0); else window.addEventListener('DOMContentLoaded', runOnce);
+
+  const obs=new MutationObserver(muts=>{
+    for (const m of muts){
+      if (m.type==='childList') m.addedNodes.forEach(n=>{ if(n.nodeType===1) fixNode(n); });
+      if (m.type==='attributes' && (m.attributeName==='src'||m.attributeName==='style'||m.attributeName==='srcset')) fixNode(m.target);
+    }
+  });
+  function startObs(){ const el=document.getElementById(CONTAINER_ID); if (el) obs.observe(el,{childList:true,subtree:true,attributes:true,attributeFilter:['src','style','srcset']}); }
+  if (document.readyState!=='loading') setTimeout(startObs,0); else window.addEventListener('DOMContentLoaded', startObs);
+
+  // --- Sıcak gizli iframe: taze stamp'li href'i hazır tut
+  let warmFrame;
+  function renderInFrame(){
+    if (!warmFrame) {
+      warmFrame = document.createElement('iframe');
+      warmFrame.style.cssText = 'display:none;width:0;height:0;border:0';
+      document.body.appendChild(warmFrame);
+    }
+    const doc = warmFrame.contentDocument;
+    doc.open();
+    doc.write(`<!doctype html><meta charset="utf-8">
+      <div id="anj-8e3fc0b5-5045-49e1-8dc5-c38892f5125c"
+           data-anj-seal-id="8e3fc0b5-5045-49e1-8dc5-c38892f5125c"
+           data-anj-image-size="92"
+           data-anj-image-type="basic-small"></div>`);
+    doc.close();
+    const s = doc.createElement('script');
+    s.src = '/anj-js.php?site=' + encodeURIComponent(siteName) + '&p=anj-seal.js&t=' + Date.now();
+    s.defer = true;
+    doc.head.appendChild(s);
+  }
+  function getHrefFromFrame(){
+    const doc = warmFrame && warmFrame.contentDocument;
+    const a = doc && doc.querySelector('a[href*="validate?"]');
+    return a ? a.href : null;
+  }
+  // ilk render ve periyodik yenile (expire'e yakalanmamak için)
+  renderInFrame();
+  setInterval(renderInFrame, 9 * 60 * 1000);
+
+  // --- Tıkta: boş sekmeyi hemen aç; mevcut taze href varsa anında yönlendir; yoksa hızlıca üret-polle
+  document.addEventListener('click',(e)=>{
+    const el=document.getElementById(CONTAINER_ID);
+    if (!el) return;
+    const a=e.target.closest && e.target.closest('#'+CSS.escape(CONTAINER_ID)+' a');
+    if (!a) return;
+    e.preventDefault();
+
+    const win = window.open('about:blank', '_blank'); // popup engeline takılmaz
+    if (!win) { window.location.href = a.href; return; }
+
+    let fresh = getHrefFromFrame();
+    if (fresh) {
+      try { win.location = fresh; } catch(_) {}
+      return;
+    }
+
+    // Hızlı üret ve 4 sn'ye kadar polle
+    renderInFrame();
+    const start = Date.now();
+    (function poll(){
+      fresh = getHrefFromFrame();
+      if (fresh) { try { win.location = fresh; } catch(_){ } return; }
+      if (Date.now() - start > 4000) { try { win.location = a.href; } catch(_){ window.location.href = a.href; } return; }
+      setTimeout(poll, 120);
+    })();
+  });
+})();
+</script><iframe style="display: none; width: 0px; height: 0px; border: 0px;"></iframe>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+
+    const ORIGIN = "https://.snippet.anjcdn.org";
+    const PROXY = url => "/anj-proxy.php?site=alobet&u=" + encodeURIComponent(url);
+
+    // Tüm IMG src'leri override et
+    document.querySelectorAll("img").forEach(img => {
+        if (img.src.startsWith(ORIGIN)) {
+            img.src = PROXY(img.src);
+        }
+    });
+
+    // background-image override
+    document.querySelectorAll("*[style]").forEach(el => {
+        let bg = el.style.backgroundImage;
+        if (bg.includes(ORIGIN)) {
+            el.style.backgroundImage = bg.replace(ORIGIN, PROXY(ORIGIN));
+        }
+    });
+});
+</script>
+
+
+
+
+</body></html>

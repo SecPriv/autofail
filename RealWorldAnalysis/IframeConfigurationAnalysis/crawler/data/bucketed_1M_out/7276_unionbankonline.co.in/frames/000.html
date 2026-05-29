@@ -1,0 +1,796 @@
+<!DOCTYPE html><html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home - Union Bank of India Online Banking</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/webslidemenu.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/newstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.min.js"></script>
+      <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+<script>
+function onChangeLocale(selectItem)
+{
+
+ //var selectedLanguage = selectItem[selectItem.selectedIndex].value;
+  var selectedLanguage = selectItem.value;
+ //alert("selectedLanguage = "+selectedLanguage);
+ document.getElementById(selectedLanguage).selected="true";
+ //document.getElementById("selectLocale").selected="true";
+var pgLoc = window.top.location;
+if(pgLoc=="https://www.unionbankonline.co.in/" || pgLoc=="https://mylang.unionbankonline.co.in/?lang=hindi" || pgLoc=="https://mylang.unionbankonline.co.in/")
+        {
+                if (selectedLanguage!='en-US')
+                {
+                        setCookie('LN_C1_Lang',selectedLanguage);
+                        window.top.location.href="https://mylang.unionbankonline.co.in?lang=hindi";
+                }
+                else
+                {
+                        setCookie('LN_C1_Lang',selectedLanguage);
+                        window.top.location.href="https://www.unionbankonline.co.in/";
+                }
+        }
+        else
+        {
+                if (selectedLanguage!='en-US')
+                {
+                        setCookie('LN_C1_Lang',selectedLanguage);
+                        window.top.location.href="https://mylang.unionbankonline.bank.in?lang=hindi";
+                }
+                else
+                {
+                        setCookie('LN_C1_Lang',selectedLanguage);
+                        window.top.location.href="https://www.unionbankonline.bank.in/";
+                }
+        }
+ //location.reload(true);
+ //reload();
+
+}
+function setCookie(cname, cvalue)
+{
+
+ document.cookie = cname + "=" +  cvalue + "; " + "; "+"path=/;domain=.unionbankonline.co.in";
+
+}
+</script>
+
+
+<!-- Added for EUM - HEAL Start-->
+
+<script src="Scripts/boomerang/boomerang.js"></script>
+<script src="Scripts/boomerang/plugins/rt.js"></script>
+<script src="Scripts/boomerang/plugins/auto-xhr.js"></script>
+<script src="Scripts/boomerang/plugins/errors.js"></script>
+<script>
+BOOMR.init({
+beacon_url: "/boomerang_handler",
+instrument_xhr: true,
+beacon_type: "GET"
+});
+</script>
+
+<!-- Added for EUM - HEAL End-->
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo-and-login">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4">
+                            <div class="logo hidden-xs hidden-sm">
+                                <a href="#">
+                                    <img src="images/logo.png" alt="Union Bank of India">
+                                </a>
+                            </div>
+                        </div>
+<!--Start-->
+                                                 <div class="col-sm-4 col-md-4" style="width:113px">
+                            <div class="logo hidden-xs hidden-sm">
+                                <a href="#">
+                                    <img src="images/logo1.png" style="height:53px" alt="Azadi Ka Amrit Mahotsav">
+                                </a>
+                            </div>
+                        </div>
+                                                <!--End-->
+
+
+                        <div class="text-right">
+ <div class="toll-free i-b" align="center" style=""><font size="1" class="toll-free-text">Language:<select id="selectLocale" aria-label="Choose Language" onchange="onChangeLocale(this);" style="background-color: white;border: 1px solid black;"><option value="choose" id="choose language" placeholder="choose language">Choose Language</option><option value="en-US" id="en-US">English</option><option value="hi-IN" id="hi-IN">हिन्दी</option></select></font></div>
+                                                                <div class="toll-free i-b">
+                                                                        <div class="toll-free-text"><h2>All-India Toll Free number</h2></div>
+                                                                        <div class="toll-free-num">
+                                                                                <table class="container-fluid">
+<tbody>
+        <tr>
+                <td rowspan="2">
+                        <img class="toll-img" src="images/toll-free.png" alt="">
+                </td>
+                        <td>
+                                <div class="toll-num">1800 222 243  / 1800 425 15 15</div>
+                        </td>
+                </tr>
+                <tr>
+                        <td>
+                                <div class="toll-num">1800 208 2244 / 1800 22 22 44</div>
+                        </td>
+                </tr>
+</tbody>
+</table>
+
+                                                                        </div>
+        &gt;                                                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- wsmenu -->
+            <div class="wsmenucontainer clearfix">
+                <div class="overlapblackbg"></div>
+                <div class="wsmobileheader clearfix">
+                    <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
+                    <a href="#" class="smallogo"><img src="images/logo.png" alt="Union Bank" width="87">
+<img src="images/logo1.png" alt="Union Bank" style="width:50px;height:30px">
+</a>
+                    <a class="callusicon" href="tel:1800222244"><span class="fa fa-phone"></span></a>
+                </div>
+                <!-- Main Menu -->
+                <div class="main-menu">
+                    <div class="wsmain">
+                        <nav class="wsmenu clearfix">
+                            <ul class="mobile-sub wsmenu-list">
+    <!--                            <li class="active"><a href="#">User Guide & Demos</a></li> -->
+<li class="other-services"><span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <a href="#" aria-label="Mouse over, User Guide and FAQs">User Guide &amp; FAQs</a>
+                                                                         <div class="megamenu clearfix">
+                                        <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 link-list">
+<li><a href="/InternetBankingProductDemos/CardTokenisation/Tokenisation_Product_Features.pdf" target="_blank" download=""><i class="fa fa-arrow-circle-right"></i>Tokenisation Product Features</a></li>
+                                                                           <li><a href="/InternetBankingProductDemos/CardTokenisation/FAQs_on_Tokenisation.pdf" target="_blank" download=""><i class="fa fa-arrow-circle-right"></i>FAQ's on Tokenisation</a></li>
+<li><a href="/InternetBankingProductDemos/Ret_Corp_Writeup.pdf" target="_blank" download=""><i class="fa fa-arrow-circle-right"></i>Writeup For Retail / Corporate Users</a></li>
+                                                                                <li><a href="https://www.unionbankonline.bank.in/InternetBankingProductDemos/FEBA_Guide.html"><i class="fa fa-arrow-circle-right"></i>User Guide &amp; FAQs</a></li>
+                                                                                <li><a href="https://www.cdslindia.com/Investors/FAQs.html"><i class="fa fa-arrow-circle-right"></i>FAQs on Demat Account-CDSL</a></li>
+                                                                                <li><a href="https://nsdl.co.in/faqs/faq.php"><i class="fa fa-arrow-circle-right"></i>FAQs on Demat Account-NSDL</a></li>
+                                                                                </ul>
+                                                                         </div>
+                                </li>
+                                        <li class="products"><span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <a href="#" aria-label=" Mouse over, Central / State Govt. Tax">Central / State Govt. Tax</a>
+                                    <div class="megamenu clearfix halfmenu">
+                                        <ul class="col-lg-3 col-md-3 col-sm-6 col-xs-12 link-list">
+                                                <li><a href="https://onlineservices.tin.nsdl.com/etaxnew/tdsnontds.jsp"><i class="fa fa-arrow-circle-right"></i>Direct Tax</a></li>
+                                                <li><a href="https://www.apct.gov.in"><i class="fa fa-arrow-circle-right"></i>AP Comm Tax</a></li>
+                                                <li><a href="https://cg.nic.in"><i class="fa fa-arrow-circle-right"></i>CG e-Challan</a></li>
+                                                <li><a href="http://rajtax.gov.in"><i class="fa fa-arrow-circle-right"></i>RJ Tax &amp; challan</a></li>
+                                                <li><a href="https://cbec.nsdl.com/EST"><i class="fa fa-arrow-circle-right"></i>Excise/Service Tax</a></li>
+                                        </ul>
+                                        <ul class="col-lg-3 col-md-3 col-sm-6 col-xs-12 link-list">
+                                                <li><a href="https://odishatax.gov.in"><i class="fa fa-arrow-circle-right"></i>Odisha Comm Tax</a></li>
+                                                <li><a href="https://vat.kar.nic.in/epay"><i class="fa fa-arrow-circle-right"></i>KA Comm Tax</a></li>
+                                                <li><a href="http://comtax.up.nic.in"><i class="fa fa-arrow-circle-right"></i>UP Tax &amp; challan</a></li>
+                                                <li><a href="http://www.icegate.gov.in"><i class="fa fa-arrow-circle-right"></i>Custom Duty</a></li>
+                                                    <li><a href="http://dgft.gov.in"><i class="fa fa-arrow-circle-right"></i>DGFT</a></li>
+                                        </ul>
+                                        <ul class="col-lg-3 col-md-3 col-sm-6 col-xs-12 link-list">
+                                                <li><a href="https://www.biharcommercialtax.gov.in"><i class="fa fa-arrow-circle-right"></i>Bihar Comm Tax</a></li>
+                                                <li><a href="https://eremit.unionbankofindia.co.in/verifytax"><i class="fa fa-arrow-circle-right"></i>MH VAT, CST &amp; PT</a></li>
+                                                <li><a href="https://www.indianpcs.gov.in/ipacpsweb/c"><i class="fa fa-arrow-circle-right"></i>Port Trust - PCS</a></li>
+<!--                                                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Assam Tax(after login)</a></li>-->
+                                                <li><a href="https://www.unionbankonline.bank.in/corp/BANKAWAY?Action.Maharashtra.esbtr.main=Y"><i class="fa fa-arrow-circle-right"></i>MH e-SBTR</a></li>
+                                        </ul>
+                                        <ul class="col-lg-3 col-md-3 col-sm-6 col-xs-12 link-list">
+                                                <li><a href="https://www.mahakosh.gov.in"><i class="fa fa-arrow-circle-right"></i>MH Mahakosh</a></li>
+                                                <li><a href="http://www.mca.gov.in/MCA21"><i class="fa fa-arrow-circle-right"></i>MCA21</a></li>
+                                                <li><a href="http://www.mptreasury.org/"><i class="fa fa-arrow-circle-right"></i>MP Treasury</a></li>
+                                                <li><a href="http://comtax.uk.gov.in/"><i class="fa fa-arrow-circle-right"></i>Uttarakhand Tax</a></li>
+                                               <li><a href="https://egras.raj.nic.in/"><i class="fa fa-arrow-circle-right"></i>Rajasthan e-GRAS</a></li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li><span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <a href="#" aria-label="Mouse over, Fees / Donation / Bills">Fees / Bills</a>
+                                    <div class="megamenu clearfix halfmenu">
+                                        <ul class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-list">
+                                             <li><a href="#"><i class="fa fa-arrow-circle-right"></i>GITAM | IGNOU | RGPV</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Telephone / Mobile Bills</a></li>
+                                                <!--<li><a href="https://iweb.in.worldline.com/ubicreditcardsplus/login.aspx"><i class="fa fa-arrow-circle-right"></i>View Union Credit Card Bill</a></li>-->
+                                                                                                <li><a href="https://unioncards.unionbankofindia.co.in/"><i class="fa fa-arrow-circle-right"></i>View Union Credit Card Bill</a></li>
+                                                      <li><a href="https://www.mponline.gov.in"><i class="fa fa-arrow-circle-right"></i>MP Online</a></li>
+                                                <li><a href="https://www.mahaonline.gov.in/site/home/index.aspx"><i class="fa fa-arrow-circle-right"></i>Maha Online</a></li>
+                                               <!-- <li><a href="https://eremit.unionbankofindia.co.in/creditcard"><i class="fa fa-arrow-circle-right"></i>Pay Union Credit Card Bill</a></li>-->
+                                                                                           <li><a href="https://unioncards.unionbankofindia.co.in/"><i class="fa fa-arrow-circle-right"></i>Pay Union Credit Card Bill</a></li>
+                                          <!--      <li><a href="https://www.unionbankofindia.co.in/english/personal_online_donations.aspx"><i class="fa fa-arrow-circle-right"></i>Donations</a></li>-->
+                                        </ul>
+                                        <ul class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-list">
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>EMI | Utility &amp; Card Payments</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Municipal Corporations</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Shopping | Entertainment</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Nagar Nigams</a></li>
+                                                                        <li><a href="https://compulsiveuat.payu.in/sms/index"><i class="fa fa-arrow-circle-right"></i>SMS Medical College</a></li>
+                                        </ul>
+                                        <ul class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-list">
+                                                <li><a href="http://www.epfindia.com"><i class="fa fa-arrow-circle-right"></i>EPFO</a></li>
+                                                <li><a href="http://www.esic.nic.in/online_application.php"><i class="fa fa-arrow-circle-right"></i>ESIC</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Insurance Premia | Mutual Fund</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Tours &amp; Travels</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Tax Payments</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system"><i class="fa fa-arrow-circle-right"></i>Other Payments..</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="download-app-form"><span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <a href="#" aria-label="Mouse over, Download Application Forms">Download Application Forms</a>
+                                    <div class="megamenu clearfix">
+                                        <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 link-list">
+                                                <li><a href="https://www.unionbankonline.bank.in/Upload/IBApplication.pdf"><i class="fa fa-arrow-circle-right"></i>Internet Banking Application</a></li>
+                                                <li><a href="https://www.unionbankonline.bank.in/Upload/aofmaccounts.doc"><i class="fa fa-arrow-circle-right"></i>Addition of more Accounts</a></li>
+                                                <li><a href="https://www.unionbankonline.bank.in/Upload/DeclReso_PartnershipFirms.doc"><i class="fa fa-arrow-circle-right"></i>Partnership Firm Declaration</a></li>
+                                                <li><a href="https://www.unionbankonline.bank.in/Upload/DeclReso_Companies.doc"><i class="fa fa-arrow-circle-right"></i>Company F T Resolution</a></li>
+                                                <li><a href="https://www.unionbankonline.bank.in/Upload/HUF_Society.doc"><i class="fa fa-arrow-circle-right"></i>HUF &amp; Society Application</a></li>
+                                                <li><a href="https://www.unionbankonline.bank.in/Upload/DSC_Linkage_Application_Form.pdf"><i class="fa fa-arrow-circle-right"></i>Digital Signature linking form</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="other-services"><span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <a href="#" aria-label="Mouse over, Other Services">Other Services</a>
+                                  <div class="megamenu clearfix">
+                                <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 link-list">
+                                <li><a href="https://www.unionbankofindia.co.in/english/digi-selfservice-banking.aspx#loan"><i class="fa fa-arrow-circle-right"></i>Apply loan online </a></li>
+                                                                <li><a href="https://www.unionbankofindia.co.in/english/personal-mutualfund.aspx"><i class="fa fa-arrow-circle-right"></i>Mutual Fund &amp; Investment</a></li>
+                                 <!--<li><a href="https://www.unionbankofindia.co.in/english/credit-card.aspx"><i class="fa fa-arrow-circle-right"></i>Credit Card Overview</a></li>
+                                   <li><a href="https://iweb.in.worldline.com/ubicreditcardsplus/login.aspx"><i class="fa fa-arrow-circle-right"></i>Credit Card</a></li>-->
+                                                                   <li><a href="https://unioncards.unionbankofindia.co.in/"><i class="fa fa-arrow-circle-right"></i>Credit Card Overview</a></li>
+                                                                   <li><a href="https://unioncards.unionbankofindia.co.in/"><i class="fa fa-arrow-circle-right"></i>Credit Card</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/english/personal-insurance-onlinetrading.aspx"><i class="fa fa-arrow-circle-right"></i>Trading</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/english/personal-insurance-dematoverview.aspx"><i class="fa fa-arrow-circle-right"></i>Demat</a></li>
+                                                <li><a href="http://www.unionbankofindia.co.in/english/personal_insurance_ASBA_overview.aspx"><i class="fa fa-arrow-circle-right"></i>ASBA</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/english/personal-other-callcenter.aspx"><i class="fa fa-arrow-circle-right"></i>Call Centre</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/english/personal-mob-overview.aspx"><i class="fa fa-arrow-circle-right"></i>Mobile Banking</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/english/personal-alternate-smsbanking.aspx"><i class="fa fa-arrow-circle-right"></i>SMS Banking</a></li>
+                                                <li><a href="https://www.unionbankofindia.co.in/english/ibd-remittance-eremit.aspx"><i class="fa fa-arrow-circle-right"></i>Union e-Remit</a></li>
+<!--                                            <li><a href="https://acs12.enstage-sas.com/ACSWeb/EnrollWeb/UnionBank/main/index.jsp"><i class="fa fa-arrow-circle-right"></i>Verified by VISA</a></li>
+                                                                                                <li><a href="https://acs.fssnet.co.in/acsauthserver/UBIBANK/webregistrationindex.htm"><i class="fa fa-arrow-circle-right"></i>Verified by VISA</a></li>-->
+                                                                                        </ul>
+                                                                                </div>
+                                </li>
+                                                                <li class="contact-us">
+                                    <a href="https://www.unionbankonline.bank.in/ContactUs.html">Contact Us</a>
+                                </li>
+<!--                               <li class='feedback'><a href="https://icmt.unionbankofindia.co.in/febaissues">Feedback</a></li>-->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Main Menu -->
+            </div>
+            <!-- End wsmenu -->
+        </header>
+        <section class="slider-and-likns">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-12">
+                        <section class="slider">
+                                                        <div class="owl-carousel owl-loaded owl-drag">
+ <!-- New images -->
+
+                                                        <!--     <div>
+                                                                        <img src="images/IBA_Poster_6-1394x393.jpg" alt="union bank" />
+                                                        </div> -->
+
+                                                                
+
+                                                                
+
+ 
+ 
+         
+
+<!--<div>
+<img src="images/mf.jpg" alt="union bank" />
+                                                                </div>-->
+
+ 
+
+
+ <!--<div>
+<img src="images/UBI-IB-Banner.jpg" alt="union bank" />
+                                                                </div>
+<div>
+<img src="images/New_Features.jpg" alt="IB New Feature" />
+</div>-->
+
+
+
+<!--
+ <div>
+<img src="images/fnp.jpg" alt="union bank" />
+                                                                </div>
+<div>
+<img src="images/IBA.jpg" alt="union bank" />
+                                                                </div>
+ <div>
+<img src="images/apollo.jpg" alt="union bank" />
+</div>
+
+ <div>
+<img src="images/Umobile.jpg" alt="union bank" />
+</div>
+
+<div>
+<img src="images/slide7.jpg" alt="union bank" />
+</div>
+-->
+
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                        <!-- <div>
+<img src="images/psb.jpg" alt="union bank" />
+                                                                </div>
+                                                                                                                                 <div>
+<img src="images/seniorcitizen.jpg" alt="union bank" />
+                                                                </div>-->
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                                 
+<!-- New images -->
+
+
+
+
+
+ 
+                                                                                                                
+
+                                                                
+                                                                
+
+<!--                                                            <div>
+                                                                        <a href="https://www.unionbankonline.bank.in/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&__EVENT_ID__=LOAD&ACTION.LOAD=Y&__CALL_MODE__=61&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=026"> <img src="images/slide5.jpg" alt="union bank"> </a>
+                                                                </div>
+-->
+                                                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-4356px, 0px, 0px); transition: 0.25s; width: 13068px;"><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/SSA.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/UnionHome.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/UnionMiles.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/UnionPersonal.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                      <img src="images/ibppf.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <img src="images/UBI_Dial.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <img src="images/FastagIB.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <img src="images/slide6.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <img src="images/slide4.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <img src="images/DICGC_logo_scan.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <img src="images/UBI_CBDC BANNER.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+          <a href="https://www.unionbankonline.bank.in/InternetBankingProductDemos/RBI_English.pdf" target="_blank">
+                  <img src="images/Nationwide_awareness_poster.jpg" alt="Salient features of RBI">
+          </a>
+                    </div></div><div class="owl-item active" style="width: 363px;"><div>
+<img src="images/DBU_Banner.jpg" alt="DBU Banner">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+          <a href="https://www.unionrewardz.com/" target="_blank">
+                  <img src="images/VyomUnionRewards.jpg" alt="Union Rewards Vyom">
+          </a>
+                    </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <a href="https://icmt.unionbankofindia.co.in/Feedback_New/Home.aspx?CHN=IB/" target="_blank">
+                                                                                <img src="images/UBI_QR.jpg" alt="union bank">
+                                                                        </a>
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/LIC_IPO1.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/DSB.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/eNPS.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/SSA.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/UnionHome.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/UnionMiles.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+<img src="images/UnionPersonal.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                      <img src="images/ibppf.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <img src="images/UBI_Dial.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <img src="images/FastagIB.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <img src="images/slide6.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item" style="width: 363px;"><div>
+                                                                        <img src="images/slide4.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <img src="images/DICGC_logo_scan.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <img src="images/UBI_CBDC BANNER.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+          <a href="https://www.unionbankonline.bank.in/InternetBankingProductDemos/RBI_English.pdf" target="_blank">
+                  <img src="images/Nationwide_awareness_poster.jpg" alt="Salient features of RBI">
+          </a>
+                    </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/DBU_Banner.jpg" alt="DBU Banner">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+          <a href="https://www.unionrewardz.com/" target="_blank">
+                  <img src="images/VyomUnionRewards.jpg" alt="Union Rewards Vyom">
+          </a>
+                    </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+                                                                        <a href="https://icmt.unionbankofindia.co.in/Feedback_New/Home.aspx?CHN=IB/" target="_blank">
+                                                                                <img src="images/UBI_QR.jpg" alt="union bank">
+                                                                        </a>
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/LIC_IPO1.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/DSB.jpg" alt="union bank">
+                                                                </div></div><div class="owl-item cloned" style="width: 363px;"><div>
+<img src="images/eNPS.jpg" alt="union bank">
+                                                                </div></div></div></div><div class="owl-nav"><div class="owl-prev"><i class="fa fa-chevron-left"></i></div><div class="owl-next"><i class="fa fa-chevron-right"></i></div></div><div class="owl-dots"><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+                        </section>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="three-tab-link">
+                            <ul>
+                                                        <li class=""><a href="https://www.unionbankonline.bank.in/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&amp;__START_TRAN_FLAG__=Y&amp;__EVENT_ID__=LOAD&amp;ACTION.LOAD=Y&amp;__CALL_MODE__=79&amp;AuthenticationFG.LOGIN_FLAG=1&amp;BANK_ID=026">Know Your User-ID</a></li>
+
+                                <li class="active"><a href="https://www.unionbankonline.bank.in/corp/AuthenticationController?__START_TRAN_FLAG__=Y&amp;FORMSGROUP_ID__=AuthenticationFG&amp;__EVENT_ID__=LOAD&amp;FG_BUTTONS__=LOAD&amp;ACTION.LOAD=Y&amp;AuthenticationFG.LOGIN_FLAG=1&amp;BANK_ID=026&amp;LANGUAGE_ID=001">Retail User Login</a></li>
+                                                                <!-- <li class=""><a href="https://www.unionbankonline.bank.in/Maintenancepage_old.htm">Retail User Login</a></li> -->
+                                                                <li class="active"><a href="https://www.unionbankonline.bank.in/corp/AuthenticationController?__START_TRAN_FLAG__=Y&amp;FORMSGROUP_ID__=AuthenticationFG&amp;__EVENT_ID__=LOAD&amp;FG_BUTTONS__=LOAD&amp;ACTION.LOAD=Y&amp;AuthenticationFG.LOGIN_FLAG=7&amp;BANK_ID=026&amp;LANGUAGE_ID=001">Corporate User Login</a></li>
+                                <!-- <li class=""><a href="https://www.unionbankonline.bank.in/Maintenancepage_old.htm">Corporate User Login</a></li> -->
+
+                                <li class=""><a href="https://www.unionbankonline.bank.in/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&amp;__START_TRAN_FLAG__=Y&amp;__EVENT_ID__=LOAD&amp;ACTION.LOAD=Y&amp;__CALL_MODE__=52&amp;AuthenticationFG.LOGIN_FLAG=1&amp;BANK_ID=026">Self User Creation</a></li>
+                                <li class=""><a href="https://www.unionbankonline.bank.in/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&amp;__START_TRAN_FLAG__=Y&amp;__EVENT_ID__=LOAD&amp;ACTION.LOAD=Y&amp;__CALL_MODE__=51&amp;AuthenticationFG.LOGIN_FLAG=1&amp;BANK_ID=026">Forgot/Create Password</a></li>
+
+                                                                <!--Added by sujisha for -->
+
+                                                                <li class=""><a href="/InternetBankingProductDemos/Ret_Corp_Writeup.pdf" style="text-transform:none;padding-right:15px" target="_blank" download="">Password Creation Process[pdf]</a></li>
+
+                                                                <!--END of Comment--->
+
+                                <li><div class="popup" onclick="myFunction()" id="popup" align="center">Register for Mobile Banking<span class="popuptext" id="myPopup" name="myPopup">Download the Vyom App from Google Playstore/ iOS  App store and proceed for registration through Internet Banking / Debit Card/ Branch Token</span></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="latest-section" style="margin:0px 0px 30px 0px">
+            <div class="container">
+
+
+<div style="margin:10px;">
+<!--New Scroll Start-->
+
+
+
+<!--<div class="row" style='padding:5px;margin:10px 0px;background:#0575B9'>
+
+                        <marquee style='font-size:14px'>
+
+                         <span style='color:white'>Dear Customers, Due to maintenance activity Internet Banking services will not be available between 07:30pm to 09:00pm on 24-12-2025. We regret the inconvenience caused.</span>
+
+                        </marquee></div>-->
+
+
+
+
+                <!-- RED Background Scroll -->
+
+
+              <!-- <div class="row" style='padding:5px;margin:10px 0px;background:#e31c22'>
+
+                        <marquee style='font-size:14px'>
+                    <span style='color:white'>Dear Customers, Due to maintenance activity Internet Banking services will not be available  between 07:30pm to 09:00pm on 24-12-2025. We regret the inconvenience caused.</span>
+                        </marquee></div>  --> 
+       
+
+
+<!-- BLUE Background Scroll -->
+                  <!-- <div class="row" style='padding:5px;margin:10px 0px;background:#0575B9'><marquee style='font-size:14px'>
+                                <span style='color:white'>The new IFSC can be obtained by sending SMS to '09223008486' by typing 'IFSC &lt;OLD IFSC&gt;'. The new IFSC codes are also available on <a href="https://unionbankofindia.co.in" target="blank" rel='noopener noreferrer' style='color:white'><u>Union Bank of India</u></a> website under Amalgamation Centre. </span></marquee></div>-->
+
+                                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="quick-links">
+                            <h2>Quick <b>Links!</b></h2>
+                            <div class="owl-carousel-2">
+                                <div class="item">
+                                    <!--<marquee direction="up">-->
+                                        <ul>
+                                                                                   <!-- <img src='/images/NPS.gif' alt='New' title='New' class='imgnps'/>
+-->
+<li><a href="https://www.unionbankonline.bank.in/Upload/RBI_Limited_Liability.pdf" target="blank" rel="noopener noreferrer"><span style="font-size:16px">RBI Limited Liability Policy </span></a> </li>
+<li><a href="https://www.unionbankofindia.co.in/english/agriculture-loan.aspx?#1" target="_blank" rel="noopener noreferrer">Agri Advisory Services</a> </li>
+<li><a href="https://trade.unionbankofindia.co.in/UBIFCC/portal" target="blank" rel="noopener noreferrer">Value Chain Finance</a> </li>
+<li><a href="https://trade.unionbankofindia.co.in/UBIFCC/portal" target="blank" rel="noopener noreferrer">Apply for LC/BG/Forex remittance</a> </li>
+<li><a href="https://play.google.com/store/apps/details?id=com.worldline.unionBank" target="blank" rel="noopener noreferrer">Apply for POS</a> </li>
+<li><a href="https://bit.ly/3y8hXnY" target="blank" rel="noopener noreferrer">Avail Pre-Approved Credit Card</a> </li>
+<li><a href="https://etc9sign.ventureinfotek.com/ubibnetc/" target="blank_" rel="noopener noreferrer">Union Bank FastTag Recharge</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/Details/bajaj-allianz-general-insurance" target="_blank" rel="noopener noreferrer">Apply for General Insurance</a></li>
+<li><a href="https://eremit.unionbankofindia.co.in/livebranch/ATMSearch.aspx" target="_blank" rel="noopener noreferrer">Branch/ATM Locator</a></li>
+<li><a href="https://digilocker.gov.in/" target="_blank" rel="noopener noreferrer">DigiLocker</a></li>
+<li><a href="https://www.DigiSaathi.info" target="_blank" rel="noopener noreferrer">DigiSaathi-Helpline 24*7 <img src="/images/NPS.gif" alt="New" title="New"></a></li>
+<li><a href="https://www.psballiance.com/doorstep-banking.html" target="_blank" rel="noopener noreferrer">Door Step Banking</a></li>
+<li><a href="https://www.cibil.com" target="_blank" rel="noopener noreferrer">Generate CIBIL Score</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/Listing/Government-Saving-Schemes">Government Schemes</a></li>
+<li><a href="https://service.unionbankportal.co.in/portal/en/home" target="_blank" rel="noopener noreferrer">Grievances Online</a></li>
+<li><a href="/InternetBankingProductDemos/Procedure_to_lodge_grievance_online.pdf" target="blank" download="">Procedure to Lodging the Grievance</a></li>
+<li><a href="https://instaloan.unionbankofindia.co.in/lendperfect/landing" target="_blank" rel="noopener noreferrer">Instant Personal Loan</a></li>
+<!--<li><a href="https://www.irctc.co.in" target="_blank" rel='noopener noreferrer'>IRCTC - Train Tickets</a></li>-->
+<li><a href="https://www.unionbankofindia.co.in/en/Details/kisan-vikas-patra-kvp" target="_blank" rel="noopener noreferrer">Kisan Vikas Patra</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/Details/national-pension-system-nps" target="_blank" rel="noopener noreferrer">NPS</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/listing/online-account-opening" target="_blank" rel="noopener noreferrer">Online Account Opening</a></li>
+<li><a href="https://www.unionbankofindia.co.in/english/digi-selfservice-banking.aspx#loan" target="_blank" rel="noopener noreferrer">Online Loan Application</a></li>
+<li><a href="https://icmt.unionbankofindia.co.in/nomination/" target="_blank" rel="noopener noreferrer">Online Nomination</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/Details/union-demat-and-online-trading-services" target="_blank" rel="noopener noreferrer">Open Trading account</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/common/online-tax-payment" target="_blank" rel="noopener noreferrer">Online Tax Payments</a></li>
+<li><a href="/InternetBankingProductDemos/CardTokenisation/Tokenisation_Product_Features.pdf" target="_blank" download="">Tokenisation Product Features</a></li>
+<li><a href="https://www.unionbankofindia.co.in/english/personal-online-uniontax.aspx" target="_blank" rel="noopener noreferrer">Union e-Tax Payments</a></li>
+<li><a href="https://www.unionbankofindia.co.in/en/Details/bharat-bill-payment-system" target="_blank" rel="noopener noreferrer">Utility Bill Payments</a></li>
+<li><a href="https://www.bseindia.com/markets/equity/EQReports/setcal.aspx" target="_blank" rel="noopener noreferrer">View Settlement Calendar E-instruction</a></li>
+<li><a href="https://www.unionbankonline.bank.in/accessibility.html">Accessibility</a></li>
+                                        </ul>
+
+
+                                   <!-- </marquee>-->
+                                </div>
+                            </div>
+
+<!-- SSL Seal Container -->
+<div id="ssl-seal-container"><div>
+      <div id="ss_gmo_globalsign_secured_site_seal" oncontextmenu="return false;" style="width:130px; height:66px">
+        <img id="ss_gmo_globalsign_img" src="https://seal.atlas.globalsign.com/gss/one/image?p1=www.unionbankonline.bank.in&amp;p2=seal_130-66_en.png&amp;p3=gs&amp;p8=0" alt="" onclick="ss_open_profile()" style="cursor:pointer; border:0; width:100%; margin-left:auto; margin-right:auto">
+      </div>
+    </div></div>
+
+<script>
+  const hostname = window.location.hostname;
+
+  if (hostname === "unionbankonline.co.in" || hostname === "www.unionbankonline.co.in")  {
+    // Load Digicert Seal
+    const sealDiv = document.createElement("div");
+    sealDiv.innerHTML = `
+      <div style="width:100%; border:0" title="Click to Verify - This site uses Digicert SSL for secure e-commerce and confidential communications.">
+        <div id="DigiCertClickID_vZclYyaq" data-language="en" style="width:100%;">
+          <a href="https://www.digicert.com/ev-ssl-certification.htm"></a>
+        </div>
+        <div class="footer" style="color:#ffffff; text-decoration:none; font: 9px verdana,sans-serif; letter-spacing:.5px; text-align:justify; margin:0px; padding:0px;">
+          Our Site is Digicert secured. Your credentials travel in a highly secure SSL mode with 128-bit to 256-bit encryption.
+        </div>
+      </div>
+    `;
+    document.getElementById("ssl-seal-container").appendChild(sealDiv);
+
+    // Load Digicert Script
+    const digicertScript = document.createElement("script");
+    digicertScript.type = "text/javascript";
+    digicertScript.innerHTML = `
+      var __dcid = __dcid || [];
+      __dcid.push({"cid":"DigiCertClickID_vZclYyaq","tag":"vZclYyaq"});
+      (function(){
+        var cid=document.createElement("script");
+        cid.async=true;
+        cid.src="https://seal.digicert.com/seals/cascade/seal.min.js";
+        document.body.appendChild(cid);
+      })();
+    `;
+    document.body.appendChild(digicertScript);
+
+  } else if (hostname === "mylang.unionbankonline.co.in" || hostname === "unionbankonline.bank.in" || hostname === "www.unionbankonline.bank.in") {
+    // Load Globalsign Seal
+    const sealDiv = document.createElement("div");
+    sealDiv.innerHTML = `
+      <div id='ss_gmo_globalsign_secured_site_seal' oncontextmenu='return false;' style='width:130px; height:66px'>
+        <img id='ss_gmo_globalsign_img' src='https://seal.atlas.globalsign.com/gss/one/seal?image=seal_130-66_en.png' alt='' onclick='ss_open_profile()' style='cursor:pointer; border:0; width:100%; margin-left:auto; margin-right:auto' >
+      </div>
+    `;
+    document.getElementById("ssl-seal-container").appendChild(sealDiv);
+
+    // Load Globalsign Script
+    window.addEventListener('load', () => {
+      let s = document.createElement('script');
+      s.src = 'https://seal.atlas.globalsign.com/gss/one/seal?image=seal_130-66_en.png';
+      document.body.appendChild(s);
+    });
+  }
+</script>
+
+
+
+                <br>
+                <img src="images/2020-Q2-ComplianceBadge-PCIDSS.png" alt="" style="height:10%; width:50%; margin-left:auto; margin-right:auto; display:block;">
+
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6">
+                            <div class="safe-guard"><!--class="the-latest">-->
+                                                                <h2>The <span style="color:#06579B">Latest</span></h2>
+
+                                                                                            <ul style="text-align:justify"><!--class="do-nicescrol"-->
+                                                                                                                     <!--
+                                          <li><a href="#">Due to upgradation of our IT systems, there may be disruptions to net banking services from 11 PM on 11 Oct 2020 to 6 AM on 12 Oct 2020 for the customers. We regret the inconvenience and request you to plan accordingly</a></li>
+
+                                                                                                                         <li><span style='color:#e31c22'>
+Based on RBI instructions on amalgamation of Banks, from 1st July 2021 onwards, NEFT/RTGS transactions are not allowed towards IFSC codes of merged banks i.e. Allahabad Bank, Syndicate Bank, Dena Bank and Vijaya Bank. You are requested to register beneficiaries with latest IFSCs of their amalgamated entity.</span></li>
+<br/>-->
+
+                                        <li><span style="color:#e31c22">
+Customers are requested to note that old cheque books are being phased out with new ones having additional security features w.e.f. 01.07.2021. Please contact your branch manager for replacement of old cheque book with new cheque book well before the said date. If you have already issued cheque from old cheque book, please get it replaced with new cheque immeditely. On receipt of confirmation from you, Bank will delete the old cheque book records from Core Banking Solution (CBS) system.</span></li>
+<br>
+                                                                                                                     <li>
+                                                                                                                             <!--<span style='color:#e31c22'>Use NEFT services in place of RTGS while doing fund transfer from Union bank to erstwhile Corporation Bank (eCB).Union Bank and eCB are now treated as same bank for RTGS service and fund transfer within same bank through RTGS is not permitted by RBI.</span>-->
+                                                                                                                             <span style="color:#e31c22">
+                                                                                                                                     You have registered for mandatory additional layer of security, by choosing 3 challenge questions and answering them. In case of providing incorrect answers to the such challenge questions your Internet Banking shall be blocked. In such case, please call our Customer Service at 1800-2222-44 &amp; 1800-208-2244 and choose option no. 2 for further process.</span>
+                                                                                                                     </li>
+                                                                                                                     <br>
+                                                                                                                     <li><span style="color:#e31c22">PSB Alliance Doorstep Banking Services available</span></li>
+                                                                                                                     <br>
+                                                                                                                     <li><span style="color:#e31c22">Bank has introduced 3 Factor Authentication (FA) to enhance the security features of your accounts, one time registration for the same is mandatory. <a href="/Challange_doc.pdf" target="_blank" style="font-weight:bold;color:#E31C22;">Challenge Question Enrollment by user[PDF file].</a></span></li>
+
+
+                                                                                                                                                 </ul>
+                                                                                                                                                                         </div>
+                            <div class="safe-guard">
+                            <h2>BEWARE <span style="color:#06579B">OF FRAUD CALLS</span></h2>
+                            <!--<ul class="do-nicescrol">-->
+                           <p style="text-align:justify">It has been observed that many fake and fraudulent contact numbers are circulated on web posting as ´Banks Customer Care Number´. One such number found in web search is 06206419089.
+Customers are hereby cautioned to conduct their own investigations and analysis and should check the accuracy, reliability of the contact numbers before using any contact number received by the customer other than through our official channels such as Bank´s Website/authentic  literature/Advertisements etc.
+Bank accepts no responsibility towards any loss incurred by the customer incidental to usage of any unauthentic contact number/channel.
+</p>
+
+
+
+<!--<li><a href="#">Dear Customers, Due to maintenance activity Internet Banking services will not be available from 12:50 AM on 23-05-2020 to 02:00 AM on 23-05-2020. Inconvenience caused is highly regretted.</a></li>  -->
+<!--                                <li><a href="#">Union Bank of India reviews MCLR</a></li>
+                                    <li><a href="#">Union Bank of India wins National Payments Excellence Awards</a></li>
+                                <li><a href="#">UNION BANK RAISES RS.250 CRORE THROUGH ISSUE OF BASEL III </a></li>
+                                <li><a href="#">ADDITIONAL TIER I (AT1) BONDS </a></li>
+                                <li><a href="#">Locker Rent revised w.e.f. 01st December,2016</a></li>
+                                <li><a href="#">Union Bank of India celebrates International Women▒s Day</a></li>
+                                <li><a href="#">Union Bank of India reviews MCLR</a></li>
+                                <li><a href="#">UNION BANK RAISES RS.500 CRORE THROUGH ISSUE OF</a></li>
+
+                                <li><a href="#">Union Bank of India changes interest rates on FCNR (B) Term Deposits</a></li>
+                                <li><a href="#">Union Bank of India reviews MCLR</a></li>
+                                <li><a href="#">Union Bank of India wins National Payments Excellence Awards</a></li>
+                                <li><a href="#">UNION BANK RAISES RS.250 CRORE THROUGH ISSUE OF BASEL III </a></li>
+                                <li><a href="#">ADDITIONAL TIER I (AT1) BONDS </a></li>
+                                <li><a href="#">Locker Rent revised w.e.f. 01st December,2016</a></li>
+                                <li><a href="#">Union Bank of India celebrates International Women▒s Day</a></li>
+                                <li><a href="#">Union Bank of India reviews MCLR</a></li>
+                                <li><a href="#">UNION BANK RAISES RS.500 CRORE THROUGH ISSUE OF</a></li>
+-->
+                            <!--</ul>-->
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                                                <div class="safe-guard" style="text-align:justify;">
+                            <h2>Safe &amp; Secure <span style="color:#06579B">[Internet Banking Usage Guidelines]</span></h2>
+                            <!--<p align="justify">Phishing is a fraudulent attempt, usually made through emails/calls/SMS to capture your confidential data like NetBanking Id/Password, mobile no, email Id/Password, Card no/PIN/CVV no, etc.</p>-->
+                                                         <marquee direction="up" behavior="scroll" scrolldelay="100" height="150" onmouseover="this.stop();" onmouseout="this.start();">
+                                                        <div class="right-things common-things" style="text-align:justify;">
+                                <ul>
+                                       <img src="images/success.png" alt="" style="margin-left: 40%;">
+                                     <li>Access your bank website only by typing the URL in address bar of browser.</li>
+                                    <li>Change your Internet Banking password at regular intervals.</li>
+                                    <li>Immediately change your passwords if you have accidentally revealed your credentials.</li>
+                                    <li>Use Virtual keyboard feature while logging into your internet banking account.</li>
+                                                                        <li>Always logout when you exit Net Banking.Do not directly close the browser.</li>
+                                                                        <li>Phishing is a fraudulent attempt,usually made through emails/calls/SMS to capture your confidential data like NetBanking Id/Password, mobile no, email Id /Password,Card no /PIN/CVV no etc.Please report immediately on antiphishing[Dot]ciso[At]the [rate]unionbankofindia[Dot] bank if you receive any such email/SMS or Phone call.</li>
+                                                                        <li>Be sure the URL you are accessing has 'https://'. The 's' indicates secured and the site uses encryption.</li>
+                                                                        <li>Always ensure latest version of Operating System with updated security patches.</li>
+                                                                        <li>Regularly update Browser and Antivirus with latest available definitions.</li>
+                                                                        <li>Always check the last log-in date and time in the post login page.</li>
+                                                                        <li>Ensure firewall is on and Antivirus is scanning the system regularly.</li>
+                                                                        <li>Avoid accessing Internet Banking from Cyber Cafes or shared PCs.</li>
+                                                                        <li>Check your account statements periodically to ensure that all the entries are correctly captured. In case of any discrepancy, inform the bank immediately</li>
+
+
+                                </ul>
+                                                           </div>
+                                                                <div class="wrong-things common-things" style="text-align:justify;">
+                                                               <ul>
+                                                                <img src="images/wrong-icon.png" alt="" style="margin-left: 40%;">
+                                    <li>Never respond to e-mails/embedded links /calls asking you to update or verify UserIDs/Passwords/Card no/CVV etc. Union Bank or any of its representative will never send you e-mails/SMS or calls you over phone to get your confidential details of your account/ PIN/OTP Password or personal details.</li>
+
+                                    <li>Never enter login or other sensitive information in any pop up window.</li>
+
+                                    <li>Do not be victim of SIM SWAPS, immediately investigate when you notice that you are not receiving call and message or getting SIM Registration fail. Keep your phone switched on and check alerts from Union Bank of India.</li>
+
+                                    <li>Never respond to any SIM Swap Request even from mobile operators.</li>
+
+                                </ul>
+                                                                </div>
+                                                                </marquee>
+
+                        </div>
+
+                        <div class="safe-guard" style="text-align:justify;">
+                            <h2>SafeGuard <span style="color:#06579B">[Beware of phishing]</span></h2>
+                            <p style="text-align:justify;">Avoid fraudulent communications asking for your UserId, Password, Card No, Account No. etc.
+                            Fraudulent emails contain links of look-alike websites to capture your financial data.
+                            Bank will never send such communications to you asking for your personal/confidential data.
+                            Always visit Bank's site instead of clicking on the links provided in emails/third party websites.
+                            Do not respond to pop-up windows asking for your financial or confidential information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></section>
+        <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="copy-right-bottom">
+                                <!--<span>"For best viewing of this website in IE 10/11, the 'Compatiblity View' setting should be turned off. To turn off the Compatiblity View setting, go to Tools -> Compatiblity View Settings and remove the mention of this website from the selected URLs."
+                                                                </span>-->
+                                <span>"Site best viewed at 1024x768 resolution in I.E. 10 or above, Google Chrome 40 or above, Firefox 37 or above, Safari 8 or above."
+                                                                </span>
+                                                                <ul class="f-menu">
+                                                                        <!--<li><a href="#">Site Map</a></li>-->
+                                                                        <li><a href="https://www.unionbankonline.bank.in/Disclaimer/TermsOfUse.pdf">Terms &amp; Conditions</a></li>
+                                                                        <li><a href="https://www.unionbankonline.bank.in/Disclaimer/Disclaimer.htm">Disclaimer</a></li>
+                                                                        <li><a href="https://www.unionbankofindia.co.in/en/common/privacypolicy" target="_blank">Privacy Policy</a></li>
+                                                                </ul>
+                                                                <p class="copy-right-union">Copyright © Union Bank of India, All rights reserved.</p>
+                                                        </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+    </div>
+<!--Start Popup Message-->
+        <!--End Pop up -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/webslidemenu.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="js/function.js"></script>
+        <script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+ }
+</script>
+<!--<script type='text/javascript'> (function(){ var s1=document.createElement('script'),s0=document.getElementsByTagName('script')[0]; s1.async=true; s1.src='https://ubi.floatbot.ai/portal/chatbot/?botId=617ce0c4e62936097723ca82'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1,s0); })(); </script>-->
+<!--New Chatbot -->
+<link rel="stylesheet" href="https://d2m39s2m8ekg0f.cloudfront.net/simplify360Style.css">
+<script src="https://d2m39s2m8ekg0f.cloudfront.net/Simplify360Chat.js"></script>
+<script type="text/javascript" src="js/newchatbot.js"></script>
+<!--End NewChat bot -->
+
+
+
+<script src="https://seal.atlas.globalsign.com/gss/one/seal?image=seal_130-66_en.png"></script><div id="s360-chat-iframe-container"><div id="s360-startup-float-message-container-id" class="s360-startup-float-message-container s360-hidden"> <div class="s360-startup-float-img"><img src="https://d2w1s20s54h788.cloudfront.net/static/media/close-icon.0ba9251cdb5c61a3505b.png" style="height:8px; width:8px; float:right ;margin-bottom:6px; cursor:pointer;" id="s360-startup-float-img-id"></div> <span id="s360-startup-float-message-id" class="s360-startup-float-message"></span></div><iframe id="s360-chat-iframe" name="s360chatiframe" allow="microphone" scrolling="no" background-color:="" transparent;="" frameborder="0" style="position: fixed; display: flow-root; width: 120px; height: 120px; right: 0px; bottom: 0px; overflow: hidden; margin-right: 0px; z-index: 999999999;" src="https://d2m39s2m8ekg0f.cloudfront.net/eyJzb3VyY2VPcmlnaW4iOiJodHRwczovL3d3dy51bmlvbmJhbmtvbmxpbmUuYmFuay5pbiIsImNsaWVudEhvc3RJZCI6ImE0NmE1MDdmLTZmZDUtNGJjNi05NDhkLWRiOGFhOTFjZjdmNCJ9" allowfullscreen="true" ,webkitallowfullscreen="true" ,="" mozallowfullscreen="true"> </iframe></div></body></html>

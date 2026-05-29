@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HeartLink — Meet, Match, and Start Something Real</title>
+  <meta name="description" content="HeartLink is a modern online dating landing page with tips, articles, and advice to help you meet someone special. Join free and start your story.">
+  <meta name="theme-color" content="#ff4477">
+
+  <style>
+    :root{
+      --bg: #0b0b12;            /* deep space */
+      --panel: #121222;         /* card bg */
+      --muted: #9aa3af;         /* text secondary */
+      --text: #eef2f7;          /* text primary */
+      --brand: #ff4477;         /* pink */
+      --brand-2: #8a5cff;       /* purple */
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --ring: rgba(255, 68, 119, 0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-lg: 22px;
+      --w: clamp(280px, 90vw, 1200px);
+    }
+
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 85% -10%, rgba(255, 68, 119, .18), transparent 60%),
+                  radial-gradient(900px 500px at 10% 0%, rgba(138, 92, 255, .18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font: 16px/1.6 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a{color:inherit}
+    img{max-width:100%; display:block}
+
+    .container{width:var(--w); margin-inline:auto; padding-inline:1rem}
+
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(1.1) blur(10px);
+      background: rgba(11,11,18,.6);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .9rem 0}
+    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800; font-size:1.1rem; letter-spacing:.3px}
+    .brand-badge{width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; box-shadow: var(--shadow)}
+    .brand-badge svg{filter: drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+
+    .nav-links{display:flex; gap:1.2rem; align-items:center}
+    .nav-links a{opacity:.85; text-decoration:none}
+    .nav-links a:hover{opacity:1}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color: var(--text); padding:.7rem 1rem; border-radius: 12px; text-decoration:none; transition: transform .12s ease, box-shadow .12s ease; box-shadow: var(--shadow)}
+    .btn:hover{transform: translateY(-1px)}
+    .btn-primary{background: linear-gradient(135deg, var(--brand), var(--brand-2)); border:none}
+
+    /* Hero */
+    .hero{padding: clamp(2rem, 4vw + 2rem, 5rem) 0}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1rem, 3vw, 2.5rem); align-items:center}
+    .eyebrow{display:inline-flex; align-items:center; gap:.5rem; color: var(--muted); font-weight:600; font-size:.9rem; margin-bottom:.8rem}
+    .eyebrow .dot{width:8px;height:8px;border-radius:999px;background:var(--success)}
+    .hero h1{font-size: clamp(2rem, 3.5vw + 1rem, 3.3rem); line-height:1.15; margin:0 0 1rem}
+    .hero p{color: var(--muted); margin:0 0 1.4rem}
+    .cta{display:flex; flex-wrap:wrap; gap:.8rem}
+    .trust{display:flex; align-items:center; gap:.8rem; color:var(--muted); font-size:.9rem; margin-top:1rem}
+    .trust img{width:26px; height:26px; border-radius:999px}
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card{padding:1rem; display:grid; gap:1rem}
+    .mini-form{display:grid; gap:.6rem}
+    .input{width:100%; padding:.8rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color:var(--text); outline:none}
+    .input:focus{box-shadow: 0 0 0 4px var(--ring); border-color:transparent}
+
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:.8rem}
+    .stat{padding:.8rem 1rem}
+    .stat .k{font-weight:800; font-size:1.4rem}
+    .stat .t{color:var(--muted); font-size:.85rem}
+
+    /* Features */
+    .section{padding: clamp(2.5rem, 5vw, 4rem) 0}
+    .section h2{font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem); margin:0 0 .8rem}
+    .section p.lead{color:var(--muted); margin:0 0 1.6rem}
+
+    .feature-grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem}
+    .feature{padding:1.1rem}
+    .feature h3{margin:.6rem 0 .2rem; font-size:1.1rem}
+    .feature p{color:var(--muted); margin:0}
+    .icon{width:38px; height:38px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(255,68,119,.25), rgba(138,92,255,.25)); border:1px solid rgba(255,255,255,.12)}
+
+    /* Articles */
+    .articles{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem}
+    .post{display:grid; gap:.8rem; padding:1rem}
+    .post small{color:var(--muted)}
+    .post h3{margin:.2rem 0}
+
+    /* Advice + Safety */
+    .tips{display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem}
+    .tips .list{display:grid; gap: .8rem}
+    .tip{padding:1rem}
+    .tip h4{margin:.2rem 0}
+
+    /* Testimonials */
+    .testimonials{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem}
+    .quote{padding:1rem; display:grid; gap:.8rem}
+    .quote .who{display:flex; align-items:center; gap:.6rem}
+    .who img{width:36px; height:36px; border-radius:999px}
+    .stars{font-size:1rem}
+
+    /* FAQ */
+    details{background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.09); border-radius:12px; padding: .9rem 1rem}
+    summary{cursor:pointer; font-weight:700}
+    details p{color:var(--muted)}
+
+    /* Footer */
+    footer{padding:2rem 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.08)}
+    .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; align-items:center}
+    .sub{display:flex; gap:.6rem}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .feature-grid, .articles, .testimonials{grid-template-columns: 1fr 1fr}
+      .tips{grid-template-columns: 1fr}
+      .footer-grid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 640px){
+      .nav-links{display:none}
+      .feature-grid, .articles, .testimonials, .stats{grid-template-columns: 1fr}
+    }
+  </style>
+<style>.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style></head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heart icon">
+            <path d="M12 21s-6.4-4.35-9.33-7.28A6.6 6.6 0 0 1 12 4.67a6.6 6.6 0 0 1 9.33 9.05C18.4 16.65 12 21 12 21Z" stroke="white" stroke-width="1.6" fill="white"></path>
+          </svg>
+        </div>
+        HeartLink
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#articles">Articles</a>
+        <a href="#advice">Advice</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="#join">Join Free</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Verified profiles • Privacy-first matching</div>
+        <h1>Meet your person.<br> Not your pen pal.</h1>
+        <p>HeartLink helps you turn great profiles into real connections with smart prompts, safety-first design, and conversation starters that actually work.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#join">Get Started</a>
+          <a class="btn" href="#articles" aria-label="Read advice and dating articles">Read Tips</a>
+        </div>
+        <div class="trust" aria-label="Trust signals">
+          <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&amp;w=64&amp;auto=format&amp;fit=crop" alt="User avatar" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&amp;w=64&amp;auto=format&amp;fit=crop" alt="User avatar" loading="lazy">
+          <span>Trusted by <strong>280k+</strong> singles worldwide</span>
+        </div>
+      </div>
+
+      <aside class="card hero-card" aria-label="Quick sign up">
+        <form class="mini-form" id="join">
+          <label>
+            <span class="sr">Your first name</span>
+            <input class="input" type="text" name="name" placeholder="Your first name" autocomplete="given-name" required="">
+          </label>
+          <label>
+            <span class="sr">Email</span>
+            <input class="input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required="">
+          </label>
+          <label>
+            <span class="sr">City</span>
+            <input class="input" type="text" name="city" placeholder="City">
+          </label>
+          <button class="btn btn-primary" type="submit">Create my free account</button>
+          <small style="color:var(--muted)">By continuing, you agree to our <a href="#">Terms</a> &amp; <a href="#">Privacy</a>.</small>
+        </form>
+        <div class="stats">
+          <div class="card stat"><div class="k">95%</div><div class="t">Profile verification rate</div></div>
+          <div class="card stat"><div class="k">24h</div><div class="t">Average match time</div></div>
+          <div class="card stat"><div class="k">4.8★</div><div class="t">App store rating</div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2>Why HeartLink works</h2>
+      <p class="lead">Real people. Real conversation. Real dates. These features make it simple—and safe—to move from match to meeting.</p>
+      <div class="feature-grid">
+        <article class="card feature">
+          <div class="icon" aria-hidden="true">💬</div>
+          <h3>Smart prompts</h3>
+          <p>Break the ice with conversation starters tailored to your shared interests and location.</p>
+        </article>
+        <article class="card feature">
+          <div class="icon" aria-hidden="true">🛡️</div>
+          <h3>Safety-first</h3>
+          <p>Photo verification, in-app reporting, and date check-ins put your safety first.</p>
+        </article>
+        <article class="card feature">
+          <div class="icon" aria-hidden="true">✨</div>
+          <h3>Quality matches</h3>
+          <p>Our matching engine prioritizes intent, shared values, and availability—not endless swiping.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section id="articles" class="section">
+    <div class="container">
+      <h2>Latest articles &amp; advice</h2>
+      <p class="lead">Evidence-backed dating guidance from coaches and behavioral science. No cheesy pick-up lines—promise.</p>
+      <div class="articles">
+        <article class="card post">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Two people laughing over coffee" loading="lazy" style="border-radius:12px">
+          <small>Guide • 6 min read</small>
+          <h3>First-Date Questions That Spark Real Conversation</h3>
+          <p>Skip the job-title small talk. Try these curiosity-forward questions that invite stories, not résumés.</p>
+          <a class="btn" href="#">Read more</a>
+        </article>
+        <article class="card post">
+          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Phone with dating app" loading="lazy" style="border-radius:12px">
+          <small>How-To • 5 min read</small>
+          <h3>Build a Profile That Attracts Replies</h3>
+          <p>Use the 70/20/10 rule for photos, and write a bio that shows warmth, values, and a hint of play.</p>
+          <a class="btn" href="#">Read more</a>
+        </article>
+        <article class="card post">
+          <img src="https://images.unsplash.com/photo-1523952578875-e14b0f2b2e10?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="City date night" loading="lazy" style="border-radius:12px">
+          <small>Advice • 7 min read</small>
+          <h3>From Chat to Meet: Timing It Right</h3>
+          <p>Most great matches meet within 5–7 days. Here’s how to suggest the first date with confidence.</p>
+          <a class="btn" href="#">Read more</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advice + Safety -->
+  <section id="advice" class="section">
+    <div class="container tips">
+      <div class="card list">
+        <div class="tip">
+          <h4>Profile photo framework</h4>
+          <p>Include 1 clear headshot, 1 full-body, 1 hobby/action shot, and 1 social photo with friends. Natural light wins.</p>
+        </div>
+        <div class="tip">
+          <h4>Messaging momentum</h4>
+          <p>Match → exchange 3–5 meaningful messages → propose a low-pressure plan. Keep the window moving.</p>
+        </div>
+        <div class="tip">
+          <h4>First date ideas</h4>
+          <p>Daytime coffee walk, bookstore browse + tea, gallery hour, or mini-golf. Built-in conversation beats sitting still.</p>
+        </div>
+        <div class="tip">
+          <h4>Deal-breakers vs. preferences</h4>
+          <p>List three true non‑negotiables and keep the rest flexible. It opens doors to real compatibility.</p>
+        </div>
+      </div>
+      <aside class="card" style="padding:1rem">
+        <h3 style="margin-top:0">Safety essentials</h3>
+        <ul style="margin:0; padding-left:1.1rem; color:var(--muted)">
+          <li>Meet in a public place and tell a friend where you’re going.</li>
+          <li>Use in‑app calling until you’re comfortable sharing your number.</li>
+          <li>Avoid sending money or sharing sensitive info.</li>
+          <li>Trust your instincts—end the date or report if something feels off.</li>
+        </ul>
+        <p style="margin-top:1rem"><a class="btn" href="#">Read full safety guide</a></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" aria-label="Success stories">
+    <div class="container">
+      <h2>Real people, real stories</h2>
+      <p class="lead">HeartLink members who met up, connected, and started something real.</p>
+      <div class="testimonials">
+        <figure class="card quote">
+          <div class="who"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&amp;w=64&amp;auto=format&amp;fit=crop" alt="Ava"> <figcaption><strong>Ava</strong> • Berlin</figcaption></div>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>“We went from bookstore banter to weekend trips in three months. The prompts made it easy to be myself.”</blockquote>
+        </figure>
+        <figure class="card quote">
+          <div class="who"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=64&amp;auto=format&amp;fit=crop" alt="Mateo"> <figcaption><strong>Mateo</strong> • Madrid</figcaption></div>
+          <div class="stars">★★★★★</div>
+          <blockquote>“The check‑in feature gave us peace of mind for the first meet. Now we’re planning our next adventure.”</blockquote>
+        </figure>
+        <figure class="card quote">
+          <div class="who"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&amp;w=64&amp;auto=format&amp;fit=crop" alt="Lina"> <figcaption><strong>Lina</strong> • Vilnius</figcaption></div>
+          <div class="stars">★★★★★</div>
+          <blockquote>“I liked how values were front‑and‑center. Fewer swipes, better dates.”</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+      <div class="container" style="display:grid; gap:.8rem; padding:0">
+        <details>
+          <summary>Is HeartLink free?</summary>
+          <p>Yes. Creating an account, browsing, and messaging are free. Optional premium boosts are available.</p>
+        </details>
+        <details>
+          <summary>How do you verify profiles?</summary>
+          <p>We use selfie video verification and community reports. Suspicious behavior is reviewed within 24 hours.</p>
+        </details>
+        <details>
+          <summary>What’s your approach to privacy?</summary>
+          <p>We collect the minimum data needed, offer granular controls, and never sell your personal info.</p>
+        </details>
+        <details>
+          <summary>Any tips for a great first message?</summary>
+          <p>Comment on a specific detail in their profile and ask a playful, open‑ended question.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container card" style="padding:1.2rem; display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; align-items:center">
+      <div>
+        <h2 style="margin:0 0 .4rem">Ready to start your story?</h2>
+        <p class="lead" style="margin:0">Join free in under a minute. It’s your move.</p>
+        <p style="margin:.8rem 0 0"><a class="btn btn-primary" href="#join">Create my account</a></p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1529336953121-a0ce9a44c3ba?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Happy couple on a city walk" loading="lazy" style="border-radius:12px">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand" aria-label="Brand">
+        <div class="brand-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heart icon">
+            <path d="M12 21s-6.4-4.35-9.33-7.28A6.6 6.6 0 0 1 12 4.67a6.6 6.6 0 0 1 9.33 9.05C18.4 16.65 12 21 12 21Z" stroke="white" stroke-width="1.6" fill="white"></path>
+          </svg>
+        </div>
+        HeartLink
+      </div>
+      <form class="sub" onsubmit="event.preventDefault(); subscribe();">
+        <input class="input" type="email" placeholder="Get weekly dating tips" aria-label="Email for newsletter" required="">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="container" style="margin-top:1rem; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+      <small>© <span id="year">2026</span> HeartLink. All rights reserved.</small>
+      <small><a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Safety</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // Accessibility: screen-reader only helper
+    const sr = document.createElement('style');
+    sr.textContent = `.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}`;
+    document.head.appendChild(sr);
+
+    // Fake form handlers
+    function toast(msg){
+      const t=document.createElement('div');
+      t.textContent=msg;
+      t.setAttribute('role','status');
+      t.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:linear-gradient(135deg, var(--brand), var(--brand-2));padding:.75rem 1rem;border-radius:12px;box-shadow:var(--shadow);z-index:9999;color:white;font-weight:700';
+      document.body.appendChild(t);
+      setTimeout(()=>t.remove(), 2200);
+    }
+
+    document.querySelector('#join')?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.currentTarget));
+      console.log('Sign up data:', data);
+      toast('Account created! Check your inbox.');
+      e.currentTarget.reset();
+    });
+
+    function subscribe(){
+      toast('Thanks! You are subscribed.');
+    }
+
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body></html>

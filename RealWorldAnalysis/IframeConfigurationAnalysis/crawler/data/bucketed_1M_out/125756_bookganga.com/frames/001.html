@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	BookGanga: Cart
+</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta content="text/html; charset=UTF-8" charset="utf8" http-equiv="Content-Type">
+
+    <link type="image/png" href="https://www.bookganga.com/eBooks/Content/images/favi_icon.png" rel="shortcut icon">
+    <link rel="Stylesheet" href="https://www.bookganga.com/eBooks/Content/Cart.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://www.bookganga.com/eBooks/Content/jquery.mCustomScrollbar.css">
+    <script type="text/javascript" language="javascript" src="https://www.bookganga.com/eBooks/Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="https://www.bookganga.com/eBooks/Scripts/jquery.mCustomScrollbar.min.js"></script>
+    
+    <style type="text/css">
+        body
+        {
+	        background:none;
+	        background-color:#FFFFFF;
+        }
+        .Order_Summary
+        {
+            width:800px;
+            border:0px;            
+	        margin-left:30px;
+	        margin-right:10px;
+	        height:334px;
+	        overflow:auto;
+        }
+        .Summary_Table
+        {
+	        width:780px;
+        }
+        .Order_Footer_Inner
+        {
+            border:0px;
+        }
+        .Order_Footer
+        {
+            border-top:3px solid #F05A29;
+        }
+        .Order_Amt
+        {
+	        color:#404041;
+	        font-size:20px;
+	        padding:0px;
+	        padding-right:35px;
+	        background-color:transparent;
+        }
+        
+        @media only screen and (min-width : 240px) and (max-width: 799px)
+        {
+
+            .Summary_Table,.Order_Summary
+            {
+	            width:100%;
+            }	
+            .Order_Header
+            {
+	            display:none;
+            }
+            .Order_Summary
+            {
+	            width:auto;
+	            margin-left:10px;
+            }
+            .Order_Footer
+            {
+            	padding:0px 10px;
+            }
+            .Order_Amt
+            {
+            	padding-right:0px;
+            	padding-top:5px;
+            }
+            .Order_BookDetails h1
+            {
+            	font-size:16px;
+            	line-height:22px;
+            }
+            .PlaceOrderButton
+            {
+            	font-size:12px;
+            	padding:5px;
+            	font-weight:bold;            	
+	            position:static;
+            }
+            .ShoppingButton
+            {
+            	font-size:10px;
+            	padding:5px;
+            	font-weight:normal;            	
+	            position:static;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="Order_Header">
+            <div style="float:left;width:419px;">
+                Book Details
+            </div>
+            <div style="float:left;width:136px;background-color:#DDDEE0;">
+                Price
+            </div>
+            <div style="float:left;width:89px;">
+                QTY
+            </div>
+            <div style="float:left;width:136px;background-color:#DDDEE0;">
+                Subtotal
+            </div>
+            <br style="clear:both;">
+            <div class="clear">&nbsp;</div>
+        </div>
+                    
+        <div class="Order_Summary mCustomScrollbar _mCS_1 mCS_no_scrollbar" id="divOrderSummary"><div id="mCSB_1" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+        
+        <div style="padding:40px;text-align:center;">
+                            <div style="font-weight:bold;font-size:16px;">
+                                There are no items in this cart.
+                            </div>
+                            <div style="padding-top:8px;">
+                                <input type="button" class="SubmitButton" value="Continue Shopping" onclick="parent.location.href='https://www.bookganga.com/eBooks/Books/';">
+                            </div>
+                    </div>
+                    
+        </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+
+        <div class="Order_Footer">
+            <div class="Order_Footer_Inner">
+                <div style="float:left;font-size:13px;">
+                    For help call us on +91 8888 300 300       
+                    &nbsp;&nbsp;<span id="spnItems">There are no items in this cart.</span>
+                </div>
+                <div class="Order_Amt" style="float:right;">
+                    
+                    Grand Total: <b>Rs. <span id="spnGrandTotal">0</span></b>
+                </div>
+                <br style="clear:both;">
+                <div class="clear">&nbsp;</div>
+            </div>
+        </div>
+        <div style="padding:10px 0px;">
+            <div style="text-align:center;">
+                <input type="button" class="ShoppingButton" value="&lt; Continue Shopping" onclick="window.parent.$('.popup-modal-dismiss').click();">                
+                
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    var CartCount=0;
+    var arrBookIds =[];
+    var arrOrderedBookTypes =[];
+    (function ($) {
+        $(window).load(function () {
+            $(".Order_Summary").mCustomScrollbar({
+                theme: "dark",
+                axis: "y"
+                //scrollButtons: { enable: true }
+            });
+        });
+    })(jQuery);
+
+    function CartEditQty(bkId) {
+        $("#lnkEditQty_" + bkId).hide();
+        $("#divEditTextBox_" + bkId).show();
+    }
+    function RemoveFromCart(bkId) {
+        var ParambkId = bkId.substring(0, bkId.indexOf("_"));
+        var ParambkType = bkId.substring(bkId.indexOf("_") + 1);
+        if (ParambkId != '' && ParambkType != "") {
+            if (confirm('Sure To Remove Book From Cart?')) {
+                $.getJSON('/eBooks/Common/AddToCartRemoveQty', { BookID: ParambkId, Quantity: 1, OrderedBookType: ParambkType, R:Math.random() }, function (data) {
+                    data = parseInt(data);
+                    if (data == 'Error') {
+                    }
+                    else {
+                        $("#spnGrandTotal").text(data);
+                        $("#tr_" + bkId).remove();
+                        CartCount -= 1;
+                        if (CartCount <= 0) {
+                            document.getElementById('divOrderSummary').innerHTML = '<div style="padding:40px;text-align:center;"><div style="font-weight:bold;font-size:16px;">There are no items in this cart.</div><div style="padding-top:8px;"><input type="button" class="SubmitButton" value="Continue Shopping" onclick="parent.location.href=\'https://www.bookganga.com/eBooks/Books/\';"/></div></div>';
+                            $("#btnPlaceOrder").hide();
+                        }
+                    }
+                });
+            }
+            for(var i=0;i<arrBookIds.length;i++)
+            {
+                if(arrBookIds[i]==ParambkId && arrOrderedBookTypes[i]==ParambkType)
+                {
+                    arrBookIds.splice(i,1);
+                    arrOrderedBookTypes.splice(i,1);
+                }
+            }
+            CalculateCartSummary();
+        }
+    }
+    function CartUpdateQty(bkId) {
+        var bookUpdatedQty = $("#txtBookQty_" + bkId).val();
+        var bookUpdatedType = $("#hidOrderedBookType_" + bkId).val();
+        if (bookUpdatedQty == "0") {
+            $("#lnkEditQty_" + bkId).text("1");
+            $("#txtBookQty_" + bkId).val("1");
+        }
+        else {
+            var ParambkId = bkId.substring(0, bkId.indexOf("_"));
+
+            if(bookUpdatedType==1)
+            {
+                $.getJSON('/eBooks/Common/CheckPStockQtyByBookId', { BookID: ParambkId}, function (PStockQty) {
+                    PStockQty = parseInt(PStockQty);
+                    bookUpdatedQty = parseInt(bookUpdatedQty);
+                    if (PStockQty < bookUpdatedQty) {
+                        bookUpdatedQty=PStockQty;
+                        alert('Available quantity is ' + PStockQty + ' only');
+                        $("#txtBookQty_" + bkId).val(bookUpdatedQty);
+                        $("#lnkEditQty_" + bkId).text(bookUpdatedQty);
+                    }
+                        $.getJSON('/eBooks/Common/AddToCartChangeQty', { BookID: ParambkId, Quantity: bookUpdatedQty, OrderedBookType: bookUpdatedType, R:Math.random() }, function (data) {
+                            data = parseInt(data);
+                            if (data == 0) {
+                            }
+                            else {
+                                $("#spnGrandTotal").text(data);
+                                $("#spnBookAmount_" + bkId).text(parseFloat($("#spnBookPrice_" + bkId).text()) * bookUpdatedQty);
+                            }
+                        });
+                });
+            }
+            else
+            {
+                $.getJSON('/eBooks/Common/AddToCartChangeQty', { BookID: ParambkId, Quantity: bookUpdatedQty, OrderedBookType: bookUpdatedType, R:Math.random() }, function (data) {
+                    data = parseInt(data);
+                    if (data == 0) {
+                    }
+                    else {
+                        $("#spnGrandTotal").text(data);
+                        $("#spnBookAmount_" + bkId).text(parseFloat($("#spnBookPrice_" + bkId).text()) * bookUpdatedQty);
+                    }
+                });
+            }
+            $("#lnkEditQty_" + bkId).text(bookUpdatedQty);
+        }
+        $("#lnkEditQty_" + bkId).show();
+        $("#divEditTextBox_" + bkId).hide();
+        CalculateCartSummary();
+    }
+
+    function CalculateCartSummary()
+    {
+        var OrderHardCopyCount=0;
+        var OrdereBookCount=0;
+        var OrderHardCopyTotal=0;
+        var OrdereBookTotal=0;
+        for(var i=0;i<arrBookIds.length;i++)
+        {            
+            if(arrOrderedBookTypes[i]==1)
+            {
+                if(document.getElementById('lnkEditQty_' + arrBookIds[i] + '_1'))
+                {
+                    OrderHardCopyCount+=1;OrderHardCopyTotal += parseInt($("#lnkEditQty_" + arrBookIds[i] + '_1').text());
+                }
+            }
+            else
+            {
+                if(document.getElementById('lnkEditQty_' + arrBookIds[i] + '_2'))
+                {
+                    OrdereBookCount+=1;OrdereBookTotal += parseInt($("#lnkEditQty_" + arrBookIds[i] + '_2').text());
+                }
+            }
+        }
+        if(OrderHardCopyCount>0 && OrdereBookCount==0)
+        {
+            document.getElementById("spnItems").innerHTML = 'Books - ' + OrderHardCopyCount + ' (Qty '+ OrderHardCopyTotal + ')';
+        }
+        if(OrderHardCopyCount==0 && OrdereBookCount>0)
+        {
+            document.getElementById("spnItems").innerHTML= '<span style="color:red;">e-Books - ' + OrdereBookCount + ' (Qty ' + OrdereBookTotal + ')</span>';
+        }
+        if(OrderHardCopyCount>0 && OrdereBookCount>0)
+        {
+            document.getElementById("spnItems").innerHTML= 'Books - ' + OrderHardCopyCount + ' (Qty '+ OrderHardCopyTotal + ') &nbsp;<span style="color:red;">e-Books - ' + OrdereBookCount + ' (Qty ' + OrdereBookTotal + ')</span>';
+        }
+        if(OrderHardCopyCount==0 && OrdereBookCount==0)
+        {
+            document.getElementById("spnItems").innerHTML = 'There are no items in this cart.';
+        }
+    }
+    CalculateCartSummary();
+
+    function PlaceOrderClick() {
+        setTimeout("parent.document.location.href='https://www.bookganga.com/eBooks/order/placeorder';", 1000);
+        
+    }
+</script>
+
+
+</body></html>

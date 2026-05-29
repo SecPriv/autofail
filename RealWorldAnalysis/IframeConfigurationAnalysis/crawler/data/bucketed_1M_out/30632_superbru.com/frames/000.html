@@ -1,0 +1,1489 @@
+<!DOCTYPE html><!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]--><!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]--><!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]--><!--[if IE 9 ]>    <html class="no-js ie9" lang="en"> <![endif]--><!--[if !(IE)]> <html class="no-js" lang="en"> <![endif]--><html lang="en" class="fa-events-icons-ready"><head>           
+<!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.3) -->
+<script src="https://connect.facebook.net/signals/config/960583988636614?v=2.9.325&amp;r=stable&amp;domain=www.superbru.com&amp;hme=af8aa31887db259becaf70277daef60bd8bc35c2df82c2acd4258de27ecac4b5&amp;ex_m=104%2C207%2C155%2C22%2C72%2C73%2C146%2C68%2C67%2C11%2C164%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C160%2C166%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C167%2C172%2C221%2C62%2C188%2C189%2C55%2C279%2C30%2C74%2C233%2C232%2C231%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C156%2C76%2C159%2C157%2C158%2C50%2C60%2C123%2C15%2C163%2C45%2C266%2C267%2C265%2C26%2C27%2C28%2C48%2C147%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C145%2C148%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C150%2C149%2C151%2C142%2C140%2C25%2C35%2C59%2C109%2C162%2C70%2C17%2C153%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C139%2C161%2C34%2C281%2C297%2C214%2C203%2C204%2C202%2C300%2C291%2C52%2C215%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C125%2C58%2C64%2C152%2C115%2C37%2C32%2C53%2C56%2C100%2C165%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C168%2C169%2C94%2C95%2C9%2C102%2C51%2C143%2C87%2C79%2C71%2C117%2C106%2C43%2C144%2C0%2C82%2C137%2C141%2C154%2C38%2C108%2C13%2C170" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://tags.srv.stackadapt.com/events.js"></script><script type="text/javascript" async="" defer="" src="//push.reamaze.com/assets/reamaze-push.js"></script><script async="" type="text/javascript" src="https://cmp.inmobi.com/tcfv2/60/cmp2.js?referer=www.superbru.com"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5PW2GWB"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5PW2GWB"></script><script async="" type="text/javascript" src="https://cmp.inmobi.com/choice/HkxnJnSLNQ6aK/www.superbru.com/choice.js?tag_version=V3"></script><script type="text/javascript" async="true">
+(function() {
+var host = 'www.superbru.com';
+var element = document.createElement('script');
+var firstScript = document.getElementsByTagName('script')[0];
+var url = 'https://cmp.inmobi.com'
+.concat('/choice/', 'HkxnJnSLNQ6aK', '/', host, '/choice.js?tag_version=V3');
+var uspTries = 0;
+var uspTriesLimit = 3;
+element.async = true;
+element.type = 'text/javascript';
+element.src = url;
+
+firstScript.parentNode.insertBefore(element, firstScript);
+
+function makeStub() {
+var TCF_LOCATOR_NAME = '__tcfapiLocator';
+var queue = [];
+var win = window;
+var cmpFrame;
+
+function addFrame() {
+var doc = win.document;
+var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+if (!otherCMP) {
+if (doc.body) {
+var iframe = doc.createElement('iframe');
+
+iframe.style.cssText = 'display:none';
+iframe.name = TCF_LOCATOR_NAME;
+doc.body.appendChild(iframe);
+} else {
+setTimeout(addFrame, 5);
+}
+}
+return !otherCMP;
+}
+
+function tcfAPIHandler() {
+var gdprApplies;
+var args = arguments;
+
+if (!args.length) {
+return queue;
+} else if (args[0] === 'setGdprApplies') {
+if (
+args.length > 3 &&
+args[2] === 2 &&
+typeof args[3] === 'boolean'
+) {
+gdprApplies = args[3];
+if (typeof args[2] === 'function') {
+args[2]('set', true);
+}
+}
+} else if (args[0] === 'ping') {
+var retr = {
+gdprApplies: gdprApplies,
+cmpLoaded: false,
+cmpStatus: 'stub'
+};
+
+if (typeof args[2] === 'function') {
+args[2](retr);
+}
+} else {
+if(args[0] === 'init' && typeof args[3] === 'object') {
+args[3] = Object.assign(args[3], { tag_version: 'V3' });
+}
+queue.push(args);
+}
+}
+
+function postMessageEventHandler(event) {
+var msgIsString = typeof event.data === 'string';
+var json = {};
+
+try {
+if (msgIsString) {
+json = JSON.parse(event.data);
+} else {
+json = event.data;
+}
+} catch (ignore) {}
+
+var payload = json.__tcfapiCall;
+
+if (payload) {
+window.__tcfapi(
+payload.command,
+payload.version,
+function(retValue, success) {
+var returnMsg = {
+  __tcfapiReturn: {
+    returnValue: retValue,
+    success: success,
+    callId: payload.callId
+  }
+};
+if (msgIsString) {
+  returnMsg = JSON.stringify(returnMsg);
+}
+if (event && event.source && event.source.postMessage) {
+  event.source.postMessage(returnMsg, '*');
+}
+},
+payload.parameter
+);
+}
+}
+
+while (win) {
+try {
+if (win.frames[TCF_LOCATOR_NAME]) {
+cmpFrame = win;
+break;
+}
+} catch (ignore) {}
+
+if (win === window.top) {
+break;
+}
+win = win.parent;
+}
+if (!cmpFrame) {
+addFrame();
+win.__tcfapi = tcfAPIHandler;
+win.addEventListener('message', postMessageEventHandler, false);
+}
+};
+
+makeStub();
+
+function makeGppStub() {
+const CMP_ID = 10;
+const SUPPORTED_APIS = [
+'2:tcfeuv2',
+'6:uspv1',
+'7:usnatv1',
+'8:usca',
+'9:usvav1',
+'10:uscov1',
+'11:usutv1',
+'12:usctv1'
+];
+
+window.__gpp_addFrame = function (n) {
+if (!window.frames[n]) {
+if (document.body) {
+var i = document.createElement("iframe");
+i.style.cssText = "display:none";
+i.name = n;
+document.body.appendChild(i);
+} else {
+window.setTimeout(window.__gpp_addFrame, 10, n);
+}
+}
+};
+window.__gpp_stub = function () {
+var b = arguments;
+__gpp.queue = __gpp.queue || [];
+__gpp.events = __gpp.events || [];
+
+if (!b.length || (b.length == 1 && b[0] == "queue")) {
+return __gpp.queue;
+}
+
+if (b.length == 1 && b[0] == "events") {
+return __gpp.events;
+}
+
+var cmd = b[0];
+var clb = b.length > 1 ? b[1] : null;
+var par = b.length > 2 ? b[2] : null;
+if (cmd === "ping") {
+clb(
+{
+gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+cmpStatus: "stub", // possible values: stub, loading, loaded, error
+cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+signalStatus: "not ready", // possible values: not ready, ready
+supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+sectionList: [],
+applicableSections: [-1],
+gppString: "",
+parsedSections: {},
+},
+true
+);
+} else if (cmd === "addEventListener") {
+if (!("lastId" in __gpp)) {
+__gpp.lastId = 0;
+}
+__gpp.lastId++;
+var lnr = __gpp.lastId;
+__gpp.events.push({
+id: lnr,
+callback: clb,
+parameter: par,
+});
+clb(
+{
+eventName: "listenerRegistered",
+listenerId: lnr, // Registered ID of the listener
+data: true, // positive signal
+pingData: {
+  gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+  cmpStatus: "stub", // possible values: stub, loading, loaded, error
+  cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+  signalStatus: "not ready", // possible values: not ready, ready
+  supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+  cmpId: CMP_ID, // list of supported APIs
+  sectionList: [],
+  applicableSections: [-1],
+  gppString: "",
+  parsedSections: {},
+},
+},
+true
+);
+} else if (cmd === "removeEventListener") {
+var success = false;
+for (var i = 0; i < __gpp.events.length; i++) {
+if (__gpp.events[i].id == par) {
+__gpp.events.splice(i, 1);
+success = true;
+break;
+}
+}
+clb(
+{
+eventName: "listenerRemoved",
+listenerId: par, // Registered ID of the listener
+data: success, // status info
+pingData: {
+  gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+  cmpStatus: "stub", // possible values: stub, loading, loaded, error
+  cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+  signalStatus: "not ready", // possible values: not ready, ready
+  supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+  cmpId: CMP_ID, // CMP ID
+  sectionList: [],
+  applicableSections: [-1],
+  gppString: "",
+  parsedSections: {},
+},
+},
+true
+);
+} else if (cmd === "hasSection") {
+clb(false, true);
+} else if (cmd === "getSection" || cmd === "getField") {
+clb(null, true);
+}
+//queue all other commands
+else {
+__gpp.queue.push([].slice.apply(b));
+}
+};
+window.__gpp_msghandler = function (event) {
+var msgIsString = typeof event.data === "string";
+try {
+var json = msgIsString ? JSON.parse(event.data) : event.data;
+} catch (e) {
+var json = null;
+}
+if (typeof json === "object" && json !== null && "__gppCall" in json) {
+var i = json.__gppCall;
+window.__gpp(
+i.command,
+function (retValue, success) {
+var returnMsg = {
+  __gppReturn: {
+    returnValue: retValue,
+    success: success,
+    callId: i.callId,
+  },
+};
+event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+},
+"parameter" in i ? i.parameter : null,
+"version" in i ? i.version : "1.1"
+);
+}
+};
+if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+window.__gpp = window.__gpp_stub;
+window.addEventListener("message", window.__gpp_msghandler, false);
+window.__gpp_addFrame("__gppLocator");
+}
+};
+
+makeGppStub();
+
+var uspStubFunction = function() {
+var arg = arguments;
+if (typeof window.__uspapi !== uspStubFunction) {
+setTimeout(function() {
+if (typeof window.__uspapi !== 'undefined') {
+window.__uspapi.apply(window.__uspapi, arg);
+}
+}, 500);
+}
+};
+
+var checkIfUspIsReady = function() {
+uspTries++;
+if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+console.warn('USP is not accessible');
+} else {
+clearInterval(uspInterval);
+}
+};
+
+if (typeof window.__uspapi === 'undefined') {
+window.__uspapi = uspStubFunction;
+var uspInterval = setInterval(checkIfUspIsReady, 6000);
+}
+})();
+</script>
+<!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->                <script>
+                __tcfapi('addEventListener', 2, function(tcData, success) { 
+                    if (success) {
+                        var loadPixel = false;
+                        if (tcData.gdprApplies) {
+                            if (tcData.eventStatus === 'tcloaded') {
+                                loadPixel = true;
+                            } else if (tcData.eventStatus === 'useractioncomplete') {
+                                loadPixel = true;
+                            } else {
+                            // console.log('Debug: tcData.eventStatus: ', tcData.eventStatus);
+                            }
+                        } else { /* gdpr does not apply */
+                            loadPixel = true;
+                        }
+                            
+                        if (loadPixel) {
+                            // console.log('load hw pixel');
+                            !function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[];t=a.createElement(e);t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,'script','https://tags.srv.stackadapt.com/events.js');saq('ts', 'tNynpJZLJCBVQpL5cRMmYg');!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '960583988636614'); fbq('track', 'PageView');
+                        } else {
+                            // console.log("don't load hw pixel due to tc.eventStatus = " + tcData.eventStatus);
+                        }
+                    }
+                });
+                </script>            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet"> -->
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@100;300;400;500;700&amp;display=swap" rel="stylesheet">
+            
+        	<meta charset="UTF-8">
+			<meta name="theme-color" content="#c0392b">
+			<meta property="fb:pages" content="6235391591">
+			<!-- <meta name="apple-itunes-app" content="app-id=613066215" /> -->
+			
+			<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">                <meta name="description" content="Superbru is a free predictor and fantasy sports game played by 2.6m users">            <meta property="og:title" content="Superbru - Free Sports Predictor and Fantasy Games">
+            <meta property="og:type" content="game">
+            <meta property="og:url" content="https://www.superbru.com/">
+            <meta property="og:image" content="https://superbru-cdn.superbru.com/images/marketing/facebook_share_image.jpg">
+            
+            <meta property="og:site_name" content="Superbru">
+            <meta property="fb:app_id" content="6483758771">
+            <meta property="og:description" content="Superbru is a free predictor and fantasy sports game played by 2.6m users">			<title>Superbru - Free Sports Predictor and Fantasy Games</title>
+			
+			
+  
+			<!-- add javascript files -->
+			<!--<script src="https://superbru-cdn.superbru.com/core/js/jquery/jquery-2.2.4.min.js"></script>-->
+			 
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+			<!-- analytics includes and calls -->
+			<!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5PW2GWB');</script>
+            <!-- End Google Tag Manager -->
+
+			<!-- bru.js functions -->
+			<script src="https://superbru-cdn.superbru.com/core/js/bru/bru.min.js?v=152"></script>
+			<script src="https://superbru-cdn.superbru.com/core/js/bru/bru.welcome.min.js?v=1"></script>            <link href="https://superbru-cdn.superbru.com/core/css/bru.min.css?v=201" rel="stylesheet" type="text/css">
+                    <link href="https://superbru-cdn.superbru.com/core/css/logged_out.min.css?v=1" rel="stylesheet" type="text/css">			<script src="https://use.fontawesome.com/76afeb1392.js"></script><link href="https://use.fontawesome.com/76afeb1392.css" media="all" rel="stylesheet">
+			
+			<!-- todo metadata tags -->
+			        
+        	<link rel="icon" type="image/x-icon" href="https://superbru-cdn.superbru.com/images/favico/favicon.ico">
+			<link rel="icon" type="image/png" href="https://superbru-cdn.superbru.com/images/favico/favicon.png">		
+		<style type="text/css"> .qc-cmp-button {    background-color: #c0392b !important;    border-color: #c0392b !important;  }  .qc-cmp-button:hover {    border-color: #c0392b !important;  }  .qc-cmp-alt-action,  .qc-cmp-link {    color: #c0392b !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #c0392b !important;    border-color: #c0392b !important;  }  .qc-cmp-button {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #505959 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #ffffff !important;    border-color: transparent !important;  }  .qc-cmp-ui,  .qc-cmp-ui .qc-cmp-title,  .qc-cmp-ui .qc-cmp-table,  .qc-cmp-ui .qc-cmp-messaging,  .qc-cmp-ui .qc-cmp-sub-title,  .qc-cmp-ui .qc-cmp-vendor-list,  .qc-cmp-ui .qc-cmp-purpose-info,  .qc-cmp-ui .qc-cmp-table-header,  .qc-cmp-ui .qc-cmp-beta-messaging,  .qc-cmp-ui .qc-cmp-main-messaging,  .qc-cmp-ui .qc-cmp-vendor-list-title{    color: #0f161c !important;  }  .qc-cmp-ui a,  .qc-cmp-ui .qc-cmp-alt-action {    color: #c0392b !important;  }  .qc-cmp-ui {    background-color: #ffffff !important;  }  .qc-cmp-small-toggle.qc-cmp-toggle-on,  .qc-cmp-toggle.qc-cmp-toggle-on {    background-color: #e74c3c!important;    border-color: #e74c3c!important;  } </style><script type="text/javascript" id="__tcfapiuiscript" src="https://cmp.inmobi.com/tcfv2/60/cmp2ui-en.js"></script><style qc-data-emotion="css" data-s=""></style><link id="sa-css" rel="stylesheet" type="text/css" href="https://tags.srv.stackadapt.com/sa.css" media="all"></head>
+		
+		<body><div class="qc-cmp2-container" id="qc-cmp2-container" data-nosnippet=""></div>		    <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PW2GWB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+			
+						<!-- mobile tray navigation -->
+					
+		<div class="hamburger-icons" style="">
+			<div class="icons">
+				<div class="icon close" onclick="bru.mobile.toggleNav(&quot;left&quot;)"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+				
+				<div class="icon dashboard" onclick="document.location=&quot;/player/dashboard.php&quot;">
+					<i class="fa fa-home" aria-hidden="true"></i>
+					<div class="title">Dashboard</div>
+				</div>
+				
+				<div class="icon results" onclick="bru.mobile.loadHamburgerPanel(&quot;results&quot;)">
+					
+					<i class="fa fa-clock-o" aria-hidden="true"></i>
+					<div class="title">Live &amp; Results</div>
+				</div>
+				<div class="icon upcoming" onclick="bru.mobile.loadHamburgerPanel(&quot;upcoming&quot;)">
+					<i class="fa fa-calendar" aria-hidden="true"></i>
+					<div class="title">Upcoming</div>
+				</div>
+				<div class="icon todo" onclick="bru.mobile.loadHamburgerPanel(&quot;todo&quot;)">
+					
+					<i class="fa fa-inbox" aria-hidden="true"></i>
+					<div class="title">To-do</div>
+				</div>
+				<div class="icon tournaments" onclick="bru.mobile.loadHamburgerPanel(&quot;tournaments&quot;)">
+					
+					<i class="fa fa-trophy" aria-hidden="true"></i>
+					<div class="title">Tourns</div>
+				</div>
+				<div class="icon invitations" onclick="bru.mobile.loadHamburgerPanel(&quot;invitations&quot;)">
+					
+					<i class="fa fa-tag" aria-hidden="true"></i>
+					<div class="title">Invites</div>
+				</div>
+				<div class="icon captaincies" onclick="bru.mobile.loadHamburgerPanel(&quot;captaincies&quot;)">
+					
+					<i class="fa fa-users" aria-hidden="true"></i>
+					<div class="title">Captains</div>
+				</div>
+				<div class="icon news" onclick="bru.mobile.loadHamburgerPanel(&quot;news&quot;)">
+					<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+					<div class="title">News</div>
+				</div>
+			</div>
+			
+			
+		</div>
+			<div class="tray tray-left ">
+						
+		
+		<div class="hamburger">
+			<div class="content-holder">
+				<div class="content"></div>
+			</div>
+			
+		</div>
+			</div>
+			<div class="tray tray-right ">
+						    
+            <div class="account">
+                
+                
+                <div class="list-block">
+                	<ul>
+                		<li>
+                			<a href="/login" class="item-link item-content">
+								<div class="item-media"><i class="fa fa-power-off" aria-hidden="true"></i></div>
+								<div class="item-inner">
+									<div class="item-title">Log in</div>		
+								</div>
+					  		</a>
+					  	</li>
+					  	<li>
+                			<a href="/home/register.php" class="item-link item-content">
+								<div class="item-media"><i class="fa fa-user" aria-hidden="true"></i></div>
+								<div class="item-inner">
+									<div class="item-title">Create Account</div>		
+								</div>
+					  		</a>
+					  	</li>
+					</ul>
+				</div>
+			</div>
+			</div>
+			<div class="tray-mask"></div>
+						<!-- main navigation -->
+			                <nav class="logged-out no-right-col">
+                    
+                    
+                    <div class="holder">
+                        
+                         <div class="inner">
+                            <a class="logo-holder" href="/">
+                                <img src="https://superbru-cdn.superbru.com/brand/images/logos/superbru_s_tight.svg" class="logo-s" height="40" width="37" alt="Superbru S logo">
+                                <img src="https://superbru-cdn.superbru.com/brand/images/logos/superbru_lettering_dark.svg" class="logo-name" height="24" width="167" alt="Superbru brand name">
+                            </a>
+                            <ul>
+                                                    <li data-name="tournaments" class=""><a href="/tournaments">Tournaments</a></li>                    <li data-name="news" class=""><a href="/news">News</a></li>                    <li data-name="get-the-app" class=""><a href="/get-the-app">Apps</a></li>                    <li data-name="premium" class=""><a href="/premium">Premium</a></li>                    <li data-name="business" class=""><a href="/business">For Businesses</a></li>                    <li data-name="about" class=""><a href="/about">About</a></li>
+                            </ul>
+                            
+                            <div class="user">
+                                                    <a href="/login" class="button arrow-button ui-logged-out">
+                        <div>Log in</div>
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="/player/dashboard.php" class="button arrow-button ui-logged-in hidden">
+                        <div>Dashboard</div>
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                            </div>
+                            
+                            <div data-action="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="mobile-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                                            <li data-name="tournaments" class=""><a href="/tournaments">Tournaments</a></li>                    <li data-name="news" class=""><a href="/news">News</a></li>                    <li data-name="get-the-app" class=""><a href="/get-the-app">Apps</a></li>                    <li data-name="premium" class=""><a href="/premium">Premium</a></li>                    <li data-name="business" class=""><a href="/business">For Businesses</a></li>                    <li data-name="about" class=""><a href="/about">About</a></li>
+                    </ul>
+                </div>			<main>
+	             
+				<div class="page no-right-col full-width">
+					
+					
+										
+					<!-- content -->
+					<div class="content">
+           
+             <div class="page-content home-page">
+                        <div class="fullscreen-bg">
+            
+        </div>
+        
+                
+        <section class="brand">
+            <div class="logotype">
+                <img src="https://superbru-cdn.superbru.com/brand/images/logos/superbru_s_tight.svg" class="logo" alt="Superbru logo">
+                <img src="https://superbru-cdn.superbru.com/brand/images/logos/superbru_lettering_white.svg" class="brand" alt="Superbru">
+            </div>
+            
+            <div class="intro">
+                <h1 class="home-title">Sports Predictor &amp; Fantasy Games</h1>
+                		<div class="population">
+			<div class="played-by"><div>played by</div><div class="num">2,621,239</div><div>sports fans</div></div>
+			<div class="more-than">(That's more than the population of Moldova!)</div>
+		</div>
+            </div>
+            
+                        <style>
+                .promo {
+                    background-color: #000;
+                    color: #fff;
+                    padding: 20px 0 20px 0;
+                }
+                @media (min-width: 768px) {
+                    .promo {
+                        border-radius: 15px;
+                        border: 2px solid #DEB745;
+                        max-width: 800px;
+                        margin: 0 auto;
+                        padding: 20px;
+                    }
+                }
+                .promo h1, .promo h2 {
+                    color: #fff;
+                    font-weight: 500;
+                }
+                .promo h2 {
+                    margin: 0;
+                    font-size: 1.8em;
+                }
+                .promo .screenshot-carousel  {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /* border:2px dashed yellow; */
+                    max-width: 100%;
+                    /* overflow-x: scroll; */
+                }
+                .promo a {
+                    color: #DEB745;
+                    text-decoration: underline;
+                }
+                .promo .screenshot-carousel img {
+                    margin: 0 10px 0 10px;
+                    border-radius: 15px;
+                    width: 240px;
+                }
+                .promo p {
+                    font-size: 1.1em;
+                    margin: 15px 0 20px 0;
+                }
+                .promo .stores {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: 15px 0 0 0;
+                }
+
+                @media (min-width: 768px) {
+                    .promo .stores {
+                        flex-direction: row;
+                    }
+                }
+                .promo .stores a {
+                    margin: 10px 20px 10px 20px;
+                }
+                .promo .icon {
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 0 10px 0;
+                    border-radius: 10px;
+                }
+               
+                .promo .players {
+                    font-size: 1.2em;
+                    margin: 10px 0 10px 0;
+                    font-weight:500;
+                }
+               
+                .promo .screenshot-carousel-mobile img {
+                    width: 40%;
+                    margin: 0 10px 15px 10px;
+                    border-radius: 5px;
+                }
+                .promo .screenshot-carousel-mobile {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+                .promo .screenshot-carousel-desktop {
+                    display: none;
+                }
+                @media (min-width: 768px) {
+                    .promo .screenshot-carousel-mobile {
+                        display: none;
+                    }
+                    .promo .screenshot-carousel-desktop {
+                        display: flex;
+                    }
+                }
+            </style>
+            <script>
+            
+            </script>
+            <div class="promo">
+                <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img class="icon" src="https://superbru-cdn.superbru.com/brand/images/sbf/sbf_app_icon.png"></a>
+                
+                <h2>Free World Cup 2026 Score Predictor Game</h2>
+                <div class="players">45,761 players and counting</div>
+                <p>Predict all the football scores in the World Cup 2026 with Superbru. Create private leagues to take on friends and work colleagues. Learn more about <a href="/worldcup_predictor">Superbru's World Cup Predictor game</a>.</p>
+                <!-- <div class="screenshot-carousel screenshot-carousel-desktop">
+                    <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/1.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                    <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/2.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                    <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/3.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                    <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/4.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                    <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/5.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                </div>
+                <div class="screenshot-carousel screenshot-carousel-mobile">
+                    <div class="row">
+                        <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/1.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                        <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/2.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                    </div>
+                    <div class="row">
+                        <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/3.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                        <a href="https://www.superbru.com/sh/?k=RVpPNUsa" target="_blank"><img src="https://superbru-cdn.superbru.com/images/marketing/pl_sbf/4.png" alt="Premier League 2024-25 Score Predictor Game" /></a>
+                    </div>
+                </div> -->
+                <div class="stores">
+                    <a href="https://www.superbru.com/sh/?k=O5Frjduv" class="ios" target="_blank" rel="noopener"><img height="50" src="https://superbru-cdn.superbru.com/coreimages/app_stores/apple_2021_black.svg" alt="App Store badge"></a>
+                    <a href="https://www.superbru.com/sh/?k=XJjiJd0e" class="android" target="_blank" rel="noopener"><img height="50" src="https://superbru-cdn.superbru.com/coreimages/app_stores/google_2021_black.png" alt="Google Play badge"></a>
+                    <a href="/beta/register.php?t=1296" class=""><img height="50" src="https://superbru-cdn.superbru.com/coreimages/app_stores/play_on_the_web.png" alt="Play on the web"></a>
+                </div>
+            </div>
+            <!--<div class="login-button">Log in</div>
+            
+            <div class="login-holder">
+                
+            </div>-->
+        </section>        <section class="tournaments">
+            <!--<nav>
+                        <ul class="sport-nav">
+            <li class="active popular" data-sport-id="0">
+				<a href="javascript:void(0)">
+					<img src="https://superbru-cdn.superbru.com/home/images/homepage/popular_star.png" alt="Popular star" />
+					    <div class="sport-name hide-mobile">Popular Today</div>
+					    <div class="sport-name hide-desktop">Popular</div>
+				</a>
+            </li>                <li data-sport-id="3">
+                    <a href="/sport/football">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/3.svg" alt="Icon for Football" /><div class="sport-name">Football</div>
+                    </a>
+                </li>                <li data-sport-id="1">
+                    <a href="/sport/rugby">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/1.svg" alt="Icon for Rugby" /><div class="sport-name">Rugby</div>
+                    </a>
+                </li>                <li data-sport-id="4">
+                    <a href="/sport/cricket">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/4.svg" alt="Icon for Cricket" /><div class="sport-name">Cricket</div>
+                    </a>
+                </li>                <li data-sport-id="5">
+                    <a href="/sport/motorsport">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/5.svg" alt="Icon for Motorsport" /><div class="sport-name">Motorsport</div>
+                    </a>
+                </li>                <li data-sport-id="2">
+                    <a href="/sport/league">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/2.svg" alt="Icon for League" /><div class="sport-name">League</div>
+                    </a>
+                </li>                <li data-sport-id="8">
+                    <a href="/sport/golf">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/8.svg" alt="Icon for Golf" /><div class="sport-name">Golf</div>
+                    </a>
+                </li>                <li data-sport-id="9">
+                    <a href="/sport/tennis">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/9.svg" alt="Icon for Sevens" /><div class="sport-name">Sevens</div>
+                    </a>
+                </li>                <li data-sport-id="12">
+                    <a href="/sport/tennis">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/12.svg" alt="Icon for Tennis" /><div class="sport-name">Tennis</div>
+                    </a>
+                </li>                <li data-sport-id="15">
+                    <a href="/sport/cycling">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/15.svg" alt="Icon for Cycling" /><div class="sport-name">Cycling</div>
+                    </a>
+                </li>                <li data-sport-id="6">
+                    <a href="/sport/aussierules">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/6.svg" alt="Icon for AFL" /><div class="sport-name">AFL</div>
+                    </a>
+                </li>                <li data-sport-id="7">
+                    <a href="/sport/americanfootball">
+                        <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/light/7.svg" alt="Icon for NFL" /><div class="sport-name">NFL</div>
+                    </a>
+                </li>        </ul>
+
+        
+            </nav>-->
+            <div class="sport-tabs">
+                            <div class="sport-tab" data-sport-id="0"> 
+                <div class="status-title">Popular Games Today</div>
+                <div class="tiles wide">                <div class="tournament">
+                    <div class="top">
+                        			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x" style="color:#151514"></i>
+			  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+                        <div>
+                            <a href="/worldcup_predictor">World Cup</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/3.svg" alt="Icon for World Cup ">                    </div>
+                    <div class="info">48 nations compete for the most prestigious trophy in football. The 2026 World Cup is hosted by Canada, Mexico and the USA.<p class="game-description">In Superbru's <a href="worldcup_predictor">World Cup predictor game</a>, you'll predict the score and earn one of three types of point: Result, Close or Exact.</p></div>
+                    <div class="total">45,761 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/worldcup_predictor" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1296" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-fr"></span>
+                        <div>
+                            <a href="/frenchopen">French Open</a><br>
+                            <div class="tournament-type">Fantasy</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/12.svg" alt="Icon for French Open ">                    </div>
+                    <div class="info">The second tennis major of the year on the clay courts of Roland Garros<p class="game-description">In Superbru's <a href="frenchopen">French Open fantasy game</a> you'll pick four players from seeded bands, then earn points for their performances on the court.</p></div>
+                    <div class="total">3,519 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/frenchopen" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1317" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-en"></span>
+                        <div>
+                            <a href="/eng_vs_nzl">New Zealand Tour of England</a><br>
+                            <div class="tournament-type">Fantasy</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/4.svg" alt="Icon for New Zealand Tour of England ">                    </div>
+                    <div class="info">A fantasy game covering New Zealand's 2026 Test cricket tour of England.<p class="game-description">In Superbru's <a href="eng_vs_nzl">New Zealand Tour of England daily fantasy game</a> you'll pick two batsmen, an allrounder and a bowler, then earn points for their performances.</p></div>
+                    <div class="total">1,721 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/eng_vs_nzl" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1320" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-au"></span>
+                        <div>
+                            <a href="/stateoforigin_tipping">State of Origin</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/2.svg" alt="Icon for State of Origin ">                    </div>
+                    <div class="info">The three match series between Queensland and New South Wales played under State of Origin rules<p class="game-description">In Superbru's <a href="stateoforigin_tipping">State of Origin predictor game</a>, you'll predict the winner and margin of victory in each match. The closer your pick, the more points you'll earn.</p></div>
+                    <div class="total">2,296 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/stateoforigin_tipping" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1319" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x" style="color:#DB2653"></i>
+			  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+                        <div>
+                            <a href="/womenst20worldcup">Women's T20 World Cup</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/4.svg" alt="Icon for Women's T20 World Cup ">                    </div>
+                    <div class="info">The 10th edition of the Women's T20 World Cup, hosted by England and Wales. New Zealand are defending champions.<p class="game-description">In Superbru's <a href="womenst20worldcup">Women's T20 World Cup predictor game</a>, you'll predict match winners and a score margin: narrow, comfortable, easy or thrashing.</p></div>
+                    <div class="total">2,749 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/womenst20worldcup" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1318" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x" style="color:#00CDE5"></i>
+			  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+                        <div>
+                            <a href="/urc_fantasy">United Rugby Championship</a><br>
+                            <div class="tournament-type">Fantasy</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for United Rugby Championship ">                    </div>
+                    <div class="info">The URC features teams from South Africa, Ireland, Wales, Scotland and Italy. Leinster Rugby are defending champions.<p class="game-description">In Superbru's <a href="urc_fantasy">United Rugby Championship fantasy game</a> you'll pick a squad of 23 players, then deploy a starting XV each round. Transfers will enable you to keep your team in form.</p></div>
+                    <div class="total">16,320 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/urc_fantasy" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1279" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-eu"></span>
+                        <div>
+                            <a href="/urc_predictor">United Rugby Championship</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for United Rugby Championship ">                    </div>
+                    <div class="info">The URC features teams from South Africa, Ireland, Wales, Scotland and Italy. Leinster Rugby are defending champions.<p class="game-description">In Superbru's <a href="urc_predictor">United Rugby Championship predictor game</a>, you'll predict the winner and margin of victory in each match. The closer your pick, the more points you'll earn.</p></div>
+                    <div class="total">40,932 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/urc_predictor" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1278" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-eu"></span>
+                        <div>
+                            <a href="/investec_champions_cup_predictor">Investec Champions Cup</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for Investec Champions Cup ">                    </div>
+                    <div class="info">The top teams from the URC, Gallagher Premiership and Top14 battle it out for the most coveted club rugby prize.<p class="game-description">In Superbru's <a href="investec_champions_cup_predictor">Investec Champions Cup predictor game</a>, you'll predict the winner and margin of victory in each match. The closer your pick, the more points you'll earn.</p></div>
+                    <div class="total">20,630 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/investec_champions_cup_predictor" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1288" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-eu"></span>
+                        <div>
+                            <a href="/investec_champions_cup_fantasy">Investec Champions Cup</a><br>
+                            <div class="tournament-type">Fantasy</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for Investec Champions Cup ">                    </div>
+                    <div class="info">The top teams from the URC, Gallagher Premiership and Top14 battle it out for the most coveted club rugby prize.<p class="game-description">In Superbru's <a href="investec_champions_cup_fantasy">Investec Champions Cup fantasy game</a> you'll pick a squad of 23 players, then deploy a starting XV each round. Transfers will enable you to keep your team in form.</p></div>
+                    <div class="total">10,921 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/investec_champions_cup_fantasy" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1290" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x" style="color:#0F2F5F"></i>
+			  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+                        <div>
+                            <a href="/superrugbyfantasy">Super Rugby Pacific</a><br>
+                            <div class="tournament-type">Fantasy</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for Super Rugby Pacific ">                    </div>
+                    <div class="info">The Crusaders look to retain their title against opposition from New Zealand, Australia, Fiji, Samoa and Tonga.<p class="game-description">In Superbru's <a href="superrugbyfantasy">Super Rugby Pacific fantasy game</a> you'll pick a squad of 23 players, then deploy a starting XV each round. Transfers will enable you to keep your team in form.</p></div>
+                    <div class="total">8,524 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/superrugbyfantasy" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1302" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-en"></span>
+                        <div>
+                            <a href="/premierleague_predictor">Premier League</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/3.svg" alt="Icon for Premier League ">                    </div>
+                    <div class="info">The top 20 football clubs in England make up the legendary Premier League. Liverpool are defending champions.<p class="game-description">In Superbru's <a href="premierleague_predictor">Premier League predictor game</a>, you'll predict the score and earn one of three types of point: Result, Close or Exact.</p></div>
+                    <div class="total">73,788 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/premierleague_predictor" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1257" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="flag-icon flag-icon-eu"></span>
+                        <div>
+                            <a href="/championsleague">Champions League</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/3.svg" alt="Icon for Champions League ">                    </div>
+                    <div class="info">Europe's top teams compete for the most coveted trophy in club football, currently held by Paris Saint-Germain.<p class="game-description">In Superbru's <a href="championsleague">Champions League predictor game</a>, you'll predict the score and earn one of three types of point: Result, Close or Exact.</p></div>
+                    <div class="total">19,342 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/championsleague" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1277" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x" style="color:#0F2F5F"></i>
+			  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+                        <div>
+                            <a href="/superrugby">Super Rugby Pacific</a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for Super Rugby Pacific ">                    </div>
+                    <div class="info">The Crusaders look to retain their title against opposition from New Zealand, Australia, Fiji, Samoa and Tonga.<p class="game-description">In Superbru's <a href="superrugby">Super Rugby Pacific predictor game</a>, you'll predict the winner and margin of victory in each match. The closer your pick, the more points you'll earn.</p></div>
+                    <div class="total">25,995 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/superrugby" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1301" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                <div class="tournament">
+                    <div class="top">
+                        			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x" style="color:#FD0607"></i>
+			  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+			</span>
+                        <div>
+                            <a href="/f1">F1 </a><br>
+                            <div class="tournament-type">Predictor</div>
+                        </div>                <img class="sport-icon" src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/5.svg" alt="Icon for F1  ">                    </div>
+                    <div class="info">The world's best drivers compete in races all around the world. Lando Norris is defending champion.<p class="game-description">In Superbru's <a href="f1">F1 Predictor predictor game</a>, you'll predict pole position, the top 10 in order and the fastest lap.</p></div>
+                    <div class="total">26,384 players</div>
+                    <div class="bottom">                <div class="tile-button-stack">
+                    <div>
+                        <a href="/f1" class="button light-button">
+                            <div>Learn more</div>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/beta/register.php?t=1307" class="button arrow-button">
+                            <div>Start playing</div>
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div></div>
+                </div>                </div>
+                
+            </div>
+            </div>
+        </section>
+
+        <div class="panel green text-white">
+                            
+            <div class="panel-inner padded padded-heavy-bottom">
+                <h2 class="text-center">More Tournaments</h2>
+                <div class="text-center">
+                    <p>Superbru runs over 80 Predictor and Fantasy games across 12 sports a year. All games are free.</p>
+                </div>
+                
+
+        
+              
+            <ul class="image-tiles">                    <li>
+                        <a href="/tournaments/football/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/3.svg" alt="Icon for Football">
+                            <div class="title">Football</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/rugby-union/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/1.svg" alt="Icon for Rugby Union">
+                            <div class="title">Rugby Union</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/cricket/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/4.svg" alt="Icon for Cricket">
+                            <div class="title">Cricket</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/motorsport/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/5.svg" alt="Icon for Motorsport">
+                            <div class="title">Motorsport</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/golf/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/8.svg" alt="Icon for Golf">
+                            <div class="title">Golf</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/rugby-league/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/2.svg" alt="Icon for Rugby League">
+                            <div class="title">Rugby League</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/rugby-sevens/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/9.svg" alt="Icon for Rugby Sevens">
+                            <div class="title">Rugby Sevens</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/tennis/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/12.svg" alt="Icon for Tennis">
+                            <div class="title">Tennis</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/american-football/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/7.svg" alt="Icon for American Football">
+                            <div class="title">American Football</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/australian-rules/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/6.svg" alt="Icon for Aussie Rules">
+                            <div class="title">Aussie Rules</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/cycling/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/15.svg" alt="Icon for Cycling">
+                            <div class="title">Cycling</div>
+                        </a>
+                    </li>                    <li>
+                        <a href="/tournaments/medal-sport/">
+                            <img src="https://superbru-cdn.superbru.com/coreimages/icons/sports/dark/16.svg" alt="Icon for Medal Sport">
+                            <div class="title">Medal Sport</div>
+                        </a>
+                    </li>            </ul>
+            </div>
+        </div>        
+        
+        <section class="max gameplay">
+            <h2 class="text-center">Gameplay</h2>
+            <div class="inner">
+                
+                
+                <div class="panel">
+                    <img class="lazy" src="https://superbru-cdn.superbru.com/home/images/homepage/icon_game_predictor.png" alt="Predictor">
+                    <div class="info">
+                        <h3 class="red">Predictor</h3>
+                        <!--<div class="heading-thin">Score prediction game</div>-->
+                        <p>Where Superbru began. Pick the score in our famous predictor game. Over 50 tournaments covered every year across 7 sports: rugby union, football, cricket, rugby league, American football, Aussie Rules and rugby sevens.</p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <img class="lazy" src="https://superbru-cdn.superbru.com/home/images/homepage/icon_game_fantasy.png" alt="Fantasy">
+                    <div class="info">
+                        <h3 class="blue">Fantasy</h3>
+                        <!--<div class="heading-thin blue">Full fantasy</div>-->
+                        <p>Select a squad of real world players, then pick a starting team for each round. Manage your squad carefully with limited transfers and team limits. Major football and rugby union tournaments covered.</p>
+                    </div>
+                </div>
+                <div class="panel">
+                    <img class="lazy" src="https://superbru-cdn.superbru.com/home/images/homepage/icon_game_fantasy_lite.png" alt="Superstars">
+                    <div class="info">
+                        <h3 class="green">Daily Fantasy</h3>
+                        <!--<div class="heading-thin">Quick fantasy</div>-->
+                        <p>Pick a handful of players in key positions each matchday. No squads, transfers or team limitations to worry about. Major team ball sports covered as well as golf, tennis, cycling and motorsport. Includes innovative <b>odds-based format</b> for some sports.</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="text-center signup-panel-home">
+                           
+                <a href="/beta/register.php" class="arrow-button large">
+                    <div>Start Playing</div>
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            
+            </div>
+        </section>
+        
+        
+        <section class="max features">
+            <div class="inner">
+                <div class="sell">
+                    <h3 class="text-white">Superbru is absolutely free!</h3>
+                    
+                    <ul>
+                        <li>Set up private leagues</li>
+                        <li>Play in up to 10 leagues per tournament</li>
+                        <li>80+ tournaments per year</li>
+                        <li>Compete in prize pools</li>
+                        <li>Take on thousands of sports fans worldwide</li>
+                        <li>Play on the web or our Android + iOS app</li>
+                    </ul>
+                
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section class="max news">
+           
+            <div class="inner">
+                <a href="/news/"><img src="https://superbru-cdn.superbru.com/brand/images/logos/superbru_herald_1000.png" class="herald" alt="Latest news from the Superbru Herald" border="0"></a>
+                
+                			<div class="articleList welcome">			<div class="news-link item itemBanded" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1755850677.jpg)" data-href="https://www.superbru.com/news/predictions-jacks-round-38-premier-league-picks">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/predictions-jacks-round-38-premier-league-picks">Predictions: Jack's Round 38 Premier League Picks</a>
+					
+					<div class="intro">Here are Jack's thoughts on the final round of the 2025-26 Premier League season which will decide the last relegation place.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Fri 22 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 1 comment</div>
+                </div>
+			</div>			<div class="news-link item itemBanded" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1755249883.jpg)" data-href="https://www.superbru.com/news/2025-26-premier-league-round-38-match-previews">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/2025-26-premier-league-round-38-match-previews">2025-26 Premier League: Round 38 Match Previews</a>
+					
+					<div class="intro">Here are your previews for the final round of the Premier League season which takes place this Sunday.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Fri 22 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 1 comment</div>
+                </div>
+			</div>			<div class="news-link item itemBanded" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779399912.jpg)" data-href="https://www.superbru.com/news/england-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/england-squad-named-for-2026-world-cup">England squad named for 2026 World Cup</a>
+					
+					<div class="intro">Thomas Tuchel has confirmed his 26-man England squad for the World Cup, leaving out several notable players.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Fri 22 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 3 comments</div>
+                </div>
+			</div>			<div class="news-link item itemBanded" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779399178.jpg)" data-href="https://www.superbru.com/news/norway-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/norway-squad-named-for-2026-world-cup">Norway squad named for 2026 World Cup</a>
+					
+					<div class="intro">Here are the 26 players that will represent Norway in their first World Cup appearance since 1998! </div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Thu 21 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 2 comments</div>
+                </div>
+			</div>			<div class="news-link item itemBanded" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779368517.jpg)" data-href="https://www.superbru.com/news/senegal-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/senegal-squad-named-for-2026-world-cup">Senegal squad named for 2026 World Cup</a>
+					
+					<div class="intro">Here is the player list Pape Thiaw has selected for Senegal's 2026 World Cup campaign.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Thu 21 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 2 comments</div>
+                </div>
+			</div>			<div class="news-link item itemBanded hidden" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779360858.jpg)" data-href="https://www.superbru.com/news/germany-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/germany-squad-named-for-2026-world-cup">Germany squad named for 2026 World Cup</a>
+					
+					<div class="intro">Julian Nagelsmann's 26-man Germany squad for the 2026 World Cup has been named, with veteran goalkeeper Manuel Neuer recalled.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Thu 21 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 1 comment</div>
+                </div>
+			</div>			<div class="news-link item itemBanded hidden" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1727262906.jpg)" data-href="https://www.superbru.com/news/predict-the-europa-league-final-to-qualify-for-the-superbru-48">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/predict-the-europa-league-final-to-qualify-for-the-superbru-48">Predict the Europa League final to qualify for the Superbru 48</a>
+					
+					<div class="intro">By managing an Exact prediction for tonight's Europa League final, you could qualify for our World Cup cash prize league.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Wed 20 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 31 comments</div>
+                </div>
+			</div>			<div class="news-link item itemBanded hidden" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779196900.jpg)" data-href="https://www.superbru.com/news/portugal-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/portugal-squad-named-for-2026-world-cup">Portugal squad named for 2026 World Cup</a>
+					
+					<div class="intro">Here's the Portugal squad that Roberto Martinez has selected for the 2026 World Cup.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Tue 19 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 5 comments</div>
+                </div>
+			</div>			<div class="news-link item itemBanded hidden" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779186543.jpg)" data-href="https://www.superbru.com/news/scotland-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/scotland-squad-named-for-2026-world-cup">Scotland squad named for 2026 World Cup</a>
+					
+					<div class="intro">Steve Clarke has named his 26-man Scotland squad for the World Cup, their first appearance at a finals since 1998.</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Tue 19 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 11 comments</div>
+                </div>
+			</div>			<div class="news-link item itemBanded hidden" style="background-image:linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 25%,rgba(255,255,255,1) 100%),url(/images/content/content_thumb/img1779120341.jpg)" data-href="https://www.superbru.com/news/brazil-squad-named-for-2026-world-cup">
+				<div class="info ">
+				    <a class="title" href="https://www.superbru.com/news/brazil-squad-named-for-2026-world-cup">Brazil squad named for 2026 World Cup</a>
+					
+					<div class="intro">Carlo Ancelotti has named his 26-man Brazil squad for the 2026 World Cup! How do you think they'll get on in the USA?</div>
+					
+				</div>
+				<div class="extra">
+                    <div class="date">Mon 18 May</div>
+                    <div class="comments"><i class="fa fa-comments-o" aria-hidden="true"></i> 6 comments</div>
+                </div>
+			</div>			</div>
+            <script>
+            $(function() {
+               $(".news-link").click(function() {
+                   document.location = $(this).data("href");
+               }) ;
+            });
+            </script>
+                
+            </div>
+            <div class="text-center">
+                <a href="/news">More news</a>
+                <br><br>
+            </div>
+            <div class="text-center signup-panel-home">
+                           
+                <a href="/beta/register.php" class="arrow-button large">
+                    <div>Start Playing</div>
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            
+            </div>
+        </section>
+        
+        
+        
+        <div class="mobile-login-bar">
+            <a href="/beta/register.php" class="button blue">Sign Up</a>
+            <a href="/beta/login_form.php" class="button green">Log in</a>
+        </div>
+    	
+              
+        
+        
+        <script type="text/javascript" async="" src="https://cdn.reamaze.com/assets/reamaze.js"></script>
+        <script type="text/javascript">
+            var _support = _support || { 'ui': {}, 'user': {} };
+            _support['account'] = 'superbru';
+            _support['ui']['contactMode'] = 'anonymous';
+            _support['ui']['enableKb'] = 'true';
+            _support['ui']['styles'] = {
+                widgetColor: 'rgb(231, 76, 60)',
+            };
+            _support['ui']['widget'] = {
+                icon: 'chat',
+                label: {
+                    text: 'Got any questions? We\'re here to help. 😊',
+                    mode: "notification",
+                    delay: 5,
+                    duration: 20,
+                },
+                position:         {
+              bottom: '100px',
+              right: '15px'
+            },
+            };
+            _support['apps'] = {
+                faq: {"enabled":false},
+                recentConversations: {},
+                orders: {}
+            };
+        </script>
+        
+        
+        <!-- analytics includes and calls -->
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5PW2GWB');</script>
+        <!-- End Google Tag Manager -->
+
+
+
+
+
+
+        
+             </div>
+                                    
+					</div>
+					
+				</div>
+			</main>
+				
+			
+			<!-- analytics includes and calls -->
+			
+			<!-- init bru.js -->
+			
+			<script>
+			$(function() {
+			   bru.init();
+			   bruWelcome.init();
+			   
+			});
+			</script>    	<div class="base-nav no-right-col">
+    		<div class="inner">
+    			<div class="left">
+					<div class="edition">
+						Edition: UK/Europe <a href="/edition" class="underline">change</a>
+					</div>
+					<div class="social">
+						<div class="service">
+							<a href="https://www.facebook.com/superbru" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i> Superbru on Facebook</a>
+						</div>
+						<div class="service" style="padding: 5px 0 5px 0">
+							<a href="https://www.twitter.com/superbru" target="_blank"><img src="https://superbru-cdn.superbru.com/core/images/icons/sharing/x_logo_black_200.png" width="25" style="margin-right: 10px;">Superbru on X</a>
+						</div>
+						<div class="service">
+							<a href="https://www.instagram.com/official_superbru" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Superbru on Instagram</a>
+						</div>
+					</div>
+					<div class="app">
+						<a href="https://itunes.apple.com/gb/app/superbru/id613066215?mt=8" target="_blank" rel="noopener"><img src="https://superbru-cdn.superbru.com/coreimages/app_stores/apple_2021_black.svg" height="50" width="150" alt="App Store badge"></a>
+						<a href="https://play.google.com/store/apps/details?id=properties.superbru" target="_blank" rel="noopener"><img alt="Get it on Google Play" width="168" src="https://superbru-cdn.superbru.com/coreimages/app_stores/google_2021_black.png" height="50"></a>
+					</div>
+					
+				</div>
+    			<div class="right">
+					<ul>
+						<li><a href="/help">Help Centre</a></li>
+						<li><a href="/policies/privacy">Privacy Policy</a></li>
+						<li><a href="/policies/cookies">Cookie Policy</a></li>
+						<li><a href="/policies/terms-of-use">Terms of Use</a></li>
+						<li><a href="/player/delete_account.php">Delete Account</a></li>
+						<li><a href="javascript:void(0)" class="change-consent" onclick="window.__tcfapi('displayConsentUi', 2, function() {} );">Change Privacy Consent</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="legal">Superbru® and the Superbru Logo are registered trademarks of SportEngage Ltd. Copyright © 2006 - 2026 SportEngage Ltd. Please see our full <a href="/policies/copyright" class="underline">copyright notice</a>.</div>
+			</div>
+		</div> 			
+		
+		
+		<iframe name="__tcfapiLocator" style="display: none;"></iframe><iframe name="__gppLocator" style="display: none;"></iframe><div id="reamazejs-container"><div id="reamaze-widget-container" style="font: 13px / 17px Nunito, Helvetica, Arial, sans-serif; display: block;"><audio preload="none"><source src="https://cdn.reamaze.com/audio/snapup.mp3" type="audio/mpeg"><source src="https://cdn.reamaze.com/audio/snapup.ogg" type="audio/ogg"></audio><div id="rmz-notify-prompts"><style>
+          #rmz-notifications {
+            position: fixed;
+            z-index: 2147483647;
+            left: 0px;
+            right: 0px;
+            top: auto;
+            bottom: 0px;
+            
+            width: 100%;
+            height: 231px;
+          }
+          </style><div id="rmz-notifications"><div style="width: 100%; height: 100%;"><iframe title="Re:amaze Chat" allow="microphone; camera" allowfullscreen="" allowtransparency="true" style="width: 100% !important; height: 100% !important; border: 0px; position: relative;"></iframe></div></div></div></div></div><iframe style="width: 0px !important; height: 0px !important; display: none;"></iframe></body></html>

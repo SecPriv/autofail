@@ -1,0 +1,823 @@
+<!DOCTYPE html><html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Balance</title>
+    <style>
+    body {
+        font-family: sans-serif;
+    }
+
+    /* Level info container - 1 row, 2 columns */
+    .level-info {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      height: 46px; /* Fixed height for both columns */
+    }
+
+    /* First column - Level button (smaller) */
+    .level-column {
+      flex: 0.3; /* Smaller width ratio */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .level-button {
+      background: linear-gradient(to bottom, #f7de4f, #ebc804, #d4af37);
+      color: #000000;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+      text-transform: uppercase;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.7);
+      text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+      transition: all 0.3s;
+    }
+
+    /* VIP tier indicator */
+    .level-button::after {
+      content: '★';
+      position: absolute;
+      top: 2px;
+      right: 3px;
+      font-size: 8px;
+      color: #ff6b35;
+      text-shadow: 0 0 2px rgba(255, 107, 53, 0.8);
+    }
+
+    /* Shine effect */
+    .level-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-25deg);
+      animation: shine 3s infinite;
+    }
+
+    /* Animation for shine effect */
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+      20% {
+        left: 100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    .level-button:hover {
+      background: linear-gradient(to bottom, #ffd700, #faa417, #f5a800);
+      box-shadow: 0 3px 7px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.7);
+      transform: translateY(-1px);
+    }
+
+    /* Second column - Progress and next rank (larger) */
+    .progress-column {
+      flex: 0.7; /* Larger width ratio */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: transparent;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+
+    /* Progress bar container */
+    .rank-progress-container {
+      width: 100%;
+      height: 20px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.08);
+      padding: 3px;
+    }
+
+    /* Inner track for progress bar */
+    .rank-progress-container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #222;
+      border-radius: 10px;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+      z-index: 1;
+    }
+
+    /* Rich gold progress fill */
+    .rank-progress-bar {
+      height: 100%;
+      background: linear-gradient(to right,
+        #E5C100 0%, /* Gold */
+        #F0D000 50%, /* Lighter gold */
+        #F0CC00 100% /* Bright gold */
+      );
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+      transition: width 0.5s ease-in-out;
+    }
+
+    /* Text display in progress bar */
+    #totalDeposit {
+      font-weight: bold;
+      font-size: 12px;
+      color: #FFFFFF;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      width: 100%;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Next rank text */
+    .level-next {
+      font-size: 11px;
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    /* Registration needed styles */
+    .registration-needed {
+      background: linear-gradient(to right, #ff6b35, #f7931e);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .registration-needed:hover {
+      background: linear-gradient(to right, #f7931e, #ff6b35);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .level-info {
+        height: 40px;
+      }
+      .level-button {
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+      .progress-column {
+        padding: 4px 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .level-button {
+        font-size: 10px;
+      }
+      #totalDeposit {
+        font-size: 11px;
+      }
+      .level-next {
+        font-size: 10px;
+      }
+    }
+
+    /* Add styles for different VIP levels - Updated for 9 tiers */
+    .level-button.regular-level {
+      background: linear-gradient(to bottom, #808080, #666666, #4d4d4d);
+    }
+
+    .level-button.bronze-level {
+      background: linear-gradient(to bottom, #cd7f32, #b06a2c, #8e5423);
+    }
+
+    .level-button.silver-level {
+      background: linear-gradient(to bottom, #c0c0c0, #a8a8a8, #909090);
+    }
+
+    .level-button.gold-level {
+      background: linear-gradient(to bottom, #ffd700, #f2c800, #e6b800);
+    }
+
+    .level-button.platinum-level {
+      background: linear-gradient(to bottom, #e5e4e2, #d0d0d0, #bcbcbc);
+    }
+
+    .level-button.diamond-level {
+      background: linear-gradient(to bottom, #b9f2ff, #8ae8ff, #5cdeff);
+    }
+
+    .level-button.elite-level {
+      background: linear-gradient(to bottom, #ff6b35, #ff8c42, #ffa652);
+    }
+
+    .level-button.royal-level {
+      background: linear-gradient(to bottom, #800080, #9932cc, #ba55d3);
+    }
+
+    .level-button.vvip-legend-level {
+      background: linear-gradient(to bottom, #ff0000, #ff4500, #ff6347);
+    }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+
+<!-- Level info now with 2 column layout -->
+<div control="show-after-login">
+<div class="level-info">
+    <!-- First column - Level button -->
+    <div class="level-column">
+        <button class="level-button" onclick="handleVipClick()">
+            <span class="level-label"></span>
+        </button>
+    </div>
+    
+    <!-- Second column - Progress bar and next rank -->
+    <div class="progress-column">
+        <div class="rank-progress-container">
+            <div class="rank-progress-bar" id="rankProgressBar"></div>
+            <span id="totalDeposit"></span>
+        </div>
+        <div class="level-next"></div>
+    </div>
+</div>
+</div>
+
+<script>
+// VIP SYSTEM INTEGRATION - Updated for 9-tier VIP system
+let currentUserData = null;
+let currentUserDeposit = null;
+let currentUserTier = null;
+let userDataReceived = false;
+let apiCallInProgress = false;
+let depositCallCompleted = false;
+let tierCallCompleted = false;
+
+// VIP tier definitions - Updated to 9 tiers with new requirements
+const vipTiers = [
+    { level: 1, name: "REGULAR", pointsRequired: 0, maintenanceRequired: 500 },
+    { level: 2, name: "BRONZE", pointsRequired: 3888, maintenanceRequired: 500 },
+    { level: 3, name: "SILVER", pointsRequired: 10000, maintenanceRequired: 500 },
+    { level: 4, name: "GOLD", pointsRequired: 100000, maintenanceRequired: 500 },
+    { level: 5, name: "PLATINUM", pointsRequired: 500000, maintenanceRequired: 500 },
+    { level: 6, name: "DIAMOND", pointsRequired: 800000, maintenanceRequired: 500 },
+    { level: 7, name: "ELITE", pointsRequired: 1000000, maintenanceRequired: 500 },
+    { level: 8, name: "ROYAL", pointsRequired: 2000000, maintenanceRequired: 500 },
+    { level: 9, name: "VVIP LEGEND", pointsRequired: 3000000, maintenanceRequired: 500 }
+];
+
+let parentOriginFromMessage = null;
+
+// Step 1: Ask parent for origin when iframe loads
+window.parent.postMessage({ action: 'requestParentOrigin' }, '*');
+
+// Step 2: Listen for the response from parent
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.action === 'parentOrigin') {
+        parentOriginFromMessage = event.data.origin;
+        console.log("Received parent origin:", parentOriginFromMessage);
+    }
+});
+
+// Step 3: Function to handle VIP button click
+function handleVipClick() {
+    if (parentOriginFromMessage) {
+        window.top.location.href = parentOriginFromMessage + '/vip';
+    } else {
+        const referrer = document.referrer;
+        if (referrer) {
+            try {
+                const referrerUrl = new URL(referrer);
+                window.top.location.href = referrerUrl.origin + '/vip';
+            } catch (e) {
+                window.top.location.href = '/vip';
+            }
+        } else {
+            window.top.location.href = '/vip';
+        }
+    }
+}
+
+// Function to send message to parent
+function sendMessageToParent(message) {
+    window.parent.postMessage(message, '*');
+}
+
+// Request user data when page loads
+window.onload = function() {
+    console.log('VIP Balance page loaded, requesting user data from parent');
+    sendMessageToParent({
+        action: 'requestUserData'
+    });
+};
+
+// Listen for user data from parent window
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.action === 'userData' && event.data.data) {
+        console.log('Processing user data:', event.data.data);
+        userDataReceived = true;
+        currentUserData = event.data.data;
+        initializeBalanceSystem();
+    }
+});
+
+// Request user data again after a delay if we haven't received it
+setTimeout(function() {
+    if (!userDataReceived) {
+        console.log('No user data received yet, requesting again');
+        sendMessageToParent({
+            action: 'requestUserData'
+        });
+    }
+}, 3000);
+
+// Check user login status from memory
+function checkUserLoginStatus() {
+    if (currentUserData) {
+        try {
+            if (currentUserData && currentUserData.id) {
+                return currentUserData;
+            }
+        } catch (error) {
+            console.error('Error accessing user data:', error);
+        }
+    }
+    return null;
+}
+
+// Initialize the balance system after receiving user data
+function initializeBalanceSystem() {
+    const levelInfoDiv = document.querySelector('.level-info');
+    const user = checkUserLoginStatus();
+
+    if (!user || !user.id) {
+        if (levelInfoDiv) {
+            levelInfoDiv.innerHTML = `Login to view your VIP Status`;
+            levelInfoDiv.style.textAlign = "center";
+            levelInfoDiv.style.fontWeight = "bold";
+            levelInfoDiv.style.background = "linear-gradient(to right, #f6f6f6, #c4af9d, #f6f6f6)";
+            levelInfoDiv.style.backgroundClip = "text";
+            levelInfoDiv.style.webkitBackgroundClip = "text";
+            levelInfoDiv.style.webkitTextFillColor = "transparent";
+            levelInfoDiv.style.animation = "shine 2s linear infinite";
+            
+            const pinfoDiv = document.querySelector('.pinfo');
+            if (pinfoDiv) {
+                pinfoDiv.style.display = 'none';
+            }
+        }
+    } else {
+        showLoadingState();
+        fetchUserDataParallel(user.id);
+        
+        const pinfoDiv = document.querySelector('.pinfo');
+        if (pinfoDiv) {
+            pinfoDiv.style.display = 'block';
+        }
+    }
+}
+
+// Function to show loading state in UI
+function showLoadingState() {
+    const totalDepositElement = document.getElementById('totalDeposit');
+    if (totalDepositElement) {
+        totalDepositElement.innerHTML = 'Loading VIP Data...';
+    }
+    
+    const levelLabelElement = document.querySelector('.level-label');
+    if (levelLabelElement) {
+        levelLabelElement.textContent = 'Loading...';
+    }
+    
+    const levelNextElement = document.querySelector('.level-next');
+    if (levelNextElement) {
+        levelNextElement.textContent = 'Loading tier information...';
+    }
+    
+    const progressBarElement = document.getElementById('rankProgressBar');
+    if (progressBarElement) {
+        progressBarElement.style.width = '5%';
+        
+        if (!document.getElementById('pulse-animation-style')) {
+            const style = document.createElement('style');
+            style.id = 'pulse-animation-style';
+            style.textContent = `
+                @keyframes pulse {
+                    0% { opacity: 0.6; }
+                    50% { opacity: 1; }
+                    100% { opacity: 0.6; }
+                }
+                #rankProgressBar.loading {
+                    animation: pulse 1.5s infinite;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        progressBarElement.classList.add('loading');
+    }
+}
+
+// Function to show error state in UI
+function showErrorState() {
+    const totalDepositElement = document.getElementById('totalDeposit');
+    if (totalDepositElement) {
+        totalDepositElement.innerHTML = 'Error loading VIP data';
+    }
+    
+    const levelLabelElement = document.querySelector('.level-label');
+    if (levelLabelElement) {
+        levelLabelElement.textContent = 'Error';
+    }
+    
+    const levelNextElement = document.querySelector('.level-next');
+    if (levelNextElement) {
+        levelNextElement.textContent = 'Could not load tier information';
+    }
+    
+    const progressBarElement = document.getElementById('rankProgressBar');
+    if (progressBarElement) {
+        progressBarElement.style.width = '100%';
+        progressBarElement.style.background = 'linear-gradient(to right, #ff3333, #cc0000)';
+        progressBarElement.classList.remove('loading');
+    }
+}
+
+// Fetch both lifetime deposit and current tier in parallel
+function fetchUserDataParallel(userId) {
+    depositCallCompleted = false;
+    tierCallCompleted = false;
+    
+    // Start both API calls in parallel
+    fetchLifetimeDeposit(userId).then(depositResult => {
+        depositCallCompleted = true;
+        if (tierCallCompleted) {
+            updateUIWithBothResults();
+        } else {
+            setTimeout(() => {
+                if (!tierCallCompleted) {
+                    console.log('Tier call taking too long, updating UI with deposit data only');
+                    updateUIWithLifetimeDeposit(currentUserDeposit);
+                }
+            }, 2000);
+        }
+    }).catch(error => {
+        console.error('Error fetching lifetime deposit:', error);
+        depositCallCompleted = true;
+        showErrorState();
+    });
+    
+    fetchCurrentTier(userId).then(tierInfo => {
+        tierCallCompleted = true;
+        if (depositCallCompleted) {
+            updateUIWithBothResults();
+        }
+    }).catch(error => {
+        console.error('Error fetching current tier:', error);
+        tierCallCompleted = true;
+        if (depositCallCompleted && currentUserDeposit !== null) {
+            updateUIWithLifetimeDeposit(currentUserDeposit);
+        }
+    });
+}
+
+// Function to fetch lifetime deposit using your existing API
+async function fetchLifetimeDeposit(userId, retryCount = 0) {
+    const MAX_API_RETRIES = 3;
+    const RETRY_DELAY = 1500;
+    
+    try {
+        console.log(`Fetching lifetime deposit for userId: ${userId}, retry count: ${retryCount}`);
+        const apiUrl = 'https://studios-vii.com/918kisser/vip/api/';
+        
+        const formData = new FormData();
+        formData.append('userId', userId);
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.status === 'SUCCESS') {
+            let lifetimeDeposit = 0;
+            
+            if (data.data && typeof data.data.lifetimeDeposit !== 'undefined') {
+                lifetimeDeposit = parseFloat(data.data.lifetimeDeposit);
+            }
+            
+            if (!isNaN(lifetimeDeposit)) {
+                console.log('Lifetime Deposit:', lifetimeDeposit);
+                currentUserDeposit = lifetimeDeposit;
+                return lifetimeDeposit;
+            } else {
+                throw new Error('Invalid lifetime deposit value');
+            }
+        } else {
+            const errorMsg = data.message || 'Unknown API error';
+            throw new Error(errorMsg);
+        }
+        
+    } catch (error) {
+        console.error('Request error:', error);
+        
+        if (retryCount < MAX_API_RETRIES) {
+            console.log(`Retrying deposit API call... (${retryCount + 1}/${MAX_API_RETRIES})`);
+            await new Promise(resolve => setTimeout(resolve, RETRY_DELAY));
+            return fetchLifetimeDeposit(userId, retryCount + 1);
+        }
+        
+        return null;
+    }
+}
+
+// Function to fetch current tier information using your existing API
+async function fetchCurrentTier(userId, retryCount = 0) {
+    const MAX_RETRIES = 2;
+    const RETRY_DELAY = 1000;
+    
+    try {
+        console.log(`Fetching current tier for userId: ${userId}, retry count: ${retryCount}`);
+        const apiUrl = 'https://studios-vii.com/918kisser/vip/api/get_current_tier.php';
+        
+        const formData = new FormData();
+        formData.append('userId', userId);
+        
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            body: formData,
+            signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.status === 'SUCCESS') {
+            const tierInfo = {
+                currentTier: parseInt(data.data.currentTier, 10),
+                maxTier: parseInt(data.data.maxTier, 10),
+                latestDeposit: parseFloat(data.data.latestDeposit || 0),
+                offsetAmount: parseFloat(data.data.offsetAmount || 0),
+                uiLifetimeDeposit: parseFloat(data.data.uiLifetimeDeposit || 0),
+                depositGrowth: parseFloat(data.data.depositGrowth || 0)
+            };
+            
+            if (isNaN(tierInfo.currentTier) || isNaN(tierInfo.maxTier) || 
+                tierInfo.currentTier < 1 || tierInfo.currentTier > 9 ||
+                tierInfo.maxTier < 1 || tierInfo.maxTier > 9) {
+                throw new Error('Invalid tier values received');
+            }
+            
+            currentUserTier = tierInfo;
+            console.log('Tier info received:', tierInfo);
+            return tierInfo;
+        } else {
+            throw new Error(data.message || 'Unknown API error');
+        }
+    } catch (error) {
+        console.error('Error fetching current tier:', error);
+        
+        if (retryCount < MAX_RETRIES) {
+            console.log(`Retrying current tier API... (${retryCount + 1}/${MAX_RETRIES})`);
+            await new Promise(resolve => setTimeout(resolve, RETRY_DELAY));
+            return fetchCurrentTier(userId, retryCount + 1);
+        }
+        
+        return null;
+    }
+}
+
+// Function to update UI using both deposit and tier results
+function updateUIWithBothResults() {
+    if (currentUserDeposit !== null && currentUserTier !== null) {
+        // Use tier data for button, deposit data for progress
+        updateUIWithTierAndDeposit(currentUserDeposit, currentUserTier);
+    } else if (currentUserDeposit !== null) {
+        updateUIWithLifetimeDeposit(currentUserDeposit);
+    } else {
+        showErrorState();
+    }
+}
+
+// Function to update UI with lifetime deposit only
+function updateUIWithLifetimeDeposit(lifetimeDeposit) {
+    console.log('Updating UI with lifetime deposit only (tier API unavailable):', lifetimeDeposit);
+    
+    const progressBar = document.getElementById('rankProgressBar');
+    if (progressBar) {
+        progressBar.classList.remove('loading');
+        progressBar.style.animation = 'none';
+    }
+    
+    const totalDepositElement = document.getElementById('totalDeposit');
+    if (totalDepositElement) {
+        totalDepositElement.innerHTML = 
+            `RM ${lifetimeDeposit.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+    
+    // Calculate tier based on deposit and update display (fallback mode)
+    updateDisplayBasedOnDeposit(lifetimeDeposit);
+}
+
+// Function to update UI with both tier and deposit information
+function updateUIWithTierAndDeposit(lifetimeDeposit, tierInfo) {
+    console.log('Updating UI with tier and deposit:', lifetimeDeposit, tierInfo);
+    
+    const progressBar = document.getElementById('rankProgressBar');
+    if (progressBar) {
+        progressBar.classList.remove('loading');
+        progressBar.style.animation = 'none';
+    }
+    
+    // Use latest_deposit - offset_amount from user_vip_tiers table for display (UI lifetime deposit)
+    let displayDeposit;
+    if (tierInfo.latestDeposit !== undefined && tierInfo.offsetAmount !== undefined) {
+        displayDeposit = Math.max(0, tierInfo.latestDeposit - tierInfo.offsetAmount);
+    } else if (tierInfo.uiLifetimeDeposit !== undefined) {
+        displayDeposit = tierInfo.uiLifetimeDeposit;
+    } else {
+        displayDeposit = lifetimeDeposit; // Fallback
+    }
+    
+    console.log('Using latest_deposit - offset_amount for progress bar:', {
+        latestDeposit: tierInfo.latestDeposit,
+        offsetAmount: tierInfo.offsetAmount,
+        uiLifetimeDeposit: tierInfo.uiLifetimeDeposit,
+        calculatedDisplayDeposit: displayDeposit,
+        lifetimeDepositFallback: lifetimeDeposit
+    });
+    
+    const totalDepositElement = document.getElementById('totalDeposit');
+    if (totalDepositElement) {
+        totalDepositElement.innerHTML = 
+            `RM ${displayDeposit.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+    
+    // Update display using tier info for button and UI lifetime deposit for progress
+    updateDisplayWithSeparateLogic(displayDeposit, tierInfo);
+}
+
+// Update display using separate logic for button vs progress bar
+function updateDisplayWithSeparateLogic(uiLifetimeDeposit, tierInfo) {
+    // Button tier: Based on current tier from user_vip_tiers (maintained tier)
+    const buttonTier = vipTiers[tierInfo.currentTier - 1];
+    
+    // Progress tier: Based on UI lifetime deposit (latest_deposit - offset_amount)
+    let progressTier = vipTiers[0]; // Default to REGULAR
+    for (let i = vipTiers.length - 1; i >= 0; i--) {
+        if (uiLifetimeDeposit >= vipTiers[i].pointsRequired) {
+            progressTier = vipTiers[i];
+            break;
+        }
+    }
+    
+    console.log('Display logic:', {
+        buttonTier: buttonTier.name,
+        progressTier: progressTier.name,
+        uiLifetimeDeposit: uiLifetimeDeposit,
+        currentTier: tierInfo.currentTier
+    });
+    
+    // Update button (based on maintained tier)
+    const levelLabelElement = document.querySelector('.level-label');
+    const levelButtonElement = document.querySelector('.level-button');
+    
+    if (levelLabelElement) {
+        levelLabelElement.textContent = buttonTier.name;
+    }
+    
+    if (levelButtonElement) {
+        // Remove all tier classes
+        levelButtonElement.className = levelButtonElement.className.replace(/\b\w*-level\b/g, '');
+        levelButtonElement.classList.add(buttonTier.name.toLowerCase().replace(/\s+/g, '-') + '-level');
+    }
+    
+    // Update progress bar and next tier (based on UI lifetime deposit)
+    const levelNextElement = document.querySelector('.level-next');
+    const progressBarElement = document.getElementById('rankProgressBar');
+    
+    if (levelNextElement && progressBarElement) {
+        const nextTier = vipTiers[progressTier.level]; // Next tier after current progress tier
+        
+        if (nextTier) {
+            const remainingToNext = nextTier.pointsRequired - uiLifetimeDeposit;
+            levelNextElement.textContent = `RM ${remainingToNext.toLocaleString('en-US', {
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: 2
+            })} To Unlock Next Tier`;
+            
+            // Calculate progress percentage
+            const currentThreshold = progressTier.pointsRequired;
+            const nextThreshold = nextTier.pointsRequired;
+            const range = nextThreshold - currentThreshold;
+            const progress = uiLifetimeDeposit - currentThreshold;
+            const progressPercentage = Math.min((progress / range) * 100, 100);
+            
+            progressBarElement.style.transition = 'width 0.5s ease-in-out';
+            progressBarElement.style.width = `${progressPercentage}%`;
+        } else {
+            // Maximum tier reached
+            levelNextElement.textContent = "Maximum Tier Achieved";
+            progressBarElement.style.width = "100%";
+        }
+    }
+}
+
+// Update display based on deposit only (fallback when tier API unavailable)
+function updateDisplayBasedOnDeposit(lifetimeDeposit) {
+    console.log('Fallback: Updating display based on lifetimeDeposit only:', lifetimeDeposit);
+    
+    // Calculate tier based on deposit
+    let currentTier = vipTiers[0];
+    for (let i = vipTiers.length - 1; i >= 0; i--) {
+        if (lifetimeDeposit >= vipTiers[i].pointsRequired) {
+            currentTier = vipTiers[i];
+            break;
+        }
+    }
+    
+    // Update button
+    const levelLabelElement = document.querySelector('.level-label');
+    const levelButtonElement = document.querySelector('.level-button');
+    
+    if (levelLabelElement) {
+        levelLabelElement.textContent = currentTier.name;
+    }
+    
+    if (levelButtonElement) {
+        levelButtonElement.className = levelButtonElement.className.replace(/\b\w*-level\b/g, '');
+        levelButtonElement.classList.add(currentTier.name.toLowerCase().replace(/\s+/g, '-') + '-level');
+    }
+    
+    // Update progress bar and next tier (using lifetimeDeposit as fallback)
+    const levelNextElement = document.querySelector('.level-next');
+    const progressBarElement = document.getElementById('rankProgressBar');
+    
+    if (levelNextElement && progressBarElement) {
+        const nextTier = vipTiers[currentTier.level]; // Next tier
+        
+        if (nextTier) {
+            const remainingToNext = nextTier.pointsRequired - lifetimeDeposit;
+            levelNextElement.textContent = `RM ${remainingToNext.toLocaleString('en-US', {
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: 2
+            })} To Unlock Next Tier`;
+            
+            // Calculate progress percentage
+            const currentThreshold = currentTier.pointsRequired;
+            const nextThreshold = nextTier.pointsRequired;
+            const range = nextThreshold - currentThreshold;
+            const progress = lifetimeDeposit - currentThreshold;
+            const progressPercentage = Math.min((progress / range) * 100, 100);
+            
+            progressBarElement.style.transition = 'width 0.5s ease-in-out';
+            progressBarElement.style.width = `${progressPercentage}%`;
+        } else {
+            levelNextElement.textContent = "Maximum Tier Achieved";
+            progressBarElement.style.width = "100%";
+        }
+    }
+}
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a004829d293a5ab1',t:'MTc3OTU0NDAyMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+</body></html>

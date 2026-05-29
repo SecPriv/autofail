@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Connexion à l'ENT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/connexion_01.v2.css?version=03042025" type="text/css" media="screen">
+<!--ODE STYLE-->
+<link href="css/iframe.css" rel="stylesheet">
+<style>
+#cookies-eu-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+	background: rgba(0,0,0,0.5);
+}
+#cookies-eu-banner article{
+	display: flex;
+	align-items: center;
+	margin: 10px 20px;
+}
+#cookies-eu-banner .btn-1{
+    width: auto;
+    height: auto;
+    min-height: auto;
+    padding: 10px;
+    margin: 0;
+    white-space: nowrap;
+    margin-left: 15px;
+} 
+#cookies-eu-banner p,
+#cookies-eu-banner a{
+    margin: 0;
+	color: white;
+}
+#content{
+	display: block;
+}
+body{
+	background: rgba(0,0,0,0.05);;
+}
+.text-center{
+	text-align: center;
+}
+iframe{
+	min-height: 80vh;
+}
+.nblightbox{
+	position:initial;
+	top:initial;
+}
+#nbsection-connexion{
+	position: initial;
+	top: initial;
+    width: auto;
+	height: auto;
+	overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+#nbsection-connexion iframe{
+	position: initial;
+	top: initial;
+    left: initial;
+	width: 100vw;
+}
+
+.footer {
+	padding: 40px 0px 70px 0px;
+	background: #436BA8;
+	color: #fff;
+	box-shadow: 0 0 5px #b6b6b6;
+}
+
+.footer_content {
+	display: flex;
+	column-gap: 70px;
+	row-gap: 30px;
+	max-width: 900px;
+	margin: 0 auto;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.footer h3,
+.footer p {
+	font-size: 14px;
+	margin: 0;
+}
+
+.footer a {
+	/* text-decoration: none; */
+	color: inherit;
+}
+
+.footer_left,
+.footer_right {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-left: 30px;
+}
+</style>
+
+<style>
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#cookies-eu-banner .btn-1{
+		min-width: 80px;
+	}
+	#nbsection-connexion{
+		margin-top: 15px;
+	}
+}
+</style>
+<!--\ODE STYLE-->
+</head>
+<body>
+<h1 class="text-center">Portail de connexion à l'ENT HDF</h1>
+<div class="lightbox nblightbox" id="content">
+	<section class="section scroll" id="nbsection-connexion">
+		<iframe src="./iframe.html?ignorebanner=true&amp;theme=inline&amp;version=03042025" id="iframeConnexion" allowtransparency="true" scrolling="no" style="overflow: hidden; height: 1927px;"></iframe>
+	</section>
+	<p class="close" id="nbclose-iframe"><a href="#"><span></span></a></p>
+</div>
+<footer class="footer">
+	<div class="footer_content">
+		<div class="footer_left">
+			<h3>ENT HDF</h3>
+			<p>Copyrights © 2025</p>
+		</div>
+
+		<div class="footer_right">
+			<h3>Mentions légales</h3>
+			<p><a href="https://enthdf.fr/assets/cgu/Charte_ENT_HDF.pdf" target="_blank">
+					Charte d'utilisation
+				</a></p>
+			<p>
+				<a href="https://enthdf.fr/assets/cgu/Edifice_Conditions_Generales_d_Utilisation.pdf" target="_blank">
+					Conditions générales d’utilisation
+				</a>
+			</p>
+			<p>
+				<a href="https://enthdf.fr/assets/cgu/Edifice_Charte_de_protection_des_donnees_personnelles.pdf" target="_blank">
+					Politique de confidentialité
+				</a>
+			</p>
+		</div>
+	</div>
+</footer>
+<section id="cookies-eu-banner" style="display: block;">
+	<article>
+		<p class="petit">
+			Parce que nous sommes soucieux de la protection de vos données personnelles, les cookies que nous utilisons collectent des informations anonymisées. Notre seule utilisation de ces cookies vise à améliorer votre expérience utilisateur. Vous pouvez consulter à tout moment ces cookies dans la plateforme depuis la page « Mon compte » dans la section « Cookies ».
+		</p>
+		<button class="btn-1" id="cookies-eu-accept">Fermer</button>
+	</article>
+</section>
+<script type="text/javascript">
+<!--
+ 	/*@cc_on @if (@_jscript_version > 5.6)
+ 	function bootup(){
+ 	var tds = document.getElementsByTagName("a"); lightbox();
+ 	for( var x=0; x < tds.length; x++ ){tds[x].onclick = function(){setTimeout(lightbox, 1);};}
+ 	}
+ 	function lightbox(){
+ 	var counted = document.getElementsByTagName("div");
+ 	for( var x=0; x < counted.length; x++ ){ if ( counted[x].className == "boxfocus" ) { counted[x].className = "lightbox"; } }
+ 	if (location.hash.substr(1) == "") {} else { document.getElementById(location.hash.substr(1)).className = "boxfocus"; }
+ 	}
+ 	window.onload=bootup;
+ 	@end @*/
+ 	// -->
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.browser.js"></script>
+<script src="js/iframeResizer.min.js"></script>
+<script src="js/cookies.v2.js"></script>
+<script src="js/lib.v2.js?version=16042025"></script>
+<script>
+	CookieManager.init(true);
+	CookieManager.onConsent = function(consent){
+		CookieManager.sendToChild(jQuery('iframe')[0], consent)
+	}
+	jQuery(document).ready(function () {
+		jQuery('iframe').iFrameResize({});
+	});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a003aa49891d22a5',t:'MTc3OTUzNTE2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden; overflow: hidden;" id="iFrameResizer0" scrolling="no"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7cd6f29d382c4b6b8a9226a6a172c989&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

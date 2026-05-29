@@ -1,0 +1,579 @@
+<!DOCTYPE html><!--YHvFkWeOpA2WURsiLDZvU--><html lang="en" style="--color-primary: #211c35; --color-primary-hover: #234681; --color-background: #ffffff; --color-text: #0f172a; --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; --border-radius: 12px;"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="/_next/static/media/797e433ab948586e-s.p.479bea2b.woff2" as="font" crossorigin="" type="font/woff2"><link rel="preload" href="/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2" as="font" crossorigin="" type="font/woff2"><link rel="stylesheet" href="/_next/static/chunks/35ae6bee60d9bd2e.css" data-precedence="next"><link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/cbd55ab9639e1e66.js"><script src="/_next/static/chunks/061a236f209ec233.js" async=""></script><script src="/_next/static/chunks/c645af7d6b65f73e.js" async=""></script><script src="/_next/static/chunks/e241394cca6a88a3.js" async=""></script><script src="/_next/static/chunks/turbopack-791c109983b9d17d.js" async=""></script><script src="/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/_next/static/chunks/247eb132b7f7b574.js" async=""></script><script src="/_next/static/chunks/602c33aa789a4257.js" async=""></script><script src="/_next/static/chunks/ec35feb65d9b5957.js" async=""></script><meta name="next-size-adjust" content=""><title>GoPersonal Search UI</title><meta name="description" content="GoPersonal Search UI"><link rel="icon" href="/favicon.ico?favicon.0b3bf435.ico" sizes="256x256" type="image/x-icon"><link rel="icon" href="https://www.gopersonal.com/favicon.ico"><script src="/_next/static/chunks/a6dad97d9634a72d.js" nomodule=""></script><link rel="preload" as="image" href="https://savillerow.cl/cdn/shop/files/SR_Morado.svg?v=1758494250&amp;width=440" fetchpriority="high"><style id="embed-custom-css">
+    * {
+    	border-radius: 0px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+    	font-family: "Playfair Display", serif;
+      font-weight: 400;
+      color: #0c0c0c;
+    }
+    h3 {
+    	font-size: 24px;
+    }
+    
+    button, input, input::placeholder {
+       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    }
+
+		body > div.min-h-screen.bg-gray-50.overflow-x-hidden > div > div > button {
+    	left: 1rem;
+      right: auto;
+    }
+    
+    body > div.min-h-screen.bg-gray-50.overflow-x-hidden > div > div {
+    	width: 100%
+    }
+		@media screen and (min-width: 768px) {
+    	h3 {
+       font-size: 28px;
+      }
+      body > div.min-h-screen.bg-gray-50.overflow-x-hidden > div > div {
+      	width: 80%;
+        margin: auto;
+      }
+     	body > div.min-h-screen.bg-gray-50.overflow-x-hidden > div > div > div > div > div > div{
+      	width: 18.55%
+      }
+    }
+  </style></head><body class="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased" style="font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><div hidden=""><!--$--><!--/$--></div><div id="gs-search-page-root" class="min-h-screen bg-gray-50 overflow-x-hidden gs-search-page-root"><button id="gs-embed-close-button" class="fixed top-1 md:top-4 right-4 cursor-pointer z-[100000] w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/80 text-white rounded-full transition-all hover:scale-110 gs-embed-close-button" title="Close (Esc)" aria-label="Close search"><svg id="gs-embed-close-icon" class="w-6 h-6 gs-embed-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button><header id="gs-search-header" class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm backdrop-blur-sm gs-search-header"><div id="gs-search-header-inner" class="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 gs-search-header-inner"><div id="gs-search-header-layout" class="flex flex-col md:flex-row items-center gap-2 sm:gap-3 md:gap-6 gs-search-header-layout "><div id="gs-search-header-logo" class="flex-shrink-0 gs-search-header-logo"><a href="https://savillerow.cl/" id="gs-brand-logo-link-single" class="block h-8 gs-brand-logo-link"><img alt="Saville Row" id="gs-brand-logo-image-single" class="h-full w-auto object-contain gs-brand-logo-image" loading="eager" fetchpriority="high" src="https://savillerow.cl/cdn/shop/files/SR_Morado.svg?v=1758494250&amp;width=440"></a></div><div id="gs-search-bar-wrapper" class="gs-search-bar-wrapper flex-1 relative max-w-3xl w-full"><div id="gs-search-bar-container" class="relative gs-search-bar-container"><div id="gs-search-bar" class="flex items-center bg-gray-50 rounded-full border-2 border-gray-200 focus-within:border-primary focus-within:bg-white transition-all min-h-[44px] gs-search-bar md:w-xl md:max-w-[calc(100%-45px)] lg:max-w-full lg:w-full"><svg id="gs-search-icon" class="w-5 h-5 text-gray-400 ml-4 gs-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg><input type="text" placeholder="Buscar productos, marcas, categorías o precios..." id="gs-search-input" class="flex-1 min-w-0 px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent outline-none text-gray-900 placeholder-gray-500 text-base min-h-[40px] gs-search-input" value=""><button id="gs-voice-search-button" class="p-2 mr-1 sm:mr-2 rounded-full transition-colors gs-voice-search-button text-gray-600 hover:bg-gray-100" title="Búsqueda por voz"><svg id="gs-voice-search-icon-idle" class="w-5 h-5 gs-voice-search-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a2 2 0 00-2 2v4a2 2 0 104 0V5a2 2 0 00-2-2z"></path><path d="M10 12a4 4 0 01-4-4H4a6 6 0 0012 0h-2a4 4 0 01-4 4zM9 14h2v3h-2v-3z"></path></svg></button><button id="gs-image-search-button" class="p-2 mr-1 sm:mr-2 rounded-full transition-colors gs-image-search-button text-gray-600 hover:bg-gray-100" title="Búsqueda por imagen"><svg id="gs-image-search-icon" class="w-5 h-5 gs-image-search-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg></button><input type="file" accept="image/jpeg,image/jpg,image/png,image/webp,image/gif" id="gs-image-search-input" class="hidden gs-image-search-input"><button id="gs-search-submit-button" class="bg-primary text-white px-3 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full font-medium hover:bg-primary-hover transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap gs-search-submit-button">Buscar</button></div></div></div></div></div></header><div id="gs-main-content" class="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-6 gs-main-content"><div id="gs-home-root" class="space-y-4 sm:space-y-6 md:space-y-8 gs-home-root"><div id="gs-popular-searches-section" class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-3 sm:p-4 md:p-8 gs-popular-searches-section"><h3 id="gs-popular-searches-title" class="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 gs-popular-searches-title">Lo más buscado</h3><div id="gs-popular-searches-list" class="flex flex-wrap gap-2 sm:gap-2 md:gap-3 gs-popular-searches-list"><button id="gs-popular-searches-button-0" class="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary-light hover:bg-gray-100 text-primary font-medium rounded-lg transition-colors text-xs sm:text-sm md:text-base gs-popular-searches-button">Abrigos</button><button id="gs-popular-searches-button-1" class="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary-light hover:bg-gray-100 text-primary font-medium rounded-lg transition-colors text-xs sm:text-sm md:text-base gs-popular-searches-button">Casacas</button><button id="gs-popular-searches-button-2" class="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary-light hover:bg-gray-100 text-primary font-medium rounded-lg transition-colors text-xs sm:text-sm md:text-base gs-popular-searches-button">Jeans</button><button id="gs-popular-searches-button-3" class="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary-light hover:bg-gray-100 text-primary font-medium rounded-lg transition-colors text-xs sm:text-sm md:text-base gs-popular-searches-button">Cárdigans</button><button id="gs-popular-searches-button-4" class="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary-light hover:bg-gray-100 text-primary font-medium rounded-lg transition-colors text-xs sm:text-sm md:text-base gs-popular-searches-button">Blazers</button><button id="gs-popular-searches-button-5" class="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 bg-primary-light hover:bg-gray-100 text-primary font-medium rounded-lg transition-colors text-xs sm:text-sm md:text-base gs-popular-searches-button">Blusas</button></div></div><div id="gs-carousel-0" class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-3 sm:p-4 md:p-8 gs-carousel-container"><h3 id="gs-carousel-title-0" class="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 gs-carousel-title">Recomendados para ti</h3><div id="gs-carousel-scroll-0" class="overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0 gs-carousel-scroll"><div id="gs-carousel-track-0" class="flex gap-2 sm:gap-3 md:gap-4 pb-4 gs-carousel-track"><div id="gs-carousel-item-0-0" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35012735-Navy-1_56448fef-d940-491a-a05f-d3c0c89b68be.jpg?v=1776186535" alt="Casaca Clásica Lisa Lana" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Casaca Clásica Lisa Lana</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$179.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-1" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014569-NAVY-1.jpg?v=1774464202" alt="Chaqueta Lisa Fulton" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Chaqueta Lisa Fulton</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$149.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-2" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/50014494-CHOCOLATE_3.jpg?v=1772567323" alt="Pantalón Bolsillo Pierna Ajustable" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Pantalón Bolsillo Pierna Ajustable</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$59.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-3" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/20213463-Chocolate-1_2c2977d0-0d34-446a-ade9-7b14cc4f45c7.jpg?v=1771345018" alt="Polera Básica Carolina Cuello Redondo" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Polera Básica Carolina Cuello Redondo</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$21.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-4" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16014589-CAMEL-1.jpg?v=1773334988" alt="Blazer Blanca 4 Botones" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blazer Blanca 4 Botones</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$189.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-5" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60114727-NAVY-1_f74d42f3-6512-48f3-a130-ce48e934d9fe.jpg?v=1773415973" alt="Abrigo Lana Peak Lapel Pin Stripe" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Lana Peak Lapel Pin Stripe</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$219.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-6" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014565-NAVY-1.jpg?v=1772656131" alt="Casaca Shacket Lisa de Lana Pile" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Casaca Shacket Lisa de Lana Pile</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$179.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-7" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014592-NAVY-1.jpg?v=1773415803" alt="Abrigo Marine Corto Con Cuatro Botones" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Marine Corto Con Cuatro Botones</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$189.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-8" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/30614585-VERDEESMERALDA-1.jpg?v=1769780997" alt="Cárdigan Punto Bascket Plaquet Contrastado" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Cárdigan Punto Bascket Plaquet Contrastado</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$69.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-9" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014614-OLIVA_1.jpg?v=1773947719" alt="Chaqueta Lisa Walk British Wax" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Chaqueta Lisa Walk British Wax</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$199.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-10" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014491-1.jpg?v=1770822165" alt="Casaca Clásica Coverall de Gamuza" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Casaca Clásica Coverall de Gamuza</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$299.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-0-11" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014505-NAVY-1.jpg?v=1773081628" alt="Abrigo Básico Lana Muflón" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Básico Lana Muflón</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$219.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div></div></div></div><div id="gs-carousel-1" class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-3 sm:p-4 md:p-8 gs-carousel-container"><h3 id="gs-carousel-title-1" class="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 gs-carousel-title">Más Populares</h3><div id="gs-carousel-scroll-1" class="overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0 gs-carousel-scroll"><div id="gs-carousel-track-1" class="flex gap-2 sm:gap-3 md:gap-4 pb-4 gs-carousel-track"><div id="gs-carousel-item-1-0" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014728-NEGRO-1.jpg?v=1774621416" alt="Abrigo Largo Militar Con Bolsillo De Tapetas" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Largo Militar Con Bolsillo De Tapetas</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$249.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-1" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/20213463-Negro-1_3329f2c7-504d-493a-b491-cddfefa90415.jpg?v=1771345637" alt="Polera Básica Carolina Cuello Redondo" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Polera Básica Carolina Cuello Redondo</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$21.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-2" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16014471-BURDEO-1.jpg?v=1773075580" alt="Blazer Amelia En Terciopelo A Rayas" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blazer Amelia En Terciopelo A Rayas</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$229.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-3" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014483-NAVY_1.jpg?v=1772655718" alt="Casaca Coverall Lisa de Lana" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Casaca Coverall Lisa de Lana</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$189.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-4" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014505-CAMEL-1.jpg?v=1773081628" alt="Abrigo Básico Lana Muflón" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Básico Lana Muflón</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$219.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-5" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/20213463-Blanco-1_762e9c8e-137c-4c15-80d8-cc47fd30b217.jpg?v=1771345421" alt="Polera Básica Carolina Cuello Redondo" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Polera Básica Carolina Cuello Redondo</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$21.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-6" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/22314437-NEGRO-1B.jpg?v=1765379177" alt="Blusa Sin Mangas Escote Cerrado En Set Texturado" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #c20000; color: #FFF; gap: 11px; text-transform: uppercase">-30%</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blusa Sin Mangas Escote Cerrado En Set Texturado</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$34.900</span>
+                <span style="position: relative; color: #999; font-size: 12px; margin-right: 0; margin-left: 0; text-decoration: line-through;">$49.900</span><span style="color: #b61d0f"> Oferta</span>
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-7" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014588-BURDEO-1.jpg?v=1773415634" alt="Abrigo Largo Evase de Lana" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Largo Evase de Lana</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$249.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-8" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16014589-NAVY-1.jpg?v=1773334988" alt="Blazer Blanca 4 Botones" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blazer Blanca 4 Botones</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$189.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-9" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/30914949-MARENGO-1.png?v=1776800317" alt="Cárdigan Sin Manga Con Mohair Merino" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Cárdigan Sin Manga Con Mohair Merino</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$54.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-10" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16114625-CAMEL-1-_6.jpg?v=1770997793" alt="Blazer Tweed Window Pane Ecuestre" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blazer Tweed Window Pane Ecuestre</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$219.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-1-11" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16014489-NAVY_1.jpg?v=1774275729" alt="Blazer Soledad Terciopelo" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blazer Soledad Terciopelo</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$139.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div></div></div></div><div id="gs-carousel-2" class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-3 sm:p-4 md:p-8 gs-carousel-container"><h3 id="gs-carousel-title-2" class="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 gs-carousel-title">Similares a lo que viste</h3><div id="gs-carousel-scroll-2" class="overflow-x-auto -mx-3 px-3 sm:mx-0 sm:px-0 gs-carousel-scroll"><div id="gs-carousel-track-2" class="flex gap-2 sm:gap-3 md:gap-4 pb-4 gs-carousel-track"><div id="gs-carousel-item-2-0" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014562-NEGRO-1.jpg?v=1773414244" alt="Casaca Coverall Lisa de Lana Pile" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Casaca Coverall Lisa de Lana Pile</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$179.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-1" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014588-NEGRO-1.jpg?v=1773415634" alt="Abrigo Largo Evase de Lana" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Largo Evase de Lana</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$249.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-2" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014498-NAVY-1.jpg?v=1773844441" alt="Abrigo Militar En Terciopelo Detalles Piping" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Militar En Terciopelo Detalles Piping</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$239.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-3" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/47014707-NEGRO-1.jpg?v=1774556029" alt="Jeans Recto Croped" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Jeans Recto Croped</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$69.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-4" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/30614746-NAVY-1.jpg?v=1773413961" alt="Cárdigan Cruce Botones Solapa y Mangas en Rib" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Cárdigan Cruce Botones Solapa y Mangas en Rib</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$69.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-5" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/47014708-AZUL-1.jpg?v=1774556175" alt="Jeans Recto Croped" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Jeans Recto Croped</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$69.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-6" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16014504-BURDEO_1.jpg?v=1773334770" alt="Blazer Soledad Coderas Lana Muflón" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blazer Soledad Coderas Lana Muflón</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$189.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-7" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/22014800-ROJO-1.jpg?v=1776203393" alt="Blusa Cuello Club Y Vuelos Gingham" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Blusa Cuello Club Y Vuelos Gingham</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$64.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-8" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/16614701-CAMEL-1.jpg?v=1773843631" alt="Chaqueta Lana Corta Bolsillos Con Tapeta" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Chaqueta Lana Corta Bolsillos Con Tapeta</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$169.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-9" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/35014610-OLIVAOSCURO-1.jpg?v=1772657907" alt="Chaqueta Lisa Sport British Wax Modelo Logan" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Chaqueta Lisa Sport British Wax Modelo Logan</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$199.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-10" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014488-NEGRO-1.jpg?v=1773081536" alt="Abrigo Terciopelo Fluido Cuello Mao" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Terciopelo Fluido Cuello Mao</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$199.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div><div id="gs-carousel-item-2-11" class="flex-shrink-0 w-40 sm:w-48 md:w-56 lg:w-64 gs-carousel-item"><div class="gopersonal-product-card-custom cursor-pointer" data-component="product-card-custom">
+          <div style="overflow: hidden; cursor: pointer;" data-action="product-click">
+            <div style="position: relative; overflow: hidden;">
+              <img src="https://cdn.shopify.com/s/files/1/0604/1305/1044/files/60014588-CAMEL-1.jpg?v=1773415634" alt="Abrigo Largo Evase de Lana" style="width: 100%; object-fit: cover; aspect-ratio: 2400 / 3000;">
+              <span style="padding: 0.3em 1em; position: absolute; top: 7.5px; right: 7.5px; margin: 0; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; background-color: #12284c; color: #FFF; gap: 11px;">New</span>
+            </div>
+            <div style="padding: 12px 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; display: flex; gap: 0.5rem; flex-flow: column;">
+              <h3 style="display: block; line-height: 20px; font-size: 13px; font-weight: 400; color: #234681; margin-bottom: 0; margin-top: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; text-transform: uppercase; max-height: 40px; overflow: hidden; letter-spacing: 0.3px;">Abrigo Largo Evase de Lana</h3>
+              <div style="display: flex; align-items: center; gap: 0px 8px; flex-wrap: wrap;">
+                <span style="font-weight: 400; font-size: 14px; color: #234681;">$249.900</span>
+                
+
+              </div>
+            </div>
+          </div>
+        </div></div></div></div></div></div></div><footer id="gs-footer" class="border-t border-gray-200 bg-white mt-12 gs-footer"><div id="gs-footer-inner" class="max-w-[1920px] mx-auto px-6 py-4 gs-footer-inner"><p id="gs-footer-text" class="text-center text-xs text-gray-500 gs-footer-text">Desarrollado por<!-- --> <a id="gs-footer-link" target="_blank" class="font-semibold text-gray-700 gs-footer-link" href="https://www.gopersonal.com/">Gopersonal</a></p></div></footer></div><!--$--><!--/$--><script src="/_next/static/chunks/cbd55ab9639e1e66.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"default\"]\n4:I[47257,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"ClientPageRoot\"]\n5:I[31713,[\"/_next/static/chunks/602c33aa789a4257.js\",\"/_next/static/chunks/ec35feb65d9b5957.js\"],\"default\"]\n8:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"OutletBoundary\"]\n9:\"$Sreact.suspense\"\nb:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"ViewportBoundary\"]\nd:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"MetadataBoundary\"]\nf:I[68027,[],\"default\"]\n:HL[\"/_next/static/chunks/35ae6bee60d9bd2e.css\",\"style\"]\n:HL[\"/_next/static/media/797e433ab948586e-s.p.479bea2b.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"YHvFkWeOpA2WURsiLDZvU\",\"c\":[\"\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/35ae6bee60d9bd2e.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"Component\":\"$5\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@6\",\"$@7\"]}}],[[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/602c33aa789a4257.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/ec35feb65d9b5957.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L8\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@a\"}]}]]}],{},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$Lb\",null,{\"children\":\"$@c\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$9\",null,{\"name\":\"Next.Metadata\",\"children\":\"$@e\"}]}]}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"6:{}\n7:\"$0:f:0:1:1:children:0:props:children:0:props:serverProvidedParams:params\"\n"])</script><script>self.__next_f.push([1,"c:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"10:I[27201,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/247eb132b7f7b574.js\"],\"IconMark\"]\ne:[[\"$\",\"title\",\"0\",{\"children\":\"GoPersonal Search UI\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"GoPersonal Search UI\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.0b3bf435.ico\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"}],[\"$\",\"link\",\"3\",{\"rel\":\"icon\",\"href\":\"https://www.gopersonal.com/favicon.ico\"}],[\"$\",\"$L10\",\"4\",{}]]\na:null\n"])</script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;0c327b1ea85e4db38fb97b7b00f140f9&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<next-route-announcer style="position: absolute;"></next-route-announcer></body></html>

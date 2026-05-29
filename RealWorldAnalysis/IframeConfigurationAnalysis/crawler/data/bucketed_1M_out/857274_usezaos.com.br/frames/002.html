@@ -1,0 +1,357 @@
+<!DOCTYPE html><html><head>
+  </head>
+  <body>
+    <div data-nonce="07apixKqcG5Gb4CFo55Z4g==">
+      <script type="text/javascript" nonce="">
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+
+;// ./utils/sources.js
+const availableSites = (/* unused pure expression or super */ null && ([
+  'br',
+  'ar',
+  'mx',
+  'bo',
+  'cl',
+  'co',
+  'cr',
+  'do',
+  'ec',
+  'gt',
+  'hn',
+  'ni',
+  'pa',
+  'py',
+  'pe',
+  'sv',
+  'uy',
+  've',
+]));
+
+const isFromMeli = /.*\.mercado(libre|livre|pago)\.(com|cl|co).*/.test(
+  document.location.host,
+);
+
+const { userAgent } = navigator;
+
+const isFromChromeMobileIOS = userAgent.includes('CriOS/');
+
+const isFromChrome =
+  userAgent.includes('Chrome/') || userAgent.includes('Chromium/') || isFromChromeMobileIOS;
+
+const isFromFirefox = userAgent.includes('Firefox/') || userAgent.includes('FxiOS/');
+
+const isFromEdge =
+  userAgent.includes('Edg/') ||
+  userAgent.includes('Edge/') ||
+  userAgent.includes('EdgiOS/') ||
+  userAgent.includes('EdgA/');
+
+const isFromSafari =
+  !isFromChrome &&
+  !isFromFirefox &&
+  !isFromEdge &&
+  userAgent.includes('Safari/') &&
+  userAgent.includes('Version/');
+
+const getRefererSite = () => {
+  const { host } = document.location;
+
+  if (!host) {
+    return null;
+  }
+
+  const site = host.split('.').pop();
+
+  if (site === '') {
+    return null;
+  }
+
+  if (availableSites.includes(site)) {
+    return site;
+  }
+
+  return null;
+};
+
+function getCrossDomain() {
+  return isFromMeli && (isFromChromeMobileIOS || isFromSafari)
+    ? `${document.location.host}/jms/lgz`
+    : 'www.mercadolibre.com/jms/lgz';
+}
+
+function getSameDomain() {
+  if (isFromMeli) {
+    return `${document.location.host}/jms/lgz`;
+  }
+
+  const refererSite = getRefererSite();
+
+  if (!refererSite) {
+    return 'www.mercadolivre.com/jms/mlb/lgz';
+  }
+
+  if (refererSite === 'cl') {
+    return 'www.mercadopago.cl/jms/lgz';
+  }
+
+  return `www.mercadopago.com.${refererSite}/jms/lgz`;
+}
+
+;// ./utils/storages.js
+const COLLECTION_INDEX_KEY = 'collection_index';
+const MAX_BATCH_INDEX = 2;
+
+const getCollectionData = currentDps => {
+  const newExecution = {
+    collectionIndex: 0,
+    dps: currentDps,
+  };
+  const item = localStorage.getItem(COLLECTION_INDEX_KEY);
+
+  const formatRegex = /^\d+-\d+-[a-zA-Z0-9._-]+$/;
+
+  if (!formatRegex.test(item)) {
+    return newExecution;
+  }
+
+  const [indexValue, timestampValue, dps] = item.split('-');
+
+  const index = Number(indexValue);
+  const timestamp = Number(timestampValue);
+
+  if (Number.isNaN(index) || Number.isNaN(timestamp) || !dps) {
+    return newExecution;
+  }
+
+  const currentTimestamp = Math.floor(Date.now() / 1000);
+
+  if (currentTimestamp - timestamp > 60) {
+    return newExecution;
+  }
+
+  if (index < 0 || index > MAX_BATCH_INDEX) {
+    return newExecution;
+  }
+
+  return {
+    collectionIndex: Number(index),
+    dps,
+  };
+};
+
+const setCollectionData = (index, dps) => {
+  const timestamp = Math.floor(Date.now() / 1000);
+
+  localStorage.setItem(COLLECTION_INDEX_KEY, `${index}-${timestamp}-${dps}`);
+};
+
+const supportIndexedDB = () => {
+  const indexedDB =
+    window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+  return !!indexedDB;
+};
+
+;// ./iframe/idbuuid.js
+
+
+
+const setStoreValue = (db, newIdbuuid) => {
+  const code = { name: 'uuid', value: newIdbuuid };
+  const customerObjectStore = db.transaction('dp', 'readwrite').objectStore('dp');
+
+  customerObjectStore.add(code);
+};
+
+const getStoreValue = async (event, newIdbuuid) => {
+  const db = event.target.result;
+  const objectStore = db.transaction('dp', 'readwrite').objectStore('dp');
+
+  try {
+    const request = objectStore.get('uuid');
+    const result = await new Promise((resolve, reject) => {
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject();
+    });
+
+    if (!result) {
+      setStoreValue(db, newIdbuuid);
+
+      return newIdbuuid;
+    }
+
+    return result;
+  } catch (error) {
+    return newIdbuuid;
+  }
+};
+
+const getVersionIDB = () => (isFromMeli && (isFromChromeMobileIOS || isFromSafari) ? 2 : 1);
+
+async function setIdbuuid(newIdbuuid) {
+  if (!supportIndexedDB()) {
+    return newIdbuuid;
+  }
+
+  try {
+    const idbuuid = await new Promise((resolve, reject) => {
+      const request = window.indexedDB.open('db', getVersionIDB());
+
+      request.onsuccess = event => {
+        getStoreValue(event, newIdbuuid).then(resolve).catch(reject);
+      };
+
+      request.onerror = () => {
+        reject(new Error('IndexedDB error'));
+      };
+
+      request.onupgradeneeded = event => {
+        const db = event.target.result;
+        const objectStore = db.createObjectStore('dp', { keyPath: 'name' });
+
+        objectStore.createIndex('name', 'name', { unique: true });
+        objectStore.createIndex('value', 'value', { unique: true });
+      };
+    });
+
+    return idbuuid.value;
+  } catch (error) {
+    return newIdbuuid;
+  }
+}
+
+;// ./iframe/jsuuid.js
+
+
+const getUrlNextJsuuid = currentJsuuid => {
+  const baseUrl =
+    isFromMeli && (isFromChromeMobileIOS || isFromSafari)
+      ? `https://${document.location.host}/jms/lgz/fingerprint/jsuuid/${currentJsuuid}`
+      : `https://www.mercadolibre.com/jms/lgz/fingerprint/jsuuid/${currentJsuuid}`;
+
+  return baseUrl;
+};
+
+const getNextJsuuid = async currentJsuuid => {
+  const url = getUrlNextJsuuid(currentJsuuid);
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      credentials: 'omit',
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+
+      return data.jsuuid || null;
+    }
+
+    return null;
+  } catch (error) {
+    return null;
+  }
+};
+
+const setLocalStorage = (currentJsuuid, nextJsuuid) => {
+  if (currentJsuuid === nextJsuuid) {
+    return currentJsuuid;
+  }
+
+  try {
+    localStorage.setItem('ml_jsuuid', nextJsuuid);
+
+    return nextJsuuid;
+  } catch (error) {
+    return null;
+  }
+};
+
+async function setJsuuid(newJsuuid) {
+  try {
+    if (window.localStorage) {
+      const currentJsuuid = localStorage.getItem('ml_jsuuid');
+
+      if (!currentJsuuid || typeof Promise === 'undefined') {
+        return setLocalStorage(currentJsuuid, newJsuuid);
+      }
+
+      const nextJsuuid = await getNextJsuuid(currentJsuuid);
+
+      return setLocalStorage(currentJsuuid, nextJsuuid || currentJsuuid);
+    }
+  } catch (error) {
+    return null;
+  }
+
+  return null;
+}
+
+;// ./iframe/iframe.js
+
+
+
+// Get nonce from data attribute
+const container = document.querySelector('div[data-nonce]');
+const nonceFromData = container?.getAttribute('data-nonce');
+
+// Store nonce globally
+window.currentNonce = nonceFromData || document.currentScript?.nonce || '';
+
+window.addEventListener('message', async event => {
+  const { action, value, nonce } = event.data;
+
+  // Update the nonce if we receive a new one
+  if (nonce) {
+    window.currentNonce = nonce;
+  }
+
+  try {
+    let response;
+    let jsuuid;
+    let idbuuid;
+
+    switch (action) {
+      case 'setJsuuid':
+        jsuuid = await setJsuuid(value);
+        response = { action, status: 'success', result: jsuuid };
+
+        break;
+
+      case 'setIdbuuid':
+        idbuuid = await setIdbuuid(value);
+        response = { action, status: 'success', result: idbuuid };
+
+        break;
+
+      default:
+        return;
+    }
+
+    event.source.postMessage(response, event.origin);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('[Iframe] Error processing message:', {
+      action,
+      error: error.message,
+      stack: error.stack,
+    });
+    event.source.postMessage(
+      {
+        action,
+        status: 'error',
+        error: error.message,
+      },
+      event.origin,
+    );
+  }
+});
+
+/******/ })()
+;
+      </script>
+    </div>
+  
+
+</body></html>

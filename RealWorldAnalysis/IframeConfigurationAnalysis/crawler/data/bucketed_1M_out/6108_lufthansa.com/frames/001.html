@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnstile Pre-clearance</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+  </style>
+  <!-- Turnstile callback stub -->
+  <script>window.__tcOnTurnstileReady = function() {};</script>
+  <!-- Turnstile API -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=__tcOnTurnstileReady&amp;render=explicit" async=""></script>
+  <!-- Iframe-specific clearance script -->
+  <script>(function(window) {
+  'use strict';
+
+  var CONFIG = {"TURNSTILE_SITEKEY":"0x4AAAAAADE-C-MZWWbFOcrD","DEBUG":false};
+  var VERSION = '1.0.0-iframe-simple';
+
+  var TurnstileIframeSimple = {
+    _widgetId: null,
+
+    _log: function(msg, data) {
+      if (!CONFIG.DEBUG) return;
+      var prefix = '[TC-IFRAME-SIMPLE]';
+      var args = [prefix, msg];
+      if (data !== undefined) args.push(data);
+      console.log.apply(console, args);
+    },
+
+    _createWidget: function() {
+      var container = document.createElement('div');
+      container.id = 'cf-turnstile-iframe-widget';
+      
+      // Apply invisible styling
+      container.style.cssText = [
+        'width: 1px',
+        'height: 1px', 
+        'opacity: 0.01',
+        'position: fixed',
+        'left: 0',
+        'top: 0',
+        'visibility: visible',
+        'pointer-events: none',
+        'z-index: -1'
+      ].join('; ') + ';';
+      
+      document.body.appendChild(container);
+      this._log('Created Turnstile widget container');
+      return container;
+    },
+
+    _renderWidget: function() {
+      var self = this;
+
+      if (typeof turnstile === 'undefined') {
+        this._log('Turnstile API not ready, retrying in 100ms');
+        setTimeout(function() {
+          self._renderWidget();
+        }, 100);
+        return;
+      }
+
+      var container = document.getElementById('cf-turnstile-iframe-widget');
+      if (!container) {
+        if (!document.body) {
+          this._log('document.body not ready, waiting...');
+          setTimeout(function() {
+            self._renderWidget();
+          }, 10);
+          return;
+        }
+        container = this._createWidget();
+      }
+
+      this._log('Rendering Turnstile widget with sitekey: ' + CONFIG.TURNSTILE_SITEKEY.substring(0, 10) + '...');
+      this._widgetId = turnstile.render(container, {
+        sitekey: CONFIG.TURNSTILE_SITEKEY,
+        callback: function(token) {
+          self._log('Turnstile solved successfully', { tokenPrefix: token.substring(0, 20) + '...' });
+        },
+        'error-callback': function(code) {
+          self._log('Turnstile error: ' + code);
+        },
+        size: 'invisible'
+      });
+    },
+
+    init: function() {
+      this._log('=== TurnstileIframeSimple v' + VERSION + ' initializing ===', {
+        sitekey: CONFIG.TURNSTILE_SITEKEY.substring(0, 10) + '...'
+      });
+
+      this._renderWidget();
+      this._log('=== Iframe initialization complete ===');
+    }
+  };
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      TurnstileIframeSimple.init();
+    });
+  } else {
+    TurnstileIframeSimple.init();
+  }
+
+  // Turnstile API callback
+  window.__tcOnTurnstileReady = function() {
+    TurnstileIframeSimple._log('Turnstile API loaded');
+  };
+
+  // Expose for debugging
+  window.TurnstileIframeSimple = TurnstileIframeSimple;
+
+})(typeof window !== 'undefined' ? window : this);</script>
+</head>
+<body>
+  <!-- Invisible iframe content for pre-clearance -->
+  <div style="display: none;">Turnstile Pre-clearance</div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0039e9feb9bb855',t:'MTc3OTUzNDY4NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+<div id="cf-turnstile-iframe-widget" style="width: 1px; height: 1px; opacity: 0.01; position: fixed; left: 0px; top: 0px; visibility: visible; pointer-events: none; z-index: -1;"><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-rsjpr_response" value=""></div></div></body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=728,initial-scale=1">
+<title>&nbsp;</title>
+<style>
+  html,body{margin:0;padding:0;width:728px;height:90px;overflow:hidden;background:#000}
+  a.stage{
+    display:block;width:728px;height:90px;position:relative;overflow:hidden;
+    text-decoration:none;outline:none;cursor:pointer;background:#000;
+  }
+  a.stage video{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;background:#000;pointer-events:none;display:block;
+  }
+  .layer{position:absolute;inset:0;pointer-events:none}
+
+  /* ============ V3: 3 cycling phrases ============ */
+  .v3 .phrase{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    color:#fff;font-weight:800;font-size:22px;letter-spacing:.3px;
+    text-shadow:0 2px 12px rgba(0,0,0,.95),0 0 22px rgba(0,0,0,.95);
+    white-space:nowrap;opacity:0;
+    font-family:"Helvetica Neue",system-ui,sans-serif;
+  }
+  .v3 .p1{animation:cycle3 6s ease-in-out infinite;animation-delay:0s}
+  .v3 .p2{animation:cycle3 6s ease-in-out infinite;animation-delay:2s}
+  .v3 .p3{animation:cycle3 6s ease-in-out infinite;animation-delay:4s}
+  .v3 b{color:#ff3a6f}
+  @keyframes cycle3{
+    0%,5%   {opacity:0;transform:translate(-50%,-50%) translateY(8px)}
+    10%,28% {opacity:1;transform:translate(-50%,-50%) translateY(0)}
+    33%,100%{opacity:0;transform:translate(-50%,-50%) translateY(-8px)}
+  }
+
+  /* ============ V5: Sweep + breathing center text ============ */
+  .v5 .sweep{
+    position:absolute;top:0;bottom:0;left:-200px;width:200px;
+    background:linear-gradient(90deg,transparent,rgba(255,58,111,.85),transparent);
+    animation:sweep 5s linear infinite;
+  }
+  .v5 .head{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    color:#fff;font-size:20px;font-weight:800;
+    text-shadow:0 2px 10px rgba(0,0,0,.95);white-space:nowrap;
+    font-family:"Helvetica Neue",system-ui,sans-serif;
+    animation:breathe 5s ease-in-out infinite;
+  }
+  .v5 .head b{color:#ffb3d1}
+  @keyframes breathe{
+    0%,25%  {opacity:1;transform:translate(-50%,-50%) scale(1)}
+    40%,55% {opacity:0;transform:translate(-50%,-50%) scale(.92)}
+    70%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  }
+  @keyframes sweep{
+    0%  {left:-200px}
+    50% {left:728px}
+    100%{left:728px}
+  }
+
+  /* ============ V6: Top + Bottom strips (static) ============ */
+  .v6 .top{
+    position:absolute;top:0;left:0;right:0;height:18px;
+    background:#000;color:#fff;
+    font:900 12px/18px Impact,"Arial Black",sans-serif;
+    text-align:center;letter-spacing:1.5px;
+  }
+  .v6 .top b{color:#ffd166}
+  .v6 .bot{
+    position:absolute;bottom:0;left:0;right:0;height:22px;
+    background:linear-gradient(90deg,#ff2a5c,#ff8a3a);
+    color:#fff;font:900 14px/22px Impact,"Arial Black",sans-serif;
+    text-align:center;letter-spacing:1px;text-shadow:1px 1px 0 #000;
+  }
+
+  /* ============ V9: Aggressive full-overlay breathing + shake ============ */
+  .v9 .head{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    color:#fff;font:900 26px/.95 Impact,"Arial Black",sans-serif;letter-spacing:1px;
+    text-shadow:
+      3px 3px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,
+      0 0 22px rgba(255,42,92,.85);
+    white-space:nowrap;
+    animation:breathe-shake 5s ease-in-out infinite;
+  }
+  .v9 .head b{color:#ff2a5c}
+  .v9 .cta-pulse{
+    position:absolute;right:8px;bottom:8px;
+    background:#ffd166;color:#000;
+    font:900 14px/1 Impact,"Arial Black",sans-serif;
+    padding:7px 13px;border-radius:3px;
+    box-shadow:0 0 0 2px #000,0 0 18px rgba(255,209,102,.8);
+    letter-spacing:1.5px;animation:pulse-ct 1.2s infinite;
+  }
+  .v9 .cta-pulse::after{content:" \25B6"}
+  @keyframes breathe-shake{
+    0%,25%   {opacity:1;transform:translate(-50%,-50%) translateX(0)}
+    8%,14%   {transform:translate(-50%,-50%) translateX(-1.5px)}
+    11%,17%  {transform:translate(-50%,-50%) translateX(1.5px)}
+    40%,55%  {opacity:0;transform:translate(-50%,-50%) scale(.92)}
+    70%,100% {opacity:1;transform:translate(-50%,-50%) translateX(0)}
+  }
+  @keyframes pulse-ct{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+
+  /* ============ V10: 3 aggressive cycling phrases ============ */
+  .v10 .phrase{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    color:#fff;font:900 24px/.95 Impact,"Arial Black",sans-serif;letter-spacing:1px;
+    text-shadow:3px 3px 0 #000,0 0 18px rgba(0,0,0,.95);white-space:nowrap;opacity:0;
+  }
+  .v10 .phrase b{color:#ff2a5c}
+  .v10 .phrase em{color:#ffd166;font-style:normal}
+  .v10 .p1{animation:cycle3 6s ease-in-out infinite;animation-delay:0s}
+  .v10 .p2{animation:cycle3 6s ease-in-out infinite;animation-delay:2s}
+  .v10 .p3{animation:cycle3 6s ease-in-out infinite;animation-delay:4s}
+  .v10 .cta-pulse{
+    position:absolute;right:8px;bottom:8px;
+    background:#ff2a5c;color:#fff;
+    font:900 13px/1 Impact,"Arial Black",sans-serif;
+    padding:7px 12px;border-radius:3px;border:2px solid #ffd166;
+    letter-spacing:1.5px;animation:pulse-ct 1.2s infinite;
+  }
+  .v10 .cta-pulse::after{content:" \25B6"}
+
+  /* ============ T1 STYLE (left text + big pulse CTA) ============ */
+  .t1 .left{
+    position:absolute;left:12px;top:50%;transform:translateY(-50%);
+    max-width:470px;font-family:Impact,"Bebas Neue","Arial Black",sans-serif;
+  }
+  .t1 .l1{
+    font-size:26px;line-height:.95;color:#fff;letter-spacing:.5px;
+    text-shadow:
+      2px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,
+      0 0 14px rgba(0,0,0,.95);
+  }
+  .t1 .l1 b{
+    color:#ff3a6f;
+    text-shadow:
+      2px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,
+      0 0 14px rgba(255,58,111,.7);
+  }
+  .t1 .l2{
+    font-size:18px;line-height:1;margin-top:6px;
+    color:#ffd166;letter-spacing:.5px;
+    font-family:Impact,"Bebas Neue","Arial Black",sans-serif;
+    text-shadow:2px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;
+  }
+  .t1 .cta-big{
+    position:absolute;right:12px;top:50%;transform:translateY(-50%);
+    background:linear-gradient(180deg,#ff3a6f,#c81548);
+    color:#fff;font:800 19px/1 Impact,"Bebas Neue","Arial Black",sans-serif;
+    padding:13px 19px;border-radius:8px;letter-spacing:1px;white-space:nowrap;
+    box-shadow:0 4px 0 #6b0a26,0 0 22px rgba(255,58,111,.6);
+    animation:pulse-big 1.4s infinite;
+  }
+  @keyframes pulse-big{
+    0%,100%{transform:translateY(-50%) scale(1)}
+    50%    {transform:translateY(-50%) scale(1.06)}
+  }
+</style>
+</head>
+<body marginwidth="0" marginheight="0">
+<a id="cta" class="stage" href="https://ck.juicyads.com/getjuicy.php?jad=1829631&amp;juser=194691&amp;token=f2df7a30347063f215dba9c5333107315752bf5a&amp;rurl=https://monteliravio.life/index?id=fa0b213213704a03bd24b1f83a761c75&amp;dynamicS2S={dynamicS2S}&amp;dynamicPUB={dynamicPUB}&amp;dynamicSITE={dynamicSITE}&amp;dynamicGEO={dynamicGEO}&amp;dynamicZNE={dynamicZNE}&amp;dynamicIMG=c12&amp;dynamicTXT=none" target="_blank" rel="noopener noreferrer nofollow">
+  <video id="vid" autoplay="" muted="" loop="" playsinline="" preload="auto" disablepictureinpicture="" disableremoteplayback="" src="videos/combo12.mp4"></video>
+  <div id="overlay" class="layer"></div>
+</a>
+<script>
+(function(){
+  var PAIRS = {
+    10: ['v5', 'v10', 'a1'],
+    12: ['none'],
+    13: ['none'],
+    14: ['none'],
+    15: ['none']
+  };
+  var ACTIVE_VIDEOS = Object.keys(PAIRS).map(function(k){ return parseInt(k,10); });
+
+  var qs = (function(){
+    var o = {}, s = (location.search || '').slice(1);
+    if (!s) return o;
+    s.split('&').forEach(function(p){
+      var i = p.indexOf('='); if (i<0) return;
+      o[decodeURIComponent(p.slice(0,i))] = decodeURIComponent(p.slice(i+1));
+    });
+    return o;
+  })();
+
+  var rawLang = (qs.lang || navigator.language || 'en').toLowerCase();
+  var L = rawLang.slice(0,2);
+  var SUP = {en:1, es:1, pt:1, de:1, fr:1, it:1, pl:1, ja:1};
+  var lang = SUP[L] ? L : 'en';
+
+  var VARIANTS = [
+    { id:'none', cls:'', html:{
+      en:'', es:'', pt:'', de:'', fr:'', it:'', pl:'', ja:''
+    }},
+
+    { id:'v3', cls:'v3', html:{
+      en:'<div class="phrase p1">Your <b>AI Slut</b> is Waiting</div>'+
+         '<div class="phrase p2">Build Your <b>Fantasy</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Try It \u2192</div>',
+      es:'<div class="phrase p1">Tu <b>Puta AI</b> Te Espera</div>'+
+         '<div class="phrase p2">Crea Tu <b>Fantas\u00EDa</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Pru\u00E9balo \u2192</div>',
+      pt:'<div class="phrase p1">Sua <b>Puta AI</b> Te Espera</div>'+
+         '<div class="phrase p2">Crie Sua <b>Fantasia</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Experimenta \u2192</div>',
+      de:'<div class="phrase p1">Deine <b>AI-Schlampe</b> Wartet</div>'+
+         '<div class="phrase p2">Erschaffe Deine <b>Fantasie</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Probier\'s \u2192</div>',
+      fr:'<div class="phrase p1">Ta <b>Salope AI</b> T\'attend</div>'+
+         '<div class="phrase p2">Cr\u00E9e Ton <b>Fantasme</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Essaie \u2192</div>',
+      it:'<div class="phrase p1">La Tua <b>AI Troia</b> Ti Aspetta</div>'+
+         '<div class="phrase p2">Crea La Tua <b>Fantasia</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Provala \u2192</div>',
+      pl:'<div class="phrase p1">Twoja <b>Suka AI</b> Czeka</div>'+
+         '<div class="phrase p2">Stw\u00F3rz Sw\u0105 <b>Fantazj\u0119</b></div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; Spr\u00F3buj \u2192</div>',
+      ja:'<div class="phrase p1">あなたの<b>AI彼女</b>が待ってる</div>'+
+         '<div class="phrase p2">理想の<b>カノジョ</b>を作ろう</div>'+
+         '<div class="phrase p3"><b>JOI AI</b> &middot; 今すぐ \u2192</div>'
+    }},
+
+    { id:'v5', cls:'v5', html:{
+      en:'<div class="sweep"></div><div class="head">Your <b>AI Slut</b> Is Waiting</div>',
+      es:'<div class="sweep"></div><div class="head">Tu <b>Puta AI</b> Te Espera</div>',
+      pt:'<div class="sweep"></div><div class="head">Sua <b>Puta AI</b> Te Espera</div>',
+      de:'<div class="sweep"></div><div class="head">Deine <b>AI-Schlampe</b> Wartet</div>',
+      fr:'<div class="sweep"></div><div class="head">Ta <b>Salope AI</b> T\'attend</div>',
+      it:'<div class="sweep"></div><div class="head">La Tua <b>AI Troia</b> Ti Aspetta</div>',
+      pl:'<div class="sweep"></div><div class="head">Twoja <b>Suka AI</b> Czeka</div>',
+      ja:'<div class="sweep"></div><div class="head">あなたの<b>AI彼女</b>が待ってる</div>'
+    }},
+
+    { id:'v9', cls:'v9', html:{
+      en:'<div class="head">YOUR <b>AI SLUT</b> IS WAITING</div><div class="cta-pulse">CLICK</div>',
+      es:'<div class="head">TU <b>PUTA AI</b> TE ESPERA</div><div class="cta-pulse">CLIC</div>',
+      pt:'<div class="head">SUA <b>PUTA AI</b> TE ESPERA</div><div class="cta-pulse">CLIQUE</div>',
+      de:'<div class="head">DEINE <b>AI-SCHLAMPE</b> WARTET</div><div class="cta-pulse">KLICK</div>',
+      fr:'<div class="head">TA <b>SALOPE AI</b> T\'ATTEND</div><div class="cta-pulse">CLIC</div>',
+      it:'<div class="head">LA TUA <b>AI TROIA</b> ASPETTA</div><div class="cta-pulse">CLICCA</div>',
+      pl:'<div class="head">TWOJA <b>SUKA AI</b> CZEKA</div><div class="cta-pulse">KLIKNIJ</div>',
+      ja:'<div class="head"><b>AI彼女</b>が待ってる</div><div class="cta-pulse">今すぐ</div>'
+    }},
+
+    { id:'v10', cls:'v10', html:{
+      en:'<div class="phrase p1">YOUR <b>AI SLUT</b> IS WAITING</div>'+
+         '<div class="phrase p2"><em>DOMINANT</em> OR <em>SUBMISSIVE?</em></div>'+
+         '<div class="phrase p3">TURN <b>FANTASY</b> INTO REALITY</div>'+
+         '<div class="cta-pulse">CLICK</div>',
+      es:'<div class="phrase p1">TU <b>PUTA AI</b> TE ESPERA</div>'+
+         '<div class="phrase p2"><em>\u00BFDOMINANTE</em> O <em>SUMISA?</em></div>'+
+         '<div class="phrase p3">HAZ REAL TU <b>FANTAS\u00CDA</b></div>'+
+         '<div class="cta-pulse">CLIC</div>',
+      pt:'<div class="phrase p1">SUA <b>PUTA AI</b> TE ESPERA</div>'+
+         '<div class="phrase p2"><em>DOMINADORA</em> OU <em>SUBMISSA?</em></div>'+
+         '<div class="phrase p3">REALIZE SUA <b>FANTASIA</b></div>'+
+         '<div class="cta-pulse">CLIQUE</div>',
+      de:'<div class="phrase p1">DEINE <b>AI-SCHLAMPE</b> WARTET</div>'+
+         '<div class="phrase p2"><em>DOMINANT</em> ODER <em>UNTERW\u00DCRFIG?</em></div>'+
+         '<div class="phrase p3"><b>FANTASIE</b> WIRD WAHR</div>'+
+         '<div class="cta-pulse">KLICK</div>',
+      fr:'<div class="phrase p1">TA <b>SALOPE AI</b> T\'ATTEND</div>'+
+         '<div class="phrase p2"><em>DOMINANTE</em> OU <em>SOUMISE?</em></div>'+
+         '<div class="phrase p3"><b>FANTASME</b> DEVIENT R\u00C9EL</div>'+
+         '<div class="cta-pulse">CLIC</div>',
+      it:'<div class="phrase p1">LA TUA <b>AI TROIA</b> ASPETTA</div>'+
+         '<div class="phrase p2"><em>DOMINANTE</em> O <em>SOTTOMESSA?</em></div>'+
+         '<div class="phrase p3"><b>FANTASIA</b> DIVENTA REALE</div>'+
+         '<div class="cta-pulse">CLICCA</div>',
+      pl:'<div class="phrase p1">TWOJA <b>SUKA AI</b> CZEKA</div>'+
+         '<div class="phrase p2"><em>DOMINUJ\u0104CA</em> CZY <em>ULEG\u0141A?</em></div>'+
+         '<div class="phrase p3"><b>FANTAZJA</b> STAJE SI\u0118 REALNA</div>'+
+         '<div class="cta-pulse">KLIKNIJ</div>',
+      ja:'<div class="phrase p1"><b>AI彼女</b>が待ってる</div>'+
+         '<div class="phrase p2"><em>Sな子</em>？それとも<em>Mな子</em>？</div>'+
+         '<div class="phrase p3"><b>妄想</b>を現実に</div>'+
+         '<div class="cta-pulse">今すぐ</div>'
+    }},
+
+    { id:'a1', cls:'t1', html:{
+      en:'<div class="left"><div class="l1"><b>AI JERK OFF</b></div><div class="l2">Fantasy unlocked</div></div><div class="cta-big">START</div>',
+      es:'<div class="left"><div class="l1"><b>PAJA CON AI</b></div><div class="l2">Fantasia desbloqueada</div></div><div class="cta-big">EMPEZAR</div>',
+      pt:'<div class="left"><div class="l1"><b>PUNHETA COM AI</b></div><div class="l2">Fantasia liberada</div></div><div class="cta-big">COMECAR</div>',
+      de:'<div class="left"><div class="l1"><b>AI WICHSEN</b></div><div class="l2">Fantasie freigeschaltet</div></div><div class="cta-big">START</div>',
+      fr:'<div class="left"><div class="l1"><b>BRANLE AI</b></div><div class="l2">Fantasme d\u00E9bloqu\u00E9</div></div><div class="cta-big">D\u00C9MARRER</div>',
+      it:'<div class="left"><div class="l1"><b>SEGA CON AI</b></div><div class="l2">Fantasia sbloccata</div></div><div class="cta-big">INIZIA</div>',
+      pl:'<div class="left"><div class="l1"><b>WAL Z AI</b></div><div class="l2">Fantazja odblokowana</div></div><div class="cta-big">START</div>',
+      ja:'<div class="left"><div class="l1"><b>AIでヌく</b></div><div class="l2">妄想解放</div></div><div class="cta-big">スタート</div>'
+    }},
+
+    { id:'a8', cls:'t1', html:{
+      en:'<div class="left"><div class="l1"><b>AI SLUT</b> GENERATOR</div><div class="l2">Turn fantasy real</div></div><div class="cta-big">GENERATE</div>',
+      es:'<div class="left"><div class="l1">GENERADOR DE <b>PUTAS AI</b></div><div class="l2">Fantas\u00EDa real</div></div><div class="cta-big">GENERAR</div>',
+      pt:'<div class="left"><div class="l1">GERADOR DE <b>PUTAS AI</b></div><div class="l2">Fantasia real</div></div><div class="cta-big">GERAR</div>',
+      de:'<div class="left"><div class="l1"><b>AI-SCHLAMPEN</b> GENERATOR</div><div class="l2">Fantasie wird real</div></div><div class="cta-big">ERSTELLEN</div>',
+      fr:'<div class="left"><div class="l1">G\u00C9N\u00C9RATEUR DE <b>SALOPES AI</b></div><div class="l2">Fantasme r\u00E9el</div></div><div class="cta-big">G\u00C9N\u00C9RER</div>',
+      it:'<div class="left"><div class="l1">GENERATORE DI <b>AI TROIE</b></div><div class="l2">Fantasia reale</div></div><div class="cta-big">GENERA</div>',
+      pl:'<div class="left"><div class="l1">GENERATOR <b>SUK AI</b></div><div class="l2">Spe\u0142nij fantazj\u0119</div></div><div class="cta-big">GENERUJ</div>',
+      ja:'<div class="left"><div class="l1"><b>AI彼女</b>を作る</div><div class="l2">理想を現実に</div></div><div class="cta-big">作成</div>'
+    }}
+  ];
+
+  var vIdx = qs.video ? (parseInt(qs.video,10) || ACTIVE_VIDEOS[0])
+                      : ACTIVE_VIDEOS[Math.floor(Math.random() * ACTIVE_VIDEOS.length)];
+
+  function findVariant(id){
+    for (var i=0;i<VARIANTS.length;i++) if (VARIANTS[i].id === id) return VARIANTS[i];
+    return null;
+  }
+
+  var t = (function(){
+    if (qs.txt) {
+      var forced = findVariant(qs.txt);
+      if (forced) return forced;
+    }
+    var allowed = PAIRS[vIdx] || [];
+    var pick = allowed[Math.floor(Math.random() * allowed.length)];
+    return findVariant(pick) || VARIANTS[0];
+  })();
+  var creo = 'c' + vIdx;
+  var txt  = t.id;
+
+  var stage   = document.getElementById('cta');
+  var video   = document.getElementById('vid');
+  var overlay = document.getElementById('overlay');
+
+  video.src = 'videos/combo' + vIdx + '.mp4';
+  if (t.cls) stage.classList.add(t.cls);
+  overlay.innerHTML = t.html[lang] || t.html.en;
+
+  var href =
+    'https://ck.juicyads.com/getjuicy.php' +
+    '?jad=1829631&juser=194691' +
+    '&token=f2df7a30347063f215dba9c5333107315752bf5a' +
+    '&rurl=https://monteliravio.life/index' +
+    '?id=fa0b213213704a03bd24b1f83a761c75' +
+    '&dynamicS2S={dynamicS2S}' +
+    '&dynamicPUB={dynamicPUB}' +
+    '&dynamicSITE={dynamicSITE}' +
+    '&dynamicGEO={dynamicGEO}' +
+    '&dynamicZNE={dynamicZNE}' +
+    '&dynamicIMG=' + creo +
+    '&dynamicTXT=' + txt;
+
+  stage.href = href;
+})();
+</script>
+
+
+</body></html>

@@ -1,0 +1,398 @@
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>AD</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://img.planbplus.co.kr/sliding/css/template1.css?v=202505091031?v=202505091031">
+<script src="https://img.planbplus.co.kr/sliding/js/sliding.js?v=20240229"></script>
+<script src="https://img.planbplus.co.kr/sliding/js/jquery.ui.touch-punch.min.js?v=20231019"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+<style type="text/css">
+#template { font-family:'NanumSquare',sans-serif; width:300px; height:250px; border-radius:14px; overflow:hidden; background:#fff; border:1px solid #e8edf2; box-shadow:0 2px 12px rgba(0,0,0,0.08); }
+#template .slide-motion { pointer-events:none; }
+#template .slideHandler { right:-50px; cursor:pointer; pointer-events:auto; }
+#template .popular-title { display:flex; align-items:center; justify-content:space-between; padding:9px 14px; border-bottom:none; background:#03c75a; }
+#template .popular-title > div:first-child { display:flex; align-items:center; gap:5px; }
+#template .popular-title svg { vertical-align:middle; margin-right:1px; stroke:rgba(255,255,255,0.9); }
+#template .popular-title span { vertical-align:middle; font-weight:800; font-size:12.5px; color:#fff; letter-spacing:-0.4px; font-family:'NanumSquare',sans-serif; }
+#template .live-dot { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,0.85); animation:livePulse 1.5s infinite; flex-shrink:0; }
+@keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+#template .template-badge { background:rgba(255,255,255,0.18); border-radius:20px; padding:3px 8px; display:flex; align-items:center; }
+#template .template-badge img { height:11px; margin:0; filter:brightness(0) invert(1); }
+#template .template_info { display:flex; flex-direction:column; height:100%; }
+#template .popular-keyword { overflow-y:auto; }
+#template .popular-keyword::-webkit-scrollbar { width:2px; }
+#template .popular-keyword::-webkit-scrollbar-track { background:#f8fafc; }
+#template .popular-keyword::-webkit-scrollbar-thumb { background:#e2e8f0; border-radius:2px; }
+#template .popular-keyword ul { margin:0; padding:0; list-style:none; }
+#template .popular-keyword ul li { border:none; border-bottom:1px solid #f3f6f9; background:#fff; transition:background 0.1s; }
+#template .popular-keyword ul li:last-child { border-bottom:none; }
+#template .popular-keyword ul li:hover { background:#f7fbff; }
+#template .popular-keyword ul li:nth-child(-n+3) { background:#fff; }
+#template .popular-keyword ul li:nth-child(-n+3):hover { background:#f7fbff; }
+#template .popular-keyword ul li a { display:flex; align-items:center; padding:7px 12px 7px 10px; gap:8px; text-decoration:none; color:#191f28; font-size:13px; font-family:'NanumSquare',sans-serif; }
+#template .rank { display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:800; font-size:11px; width:20px; height:20px; border-radius:5px; background:#f1f5f9; color:#8e9aaa; font-family:'NanumSquare',sans-serif; }
+#template .popular-keyword ul li:nth-child(1) .rank { background:#fff3cd; color:#b8860b; }
+#template .popular-keyword ul li:nth-child(2) .rank { background:#eef0f2; color:#5a6472; }
+#template .popular-keyword ul li:nth-child(3) .rank { background:#fde8d0; color:#b05a1a; }
+#template .rank-highlight { background:#fff0f0 !important; color:#e03131 !important; opacity:1 !important; }
+#template .rank-top { color:inherit; }
+#template .keyword-wrap { flex:1; display:flex; flex-direction:column; gap:2px; overflow:hidden; }
+#template .keyword-name { font-size:12.5px; font-weight:400; color:#191f28; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-family:'NanumSquare',sans-serif; }
+#template .keyword-sub { font-size:10px; color:#03c75a; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1; font-family:'NanumSquare',sans-serif; }
+#template .trend-icon { width:20px; min-width:20px; text-align:center; margin-left:2px; flex-shrink:0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+#template .trend-stable { color:#d1d8e0; }
+#template .trend-up { color:#e03131; }
+#template .trend-down { color:#3b82f6; }
+</style>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+var themes = [
+  {from:'#0B0623',to:'#0B0623'},
+  {from:'#36344F',to:'#36344F'},
+  {from:'#007D5C',to:'#007D5C'},
+  {from:'#260000',to:'#260000'},
+  {from:'#00281D',to:'#00281D'},
+  {from:'#BB1431',to:'#BB1431'},
+  {from:'#00AC7B',to:'#00AC7B'},
+  {from:'#452650',to:'#452650'},
+  {from:'#531619',to:'#531619'},
+  {from:'#001D81',to:'#001D81'}
+];
+  var theme = themes[Math.floor(Math.random() * themes.length)];
+  var titleEl = document.querySelector('#template .popular-title');
+  if (titleEl) titleEl.style.background = 'linear-gradient(135deg,'+theme.from+' 0%,'+theme.to+' 100%)';
+
+  /* ?? 광고 상단 제목 ? 원하는 문구로 자유롭게 수정하세요 */
+  var titles = [
+    '실시간 인기 키워드',
+    '지금 다들 이거 검색 중',
+    '지금 핫한 쿠팡템',
+    '요즘 뜨는 검색 리스트',
+    '오늘의 TOP 키워드'
+  ];
+  var kwEl = document.getElementById('keyword');
+  if (kwEl) kwEl.innerText = titles[Math.floor(Math.random() * titles.length)];
+
+  var titleLeft = document.querySelector('#template .popular-title > div:first-child');
+  if (titleLeft) {
+    var dot = document.createElement('div');
+    dot.className = 'live-dot';
+    titleLeft.insertBefore(dot, titleLeft.firstChild);
+  }
+
+  var trendStyles = ['A','B','C','D'];
+  var chosenStyle = trendStyles[Math.floor(Math.random() * trendStyles.length)];
+
+  function makeSvg(path) {
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">' + path + '</svg>';
+  }
+  function makeSvg13(path) {
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + path + '</svg>';
+  }
+  function makeSvg16(path) {
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">' + path + '</svg>';
+  }
+  function makeSpan(txt, color, bg) {
+    return '<span style="font-size:8px;font-weight:700;color:'+color+';background:'+bg+';padding:1px 4px;border-radius:4px;white-space:nowrap;font-family:NanumSquare,sans-serif">'+txt+'</span>';
+  }
+  var stableSvg = makeSvg('<rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"/>');
+
+  function getTrendIcon(type, style) {
+    var safeType = (['up','down','stable','new'].indexOf(type) !== -1) ? type : 'stable';
+    var upNums   = ['+1','+2','+3','+4','+5'];
+    var downNums = ['-1','-2','-3','-4'];
+    var upNum    = upNums[Math.floor(Math.random()*upNums.length)];
+    var downNum  = downNums[Math.floor(Math.random()*downNums.length)];
+
+    try {
+      if (style === 'A') {
+        if (safeType === 'up')   return makeSvg('<polygon points="5,1 9,9 1,9" fill="#ef4444"/>');
+        if (safeType === 'down') return makeSvg('<polygon points="5,9 9,1 1,1" fill="#3b82f6"/>');
+        return stableSvg;
+      }
+      if (style === 'B') {
+        if (safeType === 'up')   return '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,9 6.5,4 11,9"/></svg>';
+        if (safeType === 'down') return '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6.5,9 11,4"/></svg>';
+        return '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"><line x1="2" y1="6.5" x2="11" y2="6.5"/></svg>';
+      }
+      if (style === 'C') {
+        if (safeType === 'up')   return makeSvg16('<circle cx="8" cy="8" r="7" fill="#fee2e2"/><polyline points="4,10 8,5.5 12,10" fill="none" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>');
+        if (safeType === 'down') return makeSvg16('<circle cx="8" cy="8" r="7" fill="#dbeafe"/><polyline points="4,5.5 8,10 12,5.5" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>');
+        return makeSvg16('<circle cx="8" cy="8" r="7" fill="#f1f5f9"/><line x1="4.5" y1="8" x2="11.5" y2="8" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round"/>');
+      }
+      if (style === 'D') {
+        if (safeType === 'up')   return makeSpan(upNum,  '#ef4444', '#fee2e2');
+        if (safeType === 'down') return makeSpan(downNum,'#3b82f6', '#dbeafe');
+        if (safeType === 'new')  return '<span style="font-size:7px;font-weight:700;color:#8b5cf6;background:#ede9fe;padding:1px 4px;border-radius:4px;white-space:nowrap;font-family:NanumSquare,sans-serif;letter-spacing:-0.2px">NEW</span>';
+        // stable ? JS 문자열로 직접 처리, HTML 엔티티 사용 안 함
+        return makeSpan('\u2014', '#94a3b8', '#f1f5f9');
+      }
+      return stableSvg;
+    } catch(e) {
+      return stableSvg;
+    }
+  }
+
+  var subTexts = [
+    "\uAC80\uC0C9\uB7C9 \uAE09\uC0C1\uC2B9","\uC9C0\uAE08 \uC778\uAE30","\uB9CE\uC774 \uCC3E\uACE0 \uC788\uC5B4\uC694",
+    "\uC2E4\uC2DC\uAC04 \uAE09\uC0C1\uC2B9","\uC9C0\uAE08 \uB728\uB294 \uC911","\uC624\uB298 \uAE09\uC0C1\uC2B9",
+    "\uC694\uC998 \uD56B\uD574\uC694","\uC9C0\uAE08 \uC8FC\uBAA9\uBC1B\uB294 \uC911"
+  ];
+
+  var allItems = document.querySelectorAll('.popular-keyword ul li');
+  var trendPool = (chosenStyle === 'D') ? ['up','down','stable','stable','new'] : ['up','down','stable'];
+  var rank1Pool = trendPool.filter(function(t){ return t !== 'down' && t !== 'new'; });
+  if (!rank1Pool.length) rank1Pool = ['stable'];
+
+  var itemTypes = [];
+  allItems.forEach(function(li, i) {
+    var pool = (i === 0) ? rank1Pool : trendPool;
+    itemTypes.push(pool[Math.floor(Math.random() * pool.length)]);
+  });
+
+  var upCandidates = [];
+  for (var i = 0; i < Math.min(6, itemTypes.length); i++) {
+    if (itemTypes[i] === 'up') upCandidates.push(i);
+  }
+  var pickedIndices = upCandidates.slice().sort(function(){ return Math.random()-0.5; }).slice(0,2);
+
+  allItems.forEach(function(li, i) {
+    var t = itemTypes[i];
+    var trendEl = li.querySelector('.trend-icon');
+    var subEl   = li.querySelector('.keyword-sub');
+    var kwEl    = li.querySelector('.keyword-name');
+    var rankEl  = li.querySelector('.rank');
+
+    if (trendEl) {
+      trendEl.classList.remove('trend-up','trend-down','trend-stable');
+      if (t !== 'new') trendEl.classList.add('trend-' + t);
+      trendEl.innerHTML = getTrendIcon(t, chosenStyle);
+    }
+    if (subEl) {
+      if (pickedIndices.indexOf(i) !== -1) {
+        subEl.innerText = subTexts[Math.floor(Math.random() * subTexts.length)];
+        if (rankEl) rankEl.classList.add('rank-highlight');
+        if (kwEl) kwEl.style.fontWeight = '700';
+      } else {
+        subEl.innerText = '';
+        if (kwEl) kwEl.style.fontWeight = '400';
+      }
+    }
+  });
+
+});
+
+</script>
+</head>
+<body>
+<div id="template">
+  <div class="template_info">
+    <div class="slide-motion" data-url="https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%258B%259D%25ED%2592%2588%26traceid%3DV0-703-e4b45a2c98dc43b4%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715278%26ctime%3D1779531504%26sig%3D032a5141cb&amp;adtype=12&amp;di=&amp;ck=kwsb">
+      <div class="bn_top active ui-draggable" id="draggable">
+        <div class="slideHandler ui-draggable-handle" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%258B%259D%25ED%2592%2588%26traceid%3DV0-703-e4b45a2c98dc43b4%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715278%26ctime%3D1779531504%26sig%3D032a5141cb&amp;adtype=12&amp;di=&amp;ck=kwsb');event.stopPropagation();"></div>
+      </div>
+    </div>
+    <div class="popular-title" style="background: linear-gradient(135deg, rgb(11, 6, 35) 0%, rgb(11, 6, 35) 100%);">
+      <div><div class="live-dot"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+          <polyline points="16 7 22 7 22 13"></polyline>
+        </svg>
+        <span id="keyword">요즘 뜨는 검색 리스트</span>
+      </div>
+      <div class="template-badge">
+        <img src="https://static.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" alt="coupang">
+      </div>
+    </div>
+    <div class="popular-keyword">
+      <ul><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%258B%259D%25ED%2592%2588%26traceid%3DV0-703-e4b45a2c98dc43b4%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715278%26ctime%3D1779531504%26sig%3D032a5141cb&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-1">1</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">식품</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%2583%259D%25ED%2599%259C%25EC%259A%25A9%25ED%2592%2588%26traceid%3DV0-703-2ab00be4434ffeac%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715279%26ctime%3D1779531504%26sig%3D038ba775f9&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-2">2</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">생활용품</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25ED%2596%25A5%25EC%2588%2598%26traceid%3DV0-703-42e9084c7436e691%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715280%26ctime%3D1779531504%26sig%3D030a066273&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-3 rank-highlight">3</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 700;">향수</div>
+      <div class="keyword-sub">요즘 핫해요</div>
+    </div>
+    <div class="trend-icon trend-up"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,1 9,9 1,9" fill="#ef4444"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EA%25B0%2580%25EB%25B0%25A9%26traceid%3DV0-703-15cac5d79e64bbf0%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715281%26ctime%3D1779531504%26sig%3D03e0164f41&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-4">4</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">가방</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EA%25B0%2580%25EA%25B5%25AC%26traceid%3DV0-703-38afd86bc3e93f5b%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715282%26ctime%3D1779531504%26sig%3D03ac3ff97a&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-5">5</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">가구</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%258A%25A4%25ED%2582%25A8%25EC%25BC%2580%25EC%2596%25B4%26traceid%3DV0-703-f3243388265a82cd%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715283%26ctime%3D1779531504%26sig%3D03922479b5&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-6">6</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">스킨케어</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%258B%25A0%25EB%25B0%259C%26traceid%3DV0-703-5860d5b946416787%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715284%26ctime%3D1779531504%26sig%3D03930c8deb&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-7">7</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">신발</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%2583%259D%25EC%2588%2598%26traceid%3DV0-703-933f81a2c0c7f6f0%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715285%26ctime%3D1779531504%26sig%3D03b3d5230e&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-8">8</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">생수</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EB%25B7%25B0%25ED%258B%25B0%26traceid%3DV0-703-3482b27ff25d8038%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715286%26ctime%3D1779531504%26sig%3D03873ace9d&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-9">9</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">뷰티</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%25BB%25A4%25ED%2594%25BC%26traceid%3DV0-703-6548918d0f9a6421%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715287%26ctime%3D1779531504%26sig%3D030127f917&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-10">10</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">커피</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EB%25AA%25A8%25EA%25B8%25B0%25ED%2587%25B4%25EC%25B9%2598%25EC%25A0%259C%26traceid%3DV0-703-602a7dcefe516ade%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715288%26ctime%3D1779531504%26sig%3D03de9d0d46&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-11">11</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">모기퇴치제</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%259E%2590%25EC%25A0%2584%25EA%25B1%25B0%26traceid%3DV0-703-2dce8505ce54e691%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715289%26ctime%3D1779531504%26sig%3D03c46f68f4&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-12">12</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">자전거</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-up"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,1 9,9 1,9" fill="#ef4444"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%25A3%25BC%25EB%25B0%25A9%25EC%259A%25A9%25ED%2592%2588%26traceid%3DV0-703-8009635176a5976f%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715290%26ctime%3D1779531504%26sig%3D039ca39491&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-13">13</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">주방용품</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%259A%25B0%25EC%259C%25A0%26traceid%3DV0-703-2a5a66a3e7b44282%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715291%26ctime%3D1779531504%26sig%3D036be97d67&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-14">14</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">우유</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%25B6%25A9%25EC%25A0%2584%25EA%25B8%25B0%26traceid%3DV0-703-76c358a003b61805%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715292%26ctime%3D1779531504%26sig%3D03d8e1ccc3&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-15">15</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">충전기</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EA%25B3%25A8%25ED%2594%2584%26traceid%3DV0-703-58f2f49caea45a8e%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715293%26ctime%3D1779531504%26sig%3D03d5f97282&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-16">16</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">골프</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EC%2582%25AC%25EB%25AC%25B4%25EC%259A%25A9%25ED%2592%2588%26traceid%3DV0-703-9b00819d7fd7cab9%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715294%26ctime%3D1779531504%26sig%3D03ef3d955e&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-17">17</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">사무용품</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EB%2582%259A%25EC%258B%259C%26traceid%3DV0-703-989b4bfede7f6449%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715295%26ctime%3D1779531504%26sig%3D030467fee5&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-18">18</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">낚시</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25ED%2599%2594%25EC%259E%25A5%25ED%2592%2588%26traceid%3DV0-703-702d6c3d832dd8a6%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715296%26ctime%3D1779531504%26sig%3D037000fe1d&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-19">19</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">화장품</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-down"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="5,9 9,1 1,1" fill="#3b82f6"></polygon></svg></div>
+  </a>
+</li><li>
+  <a href="javascript:void(0)" onclick="newsxclick('https://ad.planbplus.co.kr/adlanding/?adid=4406&amp;subid=pumpbottom&amp;landing_url=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSRP%3Flptag%3DAF2595017%26subid%3Dpumpbottom%26pageKey%3D%25EB%25B8%2594%25EB%259D%25BC%25EC%259A%25B0%25EC%258A%25A4%26traceid%3DV0-703-39c33bf7da0f015e%26requestId%3D20260523191824154122715277%26impressionId%3D20260523191824155122715297%26ctime%3D1779531504%26sig%3D03e931cb68&amp;adtype=12&amp;di=&amp;ck=kwsb')">
+    <div class="rank rank-20">20</div>
+    <div class="keyword-wrap">
+      <div class="keyword-name" style="font-weight: 400;">블라우스</div>
+      <div class="keyword-sub"></div>
+    </div>
+    <div class="trend-icon trend-stable"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="4.2" width="8" height="1.6" rx="0.8" fill="#cbd5e1"></rect></svg></div>
+  </a>
+</li></ul>
+    </div>
+  </div>
+</div>
+<script>(function(){var u=["https://ads-partners.coupang.com/openapi/impression/keywords/nd1Lke4FlJaD-CGVneK0Jl92EJpYn9x8WyPOycGrEdy9PaSQbSKh95IMCsZot27dDmXEy7BvD8sacpzNqy1sM9K8sAtFnb4ly6vmepr5UpDfx5Hp4B7pdjfi7LHkt8B4oyQBi_dzYoqe8rMKmZsrs1lgPoviRax4Qh7YnGisxH-2A_iwUdybIfMtzpu7b4ibchQmfQeTIV1jhC9CDy1SvNgUYXuQYoZ45L6lTb6NboFrB6C0VHvrZwDoObrs6ndzuTJ7jJ2uSGYqDyPoTf3oa_t9mQj9AOw=","https://ads-partners.coupang.com/openapi/impression/keywords/aE6BlYqKqIVK2j7vaGiOSZ7iypIe4mPCGSKXWDSS_YfZvmmvQaiHCRnK_umjDZGnIDBY0PrmM4s_trXs929RNrHY0cl4Ug9HvSoN5_yS3AnR0ZwcwOm9VvUkjtXJzom8DpRg3G-4zj-24EXUsdDu2EGHtEgWCQLe2MELhUuPAK3Qn5DydX7SkbQNlbFM9IAIKRIJgWcnUGXJ5Yg_NAZZmp0OKgvVcF0qcuHRmql7B1CeJldHiYvV992mOblbmt-sis8g4uJf_0gJDNvTpqNQpgJClCcpbDID9toycSg=","https://ads-partners.coupang.com/openapi/impression/keywords/4OuohKjzUlNgHuWJ4KETiDV_9r9jHqHQgIdrFP8Rv1-QLfGqBWQkpW7RI0x3ruav2fnXyVyTYCM_opC_7Pg6OjeVuTrT24JLBnj_PQkR2A_U8rO7D_ifOg5J-V_Em-yqjZuiXivs-wfGBB7nVsP1RQ72mbHC9kHMS1ROOPJ4jsMaXZ8kav_3D4AioLct1Vkdfr_oY5Bf4D64AJaANiftTs4RCPz4p3nMhx4TaVBKYkH_5JeRl6npxZD243-a-TB9pnH6vMmLayzzFK498Q8fR3GuHcLfi8k=","https://ads-partners.coupang.com/openapi/impression/keywords/zm6ujh8CQCQJTXrUzrq-PxYXj_2nts8XJkNZ2MYFAhYdWdO4IM2NtE2NGMrX8W_9lcl7eYBRutkkG8NMytsa-PiXHDUq9twj8KU-GfXL8ShYzcednizC5QuwspE8d3G--qHVWubO-yumWcrt5vp82KU8zN737pM1IRijZ8629Kzx3lJKViOxICzgO-EgYlRcXxSPouufNbS0qaHOpuOCOdZqm-sF_X9GbAHHP85Ygd7tGvHii61F1oP9NVUHmsxynfBnIY_jdh7u4V1q_REd-IGqMb4aM_8=","https://ads-partners.coupang.com/openapi/impression/keywords/01eeh2XMyLcFY5ej0_XvOJdoWo_FiqPgbptf5E6SorJi42QKVZCE165ekMU0yyV9b1hDg7DvDWksZdWuTV1jxJLHQvqPZ9oLEEBcPUYdiG3PyOs6hR5sQFkPkARVzzhuFBUX7qRKCo_CbDiUmZ011wQA69ldW_hjt7DwOP2BeO0Zoz9TbdiSm8K2egqQOqkVGYX6ZkJpL9jRGtN7OJLU-LKE8G-V3pu-FvzUIDPcFN8NLWRPloXfzF7_YlZqEfKIJFDzv0qpZYs_kP2P8R5ii4K8dOW3jkU=","https://ads-partners.coupang.com/openapi/impression/keywords/N7A9Z146z4KCQ386NwRVxFEdg65IJR7bokhgiRhTZWbe26f9kuC42GsVVO94rbDDw-W9e2p3AIkYpxfyOgkQ3d0HTMR0zhzFMxNkau-X_fNwKGuAymT2eflMMVUUVInChqIPeZLLzAqGETx_wJ0tOUVgMXKLSsC133SvvWdgDMvpF1UQGYE0ZoraQuQUteRPmxsFbyKQ4aYhAaxMU-Xqs3i_VzivJIeJ116Ek8ChLMWMqXxHzOTOkSiAaq-qW2xM9fSTXxA-C8kYjyChA1mOYd4YcGp8k2KoCF2WN9U=","https://ads-partners.coupang.com/openapi/impression/keywords/3qVnO_zclh3g6m8l3r8bBlZqGWIEvnLIZK3NBgouhqrMS_i3Tc2AU_biuathw1xO_70TIGbfB-cq3YfN2xESbBkjwA0c_bBoNgRjh9zqkgV0RpUwaz3mf6Zt73vbnHvq_S6H2XTs07gz9XmXqSZkoBZ8xRNFFVE37w7ZDcncnGK_DJalGMROVwVhB6yB2ejbKCzkl_eMHpOwJz8bxOWv_RMgGb4HiLRGmvfjfeiZluRLuzF88iBStEnbRjHqPc5N5aLEilZDIe9ZbHaw01g1tE6A4ZrQUuo=","https://ads-partners.coupang.com/openapi/impression/keywords/Fc4EFNinPVsspaDTFVsTSS4I0BUkgvadPBmQrraUNzHcJOYq019l4DD1ZZPFTmH_U7Sbw0WI9xhN7Qip5_zlvQXT-41W1L0X-v6BFDCduPGchavd1epFrCP99lXnFz6-tuzicqcT4zxkPxc1Mw2-n9p4lGiW-OwhQK5G9jBEH3SJjvPxdKgU4A_KpYl8MtVNsVshhKMx64foTrS1KXwpJApFzc_Pjf8WCaZV4sC9L1JS9e1NGodmxz13NKDCkMoDwkdqA0c-FLUwp5PQ9dJSCTQYCR77ubU=","https://ads-partners.coupang.com/openapi/impression/keywords/8Fy1zrWP12jimvKH8M1qfy1ImEkD7gl8NQyBigwvne3tdxtmOYktB4D2qxvS3mfyW6bQJ1FyOSxtdWwMBEABvPhGFuKCWJpdbS-crBlDhpqhLfe1K_L_nxwEgeTzmMQAQ_QkcEnNH6uAKuDkHP3sHqEFkjlP_z4AqUhjkaqK9vAOLNrsmcviJcXsHVANAAxHT5AxLCujMpPCkxbEbXzJlmZ4AfFxnHE-iNO4L92zkgdWHJ-vRqj2NKfcJjrDK7JeU3efVgYPMfPQ4V50OjIp2eYIz95mgTM=","https://ads-partners.coupang.com/openapi/impression/keywords/Sj4F6NlUlE_T7zY2SnUpeDK_3akdEeP4GrAZ5gB0VBRKQFebqixJvsQbaUWWoT7y64ayFVmYE3spdOpl04uYURdOZRr2PGVfVupQZLjIF5CKhgN37jz72sMICTEM6sJA-bCmpNKM6kIddZxkHejKajmA29l3gFNDba2ugr7qXp_vi03ZPiBAjE9BDdduYbeyRRsmbEUn2--whSzou52kYzj5_J30Rh_BlmkD6TAaas2V1lAxOBCVxpbAUdfqtF96LmT2UcNh7kqszREUWWyA-c36-9ICXg0=","https://ads-partners.coupang.com/openapi/impression/keywords/4tzHYC2iEBCqUZoe4j37TKio7EJ3RipZksteFyr6SI96Dd3Bq-YvrrYgmt9OVHdoUD1iAVg43gYuQBSUqplrmgZ89B0r1J_-2r38HCQOyS6MY7u-FuLazrZpmoMKnnojksZg4RqesX-mFRgr0BAx3YOSIUarrTG3yn3Fh5P6mNXz3eUBeosX6DvOuKWV3hfFUzZQC6Vfhmk9dbNXJtI_j51CgVlq_pfFwtA_5vHXxlHoYwSiGwLinNEbG9KIpnJ_jiCX7VThsZrUh3USUDek6CAbSeazLThoFGZh3CmnVPpo","https://ads-partners.coupang.com/openapi/impression/keywords/ea5XevjwgFcFAU-Bec-of2CQIrtoI2a2QI166YaV8rnZiFOhQotiWoUeaxBltL5Ow-E05IJN-ZTZSzQecfAj2NLGf0sXXk9QYRnqXaLVRApuuLjXifpVYhuNrYBMoWE88epRRHSfDgIqGyVKGukzQxv3cG5kHbExW5V2fkNoYSjAMCaGRhBXGJ7jwRR0WlcM-myQq3nh0OmTmLdh2Vn-Wni1_eU90bIbPArVrr_r58sIpb687kDLCeLDtlNV5gWUtqlRnrQNcZ1Cska9Z-3seLD9IVP2B0V5qq3C","https://ads-partners.coupang.com/openapi/impression/keywords/jiCxTSWrLpbc0YzDjvenjvYnVDiwpequMcKavfOzzVErHJ0JkjRJH6eQWGfW4BOGziJFkX9B0J9u3aNEnSVmkb92AF_3KEWwhRFRuh7b9XCuCSF4EqpkRRMGOkIWbOOjVs--kZHKvSITbM9E4GDkuPH2MMbH8FKY5RTTZKkadUsT5C1DG2yqZr8AvEWy28SCctFsJSyU460aKFvHsTKdsmtLoV0d5QVg7G9fqznXI8cwn7UAapDX5-VbYk8ZvD60klbGJf_GXTKyyeC4A08_HWp7fcsLa9i8wlODroYI","https://ads-partners.coupang.com/openapi/impression/keywords/ZRtXF5EkqvJC5dDpZVR2ZADDBGRWUcJu8t2ZMhEZ48nDYTj4dMCNG0G0yUEgT_fqr4qD9P7gBP9X5g6Uc_tyTPrv31rzjzqfE0K_I9cr0Ua1WSlBilwPlwTavsiluJeLJPxP38s7yrvQlPFmvZOINZw_y8dJDU36ALtKKCHp5nQtOhnzWqco5kmaOZYEpsKuj2Mb7nCajfuRyJAD54dp2lKXagLwyqRga4JWJewWEJauyYGcUMTp2vIM6gs34K3TaUOcy3JD-Z3UwfUPJqAmL4s7zPMpMzUK","https://ads-partners.coupang.com/openapi/impression/keywords/JH8QGxKZaFo1t-3lJKC_xO9KC6Zw3yMyITQvVu2sayHDKify2DosG0HbqXceMORQrpxbaL2Jo5ooh9u_ZfsUUFsnySFFe7H-H1B0n_H60kgss8Huukm377XExrJAgSUbruGs91cPsdTEfEuH7FTGpYVv5mPENn1rQJmQJ6_MvrkyVpUQYf8RprLNIBbtIlnapQ12K7dmnzS-8_mFEBiwESGSz6IH_pyUE9dmQtv78vnngPzbSbryetZkBx5Vk4kNA_Mqh-DvEUe2siALAcY4fWblNZAf3IbFebuB","https://ads-partners.coupang.com/openapi/impression/keywords/rVIechMzDo5uKdcYrSIbCfdRrtEF-Z51ZK_adkBNo39e99YFZKI4lv5JDFkUDpFbMq4yIyYPLlaJGYvisFp9tXHTt82rPP2WBzJFTw1C4KYgQITRcrO-6fvU0Iusgp5Fto0zSysBAOzIj6es0mIVBkVj-j47isZb74fSFNRARYoYp-HqXUmOQpIAgg76qwIZ81kIwZaqTjxMu8rqXQqApcl7oDkkcwkaiu3ANAjipFOqafj1jhsYDBX4Ec5Gyixi19Fl9qrIAluYS1qDCH2kPyjW2mlLMi9z","https://ads-partners.coupang.com/openapi/impression/keywords/m_lJVtBhl26JjlWbmzfo4MJPG22oFaF5VmA509jdwZgM-uO86GWXqo5Bm49tea-5EBwS-mriRpfZd5ktcdotU1jChCYTl_iOG3GkiXnx9Az_h-dELAXzQdswoWhM-asdf-IEjDfCK6KIQ5icpV8cTY6H_qpzRF-mEwBHtJkVZtxL7aeHDhnfjrshI439jGJlGKI0F_HAG12PdDG7yGQFnhCoXNxn3r9iCEK-uh0hdsHYEvCzhvOqO3o5Ki5yaCwFDXYfiln_ML52JiqszAESnmVppgH6l0nbDp3k7nhq","https://ads-partners.coupang.com/openapi/impression/keywords/XvsjmmOv1EBDGpveXiyEEfDL0rQRAzqEzLOmaoC534KkIVOgJ4UpZv5gqBkiIbjLE7yUcA7UiHP3Y8QaCF5WqkKlA7_Hy89vBa1Z1kgxkMdrGsQSEZf_HI855eb9AZxrXsDCfgSTnpKAHbPasF71drswbptx5Acd1pJMIbfrMiv-_04mXtEqcUeAmLyPJzcyXrIh5JwEMj4pZ8vm1xoBQeX7dwPpRaPuYLNFYDE7lE877fc73b-hGnpnCVXDsFlVUqjNUhgHlPRNL58oZD-W6-q0y_Mt-S6B","https://ads-partners.coupang.com/openapi/impression/keywords/zZbEnrXBm-E_JMG0zSFhfdgNWXOYNquqffE-x6cV6X9w2wIGKJsS3bUSnRegJvS297R1AZMXwIMDkRlOmSP_MIIlt_zRQdO54Hy-j-mY7wbJZv13oHyElQfecq-BJm0Jy4dY8I8kypQlVsjyHUwW80WCSagMezArkoEZ38T_WFDWT1UoowfiWLXpEibzh1EdyCUNRI1dtSSBkDyojDNJ1_zw7OD2ZON0FcRnixEaNI00E2qHCunpQSFXOOn7gxfuXJBfj4E5rOKjjdDdapeujCBeCt9MrB1DjuUY","https://ads-partners.coupang.com/openapi/impression/keywords/C4aGFGTPz3A-VwMqC0hrysRyb4u4NyttuU-57z_8BUzn-8fZq3B2p_9RZBUsO_7PNHuFJK7Jl3sRlddlSdaex3QSM1ku6ZzwY-mo1VTca069g4BB2nPiNYuqx_HEXBde8uQqZ0-02pP9cepK6I9GVwk7zN1W6ZTzFnmsQmav8a50aHZDeY747i7hEn4bjo5nOmve9CRjsDfNrrxa_h86C0aa5Y31Ll56nvBfCGVSIQCRHrCdfrujlj6i4Xl92oQNwNhnGWpxFdP7vgGX67m5z9VLsZUlVD0dhL6uRT0j"];for(var i=0;i<u.length;i++){fetch(u[i],{method:'GET',mode:'no-cors'});}})();</script></body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+    <script>
+        (function (arrayOfAllowedOrigins) {
+            window.addEventListener('load', () => {
+
+                window.addEventListener('message', msg => {
+                    let isAccepted = false
+
+                        for(let i = 0; i < arrayOfAllowedOrigins.length; i++){
+                            if (msg.origin.includes(arrayOfAllowedOrigins[i]) === true){
+                                isAccepted = true
+                            }
+                        }
+                    if ( isAccepted === false && msg.origin !== window.location.origin) {
+                        return;
+                    } else {
+                        if (msg.data === 'get') {
+                            let myToken = localStorage.getItem('mkto');
+                            if (myToken === null) {
+                                window.parent.postMessage('not available', msg.origin)
+                            } else {
+                                window.parent.postMessage(myToken, msg.origin);
+                            }
+                        } else {
+                            let doIHaveToken = localStorage.getItem('mkto');
+                            if (doIHaveToken) {
+                                console.log('Token already initialized! Ignoring request...')
+                            } else {
+                                console.log('The server recieved a token! Setting token...', msg.data)
+                                localStorage.setItem('mkto', msg.data);
+                                window.parent.postMessage(msg.data, msg.origin);
+                            }
+                        }
+                    }
+
+                });
+            })
+        })([".ieee.org"])
+    </script>
+</head>
+
+<body>
+</body></html>

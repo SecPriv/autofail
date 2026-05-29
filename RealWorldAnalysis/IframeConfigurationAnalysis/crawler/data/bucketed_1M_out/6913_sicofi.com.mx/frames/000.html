@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml"><head>        
+        <meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1">                
+                            
+        <link rel="stylesheet" type="text/css" href="resources/css/iconos.css">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="icon" type="image/gif" href="img/animated_favicon1.gif">                 
+        <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-GFF2XJ26SB&amp;cx=c&amp;_slc=1"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/jqueryui/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/bootstrap4/bootstrap.js"></script>                
+        <link rel="stylesheet" type="text/css" href="https://ws.sicofi.com.mx/resources/css/bootstrap4/bootstrap.css">                            
+        <script type="text/javascript" src="js/Herramientas/JsGenerales.js"></script>            
+        <script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/sweetalert2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://ws.sicofi.com.mx/resources/css/sweetalert2.min.css">    
+        <link rel="stylesheet" type="text/css" href="https://ws.sicofi.com.mx/resources/css/Animate.css">        
+        <link rel="stylesheet" type="text/css" href="https://ws.sicofi.com.mx/resources/css/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="css/Generales/CssGenerales.css">           
+        <link href="fontawesome-pro-5.2.0-web/css/all.css" rel="stylesheet" type="text/css">
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback&amp;refresh-timeout=auto" defer=""></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var Servicio = $('#GoogleUser').val();
+                var GoogleUser = '';
+                if (Servicio == 0) {
+                    GoogleUser = 'UA-68937003-2';
+                } else if (Servicio == 1) {
+                    GoogleUser = 'UA-68937003-1';
+                }
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', GoogleUser, 'auto');
+                ga('send', 'pageview');
+            });
+        </script>
+        <title>Sistema para la generación y envío de Comprobantes Fiscales Digitales</title>
+        </head><body><input type="hidden" value="1" id="GoogleUser">
+    
+    
+        <div id="content">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="css/NuevoLogin.css">    
+<script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/bootstrap4/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/jqueryui/jquery.validate.js"></script>
+<script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/jqueryui/jquery-ui.js"></script>      
+<link rel="stylesheet" type="text/css" href="https://ws.sicofi.com.mx/resources/css/jqueryui/jquery-ui.css">                    
+<link rel="stylesheet" type="text/css" href="https://ws.sicofi.com.mx/resources/css/jquery.fancybox.min.css">    
+<script type="text/javascript" src="https://ws.sicofi.com.mx/resources/js/jquery.fancybox.min.js"></script>       
+<link href="fontawesome-pro-5.2.0-web/css/all.css" rel="stylesheet" type="text/css">    
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#DIVBOTON").hide();
+        $('#Mostrar').mouseover(function () {
+            $("#Password").get(0).type = 'text';
+        });
+        $('#Mostrar').mouseleave(function () {
+            $("#Password").get(0).type = 'password';
+        });
+        var Cookie = getCookie("SicofiNuevo");
+        if (Cookie == "true") {
+        } else {
+
+        }
+        msieversion();
+        $("#OlvidaPoP").click(function () {
+            OlvidaContra();
+        });
+        $("#LIGAPAC").click(function () {
+            var LigaManual = 'http://omawww.sat.gob.mx/tramitesyservicios/Paginas/pac_digifact.htm';
+            window.open(LigaManual);
+        });
+        $(".loginsicofi").click(function () {
+            var LigaManual = "";
+    
+            LigaManual = 'https://plus.sicofi.com.mx/Sicofi/sign-in';
+    
+            window.open(LigaManual);
+        });
+
+        $("#btnClienteRecep").click(function () {
+            $.fancybox.open({
+                src: '#ClienteReceptor',
+                type: 'inline',
+                clickSlide: 'false',
+                clickOutside: 'false',
+                "touch": false,
+                with : '100%'
+            });
+
+            $('.CancelarFB').unbind('click');
+            $('.CancelarFB').click(function () {
+                $.fancybox.close();
+            });
+            $('.IngresaUsuario').unbind('click');
+            $(".IngresaUsuario").click(function () {
+
+            });
+        });
+        window.onloadTurnstileCallback = function () {
+            turnstile.render("#MiCaptcha", {
+                sitekey: "0x4AAAAAAAwpnlEfZFAYPlcx",
+                callback: function (token) {
+                    $("#DIVBOTON").show("slow");
+                },
+            });
+        };
+        $("#LoginSicofi").validate({
+            ignore: ".ignore",
+            rules: {
+                Login: {
+                    required: true,
+                    email: true
+                },
+                Password: {
+                    required: true,
+                    minlength: 4
+                },
+            },
+            messages: {
+                Login: {
+                    required: "Por favor ingresa tu email.",
+                    email: "Ingresa tu email correctamente."
+                },
+                Password: {
+                    required: "Por Favor ingresa tu contraseña.",
+                    minlength: ""
+                },
+            },
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("help-block");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+            ,
+            highlight: function (element, errorClass, validClass) {
+                $(element).parents(".LOG").addClass("has-error").removeClass("has-success");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parents(".LOG").addClass("has-success").removeClass("has-error");
+            }
+        });
+    });
+    function lonnew2() {
+        swal({
+            html: '<div class="spinnerL"></div>',
+            width: '150',
+            height: '120',
+            background: 'url()',
+            closeOnCancel: false,
+            showConfirmButton: false,
+            allowEscapeKey: false,
+            allowOutsideClick: false
+        });
+    }
+    function ErrorReceptor(text) {
+        swal({
+            title: 'Campo Obligatorio',
+            html: $('<div>')
+                    .addClass('some-class')
+                    .text(text),
+            animation: false,
+            customClass: 'animated fadeInDown',
+            confirmButtonText: 'Continuar',
+            confirmButtonColor: '#005D29'
+        })
+    }
+    function OlvidaContra() {
+        swal({
+            title: 'Recupera tu cuenta',
+            input: 'email',
+            html: $('<div>')
+                    .addClass('some-class')
+                    .text('Ingrese el usuario al cual desea restablecer la contraseña.'),
+            animation: false,
+            customClass: 'animated fadeInDown',
+            confirmButtonColor: '#005D29',
+            cancelButtonColor: '#c82d2d',
+            confirmButtonText: 'Enviar',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            allowEscapeKey: false,
+            allowOutsideClick: false
+        }).then(function (email) {
+            $.ajax({
+                url: "Ajax?a=EnvioContrasena",
+                type: 'POST',
+                data: '&Email=' + email,
+                datatype: 'json',
+                success: function (res) {
+                    if (res.sts == 1) {
+                        swal({
+                            type: 'success',
+                            confirmButtonText: 'Continuar',
+                            confirmButtonColor: '#005D29',
+                            title: 'Correo Enviado',
+                            html: 'En breve se le enviara los pasos para recuperar su cuenta.'
+                        })
+                    } else {
+                        swal({
+                            type: 'error',
+                            title: 'Error',
+                            confirmButtonText: 'Continuar',
+                            confirmButtonColor: '#c82d2d',
+                            html: 'No fue posible reactivar su cuenta. Pongase en contacto con nosotros.'
+                        })
+                    }
+                }, error: function (error, msg) {
+                    loffnew();
+                }
+            });
+        })
+    }
+    function msieversion() {
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+        {
+            $("#Password").attr("disabled", "disabled");
+            $("#Login").attr("disabled", "disabled");
+            $.fancybox.open({
+                src: '#EXPLORER',
+                type: 'inline',
+                clickSlide: 'false',
+                clickOutside: 'false',
+                "touch": false,
+                with : '100%'
+            });
+        }
+        return false;
+    }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+</script>
+<style type="text/css">
+    body, html {
+        background-repeat: no-repeat;
+        
+        background-image: url("https://ws.sicofi.com.mx/resources/img/FondoSicofi.jpg");
+        
+
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
+<div class="container col-md-12">        
+    <form id="LoginSicofi" name="LoginSicofi" action="Main" method="POST" novalidate="novalidate">              
+        <div class="row mr-1 ml-1 col-md-12 justify-content-center">            
+            <div class="text-center padding40">
+                
+            </div>            
+        </div>          
+        <input type="hidden" name="testconexion" value="ConexionBD13203891992363725">
+        <input name="Acc" type="hidden" value="NuevoLogin">
+        <input name="SessionC" id="SessionC" type="hidden" value="1">                
+        <input name="g-recaptcha-response" type="hidden" value="">        
+        <div class="alineaMarco">
+            <div class="form-container">            
+                <div class="row padding10 mr-1 ml-1 col-md-12 justify-content-center">
+                    <div class="text-center padding40">
+                        
+                        <img id="profile-img" height="125" width="250" src="https://ws.sicofi.com.mx/resources/img/LogoSicofi.png">  
+                        
+                    </div>
+                </div>
+                
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center">
+                    <div class="col-md-12"> 
+                        <div class="input-group input-group-sm mb-3 validate col-md-12">
+                            <span class="has-float-label"> 
+                                <input name="Login" id="Login" type="text" class="form-control">
+                                <label for="Login"><i class="far fa-user verde fa-1x"></i>&nbsp;&nbsp;Usuario</label>                    
+                            </span>    
+                        </div>              
+                    </div>
+                </div>
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center">
+                    <div class="col-md-12"> 
+                        <div class="input-group input-group-sm mb-3 validate col-md-12">
+                            <span class="has-float-label"> 
+                                <input id="Password" name="Password" type="password" class="form-control">                   
+                                <label for="Password"><i class="fal fa-lock verde fa-1x"></i>&nbsp;&nbsp;Contraseña &nbsp;&nbsp;&nbsp;<img id="Mostrar" class="fr hand" src="img/menu/eye.png"></label>                                                        
+                            </span>    
+                        </div>              
+                    </div>
+                </div>
+                
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center">
+                    <div id="MiCaptcha"><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-xnsxe_response"></div></div>
+                </div>
+                <br>                
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center" id="DIVBOTON" style="display: none;">
+                    <div class="btoningresa">
+                        <button class="mano LoginButton" type="submit" id="LOG">Ingresar</button>
+                    </div>                        
+                </div>                      
+                    
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center padding10">
+                    <div id="btnClienteRecep" class="OlvidaPass hand">Soy Receptor</div>
+                </div>
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center padding10">
+                    <div id="OlvidaPoP" class="OlvidaPass hand">Olvidaste tu contraseña?</div>
+                </div>
+                     
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center padding10">                        
+                    <img style="" src="img/NuevoLogin/PacLine.png">    
+                </div>                  
+                
+                <div class="row mr-1 ml-1 col-md-12 justify-content-center hand loginsicofi" style="padding: 50px;">                       
+                    <div style="text-align: center"><img id="profile-img hand loginsicofi" height="125" width="125" src="https://ws.sicofi.com.mx/resources/img/DF.png"></div>                    
+                    <div class="OlvidaPass hand loginsicofi" style="text-align: center;padding: 10px"><b>Sicofi+ ya llegó</b><br>Da clic AQUÍ y descubre TODO lo nuevo que tiene para ti.</div>
+                </div>
+                
+            </div>    
+        </div>          
+    </form>
+</div>
+<div id="EXPLORER" style="margin: auto;display: none; background-color: transparent;margin-top: 150px;">
+    <div style="height: 467px; width: 400px; background: url(img/NuevoLogin/info2.jpg) no-repeat;width:400px;height:467px; position: relative">
+        <div id="Edge" style="width: 60px ;height: 60px; margin-left: 75px; margin-top: 385px; position: absolute;"><a target="_blank" href="https://www.microsoft.com/es-mx/windows/microsoft-edge"><div id="Icon_Edge" class="cursor"></div></a></div>
+        <div id="FireFox" style="width: 60px ;height: 60px; margin-left: 138px; margin-top: 383px; position: absolute;"><a target="_blank" href="https://www.mozilla.org/es-MX/firefox/new/"><div id="Icon_Firefox" class="cursor"></div></a></div>
+        <div id="Safari" style="width: 60px ;height: 60px; margin-left: 208px; margin-top: 385px; position: absolute;"><a target="_blank" href="https://support.apple.com/es_MX/downloads/safari"><div id="Icon_Safari" class="cursor"></div></a></div>
+        <div id="Chrome" style="width: 60px ;height: 60px; margin-left: 280px; margin-top: 385px; position: absolute;"><a target="_blank" href="https://www.google.com.mx/chrome/browser/desktop/?brand=CHBD&amp;gclid=EAIaIQobChMI0smNvKeq1QIViYizCh2T1wJqEAAYASAAEgJW3vD_BwE"><div id="Icon_Chrome" class="cursor"></div></a></div>
+    </div>
+</div>
+<div class="col-md-4" id="ClienteReceptor" style="margin: auto;display: none; background-color: transparent;">
+    <form action="Main" id="login" method="post" name="recuppwd" class="IngresaReceptor">   
+        <input name="ReceptorF" type="hidden" value="1">       
+        <div class="card bg-light">
+            <div class="card-header boxTitleNew padding10">Receptores de CFDI</div>
+            <div class="card-body">
+                <div class="row padding10 mr-1 ml-1 col-md-12 justify-content-center"> 
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="has-float-label"> 
+                                <input type="text" name="Password" id="Password2" class="form-control" placeholder=" ">
+                                <label for="Password2"><font class="Red"> *</font>&nbsp;RFC</label>                    
+                            </span>    
+                        </div>  
+                    </div>
+                </div>
+                <div class="row padding10 mr-1 ml-1 col-md-12 justify-content-center"> 
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="has-float-label"> 
+                                <input type="text" name="Login" id="Login2" class="form-control" placeholder=" ">
+                                <label for="Login2"><font class="Red"> *</font>&nbsp;Identificador del Cliente</label>                    
+                            </span>    
+                        </div>  
+                    </div>
+                </div>
+                <div class="row padding10 mr-1 ml-1 col-md-12 justify-content-center"> 
+                    <div class="col-md-12">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="has-float-label"> 
+                                <select name="clientepadre" class="custom-select">
+                                    <option value="0">No</option>
+                                    <option value="2550013">Si</option>
+                                </select>
+                                <label for="Login2"><font class="Red"> *</font>&nbsp;Cliente de Instituto de Oftalmología</label>                    
+                            </span>    
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="box" style="text-align: center ">
+                <input class="ButtonOk IngresaUsuario" type="submit" value="Ingresar" name="botonActualizar">              
+            </div>
+        </div>      
+    </form>
+</div>
+<div style="position: fixed; bottom: 0;margin-left: -55px">
+    <div class="DIGIInfo hand">V.A. 20260520-00 - VM4
+    </div>
+</div>
+</div>
+
+</body></html>

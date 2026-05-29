@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en" class="theme--default"><head>
+	<title>Log In | ForAgentsOnly.com</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="google-site-verification" content="1hGPlZWBROYkh-ZwSxzgZn_i90aAFSkFeFk0gNE4u2c">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/ico" href="/favicon.ico">
+
+    <script type="text/javascript" async="" src="https://progressive.com/js/cdn/qm/quantum-progressive.js"></script><script src="/ScriptsCached/bundles/FAOLayoutScripts/?v=g83BFf3LReNS1QiBXGtygopo892XEqTqMF5t8IeF_6E1"></script>
+
+
+    
+    <script type="text/javascript">
+        var postUrl = "";
+        var flowId = "o9FatXyW2x";
+        var pingBaseUrl = "https://login.progressive.com";
+        var pingAuthUrl = "/pf-ws/authn/flows/";
+        var pingUserNamePWUrl = "?action=checkUsernamePassword";
+        var pingCancelFlowIdUrl = "?action=cancel";
+        var pingAuthenticateMfaUrl = "?action=authenticate";
+        var pingOtpValidationMfaUrl = "?action=checkOtp";
+        var pingCancelReauthUrl = "?action=cancelAuthentication";
+        var pingContinueAuthUrl = "?action=continueAuthentication";
+        var pingSendAnotherOtpMfaUrl = "?action=selectDevice";
+        var startTimeUrl = "https://www.foragentsonly.com/loginstarttime/";
+        var loggingExemptionUrl = "https://www.foragentsonly.com/loginstarttime/SetLoggingExemptionCookie/";
+    </script>
+    <script src="/ScriptsCached/bundles/originaljs/mvc.Login2_0.js?v=848XNddf4rnc2nbEEEAqr6Xh3COU4hQhnplt2r4Y7T01"></script>
+
+    <script src="/ScriptsCached/bundles/originaljs/mvc.LogPingRequest.js?v=TF1j2CVgTl3_QV1MOQWZuCEqDeNT9aGMoGkE4TX0FEM1"></script>
+
+    <script src="/assets/scripts/components/modalDialog/modalDialog.js"></script>
+
+    <script src="/ScriptsCached/external/Moment-timezone-with-data.js"></script>
+
+
+
+    <link href="/assets/styles/packagesCompiled/fao-base.css" rel="stylesheet">
+
+    <link href="/assets/bundles/FAOLayoutStyles/?v=ovGDEvCgw-e7XpkLeZGOAEoJG5BUzgu5WDyU6KBCYjM1" rel="stylesheet">
+
+    <link href="/assets/bundles/fao/?v=bGEErTQsHHwv2GIpOb7xbthRVhQxaqE5CDJE5619Q5U1" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+<script type="text/javascript">
+    var dataLayer = [];
+    var splunkUrl = 'https://rtds.progressive.com/splunkservices/v1/collectors/logs';
+    var splunkApiKey = 'zTk9Eis3cEQ0uQGrRZg3UVwieie';
+</script>
+
+<script type="text/javascript">
+(function() {
+    var qtm = document.createElement('script'); qtm.type = 'text/javascript'; qtm.async = 1;
+    qtm.src = "https://progressive.com/js/cdn/qm/quantum-progressive.js";
+    var d = document.getElementsByTagName('script')[0];
+    !window.QuantumMetricAPI && d.parentNode.insertBefore(qtm, d);
+})();
+</script>
+</head>
+<body>
+	<script>    
+    var faopagetime1 = new Date().getTime();
+
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function() {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
+            };
+        }
+    }
+
+    function BaseDomainString() {
+        var parts = document.domain.split(/\./);
+        if (parts.length > 1) {
+            return (parts[parts.length - 2] + "." + parts[parts.length - 1]);
+        }
+        else {
+            return ("");
+        }
+    }
+
+    addLoadEvent(function () {
+        document.cookie = 'prevpagetime=' + ((new Date().getTime() - faopagetime1) / 1000) + ';path=/;domain=' + BaseDomainString();
+        document.cookie = 'prevpageurl=' + window.location.pathname + ';path=/;domain=' + BaseDomainString();
+    });
+
+</script>
+
+
+	
+<script>
+    if (top != self) {
+        top.location.replace(self.location);
+    }
+</script>
+
+<div id="faoLayout">
+	<div id="headerLOGIN">
+		<img class="headerLOGO" src="/Assets/images/logo-progressive-white.png" title="Progressive Insurance" alt="Progressive Insurance">
+	</div>
+	<div class="spinner" id="loginSpinner" style="display: none;">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+	</div>
+	<div id="loginContainer" class="login-page-style">
+		<div id="loginMMA" class="login-main-container cf">
+			<div id="loginBrand" class="marketing-area-login">
+				<img src="/Assets/images/login/fao-login-peace-of-mind-2026.jpg" alt="Offer your clients peace of mind with the #1 personal auto insurer among independent agents.">
+			</div>
+			<div id="loginFormDiv" class="login-form-container">
+				<div class="login-form-container-wrap">
+					<img class="mb-1" src="/Assets/images/logos/logo-fao-deep-blue.svg" width="315" alt="ForAgentsOnly">
+					<h1 class="heading-4 u-text-light p-c-gray-dark-charcoal p-md-line" style="line-height: 1.6;">Welcome to ForAgentsOnly.com, available exclusively for Progressive agents. Managing customer policies has never been easier!</h1>
+
+					<div class="errorSum"></div>
+
+<div aria-live="polite">
+	<p class="alert alert--error js-login-unauth-error u-hidden">Login failed. Please verify your credentials or contact your administrator to create a Unique ID.</p>
+	<p class="alert alert--warning js-login-error u-hidden">
+		We are experiencing technical difficulties. Please try again later.
+	</p>
+</div>
+
+<form name="loginForm" method="post" id="loginForm" autocomplete="on" class="form" novalidate="novalidate">
+	<div class="form__item">
+		<label for="user1" class="loginPlaceholderLabel">User ID</label>
+		<span class="field-validation-valid" data-valmsg-for="user1" data-valmsg-replace="true"></span>
+		<input class="placeholderInput" data-at="external-login-input-textbox-user-id-agent" data-val="true" data-val-regex="Please provide a valid User ID or Agent Code." data-val-regex-pattern="^([a-zA-Z0-9~`!@#$^&amp;*\-_+=|\\/:;&quot;',.?]{6,30}\s*)|([a-zA-Z0-9]{5}\s*)$" data-val-required="Please provide a valid User ID or Agent Code." id="user1" maxlength="50" name="user1" required="true" size="55" type="text" value="">
+	</div>
+	<div class="form__item">
+		<label for="password1" class="loginPlaceholderLabel">User Password</label>
+		<span class="field-validation-valid" data-valmsg-for="password1" data-valmsg-replace="true"></span>
+		<div class="form__pw-reveal-control">
+			<input autocomplete="off" class="placeholderInput loginInput tlprivate form__input" data-at="external-login-input-textbox-password" data-val="true" data-val-required="Please enter your Password." id="password1" maxlength="50" name="password1" size="55" type="password" value="">
+			<button id="js-show-pw-control" class="base-btn base-btn--link form__pw-reveal-control-toggle" type="button">SHOW</button>
+		</div>
+	</div>
+	<div class="form__item login-btn-container">
+		<input class="blueBtn base-btn loginButton" type="submit" name="image1" id="image1" value="Log In" title="Go" data-at="external-login-input-login-button">
+	</div>
+	<p>
+		<a href="javascript:generateFaoDomainUrl('/registration/forgotpassword/')">Forgot your password?</a>
+	</p>
+</form>
+
+<form class="js-mfa-reauth-authapp-otp form js-mfa-textbox-wrapper u-hidden">
+    <p id="reauth-authapp-otp-description" class="u-text-bold u-color-red-1">Your login needs to be reauthenticated. Please enter the one-time passcode from your authenticator app and select Continue.</p>
+    <div class="grid">
+        <div class="col-6_sm-12 u-color-blue-1">
+            <label for="reauth-authapp-otp-input">One-time passcode</label>
+            <span class="field-validation-valid mfaRedFlag" data-valmsg-for="" data-valmsg-replace="true"></span>
+            <input aria-describedby="reauth-authapp-otp-description" autocomplete="off" class="js-OtpEntryTextBox" device="authapp" id="reauth-authapp-otp-input" maxlength="20" name="MfaOtpEntry" type="text" value="">
+        </div>
+    </div>
+    <div class="form__btn-guard mb-1 js-mfa-form__btn-guard">
+        <button class="base-btn js-mfa-reauth-submit-button" type="button" data-at="">Continue</button>
+    </div>
+    <button class="base-btn base-btn--link u-block" type="button" onclick="cancelMfaReauth();logMfaReauthCancellation('authapp')">Cancel</button>
+</form>
+
+<form class="js-mfa-reauth-sms-otp form js-mfa-textbox-wrapper u-hidden">
+    <p id="reauth-sms-otp-description" class="u-text-bold u-color-red-1">Your login needs to be reauthenticated. A one-time passcode was sent to you via SMS/text message. Please enter it below and select Continue.</p>
+    <div class="grid">
+        <div class="col-6_sm-12">
+            <label for="reauth-sms-otp-input">One-time passcode</label>
+            <span class="field-validation-valid mfaRedFlag" data-valmsg-for="" data-valmsg-replace="true"></span>
+            <input aria-describedby="reauth-sms-otp-description" autocomplete="off" class="js-OtpEntryTextBox" device="phone" id="reauth-sms-otp-input" maxlength="20" name="MfaOtpEntry" type="text" value="">
+        </div>
+    </div>
+    <div class="form__btn-guard mb-1 js-mfa-form__btn-guard">
+        <button class="base-btn js-mfa-reauth-submit-button" type="button" data-at="">Continue</button>
+    </div>
+    <button class="base-btn base-btn--link u-block mb-3" type="button" onclick="cancelMfaReauth();logMfaReauthCancellation('phone')">Cancel</button>
+    <hr>
+    <p class="u-text-bold">Didn't get the code?</p>
+    <div class="form__btn-guard">
+        <button class="base-btn base-btn--alt base-btn--secondary mb-1 js-mfa-submit-button js-mfa-reauth-sms-otp-send-new" onclick="sendAnotherOtp('phone');" type="button" data-at="">Resend one-time passcode</button>
+        <p class="mb-0 u-text-bold p-alert-text p-alert-text--success u-hidden js-mfa-otp-60-message">A one-time passcode was sent to you via SMS/text message.</p>
+        <p class="u-hidden js-mfa-otp-60-message">You can request another passcode in 60 seconds.</p>
+    </div>
+</form>
+
+<form class="js-mfa-reauth-email-otp form js-mfa-textbox-wrapper u-hidden">
+    <p id="reauth-email-otp-description" class="u-text-bold u-color-red-1">Your login needs to be reauthenticated. A one-time passcode was sent to you via email. Please enter it below and select Continue.</p>
+    <div class="grid">
+        <div class="col-6_sm-12">
+            <label for="reauth-email-otp-input">One-time passcode</label>
+            <span class="field-validation-valid mfaRedFlag" data-valmsg-for="" data-valmsg-replace="true"></span>
+            <input aria-describedby="reauth-email-otp-description" autocomplete="off" class="js-OtpEntryTextBox" device="email" id="reauth-email-otp-input" maxlength="20" name="MfaOtpEntry" type="text" value="">
+        </div>
+    </div>
+    <div class="form__btn-guard mb-1 js-mfa-form__btn-guard">
+        <button class="base-btn js-mfa-reauth-submit-button" type="button" data-at="">Continue</button>
+    </div>
+    <button class="base-btn base-btn--link u-block mb-3" type="button" onclick="cancelMfaReauth();logMfaReauthCancellation('email')">Cancel</button>
+    <hr>
+    <p class="u-text-bold">Didn't get the code?</p>
+    <div class="form__btn-guard">
+        <button class="base-btn base-btn--alt base-btn--secondary mb-1 js-mfa-submit-button js-mfa-reauth-email-otp-send-new" onclick="sendAnotherOtp('email');" type="button" data-at="">Resend one-time passcode</button>
+        <p class="mb-0 u-text-bold p-alert-text p-alert-text--success u-hidden js-mfa-otp-60-message">A one-time passcode was sent to you via email.</p>
+        <p class="u-hidden js-mfa-otp-60-message">You can request another passcode in 60 seconds.</p>
+    </div>
+</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="modal-dialog js-modal-dialog js-new-flowid-modal" data-modal="GetNewFlowIdModal" data-modal-prevent-overlay-close="">
+    <div class="modal-dialog__body u-text-center">
+        <h2 data-at="new-flowid-modal-header" class="heading-4 modal-dialog__title">You have been inactive for some time.</h2>
+        <div class="mt-1 mb-1">
+            <div class="form__btn-guard js-new-flowid-modal-btn-guard">
+                <button class="base-btn base-btn--secondary" type="button" data-at="new-flowid-modal-continue-button" onclick="getNewFlowIdAndReturnToLogin()">Continue FAO login</button>
+            </div>
+        </div>
+        <p class="placeholderModal"></p>
+    </div>
+</div>
+
+
+	<script type="text/javascript" src="/Assets/js/ccr-login.js"></script>
+
+</div>
+
+
+
+<footer class="site-footer">
+    <nav class="site-footer__nav" aria-label="Secondary">
+        <ul class="site-footer__list">
+            <li class="site-footer__item">
+                <a href="/accessibility/" data-ga="link" data-component="Footer" data-label="Public Footer - accessibility">Accessibility</a>
+            </li>
+            <li class="site-footer__item">
+                <a href="/termsofuse/#privacy-hr" data-ga="link" data-component="Footer" data-label="Public Footer - Agents’ Privacy">Agents’ Privacy</a>
+            </li>
+            <li class="site-footer__item">
+                <a href="/privacy/" data-ga="link" data-component="Footer" data-label="Public Footer - Privacy Statement">Consumer/Customer Privacy</a>
+            </li>
+            <li class="site-footer__item">
+                <a href="/termsofuse/#california-notice" data-ga="link" data-component="Footer" data-label="Public Footer - CA Notice at Collection">CA Notice at Collection</a>
+            </li>
+            <li class="site-footer__item">
+                <a href="/termsofuse/" data-ga="link" data-component="Footer" data-label="Public Footer - Terms of Use">Terms of Use</a>
+            </li>
+                <li class="site-footer__item">
+                    <a href="https://aqn.foragentsonly.com" data-ga="link" data-component="Footer" data-label="Public Footer - Become an agent">Become an agent</a>
+                </li>
+                            <li class="site-footer__item">
+                    <a href="javascript:generateFaoDomainUrl('/registration/verifyinfo')" data-ga="link" data-component="Footer" data-label="Public Footer - Register for FAO">Register for FAO</a>
+                </li>
+                <li class="site-footer__item">
+                    <a href="/registration/verifyinfo/registrationhelp" data-ga="link" data-component="Footer" data-label="Public Footer - Registration help">Registration help</a>
+                </li>
+                            <li class="site-footer__item">
+                    <a href="javascript:generateFaoDomainUrl('/registration/forgotpassword/')" data-ga="link" data-component="Footer" data-label="Public Footer - Change your password">Change your password</a>
+                </li>
+        </ul>
+    </nav>
+    <div id="faoBuildId" hidden="">1.0.0.13381</div>
+    <div id="faoContentBuildId" hidden="">1.0.0.7439</div>
+    <p>ForAgentsOnly is a restricted use site for authorized users only. <span title="P16">Copyright</span> © 1997-2026 Progressive Casualty Insurance Company. All rights reserved.</p>
+</footer>
+
+<script type="text/javaScript">
+    function pop(URL) {
+        day = new Date();
+        id = day.getTime();
+        window.open(URL, id, 'toolbar=0,scrollbars=1,location=0,status=1,menubar=0,resizable=1,width=715,height=400');
+    }
+</script>
+
+</body><b tabindex="-1" aria-hidden="true" style="position: absolute; left: -1000px;"><iframe style="display: none;"></iframe></b></html>

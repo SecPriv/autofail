@@ -1,0 +1,16 @@
+<html><head></head><body style="margin: 0px; overflow: hidden;"><script>
+// See documentation in confluence for detailed explanation.
+config = {
+        pos1: [13401],
+        pos2: [],
+        pos3: [],
+  projectId: 110, // ID of project, placeholder 110 is replaced by default
+  minBoxCount: 1, // minimal box count to display
+};
+
+// do NOT change the lines bellow
+// placeholders will be replaced by banner handler
+exports = {};
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.BoxOverContentIframe = void 0;var BoxOverContentIframe = (function () {function BoxOverContentIframe(parentElement) {this.parentElement = parentElement;}BoxOverContentIframe.prototype.renderIframe = function (projectUrl, projectId, config) {var _a;var version = '2';var officeUrl = projectUrl.match(/[^.]+(\.fst\.okubefs1\.kube)?\.lsoffice\.cz/);var devUrl = (_a = projectUrl.match(/(\.(fs[fm]|wt[fm]|dc[pr]|sr[ow]))\./)) !== null && _a !== void 0 ? _a : '';var bocHost = 'https://static' + (devUrl ? devUrl[1] : '') + '.flashscore.com' + (officeUrl ? '.' + officeUrl[0] : '');var bocUrl = bocHost + "/box-over-content/" + projectId + "/?url=" + projectUrl + "&version=" + version;var iframe = document.createElement('iframe');iframe.style.width = '100%';iframe.style.height = '100%';iframe.style.border = 'none';iframe.src = bocUrl;iframe.onload = function () {var _a;var message = Object.assign(config, { type: 'BoxOverContentConfig' });(_a = iframe.contentWindow) === null || _a === void 0 ? void 0 : _a.postMessage(message, '*');};this.parentElement.append(iframe);};return BoxOverContentIframe;}());exports.BoxOverContentIframe = BoxOverContentIframe;
+new BoxOverContentIframe(document.body).renderIframe('https://www.basketball24.com', config.projectId, config);
+</script><iframe src="https://static.flashscore.com/box-over-content/110/?url=https://www.basketball24.com&amp;version=2" style="width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial;"></iframe></body></html>

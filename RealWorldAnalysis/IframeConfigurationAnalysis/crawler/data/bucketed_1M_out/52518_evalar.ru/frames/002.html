@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd"><html><head></head>
+<body>
+
+<script type="text/javascript">
+	function getCookie(name) {
+		var value = `; ${document.cookie}`;
+		var parts = value.split(`; ${name}=`);
+		if (parts.length === 2) return parts.pop().split(';').shift();
+	};
+	
+	function storageAvailable(type) {
+		try {
+			var storage = window[type],
+				x = '__storage_test__';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		}
+		catch(e) {
+			return false;
+		}
+	}				
+	
+	var gnezdo_uid = getCookie('uid');
+	if (storageAvailable('localStorage')){
+		var old_uid = localStorage.getItem("uid") || '';
+		if (gnezdo_uid){
+			localStorage.setItem("uid", gnezdo_uid);
+		}else{
+			gnezdo_uid = localStorage.getItem("uid");
+			if (!gnezdo_uid) {
+				gnezdo_uid = new Date().getTime().toString(16)+Math.random().toString(16).substring(2);
+				localStorage.setItem("uid", gnezdo_uid);
+			}
+		}
+
+		try {
+			let model_mem = localStorage.getItem("device_model_mem");
+			if(!model_mem || old_uid != gnezdo_uid) {
+				checkModel(model_mem, gnezdo_uid);
+			}
+		} catch(ex) {
+			new Image().src = 'https://fcgi5.gnezdo.ru/cb/error/?message='+encodeURIComponent(ex.message)+'&location='+escape(window.location.href);
+		}
+
+	}
+
+	window.parent.postMessage({
+		gnezdo_uid: gnezdo_uid,
+	}, '*');
+
+	function checkModel(model_mem, gnezdo_uid) {
+		if(model_mem) {
+			new Image().src = 'https://fcgi5.gnezdo.ru/pm/?m='+encodeURIComponent(model_mem)+'&uid='+encodeURIComponent(gnezdo_uid);
+			return;
+		}
+		let mem = '';
+		if(navigator) {
+			mem = navigator.deviceMemory || '';
+			if(navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+				navigator.userAgentData
+					.getHighEntropyValues(["model"])
+					.then(values => {
+						model_mem = values && values.model || '';
+						model_mem += ','+mem;
+						new Image().src = 'https://fcgi5.gnezdo.ru/pm/?m='+encodeURIComponent(model_mem)+'&uid='+encodeURIComponent(gnezdo_uid);
+						localStorage.setItem("device_model_mem", model_mem);
+					}).catch(err => {
+						new Image().src = 'https://fcgi5.gnezdo.ru/cb/error/?message='+encodeURIComponent(exr)+'&location='+escape(window.location.href);
+					});
+				return;
+			}
+		}
+		model_mem = ','+mem;
+		new Image().src = 'https://fcgi5.gnezdo.ru/pm/?m='+encodeURIComponent(model_mem)+'&uid='+encodeURIComponent(gnezdo_uid);
+		localStorage.setItem("device_model_mem", model_mem);
+	}
+</script>
+
+
+
+</body></html>

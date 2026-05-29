@@ -1,0 +1,802 @@
+<!DOCTYPE html><html><head prefix="og: http://ogp.me/ns#
+			article: http://ogp.me/ns/article#
+			fb: http://ogp.me/ns/fb#"><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<!-- Google Tag Manager -->
+		<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-KPV393T374&amp;cx=c&amp;_slc=1"></script><script src="https://connect.facebook.net/signals/config/1850554928518682?v=2.9.325&amp;r=stable&amp;domain=acadeu.com&amp;hme=af8aa31887db259becaf70277daef60bd8bc35c2df82c2acd4258de27ecac4b5&amp;ex_m=104%2C207%2C155%2C22%2C72%2C73%2C146%2C68%2C67%2C11%2C164%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C160%2C166%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C167%2C172%2C221%2C62%2C188%2C189%2C55%2C279%2C30%2C74%2C233%2C232%2C231%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C156%2C76%2C159%2C157%2C158%2C50%2C60%2C123%2C15%2C163%2C45%2C266%2C267%2C265%2C26%2C27%2C28%2C48%2C147%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C145%2C148%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C150%2C149%2C151%2C142%2C140%2C25%2C35%2C59%2C109%2C162%2C70%2C17%2C153%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C139%2C161%2C34%2C281%2C297%2C214%2C203%2C204%2C202%2C300%2C291%2C52%2C215%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C125%2C58%2C64%2C152%2C115%2C37%2C32%2C53%2C56%2C100%2C165%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C168%2C169%2C94%2C95%2C9%2C102%2C51%2C143%2C87%2C79%2C71%2C117%2C106%2C43%2C144%2C0%2C82%2C137%2C141%2C154%2C38%2C108%2C13%2C170" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-861084869&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://s.adroll.com/j/roundtrip.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-1016054384&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-THPGBP"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-THPGBP');</script>
+		<!-- End Google Tag Manager -->
+
+		<meta name="author" content="Acadeu">
+		<meta name="alexaVerifyID" content="pV_UMzzbZAfu55EjtlgFQNWbZGQ">
+		<meta property="og:site_name" content="Acadeu">
+		<meta property="fb:app_id" content="393722157405746">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="acadeu">
+		<link rel="canonical" href="https://acadeu.com">
+		
+	<title>Acadeu</title>
+	<meta name="keywords" content="Educación, Tecnología educativa, Comunicación escolar, Comunicación con padres, Gestión escolar, Software de gestión escolar, software para colegios, Gestión colegios, Gestión académica, Gestión integral para colegios, Gestión para colegios, Herramienta de comunicación escolar, Aula virtual, Educación nuevas tecnologías, Mejorar la comunicación, simplificar gestión colegios, pV_UMzzbZAfu55EjtlgFQNWbZGQ">
+	<meta name="description" content="Digitalizá la administración de tu colegio con Acadeu, el sistema de gestión escolar más completo: aula virtual, portal educativo, facturación y comunicación con familias.">
+	<meta property="og:title" content="Gestión académica y comunicación para colegios">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://acadeu.com">
+	<meta property="og:description" content="Tecnología Académica para mejorar la calidad educativa. Producto de comunicación interna y externa para la institución educativa.">
+	<meta property="og:image" content="http://acadeu.com/static/institucional/images/logo-acadeu-positivo.png">
+	<meta property="og:image:width" content="1080">
+	<meta property="og:image:height" content="1080">
+	<meta name="twitter:description" content="Tecnología Académica para mejorar la calidad educativa. Producto de comunicación interna y externa para la institución educativa.">
+	<meta name="twitter:title" content="Acadeu - Gestión académica y comunicación para colegios">
+	<meta name="twitter:image" content="http://acadeu.com/static/institucional/images/logo-acadeu-positivo.jpg">
+	<meta name="facebook-domain-verification" content="bxds95p1nzxp9qgmmainaa6wgq3m0h">
+
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/png" sizes="16x16" href="/static/institucional/images/favicon/favicon-16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/static/institucional/images/favicon/favicon-32.png">
+		<link rel="icon" type="image/png" sizes="64x64" href="/static/institucional/images/favicon/favicon-64.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/static/institucional/images/favicon/favicon-96.png">
+		<link rel="apple-touch-icon-precomposed" type="image/png" sizes="72x72" href="/static/institucional/images/favicon/favicon-72.png">
+		<link rel="apple-touch-icon-precomposed" type="image/png" sizes="76x76" href="/static/institucional/images/favicon/favicon-76.png">
+		<link rel="apple-touch-icon-precomposed" type="image/png" sizes="114x114" href="/static/institucional/images/favicon/favicon-114.png">
+		<link rel="apple-touch-icon-precomposed" type="image/png" sizes="120x120" href="/static/institucional/images/favicon/favicon-120.png">
+		<link rel="apple-touch-icon-precomposed" type="image/png" sizes="144x144" href="/static/institucional/images/favicon/favicon-144.png">
+		<link rel="apple-touch-icon-precomposed" type="image/png" sizes="152x152" href="/static/institucional/images/favicon/favicon-152.png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="/static/institucional/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/institucional/css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="/static/institucional/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="/static/institucional/css/style.css?v5">
+
+		<!-- JS -->
+		<script src="/static/institucional/js/jquery-3.0.0.min.js"></script>
+		<script src="/static/institucional/js/bootstrap.min.js"></script>
+		<script src="/static/institucional/js/wow.min.js"></script>
+		<script src="/static/institucional/js/he.min.js"></script>
+		<script src="/static/institucional/js/base.js"></script>
+		<script src="/static/institucional/js/newsletter.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.6/jsrender.min.js"></script>
+		<script>new WOW().init();</script>
+		
+	
+<link rel="stylesheet" type="text/css" href="/static/institucional/css/slick.min.css">
+<script src="/static/institucional/js/slick.min.js"></script>
+
+<script src="/static/institucional/js/jquery.sticky-sidebar.min.js"></script>
+<script src="/static/institucional/js/home.js"></script>
+<script src="/static/institucional/js/instituciones.js"></script>
+
+
+	<script type="text/javascript" src="https://s.adroll.com/j/pre/EBOOLAC265HYRB4NQNQUCJ/I4C3JT6X7REDRB6PLTTMYN/fpconsent.js"></script><script type="text/javascript" src="https://s.adroll.com/j/pre/EBOOLAC265HYRB4NQNQUCJ/I4C3JT6X7REDRB6PLTTMYN/index.js"></script><script type="text/javascript" src="https://d.adroll.com/consent/check/EBOOLAC265HYRB4NQNQUCJ?pv=16797810331.257814&amp;arrfrr=https%3A%2F%2Facadeu.com%2F&amp;_s=8145c05ad2fdb66227d616f536555c88&amp;_b=2"></script></head>
+
+	<body class="home">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THPGBP"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<!-- Header -->
+		<header class="header"><div class="container-fluid">
+
+			
+<a href="//acadeu.com/" class="logo">
+	<img src="/static/institucional/images/logo_acadeu.svg" alt="Acadeu" class="img-fluid">
+</a>
+
+			
+
+			<div class="container-fluid nav-menu-container">
+				<a class="menu-account" style="margin-right: 15px" href="https://plataforma.acadeu.com">
+					<i class="icon-user"></i>
+					Ingresar
+				</a>
+
+				<div class="nav-menu" data-open="menu">
+					<span class="menu-line"></span>
+					<span class="menu-line"></span>
+					<span class="menu-line"></span>
+				</div>
+			</div>
+
+			<!-- Navigation -->
+			<nav class="navigation">
+				<ul class="menu list-unstyled">
+					<li class=""><a href="//acadeu.com/caracteristicas">Características</a></li>
+					<li class=""><a href="//acadeu.com/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+					<li class=""><a href="//acadeu.com/ayuda">Ayuda</a></li>
+					<li class=""><a href="//acadeu.com/blog">Blog</a></li>
+					<li class=""><a href="//acadeu.com/prensa">Prensa</a></li>
+					<li class=""><a href="//acadeu.com/nosotros">Nosotros</a></li>
+					<li class=""><a href="//acadeu.com/contacto">Contacto</a></li>
+				</ul>
+
+				<a class="menu-account" href="https://plataforma.acadeu.com">
+					<i class="icon-user"></i>
+					Ingresar
+				</a>
+
+			</nav>
+
+		</div></header>
+		<header class="header-vacio" style="display: none;">
+		</header>
+
+
+		<!-- Main -->
+		<main class="main">
+			
+			
+<script type="text/javascript">
+	$('body').addClass('home');
+</script>
+<div class="page home">
+
+	<!-- Presentation -->
+	<header class="banner banner-size wow fadeIn banner-home" style="visibility: visible; animation-name: fadeIn;"><div class="container-fluid">
+
+		<div class="row">
+			<div class="col-12 col-xl-6">
+
+				<div class="title">
+					<p class="subtitle"></p>
+					<h1>Sistema de gestión escolar digital | Software para colegios - Acadeu</h1>
+					<p class="description">Digitalizá tu institución.</p>
+				</div>
+
+				<div class="text">
+					<p>Acadeu es un sistema de administración escolar online que conecta directivos, docentes, familias y estudiantes en una plataforma ágil, segura y 100% adaptable.</p>
+					<a href="//acadeu.com/proba-acadeu" class="btn btn-primary">Solicitá una demo gratuita</a>
+				</div>
+
+			</div>
+		</div>
+
+	</div></header>
+
+	
+<section class="module-schools">
+	<div class="title wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+		<p>+300 colegios ya usan nuestro software de gestión escolar en Argentina</p>
+		<h4>Descubrí cómo modernizar tu colegio con Acadeu.</h4>
+	</div>
+
+	<div class="feed-schools slides slick-initialized slick-slider" id="slide-instituciones" style="">
+	
+	<div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 100000px; transform: translate3d(-1132px, 0px, 0px); transition: transform 7000ms linear;"><div class="slide slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1">
+		<img src="https://image-proxy.acadeu.com/sGJx0u1HTSSnpN1lTgn0s3j7d2Pcu5m4DzVNG2foKu04/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/manuel-dorrego/immd.png_176973938_1690376093942" title="Instituto Modelo Manuel Dorrego" alt="Instituto Modelo Manuel Dorrego" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1">
+		<img src="https://image-proxy.acadeu.com/spbv75eqbzM-NvbRnFqNrE0RzQ3L8Uit48JnrT1Ji8TA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/modern-school/image0_5.png_1109007838_1645016423944" title="Modern School" alt="Modern School" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1">
+		<img src="https://image-proxy.acadeu.com/ssnWLrsX9mo_LiJFnWCOkq-V5AXqkoirsmQ7ap7SyhtA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/medalla-milagrosa-caba/Captura_de_pantalla_de_20240902_113535removebgpreview.png_731045666_1725287806485" title="Instituto Medalla Milagrosa" alt="Instituto Medalla Milagrosa" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide10">
+		<img src="https://image-proxy.acadeu.com/spowV-_v9Lxea7UCejM3PgwVBOQ5iSBdHY6NBDKdZEzY/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/antonio-machado/login_logo.png" title="Antonio Machado" alt="Antonio Machado" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide11">
+		<img src="https://image-proxy.acadeu.com/sOkwpxTCqp64-CRvgrvlERDy8yf1prjKcp3DIqTUiSvA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/milton/logo2.png" title="Milton's College" alt="Milton's College" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide12">
+		<img src="https://image-proxy.acadeu.com/s3ywpAkMOM49Hj4zlO055RZaqVV68i-b3fzJYavmMJZk/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/angel-d-elia/logo.png" title="Instituto Ángel D'Elía" alt="Instituto Ángel D'Elía" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide13">
+		<img src="https://image-proxy.acadeu.com/sQhSN1B42kN0KcId4L5cl4LsflrDloYSksrPIJO8NVqI/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/jesus-sacramentado/jesussacramentadologotransparente.jpg_973761852_1594811549606" title="Colegio Jesús Sacramentado" alt="Colegio Jesús Sacramentado" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide14">
+		<img src="https://image-proxy.acadeu.com/svwc5uqiDxtWR7zeYPxMubw7EmgjWxwaa-dMv0Py-bK4/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/instituto-saint-jean/Captura_de_pantalla_de_20251020_115841.png_1996225783_1760972334786" title="Instituto Saint Jean" alt="Instituto Saint Jean" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide15">
+		<img src="https://image-proxy.acadeu.com/sOUpzIHlDfvSM_ONB7b3S4p1FO4_CIlgC1xVqNTgmTxA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/santa-maria-escobar/LOGO_SANTA_MARIAremovebgpreview.png_1769898573_1716204621824" title="Colegio Santa María" alt="Colegio Santa María" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-current slick-active" data-slick-index="6" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide16">
+		<img src="https://image-proxy.acadeu.com/sMVL55oLFWK5IhLfj8cdJm-tkfX7u-9RGkEuGSJGgcvo/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/felicia-ramon-de-palacios/logo_dac_lasalle_redes_1.jpg_211240636_1684256590487" title="Felicia Ramón de Palacios" alt="Felicia Ramón de Palacios" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-active" data-slick-index="7" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide17">
+		<img src="https://image-proxy.acadeu.com/sGJx0u1HTSSnpN1lTgn0s3j7d2Pcu5m4DzVNG2foKu04/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/manuel-dorrego/immd.png_176973938_1690376093942" title="Instituto Modelo Manuel Dorrego" alt="Instituto Modelo Manuel Dorrego" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-active" data-slick-index="8" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide18">
+		<img src="https://image-proxy.acadeu.com/spbv75eqbzM-NvbRnFqNrE0RzQ3L8Uit48JnrT1Ji8TA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/modern-school/image0_5.png_1109007838_1645016423944" title="Modern School" alt="Modern School" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide19">
+		<img src="https://image-proxy.acadeu.com/ssnWLrsX9mo_LiJFnWCOkq-V5AXqkoirsmQ7ap7SyhtA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/medalla-milagrosa-caba/Captura_de_pantalla_de_20240902_113535removebgpreview.png_731045666_1725287806485" title="Instituto Medalla Milagrosa" alt="Instituto Medalla Milagrosa" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="10" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide110">
+		<img src="https://image-proxy.acadeu.com/spowV-_v9Lxea7UCejM3PgwVBOQ5iSBdHY6NBDKdZEzY/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/antonio-machado/login_logo.png" title="Antonio Machado" alt="Antonio Machado" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="11" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide111">
+		<img src="https://image-proxy.acadeu.com/sOkwpxTCqp64-CRvgrvlERDy8yf1prjKcp3DIqTUiSvA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/milton/logo2.png" title="Milton's College" alt="Milton's College" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="12" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide112">
+		<img src="https://image-proxy.acadeu.com/s3ywpAkMOM49Hj4zlO055RZaqVV68i-b3fzJYavmMJZk/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/angel-d-elia/logo.png" title="Instituto Ángel D'Elía" alt="Instituto Ángel D'Elía" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="13" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide113">
+		<img src="https://image-proxy.acadeu.com/sQhSN1B42kN0KcId4L5cl4LsflrDloYSksrPIJO8NVqI/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/jesus-sacramentado/jesussacramentadologotransparente.jpg_973761852_1594811549606" title="Colegio Jesús Sacramentado" alt="Colegio Jesús Sacramentado" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="14" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide114">
+		<img src="https://image-proxy.acadeu.com/svwc5uqiDxtWR7zeYPxMubw7EmgjWxwaa-dMv0Py-bK4/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/instituto-saint-jean/Captura_de_pantalla_de_20251020_115841.png_1996225783_1760972334786" title="Instituto Saint Jean" alt="Instituto Saint Jean" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="15" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide115">
+		<img src="https://image-proxy.acadeu.com/sOUpzIHlDfvSM_ONB7b3S4p1FO4_CIlgC1xVqNTgmTxA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/santa-maria-escobar/LOGO_SANTA_MARIAremovebgpreview.png_1769898573_1716204621824" title="Colegio Santa María" alt="Colegio Santa María" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="16" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide116">
+		<img src="https://image-proxy.acadeu.com/sMVL55oLFWK5IhLfj8cdJm-tkfX7u-9RGkEuGSJGgcvo/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/felicia-ramon-de-palacios/logo_dac_lasalle_redes_1.jpg_211240636_1684256590487" title="Felicia Ramón de Palacios" alt="Felicia Ramón de Palacios" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="17" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide117">
+		<img src="https://image-proxy.acadeu.com/sGJx0u1HTSSnpN1lTgn0s3j7d2Pcu5m4DzVNG2foKu04/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/manuel-dorrego/immd.png_176973938_1690376093942" title="Instituto Modelo Manuel Dorrego" alt="Instituto Modelo Manuel Dorrego" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="18" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide118">
+		<img src="https://image-proxy.acadeu.com/spbv75eqbzM-NvbRnFqNrE0RzQ3L8Uit48JnrT1Ji8TA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/modern-school/image0_5.png_1109007838_1645016423944" title="Modern School" alt="Modern School" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide" data-slick-index="19" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide119">
+		<img src="https://image-proxy.acadeu.com/ssnWLrsX9mo_LiJFnWCOkq-V5AXqkoirsmQ7ap7SyhtA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/medalla-milagrosa-caba/Captura_de_pantalla_de_20240902_113535removebgpreview.png_731045666_1725287806485" title="Instituto Medalla Milagrosa" alt="Instituto Medalla Milagrosa" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-cloned" data-slick-index="20" aria-hidden="true" tabindex="-1">
+		<img src="https://image-proxy.acadeu.com/spowV-_v9Lxea7UCejM3PgwVBOQ5iSBdHY6NBDKdZEzY/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/antonio-machado/login_logo.png" title="Antonio Machado" alt="Antonio Machado" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-cloned" data-slick-index="21" aria-hidden="true" tabindex="-1">
+		<img src="https://image-proxy.acadeu.com/sOkwpxTCqp64-CRvgrvlERDy8yf1prjKcp3DIqTUiSvA/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/milton/logo2.png" title="Milton's College" alt="Milton's College" class="img-fluid logo-institucion">
+	</div><div class="slide slick-slide slick-cloned" data-slick-index="22" aria-hidden="true" tabindex="-1">
+		<img src="https://image-proxy.acadeu.com/s3ywpAkMOM49Hj4zlO055RZaqVV68i-b3fzJYavmMJZk/https://acadeu-produccion-administrados-publicos.s3.amazonaws.com/logos/angel-d-elia/logo.png" title="Instituto Ángel D'Elía" alt="Instituto Ángel D'Elía" class="img-fluid logo-institucion">
+	</div></div></div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</div>
+	<div class="feed-schools slides" id="slide-instituciones-loading" style="display: none;">
+
+		<div class="slide">
+			<img src="/static/institucional/images/extras/loading.gif" alt="Cargando" class="img-fluid">
+		</div>
+	</div>
+
+</section>
+
+<script id="institucionTemplate" type="text/x-jsrender" data-jsv-tmpl="jsvTmpl">
+	<div class="slide">
+		<img src="<%:logo.login%>" title="<%:nombre%>" alt="<%:nombre%>" class="img-fluid logo-institucion">
+	</div>
+</script>
+
+	<section class="module-testimonials">
+
+	<div class="feed-testimonials slides slick-initialized slick-slider">
+		
+		<div aria-live="polite" class="slick-list draggable" style="padding: 0px 50px;"><div class="slick-track" role="listbox" style="opacity: 1; width: 3516px; transform: translate3d(-1172px, 0px, 0px);"><div class="slide slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Nos resultó útil, ágil, dinámico y de buena aceptación por parte de toda la comunidad educativa. Esperamos seguir contando con esta herramienta para continuar mejorando y acercando a las familias esta innovación en cuanto a la comunicación.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>La Gotita de Agua</h2>
+					<p class="position">Directora</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					La verdad que la presencia de Acadeu ha sido magnífica. Respuesta siempre amable y con suma celeridad. Aún ante imprevistos nuestros siempre han respondido muy bien.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Children´s School - Boston College</h2>
+					<p class="position">Secretario</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					El software de Acadeu nos resulta sumamente útil, a nosotros, a los chicos y a los padres. ¡Lo confirmamos año a año con sus dichos! Ante la mínima dificultad están ahí para ayudarnos.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Colegio Corazón de Jesús</h2>
+					<p class="position">Directora Estudios</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Estoy muy conforme con la plataforma de administración y la rápida respuesta ante las consultas a Soporte. Esto agiliza mucho la tarea de la Dirección en el control de evaluaciones, boletines, cierres, etc.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Instituto San José A-355</h2>
+					<p class="position">Regente</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide slick-current slick-active slick-center" data-slick-index="2" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Dentro de mi función, estoy muy conforme con la herramienta. Incluso, en mi caso me sirvió para tener acceso directo a muchas personas, familias y personal del Colegio. Me parece una herramienta integradora.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Colegio Newlands</h2>
+					<p class="position">Asistente de la Dirección</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Sinceramente, el sistema de gestión escolar me resulta excelente y cada vez que tuve algún inconveniente me lo solucionaron a la brevedad.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Children´s School - Boston College</h2>
+					<p class="position">Directora Jardín Maternal</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide04" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					A lo largo del año, Acadeu nos ha brindado un servicio de excelencia, respondiendo siempre a nuestros requerimientos en tiempos breves y permitiéndonos seguir avanzando en la acción iniciada.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>St. Martin in the Fields School</h2>
+					<p class="position">Directora Nivel Primario</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide05" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Para nosotros es muy bueno poder tener una comunicación directa con el equipo de soporte. Siempre resuelve con la mejor onda nuestros problemas y se muestra dispuesto a implementar lo que les pedimos.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Children´s School - Boston College</h2>
+					<p class="position">Vicedirectora Inicial</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide06" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Nos resultó útil, ágil, dinámico y de buena aceptación por parte de toda la comunidad educativa. Esperamos seguir contando con esta herramienta para continuar mejorando y acercando a las familias esta innovación en cuanto a la comunicación.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>La Gotita de Agua</h2>
+					<p class="position">Directora</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide07" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					La verdad que la presencia de Acadeu ha sido magnífica. Respuesta siempre amable y con suma celeridad. Aún ante imprevistos nuestros siempre han respondido muy bien.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Children´s School - Boston College</h2>
+					<p class="position">Secretario</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					El software de Acadeu nos resulta sumamente útil, a nosotros, a los chicos y a los padres. ¡Lo confirmamos año a año con sus dichos! Ante la mínima dificultad están ahí para ayudarnos.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Colegio Corazón de Jesús</h2>
+					<p class="position">Directora Estudios</p>
+				</div>
+
+			</article>
+		</div><div class="slide slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 293px;">
+			<article>
+				<p class="description">
+					<i class="icon-quotes icon-quotes-open"></i>
+					Estoy muy conforme con la plataforma de administración y la rápida respuesta ante las consultas a Soporte. Esto agiliza mucho la tarea de la Dirección en el control de evaluaciones, boletines, cierres, etc.
+					<i class="icon-quotes"></i>
+				</p>
+
+
+				<div class="data">
+					<h2>Instituto San José A-355</h2>
+					<p class="position">Regente</p>
+				</div>
+
+			</article>
+		</div></div></div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+
+</section>
+
+	
+<section class="module-benefits"><div class="container-fluid">
+
+	<div class="title">
+		<h3>¿Por qué tener un software de gestión escolar?</h3>
+		<p align="justify">Una plataforma de gestión escolar en la nube es la solución ideal para centralizar y automatizar múltiples operaciones desde un solo lugar, optimizando la administración y la comunicación institucional. Acadeu, como sistema de gestión escolar web, ofrece:</p>
+	</div>
+
+	<div class="row" id="sticky_container">
+		<div class="col-12 col-xl-6 text">
+
+			<div class="feed-benefits">
+				
+						<article class="active wow fadeInUp" data-image="/static/institucional/images/benefits/comunicacion.png" data-id="1" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-comunicacion.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Comunicación Colegio - Familia</h2>
+						<p align="justify">Generación de un canal directo con la comunidad educativa mediante notificaciones, mensajería y avisos escolares.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/comunicacion.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/gestion.png" data-id="2" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-gestion.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Gestión académica completa</h2>
+						<p align="justify">Agilidad en la gestión académica con la carga online de asistencias, calificaciones, sanciones y generación de boletines, informes evaluativos y documentos oficiales. También disponibles en versión impresa.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/gestion.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/estadisticas.png" data-id="3" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-estadisticas.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Informes y estadísticas automáticas</h2>
+						<p align="justify">Visualización inmediata de reportes y gráficos automáticos sobre el rendimiento de los alumnos y la actividad del personal docente.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/estadisticas.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/cuotas.png" data-id="4" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-cuotas.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Administración de cuotas escolares y facturación electrónica</h2>
+						<p align="justify">Liquidación automática y emisión de factura electrónica. Seguimiento más eficiente de cobranzas y deudores. Cuenta corriente por familia, con acceso de lectura programable.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/cuotas.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/colaborativo.png" data-id="5" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-colaborativo.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Funciones colaborativas</h2>
+						<p align="justify">Resolución de las tareas diarias en forma colaborativa, distribuyéndolas entre todos los integrantes de la comunidad.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/colaborativo.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/simple.png" data-id="6" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-simple.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Interfaz simple, intuitiva y adaptada a cada institución</h2>
+						<p align="justify">Trabajo organizado con un software intuitivo y fácil de aprender. Adaptable a las características de la institución.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/simple.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/seguridad.png" data-id="7" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-seguridad.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Seguridad de datos garantizada</h2>
+						<p align="justify">Información encriptada, protección y confidencialidad de datos personales y backups permanentes.</p>
+
+						
+							<div class="image">
+								<img src="/static/institucional/images/benefits/seguridad.png" alt="" class="img-fluid">
+							</div>
+						
+					</article>
+				
+						<article class="wow fadeInUp" data-image="/static/institucional/images/benefits/seguridad.png" data-id="8" style="visibility: hidden; animation-name: none;">
+						<div class="icon">
+							<img src="/static/institucional/images/icons/icon-institucional.svg" alt="" class="img-fluid">
+						</div>
+
+						<h2>Portal educativo personalizado con la imagen del colegio</h2>
+						<p align="justify">Gestión de las novedades de la web institucional de tu colegio desde el sistema de Acadeu.</p>
+
+						
+					</article>
+				
+			</div>
+
+		</div>
+		<div class="col-12 col-xl-6 img">
+			<div class="sticky" id="sticky">
+				<div class="image sticky__inner">
+					<img src="/static/institucional/images/benefits/comunicacion.png" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div></section>
+
+	<section class="module-video"><div class="container-fluid">
+
+	<div class="title wow fadeIn" style="visibility: hidden; animation-name: none;">
+		<h3>Descubrí cómo nuestro sistema de gestión escolar digitaliza tu colegio y mejora la comunicación educativa</h3>
+	</div>
+
+	<div class="player embed-responsive embed-responsive-16by9 wow fadeIn" data-video-id="z90vHfKBzww" data-video-type="youtube" style="visibility: hidden; animation-name: none;">
+		<i class="play icon-play"></i>
+	</div>
+
+</div></section>
+
+
+
+	<!-- App -->
+	<section class="app wow fadeIn" style="visibility: hidden; animation-name: none;"><div class="container">
+
+		<div class="title">
+			<h3>Tu sistema escolar en el bolsillo: Acadeu disponible para iOS y Android</h3>
+			<p>Accedé al aula virtual, controlá asistencia, gestioná cuotas y comunicáte con familias desde cualquier lugar.</p>
+		</div>
+
+		<ul class="stores list-unstyled">
+			<li><a href="https://plataforma.acadeu.com/mobile/instalacion" target="_blank">
+				<img src="/static/institucional/images/extras/icon-googleplay.png" alt="Instalar app en Android" class="img-fluid">
+			</a></li>
+			<li><a href="https://plataforma.acadeu.com/mobile/instalacion" target="_blank">
+				<img src="/static/institucional/images/extras/icon-appstore.png" alt="Instalar app en iOS" class="img-fluid">
+			</a></li>
+		</ul>
+
+		<div class="support">
+			<div class="icon">
+				<img src="/static/institucional/images/icons/icon-support.svg" alt="" class="img-fluid">
+			</div>
+
+			<p>Contá con el apoyo permantente del equipo de  soporte de Acadeu, la plataforma de gestión escolar en la nube para colegios de Argentina. Accedé al software de gestión escolar desde cualquier dispositivo sin necesidad de instalación.</p>
+
+			<a href="#" class="btn btn-primary">Pedir Demo</a>
+		</div>
+
+	</div></section>
+
+	<!-- Schema.org Organization and SoftwareApplication -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Acadeu",
+		"url": "https://acadeu.com",
+		"logo": "https://acadeu.com/static/institucional/images/logo-acadeu.png",
+		"description": "Sistema de gestión escolar digital que conecta directivos, docentes, familias y estudiantes en una plataforma ágil, segura y 100% adaptable.",
+		"sameAs": [
+			"https://www.facebook.com/acadeu",
+			"https://www.linkedin.com/company/acadeu",
+			"https://twitter.com/acadeu"
+		],
+		"offers": {
+			"@type": "Offer",
+			"itemOffered": {
+				"@type": "SoftwareApplication",
+				"name": "Acadeu",
+				"applicationCategory": "EducationalApplication",
+				"operatingSystem": "Web",
+				"description": "Sistema de administración escolar online que conecta directivos, docentes, familias y estudiantes en una plataforma ágil, segura y 100% adaptable.",
+				"offers": {
+					"@type": "Offer",
+					"priceCurrency": "ARS"
+				},
+				"applicationSuite": "Acadeu Suite",
+				"browserRequirements": "Requires JavaScript. Requires HTML5.",
+				"permissions": "Requires internet connection"
+			}
+		},
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "+54-11-1234-5678",
+			"contactType": "customer service",
+			"availableLanguage": ["Spanish"]
+		}
+	}
+	</script>
+
+</div>
+
+			
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+
+			<!-- Widgets -->
+			<section class="widgets"><div class="container-fluid">
+
+				<div class="row nav">
+					<div class="col-12 col-lg-4 order-lg-2 wow fadeIn" style="visibility: hidden; animation-name: none;">
+
+						<div class="newsletter">
+							<h4>Newsletter</h4>
+							<p>Suscribite a nuestro newsletter para recibir información.</p>
+
+							<form action="//acadeu.com/newsletter" method="post" id="newsletterForm">
+								<input type="hidden" name="csrfmiddlewaretoken" value="uTR7T5yHbsWoHEiVcd40duF3BsnWNFD2KmeFBoGiIbSX0tangoobfBhhPVDRkIwO">
+								<input type="text" class="form-control" name="email" id="newsletterEmail">
+								<button type="submit" class="btn btn-primary">
+									<i class="icon-email"></i>
+									<i class="icon-loading-black" style="display: none;"></i>
+								</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-12 col-lg-8 order-lg-1 wow fadeIn" style="visibility: hidden; animation-name: none;">
+
+						<ul class="menu list-unstyled">
+							<li><a href="//acadeu.com/caracteristicas">Características</a></li>
+							<li><a href="//acadeu.com/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+							<li><a href="//acadeu.com/ayuda">Ayuda</a></li>
+							<li><a href="//acadeu.com/blog">Blog</a></li>
+							<li><a href="//acadeu.com/prensa">Prensa</a></li>
+							<li><a href="//acadeu.com/nosotros">Nosotros</a></li>
+							<li><a href="//acadeu.com/contacto">Contacto</a></li>
+							<li class="menu-account"><a href="https://plataforma.acadeu.com">
+								<i class="icon-user"></i>
+								Ingresar
+							</a></li>
+						</ul>
+
+					</div>
+				</div>
+
+				<div class="row about">
+					<div class="col-12 col-lg-4 wow fadeIn" style="visibility: hidden; animation-name: none;">
+
+						
+<a href="//acadeu.com/" class="logo">
+	<img src="/static/institucional/images/logo_acadeu2.png" alt="Acadeu" style="width: 380px;">
+</a>
+
+
+					</div>
+					<div class="col-12 col-lg-4 madein">
+						<p>Hecho con <i class="icon-hearth"></i> en Buenos Aires</p>
+					</div>
+					<div class="col-12 col-lg-4 contactus">
+						<p>
+							<a href="tel:+541152630579">Soporte: (+54 11) 5263-0579</a><br>
+							<a href="tel:+541152633283">Comercial: (+54 11) 5263-3283</a><br>
+							<span>Horario de atención: 8 a 13 y 14 a 17hs</span>
+						</p>
+					</div>
+				</div>
+
+			</div></section>
+
+
+			<!-- Copyright -->
+			<section class="copyright"><div class="container-fluid">
+
+				<p>
+					© 2013-2024 Acadeu - 
+					<a href="//acadeu.com/terminos-y-condiciones">Términos y Condiciones y Política de Privacidad</a>
+					 - 
+					<a href="//acadeu.com/licencia-de-uso">Licencia de Uso</a>
+				</p>
+
+			</div></section>
+
+		</footer>
+	
+
+
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1850554928518682");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1850554928518682&amp;ev=PageView&amp;noscript=1"></noscript>
+</body></html>

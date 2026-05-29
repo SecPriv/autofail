@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head>
+  <title>Permutive Topics</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    function getTopics() {
+      try {
+        if (
+            "browsingTopics" in document &&
+            document.featurePolicy.allowsFeature("browsing-topics")
+        ) {
+          return document.browsingTopics();
+        } else {
+          return Promise.resolve([]);
+        }
+      } catch (error) {
+        return Promise.resolve([]);
+      }
+    }
+
+    (function () {
+      getTopics().then((topics) => {
+        return {
+          value: topics
+        };
+      }).catch(
+          (error) => {
+            return {
+              error: error
+            }
+          }
+      ).then(msg => {
+        window.parent.postMessage(msg, "*");
+      })
+    })();
+  </script>
+</head>
+<body>
+
+
+</body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>HotelsCombined | Find Deals on Travel Accommodations</title>
+    <meta name="robots" content="noindex">
+</head>
+<body>
+<noscript>
+    <iframe
+            src='//www.googletagmanager.com/ns.html?id=GTM-PSCCSHQ'
+            style='display:none;visibility:hidden'
+            height='0'
+            width='0'></iframe>
+</noscript>
+
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-1018621904&amp;l=unifiedDataLayer&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-undefined&amp;l=unifiedDataLayer&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-PWCRSK2Y5Y&amp;l=unifiedDataLayer&amp;cx=c&amp;gtm=4e65k1"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-PSCCSHQ&amp;l=unifiedDataLayer"></script><script type="text/javascript">
+    const containerIdPattern = /^GTM-[A-Z0-9]+$/;
+    function isIframe() {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
+
+    function getR9ConfigObject() {
+        if (!isIframe()) {
+            return null;
+        }
+        var parent = window.parent;
+
+        return typeof parent.R9 !== 'undefined' && parent.R9 && parent.R9.config ? parent.R9.config : null;
+    }
+
+    function getGoogleTagManagerId() {
+        var config = getR9ConfigObject();
+        var googleTagManagerId = config && config.getString('ui.gtm.id', '');
+        googleTagManagerId = googleTagManagerId || window.parent.googleTagManagerId || 'GTM-PSCCSHQ';
+
+        if (isIframe() && window.name && containerIdPattern.test(window.name)) {
+            googleTagManagerId = window.name;
+        }
+
+        return googleTagManagerId;
+    }
+
+    var gtmId = getGoogleTagManagerId();
+
+    function trimUrl(url, isGtmUrlTrimmerEnabled) {
+        if (isGtmUrlTrimmerEnabled) {
+            var firstSlashIndex = url.indexOf('/');
+            var secondSlashIndex = firstSlashIndex > -1 ? url.substring(firstSlashIndex + 1).indexOf('/') : -1;
+            if (secondSlashIndex > -1) {
+                return url.substring(0, secondSlashIndex + 1);
+            }
+        }
+        return url;
+    }
+
+    if (isIframe()) {
+        var parent = window.parent;
+        var parentDoc = parent.document;
+        var config = getR9ConfigObject();
+        var isGtmUrlTrimmerEnabled = config && config.getBoolean('ui.gtmUrlTrimmer.enabled', false);
+        isGtmUrlTrimmerEnabled = isGtmUrlTrimmerEnabled || parent.isGtmUrlTrimmerEnabled;
+
+        var title = isGtmUrlTrimmerEnabled ? '' : parentDoc.title;
+
+        Object.defineProperty(document, 'referrer', {
+            get: function() {
+                if (isGtmUrlTrimmerEnabled) {
+                    return;
+                }
+                return parentDoc.referrer;
+            }
+        });
+
+        if (window.history && window.history.replaceState) {
+            var origin = parentDoc.location.origin;
+            var pathname = trimUrl(parentDoc.location.pathname, isGtmUrlTrimmerEnabled);
+            var search = parentDoc.location.search;
+            window.history.replaceState('', title, origin + pathname + search);
+        }
+        document.title = title;
+    }
+
+</script>
+
+<script type="text/javascript">
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'unifiedDataLayer', gtmId);
+</script>
+
+
+
+</body></html>

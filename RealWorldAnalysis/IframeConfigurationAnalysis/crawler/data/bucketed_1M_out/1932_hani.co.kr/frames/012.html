@@ -1,0 +1,147 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+<style>
+body{margin:0 auto;padding:0;text-align:center;}
+</style>
+</head>
+<body marginwidth="0" marginheight="0">
+<script type="text/javascript">
+var vBx={"slot":"36741","w":"300","h":"250","desc_eng":"","siteurl":"http:\/\/www.hani.co.kr","sdk":0,"consume":0,"mobile":"mobile","host":"www.hani.co.kr","keyword":"","randomkey":"7340693964","pb":"https:\/\/ads.acrosspf.com\/opf\/zest.ad?mn=17&ml=221743422346&slot=36741&passback=https%3A%2F%2Fads.acrosspf.com%2Fpb.ad%3Fslot%3D36741%26size%3D300x250%26sdk%3D0%26consume%3D0%26device%3Dmobile%26method%3D14&host=www.hani.co.kr&m=mobile&r=7340693964&shp=0&prtcl=https%3A&adid=","shp":"0","mn":"22","ml":"221743422346","next_mn":"17","fid":"","zoneid":"20140153","method":22,"adid":""};
+var req_cb=function(){},req_svc=function(t,e,r){if("req"==r||"clk"==r||"req_ext"==r){var a="https://ads.acrosspf.com/"+r+"_svc.ad?slot="+t+"&method="+e+"&callback=req_cb&t="+Math.floor(99999999999*Math.random()),i=document.getElementsByTagName("body")[0],s=document.createElement("script");s.setAttribute("type","text/javascript"),s.setAttribute("src",a),i.appendChild(s)}},pback_call=function(){try{var t=document.getElementsByTagName("body")[0],e=document.createElement("iframe");e.setAttribute("frameBorder","0"),"38308"==vBx.slot||"34768"==vBx.slot||"34769"==vBx.slot||"34770"==vBx.slot?e.setAttribute("width","100%"):e.setAttribute("width",vBx.w),e.setAttribute("height",vBx.h),e.setAttribute("src",vBx.pb),e.setAttribute("scrolling","no"),e.setAttribute("border","0"),e.setAttribute("marginwidth","0"),e.setAttribute("marginheight","0"),e.setAttribute("allowtransparency","true"),t.appendChild(e)}catch(r){}},pDomains=function(t){var e="";if(""!=t){var r=", ",a=t.match(/([a-zA-Z]+(tp|tps)\:\/\/[a-zA-Z0-9._-]+)/gi);if(a){e="";for(var i=0;i<a.length;i++)0!=i&&(e+=r),e+=a[i]}}return e};
+</script>
+
+<script type="text/javascript">
+function isNotEmpty(_str){
+	obj = String(_str);
+	if(obj == null || obj == undefined || obj == 'null' || obj == 'undefined' || obj == '' ){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+try{
+	var pbtest='0';
+	if("shp" in vBx){
+		if(vBx.shp=='3'){
+			pbtest='1';
+		}
+	}
+
+	var loaded_flag=0;
+
+//	if ('pb' in vBx){
+//		if(location.protocol=='http:'){
+//			var ppb = vBx.pb;
+//			if(ppb.substr(0,2)=='//'){
+//				vBx.pb = 'http:'+ppb;
+//			}
+//		}
+//	}
+	if ('pb' in vBx){
+		var ppb = vBx.pb;
+		if(ppb.substr(0,2)=='//') {
+			vBx.pb = 'https:'+ppb;
+		} else if (ppb.substr(0,5)=='http:'){
+			vBx.pb = ppb.replace('http://', 'https://');
+		}
+	}
+
+	var udid = '';
+	if("adid" in vBx){
+		udid = vBx.adid;
+	}
+
+	var consume = '';
+	if("consume" in vBx){
+		consume = vBx.consume;
+	}
+
+	var adn_u = 'https://kn.acrosspf.com/deliverys.ad';
+	if( consume == '1'){
+		adn_u = 'https://kn.acrosspf.com/delivery_lives.ad';
+	}
+
+	var adn_r = Math.floor(Math.random()*99999999999);
+	var adn_pu = encodeURIComponent(vBx.pb);//패스백URL
+	var ifr = document.createElement("iframe");
+	ifr.frameBorder="0";
+	ifr.scrolling="no";
+
+	var pb100 = '0';
+	if( vBx.slot == '34768' ||  vBx.slot == '34769' ||  vBx.slot == '34770' ||  vBx.slot == '38308'){
+		ifr.width='100%';
+		pb100 = '1';
+	}else{
+		ifr.width=vBx.w;
+	}
+
+	ifr.height=vBx.h;
+
+	ifr.setAttribute("marginwidth", "0");
+	ifr.setAttribute("marginheight", "0");
+	ifr.setAttribute("vspace", "0");
+	ifr.setAttribute("hspace", "0");
+	ifr.setAttribute("allowtransparency", "true");
+
+	var  adn_u_src = '';
+	if( isNotEmpty(udid) ){
+		adn_u = 'https://kn.acrosspf.com/delivery_app_ad.ad';
+		adn_u_src = adn_u+"?pi="+vBx.zoneid+"&udid="+udid+"&pbu="+adn_pu+"&rnd="+adn_r+"&pbtest="+pbtest;
+	}else{
+		adn_u_src = adn_u+"?pi="+vBx.zoneid+"&loc="+encodeURIComponent(window.location)+"&ref=&pbu="+adn_pu+"&pbw="+vBx.w+"&pbh="+vBx.h+"&rnd="+adn_r+"&pbtest="+pbtest;
+	}
+
+	if (pb100 == '1'){
+		adn_u_src = adn_u_src +"&pb100=1";
+	}
+	ifr.setAttribute("src", adn_u_src);
+
+
+	//document.write(ifr.outerHTML);
+	var body = document.getElementsByTagName('body')[0];
+	body.appendChild(ifr);
+
+	ifr.onload = function(evt) {
+		//if (evt.target.src != '') {
+		//	loaded_flag=1;
+		//}
+		loaded_flag=1;
+	}
+
+
+//	window.setTimeout(function(){
+//		if(loaded_flag==0){
+////			ifr.setAttribute('style', 'height:0;width:0;border:0;border:none;display:none;');
+////
+////
+//////			try{
+//////				if(typeof (ifr.stop) === 'undefined'){
+//////					//Internet Explorer code
+//////					ifr.document.execCommand('Stop');
+//////				}else{
+//////					ifr.stop();
+//////				}
+//////			}catch(e){}
+////
+////			pback_call();
+//
+//			//req_svc(vBx.slot,vBx.method,'req_ext');
+//		}
+//	}, 3000);
+
+
+} catch (i) {
+	pback_call();
+}
+
+/*
+try{
+	req_svc(vBx.slot,vBx.method,'req');
+} catch (i) {}
+*/
+
+</script><iframe frameborder="0" scrolling="no" width="300" height="250" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" src="https://kn.acrosspf.com/deliverys.ad?pi=20140153&amp;loc=https%3A%2F%2Fads.acrosspf.com%2Fopf%2Fzest.ad%3Fmn%3D22%26ml%3D221743422346%26slot%3D36741%26passback%3D%26host%3Dwww.hani.co.kr%26m%3Dmobile%26k%3D%26r%3D7340693964%26shp%3D0%26prtcl%3Dhttps%253A%26adid%3D&amp;ref=&amp;pbu=https%3A%2F%2Fads.acrosspf.com%2Fopf%2Fzest.ad%3Fmn%3D17%26ml%3D221743422346%26slot%3D36741%26passback%3Dhttps%253A%252F%252Fads.acrosspf.com%252Fpb.ad%253Fslot%253D36741%2526size%253D300x250%2526sdk%253D0%2526consume%253D0%2526device%253Dmobile%2526method%253D14%26host%3Dwww.hani.co.kr%26m%3Dmobile%26r%3D7340693964%26shp%3D0%26prtcl%3Dhttps%253A%26adid%3D&amp;pbw=300&amp;pbh=250&amp;rnd=12532041393&amp;pbtest=0"></iframe>
+
+</body></html>

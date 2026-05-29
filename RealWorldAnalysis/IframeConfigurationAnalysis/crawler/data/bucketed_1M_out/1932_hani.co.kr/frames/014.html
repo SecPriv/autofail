@@ -1,0 +1,99 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+<style>
+body{margin:0 auto;padding:0;text-align:center;}
+</style>
+</head>
+<body marginwidth="0" marginheight="0">
+<script type="text/javascript">
+var vBx={"slot":"36741","w":"300","h":"250","desc_eng":"","siteurl":"http:\/\/www.hani.co.kr","sdk":0,"consume":0,"mobile":"mobile","host":"www.hani.co.kr","keyword":"","randomkey":"7340693964","pb":"https:\/\/ads.acrosspf.com\/opf\/zest.ad?mn=43&ml=221743422346&slot=36741&passback=https%3A%2F%2Fads.acrosspf.com%2Fpb.ad%3Fslot%3D36741%26size%3D300x250%26sdk%3D0%26consume%3D0%26device%3Dmobile%26method%3D14&host=www.hani.co.kr&m=mobile&r=7340693964&shp=0&prtcl=https%3A&adid=","shp":"0","mn":"17","ml":"221743422346","next_mn":"43","fid":"30710","zoneid":"807543","method":17,"adid":""};
+var req_cb=function(){},req_svc=function(t,e,r){if("req"==r||"clk"==r||"req_ext"==r){var a="https://ads.acrosspf.com/"+r+"_svc.ad?slot="+t+"&method="+e+"&callback=req_cb&t="+Math.floor(99999999999*Math.random()),i=document.getElementsByTagName("body")[0],s=document.createElement("script");s.setAttribute("type","text/javascript"),s.setAttribute("src",a),i.appendChild(s)}},pback_call=function(){try{var t=document.getElementsByTagName("body")[0],e=document.createElement("iframe");e.setAttribute("frameBorder","0"),"38308"==vBx.slot||"34768"==vBx.slot||"34769"==vBx.slot||"34770"==vBx.slot?e.setAttribute("width","100%"):e.setAttribute("width",vBx.w),e.setAttribute("height",vBx.h),e.setAttribute("src",vBx.pb),e.setAttribute("scrolling","no"),e.setAttribute("border","0"),e.setAttribute("marginwidth","0"),e.setAttribute("marginheight","0"),e.setAttribute("allowtransparency","true"),t.appendChild(e)}catch(r){}},pDomains=function(t){var e="";if(""!=t){var r=", ",a=t.match(/([a-zA-Z]+(tp|tps)\:\/\/[a-zA-Z0-9._-]+)/gi);if(a){e="";for(var i=0;i<a.length;i++)0!=i&&(e+=r),e+=a[i]}}return e};
+</script>
+
+
+<script type="text/javascript" src="https://advimg.ad-mapps.com/sdk/js/ver/3.0.0/ad_script.min.js" charset="utf-8"></script>
+<div id="banner"></div>
+<div id="banner_plus" mz-tid="sxlgclo1rfl1ndsdnz93oy"></div>
+
+<script type="text/javascript" charset="utf-8">
+
+	var pluscodes={
+		'802732':'805074',
+		'802733':'805075',
+		'802734':'805076',
+		'806956':'806955',
+		'806957':'806958',
+		'806800':'807242',
+		'806579':'807248'
+	};
+
+	function inArray(needle, haystack) {
+		var length = haystack.length;
+		for(var i = 0; i < length; i++) {
+			if(haystack[i] == needle) return true;
+		}
+		return false;
+	}
+	function adStart(section_code) {
+		var targetid = 'banner';
+		if ( !(section_code in pluscodes) ) {
+			targetid = 'banner_plus';
+		}
+
+		try{
+			mezzoAd({
+				targetId: targetid,
+				adid: '',
+				publisher: '1286',
+				media: vBx.fid,
+				section: section_code,
+				uAgeLevel: '1',
+				keyword: '',
+				closeBtn: false,
+				closeBtnLocation: 3,
+				callbacks: {
+					success: function (type, status, data) {
+						//console.log(
+						//	'[SUCCESS] type : ' + type + ' status : ' + status + ' data : ' + JSON.stringify(data)
+						//);
+					},
+					fail: function (type, status, data) {
+						//console.log(
+						//	'[FAIL] type : ' + type + ' status : ' + status + ' data : ' + JSON.stringify(data)
+						//);
+
+						if ( (section_code in pluscodes) && type == "noad" ) {
+							adStart(pluscodes[section_code]);
+						}else{
+							document.getElementById(targetid).removeAttribute("style");
+							pback_call();
+						}
+					},
+					event: function (type, status, data) {
+						//console.log(
+						//	'[EVENT] type : ' + type + ' status : ' + status + ' data : ' + JSON.stringify(data)
+						//);
+					}
+				}
+			});
+		} catch (i) {
+			document.getElementById(targetId).removeAttribute("style");
+			pback_call();
+		}
+	}
+
+	adStart(vBx.zoneid);
+
+
+</script>
+
+<script type="text/javascript">
+/*
+try{
+	req_svc(vBx.slot,vBx.method,'req');
+} catch (i) {}
+*/
+</script>
+
+<iframe frameborder="0" width="300" height="250" src="https://ads.acrosspf.com/opf/zest.ad?mn=43&amp;ml=221743422346&amp;slot=36741&amp;passback=https%3A%2F%2Fads.acrosspf.com%2Fpb.ad%3Fslot%3D36741%26size%3D300x250%26sdk%3D0%26consume%3D0%26device%3Dmobile%26method%3D14&amp;host=www.hani.co.kr&amp;m=mobile&amp;r=7340693964&amp;shp=0&amp;prtcl=https%3A&amp;adid=" scrolling="no" border="0" marginwidth="0" marginheight="0" allowtransparency="true"></iframe></body></html>

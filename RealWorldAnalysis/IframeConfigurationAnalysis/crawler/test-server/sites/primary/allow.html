@@ -1,0 +1,10 @@
+<!doctype html>
+<html><head><title>allow / permissions policy variants</title></head>
+<body>
+  <h2>allow attribute variants (Permissions Policy)</h2>
+  <iframe src="/child.html" id="allow-camera-mic" allow="camera; microphone" title="camera + mic"></iframe>
+  <iframe src="/child.html" id="allow-payment" allow="payment" title="payment"></iframe>
+  <iframe src="/child.html" id="allow-fullscreen-autoplay" allow="fullscreen; autoplay" title="fullscreen + autoplay"></iframe>
+  <iframe src="/child.html" id="allow-geo" allow="geolocation 'self' https://example.com" title="geo with allowlist"></iframe>
+  <iframe src="/child.html" id="allowfullscreen-legacy" allowfullscreen allowpaymentrequest title="legacy boolean attrs"></iframe>
+</body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html><!--
+	NOTES:
+	1. Профиль был скачан, а возможно куплен в телеграм канале @adobeAnimatecc
+	2. Если у вас есть вопросы то можете задавать из в чате канала @animateChat 
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+--><html><head><base href="https://cdn.dsp-rambler.ru/imp/642003024/">
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>Leto 3000-300</title>
+<meta name="ad.size" content="width=3000,height=300">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.dsp-rambler.ru/js/createjs/1.0.0/createjs.min.js"></script>
+<script src="index.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("C2FF4C35834A4122BCF87252FB971D31");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._100300_des();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+<style type="text/css">
+    body,html{
+        overflow: hidden;
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+		height: 1px;
+        min-height: 100%;
+        *height: 100%;
+    }
+</style>
+</head>
+<body onload="init();" style="margin: 0px; overflow: hidden; position: fixed;"><style>/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9ub3JtYWxpemUuY3NzL25vcm1hbGl6ZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsMkVBQUEsQ0FBQSxLQUFBLGdCQUFBLENBQUEsNkJBQUEsQ0FBQSxLQUFBLFFBQUEsQ0FBQSxLQUFBLGFBQUEsQ0FBQSxHQUFBLGFBQUEsQ0FBQSxjQUFBLENBQUEsR0FBQSxzQkFBQSxDQUFBLFFBQUEsQ0FBQSxnQkFBQSxDQUFBLElBQUEsK0JBQUEsQ0FBQSxhQUFBLENBQUEsRUFBQSw0QkFBQSxDQUFBLFlBQUEsa0JBQUEsQ0FBQSx5QkFBQSxDQUFBLGdDQUFBLENBQUEsU0FBQSxrQkFBQSxDQUFBLGNBQUEsK0JBQUEsQ0FBQSxhQUFBLENBQUEsTUFBQSxhQUFBLENBQUEsUUFBQSxhQUFBLENBQUEsYUFBQSxDQUFBLGlCQUFBLENBQUEsdUJBQUEsQ0FBQSxJQUFBLGNBQUEsQ0FBQSxJQUFBLFVBQUEsQ0FBQSxJQUFBLGlCQUFBLENBQUEsc0NBQUEsbUJBQUEsQ0FBQSxjQUFBLENBQUEsZ0JBQUEsQ0FBQSxRQUFBLENBQUEsYUFBQSxnQkFBQSxDQUFBLGNBQUEsbUJBQUEsQ0FBQSxnREFBQSx5QkFBQSxDQUFBLHdIQUFBLGlCQUFBLENBQUEsU0FBQSxDQUFBLDRHQUFBLDZCQUFBLENBQUEsU0FBQSwwQkFBQSxDQUFBLE9BQUEscUJBQUEsQ0FBQSxhQUFBLENBQUEsYUFBQSxDQUFBLGNBQUEsQ0FBQSxTQUFBLENBQUEsa0JBQUEsQ0FBQSxTQUFBLHVCQUFBLENBQUEsU0FBQSxhQUFBLENBQUEsNkJBQUEscUJBQUEsQ0FBQSxTQUFBLENBQUEsa0ZBQUEsV0FBQSxDQUFBLGNBQUEsNEJBQUEsQ0FBQSxtQkFBQSxDQUFBLHlDQUFBLHVCQUFBLENBQUEsNkJBQUEseUJBQUEsQ0FBQSxZQUFBLENBQUEsUUFBQSxhQUFBLENBQUEsUUFBQSxpQkFBQSxDQUFBLGtCQUFBLFlBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKiEgbm9ybWFsaXplLmNzcyB2OC4wLjEgfCBNSVQgTGljZW5zZSB8IGdpdGh1Yi5jb20vbmVjb2xhcy9ub3JtYWxpemUuY3NzICovaHRtbHtsaW5lLWhlaWdodDoxLjE1Oy13ZWJraXQtdGV4dC1zaXplLWFkanVzdDoxMDAlfWJvZHl7bWFyZ2luOjB9bWFpbntkaXNwbGF5OmJsb2NrfWgxe2ZvbnQtc2l6ZToyZW07bWFyZ2luOi42N2VtIDB9aHJ7Ym94LXNpemluZzpjb250ZW50LWJveDtoZWlnaHQ6MDtvdmVyZmxvdzp2aXNpYmxlfXByZXtmb250LWZhbWlseTptb25vc3BhY2UsbW9ub3NwYWNlO2ZvbnQtc2l6ZToxZW19YXtiYWNrZ3JvdW5kLWNvbG9yOnRyYW5zcGFyZW50fWFiYnJbdGl0bGVde2JvcmRlci1ib3R0b206bm9uZTt0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lO3RleHQtZGVjb3JhdGlvbjp1bmRlcmxpbmUgZG90dGVkfWIsc3Ryb25ne2ZvbnQtd2VpZ2h0OmJvbGRlcn1jb2RlLGtiZCxzYW1we2ZvbnQtZmFtaWx5Om1vbm9zcGFjZSxtb25vc3BhY2U7Zm9udC1zaXplOjFlbX1zbWFsbHtmb250LXNpemU6ODAlfXN1YixzdXB7Zm9udC1zaXplOjc1JTtsaW5lLWhlaWdodDowO3Bvc2l0aW9uOnJlbGF0aXZlO3ZlcnRpY2FsLWFsaWduOmJhc2VsaW5lfXN1Yntib3R0b206LS4yNWVtfXN1cHt0b3A6LS41ZW19aW1ne2JvcmRlci1zdHlsZTpub25lfWJ1dHRvbixpbnB1dCxvcHRncm91cCxzZWxlY3QsdGV4dGFyZWF7Zm9udC1mYW1pbHk6aW5oZXJpdDtmb250LXNpemU6MTAwJTtsaW5lLWhlaWdodDoxLjE1O21hcmdpbjowfWJ1dHRvbixpbnB1dHtvdmVyZmxvdzp2aXNpYmxlfWJ1dHRvbixzZWxlY3R7dGV4dC10cmFuc2Zvcm06bm9uZX1bdHlwZT1idXR0b25dLFt0eXBlPXJlc2V0XSxbdHlwZT1zdWJtaXRdLGJ1dHRvbnstd2Via2l0LWFwcGVhcmFuY2U6YnV0dG9ufVt0eXBlPWJ1dHRvbl06Oi1tb3otZm9jdXMtaW5uZXIsW3R5cGU9cmVzZXRdOjotbW96LWZvY3VzLWlubmVyLFt0eXBlPXN1Ym1pdF06Oi1tb3otZm9jdXMtaW5uZXIsYnV0dG9uOjotbW96LWZvY3VzLWlubmVye2JvcmRlci1zdHlsZTpub25lO3BhZGRpbmc6MH1bdHlwZT1idXR0b25dOi1tb3otZm9jdXNyaW5nLFt0eXBlPXJlc2V0XTotbW96LWZvY3VzcmluZyxbdHlwZT1zdWJtaXRdOi1tb3otZm9jdXNyaW5nLGJ1dHRvbjotbW96LWZvY3VzcmluZ3tvdXRsaW5lOjFweCBkb3R0ZWQgQnV0dG9uVGV4dH1maWVsZHNldHtwYWRkaW5nOi4zNWVtIC43NWVtIC42MjVlbX1sZWdlbmR7Ym94LXNpemluZzpib3JkZXItYm94O2NvbG9yOmluaGVyaXQ7ZGlzcGxheTp0YWJsZTttYXgtd2lkdGg6MTAwJTtwYWRkaW5nOjA7d2hpdGUtc3BhY2U6bm9ybWFsfXByb2dyZXNze3ZlcnRpY2FsLWFsaWduOmJhc2VsaW5lfXRleHRhcmVhe292ZXJmbG93OmF1dG99W3R5cGU9Y2hlY2tib3hdLFt0eXBlPXJhZGlvXXtib3gtc2l6aW5nOmJvcmRlci1ib3g7cGFkZGluZzowfVt0eXBlPW51bWJlcl06Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24sW3R5cGU9bnVtYmVyXTo6LXdlYmtpdC1vdXRlci1zcGluLWJ1dHRvbntoZWlnaHQ6YXV0b31bdHlwZT1zZWFyY2hdey13ZWJraXQtYXBwZWFyYW5jZTp0ZXh0ZmllbGQ7b3V0bGluZS1vZmZzZXQ6LTJweH1bdHlwZT1zZWFyY2hdOjotd2Via2l0LXNlYXJjaC1kZWNvcmF0aW9uey13ZWJraXQtYXBwZWFyYW5jZTpub25lfTo6LXdlYmtpdC1maWxlLXVwbG9hZC1idXR0b257LXdlYmtpdC1hcHBlYXJhbmNlOmJ1dHRvbjtmb250OmluaGVyaXR9ZGV0YWlsc3tkaXNwbGF5OmJsb2NrfXN1bW1hcnl7ZGlzcGxheTpsaXN0LWl0ZW19W2hpZGRlbl0sdGVtcGxhdGV7ZGlzcGxheTpub25lfSJdLCJzb3VyY2VSb290IjoiIn0= */body,html{height:100%;min-height:100%}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9BZGRpdGlvbmFsL1N0eWxlcy9jc3MvY29tbW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxVQUFBLFdBQUEsQ0FBQSxlQUFBIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSxodG1se2hlaWdodDoxMDAlO21pbi1oZWlnaHQ6MTAwJX0iXSwic291cmNlUm9vdCI6IiJ9 */</style><a href="https://mpx.rambler.ru/click?url=VbEFC5O7hhWyLBL4qwvnKgPrvteeqFBvpoN2P9THNHkTuFx5jX-dfa*srbwxoALgV2VlvuyGGe7bckhLUMFCZfjZae-TYv*Yxiq91QnqMmWpUBGq5s3pwjm-CeGQGFIzU3lglrOHcEGrOx6-v*agzRQk1iXUoKI3hn34TmklbeOJ6oTJ2kf9wUqkHrosYTcjPJKS9YEc7uqBqXhdvf2opOBdFADb49ulUMH6SupexkWeELwWP46Ge38bYw*C9c4ybtaS1BTIgfxe8lmhDLRnmr0BMDNqFWIPXpWIfilBUqItOp0*mN2ast6TnK5iHrYe8YdnWxrJ9Hb9gfz9JyMlCiXfEPLeFZIG1MUed3Ej3WVWYR45cgW9EKte3DdhSlvdT13C3DaoEIjxSS1jHKZxH68HeUlUNpnpRK46*ywpUHSsxUKB7R2d8FjCUZxDQSBlEQG7l94mKNMjX19VUGDyeno1IibyDpWsXZR1tDzFN5BLjiF8zx6MW7wKB-id58Hw2vOV6DacAj0jU9m36RVA3b2JahVaa86UA6bDr6ycnZOwGdWTqsUBT50HPwdSoKBCOiIPePgbn81AP6ieavPHgngdCN1L2BMzdCuA8hEPIrAEbqWvurqkFmbb9sFJdnehzxlMf7Qp5E6Ogp6C7hD-1CiPGl-ozk5*baTBvrJyoTL9J1pQDhf76D*n7Nlc3C4G7l5VQQNbdICqIB-F947QQfc8F-z7VmoRMewFUCplmxh5Wz6Dv3o35CRiFYhj1Gv641svdCxBas0t8tQ-hyCnRLwbPBy0-jinjZce2SXY3CaYgNQsRKnBuaL5IVTqz-NLXGkId3SlPK1V-AzLUp-hyGz9zyAtKsCdS3RcsYEoMw6luEnTAHIozrlC85NdgfOJOEF2R7vpin8DtVrUG5SoKbBUQU70Enugric7zFpSianjKKA*2bl04DLS4Hsw-nYm1PmUNe25oCqwM9l1UIy003o8Gdd63OoAc2WjPmw1ukS3cMGFmXQ8KWJM4j3qCKoR-6BwejqWyf2WRspr*D4GDIS3WtxO8DvYHn1ssINCozvII0XihPrrPdd1KbNrpXwIXgy6H*zoKWo3jGnlh3qWUcSsJs4PstHDnfq1Wf2fwxegoIAkVMfnZ*e9ofTZY2*YS8IOaD4JdO8l9Wn86f1WKCGe9UT2vo-Xgd0fSEMNoAsMFvamMDeXDeaax0OjadGCSj2XDJFW2r07Zhr-ojT5pOSpdiK2LQ4B07miZZcN-3S8zt1h6xIBbq8tpvU3OPMp7Jnajm49FqrXyyhjfaNHmoUakEYhVG9qxdufekgoAEXWldSxjn2sT8FZAO0xZDWNd3d91XuYDZNY9jD292vffB-BIfnryVE8MFDgw-QqkTZeXmOGQ*TymqAOVCJYPT5dH9Uun4F0ZmpeayMWgT2qwidOhmh*iY9RR5LQYhD-HvVQL3TuN5il0S8JiMSD0gcBeniAzkWPtWt1205fKOCTQU5Z6JyzIz5jO22q-6cCg0McNdlxKb5f7aCzqaCHn7pRUOj9RpdzN3pd3T3w4YBYwmz0EAwdbVb3gSGEynkqdwDQ9qleLKX-96Y*ua8cmEF23fM5Le4Z0ya6tp3eEeIXLcx2*1QvLNRnqRTrrdroNxEWaoHN1cJjvWrZR0rR5CCbVUnqzqLr5*Xr62yTD238mCeLfQNHedkQgTlvacKSmY*ggsPbm48ffHLefHYc1vQ8Se0vq8zwzQzS7z7k-FTKFERRdSKlMLiLBG3WCUA36vN8pGHYPA6iGalTUZOtMGhFGkmNMGczKijhXuzJuG3JezLs9PJTs3UAYwdI2wlnnwcNCi1MMyX3XfmXtU8U0XtoArJQjU0ehhEL5TjFIVNtnwdbZfAO3lCPylb09qwIaV59PcecbVDwaZ0g2CNDYMfJD9HRWffslSaOtJABDyaORx8zA9-*Bi1RyU3Ibc6EOwjmSZW1U0lA3vShb8aeFC34AgAAALrcvAoAAAAA&amp;erid=" target="_blank">
+	<div id="animation_container" style="background-color:rgba(1, 1, 1, 1.00); width:3000px; height:300px">
+		<canvas id="canvas" width="3000" height="300" style="position: absolute; display: block; background-color: rgb(1, 1, 1); width: 3000px; height: 300px;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 393px; height: 300px; position: absolute; left: 0px; top: 0px; display: block; border: 1px solid rgb(102, 102, 102); box-sizing: border-box;">
+		</div>
+	</div>
+</a>
+
+<div id="preloadjs-container" style="visibility: hidden; position: absolute; height: 10px; width: 10px; overflow: hidden; transform: translate(-10px, -10px);"></div></body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IDAM Check Cookie Iframe</title>
+    <meta name="robots" content="noindex">
+</head>
+<body>
+<script type="text/javascript">
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+/*  IDAM Auth Server - check_cookie_iframe JavaScript Code 	   		(c) 2018 | METRO IDAM	      */
+/*                                                                                                */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+function getCookies() {
+		var allCookies = document.cookie;
+		log("allCookies ->> "+ allCookies);
+		var cookies = allCookies.split(';');
+		return cookies.map(function(value) {
+			var parts = value.trim().split('=');
+			if (parts.length === 2) {
+				return {
+					name: parts[0].trim(),
+					value: parts[1].trim()
+				};
+			}
+		}).filter(function(item) {
+			return item && item.name && item.value;
+		});
+	}
+
+function checkCookieExistence(message) {
+
+    if(message == 'check_cookie') {
+
+        var cookie = getCookies().filter(function(cookie) {
+            return (cookie.name === ssoCookie);
+        });
+        log("Cookie - " + cookie[0]);
+        if(cookie[0]) {
+            return 'exists';
+        } else {
+            return 'not_exists';
+        }
+
+    } else {
+        return 'error';
+    }
+}
+
+function log(message) {
+	if(false) {
+	    console.log(message);
+	}
+	}
+
+var ssoCookie = 'metroIdentity'
+
+// Event listener: Catch message and respond to source
+// message format: 'check_cookie'
+
+if (window.parent !== window) {
+
+    window.addEventListener('message', function(e) {
+
+    log("Origin - "+ e.origin + " Message - "+ e.data);
+    var result = checkCookieExistence(e.data);
+    log("Check cookie existence result - "+ result);
+    e.source.postMessage(result, e.origin);
+
+    }, false);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+</script>
+<script type="text/javascript" nonce="" src="/GahdbW-uYByiA/GsPNcRZ/t_3xiqU/5iOLfJp9DY1L2hJiuN/T3VIcjEB/aiguMQ1/aDzMB"></script>
+</body></html>

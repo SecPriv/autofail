@@ -1,0 +1,216 @@
+<!DOCTYPE html><html><head>
+		<title>Reviews Badge</title>
+		<link rel="stylesheet" href="https://assets.reviews.io/iconfont/legacy/revsglobal-pr-mod/style.css?_t=20240411">
+		<link rel="stylesheet" href="style.css?primary=%23000000&amp;neutral=undefined&amp;textClr=undefined&amp;starsClr=%23000000&amp;version=1">
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap" rel="stylesheet" /> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+		<!--[if lte IE 8]>
+			<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+		<![endif]-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&amp;display=swap"></head>
+	<body>
+		<div class="Badge" style="opacity: 0.1; display: block;">
+			<div class="Badge__content">
+				<div class="Badge__stars"><i class="ruk-icon-full-star-01 RatingStars__star"></i> <i class="ruk-icon-full-star-01 RatingStars__star"></i> <i class="ruk-icon-full-star-01 RatingStars__star"></i> <i class="ruk-icon-full-star-01 RatingStars__star"></i> <i class="ruk-icon-percentage-star-75-01 RatingStars__star"></i> </div>
+				<div class="Badge__stats">
+					<div class="statsWrap">
+						<div class="stats__score">
+							<span class="ruk_rating">4.70</span>
+							out of 5
+						</div>
+						<br>
+						<div class="stats__count">
+							<span class="ruk_count">37,973</span>
+							Reviews
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="https://www.reviews.co.uk/company-reviews/store/mobilescouk?utm_source=mobilescouk&amp;utm_medium=widget&amp;utm_campaign=badge-modern" target="_blank" class="Badge__footer">
+				<div class="ReviewsLogo ReviewsLogo--medium">
+					<img src="https://assets.reviews.io/img/all-global-assets/logo/reviewsio-logo--inverted.svg" style="width: 100%">
+				</div>
+			</a>
+		</div>
+
+		<script>
+
+            var appendWebFont = 'true';
+            if(appendWebFont == 'true' || appendWebFont == '1' || appendWebFont === true) {
+                appendCssFile('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+            }
+
+			var content_mode = 'company'.split(';');
+
+			if (content_mode.includes('product')) {
+				var xhttp2 = new XMLHttpRequest();
+				xhttp2.onreadystatechange = function () {
+					if (xhttp2.readyState == 4 && xhttp2.status == 200) {
+						var data2 = JSON.parse(xhttp2.responseText);
+
+						var rating = Number(data2.product_review_stats.average_rating);
+						var count = Number(data2.product_review_stats.total_reviews);
+
+						if (content_mode.includes('company')) {
+							rating = (Number(data2.company_review_stats.average_rating) + Number(data2.product_review_stats.average_rating)) / 2;
+							count = Number(data2.company_review_stats.total_reviews) + Number(data2.product_review_stats.total_reviews);
+						}
+
+						if (!rating) {
+							return false;
+						}
+
+						var starsWraps = document.querySelectorAll('.starsWrap');
+						for (var i = 0; i < starsWraps.length; i++) {
+							starsWraps[i].innerHTML = renderRating(rating);
+						}
+
+						var counts = document.querySelectorAll('.ruk_count');
+						for (var i = 0; i < counts.length; i++) {
+							counts[i].innerHTML = numberWithCommas(count);
+						}
+
+						var ratings = document.querySelectorAll('.ruk_rating');
+						for (var i = 0; i < ratings.length; i++) {
+							ratings[i].innerHTML = parseFloat(rating).toFixed(2).replace('.', '.');
+						}
+
+						var badgeStars = document.querySelectorAll('.Badge__stars');
+						for (var i = 0; i < badgeStars.length; i++) {
+							badgeStars[i].innerHTML = renderRating(parseFloat(rating).toFixed(2));
+						}
+
+						fadeIn(document.getElementsByClassName('Badge')[0]);
+						resize();
+					}
+				};
+				xhttp2.open('GET', 'https://api.reviews.co.uk/stats/all?store=mobilescouk', true);
+				xhttp2.send();
+			} else {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (xhttp.readyState == 4 && xhttp.status == 200) {
+						var data = JSON.parse(xhttp.responseText);
+
+						var rating = Number(data.stats.average_rating);
+						var count = Number(data.stats.total_reviews);
+
+						if (!rating) {
+							return false;
+						}
+
+						var starsWraps = document.querySelectorAll('.starsWrap');
+						for (var i = 0; i < starsWraps.length; i++) {
+							starsWraps[i].innerHTML = renderRating(rating);
+						}
+
+						var counts = document.querySelectorAll('.ruk_count');
+						for (var i = 0; i < counts.length; i++) {
+							counts[i].innerHTML = numberWithCommas(count);
+						}
+
+						var ratings = document.querySelectorAll('.ruk_rating');
+						for (var i = 0; i < ratings.length; i++) {
+							ratings[i].innerHTML = parseFloat(rating).toFixed(2).replace('.', '.');
+						}
+
+						var badgeStars = document.querySelectorAll('.Badge__stars');
+						for (var i = 0; i < badgeStars.length; i++) {
+							badgeStars[i].innerHTML = renderRating(parseFloat(rating).toFixed(2));
+						}
+
+						fadeIn(document.getElementsByClassName('Badge')[0]);
+						resize();
+					}
+				};
+				xhttp.open('GET', 'https://api.reviews.co.uk/merchant/latest?store=mobilescouk&limit=21&tag=&branch=', true);
+				xhttp.send();
+			}
+
+			function numberWithCommas(x) {
+				if (!x) {
+					x = 0;
+				}
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+			}
+
+			function fadeIn(el, display) {
+				if ('false' == 'true') {
+					makeDark();
+				}
+				el.style.opacity = 0;
+				el.style.display = display || 'block';
+				setTimeout(function () {
+					(function fade() {
+						var val = parseFloat(el.style.opacity);
+						if (!((val += 0.1) > 1)) {
+							el.style.opacity = val;
+							requestAnimationFrame(fade);
+						}
+					})();
+				}, 100);
+			}
+
+			function renderRating(rating) {
+				// Round to nearest quater
+				rating = Math.round(rating * 4) / 4;
+
+				var html = '';
+				for (i = 1; i <= 5; i++) {
+					if (i <= rating) {
+						html += '<i class="ruk-icon-full-star-01 RatingStars__star"></i> ';
+					} else if (i - 0.25 <= rating) {
+						html += '<i class="ruk-icon-percentage-star-75-01 RatingStars__star"></i> ';
+					} else if (i - 0.5 <= rating) {
+						html += '<i class="ruk-icon-percentage-star-50-01 RatingStars__star"></i> ';
+					} else if (i - 0.75 <= rating) {
+						html += '<i class="ruk-icon-percentage-star-25-01 RatingStars__star"></i> ';
+					} else {
+						html += '<i class="ruk-icon-empty-star-01 RatingStars__star"></i> ';
+					}
+				}
+				return html;
+			}
+
+			function resize() {
+				var bodyStyle = window.getComputedStyle(document.body);
+				var height = parseInt(bodyStyle.getPropertyValue('height')) + 5;
+
+				window.parent.postMessage(
+					JSON.stringify({
+						action: 'widget-resize',
+						height: height,
+						elementId: 'badge-230'
+					}),
+					'*'
+				);
+			}
+
+			function makeDark() {
+				document.getElementsByClassName('Badge')[0].style.display = 'block';
+				var stars = document.getElementsByClassName('RatingStars__star');
+				for (var i = 0; i < stars.length; i++) {
+					stars[i].style.color = '#FFFFFF';
+				}
+
+				document.getElementsByClassName('Badge__stats')[0].style.color = '#FFFFFF';
+				document.getElementsByClassName('Badge__content')[0].style.background = '#282B30';
+				document.getElementsByClassName('Badge')[0].style.background = '#1E2124';
+			}
+
+            function appendCssFile(cssUrl){
+                var head = document.getElementsByTagName('head')[0];
+                var s = document.createElement('link');
+                s.setAttribute('rel', 'stylesheet');
+                s.setAttribute('href', cssUrl);
+                head.appendChild(s);
+            }
+
+			resize();
+
+			new ResizeObserver(resize).observe(document.body);
+		</script>
+		<style type="text/css">undefined</style>
+	<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a00455056e1f0388',t:'MTc3OTU0MjE1NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+</body></html>

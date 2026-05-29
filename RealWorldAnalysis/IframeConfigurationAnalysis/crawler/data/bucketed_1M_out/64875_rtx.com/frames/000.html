@@ -1,0 +1,572 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js js-focus-visible" lang="en" data-js-focus-visible=""><!--<![endif]--><head>
+<link href="https://prd-sc102-cdn.rtx.com/-/media/base-themes/rtx-third-party-components-themes/styles/pre-optimized-min.css?rev=ed3e10e00a6d49f59d28393551c94334&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20231122T171254Z&amp;hash=6B852A56E26F35B1CA5124FD81C63CD1" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/base-themes/rtx-gdpr/styles/pre-optimized-min.css?rev=767f7fdbc15e4d7682cfe7ba309229d6&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20220725T092858Z&amp;hash=19AEF7772C8022000ABA3C821353F04C" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/styles/pre-optimized-min.css?rev=3c1772c393cf4762aad99fde6f90a8aa&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20260305T135600Z&amp;hash=F279DEE0218740B87FBE53A2428BA66B" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/base-themes/news-template/styles/pre-optimized-min.css?rev=c118412b42c347d79216b7b8ed110de7&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20230810T104401Z&amp;hash=3C339B20D5EB8BAF94D09334953A38EA" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/base-themes/cards/styles/pre-optimized-min.css?rev=7bf762a2c61f42158900d0eee724e96a&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20250514T055017Z&amp;hash=633332E9DAC3B099CC5780C89D6524CA" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/extension-themes/rtx-colors/styles/pre-optimized-min.css?rev=c5a19cfb4ed549168c8b3332526e0955&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20251210T063003Z&amp;hash=72792C334B90686617BCEC8719AA63FD" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/base-themes/call-to-action/styles/pre-optimized-min.css?rev=84d2ff54a7924a02b3d5336be231a65b&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20220607T093801Z&amp;hash=C4EB0E35924380DA00775CA9822A0F12" rel="stylesheet"><link href="https://prd-sc102-cdn.rtx.com/-/media/base-themes/hero/styles/pre-optimized-min.css?rev=b3add3e993a74c78b8482ea6b35dd5c6&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20231025T093648Z&amp;hash=D58FD89BEBA794F9B8E7914A591EB6AA" rel="stylesheet">
+<link as="font" rel="preload" async="" href="https://prd-media-assets-cdn.rtx.com/shared/fonts/ObjektivMk2_W_Bd.woff2" crossorigin="anonymous">
+<link as="font" rel="preload" async="" href="https://prd-media-assets-cdn.rtx.com/shared/fonts/ObjektivMk2_W_It.woff2" crossorigin="anonymous">
+<link as="font" rel="preload" async="" href="https://prd-media-assets-cdn.rtx.com/shared/fonts/ObjektivMk2_W_Lt.woff2" crossorigin="anonymous">
+<link as="font" rel="preload" async="" href="https://prd-media-assets-cdn.rtx.com/shared/fonts/ObjektivMk2_W_LtIt.woff2" crossorigin="anonymous">
+<link as="font" rel="preload" async="" href="https://prd-media-assets-cdn.rtx.com/shared/fonts/ObjektivMk2_W_Rg.woff2" crossorigin="anonymous">
+<link as="style" rel="stylesheet preload" async="" href="https://prd-media-assets-cdn.rtx.com/shared/fonts/fonts.css?v=1">
+    
+<meta name="VIcurrentDateTime" content="639151390975422501">
+<meta name="VirtualFolder" content="/">
+<script src="https://script.crazyegg.com/pages/versioned/common-scripts/d892378aebb6dbc4da99df634f69dd11.js" type="text/javascript" async=""></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script src="https://connect.facebook.net/signals/config/339605427404971?v=2.9.325&amp;r=stable&amp;domain=www.rtx.com&amp;hme=af8aa31887db259becaf70277daef60bd8bc35c2df82c2acd4258de27ecac4b5&amp;ex_m=104%2C207%2C155%2C22%2C72%2C73%2C146%2C68%2C67%2C11%2C164%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C160%2C166%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C167%2C172%2C221%2C62%2C188%2C189%2C55%2C279%2C30%2C74%2C233%2C232%2C231%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C156%2C76%2C159%2C157%2C158%2C50%2C60%2C123%2C15%2C163%2C45%2C266%2C267%2C265%2C26%2C27%2C28%2C48%2C147%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C145%2C148%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C150%2C149%2C151%2C142%2C140%2C25%2C35%2C59%2C109%2C162%2C70%2C17%2C153%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C139%2C161%2C34%2C281%2C297%2C214%2C203%2C204%2C202%2C300%2C291%2C52%2C215%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C125%2C58%2C64%2C152%2C115%2C37%2C32%2C53%2C56%2C100%2C165%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C168%2C169%2C94%2C95%2C9%2C102%2C51%2C143%2C87%2C79%2C71%2C117%2C106%2C43%2C144%2C0%2C82%2C137%2C141%2C154%2C38%2C108%2C13%2C170" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://static.ads-twitter.com/uwt.js"></script><script type="text/javascript" async="" src="https://script.crazyegg.com/pages/scripts/0013/2539.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=G-SDGPBQDJ7B&amp;cx=c&amp;gtm=4e65k1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KTM8HMD"></script><script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+    
+
+
+    <title>Home | RTX</title>
+
+
+<link rel="canonical" href="https://www.rtx.com/">
+
+
+
+    <link href="/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx-balck-favicon.png?rev=3da99ab1a2a54dca92c98a2ede690339&amp;rid=e3e3f4840c2742cc9f36e2d33430c8cd" rel="shortcut icon">
+
+
+
+<meta property="og:description" content="At RTX, we're accelerating ideas to solve some of the world's biggest challenges by bringing together the brightest, most innovative minds across aviation, space and defense."><meta property="og:type" content="website"><meta property="og:site_name" content="RTX"><meta property="og:image" content="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2023/06/rtx-flag.jpg?rev=291d1ce27f084bc99a370b3b49cc8c6f&amp;rid=b07712ad28b94b93a524d8bd29ca9d8d"><meta property="og:title" content="Home"><meta property="og:url" content="https://www.rtx.com/">
+
+
+<meta name="description" content="At RTX, we're accelerating ideas to solve some of the world's biggest challenges by bringing together the brightest, most innovative minds across aviation, space and defense."><meta name="keywords" content="RTX">
+
+
+<meta property="twitter:site" content="$twitteraccount"><meta property="twitter:image" content="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2023/06/rtx-flag.jpg?rev=291d1ce27f084bc99a370b3b49cc8c6f&amp;rid=0a6935a83ac2497786771f4360b212ee"><meta property="twitter:description" content="See how we're helping the industry achieve net-zero emissions"><meta property="twitter:title" content="Sustainability in aviation"><meta property="twitter:card" content="summary_large_image">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, user-scalable=yes">
+
+
+<script>
+    (function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KTM8HMD');</script>
+
+<script src="//ipmeta.io/plugin.js"></script>
+	<script>
+		var data  = provideGtmPlugin({
+			gtmEventKey: 'ipmeta_loaded',
+			apiKey: '6e7bd9cfe0b14a63e5385b7a9ac7f4236841ae8819b0ecb9ab98d61026848baf',
+		});
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push(data);
+	</script>
+
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.rtx.com",
+      "logo": "https://prd-sc102-cdn.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx_logo.svg?rev=57e660dbd2ee4ef6895a84799210c5bf&rid=a5829bdc17c74537842441a8a1b055f2&w=354&hash=8D05565DA9D752EAC71DCCB8C57E972A",
+      "name": "RTX",
+      "description": "Aerospace and Defense Solutions",
+      "telephone": "(781) 522-3000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1000 Wilson Blvd.",
+        "addressLocality": "Arlington",
+        "addressCountry": "VA",
+        "addressRegion": "USA",
+        "postalCode": "22209"
+      }
+    }
+</script>
+
+<!-- Temp Style Override -->
+<style>
+.esds-mega-nav__dropdown-level2 li a {
+    white-space: normal;
+}
+
+.esds-mega-nav__dropdown-level3 li a {
+    white-space: normal;
+}
+</style>
+<style type="text/css">@keyframes resizeanim {from { opacity: 0; } to { opacity: 0; }} .ResizeSensor__resizeTriggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .ResizeSensor__resizeTriggers, .ResizeSensor__resizeTriggers > div, .ResizeSensor__contractTrigger:before { content: ' '; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .ResizeSensor__resizeTriggers > div { background: #eee; overflow: auto; } .ResizeSensor__contractTrigger:before { width: 200%; height: 200%; }</style><style type="text/css">undefined</style></head>
+<body class="default-device bodyclass" dir="ltr" data-mobile-navigation-level="0" data-mobile-navigation-open="false" data-navigation-is-compact="false" style="" data-bu-bar-ready="true" data-search-open="false">
+    
+
+
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTM8HMD"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+    <div id="wrapper">
+    <!--googleoff: index-->
+    <header>
+        <div id="header">
+            
+
+
+<button class="esds-mega-nav__skip-link" tabindex="2">Skip to main content</button><section class="esds-bu-bar"><div><input type="checkbox" id="esds-bu-bar__toggle" class="esds-bu-bar__toggle">
+            <label for="esds-bu-bar__toggle" class="esds-bu-bar__label"><svg class="esds-bu-bar__label-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 10 10">
+                    <path d="M4.583 4.583H0v.834h4.583V10h.834V5.417H10v-.834H5.417V0h-.834z"></path>
+                </svg>
+            </label>
+            <div class="esds-bu-bar__list">
+                <div>
+                    <h3>RTX Businesses</h3>
+                    <ul><li>
+                            <a tabindex="3" arialabel="" target="_self" rel="" title="RTX" href="/" class="active">RTX</a>
+                        </li><li>
+                            <a tabindex="3" arialabel="" target="_self" rel="" title="Collins Aerospace" href="https://www.rtx.com/collinsaerospace">Collins Aerospace</a>
+                        </li><li>
+                            <a tabindex="3" arialabel="" target="_self" rel="" title="Pratt &amp; Whitney" href="https://www.rtx.com/prattwhitney">Pratt &amp; Whitney</a>
+                        </li><li>
+                            <a tabindex="3" arialabel="" target="_self" rel="" title="Raytheon" href="https://www.rtx.com/raytheon">Raytheon</a>
+                        </li></ul>
+                </div>
+            </div><div class="simple-stock-quote esds-bu-bar__quote">
+                <div data-stock-quote-url="https://stockfeed.rtxapps.com/api/getbysymbol/rtx?_=1622730584390" data-stock-quote-symbol="RTX" class="initialized">
+                    <a tabindex="3" class="esds-bu-bar__quote-link" target="_self" rel="" title="" arialabel="" href="https://investors.rtx.com/stock-information/">
+                        <span>RTX</span>
+                        <span data-stock-numbers="" class="price">177.01</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="ie-bannar">
+        <i class="fa fa-warning"></i>Internet Explorer is no longer supported by Microsoft. For best results, we recommend you select an alternate browser.</div><div class="esds-mega-nav">
+        <section class="wrapper wrapper--12-col esds-mega-nav__content">
+            <div>
+                <div class="row esds-mega-nav__tier1">
+                    <div class="esds-mega-nav__logo">
+                        <a tabindex="1" href="/" target="_self" title="RTX"><img src="https://prd-sc102-cdn.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx_logo.svg?rev=57e660dbd2ee4ef6895a84799210c5bf&amp;rid=a5829bdc17c74537842441a8a1b055f2" alt="RTX logo" sizes="(max-width: 768px) 354px, (max-width: 1024px) 964px, 1600px" srcset="https://prd-sc102-cdn.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx_logo.svg?rev=57e660dbd2ee4ef6895a84799210c5bf&amp;rid=a5829bdc17c74537842441a8a1b055f2&amp;w=354&amp;hash=8D05565DA9D752EAC71DCCB8C57E972A 354w" loading="lazy"></a>
+                    </div></div>
+                <div class="row esds-mega-nav__tier2">
+                    <a aria-label="Open navigation menu" aria-expanded="false" tabindex="4" href="#" class="esds-mega-nav__hamburger"> <span class="sr-only" aria-hidden="true">Menu</span> <i></i> <i></i> <i></i> </a>
+                    <nav class="esds-mega-nav__link-bar">
+                        <div aria-label="breadcrumb" class="esds-mega-nav__breadcrumb"> 
+                            <button tabindex="4" class="arrow--back" aria-label="Navigate back one level"></button>
+                            <ul> </ul>
+                        </div>        <div class="esds-mega-nav__main">
+
+
+<ul role="menubar" class="esds-mega-nav__dropdown-level1">
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a item-id="{D0ED202F-6292-419D-B42C-FB8ACC502958}" tabindex="4" href="">Who We Are</a>
+                            <div class="esds-mega-nav__dropdown-item">
+                                <span class="esds-mega-nav__dropdown-title">Who We Are</span>
+
+            <div class="esds-mega-nav__dropdown-image">
+                <picture>
+                    <img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/our-company/megamenu/images/rtx_nav_gentleman-clocks-in-background.jpg?h=528&amp;iar=0&amp;w=738&amp;rev=f7eb8afe36124d709fdc9eae86be3ec7&amp;rid=924de1f06ab2408eada49410a8e22767&amp;hash=464E8A93235DBED4448A5782EB21FE14" alt="Person sitting on desk" width="738" height="528">
+                </picture>
+            </div>
+
+<ul role="menu" class="esds-mega-nav__dropdown-level2">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{8DB6237B-3689-4CB3-8DF2-CF23972E4EA3}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/overview" href="/who-we-are/we-are-rtx/overview">Overview</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{F259137F-7342-4D19-A319-265DAA69DE5D}" class="" rel="" target="" data-path="/who-we-are/our-leadership" href="/who-we-are/our-leadership">Our Leadership</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{DEF462FA-F114-43B8-8B81-9E4F44047169}" class="" rel="" target="" data-path="/who-we-are/our-values" href="/who-we-are/our-values">Our Values</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a tabindex="4" item-id="{501B2641-1267-4648-94A4-20EECC38E286}" class="" rel="" target="" data-path="/who-we-are/our-businesses" href="/who-we-are/our-businesses">Our Businesses</a>
+                            <button tabindex="4" class="arrow" aria-label="Open submenu"></button>
+
+
+<ul role="menu" class="esds-mega-nav__dropdown-level3">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{543687B4-9970-444E-8E5E-D1D649B9AA76}" class="" rel="" target="" data-path="https://www.rtx.com/collinsaerospace" href="https://www.rtx.com/collinsaerospace">Collins Aerospace</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{C1B1D015-2C04-49D2-A3FA-BC6A753B9616}" class="" rel="" target="" data-path="https://www.rtx.com/prattwhitney" href="https://www.rtx.com/prattwhitney">Pratt &amp; Whitney</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{8190BD4B-4087-4C5B-9121-D477AB2CD547}" class="" rel="" target="" data-path="https://www.rtx.com/raytheon" href="https://www.rtx.com/raytheon">Raytheon</a>
+
+                </li>
+
+</ul>
+                </li>
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a tabindex="4" item-id="{66092627-3C95-4A7F-91AE-8DFEBE114BBD}" class="" rel="" target="" data-path="/who-we-are/corporate-governance" href="/who-we-are/corporate-governance">Corporate Governance</a>
+                            <button tabindex="4" class="arrow" aria-label="Open submenu"></button>
+
+
+<ul role="menu" class="esds-mega-nav__dropdown-level3">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{46FFA14A-3623-4AE8-9CD9-E260A8DF47A8}" class="" rel="" target="" data-path="/who-we-are/corporate-governance" href="/who-we-are/corporate-governance">Corporate Governance</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{BF88D2CA-6377-421B-8B9E-CA28F57FC435}" class="" rel="" target="" data-path="/who-we-are/contract-vehicles" href="/who-we-are/contract-vehicles">Contract Vehicles</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{939185E8-E0B0-4FF5-A549-8C253250DE58}" class="" rel="" target="" data-path="/who-we-are/ethics-and-compliance" href="/who-we-are/ethics-and-compliance">Ethics and Compliance</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{166D82AD-52F4-428A-B0AA-98FF2A80705E}" class="" rel="" target="" data-path="/who-we-are/corporate-governance/public-activities" href="/who-we-are/corporate-governance/public-activities">Public Activities</a>
+
+                </li>
+
+</ul>
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{7D1D982A-BB12-435D-AAFF-ECE8F3DE94F3}" class="" rel="" target="|Custom" data-path="/locations" href="/locations">Corporate and Business Headquarters</a>
+
+                </li>
+
+</ul>
+                            </div>
+
+                </li>
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a item-id="{09B11A15-DB94-40CD-96C0-15361B008524}" tabindex="4" href="">What We Do</a>
+                            <div class="esds-mega-nav__dropdown-item">
+                                <span class="esds-mega-nav__dropdown-title">What We Do</span>
+
+            <div class="esds-mega-nav__dropdown-image">
+                <picture>
+                    <img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/our-company/megamenu/images/plane-takes-off-from-ship-440x530.jpg?h=530&amp;iar=0&amp;w=440&amp;rev=634ead7c217b4083aab49830aac7d2db&amp;rid=924de1f06ab2408eada49410a8e22767&amp;hash=4394F5D5917E0C87B6A1309E6666AE6C" alt="airplace takes off from ship" width="440" height="530">
+                </picture>
+            </div>
+
+<ul role="menu" class="esds-mega-nav__dropdown-level2">
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a tabindex="4" item-id="{1A482993-66E4-49C9-A0A7-7A6F08DEEE20}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/transformative-technologies" href="/who-we-are/we-are-rtx/transformative-technologies">Transformative Technologies</a>
+                            <button tabindex="4" class="arrow" aria-label="Open submenu"></button>
+
+
+<ul role="menu" class="esds-mega-nav__dropdown-level3">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{D7F8FCDA-5CC9-4F63-B7EF-2799E7BDC97A}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/transformative-technologies" href="/who-we-are/we-are-rtx/transformative-technologies">Transformative Technologies</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{DB21FA14-9B98-4488-899A-C0BBE7C95038}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/transformative-technologies/turning-scale-into-speed" href="/who-we-are/we-are-rtx/transformative-technologies/turning-scale-into-speed">Turning scale into speed</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{4398CF9C-3D16-4AE7-9308-8FF55B15AF42}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/transformative-technologies/era-defining-innovation" href="/who-we-are/we-are-rtx/transformative-technologies/era-defining-innovation">Era-Defining Innovation</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{D49E7755-C575-4119-9FBF-3500838505EB}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/transformative-technologies/bbn" href="/who-we-are/we-are-rtx/transformative-technologies/bbn">RTX BBN Technologies</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{C4987CDB-1064-47EA-B50C-85088FEAC74F}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/transformative-technologies/rtrc" href="/who-we-are/we-are-rtx/transformative-technologies/rtrc">RTX Technology Research Center</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{E160EC7C-27A3-4108-B226-7869E1E02775}" class="" rel="" target="" data-path="/who-we-are/ventures" href="/who-we-are/ventures">RTX Ventures</a>
+
+                </li>
+
+</ul>
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{A46BCEFD-F311-4F82-9F43-423640A5CF31}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/flight" href="/who-we-are/we-are-rtx/flight">Future of Flight</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a tabindex="4" item-id="{B6F9D440-A135-46A9-B5D9-8F7B69E93E93}" class="" rel="" target="" data-path="/who-we-are/we-are-rtx/defense" href="/who-we-are/we-are-rtx/defense">Smarter Defense Systems</a>
+                            <button tabindex="4" class="arrow" aria-label="Open submenu"></button>
+
+
+<ul role="menu" class="esds-mega-nav__dropdown-level3">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{AFF665C8-8F63-4CA2-BD53-4CB0B24BDE3A}" class="" rel="" target="" data-path="https://www.rtx.com/prattwhitney/products/military-engines/f135/engine-core-upgrade" href="https://www.rtx.com/prattwhitney/products/military-engines/f135/engine-core-upgrade">F135 Engine Core Upgrade</a>
+
+                </li>
+
+</ul>
+                </li>
+
+</ul>
+                            </div>
+
+                </li>
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a item-id="{592813F9-1D6F-4D50-9EA9-D18075658DAF}" tabindex="4" href="">News</a>
+                            <div class="esds-mega-nav__dropdown-item">
+                                <span class="esds-mega-nav__dropdown-title">News</span>
+
+            <div class="esds-mega-nav__dropdown-image">
+                <picture>
+                    <img src="https://prd-sc102-cdn.rtx.com/-/media/ca/megamenu/news-megamenu.jpg?h=530&amp;iar=0&amp;w=500&amp;rev=1d88d28ce4394e0e924b8dcd187334a6&amp;rid=924de1f06ab2408eada49410a8e22767&amp;hash=72EEA838682A369FC3B758ADA2F152C9" alt="Office woman reading" width="500" height="530">
+                </picture>
+            </div>
+
+<ul role="menu" class="esds-mega-nav__dropdown-level2">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{AC418848-D150-4930-B14A-A6B52CEC501C}" class="" rel="" target="" data-path="/news" href="/news">Newsroom</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{8990AFA0-CB90-4D79-B478-C866BEA354F9}" class="" rel="" target="|Custom" data-path="/news/media-resources" href="/news/media-resources">Media Resources</a>
+
+                </li>
+
+</ul>
+                            </div>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{F420F60C-5677-45E0-88BB-99B870BBB45E}" class="" rel="noopener noreferrer" target="_blank" data-path="https://careers.rtx.com/global/en" href="https://careers.rtx.com/global/en">Careers</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="true" aria-expanded="false">
+
+                            <a item-id="{B4534880-50D6-4426-A46A-0A4B0348487F}" tabindex="4" href="">Our Responsibility</a>
+                            <div class="esds-mega-nav__dropdown-item">
+                                <span class="esds-mega-nav__dropdown-title">Our Responsibility</span>
+
+            <div class="esds-mega-nav__dropdown-image">
+                <picture>
+                    <img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/o/rtx-our-responsibility-menu-image.jpg?h=530&amp;iar=0&amp;w=440&amp;rev=3e586ce1c44b43b88ca1b2d7401e0d70&amp;rid=924de1f06ab2408eada49410a8e22767&amp;hash=869A9D58B2E9608B1E9BC192737F4EB9" alt="Two girls participating in a STEM event" width="440" height="530">
+                </picture>
+            </div>
+
+<ul role="menu" class="esds-mega-nav__dropdown-level2">
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{7FC3A423-9ACC-4D76-960B-AEFF453C98E7}" class="" rel="" target="" data-path="/our-responsibility/overview" href="/our-responsibility/overview">Overview</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{634CA166-E2CD-4DCC-AB50-1DADA624B299}" class="" rel="" target="" data-path="/our-responsibility/safety-and-quality" href="/our-responsibility/safety-and-quality">Safety and quality</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{36205888-80B3-42C0-B2FB-D2A5C13199A0}" class="" rel="" target="" data-path="/our-responsibility/data-security-and-privacy" href="/our-responsibility/data-security-and-privacy">Data security and privacy</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{C7E1286F-1591-45DC-B6A2-D68FD1C4A9B0}" class="" rel="" target="" data-path="/our-responsibility/environment-health-safety" href="/our-responsibility/environment-health-safety">Environment, Health and Safety (EH&amp;S)</a>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{9D12893F-1102-4388-BC5C-EAA79759E24A}" class="" rel="" target="" data-path="/our-responsibility/corporate-citizenship" href="/our-responsibility/corporate-citizenship">Corporate Citizenship</a>
+
+                </li>
+
+</ul>
+                            </div>
+
+                </li>
+                <li role="menuitem" aria-haspopup="false" aria-expanded="false">
+
+                                <a tabindex="4" item-id="{DE387CEB-CDF9-4AA7-B4D8-D6B813B52AFA}" class="" rel="noopener noreferrer" target="_blank" data-path="https://investors.rtx.com/#Investors" href="https://investors.rtx.com/#Investors">Investors</a>
+
+                </li>
+
+</ul>
+        </div>
+<div class="esds-mega-nav__secondary">
+                            <ul role="menubar"><li role="menuitem" aria-haspopup="false" aria-expanded="false"><a href="/suppliers" aria-label="Suppliers" tabindex="4" title="Suppliers" data-path="/suppliers" target="_self">Suppliers</a></li><li role="menuitem" aria-haspopup="false" aria-expanded="false"><a href="/contacts" aria-label="Contacts" tabindex="4" title="Contacts" data-path="/contacts" target="_self">Contacts</a></li></ul>
+                        </div></nav>
+                    <div class="esds-mega-nav__search-bar"><form role="search" class="esds-mega-nav__search-bar-form" data-redirect-url="/search-results">
+                            <input tabindex="6" class="esds-mega-nav__search-bar-form-input" type="text" placeholder="What can we help you find?" id="searchBar" autocomplete="off" aria-label="Input search request">
+                            <button tabindex="5" class="esds-mega-nav__search-bar-form-submit" type="submit" aria-label="Submit search request"></button>
+                            <button tabindex="6" class="esds-mega-nav__search-bar-form-reset" type="button" aria-label="Reset search request"></button>
+                        </form><script type="text/javascript">
+                            var siteURL = {
+                                domain: "/",
+                                host: window.location.hostname,
+                                itemID: "{1FD682CB-FC9F-4C6F-8AD7-DFF4292FD674}",
+                                siteName: ""
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+<section class=" wrapper esds-hero image16-9 textLocation-left textLocation-bottom textStyle-light esds-hero--home">
+<div><div class="esds-hero__image"><picture><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/rtx-faa_gradient1.jpg?rev=80433d6a8fd94ac281b7da2b14cfd4f4&amp;rid=e967f4c04ec241e18cd5f53c9954fc25" alt="Controllers interact with advanced airspace surveillance and automation displays at a Collins Aerospace facility" sizes=" (max-width: 768px) 670px, (max-width: 1024px) 1024px, 1600px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/rtx-faa_gradient1.jpg?rev=80433d6a8fd94ac281b7da2b14cfd4f4&amp;rid=e967f4c04ec241e18cd5f53c9954fc25&amp;w=670&amp;hash=7AE725E7CEB9CAED1DD61DB483F312DE 670w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/rtx-faa_gradient1.jpg?rev=80433d6a8fd94ac281b7da2b14cfd4f4&amp;rid=e967f4c04ec241e18cd5f53c9954fc25&amp;w=1024&amp;hash=7B7F7ACEAC6FC20941F32E88D45D1F1F 1024w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/rtx-faa_gradient1.jpg?rev=80433d6a8fd94ac281b7da2b14cfd4f4&amp;rid=e967f4c04ec241e18cd5f53c9954fc25&amp;w=1600&amp;hash=AFC2AC92A0034FD32F0724F818E1820F 1600w" width="1600" height="900"></picture></div><div class="esds-hero__text-wrapper">
+                  <div class="esds-hero__text"><a aria-label="" title="" target="_self" href="/news/2026/05/14/a-modern-airspace-needs-the-right-radars-rtx-is-ramping-up-their-production" rel=""><h1 class="esds-hero__title">A modern airspace needs the right radars</h1><h2 class="esds-hero__subtitle">RTX is ramping up their production</h2></a></div>
+               </div></div>
+</section>
+        </div>
+    </header>
+    <!--googleon: index-->
+    <main>
+        <div id="content">
+            
+
+<section class="wrapper esds-cards  wrapper--12-col wrapper--full-width margin-top--small margin-bottom--none padding-top--small padding-bottom--standard esds-cards--gray gutter--minimal esds-cards--16x9 equal-grid--3-items background--standard">
+<div><div class="row esds-cards__content equal-grid"><article class="equal-grid__item"><a aria-label="" id="image-size-fix" target="_self" href="/news/2026/05/18/a-commitment-to-lifesaving-performance"><div class="esds-cards__image  "><div aria-label=""><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/memcap_sizzle_still_1600x900.jpg?rev=5a60bd05b3904e14ab9a3874a6360c0a&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="ACES ejection seat close up" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 488px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/memcap_sizzle_still_1600x900.jpg?rev=5a60bd05b3904e14ab9a3874a6360c0a&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=E38F657AEA6DBCC8CFB890ED63B11D75 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/memcap_sizzle_still_1600x900.jpg?rev=5a60bd05b3904e14ab9a3874a6360c0a&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=2FA13E51F385C375475C1FFC349915C3 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/05/memcap_sizzle_still_1600x900.jpg?rev=5a60bd05b3904e14ab9a3874a6360c0a&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=488&amp;hash=0D186FF9C7D5E98F5CB1153A4650073B 488w" loading="lazy" width="1600" height="900"></div></div><div class="esds-cards__text"><h3 class="esds-cards__title"><div aria-label="A commitment to lifesaving performance">A commitment to lifesaving performance</div></h3></div></a></article><article class="equal-grid__item"><a aria-label="" id="image-size-fix" target="_self" href="/news/2026/04/06/composable-weapons-jumpstart-on-production"><div class="esds-cards__image  "><div aria-label=""><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/03/advanced-tech-sizzle-v1-frame1-1920x1080.jpg?rev=3a2f49bd6e6a4efbab27e81b23147508&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="VR munitions" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 488px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/03/advanced-tech-sizzle-v1-frame1-1920x1080.jpg?rev=3a2f49bd6e6a4efbab27e81b23147508&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=DA86028CF63146A7478949BB4E009C21 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/03/advanced-tech-sizzle-v1-frame1-1920x1080.jpg?rev=3a2f49bd6e6a4efbab27e81b23147508&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=8E8B93F94D8B4304AAE063AA43051245 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/03/advanced-tech-sizzle-v1-frame1-1920x1080.jpg?rev=3a2f49bd6e6a4efbab27e81b23147508&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=488&amp;hash=84A774DE5117346DB9CD33CD7C26579C 488w" loading="lazy" width="1920" height="1080"></div></div><div class="esds-cards__text"><h3 class="esds-cards__title"><div aria-label="Composable weapons: A jump-start on production">Composable weapons: A jump-start on production</div></h3></div></a></article><article class="equal-grid__item"><a aria-label="" id="image-size-fix" target="_self" href="/news/news-center/2026/05/08/rtxs-pratt-whitney-completes-fully-digital-assembly-readiness-review-for-ngap"><div class="esds-cards__image  "><div aria-label=""><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/campaigns/paris-air-show-2025/press/xa103_1920x1080.jpg?rev=007f6a8d7d8249dc9a48bebadc592796&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="Pratt &amp; Whitney is procuring hardware for the construction of its XA103 prototype ground demonstrator, which is expected to test in the late 2020s." sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 488px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/campaigns/paris-air-show-2025/press/xa103_1920x1080.jpg?rev=007f6a8d7d8249dc9a48bebadc592796&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=8037A3793E2321177605D6304104FBC8 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/campaigns/paris-air-show-2025/press/xa103_1920x1080.jpg?rev=007f6a8d7d8249dc9a48bebadc592796&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=C0F0DF59AB2BFB44E94BDCB0A473776E 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/campaigns/paris-air-show-2025/press/xa103_1920x1080.jpg?rev=007f6a8d7d8249dc9a48bebadc592796&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=488&amp;hash=C5DBFBE71FDB8CFBE74287196B844C84 488w" loading="lazy" width="1920" height="1080"></div></div><div class="esds-cards__text"><h3 class="esds-cards__title"><div aria-label="RTX's Pratt &amp; Whitney completes fully digital assembly readiness review for NGAP engine">RTX's Pratt &amp; Whitney completes fully digital assembly readiness review for NGAP engine</div></h3></div></a></article></div>
+    </div>
+</section>
+
+<section class="wrapper esds-cards wrapper--10-col margin-top--small margin-bottom--none padding-top--standard padding-bottom--small esds-cards--overlay gutter--none equal-grid--2-items background--gray">
+<div><div class="row component__introduction"><h2 class="component__headline">Progress is developed. It is produced. It defines the future, and it defines us.</h2></div><div class="row esds-cards__content equal-grid"><article class="equal-grid__item"><div class="esds-cards__image  "><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/06/patriot_sizzle_still_1080x1080.jpg?rev=bfcaf9e132824f998f6e42e02a57a8ab&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="Patriot system deployed" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 788px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/06/patriot_sizzle_still_1080x1080.jpg?rev=bfcaf9e132824f998f6e42e02a57a8ab&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=D2780875B9CECE35EE9AD7F55918DBA9 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/06/patriot_sizzle_still_1080x1080.jpg?rev=bfcaf9e132824f998f6e42e02a57a8ab&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=2634B1FA23156D47C6BD82810F25D097 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/06/patriot_sizzle_still_1080x1080.jpg?rev=bfcaf9e132824f998f6e42e02a57a8ab&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=788&amp;hash=513139D38222A94409984C8196F50884 788w" loading="lazy" width="1080" height="1080"></div><div class="esds-cards__text"><a href="/news/2025/05/29/patriot-proven-in-battle-and-still-setting-standards" class="esds-cards__cta" aria-label="Patriot Missile Defense System" target="_self">
+                            <span>Patriot Missile Defense System</span>
+                        </a></div></article><article class="equal-grid__item"><div class="esds-cards__image  "><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/home/2023-06/smarter-defense-homepage.jpg?rev=567d3fd823844a679d3b1b820105c300&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="F35" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 788px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/home/2023-06/smarter-defense-homepage.jpg?rev=567d3fd823844a679d3b1b820105c300&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=561447F80CBA73A55C231FBC20112E78 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/home/2023-06/smarter-defense-homepage.jpg?rev=567d3fd823844a679d3b1b820105c300&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=D96E8FD6998506FC8286AAF60553CEB6 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/home/2023-06/smarter-defense-homepage.jpg?rev=567d3fd823844a679d3b1b820105c300&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=788&amp;hash=F8E24DF77C1B0EADF8155CC789C12DC4 788w" loading="lazy" width="1568" height="1568"></div><div class="esds-cards__text"><a href="/who-we-are/we-are-rtx/defense" class="esds-cards__cta" aria-label="Smarter defense systems" target="_self">
+                            <span>Smarter defense systems</span>
+                        </a></div></article></div>
+    </div>
+</section>
+
+<section class="wrapper wrapper--10-col margin-top--none margin-bottom--standard padding-top--none padding-bottom--standard esds-cta esds-cta--highlight equal-grid--1-items background--gray align--center">
+<div>
+      <div class="row component__introduction"></div>
+      <div class="row equal-grid"><article class="equal-grid__item esds-cta__wrapper">  
+                      <a class="" href="/who-we-are/we-are-rtx" aria-label="Who we are" rel="" target="_self">
+                          <span class="esds-cta__item icon--link">We are RTX</span>
+                      </a>
+                 </article></div>
+  </div>
+</section>
+
+<section class="wrapper esds-cards wrapper--10-col margin-top--standard margin-bottom--standard padding-top--standard padding-bottom--standard esds-cards--dark gutter--standard esds-cards--16x9 equal-grid--3-items background--standard">
+<div><div class="row component__introduction"><h2 class="component__headline">Tech and talent to transform the world</h2></div><div class="row esds-cards__content equal-grid"><article class="equal-grid__item"><a aria-label="" id="image-size-fix" target="_self" href="/news/2026/02/19/engineers-week-2026"><div class="esds-cards__image  "><div aria-label=""><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/02/engineers-sizzle_frame1_1920x1080.jpg?rev=eb13aa37d5bc4eb1a242751ad3bb3aee&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="Engineers at site looking at a display" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 488px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/02/engineers-sizzle_frame1_1920x1080.jpg?rev=eb13aa37d5bc4eb1a242751ad3bb3aee&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=BD893C1BB0698775DE153096185197DE 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/02/engineers-sizzle_frame1_1920x1080.jpg?rev=eb13aa37d5bc4eb1a242751ad3bb3aee&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=A40E4F3A4FB7D8F57473B36DBC2068AA 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/02/engineers-sizzle_frame1_1920x1080.jpg?rev=eb13aa37d5bc4eb1a242751ad3bb3aee&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=488&amp;hash=116EF4B700FE2C68BBFEAE983163ED4F 488w" loading="lazy" width="1920" height="1080"></div></div><div class="esds-cards__text"><h3 class="esds-cards__title"><div aria-label="Fast track: Engineering with speed">Fast track: Engineering with speed</div></h3></div></a></article><article class="equal-grid__item"><a aria-label="" id="image-size-fix" target="_self" href="/news/news-center/2026/04/29/rtx-recognized-as-global-leader-in-patents-and-innovation"><div class="esds-cards__image  "><div aria-label=""><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/04/rtx_worldipday.jpg?rev=9b97081fc0834e14ada6def4d099aa42&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="Two employees at station" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 488px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/04/rtx_worldipday.jpg?rev=9b97081fc0834e14ada6def4d099aa42&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=B892084C392457DD6A5F21186CBAB3D9 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/04/rtx_worldipday.jpg?rev=9b97081fc0834e14ada6def4d099aa42&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=72F376AF4335339242C1A09F1A0271BE 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2026/04/rtx_worldipday.jpg?rev=9b97081fc0834e14ada6def4d099aa42&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=488&amp;hash=78A17C86605ACB046AA057024374B0A9 488w" loading="lazy" width="1600" height="900"></div></div><div class="esds-cards__text"><h3 class="esds-cards__title"><div aria-label="RTX recognized as global leader in patents and innovation">RTX recognized as global leader in patents and innovation</div></h3></div></a></article><article class="equal-grid__item"><a aria-label="" id="image-size-fix" target="_self" href="/news/2026/02/04/munitions-agreements"><div class="esds-cards__image  "><div aria-label=""><img src="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/10/discover-animation_still_lead_1920x1080.jpg?rev=df95ea8a34324541abd1c40e00ee3797&amp;rid=fb94abda39a84718ad84a450293fe7b7" alt="Digital branch paths visual" sizes="(max-width: 768px) 354px, (max-width: 1024px) 392px, 488px" srcset="https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/10/discover-animation_still_lead_1920x1080.jpg?rev=df95ea8a34324541abd1c40e00ee3797&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=354&amp;hash=EE42A498C5AA4C094CF834C74786CC67 354w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/10/discover-animation_still_lead_1920x1080.jpg?rev=df95ea8a34324541abd1c40e00ee3797&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=392&amp;hash=5B135A6111413FD0E0EA45196FB8BD75 392w,https://prd-sc102-cdn.rtx.com/-/media/rtx/news-images/2025/10/discover-animation_still_lead_1920x1080.jpg?rev=df95ea8a34324541abd1c40e00ee3797&amp;rid=fb94abda39a84718ad84a450293fe7b7&amp;w=488&amp;hash=2E463FC04FFCF26B83A257F07D3715FD 488w" loading="lazy" width="1920" height="1080"></div></div><div class="esds-cards__text"><h3 class="esds-cards__title"><div aria-label="There are billions of ways to build an engine. Here’s how they found the best one.">There are billions of ways to build an engine. Here’s how they found the best one.</div></h3></div></a></article></div>
+    </div>
+</section>
+        </div>
+    </main>
+    <!--googleoff: index-->
+    <footer class="wrapper wrapper--12-col esds-footer">
+        <div>
+            
+
+
+<div><div class="row"><nav class="esds-footer__navigation" aria-label="Footer">
+        <div class="esds-footer__navigation-list"><p class="esds-footer__navigation-headline">RTX</p><ul><li><a href="/who-we-are/our-values" aria-label="Who We Are" title="Who We Are" target="_self">Who We Are</a></li><li><a href="/who-we-are/we-are-rtx/overview" aria-label="What We Do" title="What We Do" target="_self">What We Do</a></li><li><a href="/news" aria-label="News" title="News" target="_self">News</a></li><li><a href="https://careers.rtx.com/global/en" aria-label="Careers" title="Careers" class="icon--external-link" target="_self">Careers</a></li><li><a href="/our-responsibility/corporate-citizenship" aria-label="Our Responsibility" title="Our Responsibility" target="_self">Our Responsibility</a></li><li><a href="https://investors.rtx.com/" aria-label="Investors" rel="noopener noreferrer" title="Investors" class="icon--external-link" target="_blank">Investors</a></li><li><a href="/news/media-resources" title="Media Resources" target="_self">Media Resources</a></li><li><a href="/suppliers" title="Suppliers" target="_self">Suppliers</a></li><li><a href="/contacts" title="Contacts" target="_self">Contacts</a></li></ul></div>
+        <div class="esds-footer__navigation-list esds-footer__bu"><p class="esds-footer__navigation-headline">RTX Businesses</p><ul><li><a href="/" title="RTX" target="_self">RTX</a></li><li><a href="https://www.rtx.com/collinsaerospace" title="Collins Aerospace" target="_self">Collins Aerospace</a></li><li><a href="https://www.rtx.com/prattwhitney" title="Pratt &amp; Whitney" target="_self">Pratt &amp; Whitney</a></li><li><a href="https://www.rtx.com/raytheon" title="Raytheon" target="_self">Raytheon</a></li></ul></div>
+        <div class="esds-footer__navigation-list"></div>
+		
+		<div class="esds-footer__navigation-list"><p class="esds-footer__navigation-headline">OUR VALUES IN ACTION</p><ul><li><a href="https://www.rtx.com/who-we-are/ethics-and-compliance#speakup" rel="noopener noreferrer" title="Speak Up" class="icon--external-link" target="_blank">Speak Up</a></li><li><a href="https://www.rtx.com/who-we-are/ethics-and-compliance#raytheon-technologies-code-of-conduct" aria-label="Code of Conduct" rel="noopener noreferrer" title="Code of Conduct" class="icon--external-link" target="_blank">Code of Conduct</a></li></ul></div><div class="esds-footer__navigation-list esds-footer__social-list"><p class="esds-footer__navigation-headline">Follow Us</p><ul class="esds-social-icons__list"><li>
+                    <a href="https://www.linkedin.com/company/rtx/" aria-label="RTX on LinkedIn" title="RTX on LinkedIn" target="_self" rel="">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        <span class="sr-only">RTX on LinkedIn</span>
+                    </a>
+                </li><li>
+                    <a href="https://x.com/rtx_news" aria-label="RTX on X" title="RTX on X" target="_self" rel="">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">RTX on X</span>
+                    </a>
+                </li><li>
+                    <a href="https://www.facebook.com/rtxcorporation/" aria-label="RTX on Facebook" title="RTX on Facebook" target="_self" rel="">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <span class="sr-only">RTX on Facebook</span>
+                    </a>
+                </li><li>
+                    <a href="https://www.youtube.com/@RTXCorporation" aria-label="RTX on YouTube" title="RTX on YouTube" target="_self" rel="">
+                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        <span class="sr-only">RTX on YouTube</span>
+                    </a>
+                </li><li>
+                    <a href="https://www.instagram.com/rtxcorporation/" aria-label="RTX on Instagram" title="RTX on Instagram" target="_self" rel="">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">RTX on Instagram</span>
+                    </a>
+                </li><li>
+                    <a href="/rss-feeds/news" aria-label="" title="RSS" target="_self" rel="">
+                        <i class="fa fa-rss-square" aria-hidden="true"></i>
+                        <span class="sr-only">RSS</span>
+                    </a>
+                </li></ul></div></nav>
+</div>
+<div class="row">
+    <div class="esds-footer__fine-print-list"><ul><li class="esds-footer__fine-copyrights">© 2026 &nbsp;RTX</li><li><a href="/accessibility-statement" aria-label="Accessibility" title="Accessibility" target="_self">Accessibility</a></li><li><a href="/terms-of-use" aria-label="Terms of Use" title="Terms of Use" target="_self">Terms of Use</a></li><li><a href="/privacy" aria-label="Privacy" title="Privacy" target="_self">Privacy</a></li><li><a href="/rtx-gdpr/rtx-gdpr-overlay" title="Manage Cookies Settings" class="initializeModal optOut optOut--light" target="_self">Manage Cookies Settings</a></li></ul></div>
+</div></div>
+
+
+
+
+    <form id="gdprForm">
+        <input type="hidden" value="announcement-cookie|_evga_,_sfid_|_ga, _gcl_au, _gid, _ga_SDGPBQDJ7B, _ga_8JVM6ZL9F7, _ga_F37YFJ720B, _ga_FW8B5GG69Q, _ga_JCVEY4CMKT, _gat_UA-118039187-1, _ga_F5Q7BSTQ73, _gat_UA-162028072-1, ar_debug, G-5LZ5B95LDR, _ga_T3YC4PJER7" id="EnabledForNonEuropeCookies" name="EnabledForNonEuropeCookies">
+        <input type="hidden" value="announcement-cookie|_evga_,_sfid_|_ga, _gcl_au, _gid, _ga_SDGPBQDJ7B, _ga_8JVM6ZL9F7, _ga_F37YFJ720B, _ga_FW8B5GG69Q, _ga_JCVEY4CMKT, _gat_UA-118039187-1, _ga_F5Q7BSTQ73, _gat_UA-162028072-1, ar_debug, G-5LZ5B95LDR, _ga_T3YC4PJER7|__cf_bm|__cfduid|ak_bmsc|ARRAffinity, ARRAffinitySameSite|ASP.NET_SessionId|bm_sv|cf_clearance|GDPR Consent|PF|rtx#lang|SC_ANALYTICS_GLOBAL_COOKIE|shell#lang|sxa_site|__RequestVerificationToken|_ce.clock_event, _ce.irv, _ce.s, cebs, cebsp_, _ce.clock_data|s_cc, s_sq|_li-insight-tag, AMCV_###@AdobeOrg, AMCVS_###@AdobeOrg, AnalyticsSyncHistory, bcookie, bscookie, li_sugr, lidc, UserMatchHistory|_fbp|AWSALBTG, AWSALBTGCORS|guest_id, guest_id_ads, guest_id_marketing, muc_ads, personalization_id|nmstat|VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA, YSC" id="NecessaryCookies" name="NecessaryCookies">
+        <input type="hidden" value="announcement-cookie|_evga_,_sfid_|_ga, _gcl_au, _gid, _ga_SDGPBQDJ7B, _ga_8JVM6ZL9F7, _ga_F37YFJ720B, _ga_FW8B5GG69Q, _ga_JCVEY4CMKT, _gat_UA-118039187-1, _ga_F5Q7BSTQ73, _gat_UA-162028072-1, ar_debug, G-5LZ5B95LDR, _ga_T3YC4PJER7|__cf_bm|__cfduid|ak_bmsc|ARRAffinity, ARRAffinitySameSite|ASP.NET_SessionId|bm_sv|cf_clearance|GDPR Consent|PF|rtx#lang|SC_ANALYTICS_GLOBAL_COOKIE|shell#lang|sxa_site|__RequestVerificationToken|_ce.clock_event, _ce.irv, _ce.s, cebs, cebsp_, _ce.clock_data|s_cc, s_sq|_li-insight-tag, AMCV_###@AdobeOrg, AMCVS_###@AdobeOrg, AnalyticsSyncHistory, bcookie, bscookie, li_sugr, lidc, UserMatchHistory|_fbp|AWSALBTG, AWSALBTGCORS|guest_id, guest_id_ads, guest_id_marketing, muc_ads, personalization_id|nmstat|VISITOR_INFO1_LIVE, VISITOR_PRIVACY_METADATA, YSC" id="RecommendedCookies" name="RecommendedCookies">
+        <input type="hidden" value="1" id="CookiesVersion" name="CookiesVersion">
+    </form>
+    
+
+        </div>
+    </footer>
+    <!--googleon: index-->
+</div>
+
+    
+
+
+
+    <script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/rtx-core-libraries/scripts/optimized-min.js?rev=6ead3d23a04145449811b61eb46cf25a&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20251212T032410Z&amp;hash=BE3BEE7080F9004A3496150F0EB4D34C"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/xa-api/scripts/optimized-min.js?rev=d1154a92658c4c37a45bb024302f34f7&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20260323T003448Z&amp;hash=DABB0CE244817F804C0978108EBD8222"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/sc-main-theme-js/scripts/optimized-min.js?rev=c2551a227c914bd6a8cd235857c9e59b&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20251212T032414Z&amp;hash=8F95280B4C97024BC8D4F9DC1F2CC7F2"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/rtx-third-party-components-themes/scripts/optimized-min.js?rev=05bafdcea46742b18733652c8b40ea18&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20251212T032415Z&amp;hash=1192E1E9AB587E249DC9866569D35238"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/scroll-lock/scripts/optimized-min.js?rev=a610114b86444b01ad84b6cd7ed7055f&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20251212T032413Z&amp;hash=97C85092B257461864CB593B959D41A9"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/rtx-gdpr/scripts/optimized-min.js?rev=3abc8f447c61496d8e4ffd2927dcff9e&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20251212T032416Z&amp;hash=657B26F71F24730091E0DB1C1EDBDDEA"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/scripts/pre-optimized-min.js?rev=424d4a60b5604533b675d952783fc1b1&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20260206T150058Z&amp;hash=ACD37A6B44CC065EA416CACE42CAE5E9"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/news-template/scripts/pre-optimized-min.js?rev=149b99b68df343b5bd12a21910c39864&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20230816T105112Z&amp;hash=5F19B63364195BB6D6C68E9D62DDDD02"></script><script src="https://prd-sc102-cdn.rtx.com/-/media/base-themes/hero/scripts/pre-optimized-min.js?rev=3751b515819543debd96256cc2710620&amp;rid=fe5d7fdf89c04d999aa3b5fbd009c9f3&amp;t=20220706T075943Z&amp;hash=529802557EEE93CCCA700B064CB1A0FC"></script>    <!-- /#wrapper -->
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a004587cccf5c2ed',t:'MTc3OTU0MjI5Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+<style>
+  @media (min-width: 46.25em){
+    body.page-type--news-article main div#content section.esds-rich-text h2{
+      font-size: 2.25rem;
+    }
+  }
+  @media (min-width: 107.5em){
+    body.page-type--news-article main div#content .component__headline{
+      font-size: 2.25rem;
+    }
+  }
+</style>
+<script type="text/javascript" id="" charset="">var g_cookiesThatCouldNotBeDeleted=[],g_gdprConsentCookieName="GDPR Consent",g_currentGdprCookieName="GDPR snapshot";
+setTimeout(function(){var a=getCookie(g_gdprConsentCookieName),c=getCookie(g_currentGdprCookieName),b={event:"accept-gdpr"};typeof dataLayer!="undefined"&&dataLayer.push(b);if(a!=c){b="_ce.clock_event, _ce.irv, _ce.s, cebs, cebsp_, _ce.clock_data";b=checkCookiesDenied(b,a,c);var d="_fbp";d=checkCookiesDenied(d,a,c);var e="_ga, _gcl_au, _gid, _ga_SDGPBQDJ7B, _ga_8JVM6ZL9F7, _ga_F37YFJ720B, _ga_FW8B5GG69Q, _ga_JCVEY4CMKT, _gat_UA-118039187-1, _ga_F5Q7BSTQ73, _gat_UA-162028072-1, ar_debug, G-5LZ5B95LDR, _ga_T3YC4PJER7";e=
+checkCookiesDenied(e,a,c);var f="_li-insight-tag, AMCV_###@AdobeOrg, AMCVS_###@AdobeOrg, AnalyticsSyncHistory, bcookie, bscookie, li_sugr, lidc, UserMatchHistory";f=checkCookiesDenied(f,a,c);var g="announcement-cookie";g=checkCookiesDenied(g,a,c);var h="_evga_, _sfid_";h=checkCookiesDenied(h,a,c);var k="guest_id, guest_id_ads, guest_id_marketing, muc_ads, personalization_id,_twpid";k=checkCookiesDenied(k,a,c);var l="u_s, u_m, u_c";a=checkCookiesDenied(l,a,c);(b||d||e||f||g||h||k||a)&&alert("Changes may not take effect until you refresh this page, restart your browser, or navigate to a new page.\n\nSome denied cookies may persist, but we will not record data or take action because of them.\n\nAs an added measure, you may wish to clear all cookies for this site. For instructions, refer to the documentation for your browser.")}},
+500);function checkCookiesDenied(a,c,b){var d=!1;b=b.indexOf(a);a=c.indexOf(a);b>=0&&a<0&&(d=!0);return d}function showCookiesNotDeletedMessage(){if(g_cookiesThatCouldNotBeDeleted.length>0){var a="Several cookies related to your selection could not be removed. We will not collect data associated with them, but you may wish to manually delete them.\nThe cookies are:\n";for(i=0;i<g_cookiesThatCouldNotBeDeleted.length;i++)a+=g_cookiesThatCouldNotBeDeleted[i]+"\n";alert(a)}}
+function buildPostSaveMessage(a,c){var b="";if(g_cookiesThatCouldNotBeDeleted.length>0){b="Several cookies related to your selection could not be removed. We will not collect data associated with them, but you may wish to manually delete them.\nThe cookies are:\n";for(i=0;i<g_cookiesThatCouldNotBeDeleted.length;i++)b+=g_cookiesThatCouldNotBeDeleted[i]+"\n";a!=c&&(b+="\n\nOther changes may not take effect until you restart your browser, refresh this page, or navigate to a new page.")}return b}
+function showPostSaveMessage(a){}function doFinalCheck(a,c,b){setTimeout(function(){for(i=0;i<a.length;i++)for(t=0;t<a[i].length;t++){var d=a[i][t],e=getCookie(d);e&&e.length>0&&b.indexOf(d)<0&&g_cookiesThatCouldNotBeDeleted.push(d)}d=buildPostSaveMessage(c,b);d.length>0&&alert(d)},2E3)}function checkIfCookieInGDPRConsent(){}function checkForCookiesToDelete(a,c){for(i=0;i<a.length;i++){var b=a[i];c.indexOf(b[0])<0&&deleteCookies(b)}}
+function deleteCookies(a){for(t=0;t<a.length;t++)deleteCookie(a[t])}function getCookie(a){a+="\x3d";var c=decodeURIComponent(document.cookie);c=c.split(";");for(var b=0;b<c.length;b++){for(var d=c[b];d.charAt(0)==" ";)d=d.substring(1);if(d.indexOf(a)==0)return d.substring(a.length,d.length)}return""}function deleteCookie(a){getCookie(a)&&(document.cookie=a+"\x3d;expires\x3dThu, 01 Jan 1970 00:00:00 UTC; path\x3d/; domain\x3d.rtx.com; max-age\x3d0")};</script><script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","339605427404971");fbq("track","PageView");</script><script type="text/javascript" id="" charset="">(function(){function f(a){switch(a.type){case "timeupdate":b[a.target.id].current=Math.round(a.target.currentTime);var k=Math.floor(100*b[a.target.id].current/a.target.duration),g;for(g in b[a.target.id]._progress_markers)k>=g&&g>b[a.target.id].greatest_marker&&(b[a.target.id].greatest_marker=g);b[a.target.id].greatest_marker&&!b[a.target.id]._progress_markers[b[a.target.id].greatest_marker]&&(b[a.target.id]._progress_markers[b[a.target.id].greatest_marker]=!0,dataLayer.push({event:"html5 video",
+video_status:"progress",video_provider:"generic html5 video player",video_percent:b[a.target.id].greatest_marker,video_title:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1])}));break;case "play":dataLayer.push({event:"html5 video",video_status:"play",video_provider:"generic html5 video player",video_percent:b[a.target.id].greatest_marker,video_title:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1])});break;case "pause":b[a.target.id].greatest_marker<
+"75"&&dataLayer.push({event:"html5 video",video_status:"pause",video_provider:"generic html5 video player",video_percent:b[a.target.id].greatest_marker,video_title:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1])});break;case "ended":dataLayer.push({event:"html5 video",video_status:"complete",video_provider:"generic html5 video player",video_percent:"100",video_title:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-
+1])})}}for(var h=25,b={},d=document.getElementsByTagName("video"),c=0;c<d.length;c++){if(d[c].getAttribute("id"))var e=d[c].getAttribute("id");else e="html5_video_"+Math.random().toString(36).slice(2),d[c].setAttribute("id",e);b[e]={};b[e].greatest_marker=0;b[e]._progress_markers={};for(j=0;j<100;j++)b[e].progress_point=h*Math.floor(j/h),b[e]._progress_markers[b[e].progress_point]=!1;b[e].current=0;d[c].addEventListener("play",f,!1);d[c].addEventListener("pause",f,!1);d[c].addEventListener("ended",
+f,!1);d[c].addEventListener("timeupdate",f,!1);d[c].addEventListener("ended",f,!1)}})();</script><script type="text/javascript" id="" charset="">_linkedin_partner_id="4033452";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script>
+<script type="text/javascript" id="" charset="">(function(a){a||(window.lintrk=function(c,d){window.lintrk.q.push([c,d])},window.lintrk.q=[]);a=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";a.parentNode.insertBefore(b,a)})(window.lintrk);</script><script type="text/javascript" id="" charset="">var audioListenerCount;
+(function(){function f(a){switch(a.type){case "timeupdate":b[a.target.id].current=Math.round(a.target.currentTime);var k=Math.floor(100*b[a.target.id].current/a.target.duration),g;for(g in b[a.target.id]._progress_markers)k>=g&&g>b[a.target.id].greatest_marker&&(b[a.target.id].greatest_marker=g);b[a.target.id].greatest_marker&&!b[a.target.id]._progress_markers[b[a.target.id].greatest_marker]&&(b[a.target.id]._progress_markers[b[a.target.id].greatest_marker]=!0,dataLayer.push({event:"audio",audioPlayerAction:"Progress %"+
+b[a.target.id].greatest_marker,audioTitle:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1])}));break;case "play":dataLayer.push({event:"audio",audioPlayerAction:"play",audioTitle:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1])});break;case "pause":dataLayer.push({event:"audio",audioPlayerAction:"pause",audioTitle:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1]),audioValue:b[a.target.id].current});
+break;case "ended":dataLayer.push({event:"audio",audioPlayerAction:"finished",audioTitle:decodeURIComponent(a.target.currentSrc.split("/")[a.target.currentSrc.split("/").length-1])})}}if(!(audioListenerCount&&audioListenerCount>=1)){audioListenerCount=1;for(var h=25,b={},e=document.getElementsByTagName("audio"),c=0;c<e.length;c++){if(e[c].getAttribute("id"))var d=e[c].getAttribute("id");else d="html5_audio_"+Math.random().toString(36).slice(2),e[c].setAttribute("id",d);b[d]={};b[d].greatest_marker=
+0;b[d]._progress_markers={};for(j=0;j<100;j++)b[d].progress_point=h*Math.floor(j/h),b[d]._progress_markers[b[d].progress_point]=!1;b[d].current=0;e[c].addEventListener("play",f,!1);e[c].addEventListener("pause",f,!1);e[c].addEventListener("ended",f,!1);e[c].addEventListener("timeupdate",f,!1)}}})();</script><img src="https://t.co/i/adsct?bci=3&amp;dv=Europe%2FRome%26en-US%26Google%20Inc.%26Linux%20x86_64%26255%26393%26851%268%2624%26393%26851%261%26na&amp;eci=2&amp;event_id=904ad59e-63c6-46d8-aeca-0b3a1b29bcc5&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=6b4844db-ba8a-49a2-bdc4-95cb0e0bc318&amp;pt=Home%20%7C%20RTX&amp;tw_document_href=https%3A%2F%2Fwww.rtx.com%2F&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_pid_src=1&amp;tw_sale_amount=0&amp;twpid=tw.1779542299781.539747647518613221&amp;txn_id=nvk21&amp;type=javascript&amp;version=2.3.53" height="1" width="1" fetchpriority="high" style="display: none;"><img src="https://analytics.twitter.com/i/adsct?bci=3&amp;dv=Europe%2FRome%26en-US%26Google%20Inc.%26Linux%20x86_64%26255%26393%26851%268%2624%26393%26851%261%26na&amp;eci=2&amp;event_id=904ad59e-63c6-46d8-aeca-0b3a1b29bcc5&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=6b4844db-ba8a-49a2-bdc4-95cb0e0bc318&amp;pt=Home%20%7C%20RTX&amp;tw_document_href=https%3A%2F%2Fwww.rtx.com%2F&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_pid_src=1&amp;tw_sale_amount=0&amp;twpid=tw.1779542299781.539747647518613221&amp;txn_id=nvk21&amp;type=javascript&amp;version=2.3.53" height="1" width="1" fetchpriority="high" style="display: none;"></body><iframe id="ce_proto_iframe" title="CrazyEgg Tracking iframe" aria-hidden="true" style="display: none;"></iframe></html>

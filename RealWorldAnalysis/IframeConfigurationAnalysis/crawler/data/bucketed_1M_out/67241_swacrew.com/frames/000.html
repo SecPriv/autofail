@@ -1,0 +1,240 @@
+<!DOCTYPE html><!-- template name: html.form.login.template.html --><!-- Configurable default behavior for the Remember Username checkbox --><!-- set the checkbox to unchecked --><html lang="en" dir="ltr"><head>
+    <title>Sign On</title>
+    <base href="https://eua-crew-cwa-pf.swalife.com/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <script src="/assets/scripts/captcha/captcha-utils.js"></script>
+    <script src="/assets/scripts/captcha/captcha-script-loader.js"></script>
+<script type="text/javascript" src="https://eua-crew-cwa-pf.prod.swacrew.com/assets/app/scripts/swacrew-common.js"></script>
+</head>
+
+<body onload="setFocus();" class=" mobile">
+<!-- CAPTCHA settings-->
+<div id="captchaEnabled" hidden="">false</div>
+<div id="captchaScriptName" hidden="">"$captchaScriptName"</div>
+<div id="captchaAttributes" hidden="">$captchaAttributes</div>
+<div id="captchaCSPNonce" hidden="">"XF0Hr7749XM7gjou"</div>
+
+<div class="ping-container ping-signin login-template">
+
+    <!--
+    if there is a logo present in the 'company-logo' container,
+    then 'has-logo' class should be added to 'ping-header' container.
+    -->
+    <div class="ping-header">
+        <span class="company-logo"><!-- client company logo here --></span>
+        <img alt="Logo" src="assets/images/swa_logo_dark.svg">
+        <!-- Sign On -->
+    </div>
+    <!-- .ping-header -->
+
+    <div class="ping-body-container">
+
+        <div>
+            <form method="POST" action="https://eua-crew-cwa-pf.prod.swacrew.com/as/Pm1Mf/resume/as/authorization.ping" autocomplete="off">
+
+                <div class="ping-messages">
+                                        
+                                        
+                </div>
+
+                
+                        <div class="ping-input-label">
+                            SWA ID
+                        </div>
+                        <div class="ping-input-container">
+                                                            <input id="username" type="text" size="36" name="pf.username" value="" autocorrect="off" autocapitalize="off" onkeypress="return postOnReturn(event)"><!---->
+                                                        <div class="place-bottom type-alert tooltip-text" id="username-text">
+                                <div class="icon">!</div>
+                                Please fill out this field.
+                            </div>
+                        </div>
+
+                        <div class="ping-input-label">
+                            SWA Password
+                        </div>
+                        <div class="ping-input-container password-container">
+                            <input id="password" type="password" size="36" name="pf.pass" onkeypress="return postOnReturn(event)">
+                            <div class="place-bottom type-alert tooltip-text" id="password-text">
+                                <div class="icon">!</div>
+                                Please fill out this field.
+                            </div>
+                        </div>
+
+                        
+                        
+                        <div class="ping-buttons">
+                            <input type="hidden" name="pf.ok" value="">
+                            <input type="hidden" name="pf.cancel" value="">
+                            <span id="signOnButtonSpan">
+                                <a onclick="postOk();" class="ping-button normal allow" id="signOnButton" title="Submit">
+                                Submit
+                                </a>
+                            </span>
+                        </div><!-- .ping-buttons -->
+
+                                                <div class="ping-input-link ping-pass-change account-actions">
+                                                        <!-- The below line provides direct access to SSPR. The commented line below it is the default PingFed code, which first brings you to an intermediate page before bringing you to SSPR -->
+                            <a href="https://passwordmgr.swalife.com/sspr/public/forgottenpassword" class="password-change">Forgot Password</a>
+                            <!-- <a href="/as/Pm1Mf/resume/as/authorization.ping?ChangePassword=true" class="password-change">Forgot Password</a> -->
+                                                                                                            </div>
+                        
+                        
+                                
+
+                <input type="hidden" name="pf.adapterId" id="pf.adapterId" value="SWAFormLoginNoSession">
+            </form>
+        </div><!-- .ping-body// blank div -->
+        
+    </div><!-- .ping-body-container -->
+
+    <div class="ping-footer-container">
+        <div class="ping-footer">
+			<!-- Below credit commented out because it is already baked into the image. -->
+            <!-- <div class="ping-credits"></div>
+            <div class="ping-copyright">Copyright © 2003-2020. Ping Identity Corporation. All rights reserved.</div> -->
+        </div>
+        <!-- .ping-footer -->
+    </div>
+    <!-- .ping-footer-container -->
+
+</div><!-- .ping-container -->
+
+<script type="text/javascript">
+
+	function postForgotPassword() {
+
+		document.forms[0]['pf.passwordreset'].value = 'clicked';
+		document.forms[0].submit();
+	}
+
+	function postRecoverUsername() {
+        document.forms[0]['pf.usernamerecovery'].value = 'clicked';
+		document.forms[0].submit();
+	}
+
+	function postAlternateAuthnSystem(system) {
+	    var variants = ["Biometrics", "Windows Hello", "Face ID",  "Touch ID"];
+	    for (i = 0; i < variants.length; i++) {
+	        if(variants[i] == system) {
+	            system = "FIDO";
+	        }
+	    }
+	    document.forms[0]['$alternateAuthnSystem'].value = system;
+	    document.forms[0].submit();
+	}
+
+
+	function postRegistration()
+    {
+        document.forms[0]['$registrationValue'].value = true;
+        document.forms[0].submit();
+    }
+
+    function postOk() {
+        // Using CaptchaManager instead of direct grecaptcha call
+        CaptchaManager.execute(function() {
+            // remove error tips
+            if (document.forms[0]['pf.username'].value !== '') {
+                document.getElementById('username-text').className = 'place-bottom type-alert tooltip-text';
+            }
+            if (document.forms[0]['pf.pass'].value !== '') {
+                document.getElementById('password-text').className = 'place-bottom type-alert tooltip-text';
+            }
+            // Add back
+            if (document.forms[0]['pf.username'].value === '') {
+                document.getElementById('username-text').className += ' show';
+            }
+            else if (document.forms[0]['pf.pass'].value === '') {
+                document.getElementById('password-text').className += ' show';
+            }
+            else {
+                submitForm();
+            }
+        });
+    }
+
+    function submitForm()
+    {
+        var signOnButtonSpan = document.getElementById('signOnButtonSpan');
+        signOnButtonSpan.classList.add('content-columns', 'disabled');
+        signOnButtonSpan.style = "pointer-events: none;";
+
+        var signOnButton = document.getElementById('signOnButton');
+        signOnButton.innerHTML = 'Signing on...';
+
+        document.forms[0]['pf.ok'].value = 'clicked';
+        document.forms[0].submit();
+
+        // Add cleanup for captcha
+        CaptchaManager.cleanup();
+    }
+
+    function postCancel() {
+        document.forms[0]['pf.cancel'].value = 'clicked';
+        document.forms[0].submit();
+    }
+
+    function postOnReturn(e) {
+        var keycode;
+        if (window.event) keycode = window.event.keyCode;
+        else if (e) keycode = e.which;
+        else return true;
+
+        if (keycode == 13) {
+            postOk();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function setFocus() {
+        var platform = navigator.platform;
+        if (platform != null && platform.indexOf("iPhone") == -1) {
+                            document.getElementById('username').focus();
+                    }
+    }
+
+    function setMobile(mobile) {
+        var className = ' mobile',
+            hasClass = (bodyTag.className.indexOf(className) !== -1);
+
+        if (mobile && !hasClass) {
+            bodyTag.className += className;
+
+        } else if (!mobile && hasClass) {
+            bodyTag.className = bodyTag.className.replace(className, '');
+        }
+
+        
+        <!-- Check if this is the PingOne Mobile App -->
+            }
+
+    function getScreenWidth() {
+        return (window.outerHeight) ? window.outerWidth : document.body.clientWidth;
+    }
+
+    var bodyTag = document.getElementsByTagName('body')[0],
+        width = getScreenWidth(),
+        remember = false && false;
+
+    
+    if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        setMobile(true);
+    } else {
+        setMobile((width <= 480));
+        window.onresize = function() {
+            width = getScreenWidth();
+            setMobile((width <= 480));
+        }
+    }
+   
+
+
+</script>
+
+
+</body></html>

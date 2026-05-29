@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><title>dynamically added iframe</title></head>
+<body>
+  <h2>iframe injected by JavaScript</h2>
+  <div id="slot"></div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const f = document.createElement('iframe');
+      f.src = '/child.html';
+      f.id = 'dyn';
+      f.title = 'injected post-load';
+      f.setAttribute('data-injected', 'true');
+      document.getElementById('slot').appendChild(f);
+    });
+  </script>
+</body></html>

@@ -1,0 +1,1117 @@
+<!DOCTYPE html><html lang="pl"><head>
+  <meta charset="utf-8"><script>/* <![CDATA[ */ ringDataLayer = {"context":{"variant":{"accelerator":"Ki5yaW5nLXBhZ2VzLmlvOjpQUk9E"},"id":{"website":"60f199e7-8faa-4ec9-a2d5-bf807d6d8cae"}}}; /* ]]> */</script><script>/* <![CDATA[ */ accConf = {"events":{"endpointPaths":["/a8f4d8cd95e164917035b64b867a45dd"]}}; /* ]]> */</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ranking plaż</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body, html { margin: 0; padding: 0; background: #ffffff; }
+
+    :root {
+      --bg: #eab308;
+      --card: rgba(15, 23, 42, .34);
+      --text: #f8fafc;
+      --muted: rgba(248, 250, 252, .72);
+      --idle: #eee;
+      --accent: #fff;
+      --radius: 28px;
+      --low: #e74c3c;
+      --mid: #f5b731;
+      --high: #27ae60;
+    }
+
+    .embed-wrap {
+      width: 100%;
+      height: 650px;
+      background: transparent;
+      font-family: 'Fira Sans', system-ui, sans-serif;
+      color: var(--text);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      text-wrap: balance;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      max-width: none;
+      height: 100%;
+      max-height: 602px;
+      width: 100%;
+      padding: clamp(24px, 5vw, 56px) clamp(24px, 5vw, 56px) 120px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .48);
+      box-shadow:
+        0 6px 14px rgba(8, 35, 50, .16),
+        inset 8px 8px 14px rgba(0, 137, 178, .55),
+        inset 18px 18px 34px rgba(0, 137, 178, .32);
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .hero::before,
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/tlo_rp_2_gif_c.gif") center / cover no-repeat;
+      transform: scale(1.04);
+      z-index: 0;
+    }
+    .hero::after,
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 16, 28, .46);
+      backdrop-filter: blur(12px) saturate(1.15);
+      -webkit-backdrop-filter: blur(12px) saturate(1.15);
+      z-index: 1;
+    }
+    .hero::after {
+      background:
+        linear-gradient(rgba(0, 98, 135, .22), rgba(0, 98, 135, .22)),
+        linear-gradient(135deg, rgba(0, 137, 178, .68) 0%, rgba(0, 137, 178, .42) 38%, rgba(0, 137, 178, .18) 72%, rgba(0, 137, 178, .06) 100%);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .card::after {
+      background:
+        linear-gradient(rgba(0, 98, 135, .22), rgba(0, 98, 135, .22)),
+        linear-gradient(135deg, rgba(0, 137, 178, .68) 0%, rgba(0, 137, 178, .42) 38%, rgba(0, 137, 178, .18) 72%, rgba(0, 137, 178, .06) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .hero > *,
+    .card > * {
+      position: relative;
+      z-index: 2;
+    }
+    .frame-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      min-height: 80px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: #102033;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .frame-footer img {
+      display: block;
+      width: auto;
+      max-width: min(360px, 82%);
+      max-height: 54px;
+      object-fit: contain;
+    }
+    .hero-title {
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .hero-logo {
+      display: block;
+      width: min(460px, 86%);
+      max-height: 168px;
+      object-fit: contain;
+      margin: 0 auto 22px;
+      filter: none;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 19px);
+      font-weight: 700;
+      color: #0089b2;
+      max-width: 560px;
+      margin: 0 auto 28px;
+      line-height: 1.25;
+    }
+    .hero-sub span {
+      display: inline;
+      padding: 2px 8px 4px;
+      background: #fff;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .hero-illu {
+      font-size: clamp(56px, 9vw, 96px);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .btn-hero {
+      background: rgba(255,255,255,.92);
+      color: #102033;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 50px;
+      padding: 18px 40px;
+      font-size: clamp(17px, 2.2vw, 22px);
+      cursor: pointer;
+      box-shadow: none;
+      transition: transform .2s ease;
+      font-family: inherit;
+    }
+    .btn-hero:hover { transform: scale(1.04); }
+    .btn-hero:active { transform: scale(.97); }
+    .hero-logo,
+    .hero-sub,
+    .btn-hero {
+      animation: heroIn .42s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .hero-sub { animation-delay: 90ms; }
+    .btn-hero { animation-delay: 180ms; }
+    #goStart.pulsing { animation: pulse .8s ease-in-out infinite !important; }
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .slide-enter {
+      animation: slideEnter .42s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .hero.slide-enter { animation: none; }
+    @keyframes slideEnter {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .stagger-enter {
+      animation: slideEnter .42s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: var(--enter-delay, 0ms);
+    }
+    .choice.stagger-enter,
+    .tb-choice.stagger-enter {
+      animation-name: optionEnter;
+    }
+    @keyframes optionEnter {
+      from {
+        opacity: 0;
+        transform: scale(.985);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .slide-enter,
+      .stagger-enter,
+      .hero-logo,
+      .hero-sub,
+      .btn-hero { animation: none; }
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      max-height: 602px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .48);
+      padding: clamp(20px, 3.5vw, 40px);
+      box-shadow:
+        0 6px 14px rgba(8, 35, 50, .16),
+        inset 8px 8px 14px rgba(0, 137, 178, .55),
+        inset 18px 18px 34px rgba(0, 137, 178, .32);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .card.is-active { display: flex; }
+
+    .progress { margin-bottom: 12px; flex-shrink: 0; }
+    .conf-track {
+      height: 4px;
+      background: rgba(255,255,255,.22);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .conf-fill {
+      height: 100%;
+      background: #fff;
+      border-radius: 4px;
+      transition:
+        width .6s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color .6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    h1.question {
+      font-size: clamp(19px, 3vw, 28px);
+      line-height: 1.25;
+      text-align: center;
+      margin: 14px auto 4px;
+      max-width: 640px;
+      font-weight: 700;
+    }
+
+    .quiz-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 12px;
+      overflow-y: auto;
+      padding: 2px 2px;
+      touch-action: pan-y;
+      align-content: start;
+    }
+    @media (min-width: 720px) {
+      .choices {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        gap: 12px;
+      }
+    }
+    .choice {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 2px solid rgba(255,255,255,.26);
+      transition: border-color .15s, background-color .15s, transform .06s;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      font-size: clamp(17px, 2.1vw, 19px);
+      color: #fff;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+    .choice:hover { border-color: rgba(255,255,255,.52); background: rgba(255,255,255,.22); }
+    .choice:active { transform: translateY(1px); }
+    .choice.selected { border-color: #fff; background: rgba(255,255,255,.28); }
+    .choice .radio {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 24px; height: 24px;
+      border-radius: 100%;
+      border: 2px solid rgba(255,255,255,.88);
+      flex: 0 0 24px;
+    }
+    .choice .radio::after {
+      content: ""; width: 12px; height: 12px;
+      border-radius: 50%; background: var(--accent);
+      transform: scale(0);
+      transition: transform .18s ease;
+    }
+    .choice input[type="radio"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer;
+    }
+    .choice input[type="radio"]:checked + .radio::after { transform: scale(1); }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-shrink: 0;
+    }
+    .btn {
+      border: 0;
+      padding: 14px 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+      font-family: inherit;
+      background: rgba(255,255,255,.18);
+      color: #fff;
+      transition: background .15s, transform .2s ease;
+    }
+    .btn:hover { transform: scale(1.03); }
+    .btn:active { transform: scale(.97); }
+    .btn[disabled] {
+      cursor: not-allowed;
+      color: rgba(255,255,255,.46);
+      background: rgba(255,255,255,.12);
+      opacity: .35;
+      transform: none;
+    }
+    .btn:not([disabled]) { opacity: 1; }
+    #next[disabled] {
+      background: rgba(255,255,255,.18);
+      color: rgba(16,32,51,.58);
+      opacity: .45;
+    }
+    #next:not([disabled]) {
+      background: rgba(255,255,255,.92);
+      color: #102033;
+      opacity: 1;
+    }
+    .btn.primary { background: rgba(255,255,255,.92); color: #102033; }
+
+    .card.result-mode { padding: 0; }
+    .card.result-mode #result { padding: 0; position: relative; }
+    .card.result-mode .result {
+      padding: clamp(20px, 3.5vw, 40px);
+      padding-bottom: calc(clamp(16px, 3vw, 24px) + 56px);
+    }
+    .card.result-mode #resultControls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background: transparent;
+      padding: 8px clamp(20px, 3.5vw, 40px) clamp(16px, 3vw, 24px);
+      z-index: 3;
+    }
+    .card.result-mode #resultControls .btn { pointer-events: auto; }
+    .card.result-mode::after {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .result { flex: 1; display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow-y: auto; }
+    .result-title {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+    }
+    .result-logo {
+      display: block;
+      width: min(260px, 76%);
+      max-height: 74px;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+    .result-heading {
+      margin: 0;
+      font-size: clamp(17px, 2.4vw, 22px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .postcard {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.45);
+      flex-shrink: 0;
+      isolation: isolate;
+    }
+    .postcard::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(119, 209, 247, .3);
+      backdrop-filter: blur(10px) saturate(1.15);
+      -webkit-backdrop-filter: blur(10px) saturate(1.15);
+      z-index: 1;
+    }
+    .postcard > * { position: relative; z-index: 2; }
+    .postcard-photo {
+      height: 155px;
+      background: #d7ecf2;
+      overflow: hidden;
+    }
+    .postcard-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .postcard-body { padding: 14px 18px 18px; }
+    .postcard-kicker {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: rgba(255,255,255,.64);
+      margin-bottom: 4px;
+    }
+    .postcard-name {
+      font-size: clamp(23px, 5vw, 34px);
+      font-weight: 800;
+      line-height: 1.06;
+      color: #fff;
+      white-space: normal;
+      overflow-wrap: break-word;
+      text-wrap: balance;
+    }
+    .postcard-region {
+      font-size: 12px;
+      color: rgba(255,255,255,.72);
+      margin-top: 5px;
+    }
+    .result-badges,
+    .alt-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-start;
+    }
+    .result-badges { column-gap: 6px; row-gap: 3px; }
+    .badge-break { flex-basis: 100%; height: 0; margin: 0; }
+    .result-badges { margin-top: 12px; }
+    .alt-badges { margin-top: 8px; gap: 5px; }
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      min-height: 24px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      color: rgba(255,255,255,.9);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .alt-badges .result-badge {
+      min-height: 20px;
+      padding: 4px 7px;
+      font-size: 10px;
+      font-weight: 750;
+    }
+    .result-badge {
+      background: rgba(134,239,172,.18);
+      border-color: rgba(134,239,172,.32);
+      color: #dcfce7;
+    }
+
+    @media (min-width: 641px) {
+      .result-logo {
+        width: min(360px, 82%);
+        max-height: 96px;
+      }
+    }
+
+    .alternatives {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 540px) {
+      .alternatives { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 720px) {
+      .result {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "heading heading"
+          "main    alts";
+        column-gap: 14px;
+        row-gap: 10px;
+        align-content: center;
+      }
+      .result-title { grid-area: heading; }
+      .result .postcard {
+        grid-area: main;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+      }
+      .result .postcard-photo { flex: 1 1 auto; min-height: 0; }
+      .result .postcard-body { flex: 0 0 auto; }
+      .result .alternatives {
+        grid-area: alts;
+        grid-template-columns: 1fr;
+        align-self: stretch;
+      }
+    }
+    .alt-card {
+      position: relative;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      isolation: isolate;
+    }
+    .alt-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(119, 209, 247, .3);
+      backdrop-filter: blur(10px) saturate(1.15);
+      -webkit-backdrop-filter: blur(10px) saturate(1.15);
+      z-index: 1;
+    }
+    .alt-card > * { position: relative; z-index: 2; }
+    .alt-card-body {
+      padding: 14px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .alt-num {
+      margin: 0;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: rgba(255,255,255,.58);
+    }
+    .alt-name {
+      margin: 0;
+      font-weight: 700;
+      font-size: clamp(18px, 3vw, 22px);
+      line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #fff;
+    }
+    .alt-card .alt-badges { margin: auto 0 0; }
+
+    .result-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 4px;
+    }
+    .btn.restart {
+      background: rgba(255,255,255,.92);
+      color: #102033;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .embed-wrap { height: 550px; padding: 14px; }
+      .card,
+      .hero {
+        max-height: none;
+        border-radius: 22px;
+        box-shadow:
+          0 4px 10px rgba(8, 35, 50, .16),
+          inset 8px 8px 14px rgba(0, 137, 178, .55),
+          inset 18px 18px 34px rgba(0, 137, 178, .32);
+      }
+      .card { padding: 20px; }
+      .hero { padding: 24px 24px 86px; }
+      .frame-footer { min-height: 64px; }
+      .frame-footer img { max-width: min(260px, 76%); max-height: 36px; }
+
+      h1.question { font-size: 18px; margin-top: 10px; }
+      .choice { padding: 10px 14px; font-size: 15.4px; gap: 10px; }
+      .postcard-photo { height: 128px; }
+      .result-logo { max-height: 56px; }
+      .hero-logo { width: min(360px, 90%); max-height: 132px; margin-bottom: 18px; }
+      .hero-sub { font-size: 14px; margin-bottom: 20px; }
+      .btn-hero { padding: 14px 28px; font-size: 16px; }
+    }
+
+    ::-webkit-scrollbar { width: 0; height: 0; display: none; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: transparent; }
+    * { scrollbar-width: none; -ms-overflow-style: none; }
+  </style>
+
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V65LGG4MQZ"></script>
+  <script>
+  (function () {
+    var PROJECT = 'rp-kalkulator-2026';
+    var GA_ID   = 'G-V65LGG4MQZ';
+    var CID     = Math.random() + '.' + Date.now();
+    var SID     = '' + Date.now();
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+
+    window.trackGA = function (eventName, category, label) {
+      try {
+        navigator.sendBeacon(
+          'https://www.google-analytics.com/g/collect?v=2'
+          + '&tid=' + GA_ID
+          + '&cid=' + CID
+          + '&sid=' + SID
+          + '&en='  + encodeURIComponent(eventName)
+          + '&ep.project_name=' + encodeURIComponent(PROJECT)
+          + '&ep.category='     + encodeURIComponent(category)
+          + '&ep.label='        + encodeURIComponent(String(label))
+        );
+      } catch (e) {}
+    };
+  })();
+  </script>
+</head>
+<body>
+  <div class="embed-wrap" id="wrap">
+    <section class="hero slide-enter" id="hero" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <img class="hero-logo" src="assets/logo_rp.png" alt="Ranking Plaż">
+      <div class="hero-sub"><span>Odkryj miejsce, które najlepiej<br>pasuje do twoich wakacji.</span></div>
+      <button type="button" class="btn-hero" id="goStart">▶ Rozpocznij</button>
+      <div class="frame-footer"><img src="assets/logos.jpg" alt=""></div>
+    </section>
+
+    <section class="card" id="card" aria-live="polite">
+
+      <div id="quiz" style="display:flex; flex-direction:column; flex:1; min-height:0;">
+        <div class="progress" id="progress"></div>
+        <h1 class="question" id="question">…</h1>
+        <div class="quiz-body">
+          <form id="choicesForm" class="choices"></form>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn primary" id="next" disabled="">Wybierz odpowiedź</button>
+        </div>
+      </div>
+
+      <div id="result" style="display:none; flex-direction:column; flex:1; min-height:0;">
+        <div class="result" id="resultBody"></div>
+        <div class="result-controls" id="resultControls">
+          <button type="button" class="btn restart" id="restart"><img src="assets/reload.png" alt="" class="btn-icon">Zacznij od nowa</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="dane.js?v=20260518"></script>
+  <script src="pytania.js?v=20260518"></script>
+  <script src="scoring.js?v=20260518"></script>
+  <script src="badges.js?v=20260518"></script>
+  <script>
+  (function () {
+    function escHtml(t) {
+      if (t == null) return '';
+      return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function hexToRgb(h) {
+      const c = h.replace('#','');
+      return { r: parseInt(c.substr(0,2),16), g: parseInt(c.substr(2,2),16), b: parseInt(c.substr(4,2),16) };
+    }
+    function rgbToHex(r,g,b) {
+      const to = n => Math.max(0,Math.min(255,Math.round(n))).toString(16).padStart(2,'0');
+      return '#'+to(r)+to(g)+to(b);
+    }
+    function lerpColor(a,b,t) {
+      const A = hexToRgb(a), B = hexToRgb(b);
+      return rgbToHex(A.r+(B.r-A.r)*t, A.g+(B.g-A.g)*t, A.b+(B.b-A.b)*t);
+    }
+    function progressColor(pct) {
+      const stops = [
+        { pct: 0, color: '#e74c3c' },
+        { pct: 35, color: '#f97316' },
+        { pct: 68, color: '#f5d031' },
+        { pct: 100, color: '#27ae60' }
+      ];
+      const c = Math.max(0, Math.min(100, pct));
+      for (let i = 1; i < stops.length; i++) {
+        if (c <= stops[i].pct) {
+          const prev = stops[i - 1];
+          const next = stops[i];
+          return lerpColor(prev.color, next.color, (c - prev.pct) / (next.pct - prev.pct));
+        }
+      }
+      return stops[stops.length - 1].color;
+    }
+    function renderBadgeList(beach, limit, variant) {
+      const api = window.RESULT_BADGES;
+      if (!api || !api.getBeachBadges) return '';
+
+      const badges = api.getBeachBadges(beach, state.prefs, limit);
+      if (!badges.length) return '';
+
+      const className = variant === 'alt' ? 'alt-badges' : 'result-badges';
+      const items = badges.map((b, i) => {
+        const badgeHtml = `<span class="result-badge">${escHtml(b.label)}</span>`;
+        const breakHtml = (variant !== 'alt' && i % 2 === 1 && i < badges.length - 1)
+          ? '<i class="badge-break"></i>' : '';
+        return badgeHtml + breakHtml;
+      }).join('');
+      return `<div class="${className}">${items}</div>`;
+    }
+
+    const BEACH_IMAGE_EXTENSIONS = {
+      43: 'JPG'
+    };
+
+    function beachImageSrc(beach) {
+      const id = Number(beach && beach.id);
+      if (!Number.isFinite(id)) return '';
+      const ext = BEACH_IMAGE_EXTENSIONS[id] || 'jpg';
+      return `assets/images/${id}.${ext}`;
+    }
+
+    function renderBeachImage(beach) {
+      const src = beachImageSrc(beach);
+      if (!src) return '';
+      return `<img src="${escHtml(src)}" alt="" loading="eager" decoding="async">`;
+    }
+
+    const state = {
+      phase: 'hero',
+      askedIds: new Set(),
+      prefs: {},
+      unlocks: new Set(),
+      currentQuestion: null,
+      selectedIdx: null,
+      questionCount: 0,
+      followupCount: 0,
+      ranked: null,
+      confidence: null,
+      startedAt: null
+    };
+
+    const HARD_CAP = 15;
+    const MIN_QUESTIONS = 10;
+
+    const $ = (id) => document.getElementById(id);
+    const hero = $('hero');
+    const card = $('card');
+    const quizView = $('quiz');
+    const resultView = $('result');
+    const progressEl = $('progress');
+    const questionEl = $('question');
+    const choicesForm = $('choicesForm');
+    const nextBtn = $('next');
+    const resultBody = $('resultBody');
+
+    function animateSlide(el) {
+      if (!el) return;
+      el.classList.remove('slide-enter');
+      void el.offsetWidth;
+      el.classList.add('slide-enter');
+    }
+    function animateStagger(items) {
+      items.forEach((item, idx) => {
+        const el = item && item.el ? item.el : item;
+        if (!el) return;
+        const delay = item && item.delay != null ? item.delay : idx * 70;
+        el.classList.remove('stagger-enter');
+        el.style.setProperty('--enter-delay', delay + 'ms');
+        void el.offsetWidth;
+        el.classList.add('stagger-enter');
+      });
+    }
+
+    hero.style.display = 'flex';
+    hero.style.flexDirection = 'column';
+    hero.style.alignItems = 'center';
+    hero.style.justifyContent = 'center';
+    $('goStart').addEventListener('click', startQuiz);
+
+    const startBtn = $('goStart');
+    const PULSE_DURATION = 2400;
+    const PAUSE_DURATION = 4000;
+    let stopped = false;
+    let stopTimeout = null;
+    let nextTimeout = null;
+
+    function pulseBurst() {
+      if (stopped) return;
+      startBtn.classList.add('pulsing');
+      stopTimeout = setTimeout(() => {
+        startBtn.classList.remove('pulsing');
+        nextTimeout = setTimeout(pulseBurst, PAUSE_DURATION);
+      }, PULSE_DURATION);
+    }
+
+    startBtn.addEventListener('animationend', function onEntranceEnd(e) {
+      if (e.animationName !== 'heroIn') return;
+      startBtn.removeEventListener('animationend', onEntranceEnd);
+      startBtn.style.animation = 'none';
+      startBtn.style.opacity = '1';
+      startBtn.style.transform = 'none';
+      setTimeout(pulseBurst, 400);
+    }, { once: false });
+
+    startBtn.addEventListener('click', () => {
+      stopped = true;
+      clearTimeout(stopTimeout);
+      clearTimeout(nextTimeout);
+      startBtn.classList.remove('pulsing');
+      trackGA('klik', 'start', 'przycisk');
+    });
+
+    function shuffleCoreQuestions() {
+      const core = window.CORE_QUESTIONS;
+      if (!core) return;
+      const idx = [];
+      for (let i = 0; i < core.length; i++) {
+        if (!core[i].followupOf) idx.push(i);
+      }
+      for (let i = idx.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const a = idx[i], b = idx[j];
+        [core[a], core[b]] = [core[b], core[a]];
+      }
+    }
+
+    function startQuiz() {
+      state.startedAt = Date.now();
+      shuffleCoreQuestions();
+      hero.style.display = 'none';
+      card.classList.add('is-active');
+      progressEl.innerHTML = '<div class="conf-track"><div class="conf-fill" style="width:0%"></div></div>';
+      advance();
+    }
+
+    function renderProgress(container, questionCount, conf) {
+      const x = Math.min(Math.max(0, questionCount), HARD_CAP);
+      let pct = Math.log(1 + x) / Math.log(1 + HARD_CAP) * 100;
+
+      if (conf && questionCount >= MIN_QUESTIONS) {
+        const gapThr = (window.SCORING_CONFIG && window.SCORING_CONFIG.confidentGapPoints) || 4;
+        const gapPart = Math.min(1, conf.absGap / gapThr);
+        const top1Part = Math.max(0, Math.min(1, (conf.top1 - 50) / 10));
+        const confPct = gapPart * top1Part * 100;
+        pct = Math.max(pct, confPct);
+      }
+      pct = Math.round(Math.min(100, Math.max(0, pct)));
+
+      let fill = container.querySelector('.conf-fill');
+      if (!fill) {
+        container.innerHTML = '<div class="conf-track"><div class="conf-fill" style="width:0%"></div></div>';
+        fill = container.querySelector('.conf-fill');
+      }
+      requestAnimationFrame(() => {
+        fill.style.width = pct + '%';
+        fill.style.backgroundColor = progressColor(pct);
+      });
+    }
+
+    function advance() {
+      state.ranked = window.SCORING.rankBeaches(window.BEACHES, state.prefs);
+
+      const conf = window.SCORING.computeConfidence(state.ranked);
+      state.confidence = conf;
+
+      if (state.questionCount >= MIN_QUESTIONS && conf.shouldEnd) {
+        return showResult();
+      }
+
+      if (state.questionCount >= HARD_CAP) {
+        return showResult();
+      }
+
+      const q = window.SCORING.pickNextQuestion(state);
+      if (!q) return showResult();
+
+      state.currentQuestion = q;
+      state.selectedIdx = null;
+
+      renderQuestion(q);
+    }
+
+    function renderQuestion(q) {
+      state.questionCount += 1;
+      card.classList.remove('result-mode');
+      quizView.style.display = 'flex';
+      resultView.style.display = 'none';
+
+      questionEl.textContent = q.text;
+      choicesForm.innerHTML = '';
+
+      q.options.forEach((opt, i) => {
+        const label = document.createElement('label');
+        label.className = 'choice';
+        label.dataset.idx = i;
+        label.innerHTML = `
+          <input type="radio" name="opt" value="${i}">
+          <span class="radio"></span>
+          <span>${escHtml(opt.label)}</span>
+        `;
+        choicesForm.appendChild(label);
+      });
+
+      nextBtn.textContent = 'Wybierz odpowiedź';
+      nextBtn.disabled = true;
+      animateStagger([
+        { el: questionEl, delay: 0 },
+        ...[...choicesForm.querySelectorAll('.choice')].map((el, idx) => ({ el, delay: 70 + idx * 55 })),
+        { el: nextBtn, delay: 210 + q.options.length * 55 }
+      ]);
+    }
+
+    function selectChoice(idx, labelEl) {
+      state.selectedIdx = idx;
+      [...choicesForm.querySelectorAll('.choice')].forEach(c => c.classList.remove('selected'));
+      labelEl.classList.add('selected');
+      const inp = labelEl.querySelector('input');
+      if (inp) inp.checked = true;
+      nextBtn.textContent = 'Dalej';
+      nextBtn.disabled = false;
+      renderProgress(progressEl, state.questionCount, state.confidence);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (state.selectedIdx == null) return;
+      commitAnswer();
+    });
+
+    $('restart').addEventListener('click', () => {
+      trackGA('klik', 'wynik', 'restart');
+      resetAll();
+    });
+
+    choicesForm.addEventListener('click', (e) => {
+      const label = e.target.closest('.choice');
+      if (!label) return;
+      selectChoice(Number(label.dataset.idx), label);
+    });
+
+    function commitAnswer() {
+      const q = state.currentQuestion;
+      const opt = q.options[state.selectedIdx];
+      applyOption(q, opt);
+      state.askedIds.add(q.id);
+      trackGA('odpowiedz', 'pytanie_' + state.questionCount, 'opcja_' + state.selectedIdx);
+
+      const isFollowup = (window.FOLLOWUP_QUESTIONS || []).some(x => x.id === q.id);
+      if (isFollowup) state.followupCount += 1;
+
+      advance();
+    }
+
+    function applyOption(q, opt) {
+      if (q.type === 'weightBattle') window.SCORING.applyWeightBattle(state, q, state.selectedIdx);
+      else if (opt.prefs) window.SCORING.applyAnswer(state, opt.prefs);
+      if (opt.unlocks) opt.unlocks.forEach(u => state.unlocks.add(u));
+    }
+
+    const ANALYTICS_URL = 'https://rp-data-onet.michal-rogalski17.workers.dev/submit';
+    const RUN_NO_KEY = 'rp_run_no';
+
+    function nextRunNo() {
+      let n = 0;
+      try { n = parseInt(localStorage.getItem(RUN_NO_KEY) || '0', 10) || 0; } catch {}
+      n += 1;
+      try { localStorage.setItem(RUN_NO_KEY, String(n)); } catch {}
+      return n;
+    }
+
+    function sendAnalytics(ranked) {
+      if (!ranked || !ranked[0]) return;
+      const dur = state.startedAt
+        ? Math.max(0, Math.round((Date.now() - state.startedAt) / 1000))
+        : null;
+      const payload = {
+        beach_1: ranked[0].beach.id,
+        beach_2: ranked[1]?.beach.id ?? null,
+        beach_3: ranked[2]?.beach.id ?? null,
+        duration_seconds: dur,
+        questions_answered: state.questionCount,
+        run_no: nextRunNo()
+      };
+      try {
+        fetch(ANALYTICS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(() => {});
+      } catch {}
+    }
+
+    function showResult() {
+      card.classList.add('result-mode');
+      quizView.style.display = 'none';
+      resultView.style.display = 'flex';
+
+      const ranked = window.SCORING.rankBeaches(window.BEACHES, state.prefs);
+      sendAnalytics(ranked);
+      if (ranked && ranked[0]) trackGA('wynik', 'podsumowanie', ranked[0].beach.id);
+      const top = ranked[0];
+      const alts = ranked.slice(1, 4);
+
+      let altsHtml = '';
+      alts.forEach((a, i) => {
+        altsHtml += `
+          <div class="alt-card">
+            <div class="alt-card-body">
+              <div class="alt-num">${i + 2}. miejsce</div>
+              <div class="alt-name" title="${escHtml(a.beach.name)}">${escHtml(a.beach.name)}</div>
+              ${renderBadgeList(a.beach, window.RESULT_BADGES ? window.RESULT_BADGES.ALT_LIMIT : 3, 'alt')}
+            </div>
+          </div>`;
+      });
+
+      resultBody.innerHTML = `
+        <div class="result-title">
+          <img class="result-logo" src="assets/logo_rp_p.png" alt="Ranking Plaż">
+          <h2 class="result-heading">Twoje dopasowania:</h2>
+        </div>
+        <div class="postcard">
+          <div class="postcard-photo">${renderBeachImage(top.beach)}</div>
+          <div class="postcard-body">
+            <div class="postcard-kicker">Najlepsze dopasowanie</div>
+            <div class="postcard-name">${escHtml(top.beach.name)}</div>
+            ${renderBadgeList(top.beach, window.RESULT_BADGES ? window.RESULT_BADGES.MAIN_LIMIT : 4)}
+          </div>
+        </div>
+        <div class="alternatives">${altsHtml}</div>
+      `;
+
+      const tiles = [
+        resultBody.querySelector('.result-title'),
+        resultBody.querySelector('.postcard'),
+        ...resultBody.querySelectorAll('.alt-card')
+      ].filter(Boolean);
+      animateStagger(tiles.map((el, idx) => ({ el, delay: idx * 220 })));
+    }
+
+    function resetAll() {
+      shuffleCoreQuestions();
+      state.phase = 'hero';
+      state.askedIds = new Set();
+      state.prefs = {};
+      state.unlocks = new Set();
+      state.currentQuestion = null;
+      state.selectedIdx = null;
+      state.questionCount = 0;
+      state.followupCount = 0;
+      state.ranked = null;
+      state.confidence = null;
+      state.startedAt = null;
+      card.classList.remove('is-active', 'result-mode');
+      hero.style.display = 'flex';
+      animateSlide(hero);
+    }
+  })();
+  </script>
+
+
+</body></html>

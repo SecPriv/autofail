@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+  <title>ImproveDigital Topics API</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+    async function getTopics() {
+      try {
+        if (
+          'browsingTopics' in document &&
+          document.featurePolicy.allowsFeature('browsing-topics')
+        ) {
+          const topics = await document.browsingTopics();
+          return topics;
+        }
+      }
+      catch (e) {
+        console.error(e);
+      }
+    }
+
+    (async function() {
+      const topics = await getTopics();
+      const message = JSON.stringify({
+        segment: {
+          domain: '360yield.com',
+          bidder: 'improvedigital',
+          topics,
+        },
+        date: Date.now(),
+      });
+      window.parent.postMessage(message, '*');
+    })();
+  </script>
+</head>
+
+<body>
+
+
+
+</body></html>

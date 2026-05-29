@@ -1,0 +1,2237 @@
+<!DOCTYPE html><html lang="ja"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="在宅医療,往診,クリニック,病院,電子カルテ,モバカル,ORCA,クラウド,費用,">
+    <meta name="description" content="初期費用20万円・月額費用5万円から導入できるクラウド型電子カルテ。在宅医療業務をスマートにする機能が満載。多くの在宅医療専門クリニック・病院の声から生まれた電子カルテです。">
+    <title>モバカルネット|在宅医療対応クラウド型電子カルテ</title>
+
+
+    <link rel="stylesheet" href="movacal_net/assets/css/slick/slick-theme.css">
+    <link rel="stylesheet" href="movacal_net/assets/css/slick/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="movacal_net/assets/css/style.css">
+<!-- Google Tag Manager -->
+<script type="text/javascript" async="" src="https://hpjp.mieru-ca.com/embed?service=heatmap-popup&amp;tokenId=661355552&amp;protocol=https%3A&amp;hostname=movacal.net&amp;pathname=%2F&amp;search=&amp;hash=&amp;dv=m"></script><script async="" src="//cmkt.jp/req/i.js?r=r8835015863299.352"></script><script type="text/javascript" async="" src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16954217674&amp;cx=c&amp;gtm=4e65k1"></script><script type="text/javascript" async="" id="fjssync" src="https://hm.mieru-ca.com/service/js/mieruca-hm.js?v=1779533259624"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KFM7HHD9"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KFM7HHD9');</script>
+<!-- End Google Tag Manager -->
+    <script src="movacal_net/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script src="movacal_net/assets/js/slick.min.js"></script>
+    <script src="movacal_net/assets/js/slick.js"></script>
+    <script src="movacal_net/assets/js/script.js"></script>
+    <script src="https://cdn.rawgit.com/osamutake/japanese-holidays-js/v1.0.10/lib/japanese-holidays.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <script src="movacal_net/assets/js/jquery.holiday.js"></script>
+    <script>
+        let alert_msg = "";
+        let alert_id = [];
+
+        function submitForm(mode,type=""){
+            console.log("mode="+mode);
+            console.log("type="+type);
+
+            alert_msg = "";
+            alert_id = [];
+            $("#mode").val(mode);
+            $("#mode2").val(mode);
+
+            // 必須項目
+            if( mode == 1 ){ //デモ予約フォーム
+                checkForm("demo"+type+"_name","お名前（漢字）");
+                checkForm("demo"+type+"_name_kana","お名前（カナ）");
+                checkForm("demo"+type+"_hospital_name","医療機関名");
+                // email + confirm
+                checkEmailConfirm("demo"+type+"_email","demo"+type+"_email_confirm","Email");
+                if( $("#demo_visit").is(":checked") ){
+                    checkForm("demo"+type+"_zip","郵便番号");
+                    checkForm("demo"+type+"_pref","都道府県");
+                    checkForm("demo"+type+"_addr1","市区町村");
+                    checkForm("demo"+type+"_addr2","町名");
+                }
+                checkForm("demo"+type+"_date1","デモご希望日付");
+                checkForm("demo"+type+"_time1","デモご希望時間");
+                checkForm("demo"+type+"_agreement","個人情報保護方針に同意する","check");
+                postData("form"+type);
+
+            }else if( mode == 2 ){ //資料請求フォーム
+                checkForm("doc"+type+"_name","お名前（漢字）");
+                checkForm("doc"+type+"_name_kana","お名前（カナ）");
+                checkForm("doc"+type+"_hospital_name","医療機関名");
+                // email + confirm
+                checkEmailConfirm("doc"+type+"_email","doc"+type+"_email_confirm","Email");
+                checkForm("doc"+type+"_area","所在エリア");
+                checkForm("doc"+type+"_agreement","個人情報保護方針に同意する","check");
+                postData("form"+type);
+
+            }else if( mode == 3 ){ //お問い合わせフォーム
+                checkForm("inq"+type+"_name","お名前（漢字）");
+                checkForm("inq"+type+"_name_kana","お名前（カナ）");
+                checkForm("inq"+type+"_hospital_name","医療機関名");
+                // email + confirm
+                checkEmailConfirm("inq"+type+"_email","inq"+type+"_email_confirm","Email");
+                checkForm("inq"+type+"_content","問い合わせ内容");
+                checkForm("inq"+type+"_agreement","個人情報保護方針に同意する","check");
+                postData("form"+type);
+            }
+        }
+
+        //エラー文言
+        function checkForm( id,text,type="text" ){
+            if( type=="text" || type=="select" ){
+                if( $("#"+id).val() == "" ){
+                    $("#"+id).css("background-color","#ffe7e7");
+                    alert_msg += text + "を入力してください。\n";
+                    alert_id.push(id);
+
+                    //訪問デモを希望しないとき
+                    if( !$("#demo_visit").is(":checked") ){
+                        $(".p-zip-area,.p-ajaxzip3").css("background-color","#E4F2F8 !important");
+                    }
+                }else{
+                    $("#"+id).css("background-color","#E4F2F8");
+                }
+            }else if( type=="check" ){
+                if( !$("#"+id).prop("checked") ){
+                    alert_msg += text + "をチェックしてください。\n";
+                    alert_id.push(id);
+                }
+            }
+        }
+
+        // Validate email and confirmation
+        function checkEmailConfirm(originalId, confirmId, label){
+            const orig = $("#"+originalId).val().trim();
+            const conf = $("#"+confirmId).val().trim();
+            let valid = true;
+
+            // empty original?
+            if( orig == "" ){
+                $("#"+originalId).css("background-color","#ffe7e7");
+                alert_msg += label + "を入力してください。\n";
+                alert_id.push(originalId);
+                valid = false;
+            }else{
+                $("#"+originalId).css("background-color","#E4F2F8");
+            }
+
+            // empty confirm?
+            if( conf == "" ){
+                $("#"+confirmId).css("background-color","#ffe7e7");
+                alert_msg += label + "（確認用）を入力してください。\n";
+                alert_id.push(confirmId);
+                valid = false;
+            }else{
+                $("#"+confirmId).css("background-color","#E4F2F8");
+            }
+            if( !valid ){
+                return;
+            }
+
+            // optional: basic email format check (simple regex)
+            const emailSimpleRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if( !emailSimpleRegex.test(orig) ){
+                $("#"+originalId).css("background-color","#ffe7e7");
+                $("#"+confirmId).css("background-color","#ffe7e7");
+                alert_msg += label + "の形式が正しくありません。\n";
+                alert_id.push(originalId);
+                alert_id.push(confirmId);
+                return
+            }
+
+            // simple equality check
+            if( orig !== conf ){
+                $("#"+originalId).css("background-color","#ffe7e7");
+                $("#"+confirmId).css("background-color","#ffe7e7");
+                alert_msg += label + "が一致しません。\n";
+                alert_id.push(originalId);
+                alert_id.push(confirmId);
+                return
+            }
+
+            // ok
+            $("#"+originalId).css("background-color","#E4F2F8");
+            $("#"+confirmId).css("background-color","#E4F2F8");
+        }
+
+        //
+        function postData(form_name){
+            if( alert_id.length == 0 ){
+                if( confirm("この内容で送信します。よろしいですか？") ){
+                    document.forms[form_name].submit();
+                }
+            }else{
+                alert(alert_msg);
+                // focus first invalid
+                if(alert_id.length>0){
+                    $("#"+alert_id[0]).focus();
+                }
+            }
+        }
+    </script>
+
+    <script>
+        // ページ描画前から .mySwiper が非表示となり、JS が初期表示設定を終えるまでちらつきを防止
+        (function(){
+            var css = '\
+                .mySwiper{visibility:hidden;opacity:0;transition:opacity .28s ease;}\
+                .mySwiper.is-visible{visibility:visible;opacity:1;}';
+            var s = document.createElement('style');
+            s.type = 'text/css';
+            s.appendChild(document.createTextNode(css));
+            document.head.appendChild(s);
+        })();
+    </script><style type="text/css">                .mySwiper{visibility:hidden;opacity:0;transition:opacity .28s ease;}                .mySwiper.is-visible{visibility:visible;opacity:1;}</style>
+
+    <!-- Begin Mieruca Embed Code -->
+    <script type="text/javascript" id="mierucajs">
+        window.__fid = window.__fid || [];__fid.push([661355552]);
+        (function() {
+            function mieruca(){if(typeof window.__fjsld != "undefined") return; window.__fjsld = 1; var fjs = document.createElement('script'); fjs.type = 'text/javascript'; fjs.async = true; fjs.id = "fjssync"; var timestamp = new Date;fjs.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://hm.mieru-ca.com/service/js/mieruca-hm.js?v='+ timestamp.getTime(); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(fjs, x); };
+            setTimeout(mieruca, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent("onload", mieruca) : window.addEventListener("load", mieruca, false)) : mieruca();
+        })();
+    </script>
+    <!-- End Mieruca Embed Code -->
+<script defer="" async="" type="text/javascript" id="_ck_cmktValidCheck" src="https://cmkt.jp/req/scheck.php?i=ABE48002&amp;u=https%3A%2F%2Fmovacal.net%2F"></script><script defer="" async="" type="text/javascript" id="_ck_cmktProc" src="https://cmkt.jp/req/cspv.php?id=ABE48002&amp;rn=&amp;cv=&amp;ss=&amp;sn=NO&amp;os=&amp;rnv=12369366213340.492&amp;ref=&amp;url=https%3A%2F%2Fmovacal.net%2F&amp;user_wh=393 X 851&amp;osn="></script></head>
+
+<body class="p-top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFM7HHD9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+<header class="l-header">
+    <div id="is-mask"></div>
+    <div class="l-header__inner l-out-container">
+        <div class="l-header__hum tab-appea">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="l-header__logo">
+            <a href="/">
+                <picture>
+                    <source srcset="/movacal_net/assets/images/pc/common/logo.png" media="(min-width: 481px)">
+                    <source srcset="/movacal_net/assets/images/sp/common/logo.png" media="(max-width: 480px)" width="196">
+                    <img src="/movacal_net/assets/images/pc/common/logo.png" alt="">
+                </picture>
+            </a>
+        </div>
+        <nav class="l-header__nav">
+            <div class="l-header__nav-logo tab-appea">
+                <a href="/movacal_net/"><img src="/movacal_net/assets/images/pc/common/logo.png" alt=""></a>
+            </div>
+            <p class="tab-none">Tel. 050-5577-5406　<small>9:00～17:00(土日祝日除く)</small></p>
+            <ul class="l-header__list">
+                <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/case/" class="l-header__link">導入事例</a>
+                </li>  
+                <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/merit/" id="js-idCurrent01" class="l-header__link">選ばれる理由</a>
+                </li>
+                <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/function/" id="js-idCurrent02" class="l-header__link">機能</a>
+                </li>
+                <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/cost/" class="l-header__link">価格</a>
+                </li>
+                <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/flow/" class="l-header__link">導入の流れ</a>
+                </li>
+                <!-- <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/column/" class="l-header__link">コラム</a>
+                </li> -->
+                <li class="l-header__item l-header__item--small">
+                    <a href="/movacal_net/question/" class="l-header__link">よくある質問</a>
+                </li>
+                <li class="l-header__item is-toggle">
+                    <a href="/?id=p-demo02" class="l-header__link">デモ予約・資料請求<br>お問い合わせ</a>
+                </li>
+            </ul>
+            
+            <a href="/" class="l-header__nav-totop tab-appea"><img src="/movacal_net/assets/images/sp/common/to-top02.png" alt="to top"></a>
+            <img src="/movacal_net/assets/images/pc/common/footer_logo-251022.png" alt="ＮＴＴプレシジョンメディシン株式会社" class="l-header__nav-logo02 tab-appea">
+        </nav>
+    </div>
+</header>    <!--<section id="p-contact" class="p-contact p-contact-fixed is-toggle">
+    <div class="l-contactContainer">
+        <div class="p-contact__toggle is-close">
+            <span></span>
+            <span></span>
+        </div>
+        <hgroup>
+            <div class="p-contact__flex l-default-container">
+                <h2 class="p-contact__head">CONTACT</h2>
+                <p>お気軽にお問い合わせください</p>
+            </div>
+            <h2 class="p-contact__head02">
+                デモ予約・資料請求・お問い合わせ
+            </h2>
+            <p class="p-contact__head02--small">こちらにご入力の上、送信ボタンを押してください。</p>
+        </hgroup>
+        <div class="p-contact__form">
+            <div class="p-tab">
+                <ul class="p-contact__tab l-contact-tabContainer">
+                    <li id="p-demo">
+                        <input type="radio" checked id="p-tab01" name="form01"><label for="p-tab01">デモ予約</label>
+                    </li>
+                    <li id="p-document">
+                        <input type="radio" id="p-tab02" name="form01"><label for="p-tab02">資料請求</label>
+                    </li>
+                    <li id="p-contacts">
+                        <input type="radio" id="p-tab03" name="form01"><label for="p-tab03">お問い合わせ</label>
+                    </li>
+                </ul>
+            </div>
+            <form name="form" class="p-form l-form-container" method="post" action="https://133.18.161.67/movacal_net/contact-thanks.php">
+                <div id="p-demo_content" class="p-tab01">
+                    <div class="p-form__content">
+                        <label>お名前[漢字]demo_name</label>
+                        <input type="text" name="demo_name" id="demo_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お名前[かな]</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>医療機関名</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail</label>
+                        <input type="text" name="demo_email" id="demo_email" value="" class="p-txt-large" placeholder="例：example@domain.com">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail（確認用）</label>
+                        <input type="text" name="demo_email_confirm" id="demo_email_confirm" value="" class="p-txt-large" placeholder="もう一度入力してください">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お電話番号</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>所在エリア</label>
+                        <select name="area" class="p-txt-large">
+                            <option value="" selected="">選択してください</option>
+                            <option value="北海道">北海道</option>
+                            <option value="青森県">青森県</option>
+                            <option value="岩手県">岩手県</option>
+                            <option value="秋田県">秋田県</option>
+                            <option value="宮城県">宮城県</option>
+                            <option value="山形県">山形県</option>
+                            <option value="福島県">福島県</option>
+                            <option value="栃木県">栃木県</option>
+                            <option value="群馬県">群馬県</option>
+                            <option value="茨城県">茨城県</option>
+                            <option value="埼玉県">埼玉県</option>
+                            <option value="東京都">東京都</option>
+                            <option value="千葉県">千葉県</option>
+                            <option value="神奈川県">神奈川県</option>
+                            <option value="山梨県">山梨県</option>
+                            <option value="長野県">長野県</option>
+                            <option value="新潟県">新潟県</option>
+                            <option value="富山県">富山県</option>
+                            <option value="石川県">石川県</option>
+                            <option value="福井県">福井県</option>
+                            <option value="静岡県">静岡県</option>
+                            <option value="岐阜県">岐阜県</option>
+                            <option value="愛知県">愛知県</option>
+                            <option value="三重県">三重県</option>
+                            <option value="滋賀県">滋賀県</option>
+                            <option value="京都府">京都府</option>
+                            <option value="大阪府">大阪府</option>
+                            <option value="兵庫県">兵庫県</option>
+                            <option value="奈良県">奈良県</option>
+                            <option value="和歌山県">和歌山県</option>
+                            <option value="徳島県">徳島県</option>
+                            <option value="香川県">香川県</option>
+                            <option value="愛媛県">愛媛県</option>
+                            <option value="高知県">高知県</option>
+                            <option value="鳥取県">鳥取県</option>
+                            <option value="島根県">島根県</option>
+                            <option value="岡山県">岡山県</option>
+                            <option value="広島県">広島県</option>
+                            <option value="山口県">山口県</option>
+                            <option value="福岡県">福岡県</option>
+                            <option value="佐賀県">佐賀県</option>
+                            <option value="長崎県">長崎県</option>
+                            <option value="大分県">大分県</option>
+                            <option value="熊本県">熊本県</option>
+                            <option value="宮崎県">宮崎県</option>
+                            <option value="鹿児島県">鹿児島県</option>
+                            <option value="沖縄県">沖縄県</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content">
+                        <label>デモ希望日①</label>
+                        <input type="text" placeholder="日付" name="" value="" class="p-date01 p-txt-little p-little01">
+                        <select name="" id="" class="p-txt-little p-little01">
+                            <option value="placeholder">時間帯</option>
+                            <option value="9:00~">9:00~</option>
+                            <option value="9:30~">9:30~</option>
+                            <option value="10:00~">10:00~</option>
+                            <option value="10:30~">10:30~</option>
+                            <option value="11:00~">11:00~</option>
+                            <option value="11:30~">11:30~</option>
+                            <option value="12:00~">12:00~</option>
+                            <option value="12:30~">12:30~</option>
+                            <option value="13:00~">13:00~</option>
+                            <option value="13:30~">13:30~</option>
+                            <option value="14:00~">14:00~</option>
+                            <option value="14:30~">14:30~</option>
+                            <option value="15:00~">15:00~</option>
+                            <option value="15:30~">15:30~</option>
+                            <option value="16:00~">16:00~</option>
+                            <option value="16:30~">16:30~</option>
+                            <option value="17:00~">17:00~</option>
+                            <option value="17:30~">17:30~</option>
+                            <option value="18:00~">18:00~</option>
+                            <option value="18:30~">18:30~</option>
+                            <option value="19:00~">19:00~</option>
+                            <option value="19:30~">19:30~</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content">
+                        <label>デモ希望日②</label>
+                        <input type="text" placeholder="日付" name="" value="" class="p-date02 p-txt-little p-little01">
+                        <select name="" id="" class="p-txt-little p-little01">
+                            <option value="placeholder">時間帯</option>
+                            <option value="9:00~">9:00~</option>
+                            <option value="9:30~">9:30~</option>
+                            <option value="10:00~">10:00~</option>
+                            <option value="10:30~">10:30~</option>
+                            <option value="11:00~">11:00~</option>
+                            <option value="11:30~">11:30~</option>
+                            <option value="12:00~">12:00~</option>
+                            <option value="12:30~">12:30~</option>
+                            <option value="13:00~">13:00~</option>
+                            <option value="13:30~">13:30~</option>
+                            <option value="14:00~">14:00~</option>
+                            <option value="14:30~">14:30~</option>
+                            <option value="15:00~">15:00~</option>
+                            <option value="15:30~">15:30~</option>
+                            <option value="16:00~">16:00~</option>
+                            <option value="16:30~">16:30~</option>
+                            <option value="17:00~">17:00~</option>
+                            <option value="17:30~">17:30~</option>
+                            <option value="18:00~">18:00~</option>
+                            <option value="18:30~">18:30~</option>
+                            <option value="19:00~">19:00~</option>
+                            <option value="19:30~">19:30~</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content">
+                        <label>デモ希望日③</label>
+                        <input type="text" placeholder="日付" name="" value="" class="p-date03 p-txt-little p-little01">
+                        <select name="" id="" class="p-txt-little p-little01">
+                            <option value="placeholder">時間帯</option>
+                            <option value="9:00~">9:00~</option>
+                            <option value="9:30~">9:30~</option>
+                            <option value="10:00~">10:00~</option>
+                            <option value="10:30~">10:30~</option>
+                            <option value="11:00~">11:00~</option>
+                            <option value="11:30~">11:30~</option>
+                            <option value="12:00~">12:00~</option>
+                            <option value="12:30~">12:30~</option>
+                            <option value="13:00~">13:00~</option>
+                            <option value="13:30~">13:30~</option>
+                            <option value="14:00~">14:00~</option>
+                            <option value="14:30~">14:30~</option>
+                            <option value="15:00~">15:00~</option>
+                            <option value="15:30~">15:30~</option>
+                            <option value="16:00~">16:00~</option>
+                            <option value="16:30~">16:30~</option>
+                            <option value="17:00~">17:00~</option>
+                            <option value="17:30~">17:30~</option>
+                            <option value="18:00~">18:00~</option>
+                            <option value="18:30~">18:30~</option>
+                            <option value="19:00~">19:00~</option>
+                            <option value="19:30~">19:30~</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content p-form__last">
+                        <label>自由記入欄</label>
+                        <textarea class="p-txt-large" name=""></textarea>
+                    </div>
+                    <label for="agreement" class="p-agreement"><input class="check" type="checkbox" name=""><a href="https://www.ntt-et.co.jp/Privacy.html" target="_blank">個人情報保護方針に同意する</a></label>
+                    <div class="c-submit">
+                        <input class="c-submit-btn" type="submit" name="btn_confirm" value="デモを申し込む">
+                    </div>
+                </div>
+                <div id="p-document_content" class="p-tab02">
+                    <div class="p-form__content">
+                        <label>お名前[漢字]</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お名前[かな]</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>医療機関名</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>部署名</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail</label>
+                        <input type="text" name="doc_email" id="doc_email" value="" class="p-txt-large" placeholder="例：example@domain.com">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail（確認用）</label>
+                        <input type="text" name="doc_email_confirm" id="doc_email_confirm" value="" class="p-txt-large" placeholder="もう一度入力してください">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お電話番号</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content p-form__last">
+                        <label class="zipTxt">ご送付先住所 〒</label>
+                        <input type="text" name="zip" class="p-zip p-zip-area" value="" placeholder="例：1234567">
+                        <button type="button" class="p-ajaxzip3 p-zip-area" href="#">住所検索</button><br>
+                        <label>都道府県</label>
+                        <select name="pref" class="p-zip-area p-pref">
+                            <option value="" selected="">選択してください</option>
+                            <option value="北海道">北海道</option>
+                            <option value="青森県">青森県</option>
+                            <option value="岩手県">岩手県</option>
+                            <option value="宮城県">宮城県</option>
+                            <option value="秋田県">秋田県</option>
+                            <option value="山形県">山形県</option>
+                            <option value="福島県">福島県</option>
+                            <option value="茨城県">茨城県</option>
+                            <option value="栃木県">栃木県</option>
+                            <option value="群馬県">群馬県</option>
+                            <option value="埼玉県">埼玉県</option>
+                            <option value="千葉県">千葉県</option>
+                            <option value="東京都">東京都</option>
+                            <option value="神奈川県">神奈川県</option>
+                            <option value="新潟県">新潟県</option>
+                            <option value="富山県">富山県</option>
+                            <option value="石川県">石川県</option>
+                            <option value="福井県">福井県</option>
+                            <option value="山梨県">山梨県</option>
+                            <option value="長野県">長野県</option>
+                            <option value="岐阜県">岐阜県</option>
+                            <option value="静岡県">静岡県</option>
+                            <option value="愛知県">愛知県</option>
+                            <option value="三重県">三重県</option>
+                            <option value="滋賀県">滋賀県</option>
+                            <option value="京都府">京都府</option>
+                            <option value="大阪府">大阪府</option>
+                            <option value="兵庫県">兵庫県</option>
+                            <option value="奈良県">奈良県</option>
+                            <option value="和歌山県">和歌山県</option>
+                            <option value="鳥取県">鳥取県</option>
+                            <option value="島根県">島根県</option>
+                            <option value="岡山県">岡山県</option>
+                            <option value="広島県">広島県</option>
+                            <option value="山口県">山口県</option>
+                            <option value="徳島県">徳島県</option>
+                            <option value="香川県">香川県</option>
+                            <option value="愛媛県">愛媛県</option>
+                            <option value="高知県">高知県</option>
+                            <option value="福岡県">福岡県</option>
+                            <option value="佐賀県">佐賀県</option>
+                            <option value="長崎県">長崎県</option>
+                            <option value="熊本県">熊本県</option>
+                            <option value="大分県">大分県</option>
+                            <option value="宮崎県">宮崎県</option>
+                            <option value="鹿児島県">鹿児島県</option>
+                            <option value="沖縄県">沖縄県</option>
+                        </select><br>
+                        <label>市区町村</label>
+                        <input type="text" name="addr1" class="p-txt-large p-zip-area" value=""><br>
+
+                        <label>町名</label>
+                        <input type="text" name="addr2" class="p-txt-large p-zip-area" value=""><br>
+
+                        <label>番地・号</label>
+                        <input type="text" name="addr3" class="p-txt-large p-zip-area" value="">
+                    </div>
+                    <label for="agreement" class="p-agreement"><input class="p-check" type="checkbox" name="agreement"><a href="https://www.ntt-et.co.jp/Privacy.html" target="_blank">個人情報保護方針に同意する</a></label>
+                    <div class="c-submit">
+                        <input class="c-submit-btn" type="submit" name="btn_confirm" value="資料を請求する">
+                    </div>
+                </div>
+                <div id="p-contact_content" class="p-tab03">
+                    <div class="p-form__content">
+                        <label>お名前[漢字]</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お名前[かな]</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>医療機関名</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>部署名</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail</label>
+                        <input type="text" name="contact_email" id="contact_email" value="" class="p-txt-large" placeholder="例：example@domain.com">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail（確認用）</label>
+                        <input type="text" name="contact_email_confirm" id="contact_email_confirm" value="" class="p-txt-large" placeholder="もう一度入力してください">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お電話番号</label>
+                        <input type="text" name="" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content p-form__last">
+                        <label>お問合せ内容</label>
+                        <textarea class="p-txt-large" name=""></textarea>
+                    </div>
+
+                    <label for="agreement" class="p-agreement"><input class="check" type="checkbox" name=""><a href="https://www.ntt-et.co.jp/Privacy.html" target="_blank">個人情報保護方針に同意する</a></label>
+                    <div class="c-submit">
+                        <input class="c-submit-btn" type="submit" name="btn_confirm" value="送信する">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+-->
+    <ul class="p-tabMiddle tab-appea underTab">
+        <a href="#p-contact02" class="p-tabMiddle__btn p-top__linkDemo is-scroll">
+            <li>デモ予約</li>
+        </a>
+        <a href="#p-contact02" class="p-tabMiddle__btn p-top__linkDocument is-scroll">
+            <li>資料請求</li>
+        </a>
+        <a href="#p-contact02" class="p-tabMiddle__btn p-top__linkContact is-scroll">
+            <li>お問い合わせ</li>
+        </a>
+    </ul>
+    <main class="l-main">
+        <section class="p-intro">
+            <div class="p-mainVisual">
+                <div class="swiper mySwiper swiper-creative swiper-3d swiper-initialized swiper-horizontal swiper-android swiper-watch-progress is-visible">
+                    <div class="swiper-wrapper" id="swiper-wrapper-24673544b8e99b13" aria-live="off" style="cursor: grab; transition-duration: 0ms; transition-delay: 0ms;">
+                        
+                        
+                        
+                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 6" data-swiper-slide-index="3" style="width: 393px; z-index: 1; transform: translate3d(calc(-30% + 0px), calc(0px), calc(-1px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual04.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual04.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual04.png" alt="">
+                            </picture>
+                            <p>医療法人すずらん会 たろうクリニック様<br class="tab-appea">　[院長] 内田 直樹 先生</p>
+                        <div class="swiper-slide-shadow swiper-slide-shadow-creative" style="opacity: 1; transition-duration: 0ms;"></div></div>
+                        <div class="swiper-slide" role="group" aria-label="5 / 6" data-swiper-slide-index="4" style="width: 393px; z-index: 2; transform: translate3d(calc(-30% - 393px), calc(0px), calc(-1px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual05.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual05.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual05.png" alt="">
+                            </picture>
+                            <p>やまと診療所様<br class="tab-appea">　[院長] 安井佑 先生</p>
+                        <div class="swiper-slide-shadow swiper-slide-shadow-creative" style="opacity: 1; transition-duration: 0ms;"></div></div>
+                        <div class="swiper-slide" role="group" aria-label="6 / 6" data-swiper-slide-index="5" style="width: 393px; z-index: 3; transform: translate3d(calc(-30% - 786px), calc(0px), calc(-1px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual06.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual06.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual05.png" alt="">
+                            </picture>
+                            <p>医療法人賢友会 細谷内科医院<br class="tab-appea">　[副院長] 細谷拓真 先生</p>
+                        <div class="swiper-slide-shadow swiper-slide-shadow-creative" style="opacity: 1; transition-duration: 0ms;"></div></div>
+                        <!-- <div class="swiper-slide">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual07.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual07.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual05.png" alt="">
+                            </picture>
+                            <p>医療法人カーサミア やまおか在宅クリニック<br class="tab-appea">　[院長] 山岡憲夫 先生</p>
+                        </div> -->
+                    <div class="swiper-slide" role="group" aria-label="1 / 6" data-swiper-slide-index="0" style="width: 393px; z-index: 4; transform: translate3d(calc(-30% - 1179px), calc(0px), calc(-1px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual03.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual03.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual03.png" alt="">
+                            </picture>
+                            <p>医療法人みらい  みらい在宅クリニック様<br class="tab-appea">　[理事長] 沖田 将人 先生</p>
+                        <div class="swiper-slide-shadow swiper-slide-shadow-creative" style="opacity: 1; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 6" data-swiper-slide-index="1" style="width: 393px; z-index: 5; transform: translate3d(calc(-30% - 1572px), calc(0px), calc(-1px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual02.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual02.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual02.png" alt="">
+                            </picture>
+                            <p>医療法人桜花会 あすか在宅クリニック様<br class="tab-appea">　[理事長] 髙添 明日香 先生</p>
+                        <div class="swiper-slide-shadow swiper-slide-shadow-creative" style="opacity: 1; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active" role="group" aria-label="3 / 6" data-swiper-slide-index="2" style="width: 393px; z-index: 6; transform: translate3d(calc(-1965px), calc(0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transition-duration: 0ms;">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/top/mainVisual01.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/top/mainVisual01.png" media="(max-width: 480px)">
+                                <img src="movacal_net/assets/images/pc/top/mainVisual01.png" alt="">
+                            </picture>
+                            <p>医療法人 あい友会様<br class="tab-appea">　[理事長] 野末 睦 先生</p>
+                        <div class="swiper-slide-shadow swiper-slide-shadow-creative" style="opacity: 0; transition-duration: 0ms;"></div></div></div>
+                    <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                <div class="p-mainVisual__txts">
+                    <h1 class="p-mainVisual__head">
+                        <picture class="p-mainVisual__logos">
+                            <source srcset="movacal_net/assets/images/pc/top/mainVisual_txt-251009.png" media="(min-width: 481px)">
+                            <source srcset="movacal_net/assets/images/sp/top/mainVisual_txt-251009.png" media="(max-width: 480px)">
+                            <img src="movacal_net/assets/images/pc/top/mainVisual_txt-251009.png" alt="モバカルが支える、在宅医療の未来">
+                        </picture>
+                    </h1>
+                </div>
+                <div class="p-mainVisual__bdr"></div>
+            </div>
+        </section>
+
+        <section class="p-voice">
+            <div class="l-default-container">
+                <hgroup class="p-voice__hgroup">
+                    <h2 class="p-voice__head"><img src="movacal_net/assets/images/pc/top/voice.png"></h2>
+                    <p class="p-voice__subHead">モバカルが寄り添う、<br class="tab-appea">さまざまなクリニックのかたち。</p>
+                    <a href="./movacal_net/case/">すべての事例を見る</a>
+                </hgroup>
+            </div>
+            <div class="p-voice__slide_bg">
+                <div class=" l-voice-slideContainer">
+                    <div class="l-voice-listContainer">
+                        <ul class="p-voice__list is-slick slick-initialized slick-slider"><button class="slick-prev slick-arrow slick-disabled" aria-label="Previous" type="button" aria-disabled="true" style="">Previous</button>
+
+                            <!--テンプレート-->
+                            <!--No.●●-->
+                            <!--
+                            <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case●●_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            ●●法人<br>
+                                            ●●クリニック<br>
+                                            (●●県)
+                                        </h3>
+                                        <p class="p-voice__txt01">●●</p>
+                                        <p class="p-voice__txt02">●●・・・</p>
+                                        <a href="./movacal_net/case/single●●.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li>
+                            -->
+
+                            <!--No.01-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case01_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人みらい<br>
+                                            みらい在宅クリニック<br>
+                                            院長　沖田 将人<br>
+                                            (神奈川県)
+                                        </h3>
+                                        <p class="p-voice__txt01">自分たちが欲しい在宅医療向け電子カルテを共同開発しました。</p>
+                                        <p class="p-voice__txt02">医師用と、看護師用、事務用それぞれに管理画面があり、同時利用が可能になりました。操作がわかりやすく、非常勤の医師でもすぐに使えます。意見書などの医事書類がカルテと連動することで、作成の手間が軽減しました。</p>
+                                        <a href="./movacal_net/case/single01.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.02-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case02_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人社団 焔<br>
+                                            やまと診療所<br>
+                                            理事長　安井　佑<br>
+                                            (東京都)
+                                        </h3>
+                                        <p class="p-voice__txt01">他社システムとの連携で、在宅医療に関する新しい価値の創造をサポートしてくれます。</p>
+                                        <p class="p-voice__txt02">インターネットで簡単にFAX送信ができる「メールFAX」機能、往診ルートの最適化をサポートする「NAVITIME」との連携……他社連携や機能追加によって、常に求める機能がすばやく実現されるのでより良い在宅医療へと進んでいます。</p>
+                                        <a href="./movacal_net/case/single02.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.03-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case03_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人OWL<br>
+                                            みなみ在宅クリニック<br>
+                                            院長　南 大揮<br>
+                                            (高知県)
+                                        </h3>
+                                        <p class="p-voice__txt01">在宅医療に必要な機能が全て１つに。毎日の訪問診療に助かっています。</p>
+                                        <p class="p-voice__txt02">研修時には他社の電子カルテを使っていたこともありますが、自身で在宅医療を 始めるに あたっては2，3個のツールを組み合わせて使うのは非効率的でした。でも、モバカルは在宅医療に必要な機能が全て備わっており、「 在宅医療支援ツール 」として成り立っていたので、 導入したことですぐにスタート地点に立つことができました。</p>
+                                        <a href="./movacal_net/case/single03.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.04-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case04_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人向翔会<br>
+                                            だんホームクリニック<br>
+                                            院長　段　俊行<br>
+                                            (大阪府)
+                                        </h3>
+                                        <p class="p-voice__txt01">在宅医療の現場を知っている人が開発しているから</p>
+                                        <p class="p-voice__txt02">モバカルは、本当に在宅医療の現場を知っている人 が開発に携わり在宅医療を知っているスタッフさんがサポートしてくれているのだろうと思います。また「モバカルコミュニティ」という・・・</p>
+                                        <a href="./movacal_net/case/single04.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.05-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case05_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人洋和会<br>
+                                            横井クリニック<br>
+                                            院長　横井 達佳<br>
+                                            (愛知県)
+                                        </h3>
+                                        <p class="p-voice__txt01">開業する時は「モバカル」と決めていました。</p>
+                                        <p class="p-voice__txt02">横井先生：在宅医療を始める前に、外勤先でモバカルネットを使用して診察しており、とにかく使いやすかった事を覚えていました。 そして、次の外勤先で使用していた他製品の電子カルテは、多職種連携や、医事文書作成など、機能面で非効率的でしたので、 在宅医療のツールとしては正直使いづらいなと思っていました。自分が在宅医療を始める時は、絶対に モバカルを導入しようと開院前から決めていました。</p>
+                                        <a href="./movacal_net/case/single05.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.06-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case06_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人桜花会 <br>あすか在宅クリニック<br>
+                                             理事長　高添　明日香 <br>
+                                            (山梨県)
+                                        </h3>
+                                        <p class="p-voice__txt01">自分がやりたい医療像が見えたから</p>
+                                        <p class="p-voice__txt02">モバカルは作って終わりではなく、現場の声を聞いて日々カルテが進化し続けていました。ユーザの声を聞いて定期的に電子カルテが変化していく。そういう製品は他にないと思います。 しかも低コストで・・・</p>
+                                        <a href="./movacal_net/case/single06.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.07-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case07_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人福寿会<br>藤戸クリニック<br>
+                                            院長　平尾　健一<br>
+                                            (岡山県)
+                                        </h3>
+                                        <p class="p-voice__txt01">手間が大きく削減できました。</p>
+                                        <p class="p-voice__txt02"> モバカルを選んだ理由は、スマートフォンやタブレットのモバイル端末からカルテ入力宅医療現場での機動性が高いところも気に入っています。また医師･看護師･事務など複数の人が同時に利用でき、電子カルテを通じてリアルタイムで診察状況を把握できるようになった事で、 業務改善にもつながりました。     </p>
+                                        <a href="./movacal_net/case/single07.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.08-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case08_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人あい友会<br>
+                                            理事長　野末　睦<br>
+                                            (愛知県)
+                                        </h3>
+                                        <p class="p-voice__txt01">モバカルで、死亡診断書の修正作業が0に</p>
+                                        <p class="p-voice__txt02">行政の書式に手書きしていた「死亡診断書」も、モバカルを導入した事で書き間違いから起こる 修正作業がゼロになりました。「すぐに見える」「すぐに書ける」の作業がその場でできるので業務の効率化になりました。・・・</p>
+                                        <a href="./movacal_net/case/single08.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.09-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case09_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                        医療法人ナカノ会<br>ナカノ在宅医療クリニック<br>
+                                        理事長　中野　一司<br>
+                                        (鹿児島県)
+                                        </h3>
+                                        <p class="p-voice__txt01">多職種連携に最強なモバカル</p>
+                                        <p class="p-voice__txt02">多職種で情報共有をしながら運用するには「モバカル」が必要でした。「情報共有がその場でできる」これがモバカルの最大の強みであり2019年からモバカルを使っていますが、在宅医療に特化した最強ツールと言えます。・・・</p>
+                                        <a href="./movacal_net/case/single09.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.10-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case10_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                        医療法人のぞみ<br>天王山草野クリニック<br>
+                                        院長　 草野 超夫 <br>
+                                         (京都府)
+                                        </h3>
+                                        <p class="p-voice__txt01">開業1年未満で他社製品から移行。モバカルは一番弱点が少ない電子カルテです。</p>
+                                        <p class="p-voice__txt02">モバカルネットを導入する前の悩みは、書類作成と請求管理の負荷が大きい事でした。モバカルネットを使い始めてからは、 在宅医療に対応できる医事文書もほぼ揃っているので、カルテ内で全て管理できるようになりました。また請求管理も「収納管理」機能で一括請求 （介護と医療）できるので、導入前の悩みが解決しました。さらに訪問診療に行っても電波状況が悪くて止まるといったこともほぼなく安定感が素晴らしいです。電波が弱い場所でも「保存機能」があるので、作成途中のカルテを後から編集できます。 安定感があるから業務もはかどるし、予定通り患者さんを診る事もできます。電子カルテで選びに苦戦し本当に辛い想いをしたので良さが分かります。 導入してみて1年、モバカルは在宅医療機関にとって最もデメリットが少ない電子カルテだと感じました。</p>
+                                        <a href="./movacal_net/case/single10.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.11-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case11_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人平和の森 <br>ピースホームケアクリニック<br>
+                                            理事長・院長　 平本 秀二<br>
+                                            (滋賀県)
+                                        </h3>
+                                        <p class="p-voice__txt01">モバカルはより在宅医療に特化した電子カルテです。</p>
+                                        <p class="p-voice__txt02">モバカルを導入して10年が経ちます。単なる電子カルテだけの機能ではなく、場所を問わず業務をタイムリーに業務の共有ができ、多職種とのコミュニケーションツールとしての役割もあると感じています。</p>
+                                        <a href="./movacal_net/case/single11.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.12-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case12_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            丸の内在宅クリニック<br>
+                                             院長　上垣内　隆文<br>
+                                            (三重県)
+                                        </h3>
+                                        <p class="p-voice__txt01">準備カルテで業務改善が実現</p>
+                                        <p class="p-voice__txt02">導入してみて１年ほどた経ちましたが、一番好きな機能は「準備カルテ」です。在宅医療は月に2 回訪問診療を しますので、予定に合わせて看護師が事前に必要な情報を登録してくれます。その後、医師が最終確認をして準備カルテとして 保存しています。患者さん宅に到着したら「準備カルテ」の編集から開くと、診察をすぐに開始できるので・・・</p>
+                                        <a href="./movacal_net/case/single12.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.13-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case13_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            彩り在宅クリニック<br>
+                                            院長　坂田　鋼治<br>
+                                        　  (宮崎県)
+                                        </h3>
+                                        <p class="p-voice__txt01">導入して思った事。それは「モバカルで間違いなかった」</p>
+                                        <p class="p-voice__txt02">モバカルを導入してみて2年ほど経ちますが、クチコミや、導入事例の内容は本当だったんだなと思います。「モバカルで間違いなかった」この一言に尽きます。担当営業さんから製品の説明があった時に、「地域連携もできます」と伺いしたものの、どこの範囲まで連携できる機能が・・・</p>
+                                        <a href="./movacal_net/case/single13.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.14 20251204削除-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case14_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人元気会<br>わかさクリニック<br>
+                                            副院長　福元　剛<br>
+                                            (埼玉県)
+                                        </h3>
+                                        <p class="p-voice__txt01">モバカルに乗り換えて「業務効率が3倍」も上がりました</p>
+                                        <p class="p-voice__txt02">モバカルを使い始めてからは、動きはかるがる、繋がりやすさも抜群で、まさに「衝撃的」の一言でした。 法人である東京・埼玉のエリア９クリニックにおいてクリニック間でのカルテ情報の共有も可能になりました。訪問診療は患者さん宅で診療を行いますが、流れは外来診察と変わらず・・・</p>
+                                        <a href="./movacal_net/case/single14.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.15-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case15_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人社団青葉<br>いまいホームケアクリニック<br>
+                                            理事長　今井　浩平<br>
+                                            (北海道)
+                                        </h3>
+                                        <p class="p-voice__txt01">在宅医療を運用する上で総合的評価がよかったので導入しました。</p>
+                                        <p class="p-voice__txt02">モバカルを導入して10年が経ちます。単なる電子カルテだけの機能ではなく、場所を問わず業務をタイムリーに業務の共有ができ、多職種とのコミュニケーションツールとしての役割もあると感じています。</p>
+                                        <a href="./movacal_net/case/single15.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.16-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case16_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                        医療法人財団はるたか会<br>あおぞら診療所しずおか<br>
+                                        院長　天野　功二<br>
+                                        (静岡県)
+                                        </h3>
+                                        <p class="p-voice__txt01">在宅医療をオールマイティに対応</p>
+                                        <p class="p-voice__txt02">モバカルはその場でカルテを書いてその場で終わりますし、動きが速く、在宅医療に必要な機能もそろい、臨時の診療があった場合にもすぐ対応でき、処方箋もFAXもできます。当日に急遽予定が変更になるここともありますが、それをリアルタイムですべての職種で把握できるのがいいです。在宅に必要な機能がすべてそろっているので助かっています・・・</p>
+                                        <a href="./movacal_net/case/single16.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.17-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case17_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人賛永会法人<br> さつきホームクリニック<br>
+                                            理事長　月永　洋介<br>
+                                            (栃木県)
+                                        </h3>
+                                        <p class="p-voice__txt01">在宅医療に特化した電子カルテ</p>
+                                        <p class="p-voice__txt02">デザイン性の良さはもちろんの事、機能面では、インターネットFAX、多職種連携、計画書や医事文書のひな形など、在宅医療に必要な機能がすべてそろっており、在宅に特化した電子カルテでしたので即決しました。実際に導入してからは困ったこともなく、評判どおりの電子カルテだと思いました。・・・</p>
+                                        <a href="./movacal_net/case/single17.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.18-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case18_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人すずらん会<br>たろうクリニック<br>
+                                            院長　内田 直樹<br>
+                                            (福岡県)
+                                        </h3>
+                                        <p class="p-voice__txt01">シンプル操作。訪問診療の1日ルーティン</p>
+                                        <p class="p-voice__txt02">モバカルのいいところは、操作がとてもシンプルで、スマートフォン1台で 訪問診療できる事だと思います。またクラウド型で場所を問わず、同じ環境で 多職種の方と繋がり、リアルタイムで情報共有できるので本当に助かっています。 モバカルを導入してからは急に繋がらないなどの大きなネットワーク障害も・・・</p>
+                                        <a href="./movacal_net/case/single18.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.19-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case19_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            いろはホームクリニック<br>
+                                            院長　飯森 俊介<br>
+                                            (愛媛県)
+                                        </h3>
+                                        <p class="p-voice__txt01">モバカルは総合的評価が高かったので選びました</p>
+                                        <p class="p-voice__txt02">在宅医療を開始するにあたり、NTTさんと他社製品の二者択一で悩みました。電子カルテを導入する際の絶対的条件の１つ目は「クラウド型」ということです。クラウド型は院内にサーバーを置く必要がなく、場所や端末を問わず使用できる事です。２つ目は「在宅医療に特化している電子カルテ」だという事です。訪問診療での日々の業務を効率化でき、働き方が変わるツールの1つです。　３つめは「イニシャルコストとランニングコストが安価」です。サーバーの運用や保守費用が不要になる事で、開業までの時間が短縮になります。またランニングコストが安価であることによって経営の安定や、事業の成長を加速させることが期待できます。・・・</p>
+                                        <a href="./movacal_net/case/single19.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+                            
+                            <!--No.20-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case20_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人賢友会　細谷内科医院<br>
+                                            副院長　細谷　拓真<br>
+                                            (秋田県)
+                                        </h3>
+                                        <p class="p-voice__txt01">「モバカル一択」　この一言に賛同</p>
+                                        <p class="p-voice__txt02">在宅医療を開始するにあたり、まず電子カルテを探しました。というのも電子カルテは一旦導入すると他社に乗り換えるのが大変な作業になる為、自身が100％納得できるものを導入したいと思っていたからです。研修時に使用していた電子カルテでも特に不便は感じてはいなかったものの、もっと業務を効率化できる電子カルテがあるのではないかと思っていました。そんな中、出会ったのがNTT社のモバカルネットでした。電子カルテの選定で一番重要視したポイントは「医事文書」の処理業務の簡潔化でした。他社製品と比較しましたが、モバカルはすべての医事文書を同一システム内で完結でき、インターネットFAX機能により、即時にFAX送信が可能です。また訪問看護指示書・報告書などはモバカルリンクを使うことにより、クラウドを介して多職種に提供可能で、印刷や郵送の手間もありません。また、「事前準備カルテ」の機能を使う事で、訪問日の前日に、検査結果を自宅で確認し、事前に指示、処方、検査追加をオーダーすることができます。・・・</p>
+                                        <a href="./movacal_net/case/single20.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+
+                            <!--No.21-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case21_00.jpg" alt="">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人秋本クリニック　<br>
+                                            院長　秋本 悦志<br>
+                                            (広島県)
+                                        </h3>
+                                        <p class="p-voice__txt01">モバカルを選んだすべての理由</p>
+                                        <p class="p-voice__txt02">当院は、仕事の分量として外来：在宅が50：50です。在宅医療に特化しながら、一般診療にも十分に対応できるという面でもモバカルを選びました。<br />訪問診療先での使いやすさを追求したシンプルな操作性、モバイル端末での利用、地図連携、訪問スケジュール管理など、モバカルは訪問診療ならではのニーズに対応した機能が充実しています。またリアルタイムでの情報共有、例えば、医師、看護師、薬剤師、事務スタッフ間の患者情報の共有がスムーズに行え、多職種連携にも強く、セキュリティと安全性に関しても、患者様の重要な情報を安全に管理するための強固なセキュリティ対策が万全であることも選ぶ理由の１つになりました。。・・・</p>
+                                        <a href="./movacal_net/case/single21.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+
+                            <!--20260224～　最新5件＋最新を左に表示-->
+                            <!--No.28-->
+                            
+
+                            <!--No.27-->
+                            
+
+                            <!--No.26-->
+                            
+
+                            <!--No.25-->
+                            
+
+                            <!--No.24-->
+                            
+
+                            <!--No.23-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case23_01.jpg" alt="医療法人カーサミア　やまおか在宅クリニック">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人カーサミア<br />やまおか在宅クリニック<br>
+                                            院長　山岡 憲夫<br>
+                                            (大分県)
+                                        </h3>
+                                        <p class="p-voice__txt01">九州エリアで15年連続第1位の在宅看取り実績をもつ大分のクリニック</p>
+                                        <p class="p-voice__txt02">「医療法人カーサミア やまおか在宅クリニック」は、大分県大分市に2009年7月に設立され、今年で17年目を迎える地域密着型の診療所です。・・・</p>
+                                        <a href="./movacal_net/case/single23.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                            <!--No.22-->
+                            <!-- <li class="p-voice__item">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case22_01.jpg" alt="医療法人コスモス会　ながのファミリークリニック">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人コスモス会<br />ながのファミリークリニック<br>
+                                            理事長　清水 隆一<br>
+                                            (長野県)
+                                        </h3>
+                                        <p class="p-voice__txt01">会社員としての経験を経て医師の道へ</p>
+                                        <p class="p-voice__txt02">長野県長野市に位置する「医療法人コスモス会 ながのファミリークリニック」で理事長を務める清水隆一先生は、設計開発職から医師へと転身された、ユニークなキャリアの持ち主です。・・・</p>
+                                        <a href="./movacal_net/case/single22.php">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li> -->
+
+                        <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 25000px; transform: translate3d(35px, 0px, 0px);"><li class="p-voice__item slick-slide slick-current slick-center" style="" data-slick-index="0" aria-hidden="true" tabindex="0">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case28_01.jpg" alt="医療法人社団せせらぎ せせらぎ在宅クリニック">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人社団せせらぎ <br>
+                                            せせらぎ在宅クリニック<br>
+                                            院長　清水 亨<br>
+                                            (茨城県)
+                                        </h3>
+                                        <p class="p-voice__txt01">麻酔科医の視点を、在宅医療へ</p>
+                                        <p class="p-voice__txt02">茨城県つくば市に位置する「医療法人社団せせらぎ せせらぎ在宅クリニック」の院長を務める清水 亨先生は、日本医科大学卒業後、日赤医療センター麻酔科をはじめ、大学病院や地域の病院など複数の医療機関で麻酔科医として研鑽を積まれてきました。・・・</p>
+                                        <a href="./movacal_net/case/single28.php" tabindex="-1">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li><li class="p-voice__item slick-slide" style="" data-slick-index="1" aria-hidden="true" tabindex="-1">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case27_01.jpg" alt="あかり在宅クリニック">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            あかり在宅クリニック<br>
+                                            院長　眞川 昌大<br>
+                                            (宮崎県)
+                                        </h3>
+                                        <p class="p-voice__txt01">消化器内科・透析医療を経て在宅医療へ</p>
+                                        <p class="p-voice__txt02">宮崎県宮崎市で診療を行う眞川昌大先生は、宮崎大学医学部を卒業後、宮崎生協病院および千葉県の亀田総合病院にて、消化器内科医として臨床経験を積まれました。・・・</p>
+                                        <a href="./movacal_net/case/single27.php" tabindex="-1">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li><li class="p-voice__item slick-slide" style="" data-slick-index="2" aria-hidden="true" tabindex="-1">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case26_01.jpg" alt="周南ホームケアクリニック">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            周南ホームケアクリニック<br>
+                                            院長　山形 恭康<br>
+                                            (山口県)
+                                        </h3>
+                                        <p class="p-voice__txt01">周南エリアで在宅医療クリニックの先駆けとして開業</p>
+                                        <p class="p-voice__txt02">山口県光市にある「周南ホームケアクリニック」の院長を務める山形 恭康先生は、鳥取大学医学部を卒業後、徳山中央病院および広島市立広島市民病院にて研修を重ね、幅広い臨床経験を積んでこられました。・・・</p>
+                                        <a href="./movacal_net/case/single26.php" tabindex="-1">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li><li class="p-voice__item slick-slide" style="" data-slick-index="3" aria-hidden="true" tabindex="-1">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case25_01.jpg" alt="伊東ホスピスケアクリニック">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            伊東ホスピスケアクリニック<br>
+                                            院長　伊東 威<br>
+                                            (大分県)
+                                        </h3>
+                                        <p class="p-voice__txt01">移植医のキャリアを経て、在宅ホスピスケアに込める想い</p>
+                                        <p class="p-voice__txt02">大分市で緩和ケアを専門に診療する「伊東ホスピスケアクリニック」院長・伊東 威先生は、福岡大学医学部を卒業後、同大学病院で一般外科医として幅広い臨床経験を積まれました。・・・</p>
+                                        <a href="./movacal_net/case/single25.php" tabindex="-1">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li><li class="p-voice__item slick-slide" style="" data-slick-index="4" aria-hidden="true" tabindex="-1">
+                                <div class="p-voice__item-box">
+                                    <div class="p-voice__img">
+                                        <img src="./movacal_net/case/images/case24_01.jpg" alt="医療法人真成会　ゆずりは訪問診療所">
+                                    </div>
+                                    <div class="p-voice__txtbox">
+                                        <h3 class="p-voice__val">
+                                            医療法人真成会<br>ゆずりは訪問診療所<br>
+                                            理事長　屋宜 亮兵<br>
+                                            (沖縄県)
+                                        </h3>
+                                        <p class="p-voice__txt01">沖縄那覇で訪問診療を拠点とし地域医療の未来を切り拓く</p>
+                                        <p class="p-voice__txt02">沖縄県那覇市にある「医療法人真成会 ゆずりは訪問診療所」は、開業から9年を経て、現在10年目を迎える地域に根ざした診療所です。・・・</p>
+                                        <a href="./movacal_net/case/single24.php" tabindex="-1">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="" aria-disabled="false">Next</button></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 20250905　news追加 -->
+        <section class="p-merit news_top_box">
+            <h2 class="p-top-common__head c-common-heading news_top_title"><span class="news_top_title_main">NEWS</span><br><span class="news_top_title_sub">新着情報</span></h2>
+            
+            <ul class="news_top_ul">
+                <!-- <li class="news_top_li">
+                    <p class="news_top_days">2025.10.14</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/column/single02.php">第7回日本在宅医療連合学会ランチョンセミナー　実施のご報告をコラムに掲載しました。</a>
+                    </div>
+                </li>
+                <li class="news_top_li">
+                    <p class="news_top_days">2025.10.14</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/column/single01.php">第7回日本在宅医療連合学会大会　モバカルネットの出展のご報告をコラムに掲載しました。</a>
+                    </div>
+                </li> -->
+
+                <li class="news_top_li">
+                    <p class="news_top_days">2026.4.9</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/news/single05.php">第17回 日本プライマリ・ケア連合学会学術大会　出展のお知らせ​</a>
+                    </div>
+                </li>
+                <li class="news_top_li">
+                    <p class="news_top_days">2026.3.12</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/news/single04.php">レバレジーズ株式会社が運営する「mikaru​」にモバカルネットをご紹介いただきました。​</a>
+                    </div>
+                </li>
+                <li class="news_top_li">
+                    <p class="news_top_days">2026.2.2</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/news/single03.php">オフィス移転のお知らせ（メディカルインフォメーション事業部）</a>
+                    </div>
+                </li>
+
+                <!-- <li class="news_top_li">
+                    <p class="news_top_days">2026.1.8</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/news/single02.php">第2回生活期リハビリテーション医学会学術集会に出展します。</a>
+                    </div>
+                </li> -->
+                <!-- <li class="news_top_li">
+                    <p class="news_top_days">2026.1.8</p>
+                    <div class="news_top_text_box">
+                        <a href="./movacal_net/news/single01.php">最新医療機器情報カタログ「ME GUIDE　Vol.24」に当社製品が掲載されました。</a>
+                    </div>
+                </li> -->
+                <!-- <li class="news_top_li">
+                    <p class="news_top_days">2025.9.18</p>
+                    <div class="news_top_text_box">
+                        <a href="https://orca-conference2025.doorkeeper.jp/events/188880" target="_blank">2025年度第1回ORCAカンファレンス（医療機関様向け）に参加いたします。</a>
+                    </div>
+                </li> -->
+                <!-- <li class="news_top_li">
+                    <p class="news_top_days">2025.9.11</p>
+                    <div class="news_top_text_box">
+                        <a href="https://service.kktcs.co.jp/smms2/event/zaitaku/52" target="_blank">9月27・28日、日本在宅医療連合学会　第7回地域フォーラムに出展します。</a>
+                    </div>
+                </li> -->
+            </ul>
+
+            <div class="c-detailBtn mt40">
+                <div class="c-detailBtn__flex">
+                    <div>
+                        <a href="movacal_net/news" class="c-detailBtn-single">一覧はこちら</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-merit p-top-common">
+            <hgroup class="p-merit__heads p-top-common__heads">
+                <h2 class="p-top-common__head c-common-heading p-merit__title">全国の在宅医療の現場で<br class="sp-appea">選ばれています！</h2>
+                <p class="p-merit__subtitle">38万人の在宅患者様<br class="sp-appea">(日本全体の43％)を支える<br>信頼と実績の電子カルテ</p>
+                <p class="p-merit__reference">※2024年厚労省公表データ(88万人)に基づき当社で算出</p>
+            </hgroup>
+
+            <div class="p-merit__img">
+                <p>他社カルテからの移行がスムーズで<br class="sp-appea">多様な診療タイプに対応可能</p>
+                <img src="movacal_net/assets/images/pc/common/logo.svg" alt="movacal.net" class="p-merit__img-logo">
+            </div>
+
+            <div class="c-detailBtn">
+                <div class="c-detailBtn__flex">
+                    <div>
+                        <img src="movacal_net/assets/images/pc/top/btn_title_01.png" alt="スマホ1台で業務が遂行">
+                        <a href="./?id=p-demo02" class="c-detailBtn-single">デモを今すぐ申し込む</a>
+                    </div>
+                    <div>
+                        <img src="movacal_net/assets/images/pc/top/btn_title_02.png" alt="カンタン30秒">
+                        <a href="./?id=p-document02" class="c-detailBtn-single">無料で資料をもらう</a>
+                    </div>
+                </div>
+
+                <p class="p-merit__catch">全国65,000人を超える<br class="sp-appea">ドクターがモバカルをご利用中!</p>
+            </div>
+        </section>
+
+        <!-- parallax start -->
+        <div class="parallax"></div>
+        <!-- parallax start -->
+
+        <section class="p-reason p-top-common">
+            <div class="p-reason__bg">
+                <img src="movacal_net/assets/images/pc/top/bg_01.png" alt="" class="bg">
+                <div class="p-reason__bg-inner">
+                    <img src="movacal_net/assets/images/pc/top/img_01.png" alt="" class="obj">
+                </div>
+            </div>
+
+            <div class="l-default-container">
+                <hgroup class="p-reason__heads p-top-common__heads">
+                    <h2 class="p-top-common__head c-common-heading">モバカルネットが<br class="sp-appea">選ばれる理由</h2>
+                    <p class="p-reason__subtitle">医師も事務スタッフも看護師も<br class="sp-appea">在宅医療業務を効率化</p>
+                    <p>多くのクリニックでご利用いただいている在宅医療に特化<br class="sp-none">した機能満載のクラウド型電子カルテをご紹介します。</p>
+                </hgroup>
+
+                <ul class="p-reason__flex">
+                    <li>
+                        <p>在宅医療に特化</p>
+                        <img src="movacal_net/assets/images/pc/top/img_02.png" alt="">
+                    </li>
+                    <li>
+                        <p>多様な診療タイプに対応</p>
+                        <img src="movacal_net/assets/images/pc/top/img_03.png" alt="">
+                    </li>
+                    <li>
+                        <p>他社カルテからの移行がスムーズ</p>
+                        <img src="movacal_net/assets/images/pc/top/img_04.png" alt="">
+                    </li>
+                    <li>
+                        <p>現場の要望を反映</p>
+                        <img src="movacal_net/assets/images/pc/top/img_05.png" alt="">
+                    </li>
+                    <li>
+                        <p>セキュリティ&amp;バックアップ</p>
+                        <img src="movacal_net/assets/images/pc/top/img_06.png" alt="">
+                    </li>
+                    <li>
+                        <p>導入しやすい料金</p>
+                        <img src="movacal_net/assets/images/pc/top/img_07.png" alt="">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="c-detailBtn">
+                <div class="c-detailBtn__flex">
+                    <div>
+                        <img src="movacal_net/assets/images/pc/top/btn_title_03.png" alt="選ばれる理由をさらに">
+                        <a href="./movacal_net/merit/" class="c-detailBtn-single">詳しく見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-user">
+            <div class="p-user__bg">
+                <picture>
+                    <source srcset="movacal_net/assets/images/pc/top/img_08.png" media="(min-width: 481px)">
+                    <source srcset="movacal_net/assets/images/sp/top/img_08.png" media="(max-width: 480px)">
+                    <img src="movacal_net/assets/images/pc/top/img_08.png" alt="">
+                </picture>
+            </div>
+        </section>
+
+        <section class="p-logosTop">
+            <div class="c-detailBtn">
+                <img class="p-logosTop__img c-detailBtn-logo" src="movacal_net/assets/images/pc/common/logo.png" alt="movacal.net">
+                <div class="c-detailBtn__flex">
+                    <div>
+                        <img src="movacal_net/assets/images/pc/top/btn_title_01.png" alt="スマホ1台で業務が遂行">
+                        <a href="./?id=p-demo02" class="c-detailBtn-single">デモを今すぐ申し込む</a>
+                    </div>
+                    <div>
+                        <img src="movacal_net/assets/images/pc/top/btn_title_02.png" alt="カンタン30秒">
+                        <a href="./?id=p-document02" class="c-detailBtn-single">無料で資料をもらう</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-logosTop__inner l-short-container">
+                <h2 class="p-logosTop__head">「モバカル」シリーズで<br class="tab-appea">病院や在宅看護とも連携</h2>
+                <ul class="p-logosTop__list">
+                    <li class="p-logosTop__item">
+                        <a href="#" class="js-scroll">
+                            <img src="movacal_net/assets/images/pc/top/img_09.png" alt="" class="circle">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/common/movacal_net.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/common/movacal_net.png" media="(max-width: 480px)" width="260">
+                                <img src="movacal_net/assets/images/pc/common/movacal_net.png" alt="">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="p-logosTop__item">
+                        <a href="/hospital/" target="_blank">
+                            <img src="movacal_net/assets/images/pc/top/img_10.png" alt="" class="circle">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/common/movacal_hospital.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/common/movacal_hospital.png" media="(max-width: 480px)" width="260">
+                                <img src="movacal_net/assets/images/pc/common/movacal_hospital.png" alt="">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="p-logosTop__item">
+                        <a href="/clinic/" target="_blank">
+                            <img src="movacal_net/assets/images/pc/top/img_11.png" alt="" class="circle">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/common/movacal_clinic.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/common/movacal_clinic.png" media="(max-width: 480px)" width="260">
+                                <img src="movacal_net/assets/images/pc/common/movacal_clinic.png" alt="">
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="p-logosTop__item">
+                        <a href="/nurse/" target="_blank">
+                            <img src="movacal_net/assets/images/pc/top/img_12.png" alt="" class="circle">
+                            <picture>
+                                <source srcset="movacal_net/assets/images/pc/common/movacal_nurse.png" media="(min-width: 481px)">
+                                <source srcset="movacal_net/assets/images/sp/common/movacal_nurse.png" media="(max-width: 480px)" width="260">
+                                <img src="movacal_net/assets/images/pc/common/movacal_nurse.png" alt="">
+                            </picture>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="p-contact">
+    <div id="p-contact02" class="l-contactContainer u-headerHeight">
+        <hgroup>
+            <div class="p-contact__flex l-default-container">
+                <h2 class="p-contact__head">CONTACT</h2>
+                <p>お気軽にお問い合わせください</p>
+            </div>
+            <h2 class="p-contact__head02">
+                デモ予約・資料請求・お問い合わせ
+            </h2>
+            <p class="p-contact__head02--small">こちらにご入力の上、送信ボタンを押してください。</p>
+        </hgroup>
+        <div class="p-contact__form">
+            <div class="p-tab">
+                <ul class="p-contact__tab l-contact-tabContainer">
+                    <li id="p-demo02" class="u-headerHeight">
+                        <input type="radio" checked="" id="p-tab04" name="form02"><label for="p-tab04">デモ予約</label>
+                    </li>
+                    <li id="p-document02" class="u-headerHeight">
+                        <input type="radio" id="p-tab05" name="form02"><label for="p-tab05">資料請求</label>
+                    </li>
+                    <li id="p-contacts02" class="u-headerHeight">
+                        <input type="radio" id="p-tab06" name="form02"><label for="p-tab06">お問い合わせ</label>
+                    </li>
+                </ul>
+            </div>
+            <form name="form" class="p-form l-form-container" method="post" action="https://link.movacal.net/form/movacal_net/contact-thanks.php">
+                <input type="hidden" name="mode" id="mode" value="">
+
+                <!-- デモ予約フォーム -->
+                <div id="p-demo_content02" class="p-tab04">
+                    <div class="p-form__content">
+                        <label>お名前[漢字]</label>
+                        <input type="text" name="demo_name" id="demo_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お名前[かな]</label>
+                        <input type="text" name="demo_name_kana" id="demo_name_kana" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>医療機関名</label>
+                        <input type="text" name="demo_hospital_name" id="demo_hospital_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>部署名</label>
+                        <input type="text" name="demo_hospital_section" id="demo_hospital_section" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail</label>
+                        <input type="text" name="demo_email" id="demo_email" value="" class="p-txt-large" placeholder="例：example@domain.com">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail（確認用）</label>
+                        <input type="text" name="demo_email_confirm" id="demo_email_confirm" value="" class="p-txt-large" placeholder="もう一度入力してください">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お電話番号</label>
+                        <input type="text" name="demo_tel" id="demo_tel" value="" class="p-txt-large">
+                    </div>
+
+                    <div class="p-form__content demo_visit_btn">
+                        <label for="demo_visit">
+                            <input class="check checkArea" type="checkbox" name="demo_visit" id="demo_visit">訪問デモを希望する
+                        </label>
+                    </div>
+
+                    <!-- 260225　エリア⇔住所入れ替え -->
+                    <div class="p-form__content">
+                        <label class="zipTxt">ご訪問住所 〒</label>
+                        <input type="text" name="demo_zip" id="demo_zip" class="p-zip p-zip-area" value="" placeholder="例：1234567" data-zip-autofill-bound="1">
+                        <!--
+                        <button type="button" class="p-ajaxzip4 p-zip-area" href="#">住所検索</button><br>
+                        -->
+                        <br>
+                        <label>都道府県</label>
+                        <select name="demo_pref" id="demo_pref" class="p-zip-area p-pref">
+                            <option value="" selected="">選択してください</option>
+                            <option value="北海道">北海道</option>
+                            <option value="青森県">青森県</option>
+                            <option value="岩手県">岩手県</option>
+                            <option value="宮城県">宮城県</option>
+                            <option value="秋田県">秋田県</option>
+                            <option value="山形県">山形県</option>
+                            <option value="福島県">福島県</option>
+                            <option value="茨城県">茨城県</option>
+                            <option value="栃木県">栃木県</option>
+                            <option value="群馬県">群馬県</option>
+                            <option value="埼玉県">埼玉県</option>
+                            <option value="千葉県">千葉県</option>
+                            <option value="東京都">東京都</option>
+                            <option value="神奈川県">神奈川県</option>
+                            <option value="新潟県">新潟県</option>
+                            <option value="富山県">富山県</option>
+                            <option value="石川県">石川県</option>
+                            <option value="福井県">福井県</option>
+                            <option value="山梨県">山梨県</option>
+                            <option value="長野県">長野県</option>
+                            <option value="岐阜県">岐阜県</option>
+                            <option value="静岡県">静岡県</option>
+                            <option value="愛知県">愛知県</option>
+                            <option value="三重県">三重県</option>
+                            <option value="滋賀県">滋賀県</option>
+                            <option value="京都府">京都府</option>
+                            <option value="大阪府">大阪府</option>
+                            <option value="兵庫県">兵庫県</option>
+                            <option value="奈良県">奈良県</option>
+                            <option value="和歌山県">和歌山県</option>
+                            <option value="鳥取県">鳥取県</option>
+                            <option value="島根県">島根県</option>
+                            <option value="岡山県">岡山県</option>
+                            <option value="広島県">広島県</option>
+                            <option value="山口県">山口県</option>
+                            <option value="徳島県">徳島県</option>
+                            <option value="香川県">香川県</option>
+                            <option value="愛媛県">愛媛県</option>
+                            <option value="高知県">高知県</option>
+                            <option value="福岡県">福岡県</option>
+                            <option value="佐賀県">佐賀県</option>
+                            <option value="長崎県">長崎県</option>
+                            <option value="熊本県">熊本県</option>
+                            <option value="大分県">大分県</option>
+                            <option value="宮崎県">宮崎県</option>
+                            <option value="鹿児島県">鹿児島県</option>
+                            <option value="沖縄県">沖縄県</option>
+                        </select><br>
+                        <label>市区町村</label>
+                        <input type="text" name="demo_addr1" id="demo_addr1" class="p-txt-large p-zip-area" value=""><br>
+
+                        <label>町名</label>
+                        <input type="text" name="demo_addr2" id="demo_addr2" class="p-txt-large p-zip-area" value=""><br>
+
+                        <label>番地・号</label>
+                        <input type="text" name="demo_addr3" id="demo_addr3" class="p-txt-large p-zip-area" value="">
+                    </div>
+
+                    <div class="p-form__content">
+                        <label>デモ希望日①</label>
+                        <input type="text" placeholder="日付" name="demo_date1" id="demo_date1" value="" class="p-date04 p-txt-little p-little01 hasDatepicker">
+                        <select name="demo_time1" id="demo_time1" class="p-txt-little p-little01">
+                            <option value="">時間帯</option>
+                            <option value="9:00~">9:00~</option>
+                            <option value="9:30~">9:30~</option>
+                            <option value="10:00~">10:00~</option>
+                            <option value="10:30~">10:30~</option>
+                            <option value="11:00~">11:00~</option>
+                            <option value="11:30~">11:30~</option>
+                            <option value="12:00~">12:00~</option>
+                            <option value="12:30~">12:30~</option>
+                            <option value="13:00~">13:00~</option>
+                            <option value="13:30~">13:30~</option>
+                            <option value="14:00~">14:00~</option>
+                            <option value="14:30~">14:30~</option>
+                            <option value="15:00~">15:00~</option>
+                            <option value="15:30~">15:30~</option>
+                            <option value="16:00~">16:00~</option>
+                            <option value="16:30~">16:30~</option>
+                            <option value="17:00~">17:00~</option>
+                            <option value="17:30~">17:30~</option>
+                            <option value="18:00~">18:00~</option>
+                            <option value="18:30~">18:30~</option>
+                            <option value="19:00~">19:00~</option>
+                            <option value="19:30~">19:30~</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content">
+                        <label>デモ希望日②</label>
+                        <input type="text" placeholder="日付" name="demo_date2" id="demo_date2" value="" class="p-date05 p-txt-little p-little01 hasDatepicker">
+                        <select name="demo_time2" id="demo_time2" class="p-txt-little p-little01">
+                            <option value="">時間帯</option>
+                            <option value="9:00~">9:00~</option>
+                            <option value="9:30~">9:30~</option>
+                            <option value="10:00~">10:00~</option>
+                            <option value="10:30~">10:30~</option>
+                            <option value="11:00~">11:00~</option>
+                            <option value="11:30~">11:30~</option>
+                            <option value="12:00~">12:00~</option>
+                            <option value="12:30~">12:30~</option>
+                            <option value="13:00~">13:00~</option>
+                            <option value="13:30~">13:30~</option>
+                            <option value="14:00~">14:00~</option>
+                            <option value="14:30~">14:30~</option>
+                            <option value="15:00~">15:00~</option>
+                            <option value="15:30~">15:30~</option>
+                            <option value="16:00~">16:00~</option>
+                            <option value="16:30~">16:30~</option>
+                            <option value="17:00~">17:00~</option>
+                            <option value="17:30~">17:30~</option>
+                            <option value="18:00~">18:00~</option>
+                            <option value="18:30~">18:30~</option>
+                            <option value="19:00~">19:00~</option>
+                            <option value="19:30~">19:30~</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content">
+                        <label>デモ希望日③</label>
+                        <input type="text" placeholder="日付" name="demo_date3" id="demo_date3" value="" class="p-date06 p-txt-little p-little01 hasDatepicker">
+                        <select name="demo_time3" id="demo_time3" class="p-txt-little p-little01">
+                            <option value="">時間帯</option>
+                            <option value="9:00~">9:00~</option>
+                            <option value="9:30~">9:30~</option>
+                            <option value="10:00~">10:00~</option>
+                            <option value="10:30~">10:30~</option>
+                            <option value="11:00~">11:00~</option>
+                            <option value="11:30~">11:30~</option>
+                            <option value="12:00~">12:00~</option>
+                            <option value="12:30~">12:30~</option>
+                            <option value="13:00~">13:00~</option>
+                            <option value="13:30~">13:30~</option>
+                            <option value="14:00~">14:00~</option>
+                            <option value="14:30~">14:30~</option>
+                            <option value="15:00~">15:00~</option>
+                            <option value="15:30~">15:30~</option>
+                            <option value="16:00~">16:00~</option>
+                            <option value="16:30~">16:30~</option>
+                            <option value="17:00~">17:00~</option>
+                            <option value="17:30~">17:30~</option>
+                            <option value="18:00~">18:00~</option>
+                            <option value="18:30~">18:30~</option>
+                            <option value="19:00~">19:00~</option>
+                            <option value="19:30~">19:30~</option>
+                        </select>
+                    </div>
+                    <div class="p-form__content form__content_attention">
+                        <p>※担当のスケジュール都合によりご希望に沿えない場合がございます。​<br>　その際は改めて日程調整のご連絡をさせていただきます。​</p>
+                    </div>
+                    <div class="p-form__content p-form__last">
+                        <label>自由記入欄</label>
+                        <textarea class="p-txt-large" name="demo_content" id="demo_content"></textarea>
+                    </div>
+
+                    <div class="p-contact-form__cont p-contact-form__cont--pri">
+                        <p class="p-record__text">
+                           【 お客様個人情報のお取扱いについて 】<br>
+                             ご記入いただいた個人情報は、お問合せ事項に対する回答を行うためのみに利用いたします。また、お客様の承諾なく第三者に開示・提供しないよう、適切に管理いたします。個人情報の取り扱いに関する上記以外の事項に関しましては、&nbsp;<a href="https://www.ntt-precisionmedicine.co.jp/privacy/" target="_new" class="top_form_link">こちら</a>&nbsp;をご確認ください。
+                        </p>
+                    </div>
+                    <!-- <label for="demo_agreement" class="p-agreement">
+                    <input class="check" type="checkbox" name="demo_agreement" id="demo_agreement">
+                    個人情報保護方針に同意する
+                    </label> -->
+
+                    <p class="c-submit"><label for="demo_agreement" class="p-agreement">
+                    <input class="check" type="checkbox" name="demo_agreement" id="demo_agreement">
+                    個人情報保護方針に同意する
+                    </label></p>
+
+                    <!-- <p class="top_form_title_bottom">【 お客様個人情報のお取扱いについて 】</p>
+                    <p class="top_form_text_bottom">ご記入いただいた個人情報は、お問合せ事項に対する回答を行うためのみに利用いたします。<br />また、お客様の承諾なく第三者に開示・提供しないよう、適切に管理いたします。<br/>個人情報の取り扱いに関する上記以外の事項に関しましては、&nbsp;<a href="https://www.ntt-precisionmedicine.co.jp/privacy/" target="_new"  class="top_form_link">こちら</a>&nbsp;をご確認ください。
+                    </p>
+                    <p class="txt_center"><label for="inq2_agreement" class="agreement02"><input class="check" type="checkbox" name="inq2_agreement" id="inq2_agreement">個人情報保護方針に同意する</label></p> -->
+
+
+                    <div class="c-submit">
+                        <!--<input class="c-submit-btn" type="submit" name="btn_confirm" value="デモを申し込む">-->
+                        <input class="c-submit-btn" type="button" onclick="submitForm(1)" value="デモを申し込む">
+                    </div>
+                </div>
+
+                <!-- 資料請求フォーム -->
+                <div id="p-document_content02" class="p-tab05">
+                    <div class="p-form__content">
+                        <label>お名前[漢字]</label>
+                        <input type="text" name="doc_name" id="doc_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お名前[かな]</label>
+                        <input type="text" name="doc_name_kana" id="doc_name_kana" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>医療機関名</label>
+                        <input type="text" name="doc_hospital_name" id="doc_hospital_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>部署名</label>
+                        <input type="text" name="doc_hospital_section" id="doc_hospital_section" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail</label>
+                        <input type="text" name="doc_email" id="doc_email" value="" class="p-txt-large" placeholder="例：example@domain.com">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail（確認用）</label>
+                        <input type="text" name="doc_email_confirm" id="doc_email_confirm" value="" class="p-txt-large" placeholder="もう一度入力してください">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お電話番号</label>
+                        <input type="text" name="doc_tel" id="doc_tel" value="" class="p-txt-large">
+                    </div>
+
+                    <!-- 260225　エリア⇔住所入れ替え -->
+                    <div class="p-form__content p-form__last">
+                        <label>所在エリア</label>
+                        <select name="doc_area" id="doc_area" class="p-txt-large">
+                            <option value="" selected="">選択してください</option>
+                            <option value="北海道">北海道</option>
+                            <option value="青森県">青森県</option>
+                            <option value="岩手県">岩手県</option>
+                            <option value="秋田県">秋田県</option>
+                            <option value="宮城県">宮城県</option>
+                            <option value="山形県">山形県</option>
+                            <option value="福島県">福島県</option>
+                            <option value="栃木県">栃木県</option>
+                            <option value="群馬県">群馬県</option>
+                            <option value="茨城県">茨城県</option>
+                            <option value="埼玉県">埼玉県</option>
+                            <option value="東京都">東京都</option>
+                            <option value="千葉県">千葉県</option>
+                            <option value="神奈川県">神奈川県</option>
+                            <option value="山梨県">山梨県</option>
+                            <option value="長野県">長野県</option>
+                            <option value="新潟県">新潟県</option>
+                            <option value="富山県">富山県</option>
+                            <option value="石川県">石川県</option>
+                            <option value="福井県">福井県</option>
+                            <option value="静岡県">静岡県</option>
+                            <option value="岐阜県">岐阜県</option>
+                            <option value="愛知県">愛知県</option>
+                            <option value="三重県">三重県</option>
+                            <option value="滋賀県">滋賀県</option>
+                            <option value="京都府">京都府</option>
+                            <option value="大阪府">大阪府</option>
+                            <option value="兵庫県">兵庫県</option>
+                            <option value="奈良県">奈良県</option>
+                            <option value="和歌山県">和歌山県</option>
+                            <option value="徳島県">徳島県</option>
+                            <option value="香川県">香川県</option>
+                            <option value="愛媛県">愛媛県</option>
+                            <option value="高知県">高知県</option>
+                            <option value="鳥取県">鳥取県</option>
+                            <option value="島根県">島根県</option>
+                            <option value="岡山県">岡山県</option>
+                            <option value="広島県">広島県</option>
+                            <option value="山口県">山口県</option>
+                            <option value="福岡県">福岡県</option>
+                            <option value="佐賀県">佐賀県</option>
+                            <option value="長崎県">長崎県</option>
+                            <option value="大分県">大分県</option>
+                            <option value="熊本県">熊本県</option>
+                            <option value="宮崎県">宮崎県</option>
+                            <option value="鹿児島県">鹿児島県</option>
+                            <option value="沖縄県">沖縄県</option>
+                        </select>
+                    </div>
+
+                    <div class="p-contact-form__cont p-contact-form__cont--pri">
+                        <p class="p-record__text" style="text-align: left; padding-bottom: 0px; line-height: 110%;">
+                            【 お客様個人情報のお取扱いについて 】<br>
+                            ご記入いただいた個人情報は、お問合せ事項に対する回答を行うためのみに利用いたします。また、お客様の承諾なく第三者に開示・提供しないよう、適切に管理いたします。個人情報の取り扱いに関する上記以外の事項に関しましては、&nbsp;<a href="https://www.ntt-precisionmedicine.co.jp/privacy/" target="_new" class="top_form_link">こちら</a>&nbsp;をご確認ください。
+                        </p>
+                    </div>
+                    <!-- <label for="doc_agreement" class="p-agreement">
+                    <input class="p-check" type="checkbox" name="doc_agreement" id="doc_agreement">
+                    個人情報保護方針に同意する
+                    </label> -->
+
+                    <p class="c-submit"><label for="doc_agreement" class="p-agreement">
+                    <input class="p-check" type="checkbox" name="doc_agreement" id="doc_agreement">
+                    個人情報保護方針に同意する
+                    </label></p>
+
+
+                    <div class="c-submit">
+                        <!--<input class="c-submit-btn" type="submit" name="btn_confirm" value="資料を請求する">-->
+                        <input class="c-submit-btn" type="button" onclick="submitForm(2)" value="資料を請求する">
+                    </div>
+                </div>
+
+                <!-- お問い合わせフォーム -->
+                <div id="p-contact_content02" class="p-tab06">
+                    <div class="p-form__content">
+                        <label>お名前[漢字]</label>
+                        <input type="text" name="inq_name" id="inq_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お名前[かな]</label>
+                        <input type="text" name="inq_name_kana" id="inq_name_kana" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>医療機関名</label>
+                        <input type="text" name="inq_hospital_name" id="inq_hospital_name" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>部署名</label>
+                        <input type="text" name="inq_hospital_section" id="inq_hospital_section" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail</label>
+                        <input type="text" name="inq_email" id="inq_email" value="" class="p-txt-large" placeholder="例：example@domain.com">
+                    </div>
+                    <div class="p-form__content">
+                        <label>E-Mail（確認用）</label>
+                        <input type="text" name="inq_email_confirm" id="inq_email_confirm" value="" class="p-txt-large" placeholder="もう一度入力してください">
+                    </div>
+                    <div class="p-form__content">
+                        <label>お電話番号</label>
+                        <input type="text" name="inq_tel" id="inq_tel" value="" class="p-txt-large">
+                    </div>
+                    <div class="p-form__content p-form__last">
+                        <label>お問合せ内容</label>
+                        <textarea class="p-txt-large" name="inq_content" id="inq_content"></textarea>
+                    </div>
+                    <div class="p-contact-form__cont p-contact-form__cont--pri">
+                        <p class="p-record__text" style="text-align: left; padding-bottom: 0px; line-height: 110%;">
+                            【 お客様個人情報のお取扱いについて 】<br>
+                            ご記入いただいた個人情報は、お問合せ事項に対する回答を行うためのみに利用いたします。また、お客様の承諾なく第三者に開示・提供しないよう、適切に管理いたします。個人情報の取り扱いに関する上記以外の事項に関しましては、&nbsp;<a href="https://www.ntt-precisionmedicine.co.jp/privacy/" target="_new" class="top_form_link">こちら</a>&nbsp;をご確認ください。
+                        </p>
+                    </div>
+                    <!-- <label for="inq_agreement" class="p-agreement">
+                    <input class="check" type="checkbox" name="inq_agreement" id="inq_agreement">
+                    個人情報保護方針に同意する
+                    </label> -->
+
+                    <p class="c-submit"><label for="inq_agreement" class="p-agreement">
+                    <input class="check" type="checkbox" name="inq_agreement" id="inq_agreement">
+                    個人情報保護方針に同意する
+                    </label></p>
+
+                    <div class="c-submit">
+                        <!--<input class="c-submit-btn" type="submit" name="btn_confirm" value="送信する">-->
+                        <input class="c-submit-btn" type="button" onclick="submitForm(3)" value="送信する">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    </main>
+    <footer class="l-footer sp-show">
+    <div class="l-footer__bg">
+        <div class="l-default-container">
+            <ul class="l-footer__links">
+                <a href="/?id=p-demo02" class="l-footer__link top__linkDemo">
+                    <li>オンラインデモ予約</li>
+                </a>
+                <a href="/?id=p-document02" class="l-footer__link top__linkDocument">
+                    <li>資料請求</li>
+                </a>
+                <a href="/?id=p-contacts02" class="l-footer__link top__linkContact">
+                    <li>お問い合わせ</li>
+                </a>
+            </ul>
+            <div class="l-footer__flex">
+                <p class="l-footer__company">NTTプレシジョンメディシン株式会社<br>
+                    <span class="l-footer__adress">
+                        〒221-0056​<br>神奈川県横浜市神奈川区金港町1番地4<br>横浜イーストスクエア 7階
+                    </span>
+                </p>
+                <img src="/movacal_net/assets//images/pc/common/tel.png" alt="電話でのお問い合わせ 050-5577-5406 9:00～17:00（土日祝日除く）" class="l-footer__tel">
+            </div>
+            
+            <a href="#" class="l-to-top js-scroll">
+                <picture class="p-mainVisual__logos">
+                    <source srcset="/movacal_net/assets//images/pc/common/to-top.png" media="(min-width: 481px)" type="image/png">
+                    <source srcset="/movacal_net/assets//images/sp/common/to-top.png" media="(max-width: 480px)" width="72" type="image/png">
+                    <img src="/movacal_net/assets//images/pc/common/to-top.png" alt="TOPへ戻るボタン">
+                </picture>
+            </a>
+        </div>
+    </div>
+    <div class="l-footer__copy">
+        <div class="l-default-container">
+            <div class="l-footer__copy-flex">
+                <picture class="l-footer__logo">
+                    <source srcset="/movacal_net/assets/images/pc/common/footer_logo-251022.png" media="(min-width: 481px)" type="image/png">
+                    <source srcset="/movacal_net/assets/images/sp/common/footer_logo-251022.png" media="(max-width: 480px)" width="252" type="image/png">
+                    <img src="/movacal_net/assets/images/pc/common/footer_logo-251022.png" alt="NTTプレシジョンメディシン株式会社">
+                </picture>
+
+                <div class="l-footer__privacy">
+                    <ul>
+                        <li><a href="https://www.ntt-precisionmedicine.co.jp/about-us/" target="_blank">会社概要</a></li>
+                        <li><a href="https://www.ntt-precisionmedicine.co.jp/privacy/" target="_blank">個人情報保護方針</a></li>
+                        <li><a href="/movacal_net/terms">利用規約</a></li>
+                    </ul>
+                    <p>© 2024 ＮＴＴプレシジョンメディシン株式会社</p>
+                    
+                    <!-- <script>
+                        var date = new Date();
+                        var y = date.getFullYear();
+                        var now = y;
+                        document.getElementById('now').innerHTML = now;
+                    </script> -->
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function(window, document){
+    "use strict";
+
+    function normalizeJapaneseZip(zip){
+        if(!zip){
+            return "";
+        }
+        var half = zip.replace(/[０-９]/g, function(ch){
+            return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
+        });
+        return half.replace(/[^0-9]/g, "").slice(0, 7);
+    }
+
+    function formatJapaneseZip(zip){
+        if(zip.length !== 7){
+            return zip;
+        }
+        return zip.slice(0, 3) + "-" + zip.slice(3);
+    }
+
+    function findById(id){
+        if(!id){
+            return null;
+        }
+        return document.getElementById(id);
+    }
+
+    function findByName(name){
+        if(!name){
+            return null;
+        }
+        var elements = document.getElementsByName(name);
+        if(!elements || !elements.length){
+            return null;
+        }
+        return elements[0];
+    }
+
+    function resolveField(field){
+        if(!field){
+            return null;
+        }
+        return findById(field.id) || findByName(field.name);
+    }
+
+    function bindZipAutofill(zipEl, prefEl, addr1El, addr2El){
+        if(!zipEl || zipEl.dataset.zipAutofillBound === "1"){
+            return;
+        }
+
+        zipEl.dataset.zipAutofillBound = "1";
+        zipEl.addEventListener("blur", function(){
+            var normalizedZip = normalizeJapaneseZip(zipEl.value);
+            if(normalizedZip.length !== 7){
+                if(normalizedZip.length > 0){
+                    zipEl.value = normalizedZip;
+                }
+                return;
+            }
+
+            zipEl.value = formatJapaneseZip(normalizedZip);
+
+            fetch("https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + normalizedZip)
+                .then(function(res){ return res.json(); })
+                .then(function(data){
+                    if(!data || data.status !== 200 || !data.results || !data.results[0]){
+                        return;
+                    }
+
+                    var result = data.results[0];
+                    if(prefEl){
+                        prefEl.value = result.address1 || "";
+                    }
+                    if(addr1El){
+                        addr1El.value = result.address2 || "";
+                    }
+                    if(addr2El){
+                        addr2El.value = result.address3 || "";
+                    }
+                })
+                .catch(function(){
+                    // no-op
+                });
+        });
+    }
+
+    function applyConfig(config){
+        var zipEl = resolveField(config.zip);
+        var prefEl = resolveField(config.pref);
+        var addr1El = resolveField(config.addr1);
+        var addr2El = resolveField(config.addr2);
+
+        if(!zipEl || !prefEl || !addr1El || !addr2El){
+            return;
+        }
+
+        bindZipAutofill(zipEl, prefEl, addr1El, addr2El);
+    }
+
+    function autoDetectConfigs(){
+        var zipInputs = document.querySelectorAll('input[id$="_zip"], input[name$="_zip"], input[name="zip"]');
+        var configs = [];
+
+        for(var i = 0; i < zipInputs.length; i++){
+            var zipEl = zipInputs[i];
+            var source = zipEl.id || zipEl.name || "";
+            var base = "";
+
+            if(source === "zip"){
+                configs.push({
+                    zip: { name: "zip" },
+                    pref: { name: "pref" },
+                    addr1: { name: "addr1" },
+                    addr2: { name: "addr2" }
+                });
+                continue;
+            }
+
+            if(source.lastIndexOf("_zip") === source.length - 4){
+                base = source.substring(0, source.length - 4);
+            }
+
+            if(!base){
+                continue;
+            }
+
+            configs.push({
+                zip: { id: base + "_zip", name: base + "_zip" },
+                pref: { id: base + "_pref", name: base + "_pref" },
+                addr1: { id: base + "_addr1", name: base + "_addr1" },
+                addr2: { id: base + "_addr2", name: base + "_addr2" }
+            });
+        }
+
+        return configs;
+    }
+
+    function init(){
+        var predefined = window.__ZIP_AUTOFILL_CONFIGS || [];
+        for(var i = 0; i < predefined.length; i++){
+            applyConfig(predefined[i]);
+        }
+
+        var detected = autoDetectConfigs();
+        for(var j = 0; j < detected.length; j++){
+            applyConfig(detected[j]);
+        }
+    }
+
+    if(document.readyState === "loading"){
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
+})(window, document);
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        (() => {
+            // ===== 設定 =====
+            const STORAGE_KEY = 'movacal_last_top_index';
+            const REVEAL_TIMEOUT = 300; // imagesReady が来ない場合の最大待ち時間(ms)
+
+            // 要素取得
+            const swiperEl = document.querySelector('.mySwiper');
+            if (!swiperEl) return;
+
+            // スライド数（元スライド）
+            const slides = document.querySelectorAll('.mySwiper .swiper-slide');
+            const totalSlides = slides.length;
+            if (totalSlides === 0) {
+                // スライドが無い場合は即表示して終了
+                swiperEl.classList.add('is-visible');
+                return;
+            }
+
+            // 前回 index の読み取り（localStorage）
+            const prev = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+            const initialIndex = Number.isNaN(prev)
+                ? Math.floor(Math.random() * totalSlides)   // 初回: ランダム
+                : (prev + 1) % totalSlides;                 // 2回目以降: 次のスライド
+
+            // ===== Swiper 初期化（通常通り） =====
+            const swiper = new Swiper('.mySwiper', {
+                loop: true,
+                speed: 750,
+                autoplay: { delay: 3000 },
+                pagination: { el: '.swiper-pagination' },
+                grabCursor: true,
+                effect: 'creative',
+                creativeEffect: {
+                prev: { shadow: true, translate: ['-30%', 0, -1] },
+                next: { translate: ['100%', 0, 0] }
+                },
+            });
+
+            // ===== 初期スライドへ移動（即時） =====
+            // loop が有効でも正しい元スライドに飛べるよう slideToLoop を使用
+            swiper.slideToLoop(initialIndex, 0, false);
+
+            // ===== 表示制御 =====
+            let revealed = false;
+            function revealNow() {
+                if (revealed) return;
+                revealed = true;
+                // is-visible を付与してフェードイン（head の CSS が効く）
+                swiperEl.classList.add('is-visible');
+            }
+
+            // Swiper の imagesReady を待つ（画像読み込みが終わったら表示）
+            swiper.on('imagesReady', () => {
+                revealNow();
+            });
+
+            // フォールバック: imagesReady が発火しないケースのため短いタイムアウト
+            setTimeout(() => {
+                revealNow();
+            }, REVEAL_TIMEOUT);
+
+            // ===== スライド変更時に index を保存 =====
+            swiper.on('slideChange', () => {
+                try {
+                localStorage.setItem(STORAGE_KEY, String(swiper.realIndex));
+                } catch (e) {
+                // private mode 等で保存不可なら無視
+                console.warn('localStorage set failed', e);
+                }
+            });
+
+            // 安全のため初期化後すぐ autoplay を確実に動かす
+            if (swiper.autoplay && swiper.params.autoplay) {
+                swiper.autoplay.start();
+            }
+        })();
+    </script>
+
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">May</span>&nbsp;<span class="ui-datepicker-year">2026</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">2</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">9</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">10</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">13</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">15</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">16</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">17</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">18</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">19</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">20</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">21</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">22</span></td><td class=" ui-datepicker-week-end ui-datepicker-days-cell-over ui-datepicker-unselectable ui-state-disabled undefined ui-datepicker-current-day ui-datepicker-today"><span class="ui-state-default">23</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">24</span></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2026"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2026"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2026"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2026"><a class="ui-state-default" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2026"><a class="ui-state-default" href="#">29</a></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">30</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined"><span class="ui-state-default">31</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div>	
+	<script type="text/javascript" id="" charset="">var _cmktid="ABE48002";(function(){var c="r"+(new Date).getTime()*Math.random()*9,a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//cmkt.jp/req/i.js?r\x3d"+c;b.parentNode.insertBefore(a,b)})();</script>
+	</body></html>

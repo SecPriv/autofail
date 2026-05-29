@@ -1,0 +1,677 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+	Renovaciones INDEX
+</title><link href="Responsive/css/bootstrap.min.css" rel="stylesheet">
+    <script src="Responsive/js/jquery-3.7.1.min.js"></script>
+    <script src="Responsive/js/bootstrap.min.js"></script>
+    <link href="Responsive/css/font-awesome.min.css" rel="stylesheet"><link href="Responsive/css/Style.css" rel="stylesheet">
+
+    <script src="Responsive/js/notiflix-block-aio-3.2.5.min.js"></script>
+    <script src="Responsive/js/notiflix-confirm-aio-3.2.5.min.js"></script>
+    <script src="Responsive/js/notiflix-loading-aio-3.2.5.min.js"></script>
+    <script src="Responsive/js/notiflix-notify-aio-3.2.5.min.js"></script>
+    <script src="Responsive/js/notiflix-report-aio-3.2.5.min.js"></script>
+    <script src="JS/AcreditacionDeposito.js?ver="></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="Responsive/remixicon/remixicon.css" rel="stylesheet">
+      
+    
+    <!-- Compiled and minified JavaScript -->
+    
+    <style>
+
+        #footer {
+            clear: both;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: #00ACA9;
+            border-top: 1px solid #fff;
+            color: #fff;
+            z-index: 999;
+            font-size: 10px;
+        }
+
+        #icon {
+            width: 30%;
+        }
+
+        /* Create a custom radio button */
+        .checkround {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border-color: #E5005B;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 50%;
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .radio input:checked ~ .checkround {
+            background-color: #fff;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkround:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .radio input:checked ~ .checkround:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .radio .checkround:after {
+            left: 2px;
+            top: 2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00aca9;
+        }
+
+        /* The check */
+        .check {
+            display: block;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            padding-right: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            /* Hide the browser's default checkbox */
+            .check input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            background-color: #fff;
+            border-color: #f8204f;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+
+
+        /* When the checkbox is checked, add a blue background */
+        .check input:checked ~ .checkmark {
+            background-color: #fff;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .check input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .check .checkmark:after {
+            left: 5px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border: solid;
+            border-color: #f8204f;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .cust-btn {
+            margin-bottom: 10px;
+            background-color: #f8204f;
+            border-width: 2px;
+            border-color: #f8204f;
+            color: #fff;
+        }
+
+            .cust-btn:hover {
+                border-color: #f8204f;
+                background-color: #fff;
+                color: #f8204f;
+                border-radius: 20px;
+                transform-style: 2s;
+            }
+
+        /* Custom Radio Button Start*/
+
+        .radiotextsty {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .customradio {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 0px;
+            cursor: pointer;
+            /*font-size: 18px;*/
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            /* Hide the browser's default radio button */
+            .customradio input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+        /* Create a custom radio button */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid #BEBEBE;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .customradio:hover input ~ .checkmark {
+            /*background-color: transparent;*/
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .customradio input:checked ~ .checkmark {
+            background-color: white;
+            border: 1px solid #BEBEBE;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .customradio input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .customradio .checkmark:after {
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #E5005B;
+        }
+
+        /* Custom Radio Button End*/
+
+        /*FLOTANTE*/
+ .fab-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.fab-icon-holder {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #00ACA9;
+  /*box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);*/
+}
+
+.fab-icon-holder:hover {
+  opacity: 0.8;
+}
+
+.fab-icon-holder i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.fab {
+  width: 60px;
+  height: 60px;
+  background: #E5005B;
+}
+
+.fab-options {
+  list-style-type: none;
+  margin: 0;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: 85% bottom;
+}
+
+.fab:hover+.fab-options,
+.fab-options:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fab-options li {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.fab-label {
+  padding: 2px 5px;
+  align-self: center;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 3px;
+  font-size: 16px;
+  background: #666666;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+}
+
+    </style>
+
+    <script>
+        if ('Notify' in window.Notiflix) {
+            Notiflix.Notify.init({
+                // closeButton: true,
+                // cssAnimationStyle: 'zoom',
+                // cssAnimationDuration: 500,
+                // messageMaxLength: 20,
+                // plainText: false,
+                // pauseOnHover: true,
+                clickToClose: true,
+            });
+        }
+
+        if ('Report' in window.Notiflix) {
+            Notiflix.Report.init({
+                backOverlayClickToClose: false,
+                plainText: false,
+                messageMaxLength: 20000000,
+                buttonsMaxLength: 1000,
+                width: '400px',
+                titleMaxLength: 200000000,
+            });
+        }
+
+        if ('Confirm' in window.Notiflix) {
+            Notiflix.Confirm.init({
+                messageMaxLength: 1000000,
+                // rtl: true,
+                position: 'center',
+                distance: '10px',
+                cssAnimationStyle: 'fade',
+                plainText: false,
+                messageMaxLength: 200000000,
+                okButtonBackground: '#E5005B',
+                buttonsMaxLength: 1000,
+                width: '450px',
+                titleColor: '#E5005B',
+                titleMaxLength: 200000000,
+            });
+        }
+
+        if (typeof Notiflix === 'object' && typeof Notiflix.Loading === 'object') {
+            Notiflix.Loading.init({
+                clickToClose: false,
+                svgColor: "#E5005B",
+                //customSvgUrl: 'https://notiflix.github.io/content/media/loading/notiflix-loading-nx-dark.svg',
+                //svgSize: '81px',
+            });
+
+            Notiflix.Block.init({
+                className: 'block-custom-class',
+                cssAnimationDuration: 400,
+            });
+        }
+
+
+    </script><style id="NotiflixNotifyInternalCSS">[id^=NotiflixNotifyWrap]{pointer-events:none;position:fixed;z-index:4001;opacity:1;right:10px;top:10px;width:280px;max-width:96%;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent}[id^=NotiflixNotifyWrap].nx-flex-center-center{max-height:calc(100vh - 20px);overflow-x:hidden;overflow-y:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;margin:auto}[id^=NotiflixNotifyWrap]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixNotifyWrap]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixNotifyWrap]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixNotifyWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixNotifyOverlay]{-webkit-transition:background .3s ease-in-out;-o-transition:background .3s ease-in-out;transition:background .3s ease-in-out}[id^=NotiflixNotifyWrap]>div{pointer-events:all;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;width:100%;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;position:relative;margin:0 0 10px;border-radius:5px;background:#1e1e1e;color:#fff;padding:10px 12px;font-size:14px;line-height:1.4}[id^=NotiflixNotifyWrap]>div:last-child{margin:0}[id^=NotiflixNotifyWrap]>div.nx-with-callback{cursor:pointer}[id^=NotiflixNotifyWrap]>div.nx-with-icon{padding:8px;min-height:56px}[id^=NotiflixNotifyWrap]>div.nx-paused{cursor:auto}[id^=NotiflixNotifyWrap]>div.nx-notify-click-to-close{cursor:pointer}[id^=NotiflixNotifyWrap]>div.nx-with-close-button{padding:10px 36px 10px 12px}[id^=NotiflixNotifyWrap]>div.nx-with-icon.nx-with-close-button{padding:6px 36px 6px 6px}[id^=NotiflixNotifyWrap]>div>span.nx-message{cursor:inherit;font-weight:normal;font-family:inherit!important;word-break:break-all;word-break:break-word}[id^=NotiflixNotifyWrap]>div>span.nx-close-button{cursor:pointer;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;position:absolute;right:8px;top:0;bottom:0;margin:auto;color:inherit;width:20px;height:20px}[id^=NotiflixNotifyWrap]>div>span.nx-close-button:hover{-webkit-transform:rotate(90deg);transform:rotate(90deg)}[id^=NotiflixNotifyWrap]>div>span.nx-close-button>svg{position:absolute;width:16px;height:16px;right:2px;top:2px}[id^=NotiflixNotifyWrap]>div>.nx-message-icon{position:absolute;width:40px;height:40px;font-size:30px;line-height:40px;text-align:center;left:8px;top:0;bottom:0;margin:auto;border-radius:inherit}[id^=NotiflixNotifyWrap]>div>.nx-message-icon-fa.nx-message-icon-fa-shadow{color:inherit;background:rgba(0,0,0,.15);-webkit-box-shadow:inset 0 0 34px rgba(0,0,0,.2);box-shadow:inset 0 0 34px rgba(0,0,0,.2);text-shadow:0 0 10px rgba(0,0,0,.3)}[id^=NotiflixNotifyWrap]>div>span.nx-with-icon{position:relative;float:left;width:calc(100% - 40px);margin:0 0 0 40px;padding:0 0 0 10px;-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixNotifyWrap]>div.nx-rtl-on>.nx-message-icon{left:auto;right:8px}[id^=NotiflixNotifyWrap]>div.nx-rtl-on>span.nx-with-icon{padding:0 10px 0 0;margin:0 40px 0 0}[id^=NotiflixNotifyWrap]>div.nx-rtl-on>span.nx-close-button{right:auto;left:8px}[id^=NotiflixNotifyWrap]>div.nx-with-icon.nx-with-close-button.nx-rtl-on{padding:6px 6px 6px 36px}[id^=NotiflixNotifyWrap]>div.nx-with-close-button.nx-rtl-on{padding:10px 12px 10px 36px}[id^=NotiflixNotifyOverlay].nx-with-animation,[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-fade{-webkit-animation:notify-animation-fade .3s ease-in-out 0s normal;animation:notify-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes notify-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-zoom{-webkit-animation:notify-animation-zoom .3s ease-in-out 0s normal;animation:notify-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-zoom{0%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes notify-animation-zoom{0%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-right{-webkit-animation:notify-animation-from-right .3s ease-in-out 0s normal;animation:notify-animation-from-right .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-right{0%{right:-300px;opacity:0}50%{right:8px;opacity:1}100%{right:0;opacity:1}}@keyframes notify-animation-from-right{0%{right:-300px;opacity:0}50%{right:8px;opacity:1}100%{right:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-left{-webkit-animation:notify-animation-from-left .3s ease-in-out 0s normal;animation:notify-animation-from-left .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-left{0%{left:-300px;opacity:0}50%{left:8px;opacity:1}100%{left:0;opacity:1}}@keyframes notify-animation-from-left{0%{left:-300px;opacity:0}50%{left:8px;opacity:1}100%{left:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-top{-webkit-animation:notify-animation-from-top .3s ease-in-out 0s normal;animation:notify-animation-from-top .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-top{0%{top:-50px;opacity:0}50%{top:8px;opacity:1}100%{top:0;opacity:1}}@keyframes notify-animation-from-top{0%{top:-50px;opacity:0}50%{top:8px;opacity:1}100%{top:0;opacity:1}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-bottom{-webkit-animation:notify-animation-from-bottom .3s ease-in-out 0s normal;animation:notify-animation-from-bottom .3s ease-in-out 0s normal}@-webkit-keyframes notify-animation-from-bottom{0%{bottom:-50px;opacity:0}50%{bottom:8px;opacity:1}100%{bottom:0;opacity:1}}@keyframes notify-animation-from-bottom{0%{bottom:-50px;opacity:0}50%{bottom:8px;opacity:1}100%{bottom:0;opacity:1}}[id^=NotiflixNotifyOverlay].nx-with-animation.nx-remove,[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-fade.nx-remove{opacity:0;-webkit-animation:notify-remove-fade .3s ease-in-out 0s normal;animation:notify-remove-fade .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-fade{0%{opacity:1}100%{opacity:0}}@keyframes notify-remove-fade{0%{opacity:1}100%{opacity:0}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-zoom.nx-remove{-webkit-transform:scale(0);transform:scale(0);-webkit-animation:notify-remove-zoom .3s ease-in-out 0s normal;animation:notify-remove-zoom .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-zoom{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(0);transform:scale(0)}}@keyframes notify-remove-zoom{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}100%{-webkit-transform:scale(0);transform:scale(0)}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-top.nx-remove{opacity:0;-webkit-animation:notify-remove-to-top .3s ease-in-out 0s normal;animation:notify-remove-to-top .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-top{0%{top:0;opacity:1}50%{top:8px;opacity:1}100%{top:-50px;opacity:0}}@keyframes notify-remove-to-top{0%{top:0;opacity:1}50%{top:8px;opacity:1}100%{top:-50px;opacity:0}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-right.nx-remove{opacity:0;-webkit-animation:notify-remove-to-right .3s ease-in-out 0s normal;animation:notify-remove-to-right .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-right{0%{right:0;opacity:1}50%{right:8px;opacity:1}100%{right:-300px;opacity:0}}@keyframes notify-remove-to-right{0%{right:0;opacity:1}50%{right:8px;opacity:1}100%{right:-300px;opacity:0}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-bottom.nx-remove{opacity:0;-webkit-animation:notify-remove-to-bottom .3s ease-in-out 0s normal;animation:notify-remove-to-bottom .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-bottom{0%{bottom:0;opacity:1}50%{bottom:8px;opacity:1}100%{bottom:-50px;opacity:0}}@keyframes notify-remove-to-bottom{0%{bottom:0;opacity:1}50%{bottom:8px;opacity:1}100%{bottom:-50px;opacity:0}}[id^=NotiflixNotifyWrap]>div.nx-with-animation.nx-from-left.nx-remove{opacity:0;-webkit-animation:notify-remove-to-left .3s ease-in-out 0s normal;animation:notify-remove-to-left .3s ease-in-out 0s normal}@-webkit-keyframes notify-remove-to-left{0%{left:0;opacity:1}50%{left:8px;opacity:1}100%{left:-300px;opacity:0}}@keyframes notify-remove-to-left{0%{left:0;opacity:1}50%{left:8px;opacity:1}100%{left:-300px;opacity:0}}</style><style id="NotiflixReportInternalCSS">[id^=NotiflixReportWrap]{position:fixed;z-index:4002;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;left:0;top:0;padding:10px;color:#1e1e1e;border-radius:25px;background:transparent;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixReportWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixReportWrap]>div[class*="-overlay"]{width:100%;height:100%;left:0;top:0;background:rgba(255,255,255,.5);position:fixed;z-index:0}[id^=NotiflixReportWrap]>div.nx-report-click-to-close{cursor:pointer}[id^=NotiflixReportWrap]>div[class*="-content"]{width:320px;max-width:100%;max-height:96vh;overflow-x:hidden;overflow-y:auto;border-radius:inherit;padding:10px;-webkit-filter:drop-shadow(0 0 5px rgba(0,0,0,0.05));filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));border:1px solid rgba(0,0,0,.03);background:#f8f8f8;position:relative;z-index:1}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixReportWrap]>div[class*="-content"]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixReportWrap]>div[class*="-content"]>div[class$="-icon"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:110px;height:110px;display:block;margin:6px auto 12px}[id^=NotiflixReportWrap]>div[class*="-content"]>div[class$="-icon"] svg{min-width:100%;max-width:100%;height:auto}[id^=NotiflixReportWrap]>*>h5{word-break:break-all;word-break:break-word;font-family:inherit!important;font-size:16px;font-weight:500;line-height:1.4;margin:0 0 10px;padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.1);float:left;width:100%;text-align:center}[id^=NotiflixReportWrap]>*>p{word-break:break-all;word-break:break-word;font-family:inherit!important;font-size:13px;line-height:1.4;font-weight:normal;float:left;width:100%;padding:0 10px;margin:0 0 10px}[id^=NotiflixReportWrap] a#NXReportButton{word-break:break-all;word-break:break-word;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:inherit!important;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;cursor:pointer;float:right;padding:7px 17px;background:#32c682;font-size:14px;line-height:1.4;font-weight:500;border-radius:inherit!important;color:#fff}[id^=NotiflixReportWrap] a#NXReportButton:hover{-webkit-box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25);box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25)}[id^=NotiflixReportWrap].nx-rtl-on a#NXReportButton{float:left}[id^=NotiflixReportWrap]>div[class*="-overlay"].nx-with-animation{-webkit-animation:report-overlay-animation .3s ease-in-out 0s normal;animation:report-overlay-animation .3s ease-in-out 0s normal}@-webkit-keyframes report-overlay-animation{0%{opacity:0}100%{opacity:1}}@keyframes report-overlay-animation{0%{opacity:0}100%{opacity:1}}[id^=NotiflixReportWrap]>div[class*="-content"].nx-with-animation.nx-fade{-webkit-animation:report-animation-fade .3s ease-in-out 0s normal;animation:report-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes report-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixReportWrap]>div[class*="-content"].nx-with-animation.nx-zoom{-webkit-animation:report-animation-zoom .3s ease-in-out 0s normal;animation:report-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes report-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixReportWrap].nx-remove>div[class*="-overlay"].nx-with-animation{opacity:0;-webkit-animation:report-overlay-animation-remove .3s ease-in-out 0s normal;animation:report-overlay-animation-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}@keyframes report-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixReportWrap].nx-remove>div[class*="-content"].nx-with-animation.nx-fade{opacity:0;-webkit-animation:report-animation-fade-remove .3s ease-in-out 0s normal;animation:report-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes report-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixReportWrap].nx-remove>div[class*="-content"].nx-with-animation.nx-zoom{opacity:0;-webkit-animation:report-animation-zoom-remove .3s ease-in-out 0s normal;animation:report-animation-zoom-remove .3s ease-in-out 0s normal}@-webkit-keyframes report-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@keyframes report-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}</style><style id="NotiflixConfirmInternalCSS">[id^=NotiflixConfirmWrap]{position:fixed;z-index:4003;width:100%;height:100%;left:0;top:0;padding:10px;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixConfirmWrap].nx-position-center-top{-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-center-bottom{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap].nx-position-left-top{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-left-center{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start}[id^=NotiflixConfirmWrap].nx-position-left-bottom{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap].nx-position-right-top{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start}[id^=NotiflixConfirmWrap].nx-position-right-center{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end}[id^=NotiflixConfirmWrap].nx-position-right-bottom{-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}[id^=NotiflixConfirmWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixConfirmWrap]>div[class*="-overlay"]{width:100%;height:100%;left:0;top:0;background:rgba(255,255,255,.5);position:fixed;z-index:0}[id^=NotiflixConfirmWrap]>div[class*="-overlay"].nx-with-animation{-webkit-animation:confirm-overlay-animation .3s ease-in-out 0s normal;animation:confirm-overlay-animation .3s ease-in-out 0s normal}@-webkit-keyframes confirm-overlay-animation{0%{opacity:0}100%{opacity:1}}@keyframes confirm-overlay-animation{0%{opacity:0}100%{opacity:1}}[id^=NotiflixConfirmWrap].nx-remove>div[class*="-overlay"].nx-with-animation{opacity:0;-webkit-animation:confirm-overlay-animation-remove .3s ease-in-out 0s normal;animation:confirm-overlay-animation-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}@keyframes confirm-overlay-animation-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixConfirmWrap]>div[class*="-content"]{width:300px;max-width:100%;max-height:96vh;overflow-x:hidden;overflow-y:auto;border-radius:25px;padding:10px;margin:0;-webkit-filter:drop-shadow(0 0 5px rgba(0,0,0,0.05));filter:drop-shadow(0 0 5px rgba(0, 0, 0, .05));background:#f8f8f8;color:#1e1e1e;position:relative;z-index:1;text-align:center}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar{width:0;height:0}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar-thumb{background:transparent}[id^=NotiflixConfirmWrap]>div[class*="-content"]::-webkit-scrollbar-track{background:transparent}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]{float:left;width:100%;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>h5{float:left;width:100%;margin:0;padding:0 0 10px;border-bottom:1px solid rgba(0,0,0,.1);color:#32c682;font-family:inherit!important;font-size:16px;line-height:1.4;font-weight:500;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div{font-family:inherit!important;margin:15px 0 20px;padding:0 10px;float:left;width:100%;font-size:14px;line-height:1.4;font-weight:normal;color:inherit;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div{font-family:inherit!important;float:left;width:100%;margin:15px 0 0;padding:0}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input{font-family:inherit!important;float:left;width:100%;height:40px;margin:0;padding:0 15px;border:1px solid rgba(0,0,0,.1);border-radius:25px;font-size:14px;font-weight:normal;line-height:1;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;text-align:left}[id^=NotiflixConfirmWrap].nx-rtl-on>div[class*="-content"]>div[class*="-head"]>div>div>input{text-align:right}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input:hover{border-color:rgba(0,0,0,.1)}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input:focus{border-color:rgba(0,0,0,.3)}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input.nx-validation-failure{border-color:#ff5549}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-head"]>div>div>input.nx-validation-success{border-color:#32c682}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-radius:inherit;float:left;width:100%;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a{cursor:pointer;font-family:inherit!important;-webkit-transition:all .25s ease-in-out;-o-transition:all .25s ease-in-out;transition:all .25s ease-in-out;float:left;width:48%;padding:9px 5px;border-radius:inherit!important;font-weight:500;font-size:15px;line-height:1.4;color:#f8f8f8;text-align:inherit}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.nx-confirm-button-ok{margin:0 2% 0 0;background:#32c682}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.nx-confirm-button-cancel{margin:0 0 0 2%;background:#a9a9a9}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a.nx-full{margin:0;width:100%}[id^=NotiflixConfirmWrap]>div[class*="-content"]>div[class*="-buttons"]>a:hover{-webkit-box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25);box-shadow:inset 0 -60px 5px -5px rgba(0,0,0,.25)}[id^=NotiflixConfirmWrap].nx-rtl-on>div[class*="-content"]>div[class*="-buttons"],[id^=NotiflixConfirmWrap].nx-rtl-on>div[class*="-content"]>div[class*="-buttons"]>a{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}[id^=NotiflixConfirmWrap].nx-with-animation.nx-fade>div[class*="-content"]{-webkit-animation:confirm-animation-fade .3s ease-in-out 0s normal;animation:confirm-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes confirm-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixConfirmWrap].nx-with-animation.nx-zoom>div[class*="-content"]{-webkit-animation:confirm-animation-zoom .3s ease-in-out 0s normal;animation:confirm-animation-zoom .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes confirm-animation-zoom{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{opacity:1;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}[id^=NotiflixConfirmWrap].nx-with-animation.nx-fade.nx-remove>div[class*="-content"]{opacity:0;-webkit-animation:confirm-animation-fade-remove .3s ease-in-out 0s normal;animation:confirm-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes confirm-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixConfirmWrap].nx-with-animation.nx-zoom.nx-remove>div[class*="-content"]{opacity:0;-webkit-animation:confirm-animation-zoom-remove .3s ease-in-out 0s normal;animation:confirm-animation-zoom-remove .3s ease-in-out 0s normal}@-webkit-keyframes confirm-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@keyframes confirm-animation-zoom-remove{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}50%{opacity:.5;-webkit-transform:scale(1.05);transform:scale(1.05)}100%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}</style><style id="NotiflixLoadingInternalCSS">[id^=NotiflixLoadingWrap]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:fixed;z-index:4000;width:100%;height:100%;left:0;top:0;right:0;bottom:0;margin:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box;background:rgba(0,0,0,.8);font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}[id^=NotiflixLoadingWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixLoadingWrap].nx-loading-click-to-close{cursor:pointer}[id^=NotiflixLoadingWrap]>div[class*="-icon"]{width:60px;height:60px;position:relative;-webkit-transition:top .2s ease-in-out;-o-transition:top .2s ease-in-out;transition:top .2s ease-in-out;margin:0 auto}[id^=NotiflixLoadingWrap]>div[class*="-icon"] img,[id^=NotiflixLoadingWrap]>div[class*="-icon"] svg{max-width:unset;max-height:unset;width:100%;height:auto;position:absolute;left:0;top:0}[id^=NotiflixLoadingWrap]>p{position:relative;margin:10px auto 0;font-family:inherit!important;font-weight:normal;font-size:15px;line-height:1.4;padding:0 10px;width:100%;text-align:center}[id^=NotiflixLoadingWrap].nx-with-animation{-webkit-animation:loading-animation-fade .3s ease-in-out 0s normal;animation:loading-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes loading-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes loading-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixLoadingWrap].nx-with-animation.nx-remove{opacity:0;-webkit-animation:loading-animation-fade-remove .3s ease-in-out 0s normal;animation:loading-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes loading-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes loading-animation-fade-remove{0%{opacity:1}100%{opacity:0}}[id^=NotiflixLoadingWrap]>p.nx-loading-message-new{-webkit-animation:loading-new-message-fade .3s ease-in-out 0s normal;animation:loading-new-message-fade .3s ease-in-out 0s normal}@-webkit-keyframes loading-new-message-fade{0%{opacity:0}100%{opacity:1}}@keyframes loading-new-message-fade{0%{opacity:0}100%{opacity:1}}</style><style id="NotiflixBlockInternalCSS">[id^=NotiflixBlockWrap]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-box-sizing:border-box;box-sizing:border-box;position:absolute;z-index:1000;font-family:"Quicksand",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:rgba(255,255,255,.9);text-align:center;animation-duration:.4s;width:100%;height:100%;left:0;top:0;border-radius:inherit;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}[id^=NotiflixBlockWrap] *{-webkit-box-sizing:border-box;box-sizing:border-box}[id^=NotiflixBlockWrap]>span[class*="-icon"]{display:block;width:45px;height:45px;position:relative;margin:0 auto}[id^=NotiflixBlockWrap]>span[class*="-icon"] svg{width:inherit;height:inherit}[id^=NotiflixBlockWrap]>span[class*="-message"]{position:relative;display:block;width:100%;margin:10px auto 0;padding:0 10px;font-family:inherit!important;font-weight:normal;font-size:14px;line-height:1.4}[id^=NotiflixBlockWrap].nx-with-animation{-webkit-animation:block-animation-fade .3s ease-in-out 0s normal;animation:block-animation-fade .3s ease-in-out 0s normal}@-webkit-keyframes block-animation-fade{0%{opacity:0}100%{opacity:1}}@keyframes block-animation-fade{0%{opacity:0}100%{opacity:1}}[id^=NotiflixBlockWrap].nx-with-animation.nx-remove{opacity:0;-webkit-animation:block-animation-fade-remove .3s ease-in-out 0s normal;animation:block-animation-fade-remove .3s ease-in-out 0s normal}@-webkit-keyframes block-animation-fade-remove{0%{opacity:1}100%{opacity:0}}@keyframes block-animation-fade-remove{0%{opacity:1}100%{opacity:0}}</style>
+</head>
+<body style="background-color: #fff !important" onload="CargarFecha()">
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="screqusDBTK099a8XznHIN8gEBre9jpj+P6TuK0y4qq2mucpioYZOcDNKownvWEmWdLtU/lD5EcLyg0yXERUn9W1lM7KyIafmceZTgLfHQTtU0MVi2RUjPUUQhT+0oCCSGnMoAGdV3WnXiyWLP6lvyyO1GG7NAKFEeNllO+srjDsZdlcx+MSTe7grmswLSJxL9Wgq00jR+ljXVxMXzID362wLmj+7Wgts0/YKEd+iVs=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Renovaciones/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZIhfFhoJnn7XLEQ-MKZvuz1QHANs8ryS001oS1jjZxqWIAtyvqhqBZR8ikhqB-eJ_w2&amp;t=638901320248157332" type="text/javascript"></script>
+
+
+<script src="/Renovaciones/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvtDSiM1UAhqe7Np_vU_NNc-cY-EAAs0BLlMPkG5Zl_kOaWQXhh_fG-CrWbODFCfKFeHDjT3HhAR57QX09ppnQvAapkMzNlC36NQUgRwZciTB1XKT7F4Q9eK96JpKLBZz2lBrDVjVrVtQe1u8gWYqqOE1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/Renovaciones/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OMLDgKw_tO7pC_7IJ-gl6MYZsCgWSCNAqMUeo1k47_M7dCuFHrMyB3qBiOr8llIvDKl7qQwAfmnMPsEa_643KYP10OdztdBscFuIfGvTzTJ10l_BFfYrbBCv5gBZE-ILu_VwTjXV1IplZHHVBh8yddA1&amp;t=5c0e0825" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A2B4DAF8">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="hHoJdofZ/aNHVY+wkj4uRju/IBB6lvQnuG1ePphOl/r7KVaFg3+GhWNaKp5pEEy3KuuQMdhfLE2iPaT/PiX1ich1avmZcnVVUu4o2ok9l4zcjquQfzIW6pteESb4+frw32AU2+kx1F/nab7CMn/Q2SCUVlOhc+7Eoicw13FPnHI=">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel1','UpdatePanel1'], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="UpdatePanel1">
+	
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #E5005B !important;display:none;">
+                    <a class="navbar-brand" href="#">
+                        <img id="logo" alt="logo" height="100" data-sticky-width="100" data-sticky-height="100" data-sticky-top="33" src="Responsive/img/logoIndex.png"></a>
+                </nav>
+
+                
+                <div class="container" style="margin-top: 1em; max-width: 1250px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <h4 id="pTitulo" style="color:#707170; font-weight:700">Depósitos acreditados hasta el dia 22/05/2026</h4>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                    <div class="col-md-5">
+                                        <input type="number" id="txtCarne" class="form-control" placeholder="Carné" style="text-align: center;" onkeypress="return valideKey(event);">
+                                    </div>
+                                 <div class="col-md-2">
+                    <div class="custom-control custom-checkbox mb-3" style="margin-top:18px;">
+                        <input type="checkbox" class="custom-control-input" id="chkconsul" name="example1">
+                        <label class="custom-control-label" for="chkconsul">Consul</label>
+                    </div>
+                </div>
+                                    <div class="col-md-3">
+                                        <a onclick="ObtenerCarne()" class="btn btn-danger" style="margin-top: 10px; color: #fff; width: 100%;"><i class="ri-search-2-line"></i></a>
+                                    </div>
+                             
+                                 <div class="col-md-12"><hr></div>
+                                <div class="col-md-5 row" id="divInformacionUsuario" style="display:none;">
+                                     <div class="col-md-12">
+                                        <h5 style="color:#707170;"><i class="ri-user-3-line"></i> Información usuario:</h5>
+                                    </div>
+                                    <div class="col-md-12" style="font-size:15px;">
+                                        <label id="lblCedula"></label>
+                                        <br>
+                                        <label id="lblNombre"></label>
+                                        <br>
+                                        <label id="lblSuscrito"></label>  <input type="hidden" name="hdnEstadoSuscripcion" id="hdnEstadoSuscripcion" value="0"> 
+                                        <br>
+                                        <label id="lblultimaQuincenaPaga"></label>
+                                        <br>
+                                        <label id="lblultimaQuincenaPresentada"></label> 
+                                        <label id="lblMedioPresentacion"></label>
+                                        <br> <label id="lblEstado" style="display:none"></label>
+                                        <br id="brFechaVencimiento" style="display:none;">
+                                        <label id="lblFechaVencimiento" style="display:none;"></label>
+
+                                    <br>
+                                    
+                                        </div>
+                                    <div class="col-md-12" id="divConsulado" style="font-size:13px;">
+                                        <label id="lblConsulado"></label>
+                                        <br>
+                                        <label id="lblPais"></label>
+                                        </div>
+                                    <div class="col-md-12">
+                                    <a id="lnkIndices" onclick="VisualizarIndices()" style="color: #E5005B;cursor:pointer;display:none;" data-bs-toggle="modal" data-bs-target="#modalIndices"><i class="ri-file-2-line"></i> Ver índices pendientes</a>
+                                </div>     
+                                </div>
+                                <div class="col-md-3" id="divTipoPago" style="display:none;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h5 style="color:#707170;"><i class="fa fa-circle"></i> Tipos de pago:</h5>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <label class="customradio">
+                                                    <span class="radiotextsty">Entre cuentas del BCR</span>
+                                                    <input type="radio" name="inlineRadioOptions" id="rBCR" onclick="Cambiar('rBCR')" checked="checked">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="customradio">
+                                                    <span class="radiotextsty">De cualquier otro Banco</span>
+                                                    <input type="radio" name="inlineRadioOptions" id="rOtroBanco" onclick="Cambiar('rOtroBanco')">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="customradio">
+                                                    <span class="radiotextsty">Ventanilla BCR</span>
+                                                    <input type="radio" name="inlineRadioOptions" id="rVentBCR" onclick="Cambiar('rVentBCR')">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="customradio">
+                                                    <span class="radiotextsty">Pago en caja Archivo Nacional</span>
+                                                    <input type="radio" name="inlineRadioOptions" id="rArchivoN" onclick="Cambiar('rArchivoN')">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 row" id="divInformacionPago" style="display:none;">
+                                    <div class="col-md-12">
+                                        <h5 style="color:#707170;"><i class="fa fa-money"></i> Información de pago:</h5>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <input name="dtFecha" type="date" id="dtFecha" class="form-control" placeholder="Fecha depósito" tabindex="4" style="text-align: center;" max="2026-05-22">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <input type="number" id="txtIndices" class="form-control" placeholder="Cantidad índices pagados (24 por año)" max="200" min="1" style="text-align: center;" onkeypress="return valideKey(event);">
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <input type="text" id="txtDocumento" class="form-control" placeholder="Número documento" style="text-align: center;">
+                                    </div>
+                                    <div class="col-md-12 mb-3" style="display:none;" id="divMonto">
+                                         <select id="ddlMoneda" class="form-select" placeholder="Moneda" style="text-align: center;">
+                                                        <option value="¢">¢</option>
+                                                         <option value="$">$</option>
+                                                         </select>
+                                        <input type="text" id="txtMonto" class="form-control" placeholder="Monto" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div id="divBotonValidar" class="col-md-12 mb-3" style="text-align: center;display:none;">
+                                    <a id="lnkValidar" class="btn btn-dark btn-lg" onclick="ValidarDatos()" style="color: #fff;"><i class="ri-checkbox-circle-line"></i> Validar</a>
+                                </div>
+                               <div id="divBotonAcreditar" class="col-md-12 mb-3" style="text-align: center;display:none;">
+                                    <a id="lnkAcreditar" class="btn btn-dark btn-lg" onclick="Acreditar()" style="color: #fff;"><i class="ri-save-line"></i> Acreditar</a>
+                                </div>
+                                <div class="col-md-12 row" id="divOpciones" style="margin-bottom:15px;margin-top:10px;display:none;">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12 row" style="border:1px solid #707170;border-radius:5px;">
+                                        <div class="col-md-6 mb-3" style="padding:10px;">
+                                             <div class="form-check">
+                                                <label class="customradio">
+                                                    <span class="radiotextsty">Seleccionar</span>
+                                                    <input type="radio" name="radioOpciones" id="1" checked="checked">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3" style="text-align:left;padding:10px;">
+                                            <p><i class="fa fa-circle"></i> Fracionada</p>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <h4>Lista: </h4>
+                                            <ul>
+                                                <li>Opcion #1</li>
+                                                <li>Opcion #2</li>
+                                                <li>Opcion #3</li>
+                                                <li>Opcion #4</li>
+                                                <li>Opcion #5</li>
+                                                <li>Opcion #6</li>
+                                                <li>Opcion #7</li>
+                                                <li>Opcion #8</li>
+                                                <li>Opcion #9</li>
+                                                <li>Opcion #10</li>
+                                            </ul>
+                                        </div>
+                                            </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="footer" style="display:none;">
+                        <img src="Responsive/img/Logo 3i.png" style="width: 175px;">
+                        <br>
+                        © 2026 Tirant Todos los derechos reservados | <strong>
+                            <span id="lblVersion">2.0</span></strong>.
+
+                    </div>
+                    <input type="hidden" name="hdnTipo" id="hdnTipo" value="rBCR">
+                    <input type="hidden" name="hdnFecha" id="hdnFecha" value="2026-05-22">
+                    <input type="hidden" id="hdnCantidadOpciones" value="0">
+                <input type="hidden" id="hdnOpcion" value="">
+                <input type="hidden" id="hdnOpcionINX" value="0">
+
+                <div class="modal fade" id="modalIndices" tabindex="-1" role="dialog" aria-labelledby="modalIndicesLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #E5005B; color: #fff;">
+                                <h5 class="modal-title">Lista de índices </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                     <table id="tblIndices" class="table table-striped table-bordered table-list" style="font-size:13px;">
+                                            <thead id="theadS" style="background-color: #c3c7ca; color: black;">
+                                                <tr><th style="text-align: center;vertical-align:middle;">Índice pago</th>
+                                                <th style="text-align: center;vertical-align:middle;">Año</th>
+                                                <th style="text-align: center;vertical-align:middle;">Quincena</th>
+                                            </tr></thead>
+                                            <tbody id="tbodyS1">
+                                            </tbody>
+                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fab-container">
+                    <div class="fab fab-icon-holder">
+                        <i class="fa fa-question-circle-o" style="font-size: 40px;"></i>
+                    </div>
+                    <ul class="fab-options">
+                        <li onclick="AbrirModalSoporte('WA')">
+                            
+                            <div class="fab-icon-holder">
+                                <i class="fa fa-whatsapp"></i>
+                            </div>
+                        </li>
+                        <li onclick="AbrirModalSoporte('TEL')">
+                            <div class="fab-icon-holder">
+                                <i class="fa fa-fax"></i>
+                            </div>
+                        </li>
+                        <li onclick="AbrirModalSoporte('EMAIL')">
+                            <div class="fab-icon-holder">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <a id="lnkayuda" style="cursor: pointer; color: blue; display: none;" data-bs-toggle="modal" data-bs-target="#modalAyuda">Abrir modal</a>
+                <div class="modal fade" id="modalAyuda" tabindex="-1" role="dialog" aria-labelledby="modalAyudaLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #E5005B; color: #fff;text-align:center;">
+                                <h5 id="htituloayuda" class="modal-title"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                   
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12" style="text-align:center;">
+                                            <i id="faayuda" class="fa fa-whatsapp" style="font-size:100px;color:#707170;"></i>
+                                            <p>En caso de cualquier duda o consulta, sirvase a contactarnos por este medio.</p>
+                                            <a id="aWAayuda" style="display:none;color:#00ACA9;font-size: 25px;font-weight: 500;" target="_blank" href="https://wa.me/50660544832">+506 6054-4832</a>
+                                            <a id="aTELayuda" style="display:none;color:#00ACA9;font-size: 25px;font-weight: 500;" target="_blank" href="tel:22801370"> (+506) 4000-2850</a>
+                                            <a id="aEMAILayuda" style="display:none;color:#00ACA9;font-size: 25px;font-weight: 500;" target="_blank" href="mailto: depositos@index.co.cr"> depositos@index.co.cr</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+</div>
+    </form>
+
+
+
+
+</body></html>

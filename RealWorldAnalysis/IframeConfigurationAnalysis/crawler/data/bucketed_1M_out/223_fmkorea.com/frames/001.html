@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="ko"><head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<style type="text/css">
+html, body { width:100%; height:100%; margin:0;	padding:0; overflow:hidden; }
+	.fmad_wrapper.fmad_naver_power_link .adpost.m a {
+		text-align:left;
+	}
+	.fmad_wrapper.fmad_naver_power_link .adpost
+    {
+		background:none !important;
+		padding:0px !important;
+	}
+	.fmad_wrapper.fmad_naver_power_link .adpost div.div {
+		padding:5px 10px;
+	}
+
+	.fmad_wrapper.fmad_naver_power_link .adpost div.div {
+		a.wrapper {
+			display:block;
+			width:100%;
+			height:100px;
+			left:0px;
+			top:0px;
+			position:absolute;
+			z-index:12345;
+		}
+	}
+	.fmad_wrapper.fmad_naver_power_link .adpost.m .title {
+		font-size:24px !important;
+	}
+	.fmad_wrapper.fmad_naver_power_link .adpost.m .desc {
+		font-size:14px !important;
+        margin-top:2px;
+	}
+	.fmad_wrapper.fmad_naver_power_link .adpost.m .vUrl {
+		font-size:14px !important;
+		margin-top:2px;
+	}
+	.fmad_wrapper.fmad_naver_power_link .adpost:after {
+		display:block;
+		content:'광고';
+		position:absolute;
+		font-size:10px;
+		right:5px;
+		top:5px;
+		padding:1px 2px;
+		border:1px solid #ccc;
+		border-radius:2px;
+	}
+
+	body.night_mode .fmad_wrapper.fmad_naver_power_link .adpost:after {
+		color:#afafaf;
+	}
+
+	.fmad_wrapper.fmad_naver_power_link .adpost a.descExt {
+		text-align:left;
+		display:block;
+        background: #f1f1f1;
+        padding: 3px 5px;
+        border-radius: 3px;
+        font-size: 13px;
+		margin-top:5px;
+		color:#555;
+		text-decoration:none;
+		z-index:23456;
+		position:relative;
+	}
+
+	body.night_mode .fmad_wrapper.fmad_naver_power_link .adpost a.descExt {
+		color:#aaaaaa;
+		background:#333333;
+	}
+
+	.fmad_wrapper.fmad_naver_power_link .adpost div.has_vUrl {
+		padding-top:10px;
+	}
+</style>
+	<link rel="stylesheet" type="text/css" href="//static.fmkorea.com/modules/fmad/tpl/css/naver_power_link.css">
+	<script type="text/javascript" src="//static.fmkorea.com/common/js/jquery.js"></script>
+<script>
+    window.is_mobile_variable = 'true';
+    function fmad_naver_power_link_init() {
+        let retry_counts = 1; // counts 값에 1을 넣으면 1회 재시도 (=최대 2회), 값에 2를 넣으면 2회 재시도 (=최대 3회)
+        let $ = jQuery;
+
+        let params = {};
+        params.idx = 0;
+        params.pageSize = 1;
+        params.url = 'https://m.fmkorea.com/';
+        if(params.url.length < 1) {
+			params.url = window.location.href;
+		}
+		params.channel = 'm_fmkorea.ch5';
+        params.keywordGroup = '모바일에펨코리아_공통';
+
+        if(typeof params.idx == 'undefined' || typeof params.idx != 'number') {
+            return '';
+        }
+
+        window['__fmad_handle_naver_power_link_' + params.idx] = function(data) {
+            __fmad_handle_naver_power_link(params.idx, data, params);
+        };
+
+        if(typeof window.retry_counts == 'undefined') {
+            window.retry_counts = [];
+        }
+        window.retry_counts[params.idx] = retry_counts;
+        window.a_success = null;
+        $.ajax({
+            type: "GET",
+            url: 'https://external-api.impression-neo.naver.com/api/v2/ads/search-jsonp',
+            dataType: "jsonp",
+            data: params,
+            'jsonpCallback': '__fmad_handle_naver_power_link_' + params.idx,
+            error: function() {
+                window.a_success = false;
+            },
+        });
+    }
+
+    function __fmad_handle_naver_power_link(idx, data, params) {
+        window.a_success = true;
+        var _length = 0;
+        try
+        {
+            _length = data.ads.length;
+        }
+        catch (e)
+        {
+        }
+        if(_length)
+        {
+            __fmad_make_naver_power_link(idx, data, params);
+        }
+        else if(window.retry_counts[idx]-- > 0)
+        {
+            jQuery.ajax({
+                type: "GET",
+                url: 'https://external-api.impression-neo.naver.com/api/v2/ads/search-jsonp',
+                dataType: "jsonp",
+                data: params,
+                'jsonpCallback': '__fmad_handle_naver_power_link_' + idx
+            });
+        }
+    }
+
+    function __fmad_make_naver_power_link(idx, data, params) {
+        var $ = jQuery;
+        var config = params;
+
+        var $adpost = $('#fmad_wrapper_' + idx).find('.adpost');
+        if(params.wrapper && $(params.wrapper).length > 0) {
+            $adpost = $(params.wrapper).first();
+        }
+
+        if(!$adpost.length)
+        {
+            $adpost = $('.adpost');
+        }
+        if(config.move_header_to_bottom == true) {
+            $adpost.addClass('plt');
+        } else {
+            $adpost.addClass('nplt');
+        }
+        var space = 0;
+        if(!Array.isArray(data.ads))
+        {
+            data.ads = [];
+        }
+
+        if(typeof(config)=='object')
+        {
+            if(config.dupe===1 && data.ads.length==1)
+            {
+                data.ads[1] = data.ads[0];
+            }
+            space = config.space;
+
+        }
+        if(typeof(data.ads)!='object' || !data.ads.length)
+        {
+            $adpost[0].innerHTML = '';
+            $adpost.css('background','none');
+        }
+        var i = 1;
+
+        $.each(data.ads, function(){
+                var $div = $('<div class="div"></div>');
+            var $a_wrapper = $('<a/>') // 제목
+				.attr('class', 'wrapper')
+                .attr('href', this.clickUrl)
+                .attr('target', '_blank')
+                .appendTo($div);
+            if (typeof this.imageExtension == 'object' && this.imageExtension.imageUrl.length > 0 && config.display_thumbnail == true) {
+                    $div.addClass('has_thumbnail');
+                    var $a = $('<a/>').addClass('thumbnail').attr('href', this.imageExtension.clickUrl)
+                        .attr('target', '_blank').appendTo($div);
+                    var $thumbnail = $('<img />').attr('src', this.imageExtension.imageUrl).appendTo($a);
+                }
+                var $a = $('<a/>') // 제목
+                    .text(this.headline)
+                    .attr('href', this.clickUrl)
+                    .attr('class', 'title')
+                    .attr('target', '_blank')
+                    .appendTo($div);
+                /*if(this.isMobile)
+				{
+					$a.append('<span class="mobile"></span>');
+				}*/
+                var $desc = $('<a/>') // 설명
+                    .text(this.description)
+                    .attr('class', 'desc')
+                    .attr('href', this.clickUrl)
+                    .attr('target', '_blank')
+                    .appendTo($div);
+                if(typeof this.descriptionExtension == 'object' && this.descriptionExtension.description) {
+                    let desc_ext_html = '';
+                    if(typeof this.descriptionExtension.heading == 'string' && this.descriptionExtension.heading.length > 0) {
+                        desc_ext_html += '<b>' + this.descriptionExtension.heading + '</b> ';
+					}
+                    desc_ext_html += this.descriptionExtension.description;
+                    var $descExt = $('<a />') // 설명
+						.html(desc_ext_html)
+						.attr('class', 'descExt')
+						.attr('href', this.descriptionExtension.clickUrl)
+						.appendTo($div);
+                    $div.addClass('has_descExt');
+				} else {
+                    var $vUrl = $('<a/>') // 사이트 주소
+                        .text(' ' + this.displayUrl + ' ')
+                        .attr('class', 'vUrl')
+                        .attr('href', this.clickUrl)
+                        .attr('target', '_blank')
+                        .appendTo($div);
+                    $div.addClass('has_vUrl');
+                }
+                $adpost.append($div);
+                i++;
+        });
+        if($('#fmad_extra_wrapper_' + idx).find('.adpost > div.div').length < 1) {
+            $('#fmad_extra_wrapper_' + idx).remove();
+        }
+    }
+    jQuery(document).ready(function(){
+        fmad_naver_power_link_init();
+	});
+</script></head>
+
+<body style="padding:0; margin:0; text-align:center">
+	<div id="fmad_wrapper_0" class="fmad_wrapper fmad_naver_power_link"><div class="adpost adpost_index adpost_m m adpost_with_thumbnail nplt" style="margin:0px; height:100px; box-sizing:border-box;"><div class="div has_vUrl"><a class="wrapper" href="https://ader.naver.com/v1/I7eVSWASp7Uvds0z9qPMdDjsn2rYtQn9OZg4MdV-wzbmSw9gdlgR_YdInR4tJJs3T-5VrwkbHNYms3gDOMPlMFrO_wMS9-2jM-CrbKQ_FrSwfmMBZ7C58ubcdwZPGRz0xgvVT3cdYqmKg_lcB4HVpqokqzOebCpQ_-p5JMOTmGhgDArJnrJOdpEhyAASXp2G?c=m_fmkorea.ch5&amp;t=0" target="_blank"></a><a href="https://ader.naver.com/v1/I7eVSWASp7Uvds0z9qPMdDjsn2rYtQn9OZg4MdV-wzbmSw9gdlgR_YdInR4tJJs3T-5VrwkbHNYms3gDOMPlMFrO_wMS9-2jM-CrbKQ_FrSwfmMBZ7C58ubcdwZPGRz0xgvVT3cdYqmKg_lcB4HVpqokqzOebCpQ_-p5JMOTmGhgDArJnrJOdpEhyAASXp2G?c=m_fmkorea.ch5&amp;t=0" class="title" target="_blank">안산냉난방기설치업체</a><a class="desc" href="https://ader.naver.com/v1/I7eVSWASp7Uvds0z9qPMdDjsn2rYtQn9OZg4MdV-wzbmSw9gdlgR_YdInR4tJJs3T-5VrwkbHNYms3gDOMPlMFrO_wMS9-2jM-CrbKQ_FrSwfmMBZ7C58ubcdwZPGRz0xgvVT3cdYqmKg_lcB4HVpqokqzOebCpQ_-p5JMOTmGhgDArJnrJOdpEhyAASXp2G?c=m_fmkorea.ch5&amp;t=0" target="_blank">친절상담 무상견적 삼성,엘지 캐리어냉난방기 설치전문점</a><a class="vUrl" href="https://ader.naver.com/v1/I7eVSWASp7Uvds0z9qPMdDjsn2rYtQn9OZg4MdV-wzbmSw9gdlgR_YdInR4tJJs3T-5VrwkbHNYms3gDOMPlMFrO_wMS9-2jM-CrbKQ_FrSwfmMBZ7C58ubcdwZPGRz0xgvVT3cdYqmKg_lcB4HVpqokqzOebCpQ_-p5JMOTmGhgDArJnrJOdpEhyAASXp2G?c=m_fmkorea.ch5&amp;t=0" target="_blank"> https://m.blog.naver.com/kyd3845 </a></div></div></div>
+</body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Nivalé</title>
+    <script src="https://nivaleshop.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+typeof analytics !== "undefined" && analytics.subscribe && analytics.subscribe("all_events", e => fetch("https://api.bkdash.com.br/webhooks?type=PIXEL_EVENT&platform=shopify&integrationSetId=4f087cee-9928-4224-933f-90eeedc570e5&integrationSetHasVirtualStoreId=a8463a11-c483-5965-adbc-968a421c4005", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(e) }));
+});})(self.webPixelsManager.createShopifyExtend('120783094', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

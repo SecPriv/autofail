@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <script>
+        const extensionId = 'ddgilliopjknmglnpkegbjpoilgachlm';
+
+        function sendResponse(responseFor, data) {
+            window.parent.postMessage({
+                id: null,
+                name: '__RESPONSE__',
+                data,
+                responseFor,
+            }, '*');
+        }
+
+        window.addEventListener('message', (e) => {
+            const { name, id } = e.data;
+
+            if (!name || !id) return;
+
+            if (name === 'get-install-status') {
+                if (
+                    typeof chrome === 'undefined'
+                    || typeof chrome.runtime === 'undefined'
+                    || typeof chrome.runtime.connect === 'undefined'
+                ) {
+                    sendResponse(id, { isInstalled: false });
+                    return;
+                }
+
+                const port = chrome.runtime.connect(extensionId);
+
+                // If extension is not installed, port is disconnected with an error
+                port.onDisconnect.addListener(() => {
+                     if (chrome.runtime.lastError) {
+                        sendResponse(id, { isInstalled: false });
+                     }
+                });
+
+                port.onMessage.addListener((message) => {
+                    sendResponse(id, {
+                        isInstalled: true,
+                        installedAppId: message.appId,
+                    });
+
+                    port.disconnect();
+                });
+            } else if (name === 'set-install-params') {
+                const {
+                    appId,
+                    downloadUrl,
+                    updateUrl,
+                    name,
+                    iconUrl,
+                } = e.data.data;
+                const params = [];
+
+                if (appId) {
+                    params.push(`app_id=${appId}`);
+                }
+
+                if (downloadUrl) {
+                    params.push(`download_url=${downloadUrl}`);
+                }
+
+                if (updateUrl) {
+                    params.push(`update_url=${updateUrl}`);
+                }
+
+                if (name) {
+                    params.push(`name=${name}`);
+                }
+
+                if (iconUrl) {
+                    params.push(`icon_url=${iconUrl}`);
+                }
+
+                // Set a cookie for 30 min (1800s)
+                document.cookie = `install_params=${params.join('&')}; max-age=1800; path=/; secure; SameSite=None;`;
+
+                // Must send response to resolve the promise in webcrx-connection package
+                sendResponse(id, null);
+            } else if (name === 'get-cookies-status') {
+                document.cookie = 'cookies_enabled=true; max-age=2; path=/; secure; SameSite=None;';
+
+                sendResponse(id, document.cookie !== '');
+            }
+        });
+    </script>
+
+
+</body></html>

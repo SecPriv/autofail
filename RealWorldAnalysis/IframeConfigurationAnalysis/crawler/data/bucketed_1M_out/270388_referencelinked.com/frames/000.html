@@ -1,0 +1,668 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulier | Couro, Moda &amp; Lifestyle · São Cristóvão · Rio de Janeiro</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&amp;family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg:        #F7F4EF;
+            --bg-1:      #EDE8DF;
+            --dark:      #1A1208;
+            --umber:     #241A0C;
+            --ink:       #1A1208;
+            --ink-mid:   #3A2818;
+            --ink-dim:   #8A7860;
+            --rust:      #8B3A1A;
+            --rust-lt:   #A84820;
+            --rust-pale: #F5E8E0;
+            --cognac:    #C09040;
+            --border:    rgba(26,18,8,.09);
+            --border-r:  rgba(139,58,26,.18);
+            --font-d: 'Italiana', serif;
+            --font-b: 'Jost', sans-serif;
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-b);
+            font-weight: 300;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 0;
+        }
+
+        .container { max-width:1380px; margin:0 auto; padding:0 48px; position:relative; z-index:1; }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(247,244,239,.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner { display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+
+        .logo { text-decoration: none; }
+        .logo-name { font-family:var(--font-d); font-size:2rem; color:var(--ink); letter-spacing:8px; line-height:1; display:block; }
+        .logo-sub { font-size:.46rem; font-weight:300; letter-spacing:4px; text-transform:uppercase; color:var(--ink-dim); display:block; margin-top:3px; }
+
+        nav { display:flex; align-items:center; gap:3px; }
+        nav a { text-decoration:none; color:var(--ink-mid); font-size:.72rem; font-weight:300; letter-spacing:1.5px; padding:8px 18px; border-radius:100px; transition:background .25s, color .25s; }
+        nav a:hover { background:var(--rust-pale); color:var(--rust); }
+        .nav-cta { background:var(--ink) !important; color:var(--bg) !important; }
+        .nav-cta:hover { background:var(--umber) !important; }
+
+        /* ===== HERO ===== */
+        .hero { display:grid; grid-template-columns:1fr 1fr; min-height:calc(100vh - 73px); }
+
+        .hero-left {
+            background: var(--dark);
+            display:flex; flex-direction:column; justify-content:flex-end;
+            padding: 80px;
+            position: relative; overflow: hidden;
+        }
+
+        .hero-left::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 30% 40%, rgba(80,50,20,.5) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 75% 75%, rgba(26,18,8,.7) 0%, transparent 55%);
+        }
+
+        .hero-left::after {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        .hero-stitch { position:absolute; top:20px; left:20px; right:20px; bottom:20px; border:1px dashed rgba(247,244,239,.07); z-index:1; pointer-events:none; }
+
+        .hero-emboss { position:absolute; bottom:-40px; right:-20px; font-family:var(--font-d); font-size:28rem; color:rgba(247,244,239,.03); line-height:1; pointer-events:none; z-index:1; }
+
+        .hero-left-content { position:relative; z-index:2; }
+
+        .hero-year { font-size:.58rem; font-weight:300; letter-spacing:5px; text-transform:uppercase; color:rgba(247,244,239,.35); display:flex; align-items:center; gap:12px; margin-bottom:28px; }
+        .year-line { width:28px; height:1px; background:var(--rust); }
+
+        .hero-h1-left { font-family:var(--font-d); font-size:clamp(3.5rem,5.5vw,7rem); color:rgba(247,244,239,.9); line-height:.95; letter-spacing:2px; margin-bottom:20px; }
+        .hero-h1-left em { font-style:italic; color:var(--cognac); }
+
+        .hero-sub-left { font-size:.72rem; font-weight:300; letter-spacing:2.5px; text-transform:uppercase; color:rgba(247,244,239,.35); }
+
+        /* Hero right */
+        .hero-right {
+            display:flex; flex-direction:column; justify-content:center;
+            padding: 80px 80px 80px 72px;
+            position: relative;
+        }
+
+        .hero-right::before { content:''; position:absolute; top:0; left:0; bottom:0; width:1px; background:linear-gradient(to bottom, transparent 5%, var(--bg-1) 30%, var(--bg-1) 70%, transparent 95%); }
+
+        .hero-season { font-size:.58rem; font-weight:300; letter-spacing:4px; text-transform:uppercase; color:var(--rust); display:flex; align-items:center; gap:12px; margin-bottom:32px; }
+
+        .hero-h1 { font-family:var(--font-d); font-size:clamp(4rem,6.5vw,8rem); font-weight:400; line-height:.9; letter-spacing:.5px; color:var(--ink); margin-bottom:28px; }
+        .hero-h1 em { font-style:italic; color:var(--rust); }
+
+        .hero-desc { font-size:.88rem; font-weight:300; color:var(--ink-dim); line-height:2; max-width:400px; margin-bottom:44px; }
+
+        .hero-acts { display:flex; gap:14px; flex-wrap:wrap; }
+
+        .btn-dark { display:inline-flex; align-items:center; gap:10px; background:var(--dark); color:var(--bg); padding:14px 30px; border-radius:100px; text-decoration:none; font-size:.72rem; font-weight:300; letter-spacing:2px; text-transform:uppercase; transition:background .3s; }
+        .btn-dark:hover { background:var(--umber); }
+
+        .btn-rust { display:inline-flex; align-items:center; gap:10px; background:var(--rust); color:white; padding:14px 24px; border-radius:100px; text-decoration:none; font-size:.72rem; font-weight:300; letter-spacing:2px; text-transform:uppercase; transition:filter .25s; }
+        .btn-rust:hover { filter:brightness(1.12); }
+
+        .btn-ghost { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border-r); color:var(--rust); padding:14px 20px; border-radius:100px; text-decoration:none; font-size:.72rem; font-weight:300; letter-spacing:2px; text-transform:uppercase; transition:background .25s; }
+        .btn-ghost:hover { background:var(--rust-pale); }
+
+        .hero-meta { margin-top:52px; padding-top:28px; border-top:1px solid var(--border); display:flex; gap:36px; }
+        .meta-num { font-family:var(--font-d); font-size:2rem; color:var(--ink); display:block; line-height:1; }
+        .meta-lbl { font-size:.56rem; font-weight:300; letter-spacing:2.5px; text-transform:uppercase; color:var(--ink-dim); display:block; margin-top:4px; }
+
+        /* ===== TICKER ===== */
+        .ticker-wrap { border-top:1px solid var(--border-r); border-bottom:1px solid var(--border-r); overflow:hidden; padding:14px 0; margin-bottom:88px; background:var(--bg-1); }
+        .ticker-track { display:flex; gap:64px; animation:tick 30s linear infinite; white-space:nowrap; }
+        @keyframes tick { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+        .t-item { display:flex; align-items:center; gap:16px; font-family:var(--font-d); font-style:italic; font-size:.95rem; color:var(--ink-dim); }
+        .t-rust { color:var(--rust); font-size:.65rem; }
+
+        /* ===== SEC HEAD ===== */
+        .sec-hd { display:flex; align-items:center; gap:18px; margin-bottom:44px; }
+        .sec-l { font-family:var(--font-d); font-style:italic; font-size:.95rem; color:var(--rust); white-space:nowrap; }
+        .sec-r { flex:1; height:1px; background:var(--border); }
+
+        /* ===== SOBRE ===== */
+        .sobre-section { margin-bottom:88px; }
+        .sobre-layout { display:grid; grid-template-columns:1fr 1.1fr; gap:88px; align-items:center; }
+        .sobre-left h2 { font-family:var(--font-d); font-size:clamp(2.5rem,4.5vw,6rem); font-weight:400; line-height:.9; color:var(--ink); margin-bottom:24px; }
+        .sobre-left h2 em { font-style:italic; color:var(--rust); }
+        .sobre-left p { font-size:.88rem; font-weight:300; color:var(--ink-dim); line-height:2.1; margin-bottom:14px; }
+        .sobre-left p strong { color:var(--ink); font-weight:400; }
+        .sobre-right { display:flex; flex-direction:column; }
+        .pil { display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--border); }
+        .pil:first-child { border-top:1px solid var(--border); }
+        .pil-icon { font-size:1.5rem; flex-shrink:0; padding-top:2px; }
+        .pil h4 { font-family:var(--font-d); font-style:italic; font-size:1rem; color:var(--rust); margin-bottom:3px; }
+        .pil p { font-size:.76rem; font-weight:300; color:var(--ink-dim); line-height:1.7; }
+
+        /* ===== CATEGORIAS BENTO ===== */
+        .cat-section { margin-bottom:88px; }
+        .cat-intro { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:22px; flex-wrap:wrap; gap:16px; }
+        .cat-intro h2 { font-family:var(--font-d); font-size:clamp(3rem,5.5vw,7.5rem); font-weight:400; line-height:.88; color:var(--ink); }
+        .cat-intro h2 em { font-style:italic; color:var(--rust); }
+
+        .cat-bento { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+
+        .cat-card { background:var(--bg-1); border:1px solid var(--border); border-radius:18px; padding:28px 24px; text-decoration:none; color:inherit; position:relative; overflow:hidden; transition:transform .4s, box-shadow .35s, border-color .3s; }
+        .cat-card::before { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--rust),var(--cognac)); transform:scaleX(0); transform-origin:left; transition:transform .4s; }
+        .cat-card:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(139,58,26,.1); border-color:var(--border-r); }
+        .cat-card:hover::before { transform:scaleX(1); }
+
+        .cat-card.wide { grid-column:span 2; }
+        .cat-card.feat-rust { background:var(--rust); border-color:transparent; }
+        .cat-card.feat-rust::before { display:none; }
+        .cat-card.feat-rust:hover { filter:brightness(1.06); }
+        .cat-card.feat-dark { background:var(--dark); border-color:transparent; }
+        .cat-card.feat-dark::before { background:var(--rust); opacity:1; transform:scaleX(1); }
+        .cat-card.feat-dark:hover { background:var(--umber); }
+
+        .cat-icon { font-size:2.2rem; display:block; margin-bottom:16px; }
+        .cat-n { font-size:.52rem; font-weight:300; letter-spacing:3px; text-transform:uppercase; color:var(--ink-dim); display:block; margin-bottom:5px; }
+        .cat-card h4 { font-family:var(--font-d); font-size:1.3rem; color:var(--ink); margin-bottom:7px; }
+        .cat-card p { font-size:.76rem; font-weight:300; color:var(--ink-dim); line-height:1.7; }
+        .feat-rust .cat-n, .feat-dark .cat-n { color:rgba(247,244,239,.5); }
+        .feat-rust h4, .feat-dark h4 { color:white; }
+        .feat-rust p, .feat-dark p { color:rgba(247,244,239,.65); }
+
+        /* ===== DARK BAND ===== */
+        .dark-band { background:var(--dark); border-radius:20px; padding:80px; margin-bottom:88px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; overflow:hidden; }
+        .dark-band::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--rust),var(--cognac),transparent); }
+        .dark-band::after { content:''; position:absolute; top:20px; left:20px; right:20px; bottom:20px; border:1px dashed rgba(247,244,239,.04); pointer-events:none; }
+        .db-l > span { font-family:var(--font-d); font-style:italic; font-size:.95rem; color:var(--rust-lt); display:block; margin-bottom:14px; }
+        .db-l h2 { font-family:var(--font-d); font-size:clamp(2.5rem,4vw,5.5rem); font-weight:400; color:rgba(247,244,239,.92); line-height:.95; margin-bottom:14px; letter-spacing:.5px; }
+        .db-l h2 em { font-style:italic; color:var(--cognac); }
+        .db-l p { color:rgba(247,244,239,.3); font-size:.86rem; line-height:2.1; font-weight:300; }
+        .db-r { display:flex; flex-direction:column; position:relative; z-index:1; }
+        .db-item { display:flex; gap:18px; padding:22px 0; border-bottom:1px solid rgba(247,244,239,.06); }
+        .db-item:first-child { border-top:1px solid rgba(247,244,239,.06); }
+        .db-icon { font-size:1.4rem; flex-shrink:0; padding-top:2px; }
+        .db-item h4 { font-family:var(--font-d); font-style:italic; font-size:1rem; color:rgba(247,244,239,.9); margin-bottom:3px; }
+        .db-item p { font-size:.76rem; font-weight:300; color:rgba(247,244,239,.3); line-height:1.7; }
+
+        /* ===== IDENTIDADE ===== */
+        .id-section { margin-bottom:88px; }
+        .id-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--border); }
+        .id-cell { padding:32px 26px; border-right:1px solid var(--border); transition:background .25s; }
+        .id-cell:last-child { border-right:none; }
+        .id-cell:hover { background:var(--bg-1); }
+        .id-cell.dark-cell { background:var(--dark); }
+        .id-cell.rust-cell { background:var(--rust); }
+        .id-cell::before { content:''; display:block; width:28px; height:1px; background:var(--rust); margin-bottom:20px; }
+        .dark-cell::before, .rust-cell::before { background:rgba(247,244,239,.2); }
+        .id-lbl { font-size:.56rem; font-weight:300; letter-spacing:3px; text-transform:uppercase; color:var(--ink-dim); display:block; margin-bottom:6px; }
+        .id-val { font-family:var(--font-d); font-size:1.1rem; color:var(--ink); line-height:1.1; }
+        .id-sub { font-size:.7rem; font-weight:300; color:var(--ink-dim); margin-top:5px; display:block; line-height:1.7; }
+        .dark-cell .id-lbl, .rust-cell .id-lbl { color:rgba(247,244,239,.45); }
+        .dark-cell .id-val, .rust-cell .id-val { color:rgba(247,244,239,.92); }
+        .dark-cell .id-sub, .rust-cell .id-sub { color:rgba(247,244,239,.3); }
+
+        /* ===== CONTATO ===== */
+        .contato-section { margin-bottom:88px; }
+        .contato-layout { display:grid; grid-template-columns:1.4fr 1fr; gap:12px; }
+        .ct-main { background:white; border:1px solid var(--border-r); border-radius:20px; padding:52px; border-top:2px solid var(--rust); }
+        .ct-over { font-family:var(--font-d); font-style:italic; font-size:.95rem; color:var(--rust); display:block; margin-bottom:12px; }
+        .ct-main h3 { font-family:var(--font-d); font-size:2.2rem; font-weight:400; color:var(--ink); margin-bottom:8px; line-height:1; }
+        .ct-addr { font-size:.86rem; font-weight:300; color:var(--ink-dim); line-height:2.2; margin-bottom:22px; }
+        .ct-rows { display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
+        .ct-row { display:flex; align-items:center; gap:12px; font-size:.8rem; font-weight:300; color:var(--ink-mid); }
+        .ct-row i { color:var(--rust); width:16px; text-align:center; }
+        .hora-strip { background:var(--rust-pale); border:1px solid var(--border-r); border-radius:8px; padding:14px 18px; margin-bottom:22px; display:flex; flex-direction:column; gap:4px; }
+        .hora-strip span:first-child { font-size:.52rem; font-weight:300; letter-spacing:2.5px; text-transform:uppercase; color:var(--rust); }
+        .hora-strip span:last-child { font-family:var(--font-d); font-size:1rem; color:var(--ink); }
+        .ct-btns { display:flex; gap:10px; flex-wrap:wrap; }
+        .ct-side { display:flex; flex-direction:column; gap:12px; }
+        .side-c { flex:1; border-radius:20px; padding:26px; display:flex; flex-direction:column; justify-content:flex-end; }
+        .side-c.rust-s { background:var(--rust); }
+        .side-c.dark-s { background:var(--dark); border:1px solid rgba(247,244,239,.05); }
+        .side-c.linen-s { background:var(--bg-1); border:1px solid var(--border); }
+        .sc-l { font-size:.52rem; font-weight:300; letter-spacing:2.5px; text-transform:uppercase; display:block; margin-bottom:5px; }
+        .rust-s .sc-l, .dark-s .sc-l { color:rgba(247,244,239,.5); }
+        .linen-s .sc-l { color:var(--ink-dim); }
+        .sc-v { font-family:var(--font-d); font-size:1.05rem; line-height:1.1; display:block; }
+        .rust-s .sc-v, .dark-s .sc-v { color:rgba(247,244,239,.9); }
+        .linen-s .sc-v { color:var(--ink); }
+        .sc-s { font-size:.7rem; margin-top:3px; font-weight:300; }
+        .rust-s .sc-s, .dark-s .sc-s { color:rgba(247,244,239,.4); }
+        .linen-s .sc-s { color:var(--ink-dim); }
+
+        /* ===== FOOTER CTA ===== */
+        .footer-cta { background:var(--dark); border-radius:20px 20px 0 0; padding:80px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:48px; position:relative; overflow:hidden; border-top:2px solid var(--rust); }
+        .footer-cta::before { content:'Soulier'; position:absolute; font-family:var(--font-d); font-size:14rem; color:rgba(247,244,239,.025); right:-20px; top:50%; transform:translateY(-50%); pointer-events:none; letter-spacing:2px; }
+        .footer-cta h2 { font-family:var(--font-d); font-size:clamp(3rem,5.5vw,7rem); font-weight:400; line-height:.9; color:rgba(247,244,239,.92); position:relative; z-index:1; }
+        .footer-cta h2 em { font-style:italic; color:var(--cognac); }
+        .footer-cta p { font-family:var(--font-d); font-style:italic; color:rgba(247,244,239,.3); font-size:.95rem; margin-top:10px; position:relative; z-index:1; }
+        .footer-cta-acts { display:flex; flex-direction:column; gap:10px; flex-shrink:0; position:relative; z-index:1; }
+        .btn-linen { display:inline-flex; align-items:center; gap:10px; background:var(--bg); color:var(--dark); padding:14px 28px; border-radius:100px; text-decoration:none; font-size:.72rem; font-weight:300; letter-spacing:2px; text-transform:uppercase; transition:filter .2s; white-space:nowrap; }
+        .btn-linen:hover { filter:brightness(.95); }
+        .btn-rust-ft { display:inline-flex; align-items:center; gap:10px; background:var(--rust); color:white; padding:14px 22px; border-radius:100px; text-decoration:none; font-size:.72rem; font-weight:300; letter-spacing:2px; text-transform:uppercase; transition:filter .2s; white-space:nowrap; }
+        .btn-rust-ft:hover { filter:brightness(1.1); }
+
+        /* ===== FOOTER ===== */
+        footer { background:var(--dark); padding:56px 0 32px; }
+        .footer-top { display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; gap:52px; margin-bottom:48px; }
+        .footer-logo { text-decoration:none; margin-bottom:12px; display:block; }
+        .footer-logo .logo-name { color:rgba(247,244,239,.9); font-size:1.6rem; }
+        .footer-logo .logo-sub { color:rgba(247,244,239,.2); }
+        .footer-brand p { color:rgba(247,244,239,.22); font-size:.76rem; line-height:1.9; max-width:240px; font-weight:300; }
+        .footer-col h5 { font-family:var(--font-d); font-style:italic; font-size:.9rem; color:rgba(192,144,64,.7); margin-bottom:16px; }
+        .footer-col a { display:block; color:rgba(247,244,239,.25); text-decoration:none; font-size:.76rem; margin-bottom:9px; font-weight:300; transition:color .2s; }
+        .footer-col a:hover { color:rgba(247,244,239,.8); }
+        .footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:24px; border-top:1px solid rgba(247,244,239,.06); font-size:.62rem; font-weight:300; color:rgba(247,244,239,.18); flex-wrap:wrap; gap:14px; }
+        .footer-legal { display:flex; gap:20px; }
+        .footer-legal a { color:rgba(247,244,239,.18); text-decoration:none; font-size:.62rem; transition:color .2s; }
+        .footer-legal a:hover { color:rgba(247,244,239,.55); }
+
+        /* ===== REVEAL ===== */
+        .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+        .reveal.on { opacity:1; transform:none; }
+        @keyframes up { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:none;} }
+        .hero-year     { animation:up .7s ease .1s both; }
+        .hero-h1-left  { animation:up .7s ease .2s both; }
+        .hero-sub-left { animation:up .7s ease .3s both; }
+        .hero-season   { animation:up .7s ease .15s both; }
+        .hero-h1       { animation:up .7s ease .25s both; }
+        .hero-desc     { animation:up .7s ease .35s both; }
+        .hero-acts     { animation:up .7s ease .43s both; }
+        .hero-meta     { animation:up .7s ease .5s both; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:1100px) {
+            .container { padding:0 28px; }
+            .hero { grid-template-columns:1fr; min-height:auto; }
+            .hero-left { min-height:55vh; padding:60px 40px; }
+            .hero-right { padding:60px 36px; }
+            .hero-right::before { display:none; }
+            .sobre-layout { grid-template-columns:1fr; gap:44px; }
+            .cat-bento { grid-template-columns:1fr 1fr; }
+            .cat-card.wide { grid-column:span 1; }
+            .dark-band { grid-template-columns:1fr; gap:44px; padding:52px; }
+            .id-grid { grid-template-columns:1fr 1fr; }
+            .id-cell { border-bottom:1px solid var(--border); }
+            .id-cell:nth-child(2n) { border-right:none; }
+            .contato-layout { grid-template-columns:1fr; }
+            .ct-side { flex-direction:row; }
+            .footer-top { grid-template-columns:1fr 1fr; gap:40px; }
+            .footer-cta { grid-template-columns:1fr; gap:36px; padding:52px; border-radius:20px; margin:0 14px; }
+        }
+
+        @media (max-width:700px) {
+            .container { padding:0 20px; }
+            header nav { display:none; }
+            .cat-bento { grid-template-columns:1fr; }
+            .id-grid { grid-template-columns:1fr; }
+            .id-cell { border-right:none; }
+            .hero-meta { flex-wrap:wrap; gap:20px; }
+            .footer-top { grid-template-columns:1fr; }
+            .footer-bottom { flex-direction:column; align-items:flex-start; }
+            .ct-side { flex-direction:column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-name">Soulier</span>
+                <span class="logo-sub">Couro · Moda · Lifestyle · Rio de Janeiro</span>
+            </a>
+            <nav>
+                <a href="#sobre">A Marca</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#contato">Contato</a>
+                <a href="https://wa.me/551150548870" class="nav-cta">WhatsApp</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="hero-stitch"></div>
+        <div class="hero-emboss">S</div>
+        <div class="hero-left-content">
+            <div class="hero-year">
+                <div class="year-line"></div>
+                Desde 2010 · Rio de Janeiro
+            </div>
+            <h1 class="hero-h1-left">
+                L'art du<br>
+                cuir bien<br>
+                <em>fait.</em>
+            </h1>
+            <span class="hero-sub-left">New River · Artigos de Couro</span>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="hero-season">
+            <div class="year-line"></div>
+            São Cristóvão · Rio de Janeiro, RJ
+        </div>
+        <h1 class="hero-h1">
+            Moda,<br>
+            couro &amp;<br>
+            <em>alma carioca.</em>
+        </h1>
+        <p class="hero-desc">
+            A Soulier — marca da New River Comércio de Artigos de Couro — reúne vestuário, calçados, bijouterias, cosméticos e artigos de viagem com a elegância discreta de quem sabe o que faz desde 2010.
+        </p>
+        <div class="hero-acts">
+            <a href="#sobre" class="btn-dark">Conhecer a Marca <i class="fas fa-arrow-right"></i></a>
+            <a href="https://wa.me/551150548870" class="btn-ghost"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="hero-meta">
+            <div>
+                <span class="meta-num">15</span>
+                <span class="meta-lbl">Anos de mercado</span>
+            </div>
+            <div>
+                <span class="meta-num">6</span>
+                <span class="meta-lbl">Categorias</span>
+            </div>
+            <div>
+                <span class="meta-num">RJ</span>
+                <span class="meta-lbl">São Cristóvão</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+    <div class="ticker-track">
+        <span class="t-item"><span class="t-rust">◆</span> Couro Artesanal</span>
+        <span class="t-item"><span class="t-rust">◆</span> Vestuário &amp; Moda</span>
+        <span class="t-item"><span class="t-rust">◆</span> Calçados</span>
+        <span class="t-item"><span class="t-rust">◆</span> Bijouterias &amp; Artesanatos</span>
+        <span class="t-item"><span class="t-rust">◆</span> Cosméticos &amp; Perfumaria</span>
+        <span class="t-item"><span class="t-rust">◆</span> Artigos de Viagem</span>
+        <span class="t-item"><span class="t-rust">◆</span> São Cristóvão · Rio de Janeiro · RJ</span>
+        <span class="t-item"><span class="t-rust">◆</span> Couro Artesanal</span>
+        <span class="t-item"><span class="t-rust">◆</span> Vestuário &amp; Moda</span>
+        <span class="t-item"><span class="t-rust">◆</span> Calçados</span>
+        <span class="t-item"><span class="t-rust">◆</span> Bijouterias &amp; Artesanatos</span>
+        <span class="t-item"><span class="t-rust">◆</span> Cosméticos &amp; Perfumaria</span>
+        <span class="t-item"><span class="t-rust">◆</span> Artigos de Viagem</span>
+        <span class="t-item"><span class="t-rust">◆</span> São Cristóvão · Rio de Janeiro · RJ</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- SOBRE -->
+    <div class="sec-hd" id="sobre">
+        <span class="sec-l">I — A Marca</span>
+        <div class="sec-r"></div>
+    </div>
+
+    <div class="sobre-section">
+        <div class="sobre-layout reveal">
+            <div class="sobre-left">
+                <h2>
+                    Nascida no<br>
+                    Rio, feita<br>
+                    de <em>couro.</em>
+                </h2>
+                <p>
+                    A <strong>Soulier</strong> é o nome fantasia da New River Comércio de Artigos de Couro LTDA — fundada em 10 de junho de 2010, com 15 anos de história no varejo carioca.
+                </p>
+                <p>
+                    O nome vem do francês <em>soulier</em> — sapato — e traduz o posicionamento da marca: sofisticação acessível, qualidade no detalhe e a leveza do espírito carioca em cada peça.
+                </p>
+            </div>
+            <div class="sobre-right">
+                <div class="pil"><span class="pil-icon">👜</span><div><h4>Couro &amp; Vestuário</h4><p>CNAE 47.81-4-00 — artigos do vestuário e acessórios como carro-chefe da marca.</p></div></div>
+                <div class="pil"><span class="pil-icon">👠</span><div><h4>Calçados</h4><p>CNAE 47.82-2-01 — calçados com seleção criteriosa feminina e masculina.</p></div></div>
+                <div class="pil"><span class="pil-icon">💄</span><div><h4>Cosméticos &amp; Perfumaria</h4><p>CNAE 47.72-5-00 — produtos de beleza e higiene pessoal curados.</p></div></div>
+                <div class="pil"><span class="pil-icon">💎</span><div><h4>Bijouterias, Viagem &amp; Papelaria</h4><p>CNAEs 47.89-0-01, 47.82-2-02 e 47.61-0-03 — acessórios, malas e papelaria de estilo.</p></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIAS -->
+    <div class="sec-hd" id="categorias">
+        <span class="sec-l">II — Categorias</span>
+        <div class="sec-r"></div>
+    </div>
+
+    <div class="cat-section">
+        <div class="cat-intro">
+            <h2>6 categorias.<br><em>1 endereço.</em></h2>
+            <a href="https://wa.me/551150548870" class="btn-ghost" style="flex-shrink:0;margin-bottom:8px;">Consultar via WhatsApp <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cat-bento reveal">
+            <a href="https://wa.me/551150548870" class="cat-card feat-rust wide">
+                <span class="cat-icon">👜</span>
+                <span class="cat-n">01 · Principal · 47.81-4-00</span>
+                <h4>Vestuário &amp; Couro</h4>
+                <p>O carro-chefe Soulier — artigos do vestuário e acessórios de couro selecionados com o olhar carioca para a moda que dura.</p>
+            </a>
+            <a href="https://wa.me/551150548870" class="cat-card">
+                <span class="cat-icon">👠</span>
+                <span class="cat-n">02 · 47.82-2-01</span>
+                <h4>Calçados</h4>
+                <p>Sapatos, sandálias e botas com curadoria feminina e masculina.</p>
+            </a>
+            <a href="https://wa.me/551150548870" class="cat-card feat-dark">
+                <span class="cat-icon">💄</span>
+                <span class="cat-n">03 · 47.72-5-00</span>
+                <h4>Cosméticos &amp; Perfumaria</h4>
+                <p>Beleza e higiene com a elegância discreta que a Soulier propõe.</p>
+            </a>
+            <a href="https://wa.me/551150548870" class="cat-card">
+                <span class="cat-icon">💍</span>
+                <span class="cat-n">04 · 47.89-0-01</span>
+                <h4>Bijouterias &amp; Artesanatos</h4>
+                <p>Peças únicas e bijoux com a alma artesanal do Rio de Janeiro.</p>
+            </a>
+            <a href="https://wa.me/551150548870" class="cat-card">
+                <span class="cat-icon">🧳</span>
+                <span class="cat-n">05 · 47.82-2-02</span>
+                <h4>Artigos de Viagem</h4>
+                <p>Malas, bolsas e acessórios para quem viaja com estilo.</p>
+            </a>
+            <a href="https://wa.me/551150548870" class="cat-card">
+                <span class="cat-icon">📓</span>
+                <span class="cat-n">06 · 47.61-0-03</span>
+                <h4>Papelaria</h4>
+                <p>Artigos de papelaria com o cuidado Soulier — do caderno ao presente especial.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- DARK BAND -->
+    <div class="dark-band reveal">
+        <div class="db-l">
+            <span>São Cristóvão · Rio de Janeiro</span>
+            <h2>Couro,<br>moda e<br><em>Rio.</em></h2>
+            <p>São Cristóvão é um dos bairros históricos do Rio de Janeiro — e é aqui que a Soulier faz seu trabalho há 15 anos. Uma marca com raízes cariocas e o olhar para o detalhe que o couro exige.</p>
+        </div>
+        <div class="db-r">
+            <div class="db-item"><span class="db-icon">🏷️</span><div><h4>Empresa de Pequeno Porte</h4><p>EPP com 15 anos de mercado — solidez, continuidade e a confiança de quem cresceu com seus clientes.</p></div></div>
+            <div class="db-item"><span class="db-icon">📜</span><div><h4>Desde junho de 2010</h4><p>Fundada em 10/06/2010 — uma história construída peça a peça no varejo carioca.</p></div></div>
+            <div class="db-item"><span class="db-icon">🌿</span><div><h4>Curadoria em cada peça</h4><p>Da bolsa ao cosmético — cada produto Soulier é selecionado com o critério de quem vive a moda.</p></div></div>
+        </div>
+    </div>
+
+    <!-- IDENTIDADE -->
+    <div class="sec-hd">
+        <span class="sec-l">III — Identidade</span>
+        <div class="sec-r"></div>
+    </div>
+
+    <div class="id-section">
+        <div class="id-grid reveal">
+            <div class="id-cell rust-cell">
+                <span class="id-lbl">Nome Fantasia</span>
+                <div class="id-val">Soulier</div>
+                <span class="id-sub">Do francês — "sapato, calçado"</span>
+            </div>
+            <div class="id-cell">
+                <span class="id-lbl">Razão Social</span>
+                <div class="id-val" style="font-size:.9rem;">New River Comércio de<br>Artigos de Couro LTDA</div>
+                <span class="id-sub">Sociedade Empresária Limitada · EPP</span>
+            </div>
+            <div class="id-cell">
+                <span class="id-lbl">Fundação</span>
+                <div class="id-val">10 Jun 2010</div>
+                <span class="id-sub">15 anos · IE RJ: 79.134.72-4</span>
+            </div>
+            <div class="id-cell dark-cell">
+                <span class="id-lbl">CNPJ</span>
+                <div class="id-val" style="font-size:.9rem;font-family:var(--font-b);font-weight:300;letter-spacing:0;">12.150.996/0001-09</div>
+                <span class="id-sub">São Cristóvão · Rio de Janeiro, RJ</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="sec-hd" id="contato">
+        <span class="sec-l">IV — Contato</span>
+        <div class="sec-r"></div>
+    </div>
+
+    <div class="contato-section">
+        <div class="contato-layout reveal">
+            <div class="ct-main">
+                <span class="ct-over">Fale com a Soulier</span>
+                <h3>São Cristóvão<br>Rio de Janeiro, RJ</h3>
+                <p class="ct-addr">
+                    Rua Fonseca Teles, 54 — Apt. 301<br>
+                    São Cristóvão · Rio de Janeiro — RJ<br>
+                    CEP 20940-200
+                </p>
+                <div class="ct-rows">
+                    <div class="ct-row"><i class="fab fa-whatsapp"></i> (11) 5054-8870</div>
+                    <div class="ct-row"><i class="fas fa-phone"></i> (11) 5054-8870</div>
+                    <div class="ct-row"><i class="fas fa-envelope"></i> tien01674000336@gmail.com</div>
+                </div>
+                <div class="hora-strip">
+                    <span>Horário de Atendimento</span>
+                    <span>Segunda a Sexta · 9h às 18h</span>
+                </div>
+                <div class="ct-btns">
+                    <a href="https://wa.me/551150548870" class="btn-rust"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+                    <a href="tel:+551150548870" class="btn-ghost"><i class="fas fa-phone"></i> Ligar</a>
+                </div>
+            </div>
+            <div class="ct-side">
+                <div class="side-c rust-s"><span class="sc-l">Bairro</span><span class="sc-v">São Cristóvão</span><span class="sc-s">Rio de Janeiro · RJ</span></div>
+                <div class="side-c dark-s"><span class="sc-l">WhatsApp</span><span class="sc-v">(11) 5054-8870</span><span class="sc-s">Seg–Sex · 9h às 18h</span></div>
+                <div class="side-c linen-s"><span class="sc-l">Marca</span><span class="sc-v" style="font-family:var(--font-d);font-style:italic;font-size:1.3rem;">Soulier</span><span class="sc-s">Desde 2010 · 15 anos</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER CTA -->
+<div class="container">
+    <div class="footer-cta reveal">
+        <div>
+            <h2>Venha conhecer<br>a <em>Soulier.</em></h2>
+            <p>R. Fonseca Teles, 54 · São Cristóvão · Rio de Janeiro, RJ</p>
+        </div>
+        <div class="footer-cta-acts">
+            <a href="https://wa.me/551150548870" class="btn-rust-ft"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tel:+551150548870" class="btn-linen"><i class="fas fa-phone"></i> (11) 5054-8870</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <span class="logo-name">Soulier</span>
+                    <span class="logo-sub">New River · Couro &amp; Lifestyle · Rio de Janeiro, RJ</span>
+                </a>
+                <p>Vestuário, calçados, cosméticos, bijouterias e artigos de viagem — com a elegância do nome francês e a alma do Rio de Janeiro. Desde 2010.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Categorias</h5>
+                <a href="#categorias">Vestuário &amp; Couro</a>
+                <a href="#categorias">Calçados</a>
+                <a href="#categorias">Cosméticos</a>
+                <a href="#categorias">Bijouterias</a>
+                <a href="#categorias">Artigos de Viagem</a>
+                <a href="#categorias">Papelaria</a>
+            </div>
+            <div class="footer-col">
+                <h5>A Marca</h5>
+                <a href="#sobre">Nossa história</a>
+                <a href="#categorias">O que oferecemos</a>
+                <a href="#contato">Onde estamos</a>
+            </div>
+            <div class="footer-col">
+                <h5>Contato</h5>
+                <a href="https://wa.me/551150548870">WhatsApp</a>
+                <a href="tel:+551150548870">(11) 5054-8870</a>
+                <a href="mailto:tien01674000336@gmail.com">E-mail</a>
+                <p style="color:rgba(247,244,239,.18);font-size:.72rem;margin-top:10px;line-height:2;font-weight:300;">
+                    R. Fonseca Teles, 54 — Apt. 301<br>
+                    São Cristóvão · Rio de Janeiro — RJ<br>
+                    CEP 20940-200
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>CNPJ: 12.150.996/0001-09 · New River Comércio de Artigos de Couro LTDA (Soulier) · Rio de Janeiro, RJ</span>
+            <div class="footer-legal">
+                <a href="politicas.html">Políticas</a>
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html">Termos</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    const obs = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold:.07 });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+
+</body></html>

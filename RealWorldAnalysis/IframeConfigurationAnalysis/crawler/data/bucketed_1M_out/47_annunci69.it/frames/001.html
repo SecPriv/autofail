@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head>
+<title>Mappa Carsex Italia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="/js/OpenLayers.js?212"></script>
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+   
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+
+<script src="/carsex/listapoi.php?&amp;v=2"></script>
+<!-- <script src="/js/parking-sex/leaflet-marker-cluster.js"></script> -->
+<script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js" crossorigin=""></script>
+
+<style>
+body,html { margin:0px auto; }
+    .mycluster {
+        color:#FFF;
+        line-height:58px;
+        text-align:center;
+        font-size:11px; font-weight:bold;
+        background-image:url('/img/cluster_map.png');
+        background-repeat:no-repeat;
+		background-size:cover;
+    }
+.leaflet-popup-content { text-align: center; padding: 10px; }	
+.leaflet-popup-content-wrapper { background: #3f3d36; color: #fff; }
+.leaflet-container a { color: #ffffff; }
+.btn_map { display:inline-block; border-radius:20px; background:orange; color:#fff; padding:5px 16px; font-size: 14px; font-weight:700; }
+</style>
+</head>
+<body>
+<div id="map" style="width: 100%; height: 440px; position: relative;" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/5/16/11.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; backface-visibility: hidden; transform: translate3d(-99px, 3px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/5/17/11.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; backface-visibility: hidden; transform: translate3d(157px, 3px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/5/16/10.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; backface-visibility: hidden; transform: translate3d(-99px, -253px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/5/17/10.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; backface-visibility: hidden; transform: translate3d(157px, -253px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/5/16/12.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; backface-visibility: hidden; transform: translate3d(-99px, 259px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/5/17/12.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; backface-visibility: hidden; transform: translate3d(157px, 259px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(188px, 418px, 0px); z-index: 418;">2</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(222px, 359px, 0px); z-index: 359;">152</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(206px, 367px, 0px); z-index: 367;">13</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(117px, 261px, 0px); z-index: 261;">20</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(101px, 296px, 0px); z-index: 296;">75</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(177px, 110px, 0px); z-index: 110;">246</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(57px, 131px, 0px); z-index: 131;">3</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(143px, 202px, 0px); z-index: 202;">29</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(103px, 117px, 0px); z-index: 117;">401</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(93px, 151px, 0px); z-index: 151;">124</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(153px, 159px, 0px); z-index: 159;">451</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(303px, 275px, 0px); z-index: 275;">68</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(262px, 335px, 0px); z-index: 335;">101</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(207px, 186px, 0px); z-index: 186;">94</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(184px, 227px, 0px); z-index: 227;">198</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(251px, 264px, 0px); z-index: 264;">260</div><div class="leaflet-marker-icon mycluster leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -27.5px; margin-top: -27.5px; width: 55px; height: 55px; transform: translate3d(216px, 232px, 0px); z-index: 232;">100</div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div></div></div></div>
+
+
+
+<script>
+
+ // var tiles = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  //    maxZoom: 18,
+  //    attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>'
+        
+  //  });
+     //var map = L.map('map',).setView([42.253, 12.986], 6);
+                 var map = L.map('map', { center: [42.253, 12.986], zoom: 5 })
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+
+                var greenIcon = L.icon({
+										iconUrl: 'https://www.annunci69.it/img/carsex_marker.png?marker.png',
+					                    iconSize:     [64, 64], // size of the icon
+                    iconAnchor:   [36, 64], // point of the icon which will correspond to marker's location
+                    popupAnchor:  [-3, -30] // point from which the popup should open relative to the iconAnchor
+                });
+                var markers = new L.MarkerClusterGroup({
+                    iconCreateFunction: function (cluster) {
+        return L.divIcon({html: cluster.getChildCount(),className: 'mycluster', iconSize: L.point(55, 55) });
+      },
+      //Disable all of the defaults:
+       zoomToBoundsOnClick: true,spiderfyOnMaxZoom: true, showCoverageOnHover: false,disableClusteringAtZoom: 13,maxClusterRadius:40,singleMarkerMode:false,removeOutsideVisibleBounds:true
+    });
+    for (var i = 0; i < planes.length; i++) {
+                    /*var projWGS84 = new OpenLayers.Projection("EPSG:4326");
+                    var proj900913 = new OpenLayers.Projection("EPSG:900913");
+                    var point = new OpenLayers.LonLat(planes[i][2], planes[i][1]);
+                    var point2 =  point.transform(proj900913, projWGS84); */
+                    
+                    markers.addLayer(new L.marker([planes[i][1],planes[i][2]],{icon: greenIcon})
+        .bindPopup(planes[i][3]));
+                    
+      /*marker = new L.marker([point2.lat,point2.lon],{icon: greenIcon})
+        .bindPopup(planes[i][3])
+        .addTo(map); */
+    }
+                map.addLayer(markers);
+    function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+    }
+    map.on('click', onMapClick);
+  </script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;9a749fb7b56140c9ab4f9f22c3b6df4f&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="ja"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Content-Style-type" content="text/css">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <style>
+        @font-face {
+            font-family: 'material-icons';
+            src:  url('/chat/css/fonts/material-icons.eot?ver=10.5.2.0&modeno=1');
+            src:  url('/chat/css/fonts/material-icons.eot?ver=10.5.2.0&modeno=1#iefix') format('embedded-opentype'),
+            url('/chat/css/fonts/material-icons.ttf?ver=10.5.2.0&modeno=1') format('truetype'),
+            url('/chat/css/fonts/material-icons.woff?ver=10.5.2.0&modeno=1') format('woff'),
+            url('/chat/css/fonts/material-icons.svg?ver=10.5.2.0&modeno=1#material-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('/chat/css/fonts/icomoon.eot?ver=10.5.2.0&modeno=1');
+            src:  url('/chat/css/fonts/icomoon.eot?ver=10.5.2.0&modeno=1#iefix') format('embedded-opentype'),
+            url('/chat/css/fonts/icomoon.ttf?ver=10.5.2.0&modeno=1') format('truetype'),
+            url('/chat/css/fonts/icomoon.woff?ver=10.5.2.0&modeno=1') format('woff'),
+            url('/chat/css/fonts/icomoon.svg?ver=10.5.2.0&modeno=1#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="/chat/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/chat/css/reset.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/chat.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/material-icons.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/iconstyle.css?ver=10.5.2.0&amp;modeno=1">
+    <link rel="stylesheet" type="text/css" href="/chat/css/loaders.css?ver=10.5.2.0&amp;modeno=1">
+
+    <script type="text/javascript" src="/chat/js/jquery.js?ver=10.5.2.0&amp;modeno=1"></script>
+    <script type="text/javascript" src="/chat/js/common.js?ver=10.5.2.0&amp;modeno=1"></script>
+
+    <script>
+        $(window).on('load',function(){
+            $('#loading-chat-window').removeClass('loading-chat-window');
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div id="loading-chat-window" class=""></div>
+<style type="text/css">
+<!--
+.chat-icon-window.balloon {
+    border-color: #f3ead6;
+}
+.chat-icon-window-tip::before {
+    background: #f3ead6;
+}
+-->
+</style>
+
+<script type="text/javascript">
+<!--
+    $(function () {
+        $('.ico-click-area').click(function (e) {
+            parent.postMessage('chatdealer_visitor_open','*');
+            e.stopPropagation();
+            return false;
+        });
+
+        const size = {
+                'width': 73,
+                'height': 73,
+        };
+
+        let fncComplete = function () {
+            try {
+                parent.loadChatCloseComplete(size);
+            } catch (e) {
+                setTimeout(function () {
+                    fncComplete();
+                }, 1000);
+            }
+        };
+
+        fncComplete();
+    });
+//-->
+</script>
+
+<div class="chat-icon-window-tip ico-click-area">
+    <div class="chat-icon-window balloon">
+        <div class="chat-icon-window-frame">
+            <img id="chatIconImg" src="/img/acc/p2JaSChat1-662/1/wicon/163ff07e3612ca6.17270472_l.png" onerror="imgLoadRetry(this)">
+        </div>
+    </div>
+</div>
+
+
+<!-- ver.10.5.2.0 -->
+
+
+</body></html>

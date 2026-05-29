@@ -1,0 +1,1869 @@
+<!DOCTYPE html><html data-theme="light"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+      Шахматная тактика - тренажер
+    </title>
+    <meta name="keywords" content="шахматы,тактика"> <meta name="description" content="Изучите шахматную тактику через практику на сайте stepchess.ru совершенно бесплатно.">
+    <meta name="author" content="stepchess">
+    <meta name="yandex-verification" content="52f93fd019edb172">
+
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Шахматная тактика - тренажер"> <meta property="og:description" content="Изучите шахматную тактику через практику на сайте stepchess.ru совершенно бесплатно."> 
+
+    <meta property="og:url" content="http://stepchess.ru/">
+
+    
+
+    <meta property="og:site_name" content="Шахматные задачи по тактике на сайте stepchess - изучение тактики через практику">
+    <meta property="og:image" content="https://stepchess.ru/uploads/b1945a3cad43bb376967d80d06e1cb221582972217722.jpeg">
+    <meta property="og:image:secure_url" content="https://stepchess.ru/uploads/b1945a3cad43bb376967d80d06e1cb221582972217722.jpeg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="675">
+
+    <style>
+      .nav-pills .nav-link {
+        border-radius: 0.75rem !important;
+      }
+    </style>
+
+    
+
+    <link rel="canonical" href="http://stepchess.ru/">
+
+    
+
+    <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script>
+  (function () {
+    var stored = localStorage.getItem("theme"); // "light" | "dark"
+    var prefersDark =
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    var theme = stored || "light";
+    document.documentElement.dataset.theme = theme;
+  })();
+
+  window.setTheme = function (theme) {
+  document.documentElement.dataset.theme = theme; // "light" | "dark"
+  localStorage.setItem("theme", theme);
+};
+
+window.toggleTheme = function () {
+  var cur = document.documentElement.dataset.theme || "light";
+  window.setTheme(cur === "dark" ? "light" : "dark");
+};
+</script>
+
+    <link rel="stylesheet" href="/stylesheets/common.css?12">
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, system-ui,
+          Helvetica, Arial, sans-serif !important;
+      }
+    </style>
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Raleway&display=swap" rel="stylesheet">-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <script src="/js/j.js"></script>
+     
+  </head>
+  <body id="app">
+    <script>
+      window.locale = 'ru';
+    </script>
+
+    <div id="wrp">
+
+  
+   <style>
+  .nav-user-label {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 180px;        /* подстрой */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* чуть уже на меньших экранах */
+  @media (max-width: 1199.98px) { /* < xl */
+    .nav-user-label { max-width: 140px; }
+  }
+  @media (max-width: 991.98px) {  /* < lg */
+    .nav-user-label { max-width: 120px; }
+  }
+</style>
+
+<nav class="navbar navbar-expand-xl navbar-dark" style="background-color: #305996" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-chess-queen"></i> StepChess
+      <!--<sup>>beta</sup>-->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!--                    <li class="nav-item">-->
+        <!--                        <a class="nav-link text-light" href="/">Главная <span class="sr-only">-->
+        <!--                                    (current)-->
+        <!--                                </span></a>-->
+        <!--                    </li>-->
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/mystudents">
+            Мои ученики
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/users/leaderboard">
+            Лидеры
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/ontime">
+            Тренировка
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Дополнительно
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/" class="dropdown-item" data-toggle="modal" data-target="#donate">
+              Поддержать проект
+            </a>
+            <div class="dropdown-divider"></div>
+
+            
+            <a class="dropdown-item" href="/tactics">
+              Тест на тактику
+            </a>
+            
+
+            <a class="dropdown-item" href="/ontime">
+              Тренировка по тактике
+            </a>
+
+            <a class="dropdown-item" href="/leagues">
+              Шахматные Лиги
+            </a>
+
+            <a class="dropdown-item" href="/clubs"> Клубы </a>
+            <div class="dropdown-divider"></div>
+
+            
+
+            <a class="dropdown-item" href="/classes">
+              Онлайн-классы
+            </a>
+            <a class="dropdown-item" href="/classes">
+              Создать игру против ученика
+            </a>
+            <a class="dropdown-item" href="/course/learn_program/create">
+              Создать курс
+            </a>
+            <a class="dropdown-item" href="/create_board">
+              Создать колекцию задач
+            </a>
+            <a class="dropdown-item" href="/create_board?test=true">
+              Создать квиз (тест)
+            </a>
+            <a class="dropdown-item" href="/desk">
+              Создать панель
+            </a>
+
+                  <a class="dropdown-item" href="/homework_dashboard">Домашнее задание</a>
+
+            <div class="dropdown-divider"></div>
+          <a href="/instructions" class="dropdown-item">Инструкции</a>
+            <a class="dropdown-item" href="/feedback">
+              Обратная связь
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="navbar navbar-nav navbar-right">
+
+        <li class="nav-item mr-3">
+  <button type="button" class="btn btn-link p-0 nav-theme-toggle" onclick="window.toggleTheme()" aria-label="Переключить тему" title="Тема">
+    <i class="fas fa-moon"></i>
+  </button>
+</li>
+
+        
+        <li class="nav-item mr-4">
+          <a href="https://stepchess.ru/desk/8" class="text-white">Видеотека</a>
+        </li>
+         
+        <!-- Authentication Links -->
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/login">Войти</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/signup">Регистрация</a>
+        </li>
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ </div>
+    <!-- end /.wrp-->
+    
+      <div class="container">
+        <div class="main__content  mt-4 mb-0 row">
+          <div class="alert alert-info col-12">Протестируйте <a href="https://dofrag.com" target="_blank">игровую платформу от stepchess.ru - dofrag.com</a>  <a href="/info" target="_blank">Подробнее</a></div>
+        </div>
+      </div>
+    
+    <div class="container">
+      <div class="main__content bg-white border_20 mt-4 pb-4 row">
+        <div class="col-12">
+
+<!--%- include partials/toastr.ejs %-->
+
+<style>
+    .h {
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .h:hover {
+        background: #f6f6f6;
+    }
+</style>
+
+<!--        <div class="row">-->
+<!--            <div class="col-lg-3 bg-white">-->
+<!--                <a class="btn btn-success btn-block mt-4 btn-lg" href="/course/create"><i class="fas fa-plus-square mr-1"></i> Создать курс</a>-->
+<!--            </div>-->
+<!--            <div class="col-lg-12 ">-->
+<div class="row p-5 pt-0">
+
+        <ul class="nav nav-pills nav-fill col-12 mb-5 ">
+
+            <li class="nav-item">
+                <a class="nav-link active" href="/tactic">Тактика</a>
+            </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link null" href="/debut">Дебюты</a>
+                </li>
+           
+            <li class="nav-item">
+                <a class="nav-link null" href="/ending">Эндшпиль</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link null" href="/beginner">Для начинающих</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link null" href="/trainer">Раздел тренера</a>
+            </li>
+        </ul>
+
+    
+        <a href="/course/65" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/69241d220722ca1ca949a58d841fea101602445739565.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Мат в 1 ход
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_65">
+                                    <span id="user_points_65">0</span>
+                                    из
+
+                                    <span id="max_points_65">1746</span></div>
+                                <i id="star_65" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_65">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/65" class="text-dark" style="font-size: 1.5em">Мат в 1 ход|Mate in one</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/89" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/8b5f57d29cea1808c4f595292f7559b51602523738361.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Двойные удары и вилки
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_89">
+                                    <span id="user_points_89">0</span>
+                                    из
+
+                                    <span id="max_points_89">513</span></div>
+                                <i id="star_89" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_89">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/89" class="text-dark" style="font-size: 1.5em">Двойные удары и вилки|A Double Attack and forks</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/90" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/7d78b4c7b8929d5161bed290e5a03fa61602447473358.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Связка
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_90">
+                                    <span id="user_points_90">0</span>
+                                    из
+
+                                    <span id="max_points_90">774</span></div>
+                                <i id="star_90" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_90">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/90" class="text-dark" style="font-size: 1.5em">Связка|A pin</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/91" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/0df6032f9e3dbf89596fa198b65a31c41602447455842.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Сквозной удар или "Копьё"
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_91">
+                                    <span id="user_points_91">0</span>
+                                    из
+
+                                    <span id="max_points_91">657</span></div>
+                                <i id="star_91" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_91">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/91" class="text-dark" style="font-size: 1.5em">Сквозной удар или &quot;Копьё&quot;|Blow through or &quot;Spear&quot;</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/92" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/8014fb86f5efef64b87939387f29c4201602520218654.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Открытый шах и мельница
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_92">
+                                    <span id="user_points_92">0</span>
+                                    из
+
+                                    <span id="max_points_92">681</span></div>
+                                <i id="star_92" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_92">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/92" class="text-dark" style="font-size: 1.5em">Открытый шах и мельница|Discovered check</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/94" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/b24a6eb4452e16a44b68bb995b579b1d1602522763250.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Открытое нападение
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_94">
+                                    <span id="user_points_94">0</span>
+                                    из
+
+                                    <span id="max_points_94">687</span></div>
+                                <i id="star_94" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_94">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/94" class="text-dark" style="font-size: 1.5em">Открытое нападение|Discovered Attack</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/96" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/8e5b7674fbb66c1b76e2ad770f86243c1602520458625.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Двойной шах
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_96">
+                                    <span id="user_points_96">0</span>
+                                    из
+
+                                    <span id="max_points_96">690</span></div>
+                                <i id="star_96" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_96">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/96" class="text-dark" style="font-size: 1.5em">Двойной шах|Double check</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >2</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/100" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/4a07d9f28913caa3518e691f5cd42b911602523142745.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Ловля фигуры
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_100">
+                                    <span id="user_points_100">0</span>
+                                    из
+
+                                    <span id="max_points_100">633</span></div>
+                                <i id="star_100" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_100">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/100" class="text-dark" style="font-size: 1.5em">Ловля фигуры|Trapping a piece</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/84" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/655538ac01c0156f41b4711f2c36a52b1602446646620.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Уничтожение защитника
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_84">
+                                    <span id="user_points_84">0</span>
+                                    из
+
+                                    <span id="max_points_84">621</span></div>
+                                <i id="star_84" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_84">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/84" class="text-dark" style="font-size: 1.5em">Уничтожение защитника|Remove the defender</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/70" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/a61570de61b95fd7523f410ddcd508861602447293312.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Отвлечение
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_70">
+                                    <span id="user_points_70">0</span>
+                                    из
+
+                                    <span id="max_points_70">603</span></div>
+                                <i id="star_70" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_70">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/70" class="text-dark" style="font-size: 1.5em">Отвлечение|Deflection</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/101" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/f2afb55303600ba03608b65c1cec44641602447219793.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Завлечение
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_101">
+                                    <span id="user_points_101">0</span>
+                                    из
+
+                                    <span id="max_points_101">600</span></div>
+                                <i id="star_101" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_101">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/101" class="text-dark" style="font-size: 1.5em">Завлечение|Attraction</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/81" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/265b4d0b10932f9e2d091e671553edb21602447431454.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Мат в 2 хода
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_81">
+                                    <span id="user_points_81">0</span>
+                                    из
+
+                                    <span id="max_points_81">1230</span></div>
+                                <i id="star_81" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_81">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/81" class="text-dark" style="font-size: 1.5em">Мат в 2 хода|Mate in two</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/241" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/3b993a0c9f6daeca561a922b983c6dcc1616947342127.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Перегрузка
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_241">
+                                    <span id="user_points_241">0</span>
+                                    из
+
+                                    <span id="max_points_241">294</span></div>
+                                <i id="star_241" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_241">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/241" class="text-dark" style="font-size: 1.5em">Перегрузка|Overload</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/166" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/88ccb5eb4333bd211da4844ea175c5eb1612598975246.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Перекрытие
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_166">
+                                    <span id="user_points_166">0</span>
+                                    из
+
+                                    <span id="max_points_166">216</span></div>
+                                <i id="star_166" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_166">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/166" class="text-dark" style="font-size: 1.5em">Перекрытие|Overlap</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/213" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/e92bf2a1ff49cdae3d403c12a9b6f2cc1617299017746.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Слабость последней горизонтали
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_213">
+                                    <span id="user_points_213">0</span>
+                                    из
+
+                                    <span id="max_points_213">834</span></div>
+                                <i id="star_213" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_213">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/213" class="text-dark" style="font-size: 1.5em">Слабость последней горизонтали|Weakness of the last line</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/264" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/93386e5f63a092623d687ebf838142b31618030400112.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Ничья
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_264">
+                                    <span id="user_points_264">0</span>
+                                    из
+
+                                    <span id="max_points_264">459</span></div>
+                                <i id="star_264" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_264">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/264" class="text-dark" style="font-size: 1.5em">Ничья|Draw</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/136" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/dc2c0ba97cdc2991d02288af059759a71605785802725.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Мат в 3-4 хода
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_136">
+                                    <span id="user_points_136">0</span>
+                                    из
+
+                                    <span id="max_points_136">300</span></div>
+                                <i id="star_136" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_136">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/136" class="text-dark" style="font-size: 1.5em">Мат в 3-4 хода|Mate in 3-4</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/215" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/389e3599811f36b931a3e2e894b666051617352134688.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Освобождение поля или линии
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_215">
+                                    <span id="user_points_215">0</span>
+                                    из
+
+                                    <span id="max_points_215">654</span></div>
+                                <i id="star_215" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_215">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/215" class="text-dark" style="font-size: 1.5em">Освобождение поля или линии|Clearance</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >1</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/421" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/7fa69fa96d66f19e05a9bfd4af623dd41633120284910.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Защита
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_421">
+                                    <span id="user_points_421">0</span>
+                                    из
+
+                                    <span id="max_points_421">762</span></div>
+                                <i id="star_421" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_421">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/421" class="text-dark" style="font-size: 1.5em">Защита|Defence</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >739</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/1023" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/e0c3634639183d6f355d128a6173a9411658322106758.png" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Промежуточный ход
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_1023">
+                                    <span id="user_points_1023">0</span>
+                                    из
+
+                                    <span id="max_points_1023">498</span></div>
+                                <i id="star_1023" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_1023">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/1023" class="text-dark" style="font-size: 1.5em">Промежуточный ход</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >531</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+        <a href="/course/856" style="text-decoration: none" class="col-lg-3 col-md-4 col-sm-6 py-5 text-center h">
+            <div class="">
+                <div class=" ">
+                    <div class="text-center">
+                        <div>
+                            <img class="" style="height: 100px; height: 100px" src="/uploads/5aa6a2f7a5444b6a9352f2d321b83cb41754328983021.jpeg" alt="">
+                        </div>
+                        <div class="mt-2">
+                            Пешечные превращения
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <small class="" style="color: #9a9a9a; display: flex; align-items: center">
+                                <span style="text-decoration: none!important;">
+                                    Очки
+
+                                </span>
+                                <div class="badge badge-light" id="badge_856">
+                                    <span id="user_points_856">0</span>
+                                    из
+
+                                    <span id="max_points_856">615</span></div>
+                                <i id="star_856" class="far fa-star"></i>
+                            </small>
+
+                        </div>
+<!--                        <div class="d-flex justify-content-around">-->
+<!--                            <small class="" style="color: #9a9a9a; text-decoration: none">-->
+<!--                                Экзамен <div class="badge badge-light" id="exam_856">Не сдан</div> <i class="fas fa-graduation-cap"></i>-->
+<!--                            </small>-->
+
+<!--                        </div>-->
+                    </div>
+                    <!--                                <div class="col-10">-->
+                    <!--                                    <div class="">-->
+                    <!--<div></div>-->
+                    <!--                                        <div class="p-3">-->
+                    <!--                                            <div class="align-self-center">-->
+                    <!--                                                <a href="/course/856" class="text-dark" style="font-size: 1.5em">Пешечные превращения</a>-->
+                    <!--                                            </div>-->
+                    <!--                                            <div>-->
+                    <!--                                                <span  class=" small text-gray" style="color: #777!important;">Учитель</span>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="text-right">-->
+
+                    <!--                                            <div class="rateit" title="Рейтинг курса" data-rateit-value='4' data-rateit-mode="font" style="height: 24px"  data-rateit-readonly="true" data-rateit-max="5" data-rateit-resetable="false"></div>-->
+                    <!--                                            <span class="mr-4">4</span>-->
+
+                    <!--                                            <span style="line-height: 1em; position: relative; top: 0px;" data-toggle="tooltip" data-placement="top"-->
+                    <!--                                                  title="Количество записавшихся на курс"><i class="fas fa-user text-gray" style="color: #777!important;"></i> <span >180</span></span>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <!--                                </div>-->
+                </div>
+            </div>
+        </a>
+    
+
+    <!--<li class="list-group-item">
+        <div class="row pt-3">
+            <div class="col-2">
+                <a href="#">
+                    <img width="110px" src="/img/home-icon.png" alt="">
+                </a>
+            </div>
+            <div class="col-10 pl-5 d-flex align-items-center">
+                <a href="#">Шахматы для начинающих</a>
+            </div>
+        </div>
+
+        <hr />
+
+    </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-2">
+                <a href="#">
+                    <img width="110px" src="/img/course_2.png" alt="">
+                </a>
+            </div>
+            <div class="col-10 pl-5 d-flex align-items-center">
+                <a href="#">Шахматы для начинающих</a>
+            </div>
+        </div>
+
+        <hr />
+
+    </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-2">
+                <a href="#">
+                    <img width="110px" src="/img/course_3.png" alt="">
+                </a>
+            </div>
+            <div class="col-10 pl-5 d-flex align-items-center">
+                <a href="#">Шахматы для начинающих</a>
+            </div>
+        </div>
+
+        <hr />
+    </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-2">
+                <a href="#">
+                    <img width="110px" src="/img/course_4.png" alt="">
+                </a>
+            </div>
+            <div class="col-10 pl-5 d-flex align-items-center">
+                <a href="#">Шахматы для начинающих</a>
+            </div>
+        </div>
+
+        <hr />
+    </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-2">
+                <a href="#">
+                    <img width="110px" src="/img/course_5.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-10 pl-5 d-flex align-items-center">
+                <a href="#">Шахматы для начинающих</a>
+            </div>
+        </div>
+
+        <hr />
+    </li>-->
+</div>
+<!--            </div>&lt;!&ndash; end /.col-lg-9 &ndash;&gt;-->
+<!--        </div>&lt;!&ndash; end /.row&ndash;&gt;-->
+
+
+<script src="/js/popper.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
+
+</div>      </div>
+    </div>
+    <footer class="noprint mt-3 mb-5 pt-5 text-muted text-center text-small d-flex justify-content-center align-items-center">
+      <footer class="footer py-2">
+  <div class="container-fluid">
+    <div class="d-flex flex-wrap align-items-start footer-items">
+      
+        <div class="footer-item d-print-none">
+          <a href="/mobile">Приложение</a>
+        </div>
+
+        <div class="footer-item d-print-none">
+          <a href="/articles">Статьи по тактике</a>
+        </div>
+
+        <div class="footer-item d-print-none">
+          <a href="/feedback">Обратная связь</a>
+        </div>
+
+        <div class="footer-item d-print-none">
+          <a href="/policy/privacy">Политика конфиденциальности</a>
+        </div>
+
+        <div class="footer-item d-print-none">
+          <a href="/policy/data-processing">Обработка данных</a>
+        </div>
+
+        <div class="footer-item d-print-none">
+          <a href="/policy/profile-rules">Правила профиля</a>
+        </div>
+
+        
+          <div class="footer-item d-print-none">
+            <a href="/" data-toggle="modal" data-target="#donate">Поддержать проект</a>
+          </div>
+
+          <div class="footer-item d-print-none">
+            <a href="https://www.youtube.com/channel/UClnriG6Kt3kOhU5tmUhDdCA" title="Youtube канал stepchess.ru" target="_blank" rel="nofollow noopener noreferrer" aria-label="YouTube">
+              <i class="fab fa-youtube fa-lg"></i>
+            </a>
+          </div>
+
+          <div class="footer-item d-print-none">
+            <a href="https://rutube.ru/channel/57810644/" title="Rutube канал stepchess.ru" target="_blank" rel="nofollow noopener noreferrer" aria-label="Rutube" style="line-height:0;">
+              <svg width="24" height="24" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_519_1963)">
+                  <rect width="132" height="132" fill="#100943"></rect>
+                  <path d="M132 66.0001C168.451 66.0001 198 36.4508 198 3.05176e-05C198 -36.4508 168.451 -66 132 -66C95.5492 -66 66 -36.4508 66 3.05176e-05C66 36.4508 95.5492 66.0001 132 66.0001Z" fill="#ED143B"></path>
+                  <path d="M81.5361 62.9865H42.5386V47.5547H81.5361C83.814 47.5547 85.3979 47.9518 86.1928 48.6451C86.9877 49.3385 87.4801 50.6245 87.4801 52.5031V58.0441C87.4801 60.0234 86.9877 61.3094 86.1928 62.0028C85.3979 62.6961 83.814 62.9925 81.5361 62.9925V62.9865ZM84.2115 33.0059H26V99H42.5386V77.5294H73.0177L87.4801 99H106L90.0546 77.4287C95.9333 76.5575 98.573 74.756 100.75 71.7869C102.927 68.8179 104.019 64.071 104.019 57.7359V52.7876C104.019 49.0303 103.621 46.0613 102.927 43.7857C102.233 41.51 101.047 39.5307 99.362 37.7528C97.5824 36.0698 95.6011 34.8845 93.2223 34.0904C90.8435 33.3971 87.8716 33 84.2115 33V33.0059Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_519_1963">
+                    <rect width="132" height="132" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+
+        
+
+          <div class="footer-item d-print-none">
+            <a href="https://t.me/stepchessru" title="Telegram канал stepchess.ru" target="_blank" rel="nofollow noopener noreferrer" aria-label="Telegram">
+              <i class="fab fa-telegram fa-lg"></i>
+            </a>
+          </div>
+
+          <div class="footer-item d-print-none">
+            <a href="https://web.max.ru/-70925350783742" title="MAX группа stepchess.ru" target="_blank" rel="nofollow noopener noreferrer" aria-label="MAX" class="footer-max-link">
+              <svg class="footer-max-icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+                <defs>
+                  <linearGradient id="footer-max-icon-blue-fade">
+                    <stop offset="0" stop-color="#00f"></stop>
+                    <stop offset="1" stop-opacity="0"></stop>
+                    <stop offset="1" stop-opacity="0"></stop>
+                  </linearGradient>
+                  <linearGradient id="footer-max-icon-brand">
+                    <stop offset="0" stop-color="#4cf"></stop>
+                    <stop offset=".662" stop-color="#53e"></stop>
+                    <stop offset="1" stop-color="#93d"></stop>
+                  </linearGradient>
+                  <linearGradient id="footer-max-icon-bg" x1="117.847" x2="1000" y1="760.536" y2="500" gradientUnits="userSpaceOnUse" href="#footer-max-icon-brand"></linearGradient>
+                  <radialGradient id="footer-max-icon-radial" cx="-87.392" cy="1166.116" r="500" fx="-87.392" fy="1166.116" gradientTransform="rotate(51.356 1551.478 559.3)scale(2.42703433 1)" gradientUnits="userSpaceOnUse" href="#footer-max-icon-blue-fade"></radialGradient>
+                </defs>
+                <rect width="1000" height="1000" fill="url(#footer-max-icon-bg)" ry="249.681"></rect>
+                <rect width="1000" height="1000" fill="url(#footer-max-icon-radial)" ry="249.681"></rect>
+                <path fill="#fff" fill-rule="evenodd" d="M508.211 878.328c-75.007 0-109.864-10.95-170.453-54.75-38.325 49.275-159.686 87.783-164.979 21.9 0-49.456-10.95-91.248-23.36-136.873-14.782-56.21-31.572-118.807-31.572-209.508 0-216.626 177.754-379.597 388.357-379.597 210.785 0 375.947 171.001 375.947 381.604.707 207.346-166.595 376.118-373.94 377.224m3.103-571.585c-102.564-5.292-182.499 65.7-200.201 177.024-14.6 92.162 11.315 204.398 33.397 210.238 10.585 2.555 37.23-18.98 53.837-35.587a189.8 189.8 0 0 0 92.71 33.032c106.273 5.112 197.08-75.794 204.215-181.95 4.154-106.382-77.67-196.486-183.958-202.574Z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
+        
+      
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-items {
+    /* gap даёт автоматические промежутки между элементами */
+    gap: 0.5rem;
+  }
+  .footer-item {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto; /* не растёт, подстраивается по содержимому и переносится при необходимости */
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-max-link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+
+  .footer-max-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: block;
+  }
+
+  @media (max-width: 576px) {
+    .footer-item {
+      flex: 1 1 100%; /* на очень узких экранах — колонка */
+    }
+  }
+</style>
+
+    </footer>
+
+    <div class="modal fade" id="donate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Поддержка stepchess.ru
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Карта или yandex money</h5>
+            <iframe src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&amp;default-sum=&amp;button-text=14&amp;payment-type-choice=on&amp;mobile-payment-type-choice=on&amp;successURL=&amp;quickpay=shop&amp;account=410012086829377&amp;targets=%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%20%D0%BF%D0%BE%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B5&amp;" width="423" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+
+            <h5 class="mt-4">Иная поддержка</h5>
+            <p>
+              Вы можете поддержать проект просто поделившись ссылкой в соц.
+              сетях или порекомендовав проект своим друзьям
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Закрыть
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/b.js"></script>
+
+    <script>
+      function parseAnswer(jqXHR) {
+        var error = "";
+        for (var obj in jqXHR.responseJSON.errors) {
+          error = jqXHR.responseJSON.errors[obj].msg;
+        }
+        console.log(error);
+      }
+    </script>
+
+    <link rel="stylesheet" async="" href="/css/fontawesome/web-fonts-with-css/css/all.min.css">
+
+    <!-- Modal -->
+    <div class="modal fade" id="soundModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Уровень звука
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="soundRange">
+              <div>Уровень звука:</div>
+              <h5>
+                <b id="soundLevel"></b>
+              </h5>
+            </label>
+            <div>
+              <input oninput="window.changeSound()" type="range" class="custom-range" value="" min="0" max="100" step="1" id="soundRange">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Закрыть
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeSound() {
+        var level = $("#soundRange").val();
+        $("#soundLevel").html(level);
+        localStorage.setItem("soundLevel", level);
+        $("audio").each(function () {
+          this.volume = level / 100;
+        });
+        window.volume = level;
+      }
+      $("#soundModal").on("show.bs.modal", function (e) {
+        $("#soundRange").val(localStorage.getItem("soundLevel") || 50);
+        $("#soundLevel").html(localStorage.getItem("soundLevel") || 50);
+      });
+      window.volume = parseInt(localStorage.getItem("soundLevel") || 50);
+    </script>
+
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+
+      ym(48001862, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <noscript><div>
+        <img
+          src="https://mc.yandex.ru/watch/48001862"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+  
+
+</body></html>

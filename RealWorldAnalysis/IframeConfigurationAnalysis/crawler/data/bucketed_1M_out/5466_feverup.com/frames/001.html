@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <title>Cookie Test</title>
+</head>
+<body>
+  <script>
+    document.cookie = "__test=1; Domain=.feverup.com; SameSite=None; Secure; Path=/";
+
+    const success = typeof navigator.brave === 'object' ? false : document.cookie.includes("__test=1");
+
+    document.cookie = "__test=; Domain=.feverup.com; expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/";
+
+    window.parent.postMessage({
+      type: "FEVER_COOKIE_TEST",
+      result: success
+    }, "*");
+
+    if (!success) {
+      window.addEventListener('message', (event) => {
+        if (event.data.type === 'FEVER_PERSIST_DATA') {
+          const { domainprint, timestamp } = event.data;
+
+          document.cookie = `__dp=${domainprint}; Domain=.feverup.com; Path=/; SameSite=Lax; Secure; Max-Age=300`;
+          document.cookie = `__tms=${timestamp}; Domain=.feverup.com; Path=/; SameSite=Lax; Secure; Max-Age=300`;
+
+          console.debug('Persistence cookies set');
+
+          event.source.postMessage({
+            type: 'FEVER_PERSIST_CONFIRMED',
+            success: true
+          }, event.origin);
+        }
+      });
+
+      console.debug('Persistence listener correctly activated');
+    }
+  </script>
+
+</body></html>

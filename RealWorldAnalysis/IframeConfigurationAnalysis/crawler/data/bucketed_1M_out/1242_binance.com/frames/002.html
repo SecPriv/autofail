@@ -1,0 +1,12 @@
+<html><head><script>
+    window.addEventListener('storage', (e) => {
+      if(e.key === 'refreshPage' && e.newValue) {
+         window.parent.postMessage('refreshPageToParent', '*')
+      }
+    })
+    window.addEventListener('message', function(event) {
+      if (event.data === 'refreshPage') {
+          window.localStorage.setItem('refreshPage', Date.now().toString())
+      }
+    })
+  </script></head><body></body></html>

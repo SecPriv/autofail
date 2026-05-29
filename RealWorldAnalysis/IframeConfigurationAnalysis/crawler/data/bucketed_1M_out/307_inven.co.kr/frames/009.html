@@ -1,0 +1,15 @@
+<html><head><script>
+    function getParaByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec("?ibt=ibtBottom1&a1bp=0");
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+document.domain='inven.co.kr';
+var ibt = getParaByName("ibt");
+var bgcolorcode = "";
+if (bgcolorcode!='') parent.setMobileAdibtBgColor(bgcolorcode, ibt);
+</script>
+
+<script src="https://api.ootoo.co.kr/cou/api_reco.php?code=ambb300250iv&amp;adid=&amp;type=js&amp;click_log=&amp;click_type=&amp;load_type=0"></script></head><body marginwidth="0" marginheight="0"><iframe src="https://api.ootoo.co.kr/cou/iframe/api_300x250.php?code=ambb300250iv&amp;adid=&amp;click_log=1&amp;click_id=&amp;click_type=2" width="300" height="250" frameborder="0" scrolling="no"></iframe></body></html>

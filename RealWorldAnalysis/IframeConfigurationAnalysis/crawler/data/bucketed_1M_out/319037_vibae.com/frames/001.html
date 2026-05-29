@@ -1,0 +1,206 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>VIBAe - Sustainable and Comfortable Footwear</title>
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-625282897&amp;cx=c&amp;gtm=4e65k1"></script><script async="" src="https://tralut.vibae.com/js/script-dynamic.js?version=1761229006289"></script><script src="https://vibae.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+window.shopifyBrowser = browser;
+window.shopifyAnalytics = analytics;
+window.shopifyInit = init;
+
+!function(t,l,r,o,c,k,s)
+{if(t.tlq)return;c=t.tlq=function(){c.callMethod?
+  c.callMethod(arguments):c.queue.push(arguments)};
+  if(!t._tlq)t._tlq=c;c.push=c;c.loaded=!0;c.version='1.0';c.src=o;
+  c.queue=[];k=l.createElement(r);k.async=!0;c.pd = false;c.tools = null;
+  k.src=o;s=l.getElementsByTagName(r)[0];
+  s.parentNode.insertBefore(k,s);k.onerror=function(){
+  o='https://main.trlution.com/js/script-dynamic.js?version=1761229006289';
+  t._tlq.src=o;k=l.createElement(r);k.async=!0;k.src=o;
+  s.parentNode.insertBefore(k, s)
+}}(window,document,'script',
+  'https://tralut.vibae.com/js/script-dynamic.js?version=1761229006289');
+
+analytics.subscribe('page_viewed', (event) => {
+  tlq('init', 'LS-32293762-7', { url: event.context?.document?.location?.href, api: true, inject: true });
+
+  tlq('track', 'PageView', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+  });
+});
+
+analytics.subscribe('product_viewed', async (event) => {
+  const productVariant = event.data?.productVariant;
+
+  const item = {
+    item_id: productVariant?.sku,
+    item_name: productVariant?.product?.title,
+    item_variant: productVariant?.title,
+    item_brand: productVariant?.product?.vendor,
+    sku:  productVariant?.sku,
+    variant_id: productVariant?.id,
+    product_id:  productVariant?.product?.id,
+    price: productVariant?.price?.amount,
+    currency: productVariant?.price?.currencyCode,
+  };
+
+  tlq('track', 'ViewContent', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+    items: [item],
+  });
+});
+
+analytics.subscribe('product_added_to_cart', (event) => {
+  const cartLine = event.data?.cartLine;
+  const productVariant = cartLine?.merchandise;
+
+  const item = {
+    item_id: productVariant?.sku,
+    item_name: productVariant?.product?.title,
+    item_variant: productVariant?.title,
+    item_brand: productVariant?.product?.vendor,
+    sku:  productVariant?.sku,
+    variant_id: productVariant?.id,
+    product_id:  productVariant?.product?.id,
+    price: productVariant?.price?.amount,
+    currency: productVariant?.price?.currencyCode,
+  };
+
+  tlq('track', 'AddToCart', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+    items: [item],
+  });
+});
+
+analytics.subscribe('payment_info_submitted', (event) => {
+  tlq('track', 'AddPaymentInfo', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+  });
+
+  const billingAddress = event.data?.checkout?.billingAddress;
+
+  tlq('set', 'ContactInfo', {
+    target: 'LS-32293762-7',
+    email: event.data?.checkout?.email,
+    phoneNumber: event.data?.checkout?.phone || billingAddress?.phone,
+    firstName: billingAddress?.firstName,
+    lastName: billingAddress?.lastName,
+    address: billingAddress?.address1,
+    postCode: billingAddress?.zip,
+    city: billingAddress?.city,
+    country: billingAddress?.country,
+    isFirstOrder: event.data?.checkout?.order?.customer?.isFirstOrder,
+  });
+});
+
+analytics.subscribe('checkout_started', (event) => {
+  let lineItems = [];
+
+  if (event.data?.checkout?.lineItems) {
+    for (const checkoutLineItem of event.data.checkout.lineItems) {
+      lineItems.push({
+        item_id: checkoutLineItem?.variant?.sku,
+        item_name: checkoutLineItem?.title,
+        item_variant: checkoutLineItem?.variant?.title,
+        item_brand: checkoutLineItem?.variant?.product?.vendor,
+        sku:  checkoutLineItem?.variant?.sku,
+        variant_id: checkoutLineItem?.variant?.id,
+        product_id:  checkoutLineItem?.variant?.product?.id,
+        price: checkoutLineItem?.variant?.price?.amount,
+        currency: checkoutLineItem?.variant?.price?.currency,
+        quantity: checkoutLineItem?.quantity,
+      });
+    }
+  }
+
+  tlq('track', 'InitiateCheckout', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+    tax: event.data?.checkout?.totalTax?.amount,
+    shipping:
+      event.data?.checkout?.shippingLine?.price?.amount ??
+      event.data?.checkout?.delivery?.selectedDeliveryOptions?.[0]?.price?.amount ??
+      null,
+    shippingTitle:
+      event.data?.checkout?.shippingLine?.title ||
+      event.data?.checkout?.delivery?.selectedDeliveryOptions?.[0]?.title ||
+      null,
+    items: lineItems,
+  });
+});
+
+analytics.subscribe('checkout_completed', (event) => {
+  let lineItems = [];
+
+  if (event.data?.checkout?.lineItems) {
+    for (const checkoutLineItem of event.data.checkout.lineItems) {
+      lineItems.push({
+        item_id: checkoutLineItem?.variant?.sku,
+        item_name: checkoutLineItem?.title,
+        item_variant: checkoutLineItem?.variant?.title,
+        item_brand: checkoutLineItem?.variant?.product?.vendor,
+        sku:  checkoutLineItem?.variant?.sku,
+        variant_id: checkoutLineItem?.variant?.id,
+        product_id:  checkoutLineItem?.variant?.product?.id,
+        price: checkoutLineItem?.variant?.price?.amount,
+        currency: checkoutLineItem?.variant?.price?.currency,
+        quantity: checkoutLineItem?.quantity,
+      });
+    }
+  }
+
+  tlq('track', 'Purchase', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+    currency: event.data?.checkout?.currencyCode,
+    value: event.data?.checkout?.totalPrice?.amount,    
+    tax: event.data?.checkout?.totalTax?.amount,
+    shipping: event.data?.checkout?.shippingLine?.price?.amount,
+    shippingTitle:
+      event.data?.checkout?.shippingLine?.title ||
+      event.data?.checkout?.delivery?.selectedDeliveryOptions?.[0]?.title || null,
+    items: lineItems,
+  });
+
+  const billingAddress = event.data?.checkout?.billingAddress;
+
+  tlq('set', 'ContactInfo', {
+    target: 'LS-32293762-7',
+    url: event.context?.document?.location?.href,
+    email: event.data?.checkout?.email,
+    phoneNumber: event.data?.checkout?.phone || billingAddress?.phone,
+    externalId: event?.data?.checkout?.order?.id,
+    firstName: billingAddress?.firstName,
+    lastName: billingAddress?.lastName,
+    address: billingAddress?.address1,
+    postCode: billingAddress?.zip,
+    city: billingAddress?.city,
+    country: billingAddress?.country,
+    isFirstOrder: event.data?.checkout?.order?.customer?.isFirstOrder,
+  });
+});
+
+api.customerPrivacy.subscribe('visitorConsentCollected', (event) => {  
+  tlq('set', 'Consent', {
+    target: 'LS-32293762-7',
+    marketingConsent: event.customerPrivacy?.marketingAllowed ? 'granted' : 'denied',
+    analyticsConsent: event.customerPrivacy?.analyticsProcessingAllowed ? 'granted' : 'denied',
+    preferences: event.customerPrivacy?.preferencesProcessingAllowed ? 'granted' : 'denied',
+    saleOfData: event.customerPrivacy?.saleOfDataAllowed ? 'granted' : 'denied',
+    consentSource: 'shopify'
+  });
+})
+});})(self.webPixelsManager.createShopifyExtend('136937804', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+<div><div id="trl-payload"></div></div></body></html>

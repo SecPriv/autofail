@@ -1,0 +1,846 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zigbi Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface2: #16161f;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00e5a0;
+      --accent2: #0066ff;
+      --text: #f0f0f5;
+      --muted: #7a7a90;
+      --heading: 'Syne', sans-serif;
+      --body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.3s, backdrop-filter 0.3s;
+    }
+    header.scrolled {
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo img { height: 36px; }
+    .nav-logo span {
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    nav ul {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    nav a {
+      font-family: var(--body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent);
+      color: #000 !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      letter-spacing: 0.02em !important;
+    }
+    .nav-cta:hover { background: #00ffb3 !important; color: #000 !important; }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 800px; height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,160,0.12) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%);
+      bottom: -100px; left: -100px;
+      pointer-events: none;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: var(--heading);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 440px;
+      line-height: 1.8;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #00ffb3; transform: translateY(-2px); }
+    .hero-image-wrap {
+      position: relative;
+    }
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(0,229,160,0.3), rgba(0,102,255,0.3));
+      z-index: 0;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      height: 400px;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      z-index: 2;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      backdrop-filter: blur(10px);
+    }
+    .badge-num {
+      font-family: var(--heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .badge-label { font-size: 0.75rem; color: var(--muted); }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 100px 0; position: relative; z-index: 1; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1px;
+      background: var(--accent);
+    }
+    h2 {
+      font-family: var(--heading);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--surface); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .stat-box {
+      background: var(--bg);
+      padding: 28px 24px;
+    }
+    .stat-num {
+      font-family: var(--heading);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
+    .about-right p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+    .mission-block {
+      background: var(--surface2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-top: 32px;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 60px;
+    }
+    .service-card {
+      background: var(--surface);
+      padding: 36px 32px;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover { background: var(--surface2); }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+    .service-card:hover::after { transform: scaleX(1); }
+    .svc-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(0,229,160,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-family: var(--heading);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .service-card p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── WHY CHOOSE ── */
+    #why { background: var(--surface); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .why-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .why-card:hover {
+      border-color: rgba(0,229,160,0.3);
+      transform: translateY(-4px);
+    }
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .why-card h3 {
+      font-family: var(--heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .why-card p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg); }
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .project-item {
+      background: var(--surface);
+      padding: 22px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: background 0.2s;
+    }
+    .project-item:hover { background: var(--surface2); }
+    .proj-num {
+      font-family: var(--heading);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 28px;
+      padding-top: 2px;
+      opacity: 0.7;
+    }
+    .proj-text {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .proj-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── CLIENTS ── */
+    #clients { background: var(--surface); }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .client-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .client-card:hover {
+      border-color: rgba(0,229,160,0.25);
+      transform: translateY(-4px);
+    }
+    .client-img {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface2);
+      padding: 20px;
+      overflow: hidden;
+    }
+    .client-img img {
+      max-height: 80px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: grayscale(60%);
+      transition: filter 0.3s;
+    }
+    .client-card:hover .client-img img { filter: grayscale(0%); }
+    .client-info { padding: 16px 18px; }
+    .client-info h5 {
+      font-family: var(--heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .client-info p { font-size: 0.73rem; color: var(--muted); line-height: 1.4; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 3fr 1.5fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+    .footer-logo img { height: 32px; }
+    .footer-logo span {
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    .footer-col p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; }
+    .footer-col h5 {
+      font-family: var(--heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a {
+      font-size: 0.83rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: var(--muted); }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-link:hover { color: #00ffb3; }
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .socials a {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .socials a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .clients-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image-wrap { display: none; }
+      nav ul { display: none; }
+      .services-grid, .why-grid, .projects-list { grid-template-columns: 1fr; }
+      .clients-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .projects-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.35s; opacity: 0; }
+    .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+    /* Tag pill */
+    .pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(0,229,160,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,160,0.2);
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <img src="assets/images/logo.jpeg" alt="Zigb Logo" onerror="this.style.display='none'">
+      <span>Zigbi Solutions</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <!-- <li><a href="#projects">Projects</a></li> -->
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#footer" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1 class="fade-up delay-2"><span>Simplifying</span><br>Work. Empowering<br>Progress.</h1>
+        <p class="hero-desc fade-up delay-3">Web-based application software management solutions for businesses, and institutions across India and the UAE.</p>
+        <a href="#services" class="btn-primary fade-up delay-4">
+          Explore Solutions
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+      <div class="hero-image-wrap fade-up delay-3">
+        <img src="assets/images/bg_1.jpg" alt="Zigb Solutions" onerror="this.src='https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&amp;q=80'">
+     
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-right">
+        <div class="section-label">Our Story</div>
+        <p>Welcome to ZigB Solutions — where we turn your challenges into custom software solutions. Whether you're a business, we simplify your processes, automate your systems, and bring all essential data to your fingertips.</p>
+        <p>Every organization has its own unique workflow. Our job is to understand it, identify problems or inefficiencies, and build a software solution that solves them.</p>
+        <div class="mission-block">
+          "To make work simple, efficient, and smart by creating customized software solutions that bring control, insight, and innovation to our clients."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2>End-to-End Software<br>Development Services</h2>
+    <p class="section-desc">Practical, secure, and scalable solutions tailored to your needs — no bloat, just the tools you need.</p>
+    <div class="services-grid">
+      <div class="service-card" style="opacity: 0;">
+        <div class="svc-icon">⚙️</div>
+        <h3>Custom Software Development</h3>
+        <p>Tailored solutions built around your exact workflow — nothing generic, nothing wasted.</p>
+      </div>
+      <div class="service-card" style="opacity: 0;">
+        <div class="svc-icon">🔄</div>
+        <h3>Process Automation</h3>
+        <p>Reduce human error, speed up workflows, and free your team for meaningful work.</p>
+      </div>
+      <div class="service-card" style="opacity: 0;">
+        <div class="svc-icon">🗄️</div>
+        <h3>Data Management Systems</h3>
+        <p>Centralized, secure platforms that put the right data in the right hands at the right time.</p>
+      </div>
+      <div class="service-card" style="opacity: 0;">
+        <div class="svc-icon">🔧</div>
+        <h3>Legacy System Modernization</h3>
+        <p>Transform outdated systems into modern, cloud-ready tools without losing what works.</p>
+      </div>
+      <div class="service-card" style="opacity: 0;">
+        <div class="svc-icon">📱</div>
+        <h3>Mobile &amp; Web Apps</h3>
+        <p>Responsive, fast, and built specifically for your business needs across all devices.</p>
+      </div>
+       <div class="service-card" style="opacity: 0;"> 
+        <div class="svc-icon">🌐</div>
+       <h3>Website Development</h3> 
+       <p>Modern, fast, and SEO-friendly websites tailored for your business.</p> 
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section id="why">
+  <div class="container">
+    <div class="section-label">Why ZigB</div>
+    <h2>Built Different,<br>By Design</h2>
+    <div class="why-grid">
+      <div class="why-card" style="opacity: 0;">
+        <div class="why-icon">🤝</div>
+        <h3>Easy to Use</h3>
+        <p>Intuitive interfaces and workflows that require little to no training for your team.</p>
+      </div>
+      <div class="why-card" style="opacity: 0;">
+        <div class="why-icon">🔒</div>
+        <h3>Highly Secured</h3>
+        <p>Your data is protected with robust security protocols and granular access controls.</p>
+      </div>
+      <div class="why-card" style="opacity: 0;">
+        <div class="why-icon">✦</div>
+        <h3>High-Quality Design</h3>
+        <p>Visually appealing, responsive, and built to genuinely enhance the user experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <div class="section-label">Trusted By</div>
+    <h2>Our Major Clients</h2>
+    <div class="clients-grid">
+      <div class="client-card" style="opacity: 0;">
+        <div class="client-img"><img src="assets/images/eagle.png" alt="Eagle Marine" onerror="this.parentElement.innerHTML='&lt;span style=\'font-family:var(--heading);font-weight:800;color:var(--accent);font-size:1.5rem;\'&gt;KVR&lt;/span&gt;'"></div>
+        <div class="client-info"><h5>EAGLLE MARINE</h5>
+          <!-- <p>Tirurkad, Padinjarepadam, Kerala 679321</p> -->
+        </div>
+      </div>
+      <div class="client-card" style="opacity: 0;">
+        <div class="client-img"><img src="assets/images/oregon.png" alt="Oregon Impex" onerror="this.parentElement.innerHTML='&lt;span style=\'font-family:var(--heading);font-weight:800;color:var(--accent);font-size:1.5rem;\'&gt;G-TEC&lt;/span&gt;'"></div>
+        <div class="client-info"><h5>OREGON IMPEX</h5>
+          <!-- <p>Bhaskar Building, 2nd Flr., CH. Flyover Jn.</p> -->
+        </div>
+      </div>
+      <div class="client-card" style="opacity: 0;">
+        <div class="client-img"><span style="font-family:var(--heading);font-weight:800;color:var(--accent);font-size:1.5rem;">BRAVO</span></div>
+        <div class="client-info"><h5>BRAVO</h5>
+          <!-- <p>Perinthalmanna, Palachode Post, Malappuram</p> -->
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+       <div class="footer-col">
+        <div class="footer-logo">
+          <img src="assets/images/logo.jpeg" alt="Zigb Solutions" onerror="this.style.display='none'">
+          <span>Zigbi Solutions</span>
+        </div>
+        <p>Zigbi Solutions FZC · Ce.No: 10785<br>Al Shmookh Business Centre,<br>UAQ Free Trade Zone,<br>Umm Al Quwain, U.A.E.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <!-- <li><a href="#projects">Projects</a></li> -->
+          <li><a href="#clients">Clients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Custom Software</a></li>
+          <li><a href="#">Process Automation</a></li>
+          <li><a href="#">Data Management</a></li>
+          <li><a href="#">Mobile &amp; Web Apps</a></li>
+          <!-- <li><a href="#">Gov. Solutions</a></li> -->
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Zigbi Solutions. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Intersection observer for fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'fadeUp 0.7s ease forwards';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .why-card, .client-card, .project-item, .stat-box').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+
+</body></html>

@@ -1,0 +1,56 @@
+Reading and analyzing 'query_result.json'...
+
+=====================================================================================
+STATS PER POPULARITY BUCKET (CUMULATIVE)
+=====================================================================================
+Bucket       | Embeddable             | Blocked                | Total       
+-------------------------------------------------------------------------------------
+Top 1K       | 506 (54.0%)            | 431 (46.0%)            | 937         
+Top 10K      | 4,306 (52.8%)          | 3,850 (47.2%)          | 8,156       
+Top 100K     | 44,052 (55.7%)         | 34,995 (44.3%)         | 79,047      
+Top 1M       | 484,416 (58.9%)        | 338,023 (41.1%)        | 822,439     
+
+====================================================================================================
+TOP 10 MOST COMMON X-FRAME-OPTIONS VALUES
+Total Processed: 822,439 | Total Using Header(s): 318,983
+====================================================================================================
+ 1. No XFO                                                       -> 503,456 ( 61.2% overall) | [N/A]
+ 2. SAMEORIGIN                                                   -> 214,255 ( 26.1% overall) | [ 67.2% of adoption]
+ 3. DENY                                                         -> 81,341  (  9.9% overall) | [ 25.5% of adoption]
+ 4. SAMEORIGIN | SAMEORIGIN                                      -> 12,515  (  1.5% overall) | [  3.9% of adoption]
+ 5. ALLOWALL                                                     -> 1,152   (  0.1% overall) | [  0.4% of adoption]
+ 6. DENY | SAMEORIGIN                                            -> 1,016   (  0.1% overall) | [  0.3% of adoption]
+ 7. SAMEORIGIN | DENY                                            -> 844     (  0.1% overall) | [  0.3% of adoption]
+ 8. SAMEORIGIN, SAMEORIGIN                                       -> 764     (  0.1% overall) | [  0.2% of adoption]
+ 9. SAMEORIGIN, SAMEORIGIN | SAMEORIGIN                          -> 689     (  0.1% overall) | [  0.2% of adoption]
+10. DENY | DENY                                                  -> 404     (  0.0% overall) | [  0.1% of adoption]
+
+====================================================================================================
+TOP 10 MOST COMMON CSP FRAME-ANCESTORS VALUES
+Total Processed: 822,439 | Total Using Header(s): 136,347
+====================================================================================================
+ 1. No frame-ancestors                                           -> 686,092 ( 83.4% overall) | [N/A]
+ 2. 'none'                                                       -> 57,746  (  7.0% overall) | [ 42.4% of adoption]
+ 3. 'self'                                                       -> 38,529  (  4.7% overall) | [ 28.3% of adoption]
+ 4. 'self' mitiendanube.com *.mitiendanube.com lojavirtualnuvem.com.br *.lojavirtualnuvem.com.br mitiendanube.com.ar *.mitiendanube.com.ar mitiendanube.com.mx *.mitiendanube.com.mx mitiendanube.com.co *.mitiendanube.com.co mitiendanube.cl *.mitiendanube.cl -> 2,179   (  0.3% overall) | [  1.6% of adoption]
+ 5. *                                                            -> 2,109   (  0.3% overall) | [  1.5% of adoption]
+ 6. 'self' http://webvisor.com                                   -> 541     (  0.1% overall) | [  0.4% of adoption]
+ 7. 'self' | 'self'                                              -> 480     (  0.1% overall) | [  0.4% of adoption]
+ 8. 'self' *.s3waas.gov.in                                       -> 467     (  0.1% overall) | [  0.3% of adoption]
+ 9. 'self' https://s.salla.sa https://mahally.com/ https://portal.salla.partners -> 436     (  0.1% overall) | [  0.3% of adoption]
+10. https://*.craigslist.org                                     -> 400     (  0.0% overall) | [  0.3% of adoption]
+
+====================================================================================================
+TOP 10 MOST COMMON COMBINATIONS
+Total Processed: 822,439 | Total Using Header(s): 343,757
+====================================================================================================
+ 1. XFO: No XFO | CSP FA: No frame-ancestors                     -> 478,682 ( 58.2% overall) | [N/A]
+ 2. XFO: SAMEORIGIN | CSP FA: No frame-ancestors                 -> 167,436 ( 20.4% overall) | [ 48.7% of adoption]
+ 3. XFO: DENY | CSP FA: 'none'                                   -> 53,999  (  6.6% overall) | [ 15.7% of adoption]
+ 4. XFO: SAMEORIGIN | CSP FA: 'self'                             -> 28,637  (  3.5% overall) | [  8.3% of adoption]
+ 5. XFO: DENY | CSP FA: No frame-ancestors                       -> 22,914  (  2.8% overall) | [  6.7% of adoption]
+ 6. XFO: SAMEORIGIN | SAMEORIGIN | CSP FA: No frame-ancestors    -> 9,590   (  1.2% overall) | [  2.8% of adoption]
+ 7. XFO: No XFO | CSP FA: 'self'                                 -> 5,789   (  0.7% overall) | [  1.7% of adoption]
+ 8. XFO: No XFO | CSP FA: 'self' mitiendanube.com *.mitiendanube.com lojavirtualnuvem.com.br *.lojavirtualnuvem.com.br mitiendanube.com.ar *.mitiendanube.com.ar mitiendanube.com.mx *.mitiendanube.com.mx mitiendanube.com.co *.mitiendanube.com.co mitiendanube.cl *.mitiendanube.cl -> 2,179   (  0.3% overall) | [  0.6% of adoption]
+ 9. XFO: DENY | CSP FA: 'self'                                   -> 1,907   (  0.2% overall) | [  0.6% of adoption]
+10. XFO: SAMEORIGIN | CSP FA: 'none'                             -> 1,844   (  0.2% overall) | [  0.5% of adoption]

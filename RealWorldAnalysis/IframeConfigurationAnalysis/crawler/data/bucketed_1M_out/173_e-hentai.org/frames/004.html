@@ -1,0 +1,42 @@
+<html><head>
+	<title></title>
+<style>* {margin: 0; padding: 0; font-size: 100%;} .spot-img {display: block!important; width: 100%!important; height: auto!important;}</style>
+</head>
+<body data-campaignuuid="0c95b442-1b78-4adb-806a-ae0e18dbc6e4" marginwidth="0" marginheight="0"><div style="position: relative; width: 728px; height: 90px;">
+<iframe id="child-iframe-99" referrerpolicy="no-referrer" width="728px" height="90px" style="width:100%;height:100%;border:0;" src="javascript:window.location.replace('https://creative.xxxvjmp.com/widgets/v4/Universal?creativeId=728teenrsgirlswl&amp;tag=girls%2Fteens&amp;targetDomain=&amp;buttonColor=&amp;hideModelNameOnSmallSpots=1&amp;hideTitleOnSmallSpots=1&amp;liveBadgeColor=&amp;showButton=1&amp;showModelName=1&amp;showTitle=1&amp;showLiveBadge=1&amp;isXhDesign=0&amp;actionButtonPlacement=bottom&amp;thumbSizeKey=small&amp;hideButtonOnSmallSpots=1&amp;userId=ebe1e2aa04642c4dc9f7e9a5dfdb455c9ef1b6825ab8b9414a96e56e40140e75&amp;autoplay=all&amp;autoplayForce=1&amp;showModal=signup&amp;noc=1&amp;quality=120p')"></iframe>
+    <div id="click-wrapper" style="position:absolute;top:0;left:0;right:0;bottom:0;cursor: pointer;"></div>
+</div>
+<script>
+    (function initBannerClick() {
+        var iframe = document.getElementById('child-iframe-99');
+        var clickWrapper = document.getElementById('click-wrapper');
+        var offerId = 45440;
+        var url = 'https://t.nettrck.store/c1/0c95b442-1b78-4adb-806a-ae0e18dbc6e4?cost=%7BcostPlaceholder%7D&cv1=%7BdynamicCON%7D&cv2=AT&cv3=115&cv4=6666&cv5=19869&cv6=0&externalId=%7BextPlaceholder%7D&p=eyJzIjozNjA0MSwiZiI6MTgsInJpIjoyNjMyNCwicGgiOjg2MzE5LCJwIjoxLCJvZiI6NDE3NDYsIm8iOjEsIm4iOjUyMywiZmwiOjI4NTU0LCJiIjoyODUxNjYsImJzIjoiNzI4eDkwIn0';
+
+        if (typeof offerId === 'undefined' || !offerId) {
+            console.debug('offerId not found');
+            return;
+         }
+        function isMobileDevice() {
+            return ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/)) ||
+                   /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
+                   /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform);
+        }
+        var quality = isMobileDevice() ? '120p' : '240p';
+        var baseUrl = 'https://creative.xxxvjmp.com/widgets/v4/Universal?creativeId=728teenrsgirlswl&tag=girls%2Fteens&targetDomain=&buttonColor=&hideModelNameOnSmallSpots=1&hideTitleOnSmallSpots=1&liveBadgeColor=&showButton=1&showModelName=1&showTitle=1&showLiveBadge=1&isXhDesign=0&actionButtonPlacement=bottom&thumbSizeKey=small&hideButtonOnSmallSpots=1&userId=ebe1e2aa04642c4dc9f7e9a5dfdb455c9ef1b6825ab8b9414a96e56e40140e75&autoplay=all&autoplayForce=1&showModal=signup&noc=1'; 
+       var modifiedUrl = baseUrl + '&quality=' + quality;
+        iframe.src = "javascript:window.location.replace('" + modifiedUrl + "')";
+        iframe.onload = function() {
+            try {
+                clickWrapper.onclick = function(e) {
+                    var clickUrl = url + '&offerId=' + offerId + "&tag=girls%2Fteens";
+                    console.debug('URL to click');
+                    console.debug(clickUrl);
+                    window.open(clickUrl, '_blank').focus();
+                };
+                clickWrapper.style.position = 'absolute';
+            } catch (e) {}
+        };
+    })();
+</script>
+</body></html>

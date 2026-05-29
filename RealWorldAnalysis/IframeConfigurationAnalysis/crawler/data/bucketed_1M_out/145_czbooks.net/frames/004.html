@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body>
+<script>
+  const COOKIE_NAME = 'AviviD_uuid';
+  const domain = '.likr.com.tw';
+  const expireDays = 10;
+  const expires = new Date(Date.now() + expireDays * 86400000).toUTCString();
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  function generateUUIDv4() {
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    return [...bytes].map((b, i) =>
+      (i === 4 || i === 6 || i === 8 || i === 10 ? '-' : '') +
+      b.toString(16).padStart(2, '0')
+    ).join('');
+  }
+
+  let uuid = getCookie(COOKIE_NAME);
+  let isNew = false;
+  if (!uuid || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(uuid)) {
+    uuid = generateUUIDv4();
+    isNew = true;
+  }
+
+  document.cookie = `${COOKIE_NAME}=${uuid}; expires=${expires}; path=/; domain=${domain}; SameSite=None; Secure`;
+  document.cookie = `uuid=${uuid}; expires=${expires}; path=/; domain=${domain}; SameSite=None; Secure`;
+  if (isNew) {
+    const oneDay = new Date(Date.now() + 86400000).toUTCString();
+    document.cookie = `AviviD_new=1; expires=${oneDay}; path=/; domain=${domain}; SameSite=None; Secure`;
+  }
+
+  console.log('[UUID] Cookie 寫入完成：', uuid);
+  parent.postMessage(uuid, '*');
+</script>
+
+
+</body></html>

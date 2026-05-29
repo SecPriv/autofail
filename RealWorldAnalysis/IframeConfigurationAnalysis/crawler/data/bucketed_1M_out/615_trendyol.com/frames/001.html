@@ -1,0 +1,102 @@
+<html lang="tr"><head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&amp;display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@500&amp;display=swap" rel="stylesheet">
+        <style>
+          html {
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+          *, *:before, *:after {
+            box-sizing: inherit;
+        }
+          body {
+          margin: 0;
+          padding: 0;
+          font-weight: normal;
+        }
+        .live-support-button {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 6px 16px;
+          width: 100%;
+          height: 100%;
+          /* Main Orange */
+          background: #F27A1A;
+          border-radius: 4px 4px 0 0;
+          cursor: pointer;
+          -webkit-user-select: none; /* Safari */
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* IE10+/Edge */
+          user-select: none;
+        }
+        .live-support-button-v2 {
+            cursor: pointer;
+            background: #fff;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%) padding-box, linear-gradient(90deg, #FF6C18 0%, #FFE190 100%) border-box;
+        }
+        .live-support-button-v2 .live-support-button-text {
+            color: #F27A1A;
+            font-weight: 400;
+        }
+        .live-support-button-v2 .live-support-button-chevron {
+            margin-left: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .live-support-button-v2-opened .live-support-button-chevron {
+            transform: rotate(180deg);
+        }
+
+        .live-support-button-text {
+          font-family: Roboto,sans-serif !important;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #FFFFFF;
+          margin-left: 20px;
+        }
+        
+        /* RTL support for Arabic */
+        .live-support-button-rtl {
+          direction: rtl;
+        }
+        .live-support-button-rtl .live-support-button-text {
+          margin-left: 0;
+          margin-right: 20px;
+        }
+        .live-support-button-rtl.live-support-button-v2 .live-support-button-chevron {
+          margin-left: 0;
+          margin-right: 5px;
+        }
+        .live-support-button-v2 .live-support-button-text {
+            font-family: 'Source Sans 3',sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+        }
+        </style>
+        <script type="text/javascript">
+          function onButtonClick() {
+          if(!window.top) {
+          console.error('accessing sticky html without iframe');
+        }
+          window.top.postMessage('trendyolAssistantStickyButtonClick', '*');
+        }
+        </script>
+        <title>Trendyol Assistant</title>
+</head>
+<body>
+<div id="live-support-button" class="live-support-button" onclick="onButtonClick()">
+    <span class="live-support-button-text">
+            Trendyol Assistant
+        </span>
+</div>
+
+</body></html>

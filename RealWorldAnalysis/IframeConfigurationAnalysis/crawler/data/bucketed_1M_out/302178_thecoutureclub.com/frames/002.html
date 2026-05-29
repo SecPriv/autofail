@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Men's &amp; Women's Clothing | The Couture Club</title>
+    <script src="https://www.thecoutureclub.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+// Step 1. Initialize the JavaScript pixel SDK (make sure to exclude HTML)
+
+const script = document.createElement('script');
+script.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=AW-869754542');
+script.setAttribute('async', '');
+document.head.appendChild(script);
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','AW-869754542', {'allow_enhanced_conversions':true});
+
+
+// Step 2. Subscribe to customer events with analytics.subscribe(), and add tracking
+//  analytics.subscribe("event_name", event => {
+//    pixel("track", "event_name", event.data);
+//  });
+
+analytics.subscribe("checkout_completed", (event) => {
+
+  console.log(event.data?.checkout?.totalPrice.amount)
+  
+  gtag('set', 'user_data', {
+			"email": event.data?.checkout?.email,
+			"address": {
+				"first_name": event.data?.checkout?.shippingAddress?.firstName,
+				"last_name": event.data?.checkout?.shippingAddress?.lastName,
+				"street": event.data?.checkout?.shippingAddress?.address1,
+				"city": event.data?.checkout?.shippingAddress?.city,
+				"region": event.data?.checkout?.shippingAddress?.province,
+				"postal_code": event.data?.checkout?.shippingAddress?.zip,
+				"country": event.data?.checkout?.shippingAddress?.country
+			}
+		});
+
+gtag('event', 'conversion', { 'send_to': 'AW-869754542/RZNoCK37_J8YEK7N3Z4D', 'value': event.data?.checkout?.totalPrice.amount, 'currency': event.data?.checkout?.currencyCode, 'transaction_id': event.data?.checkout?.token });
+
+gtag('event', 'conversion', { 'send_to': 'AW-869754542/CmoTCKr7_J8YEK7N3Z4D', 'value': event.data?.checkout?.totalPrice.amount, 'currency': event.data?.checkout?.currencyCode, 'transaction_id': event.data?.checkout?.token }); 
+  
+});
+
+
+
+
+
+
+});})(self.webPixelsManager.createShopifyExtend('25264180', 'custom'));
+
+</script>
+
+  <script src="https://www.googletagmanager.com/gtag/js?id=AW-869754542" async=""></script></head>
+  <body>
+
+</body></html>

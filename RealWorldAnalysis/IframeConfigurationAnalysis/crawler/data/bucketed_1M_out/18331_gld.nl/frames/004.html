@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><script>(function () {
+    try {
+        let OUR_HOSTNAME = "cdn.optoutadvertising.com";
+        if (window.location.host === OUR_HOSTNAME) {
+            Storage.prototype.setItem = function () {}
+            window.indexedDB.open = function () {}
+        }
+    }
+    catch (e) { };
+})();
+</script><script>(function () {
+    try {
+        let OUR_HOSTNAME = "cdn.optoutadvertising.com";
+        if (window.location.host === OUR_HOSTNAME) {
+            var theCookies = document.cookie.split(';');
+            for (var i = 0; i < theCookies.length; i++) {
+                if (theCookies[i] !== "") {
+                    var del = "=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                    var namedel = theCookies[i].split('=')[0] + del
+                    document.cookie = namedel;
+                }
+            }
+
+            document.__defineSetter__("cookie", function (val) {
+            });
+        }
+    }
+    catch (e) { };
+})();
+</script><script>(function () {
+    let OUR_HOSTNAME = "cdn.optoutadvertising.com";
+    var decodeURLRecursively = function (url) {
+        if (url.indexOf('%') != -1) {
+            return decodeURLRecursively(decodeURIComponent(url));
+        }
+        return url;
+    }
+    let OUR_CLICKHOST = "events.optoutadserving.com";
+    let ORIG_CLICK = window.open
+    if (window.location.host === OUR_HOSTNAME) {
+        window.open = function (e, f) {
+            try {
+                if (typeof OPTOUT_489263_CLICK !== 'undefined') {
+                    ORIG_CLICK(OPTOUT_489263_CLICK);
+                }
+                else {
+                    let splitted = e.split(OUR_CLICKHOST);
+                    if (splitted.length > 1) {
+                        ORIG_CLICK("https://" + OUR_CLICKHOST + decodeURLRecursively(splitted[1]));
+                    }
+                    else {
+                        ORIG_CLICK(e, f);
+                    }
+                }
+            } catch {
+                ORIG_CLICK(e, f);
+            }
+        };
+    }
+})();
+
+
+</script><script>(function () {
+    var decodeURLRecursively = function (url) {
+        if (url.indexOf('%') != -1) {
+            return decodeURLRecursively(decodeURIComponent(url));
+        }
+        return url;
+    }
+    try {
+        document.addEventListener("DOMContentLoaded", function (event) {
+            let OUR_HOSTNAME = "cdn.optoutadvertising.com";
+            let OUR_CLICKHOST = "events.optoutadserving.com";
+            if (window.location.hostname === OUR_HOSTNAME) {
+                var links = document.getElementsByTagName("a");
+                for (var i = 0, max = links.length; i < max; i++) {
+                    let splitted = window.location.toString().split(OUR_CLICKHOST);
+                    if (splitted.length > 1) { //our url is found
+                        let secondSplit = splitted[1].split("%26cb%3D");
+                        if (secondSplit.length > 1) {//our url encoded
+                            links[i].href = "https://" + OUR_CLICKHOST + decodeURLRecursively(secondSplit[0]);
+                        }
+                        else {
+                            let thirdSplit = splitted[1].split("&cb=");
+                            if (thirdSplit.length > 1) { //our url is unencoded
+                                links[i].href = "https://" + OUR_CLICKHOST + decodeURLRecursively(thirdSplit[0]);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    catch (e) { }
+})();
+</script>
+<script src="https://proxy.optoutadvertising.com/redirect/prod/display/489263/rehosted_oo/script/mraid2.js"></script>
+<script src="https://proxy.optoutadvertising.com/redirect/prod/display/489263/rehosted_oo/script/adscience_dynamic_banner.js"> 
+</script><meta name="referrer" content="no-referrer">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="ad.size" content="width=300,height=250">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://proxy.optoutadvertising.com/redirect/prod/display/489263/rehosted_oo/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="SplitText.min.js"></script>
+  <script src="animation.js"></script> 
+
+   <script type="text/javascript">
+    var clickTag = "https://proxy.optoutadvertising.com/redirect/prod/display/489263/rehosted_oo/";
+    window.onload = function() {
+      init();
+
+    };
+  </script>
+  
+</head>
+
+<body>
+
+    <div id="container" style="visibility: visible;">
+        
+        <img id="bg" class="images" src="bg.jpg" style="transform: translate3d(0px, 0px, 0px) scale(1.0936, 1.0936); filter: brightness(0.9712);">
+        <img id="car" class="images highlight" src="car.png" style="transform: translate3d(0px, 0px, 0px) scale(1.0936, 1.0936);">
+        
+        <img id="footer" class="images" src="footer.png">
+
+
+        <div id="tekst-1" class="tekst" style="visibility: visible;"><div style="display: block; text-align: left; position: relative; transform: translate(0px, 0px); opacity: 1;">Ook elektrisch rijden?</div></div>
+        <div id="tekst-2" class="tekst" style="opacity: 1; visibility: inherit;"><div style="display: block; text-align: left; position: relative; transform: translate(0px, 0px); opacity: 1;">Easy.</div></div>
+          <img id="bereik" class="images" src="bereik.png" style="opacity: 1; visibility: inherit;">
+
+        <div class="button-container" style="width: 100px;">
+          <img id="prijs" src="prijs.png">
+        </div>
+
+        <a href="javascript:ADSCIENCE_CLICK()"><div id="border"></div></a>
+    </div>
+
+
+
+</body></html>

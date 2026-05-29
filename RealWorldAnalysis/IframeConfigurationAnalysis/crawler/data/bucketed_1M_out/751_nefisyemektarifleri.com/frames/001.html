@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"></head>
+<body style="display:none">
+<script>
+function cookie(u, d, e) {
+	try{
+	if (typeof(d) != "undefined") {
+		if (e) {
+			var b = new Date();
+			b.setTime(b.getTime() + Math.ceil(e * 86400000));
+			var a = "; expires=" + b.toGMTString() + ";"
+		} else {
+			var a = ""
+		}
+		document.cookie = u + "=" + d + a + "; path=/; SameSite=None; Secure"
+	} else {
+		var nameEQ = u + '=';
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ')
+				c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) == 0)
+				return c.substring(nameEQ.length, c.length);
+		}
+		return '';
+	}
+	}catch(ecv){}
+	return '';
+}
+function getUser(){
+	var pid=cookie('pId');
+	if(pid!='') {
+		try{localStorage.setItem('pId',pid);}catch(expd){}
+		return pid;
+	}
+	pid=localStorage.getItem('pId');
+	if(pid!=null)
+		return pid;
+	return 'fetch';
+}
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+window[eventMethod](eventMethod == "attachEvent" ? "onmessage" : "message", function (e) {
+try{
+	 var data = JSON.parse(e[e.message ? "message" : "data"]);
+	 if(data.a=='user'){
+		e.source.postMessage('userId£'+getUser(),'*');
+		if(e.source!=top)
+			top.postMessage('userId£'+getUser(),'*');
+	 } else if(data.a=='fetch'){
+		var u=getUser(e);
+		if(u=='fetch'){
+			cookie('pId',data.v,999);
+			localStorage.setItem('pId',data.v);
+		}
+		e.source.postMessage('userId£'+getUser(),'*');
+		if(e.source!=top)
+			top.postMessage('userId£'+getUser(),'*');
+	 }
+ }catch(edsf){
+ }
+});
+</script>
+
+</body></html>

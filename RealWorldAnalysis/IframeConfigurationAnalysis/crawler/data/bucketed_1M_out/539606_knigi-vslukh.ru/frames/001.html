@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head>
+        <script>
+            var pixels = [];
+            var params = [];
+            function getURLParameter(name) {
+                return decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,null])[1]
+                );
+            }
+                            params.push({key: "${USER_ID}", value: getURLParameter("USER_ID")});
+                            params.push({key: "${CACHEBUSTER}", value: getURLParameter("CACHEBUSTER")});
+                            params.push({key: "${BUYER_USER_ID}", value: getURLParameter("BUYER_USER_ID")});
+                                        pixels.push({type: 'image', url: ('https://x.bidswitch.net/sync?ssp=between')});
+                            pixels.push({type: 'image', url: ('https://sync.bumlam.com/?src=aid0')});
+                            pixels.push({type: 'image', url: ('https://www.tns-counter.ru/V13a****betweenx_ru/ru/CP1251/tmsec=betweenx_bx-ban-1/${CACHEBUSTER}')});
+                            pixels.push({type: 'image', url: ('https://x.bidswitch.net/sync?dsp_id=429&user_id=${USER_ID}&expires=60')});
+                            pixels.push({type: 'iframe', url: ('https://onetag-sys.com/usync/?pubId=5d1628750185ace')});
+                            pixels.push({type: 'image', url: ('https://ads.betweendigital.com/match?bidder_id=43554&callback_url=https%3A%2F%2Fan.yandex.ru%2Fmapuid%2Fbetweendigitalis%2F${USER_ID}')});
+                            pixels.push({type: 'image', url: ('https://t.adx.opera.com/sync?vendor=60079&uid=${USER_ID}')});
+                            pixels.push({type: 'image', url: ('https://cm-exchange.toast.com/pixel?cm_pid=1641267272&cm_puid=${USER_ID}&toast_push')});
+                            pixels.push({type: 'image', url: ('https://cookies.andbeyond.media/3b3bd4177dc9cc764d515f98ec9e416d.gif?puid=${USER_ID}')});
+                            pixels.push({type: 'image', url: ('https://s.ad.smaato.net/c/?dspInit=1001935&dspCookie=${USER_ID}')});
+                            pixels.push({type: 'image', url: ('https://redirect.frontend.weborama.fr/rd?url=https%3A%2F%2Flbs-ru1.ads.betweendigital.com%2Fmatch%3Fbidder_id%3D35%26external_matching%3D1%26external_user_id%3D%7BWEBO_CID%7D')});
+                            pixels.push({type: 'image', url: ('https://x01.aidata.io/0.gif?pid=VIHUB&id=${USER_ID}')});
+                        window.onload = function () {
+                var elems = [];
+                for(var i=0; i<pixels.length; i++) {
+                    for(var n=0; n<params.length; n++) {
+                        if (params[n].value != "null") {
+                            pixels[i].url = pixels[i].url.replace(params[n].key, params[n].value);
+                        }
+                    }
+                    switch(pixels[i].type) {
+                        case "image":
+                            var elem = document.createElement("img");
+                            break;
+                        case "iframe":
+                            var elem = document.createElement("iframe");
+                            break;
+                        case "js":
+                            var elem = document.createElement("script");
+                            break;
+                    }
+                    elem.setAttribute("async", true);
+                    elems.push(elem);
+                }
+                var num = 0;
+
+                var start = function() {
+                    if(elems[num] !== undefined) {
+                        elems[num].id = "p"+num;
+                        document.body.appendChild(elems[num]);
+                        var cur = document.getElementById('p'+num);
+                        cur.onload = function() {num++; start()}
+                        cur.onerror = function() {num++; start()}
+                        cur.src = pixels[num].url;     
+                    }
+                }
+                
+                start();
+            }
+        </script>
+    </head>
+    <body>
+<img async="true" id="p0" src="https://x.bidswitch.net/sync?ssp=between"><img async="true" id="p1" src="https://sync.bumlam.com/?src=aid0"><img async="true" id="p2" src="https://www.tns-counter.ru/V13a****betweenx_ru/ru/CP1251/tmsec=betweenx_bx-ban-1/250937"><img async="true" id="p3" src="https://x.bidswitch.net/sync?dsp_id=429&amp;user_id=b435941f-e53d-528f-b7d1-2567ddc09183&amp;expires=60"><iframe async="true" id="p4" src="https://onetag-sys.com/usync/?pubId=5d1628750185ace"></iframe></body></html>

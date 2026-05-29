@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Mini-Solaranlage von solago – Dein Solarenergie-Experte</title>
+    <script src="https://solago.de/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+analytics.subscribe("checkout_completed",t=>{var c,d,f,h,p,g;var r="310474",n="https://analytics.webgains.io/",i=t.data.checkout,o=i.lineItems,a=[],s=1+t.data.checkout.totalTax.amount/(t.data.checkout.totalPrice.amount-t.data.checkout.totalTax.amount);for(var u of o){var l=u.variant.price.amount*u.quantity;l-=u.discountAllocations.reduce((v,y)=>v+y.amount.amount,0),l/=s,a.push({name:u.title,price:String(l.toFixed(4)),voucher:((d=(c=u.discountAllocations.find(v=>["ENTITLED","EXPLICIT"].includes(v.discountApplication.targetSelection)))==null?void 0:c.discountApplication)==null?void 0:d.title)||"",event:"",code:((f=u==null?void 0:u.variant)==null?void 0:f.sku)||((p=(h=u==null?void 0:u.variant)==null?void 0:h.product)==null?void 0:p.id)})}(function(v){var y="ITCVRQ";window[y]=window[y]||function(){(window[y].q=window[y].q||[]).push(arguments)},window[y].l=1*new Date;var b=document.createElement("script"),_=document.getElementsByTagName("script")[0];b.async=1,b.src=v,_.parentNode.insertBefore(b,_)})(n+r+"/main.min.js"),ITCVRQ("set","trk.programId",r),ITCVRQ("set","cvr",{value:String(a.reduce((v,y)=>v+parseFloat(y.price),0).toFixed(4)),currency:i.currencyCode,language:t.context.navigator.language,eventId:"",orderReference:i.order.id,comment:"https://"+t.context.window.location.hostname+"/admin/orders/"+i.order.id,multiple:"",checksum:"",items:a,customerId:i.order.customer.id,voucherId:((g=i.discountApplications[0])==null?void 0:g.title)||"",location:document.location.href}),ITCVRQ("conversion")})
+});})(self.webPixelsManager.createShopifyExtend('229835126', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

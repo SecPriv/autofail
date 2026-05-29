@@ -1,0 +1,778 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Fish World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <style>body {
+    font-family: arial,serif;
+    font-size: 16px;
+    padding-top: 3em;
+    min-width: 475px;
+    height: 100%;
+    overflow: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#loginEntryContainer h4, h2 {
+    text-align: center;
+    color: #024dc0ff;
+    margin-bottom: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#email, #password {
+    background-color: #d2eef9ff;
+}
+
+.content {
+    margin-top: 180px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #fdfdfd;
+}
+
+#prePasswordContent {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#welcomeMessage {
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2621d1;
+}
+
+#welcomeSubMessage {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #2621d1;
+}
+
+.dn {
+    display: none;
+}
+
+.btn-1 {
+    background-image: linear-gradient(to right, #39c439 0%, #66cf66 51%, #39c439 100%);
+
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 0 4px 2px -2px dimgrey;
+}
+
+#loginEntryContainer {
+    color: #2baacbff;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.login-checkbox {
+    padding-top: 8px;
+}
+
+.remember-me-checkbox {
+    font-size: 14px;
+}
+
+.horizontal-line {
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid #aaa;
+    padding: 0.5em 0 0.17em 0;
+    color: #000;
+    font: normal 150%/1.5 sans-serif;
+}
+
+label {
+    font-size: 15px;
+}
+
+#passwordTextToggle {
+    cursor: pointer;
+    font-size: 20px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+
+#loginPageImage {
+    max-width: 500px;
+    padding-top: 20px;
+}
+
+.auth-footer {
+    color: #313435;
+    margin: 15px auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: -1;
+}
+
+.auth-footer-link {
+    text-decoration: underline;
+    display: inline-block;
+    margin: 0 10px;
+}
+</style>
+    <style>.accountSelectionPage {
+    text-align: center;
+    background-image: linear-gradient(to bottom, #2076CB 0%, #478fdaff 51%, #2076cc 100%);
+    overflow: scroll;
+    padding-top: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 600px;
+}
+
+.accountSelectionPage h4 {
+    font-weight: bold;
+    color: white;
+}
+
+.middle-col {
+    padding-left: 30px;
+    margin: auto;
+}
+
+#account-list {
+    text-align: center;
+    margin-top: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.accountSelectionPage li {
+    margin-bottom: 5px;
+}
+
+#accounts .col-9 {
+    padding-top: 6px;
+}
+
+#accounts .col-3 {
+    padding-left: 20px;
+}
+
+#accounts .row {
+    background-color: #6aa2de;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-bottom: 2px;
+}
+
+#accountImage {
+    max-width: 102px;
+}
+
+h4 {
+    margin-bottom: 60px;
+}</style>
+    <style>#decoupled-gdpr-agreement {
+    margin-top: 40px;
+}
+
+#decoupled-gdpr-agreement #error-message {
+    margin-top: 15px;
+    color: #cd0404;
+    text-align: center;
+}
+
+#decoupled-gdpr-agreement #content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#decoupled-gdpr-agreement #content p {
+    font-size: 12px;
+}
+
+#decoupled-gdpr-agreement .t-and-p {
+    font-weight: bold;
+    text-align: center;
+}
+
+#decoupled-gdpr-agreement .checkbox {
+    margin-top: 10px;
+    border: 1px solid gray;
+    padding: 6px;
+    border-radius: 7px;
+    background-color: #ebf7ff;
+}
+
+#decoupled-gdpr-agreement #info-collect-container {
+    padding-top: 10px;
+    display: inline-flex;
+    font-size: 14px;
+}
+
+#decoupled-gdpr-agreement .info-collect-title {
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+    <div class="content">
+        <div id="prePasswordContent">
+            <div class="my-3 form-group" id="loginEntryContainer">
+                <h2 class="bold">Welcome Back</h2>
+                <h4>Log in to play</h4>
+                <div class="alert alert-info mt-3" role="alert">
+                    Need support with migrating from Facebook?<br><a href="/dotcom-info/" id="dotcomInfoLink" class="alert-link">Click here to see more information.</a>
+                </div>
+                <label class="mt-5" for="email">Enter your email:</label>
+                <input class="form-control input-box" type="email" id="email" name="email" required="">
+                <br>
+                <label for="password">Password:</label>
+                <div class="input-group">
+                    <input class="form-control input-box" type="password" id="password" name="password" required="">
+                    <i class="bi bi-eye" id="passwordTextToggle" onclick="eyeClicked()"></i>
+                </div>
+                <div class="form-check login-checkbox">
+                    <input class="form-check-input" type="checkbox" value="" id="rememberMeCheckBox" name="rememberMeCheckBox">
+                    <label class="form-check-label remember-me-checkbox" for="rememberMeCheckBox">
+                        Keep me signed in
+                    </label>
+                </div>
+                <div class="mt-3" id="textContainer" style="display: none" role="alert"></div>
+                <div class="button-container">
+                    <a class="btn btn-primary btn-1 px-5 py-2 my-3 text-center" id="submitBtn" onclick="onLoginButtonClicked()">
+                        Continue
+                    </a>
+                </div>
+                <div class="text-center forgot-pass-container">
+                    <a class="my-4" href="#" onclick="onForgotPasswordClicked(); return false;">Forgot your password?</a>
+                </div>
+            </div>
+            <div class="auth-footer" style="margin-bottom: 10px;">
+                <a href="https://www.bigvikinggames.com/terms-of-service/" target="_blank" class="auth-footer-link">Terms of Service</a> |
+                <a href="mailto:support@fishworldgame.com?subject=Support" class="auth-footer-link">Contact Support</a>
+            </div>
+        </div>
+        <div id="accountSelection" class="dn">
+            <div class="accountSelectionPage">
+    <h4>Select Account</h4>
+    <ul id="account-list"></ul>
+    <div id="accounts">
+    </div>
+</div>
+
+
+<script>
+
+    function accountClicked(userId) {
+        selectedAccount = userId;
+        setAccountId();
+    }
+
+    function setAccountId() {
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/authentication/setAccount.php',
+            dataType: 'json',
+            data: {
+                'accountId': selectedAccount,
+                'rememberMe': rememberMe
+            },
+            success: () => {
+                // check if we need to show cookies
+                hasUserAcceptedCookies(selectedAccount)
+            },
+            error: () => {
+                showGeneralErrors();
+            }
+        });
+    }
+
+    function hasUserAcceptedCookies() {
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/authentication/getUserDecoupledGdprAgreement.php',
+            dataType: 'json',
+            data: {
+                'account': selectedAccount
+            },
+            success: (response) => {
+                // check if we need to show cookies
+                if (response.accepted) {
+                    // maintain the query params
+                    window.location.href = '/' + document.location.search;
+                } else {
+                    showUserGdprAgreementPage();
+                }
+            },
+            error: () => {
+                showGeneralErrors();
+            }
+        });
+    }
+
+    function showUserGdprAgreementPage() {
+        $('#accountSelection').hide();
+        $('#userGdprAgreement').show();
+    }
+</script>        </div>
+
+        <div id="userGdprAgreement" class="dn">
+            <div id="decoupled-gdpr-agreement">
+    <h4 class="t-and-p">Terms and Privacy Update</h4>
+    <div id="content">
+        <p>We have updated our <a href="https://www.bigvikinggames.com/terms-of-service/" target="_blank">Terms of Service</a> and <a href="https://www.bigvikinggames.com/privacy-policy/" target="_blank">
+                Privacy Policy</a> to add clarity and compliance with the EU <a href="https://www.bigvikinggames.com/faq/" target="_blank">
+                General Data Protection Regulations (GDPR)</a>.  You can download a copy of all information collected, or delete your account at any time from the Account Settings.
+        </p>
+        <h7 class="subtitles">Information we collect</h7>
+        <div id="info-collect-container">
+            <ul>
+                <li>Full Name</li>
+                <li>Facebook Id</li>
+            </ul>
+            <ul>
+                <li>IP Address</li>
+                <li>Transaction History</li>
+            </ul>
+            <ul>
+                <li>Email Address (opt-in)</li>
+                <li>Birthday (opt-in)</li>
+            </ul>
+        </div>
+        <div class="checkbox">
+            <input id="gdprInfoCheckbox" name="collection" type="checkbox" class="js-gdprReqCheckbox">
+            <label for="gdprInfoCheckbox">I <b>accept</b> the collection of the information listed above.</label>
+        </div>
+        <div class="checkbox">
+            <input id="gdprTermsCheckbox" name="tos-pp" type="checkbox" class="js-gdprReqCheckbox">
+            <label for="gdprTermsCheckbox">I have <b>read and agree</b> to the Terms of Service and Privacy Policy.</label>
+        </div>
+        <div class="checkbox">
+            <h7 class="subtitles"> Age Validation </h7>
+            <div class="radio">
+                <input id="gdprAge16" type="radio" name="gdprAgeConsent" value="selfAgree">
+                <label for="gdprAge16">I am <b>16 years of age</b> or older.</label>
+            </div>
+            <div class="radio">
+                <input id="gdprGuardian" type="radio" name="gdprAgeConsent" value="guardianAgree">
+                <label for="gdprGuardian">I am a <b>parent or guardian</b> and my child is 13 years of age or older.</label>
+            </div>
+        </div>
+        <div id="error-message" class="dn">
+            <b>You must accept all terms and verify your age to continue.</b>
+        </div>
+        <div class="button-container">
+            <a class="btn btn-primary btn-1 px-5 py-2 my-3 text-center" id="gdprSubmitBtn" onclick="onSubmitDecoupledGdprClicked()">
+                Agree
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function onSubmitDecoupledGdprClicked() {
+        hideError();
+        disableButton();
+
+        let collection = $('input[name = "collection"]:checked').val();
+        let tosAndPp = $('input[name = "tos-pp"]:checked').val();
+        let ageCheck = $('input[name = "gdprAgeConsent"]:checked').val();
+
+        if (collection === undefined || tosAndPp === undefined || ageCheck === undefined) {
+            showError();
+            enableButton();
+            return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/authentication/updateUserDecoupledGdprAgreement.php',
+            dataType: 'json',
+            data: {
+                'account': selectedAccount
+            },
+            success: () => {
+                window.location.href = '/' + document.location.search;
+            },
+            error: () => {
+                enableButton();
+                hideDecoupledUserGdprAgreement();
+                showGeneralErrors();
+            }
+        });
+    }
+
+    function hideDecoupledUserGdprAgreement() {
+        $('#userGdprAgreement').hide();
+    }
+
+    function disableButton() {
+        $('#gdprSubmitBtn').css('pointer-events', 'none').css('opacity', '40%');
+    }
+
+    function enableButton() {
+        $('#gdprSubmitBtn').css('pointer-events', '').css('opacity', '');
+    }
+
+    function showError() {
+        $('#error-message').show();
+    }
+
+    function hideError() {
+        $('#error-message').hide();
+    }
+</script>        </div>
+
+        <div id="generalError" class="dn">
+            <p class="my-3" style="line-height: 1.5em;">An error has occurred, please try again later</p>
+<a href="https://playfishworld.com" target="_parent">
+    <span class="btn btn-primary px-3 py-2 my-3" style="color: white; background-color: #00a8ff; text-align: center; font-size: 1.2em;">
+        Return to Fish World
+    </span>
+</a>
+        </div>
+    </div>
+    <div class="text-center">
+        <img src="/authentication/images/bvg_logo_stamp.png" alt="BVG Brand Logo">
+    </div>
+    <style>#cookie-container p {
+    margin: 0;
+    padding-left: 30px;
+}
+
+.x-button {
+    text-align: right;
+    padding-right: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0a0e0a;
+}
+
+#cookie-container button {
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.open {
+    max-height: 70px;
+    transition: max-height .5s ease-in;
+}
+
+.closed {
+    max-height: 0;
+    transition: max-height .5s ease-in;
+}
+
+.cookie-text {
+    text-align: left;
+    font-size: 14px;
+}
+
+/*#acceptCookiesButton {*/
+/*    background-color: #fdfdfd;*/
+/*    color: #346e4a;*/
+/*    border: 2px solid #346e4a;*/
+/*}*/
+
+#acceptCookiesButton {
+    background-color: #346e4a;
+    color: white;
+    border: 2px solid #346e4a;
+}
+
+#cookieSettingsButton {
+    background-color: #346e4a;
+    color: white;
+    border: 2px solid #346e4a;
+}
+
+.padding {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#cookie-container {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 101%;
+}</style>
+<div id="cookie-container" class="row open padding">
+    <div class="col-7 cookie-text">
+        <p>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish. <b><a href="https://www.bigvikinggames.com/privacy-policy/">Read our privacy policy.</a></b></p>
+    </div>
+    <div class="col-4">
+        <button id="acceptCookiesButton" onclick="acceptCookiesButtonClicked()">Accept Cookies</button>
+    </div>
+    <a class="col-1 x-button" onclick="hideCookieBar()">X</a>
+</div>
+
+<script>
+    $(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/getUserCookieAgreementStatus.php',
+            dataType: 'json',
+            success: (response) => {
+                if (!response.accepted) {
+                    showAcceptCookies();
+                }
+            },
+            error: (response) => {
+                console.log(response);
+            }
+        });
+    });
+
+    function acceptCookiesButtonClicked() {
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/userAcceptedCookies.php',
+            dataType: 'json',
+            success: () => {},
+            error: () => {
+                console.log('error accepting cookies')
+            }
+        });
+
+        hideCookieBar();
+    }
+
+    function hideCookieBar() {
+        $('#cookie-container').removeClass('open').addClass('closed').addClass('dn').removeClass('padding');
+    }
+
+    function showAcceptCookies() {
+        $('#cookie-container').removeClass('dn').removeClass('closed').addClass('open').addClass('padding');
+    }
+</script>
+
+
+
+<style>
+    body {
+        background-image: url('/images/login-page/login-page-background-with-logo.jpg');
+    }
+</style>
+
+<script>
+    let rememberMe = null;
+    let selectedAccount = null;
+
+    let container = document.getElementById("prePasswordContent");
+    container.addEventListener("keypress", function(event) {
+
+        if (event.key === "Enter") {
+            event.preventDefault();
+            onLoginButtonClicked();
+        }
+    });
+
+    function onLoginButtonClicked() {
+        resetErrors();
+        $('#submitBtn').css('pointer-events', 'none').css('opacity', '40%');
+
+        // Get the form data
+        let email = $('#email').val();
+        let password = $('#password').val();
+        rememberMe = $('#rememberMeCheckBox').is(':checked');
+
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/authentication/login.php',
+            dataType: 'json',
+            data: {
+                'email': email,
+                'password': password
+            },
+            success: (response) => {
+                resetButton();
+                if (response && response.statusCode === 200 && response.data.accounts) {
+                    // show the page that displays users different accounts
+                    prepareAccountSelectionPage(response.data.accounts);
+                    showAccountSelectionPage();
+                }
+            },
+            error: (response) => {
+                resetButton();
+
+                if (response.status === 400) {
+                    inputErrors(response.responseJSON.data.errors);
+                } else if (response.status === 404) {
+                    invalidError();
+                } else {
+                    showGeneralErrors();
+                }
+            }
+        });
+    }
+
+    function onForgotPasswordClicked() {
+        window.location.href = '/authentication/forgot-password.php' + document.location.search;
+    }
+
+    function prepareAccountSelectionPage(accounts) {
+        $.ajax({
+            type: 'POST',
+            url: '/ajax_scripts/loginService/authentication/getUserInfo.php',
+            dataType: 'json',
+            data: {
+                'userIds': accounts
+            },
+            success: (response) => {
+                if (response && response[0]) {
+                   populateAccountSelectionPage(response);
+                } else {
+                    showGeneralErrors();
+                }
+            },
+            error: () => {
+                showGeneralErrors();
+            }
+        });
+    }
+
+    function populateAccountSelectionPage(userData) {
+        let accountList = document.getElementById("accounts");
+
+        // Loop through the numbers array and create <li> elements
+        for (let i = 0; i < userData.length; i++) {
+            let row = document.createElement('div');
+            row.classList.add('row');
+            row.setAttribute('data-id', userData[i].user_id);
+
+            // goldies image on the left
+            let colTwo = document.createElement('div');
+            colTwo.classList.add('col-2');
+
+            let image = document.createElement('img');
+            image.src = "/images/friendSelector/goldie.png";
+            image.alt = 'goldfish';
+            image.id = 'accountImage';
+
+            colTwo.appendChild(image);
+
+            // info in the middle
+            let colSeven = document.createElement('div');
+            colSeven.classList.add('col-7', 'middle-col');
+
+            let name = document.createElement('div');
+            name.innerText = 'Account Name: ' + userData[i].first_name;
+
+            let level = document.createElement('div');
+            level.innerText = 'Level: ' + userData[i].level;
+
+            let lastPlayed = document.createElement('div');
+            lastPlayed.innerText = 'Last Played: ' + userData[i].last_use;
+
+            colSeven.appendChild(name);
+            colSeven.appendChild(level);
+            colSeven.appendChild(lastPlayed);
+
+            let colThree = document.createElement('div');
+            colThree.classList.add('col-3');
+
+            let playButton = document.createElement('a');
+            playButton.classList.add('btn', 'btn-primary', 'btn-1', 'px-4', 'py-2', 'my-3', 'text-center');
+            playButton.id = 'submitBtn';
+            playButton.innerHTML = 'Play'
+            playButton.onclick = function() {
+                accountClicked(userData[i].user_id);
+            }
+
+            colThree.appendChild(playButton);
+
+            row.appendChild(colTwo);
+            row.appendChild(colSeven);
+            row.appendChild(colThree);
+
+            accountList.appendChild(row);
+        }
+    }
+
+    function eyeClicked() {
+        const passElem = document.getElementById('password');
+        const eye = document.getElementById('passwordTextToggle');
+
+        if (passElem.type === "password") {
+            passElem.type = "text";
+            eye.classList.replace('bi-eye', 'bi-eye-slash');
+        } else {
+            passElem.type = "password";
+            eye.classList.replace('bi-eye-slash', 'bi-eye');
+        }
+    }
+
+    function showAccountSelectionPage() {
+        $('#prePasswordContent').hide();
+        $('#accountSelection').show();
+    }
+
+    function showGeneralErrors() {
+        $('#prePasswordContent').hide();
+        $('#accountSelection').hide();
+        $('#generalError').show();
+    }
+
+    function resetErrors() {
+        $('#textContainer').hide().html('');
+    }
+
+    function resetButton() {
+        $('#submitBtn').css('pointer-events', '').css('opacity', '');
+    }
+
+    function invalidError() {
+        let html = "<ul class='mb-0'><li>Invalid email or password, please try again.</li><ul/>";
+        $('#textContainer').show().addClass('alert alert-danger').html(html);
+    }
+
+    function inputErrors(errorArr) {
+        let html = "<ul class='mb-0'>\n";
+
+        // create the list of error's to display for password
+        if (errorArr.password) {
+            errorArr.password.forEach(elem => {
+                html += `<li>${elem}</li>\n`
+            });
+        }
+
+        if (errorArr.email) {
+            errorArr.email.forEach(elem => {
+                html += `<li>${elem}</li>\n`
+            });
+        }
+
+        if (!errorArr.email && !errorArr.password) {
+            invalidError();
+            return;
+        }
+
+        html += "<ul/>"
+
+        $('#textContainer').show().addClass('alert alert-danger').html(html);
+    }
+</script>
+
+</body></html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Forbidden</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #ff0000;
+        }
+        p {
+            color: #333333;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 30px auto;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- English Section -->
+    <h1>Access Forbidden</h1>
+    <p>We're sorry, but access to this content is restricted in your country.</p>
+    <p id="info-en">Domain: bintanggol168.online | IP address: 2001:629:9400:1000:1:c7d5:163a:600c</p>
+
+    <hr class="divider">
+
+    <!-- Indonesian Section -->
+    <h1>Akses di batasi</h1>
+    <p>Maaf, akses konten ini di batasi untuk negara anda.</p>
+    <p id="info-id">Domain: bintanggol168.online | Alamat IP: 2001:629:9400:1000:1:c7d5:163a:600c</p>
+
+    <script>
+        var domain = window.location.hostname;
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                var ip = data.ip;
+                document.getElementById('info-en').innerText = 'Domain: ' + domain + ' | IP address: ' + ip;
+                document.getElementById('info-id').innerText = 'Domain: ' + domain + ' | Alamat IP: ' + ip;
+            })
+            .catch(error => console.error('Error fetching IP address:', error));
+    </script>
+
+</body></html>

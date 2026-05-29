@@ -1,0 +1,3258 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+<meta http-equiv="imagetoolbar" content="no">
+<link rel="shortcut icon" type="image/x-icon" href="/hans/images/favicon.ico">
+<link rel="icon" href="/hans/images/favicon.ico" type="image/x-icon">
+<link rel="favicon" href="/hans/images/favicon.ico">
+<script type="text/javascript" src="/hans/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="/hans/js/numeral.min.js"></script>
+<link rel="stylesheet" href="/m/hans_mobile.css?d=s2sdfdddddddd2fddsdddddddsddd" type="text/css">
+<script type="text/javascript" src="/hans/js/moment.min.js"></script>
+<link rel="stylesheet" href="/hans/js/alertifyjs/css/alertify.css" type="text/css">
+<script type="text/javascript" src="/hans/js/alertifyjs/alertify.min.js"></script>
+<link href="/hans/js/timeapi/css/mobiscroll.jquery.min.css" rel="stylesheet">
+<script src="/hans/js/timeapi/js/mobiscroll.jquery.min.js"></script>
+<link rel="preload" as="style" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+<link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" media="all">
+<meta name="Keywords" content="한스라벨르,프리미엄화장품">
+<meta name="Copyright" content="한스라벨르">
+<meta name="Description" content="최상의 성분이 선사한 기능, 완벽한 순간으로 남아 피부에 새겨집니다.">
+<meta property="og:site_name" content="한스라벨르">
+<meta property="og:title" content="한스라벨르">   
+<meta property="og:url" content="https://hanslabelle.com/m/">
+<meta property="og:image" content="https://hanslabelle.com/hans/images/kakao_img_re.webp">
+<meta property="og:description" content="최상의 성분이 선사한 기능, 완벽한 순간으로 남아 피부에 새겨집니다.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="한스라벨르">
+<meta name="twitter:image" content="https://hanslabelle.com/hans/images/kakao_img_re.webp">
+<meta name="twitter:description" content="최상의 성분이 선사한 기능, 완벽한 순간으로 남아 피부에 새겨집니다.">
+<meta name="twitter:site" content="@test.com">
+<script src="/hans/js/axios.min.js"></script>
+<title>한스라벨르</title>
+<link rel="stylesheet" href="/hans/js/swiper-bundle.min.css">
+<script src="/hans/js/swiper-bundle.min.js"></script>
+<script src="/hans/js/jquery.countdown.min.js"></script>
+<script src="/hans/js/sophia.util.js"></script><style type="text/css">
+.body_wrap > .slide_main_banner{width:100%; margin:0 0 0 0; position: relative;}
+.body_wrap > .slide_main_banner > .bl{width:100%; display: block;}
+.body_wrap > .slide_main_banner > .swiper{width:100%; height:581x; overflow: hidden; position: relative;}
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper > .swiper-slide{width:100%;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;}
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper > .swiper-slide > a.item:link{display: block; padding:0; margin:0; }
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper > .swiper-slide > a.item:visited{display: block;padding:0; margin:0; }
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper > .swiper-slide > a.item:active{display: block;padding:0; margin:0; }
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper > .swiper-slide > a.item:hover{display: block;padding:0; margin:0; }
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper > .swiper-slide > a.item > .bl{width:100%; display: block;}
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper .swiper-pagination-bullet { width: 12px; height: 12px; background: transparent; border: 1px solid pink; opacity: 1; }
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper .swiper-pagination-bullet-active { width: 40px; transition: width .5s; border-radius: 5px; background: pink; border: 1px solid transparent; }
+.body_wrap > .slide_main_banner > .swiper .swiper-pagination-bullet-active {
+     background-color: #ff0 !important;
+}
+.mainBannerSwiper [class^="swiper-button-"]::after{
+    font-size: 40px; color:#d9d9d9; background:none; background-image: none;
+}
+.body_wrap > .slide_main_banner > .swiper > .swiper-wrapper .swiper-button-next,.swiper-button-prev {
+    background-color: none;
+    background-color:rgba(255,255,255,0);
+    padding: 0px;
+    color: #d9d9d9 !important;
+    fill: #d9d9d9 !important;
+    stroke: #d9d9d9 !important;
+}
+    .body_wrap > .shop_gray_box .product_list_box .swiper-slide{width:310px;}
+</style>
+<script language="javascript">
+$(document).bind("contextmenu", function (e) {
+    return false;
+});
+    
+$(document).ready(function(){
+    $("#click_box").click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        
+        $("#showbox").show();
+    });
+    
+
+    
+    var swiper3 = new Swiper(".pc_hot_swiper", {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+    });
+    
+});
+    
+$(document).scroll(function(){
+    var scrollT = $(this).scrollTop();
+    var scrollH = $(this).height();
+    
+    if(scrollT > 100){
+        $(".mainmenu_box").addClass("mainmenu_scroll_background");
+    } else {
+        $(".mainmenu_box").removeClass("mainmenu_scroll_background");
+        
+    }
+});
+</script>
+
+
+<style>
+.slide-wrapper {
+    position: relative;
+    width: 100%;
+    height: 581px;
+    overflow: hidden;
+    background: #000;
+}
+
+.slide-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slide-item.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.youtube-embed {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    transform-origin: center;
+    z-index: 1;
+}
+
+.youtube-embed iframe {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.youtube-overlay-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.youtube-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    z-index: 6;
+    pointer-events: none;
+}
+
+.youtube-overlay-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    pointer-events: auto;
+}
+
+.slide-item:not(.active) .youtube-overlay-link,
+.slide-item:not(.active) .slide-link,
+.slide-item:not(.active) a {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* 하단 컨트롤 바 스타일 */
+.slide-bottom-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+/* 숫자 페이지네이션 */
+.slide-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding-right: 8px;
+    border-right: 1px solid #ddd;
+}
+
+.current-page {
+    font-weight: 600;
+    color: #000;
+}
+
+.page-separator {
+    color: #999;
+    font-weight: 400;
+}
+
+.total-pages {
+    color: #666;
+}
+
+/* 네비게이션 버튼 그룹 */
+.slide-nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 4px;
+    border-right: 1px solid #ddd;
+}
+
+/* 버튼 공통 스타일 */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #000;
+}
+
+.nav-btn:active {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.nav-btn svg {
+    pointer-events: none;
+}
+
+/* Play/Pause 버튼 */
+.play-pause-btn {
+    margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+    .slide-wrapper {
+        height: 250px;
+    }
+    
+    .slide-bottom-controls {
+        bottom: 10px;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+    
+    .slide-pagination {
+        font-size: 12px;
+        padding-right: 6px;
+    }
+    
+    .nav-btn {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .nav-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="main_wrapper">
+    <div class="mainmenu_wrap">
+        
+<style>
+/* 모바일 우선 반응형 CSS */
+.main_wrapper > .mainmenu_wrap:first-child{width:100%; background:#fff; }
+.main_wrapper > .mainmenu_wrap:last-child{width:100%; }
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box{width:100%; margin:0 auto; z-index: 9999; position: relative; padding: 0 0;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain{width:100%; max-width:1380px; margin:0 auto; padding:0px 0; position: relative;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item{width:100%; margin:0 0 0 0;}
+    
+.main_wrapper > .mainmenu_wrap > .abs_box{width:100%;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box{position: relative; width:100%;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box > a.goto_link:link{background:#3f37c9; height:50px; padding:0 0; margin:auto 0; overflow: hidden; display: block;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box > a.goto_link:visited{ background:#3f37c9; height:50px; padding:0 0; margin:auto 0;overflow: hidden; display: block;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box > a.goto_link:active{background:#3f37c9; height:50px; padding:0 0; margin:auto 0;overflow: hidden; display: block;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box > a.goto_link:hover{background:#3a86ff; height:50px; padding:0 0; margin:auto 0;overflow: hidden; display: block;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box > a.goto_link > .bl{width:100%; display: block;transition: all ease .5s;}
+.main_wrapper > .mainmenu_wrap > .abs_box > .blue_box > a.goto_link:hover > .bl{transform: scale(1.05,1.05);}
+
+.mainmenu_white_box > .top_box_wrap{display: flex; align-items: center; justify-content: space-between; padding: 10px 0;}
+.mainmenu_white_box > .top_box_wrap > .item{position: relative;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(1){width:auto; flex-shrink: 0; margin-left:10px;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(2){flex: 1; display: none;} /* 모바일에서 검색 숨김 */
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(3){width:auto; flex-shrink: 0; margin-right:10px;}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:link{display: block; width:150px; margin:15px 0;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:visited{display: block; width:150px; margin:15px 0;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:active{display: block; width:150px; margin:15px 0;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:hover{display: block; width:150px; opacity: 0.85;}
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link > .bl{width:100%; display: block;}
+
+/* 메인 메뉴 - 모바일에서는 숨김 */
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu{
+    margin:0;
+    position: relative;
+    z-index: 1000;
+    display: none; /* 모바일에서 숨김 */
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li{
+    display: inline-block; 
+    list-style-type: none; 
+    position: relative;
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu_icon:link,
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu_icon:visited,
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu_icon:active{
+    width:32px; 
+    padding:10px 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    display: block;
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu_icon > .bl{width:100%; display: block;}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:link{
+    width:calc(100% - 30px); 
+    padding:12px 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    display: block;
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:visited{
+    width:calc(100% - 30px); 
+    padding:12px 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    display: block;
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:active{
+    width:calc(100% - 30px); 
+    padding:12px 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    display: block;
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:hover{
+    width:calc(100% - 30px); 
+    padding:12px 15px; 
+    overflow: hidden;
+    background: linear-gradient(135deg, #3a86ff 0%, #3f37c9 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 134, 255, 0.3);
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu > .text{
+    display: inline-block;
+    font-size: 14px; 
+    line-height: 18px; 
+    font-weight: 500; 
+    color:#000;
+    transition: all 0.3s ease;
+}
+
+.main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:hover > .text{
+    color:#fff;
+    font-weight: 600;
+}
+
+/* 드롭다운 메뉴 - 모바일에서 비활성화 */
+.dropdown-menu {
+    display: none;
+}
+
+/* 검색박스 - 모바일 최적화 */
+.searchbox {
+    width: 100%;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.inbox_wrap {
+    background: #f7f7f7;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.inbox_wrap input[type="text"] {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+.inbox_wrap button {
+    background: linear-gradient(135deg, #3a86ff 0%, #3f37c9 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.inbox_wrap button:active {
+    transform: scale(0.95);
+}
+
+/* 햄버거 메뉴 버튼 */
+.hamberger_menu_link {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamberger_menu_link span {
+    width: 100%;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* 아이콘 스타일 */
+.right_icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right_icons a {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 오버레이 메뉴 - 모바일 최적화 */
+.overlay_mainmenu_box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.overlay_mainmenu_box.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay_mainmenu_box .inbox_menu {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.overlay_mainmenu_box.active .inbox_menu {
+    transform: translateX(0);
+}
+
+/* 메뉴 헤더 */
+.menu-header {
+    padding: 20px 0;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.menu-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #101010;
+    margin-bottom: 8px;
+}
+
+.menu-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 닫기 버튼 */
+.close_overlay_mainmenu_link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close_overlay_mainmenu_link:before,
+.close_overlay_mainmenu_link:after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: #333;
+}
+
+.close_overlay_mainmenu_link:before {
+    transform: rotate(45deg);
+}
+
+.close_overlay_mainmenu_link:after {
+    transform: rotate(-45deg);
+}
+
+.close_overlay_mainmenu_link:hover {
+    background: #e0e0e0;
+}
+
+/* 메뉴 컨테이너 */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 섹션 타이틀 */
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #404040;
+}
+
+/* 카테고리 그리드 */
+.category-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.category-card:active {
+    transform: scale(0.98);
+    background: #e9ecef;
+}
+
+.category-card-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.category-sub-list {
+    list-style: none;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.category-sub-list li {
+    flex: 0 0 auto;
+}
+
+.category-sub-list a {
+    display: inline-block;
+    padding: 6px 12px;
+    background: white;
+    border-radius: 15px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+    .category-sub-list a:hover,
+.category-sub-list a:active {
+    background: #7c5650;
+    color: white;
+    border-color: #7c5650;
+}
+
+/* 기타 서비스 섹션 */
+.other-services-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.other-services-section .menu-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.overmenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.overmenu li a {
+    display: block;
+    padding: 10px 12px;
+    background: white;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+    .overmenu li a:hover,
+.overmenu li a:active {
+    background: #7c5650;
+    color: white;
+    border-color: #7c5650;
+}
+
+/* 태블릿 이상 (768px~) */
+@media screen and (min-width: 768px) {
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box {
+        padding: 0 30px;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(2){
+        display: block; /* 태블릿에서 검색 표시 */
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:link,
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:visited,
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:active {
+        width: 180px;
+        margin: 30px 0 15px 0;
+    }
+
+    .searchbox {
+        max-width: 400px;
+        margin: 30px auto 15px auto;
+    }
+
+    .overlay_mainmenu_box .inbox_menu {
+        width: 85%;
+        max-width: 600px;
+    }
+
+    .menu-container {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .product-categories-section {
+        flex: 2;
+    }
+
+    .other-services-section {
+        flex: 1;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* 데스크탑 (1024px~) */
+@media screen and (min-width: 1024px) {
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain {
+        width: 1380px;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(1){
+        width:220px;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(2){
+        width:calc(100% - 600px);
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item:nth-child(3){
+        width:200px;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:link,
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:visited,
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .top_box_wrap > .item > a.logo_link:active {
+        width: 220px;
+        margin: 60px 0 20px 0;
+    }
+
+    /* 데스크탑에서 메인 메뉴 표시 */
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu{
+        display: block;
+        margin: 10px 0 0 0;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:link,
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:visited,
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:active {
+        width:calc(100% - 40px);
+        padding:15px 20px;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:hover{
+        width:calc(100% - 40px);
+        padding:15px 20px;
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu > .text{
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    /* 드롭다운 메뉴 활성화 */
+    .dropdown-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 250px;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        border: 1px solid #e9ecef;
+        padding: 15px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        backdrop-filter: blur(10px);
+    }
+
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid white;
+    }
+
+    .dropdown-menu .dropdown-item {
+        display: block;
+        padding: 12px 20px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 0 10px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .dropdown-menu .dropdown-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(58, 134, 255, 0.1), transparent);
+        transition: left 0.5s;
+    }
+
+    .dropdown-menu .dropdown-item:hover::before {
+        left: 100%;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #3a86ff;
+        transform: translateX(5px);
+        font-weight: 500;
+    }
+
+    .dropdown-menu .dropdown-item:first-child {
+        font-weight: 600;
+        color: #3f37c9;
+        border-bottom: 1px solid #e9ecef;
+        margin-bottom: 5px;
+        padding-bottom: 15px;
+    }
+
+    .dropdown-menu .dropdown-item:first-child:hover {
+        background: linear-gradient(135deg, #3a86ff 0%, #3f37c9 100%);
+        color: white;
+    }
+
+    .searchbox {
+        width: 500px;
+        margin: 50px auto 20px auto;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 터치 디바이스 최적화 */
+@media (hover: none) and (pointer: coarse) {
+    .main_wrapper > .mainmenu_wrap > .mainmenu_white_box > .incontain > .item > ul.mainmenu li > a.menu:hover {
+        transform: none;
+    }
+
+    .dropdown-menu {
+        display: none !important;
+    }
+}
+</style>
+
+
+<div class="main_wrapper">
+    <div class="mainmenu_wrap">
+        <div class="mainmenu_white_box">
+            <div class="top_box_wrap">
+                <!-- 로고 -->
+                <div class="item">
+                    <a href="/m/" target="_self" class="logo_link">
+                        <img src="/hans/images/s7_logo1.png" alt="한스라벨르" class="bl">
+                    </a>
+                </div>
+
+                <!-- 검색박스 (태블릿 이상에서 표시) -->
+                <div class="item">
+                    <div class="searchbox">
+                        <form action="/m/shop/list" method="get" id="search_fix_form">
+                            <div class="inbox_wrap">
+                                <input type="text" name="search" id="search_main" placeholder="검색어를 입력하세요">
+                                <button type="button" id="mainmenu_search_btt">
+                                    <img src="/hans/img/icon_search.png" alt="검색" style="width:18px;">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 우측 아이콘 -->
+                <div class="item">
+                    <div class="right_icons">
+                        <a href="/m/member/mypage" target="_self" id="search_menu">
+                            <img src="/hans/images/icon_mobile_search.png" alt="검색">
+                        </a>
+                        <a href="/m/company/list" target="_self">
+                            <img src="/hans/images/icon_mobile_store.png" alt="창업">
+                        </a>
+                        <a href="#" id="hamberger_menu" class="hamberger_menu_link">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 데스크탑 메인 메뉴 -->
+            <div class="incontain">
+                <div class="item">
+                    <ul class="mainmenu">
+                        <li>
+                            <a href="#" class="menu_icon">
+                                <img src="/hans/img/icon_menu.png" alt="전체메뉴" class="bl">
+                            </a>
+                        </li>
+                                                    <li>
+                                <a href="/m/shop/list?type=1-0" target="_self" class="menu">
+                                    <span class="text">멤버십 라운지</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=1-0" class="dropdown-item">전체 멤버십 라운지</a>
+                                                                        <a href="/m/shop/list?type=1-1" class="dropdown-item">회원전용</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=12-0" target="_self" class="menu">
+                                    <span class="text">한스라벨르</span>
+                                </a>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=9-0" target="_self" class="menu">
+                                    <span class="text">포어수</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=9-0" class="dropdown-item">전체 포어수</a>
+                                                                        <a href="/m/shop/list?type=9-1" class="dropdown-item">포어수</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=2-0" target="_self" class="menu">
+                                    <span class="text">기초라인</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=2-0" class="dropdown-item">전체 기초라인</a>
+                                                                        <a href="/m/shop/list?type=2-4" class="dropdown-item">크림</a>
+                                                                        <a href="/m/shop/list?type=2-3" class="dropdown-item">앰플/세럼</a>
+                                                                        <a href="/m/shop/list?type=2-5" class="dropdown-item">미스트</a>
+                                                                        <a href="/m/shop/list?type=2-6" class="dropdown-item">기타</a>
+                                                                        <a href="/m/shop/list?type=2-7" class="dropdown-item">대용량</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=11-0" target="_self" class="menu">
+                                    <span class="text">SET</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=11-0" class="dropdown-item">전체 SET</a>
+                                                                        <a href="/m/shop/list?type=11-1" class="dropdown-item">SET</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=3-0" target="_self" class="menu">
+                                    <span class="text">메이크업</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=3-0" class="dropdown-item">전체 메이크업</a>
+                                                                        <a href="/m/shop/list?type=3-1" class="dropdown-item">페이스</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=4-0" target="_self" class="menu">
+                                    <span class="text">퍼스널케어</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=4-0" class="dropdown-item">전체 퍼스널케어</a>
+                                                                        <a href="/m/shop/list?type=4-1" class="dropdown-item">바디</a>
+                                                                        <a href="/m/shop/list?type=4-2" class="dropdown-item">헤어</a>
+                                                                        <a href="/m/shop/list?type=4-3" class="dropdown-item">핸드 &amp; 풋</a>
+                                                                        <a href="/m/shop/list?type=4-4" class="dropdown-item">클렌저</a>
+                                                                        <a href="/m/shop/list?type=4-5" class="dropdown-item">마스크 팩</a>
+                                                                        <a href="/m/shop/list?type=4-6" class="dropdown-item">립</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=5-0" target="_self" class="menu">
+                                    <span class="text">이너뷰티</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=5-0" class="dropdown-item">전체 이너뷰티</a>
+                                                                        <a href="/m/shop/list?type=5-1" class="dropdown-item">낙산균</a>
+                                                                        <a href="/m/shop/list?type=5-2" class="dropdown-item">젤리</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=7-0" target="_self" class="menu">
+                                    <span class="text">퍼퓸라인</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=7-0" class="dropdown-item">전체 퍼퓸라인</a>
+                                                                        <a href="/m/shop/list?type=7-2" class="dropdown-item">향수</a>
+                                                                        <a href="/m/shop/list?type=7-3" class="dropdown-item">디퓨저</a>
+                                                                    </div>
+                                                            </li>
+                                                        <li>
+                                <a href="/m/shop/list?type=10-0" target="_self" class="menu">
+                                    <span class="text">쇼핑백외</span>
+                                </a>
+                                                                <div class="dropdown-menu">
+                                    <a href="/m/shop/list?type=10-0" class="dropdown-item">전체 쇼핑백외</a>
+                                                                        <a href="/m/shop/list?type=10-1" class="dropdown-item">쇼핑백</a>
+                                                                        <a href="/m/shop/list?type=10-2" class="dropdown-item">선물 BOX</a>
+                                                                        <a href="/m/shop/list?type=10-3" class="dropdown-item">디바이스</a>
+                                                                        <a href="/m/shop/list?type=10-4" class="dropdown-item">사업지원아이템</a>
+                                                                        <a href="/m/shop/list?type=10-5" class="dropdown-item">기타</a>
+                                                                    </div>
+                                                            </li>
+                                                    <li>
+                            <a href="/m/shop/list?lv=a" target="_self" class="menu">
+                                <span class="text">피부타입별</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="/m/shop/list?lv=a&amp;t_p_i=0" class="dropdown-item">전체보기</a>
+                                <a href="/m/shop/list?lv=민감성&amp;t_p_i=1" class="dropdown-item">민감성</a>
+                                <a href="/m/shop/list?lv=여드름성&amp;t_p_i=2" class="dropdown-item">여드름성</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모바일 오버레이 메뉴 -->
+    <div class="overlay_mainmenu_box" id="overlay_mainmenu_box">
+        <div class="inbox_menu">
+            <div class="menu-header">
+                <h1>전체 메뉴</h1>
+                <p>한스라벨르의 모든 상품과 서비스를 한눈에 확인하세요</p>
+            </div>
+            
+            <div class="menu-container">
+                <!-- 상품 카테고리 섹션 -->
+                <div class="product-categories-section">
+                    <h2 class="section-title">
+                        상품 카테고리
+                    </h2>
+                    <ul class="category-grid">
+                                                    <li class="category-card">
+                                <a href="/m/shop/list?type=1-0" target="_self" class="category-card-title">
+                                    멤버십 라운지                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=1-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=1-1" target="_self">회원전용</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=12-0" target="_self" class="category-card-title">
+                                    한스라벨르                                </a>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=9-0" target="_self" class="category-card-title">
+                                    포어수                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=9-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=9-1" target="_self">포어수</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=2-0" target="_self" class="category-card-title">
+                                    기초라인                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=2-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=2-4" target="_self">크림</a></li>
+                                                                        <li><a href="/m/shop/list?type=2-3" target="_self">앰플/세럼</a></li>
+                                                                        <li><a href="/m/shop/list?type=2-5" target="_self">미스트</a></li>
+                                                                        <li><a href="/m/shop/list?type=2-6" target="_self">기타</a></li>
+                                                                        <li><a href="/m/shop/list?type=2-7" target="_self">대용량</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=11-0" target="_self" class="category-card-title">
+                                    SET                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=11-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=11-1" target="_self">SET</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=3-0" target="_self" class="category-card-title">
+                                    메이크업                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=3-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=3-1" target="_self">페이스</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=4-0" target="_self" class="category-card-title">
+                                    퍼스널케어                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=4-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=4-1" target="_self">바디</a></li>
+                                                                        <li><a href="/m/shop/list?type=4-2" target="_self">헤어</a></li>
+                                                                        <li><a href="/m/shop/list?type=4-3" target="_self">핸드 &amp; 풋</a></li>
+                                                                        <li><a href="/m/shop/list?type=4-4" target="_self">클렌저</a></li>
+                                                                        <li><a href="/m/shop/list?type=4-5" target="_self">마스크 팩</a></li>
+                                                                        <li><a href="/m/shop/list?type=4-6" target="_self">립</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=5-0" target="_self" class="category-card-title">
+                                    이너뷰티                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=5-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=5-1" target="_self">낙산균</a></li>
+                                                                        <li><a href="/m/shop/list?type=5-2" target="_self">젤리</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=7-0" target="_self" class="category-card-title">
+                                    퍼퓸라인                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=7-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=7-2" target="_self">향수</a></li>
+                                                                        <li><a href="/m/shop/list?type=7-3" target="_self">디퓨저</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="category-card">
+                                <a href="/m/shop/list?type=10-0" target="_self" class="category-card-title">
+                                    쇼핑백외                                </a>
+                                                                <ul class="category-sub-list">
+                                    <li><a href="/m/shop/list?type=10-0" target="_self">전체보기</a></li>
+                                                                        <li><a href="/m/shop/list?type=10-1" target="_self">쇼핑백</a></li>
+                                                                        <li><a href="/m/shop/list?type=10-2" target="_self">선물 BOX</a></li>
+                                                                        <li><a href="/m/shop/list?type=10-3" target="_self">디바이스</a></li>
+                                                                        <li><a href="/m/shop/list?type=10-4" target="_self">사업지원아이템</a></li>
+                                                                        <li><a href="/m/shop/list?type=10-5" target="_self">기타</a></li>
+                                                                    </ul>
+                                                            </li>
+                                                    
+                        <li class="category-card">
+                            <a href="/m/shop/list?lv=a" target="_self" class="category-card-title">
+                                피부타입별
+                            </a>
+                            <ul class="category-sub-list">
+                                <li><a href="/m/shop/list?lv=a&amp;t_p_i=0" target="_self">전체보기</a></li>
+                                <li><a href="/m/shop/list?lv=민감성&amp;t_p_i=1" target="_self">민감성</a></li>
+                                <li><a href="/m/shop/list?lv=여드름성&amp;t_p_i=2" target="_self">여드름성</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 기타 서비스 섹션 -->
+                <div class="other-services-section">
+                    <!-- 서비스/이벤트 섹션 -->
+                    <div class="menu-section">
+                        <h2 class="section-title">
+                            서비스/이벤트
+                        </h2>
+                        <ul class="overmenu">
+                            <li><a href="/m/custom/info" target="_self">고객센터</a></li>
+                            <li><a href="/m/news/list" target="_self">공지사항</a></li>
+                            <li><a href="/m/custom/inquiry" target="_self">1:1문의</a></li>
+                            <li><a href="/m/planning/list" target="_self">기획전</a></li>
+                            <li><a href="/m/review/list" target="_self">구매후기</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 회사 정보 섹션 -->
+                    <div class="menu-section">
+                        <h2 class="section-title">
+                            회사 정보
+                        </h2>
+                        <ul class="overmenu">
+                            <li><a href="/m/biz/aboutus" target="_self">회사소개</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 회원 서비스 섹션 -->
+                    <div class="menu-section">
+                        <h2 class="section-title">
+                            회원 서비스
+                        </h2>
+                        <ul class="overmenu">
+                                                        <li><a href="/m/member/signin" target="_self">로그인</a></li>
+                            <li><a href="/m/member/register" target="_self">회원가입</a></li>
+                                                        <li><a href="/m/page/terms" target="_self">이용약관</a></li>
+                            <li><a href="/m/page/privacy" target="_self">개인정보취급방침</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 쇼핑몰 서비스 섹션 -->
+                    <div class="menu-section">
+                        <h2 class="section-title">
+                            쇼핑몰 서비스
+                        </h2>
+                        <ul class="overmenu">
+                            <li><a href="https://www.hanjin.com/kor/CMS/DeliveryMgr/WaybillSch.do?mCode=MN038" target="_blank">배송추적</a></li>
+                            <li><a href="/m/shop/cart" target="_self">장바구니</a></li>
+                            <li><a href="/m/" target="_self">처음화면</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" target="_self" class="close_overlay_mainmenu_link" title="메뉴 닫기"></a>
+        </div>
+    </div>
+</div>
+
+<div class="modal_wine_product_search_popup" id="modal_wine_product_search_popup">
+    <div class="modal_wine_product_search_overlay"></div>
+
+    <div class="modal_wine_product_search_container">
+        <!-- 헤더 -->
+        <div class="modal_wine_product_search_header">
+            <h1 class="modal_wine_product_search_title">상품 검색</h1>
+            <p class="modal_wine_product_search_subtitle">원하시는 상품을 찾아보세요</p>
+            <button class="modal_wine_product_search_close modal_wine_product_search_close_btn">✕</button>
+        </div>
+
+        <!-- 검색 박스 -->
+        <div class="modal_wine_product_search_box">
+            <form action="/m/shop/search" method="GET" name="modal_wine_product_search_form" id="modal_wine_product_search_form">
+                <div class="modal_wine_product_search_input_wrapper">
+                    <input type="text" name="search" id="modal_wine_product_search_input" class="modal_wine_product_search_input" placeholder="상품명, 제품코드를 입력하세요" autocomplete="off">
+                    <span class="modal_wine_product_search_input_icon"><img src="/hans/images/icon_m_search_input.png" class="bl"></span>
+                </div>
+                <button type="button" class="modal_wine_product_search_btn" id="modal_wine_product_search_submit">
+                    검색하기
+                </button>
+            </form>
+        </div>
+
+        <!-- 검색 가이드 -->
+        <div class="modal_wine_product_search_guide">
+            <h3 class="modal_wine_product_search_guide_title">검색 가이드</h3>
+
+            <ul class="modal_wine_product_search_guide_list">
+                <li class="modal_wine_product_search_guide_item">
+                    <span>상품명, 제품코드로 검색 가능합니다</span>
+                </li>
+                <li class="modal_wine_product_search_guide_item">
+                    <span>상품 설명문의 내용으로도 검색할 수 있습니다</span>
+                </li>
+            </ul>
+
+            <!-- 인기 검색 태그 -->
+            <div class="modal_wine_product_search_tags">
+                <span class="modal_wine_product_search_tag" data-value="소비자 패키지">소비자 패키지</span>
+                <span class="modal_wine_product_search_tag" data-value="스킨31퓨어크림">스킨31퓨어크림</span>
+                <span class="modal_wine_product_search_tag" data-value="SC남성올인원앰플">SC남성올인원앰플</span>
+                <span class="modal_wine_product_search_tag" data-value="쿠션리필페탈">쿠션리필페탈</span>
+                <span class="modal_wine_product_search_tag" data-value="벨르코코퍼퓸">벨르코코퍼퓸</span>
+            </div>
+        </div>
+
+        <!-- 로딩 -->
+        <div class="modal_wine_product_search_loading" id="modal_wine_product_search_loading">
+            <div class="modal_wine_product_search_loading_spinner"></div>
+        </div>
+    </div>
+</div>
+<script>
+$("#search_menu").on('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $("body").addClass('notScroll');
+    $("#modal_wine_product_search_popup").fadeIn(300);
+});
+
+
+$(document).on('click', '.modal_wine_product_search_close_btn, .modal_wine_product_search_close', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $("body").removeClass('notScroll');
+    $("#modal_wine_product_search_popup").fadeOut(300);
+});
+
+
+$(document).on('click', '.modal_wine_product_search_overlay', function() {
+    $("body").removeClass('notScroll');
+    $("#modal_wine_product_search_popup").fadeOut(300);
+});
+
+
+$(document).keyup(function(e) {
+    if (e.key === "Escape" && $("#modal_wine_product_search_popup").is(":visible")) {
+        $("body").removeClass('notScroll');
+        $("#modal_wine_product_search_popup").fadeOut(300);
+    }
+});
+
+
+$("#modal_wine_product_search_submit").click(function() {
+    var frm = document.modal_wine_product_search_form;
+    if (!frm.search.value.trim()) {
+        alert('검색어를 입력해 주세요.');
+        frm.search.focus();
+        return false;
+    }
+    frm.submit();
+});
+
+
+$("#modal_wine_product_search_input").keypress(function(e) {
+    if (e.which == 13) {
+        $("#modal_wine_product_search_submit").click();
+        return false;
+    }
+});
+
+
+$(".modal_wine_product_search_tag").click(function() {
+    var value = $(this).data('value');
+    $("#modal_wine_product_search_input").val(value);
+    $("#modal_wine_product_search_input").focus();
+});
+</script>
+<style>
+.modal_wine_product_search_popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    animation: modal_wine_product_search_fadeIn 0.3s ease;
+}
+
+@keyframes modal_wine_product_search_fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 배경 오버레이 */
+.modal_wine_product_search_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 모달 컨테이너 */
+.modal_wine_product_search_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #fff 0%, #f6f6f6 100%);
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5),
+                0 0 100px rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    animation: modal_wine_product_search_slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modal_wine_product_search_slideUp {
+from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+}
+to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+}
+
+/* 헤더 */
+.modal_wine_product_search_header {
+    position: relative;
+    padding: 30px;
+    background: #dadada;
+    text-align: center;
+}
+
+.modal_wine_product_search_title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #101010;
+    letter-spacing: -0.5px;
+}
+
+.modal_wine_product_search_subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #505050;
+    font-weight: 400;
+}
+
+/* 와인 아이콘 장식 */
+.modal_wine_product_search_icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    opacity: 0.3;
+    transform: rotate(-15deg);
+}
+
+/* 검색 박스 */
+.modal_wine_product_search_box {
+    padding: 30px;
+}
+
+.modal_wine_product_search_input_wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.modal_wine_product_search_input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    background: #eee;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.modal_wine_product_search_input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #8b2c7b;
+    box-shadow: 0 0 0 4px rgba(139, 44, 123, 0.1);
+}
+
+.modal_wine_product_search_input::placeholder {
+    color: #808080;
+    font-weight: 400;
+}
+
+/* 검색 아이콘 */
+.modal_wine_product_search_input_icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    width:20px;
+    pointer-events: none;
+}
+    .modal_wine_product_search_input_icon > .bl{width:100%; display: block;}
+/* 검색 버튼 */
+.modal_wine_product_search_btn {
+    width: 100%;
+    padding: 18px;
+    background:#353535;
+box-shadow:0 4px 10px  rgba(67,67,67,0.3);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal_wine_product_search_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.modal_wine_product_search_btn:hover::before {
+    left: 100%;
+}
+
+.modal_wine_product_search_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(139, 44, 123, 0.4);
+}
+
+.modal_wine_product_search_btn:active {
+    transform: translateY(0);
+}
+
+/* 검색 가이드 */
+.modal_wine_product_search_guide {
+    padding: 0 30px 30px;
+}
+
+.modal_wine_product_search_guide_title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #212121;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.modal_wine_product_search_guide_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal_wine_product_search_guide_item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+color:#5d5d5d;
+line-height: 1.2;
+    font-size: 13px; font-weight: 400;
+}
+
+.modal_wine_product_search_guide_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(139, 44, 123, 0.2);
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #b8458f;
+}
+
+/* 예시 태그 */
+.modal_wine_product_search_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.modal_wine_product_search_tag {
+    padding: 6px 12px;
+    background:rgba(192,192,192, 0.3);
+border:1px solid rgba(192,192,192, 0.8);
+color:#606060;
+
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal_wine_product_search_tag:hover {
+    background:rgba(192,192,192, 0.3);
+border:1px solid rgba(192,192,192, 0.8);
+color:#606060;
+    transform: scale(1.05);
+}
+
+/* 닫기 버튼 */
+.modal_wine_product_search_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;background:rgba(255,255,255, 0.4);
+color :rgba(0,0,0, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.modal_wine_product_search_close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+    color: white;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    .modal_wine_product_search_container {
+        width: 98%;
+        margin: 20px auto;
+    }
+
+    .modal_wine_product_search_header {
+        padding: 25px;
+    }
+
+    .modal_wine_product_search_box,
+    .modal_wine_product_search_guide {
+        padding: 20px;
+    }
+
+    .modal_wine_product_search_title {
+        font-size: 20px;
+    }
+}
+
+/* 로딩 애니메이션 */
+.modal_wine_product_search_loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal_wine_product_search_loading_spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #8b2c7b;
+    border-radius: 50%;
+    animation: modal_wine_product_search_spin 1s linear infinite;
+}
+
+@keyframes modal_wine_product_search_spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style><script>
+// jQuery 안전하게 사용
+$(document).ready(function() {
+    // 현재 활성 메뉴 표시
+    var pidx = 999;
+    if($("ul.mainmenu li").eq(pidx).length > 0) {
+        $("ul.mainmenu li").eq(pidx).find("a").addClass("menu_hover");
+    }
+    
+    // 검색 기능
+    $("#mainmenu_search_btt").on('click', function(e) {
+        e.preventDefault();
+        if (!$("#search_main").val().trim()) {
+            alert("검색어를 입력해 주세요.");
+            $("#search_main").focus();
+            return;
+        }
+        document.getElementById('search_fix_form').submit();
+    });
+    
+    // 엔터키 검색
+    $("#search_main").on('keypress', function(e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            $("#mainmenu_search_btt").trigger('click');
+        }
+    });
+    
+    // 오버레이 메뉴 관리
+    function openOverlayMenu() {
+        $("#overlay_mainmenu_box").addClass('active');
+        $('body').css('overflow', 'hidden');
+    }
+    
+    function closeOverlayMenu() {
+        $("#overlay_mainmenu_box").removeClass('active');
+        $('body').css('overflow', '');
+    }
+
+    // 햄버거 메뉴 클릭
+    $("#hamberger_menu").on('click', function(e) {
+        e.preventDefault();
+        openOverlayMenu();
+    });
+    
+    // 닫기 버튼 클릭
+    $(".close_overlay_mainmenu_link").on('click', function(e) {
+        e.preventDefault();
+        closeOverlayMenu();
+    });
+    
+    // 오버레이 배경 클릭 시 닫기
+    $("#overlay_mainmenu_box").on('click', function(e) {
+        if ($(e.target).is('#overlay_mainmenu_box')) {
+            closeOverlayMenu();
+        }
+    });
+    
+    // ESC 키로 메뉴 닫기
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27) {
+            closeOverlayMenu();
+        }
+    });
+    
+    // 드롭다운 메뉴 효과 (데스크탑에서만)
+    if ($(window).width() >= 1024) {
+        $(".mainmenu li").hover(
+            function() {
+                $(this).find('.dropdown-menu').stop(true, true).fadeIn(200);
+            },
+            function() {
+                $(this).find('.dropdown-menu').stop(true, true).fadeOut(200);
+            }
+        );
+    }
+});
+</script>    </div>
+
+    <div class="body_wrap">
+        <div class="slide_main_banner">
+            
+            <!-- 메인 슬라이드 컨테이너 -->
+            <div id="main-slide-container"><div class="slide-wrapper"><div class="slide-container"><div class="slide-item" data-index="0" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/planning/view?id=13" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1778566234_8.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item" data-index="1" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/planning/view?id=12" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1776822682_6.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item active" data-index="2" data-type="image" style="pointer-events: auto; z-index: 10;">
+            <a href="/m/planning/view?id=10" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1773909531_2.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item " data-index="3" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/planning/view?id=3" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1766392728_1.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item " data-index="4" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/planning/view?id=5" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1767167518_7.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item " data-index="5" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/planning/view?id=7" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1774397084_4.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item " data-index="6" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/news/view?num=393&amp;page=1" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1763457193_5.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div><div class="slide-item " data-index="7" data-type="image" style="pointer-events: none; z-index: 1;">
+            <a href="/m/news/view?num=396&amp;page=1" target="_blank" class="slide-link">
+                <img src="/hans/img_data/main/1775008290_8.webp" alt="슬라이드 이미지" class="slide-image">
+            </a>
+        </div></div>
+                <div class="slide-bottom-controls">
+                    <div class="slide-pagination">
+                        <span class="current-page">3</span>
+                        <span class="page-separator">|</span>
+                        <span class="total-pages">8</span>
+                    </div>
+                    <div class="slide-nav-buttons">
+                        <button type="button" class="nav-btn prev-btn" onclick="slideManager.prevSlide()" title="이전">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button type="button" class="nav-btn next-btn" onclick="slideManager.nextSlide()" title="다음">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <button type="button" class="nav-btn play-pause-btn" onclick="slideManager.togglePlayPause()" title="일시정지"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></button>
+                </div>
+            </div></div>
+
+            <!-- 슬라이드 JavaScript 포함 -->
+            <script src="/hans/util/slide_frontend.js?a=s1"></script>
+
+            <script>
+                // 슬라이드 매니저 초기화
+                document.addEventListener('DOMContentLoaded', function() {
+                    const slideManager = new SlideManager('main-slide-container', {
+                        autoPlay: true,           // 자동 재생
+                        autoPlayInterval: 6000,   // 5초마다 전환
+                        showControls: true,       // 이전/다음 버튼 표시
+                        showIndicators: true      // 인디케이터 표시
+                    });
+
+                    // 전역 변수로 설정 (선택사항)
+                    window.slideManager = slideManager;
+                });
+            </script>
+           
+                
+        </div>
+        <div class="copyright_text_box flexColumnCenterMiddle">
+            <p class="txt"><span class="iconbox"><img src="/hans/images/icon_grade_main.png" class="bl"></span> 회원님의 <span class="blue">‘현재등급’</span>이<br>궁금하신가요?</p>
+            <a href="/m/custom/grade" target="_self" class="icon_link flexColumnCenterMiddle">
+                <span class="txt">확인하기</span>
+                <span class="icon"><img src="/hans/images/icon_right.png" class="bl"></span>
+            </a>
+        </div>
+                        <div class="shop_white_box">
+            <div class="incontain">
+                
+                <div class="title_box flexColumn">
+                    <div class="item">
+                        <h5 class="title">#1 피부의 니즈에 맞춘, BEST 아이템!</h5>
+                        <h1 class="title">전문가가 추천하는 한스라벨르 프리미엄의 SPECIAL 상품을 소개합니다</h1>
+                    </div>
+                    <div class="item">
+                       
+                    </div>
+                </div>
+                <div class="product_raw_list_box flexColumn">
+                                        <a href="/m/shop/view?num=12&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758995130-empress_cream_set_ssum.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758186027-hans_empress_cream_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">SET <span class="bar">|</span> <span class="sub">SET</span></h2>
+                                <h1 class="title"> SC 엠프레스 크림세트 </h1>
+                                <p class="us_name"> SC EMPRESS CREAM SET</p>
+                                <p class="grape"><span class="marker">용량</span> 50ml+30ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=8&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1768786554-thumnail_set_whitening01.webp" class="bl">   
+                                                                            <img src="/hans/img_data/product/1768786554-thumnail_set_whitening02.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">SET <span class="bar">|</span> <span class="sub">SET</span></h2>
+                                <h1 class="title">SC 화이트닝 부스팅 세트</h1>
+                                <p class="us_name">SC WHITENING BOOSTING SET</p>
+                                <p class="grape"><span class="marker">용량</span> 10ml*8 +10ml +15g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                <div class="price_soldout">SOLD OUT <span class="remark">매진</span></div>
+                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=7&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1768786697-thumnail_set_antiWrinkle01.webp" class="bl">   
+                                                                            <img src="/hans/img_data/product/1766997710-thumnail_set_antiWrinkle02.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">SET <span class="bar">|</span> <span class="sub">SET</span></h2>
+                                <h1 class="title">SC 안티 링클 부스팅 세트</h1>
+                                <p class="us_name">SC ANTI-WRINKLE BOOSTING SET</p>
+                                <p class="grape"><span class="marker">용량</span> 10ml*8+10ml+15g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=10&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1772088422-thumbnail_600x600.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1768786600-thumnail_set_Aclear02.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">SET <span class="bar">|</span> <span class="sub">SET</span></h2>
+                                <h1 class="title"> SC A클리어 부스팅 세트</h1>
+                                <p class="us_name">SC A CLEAR BOOSTING SET</p>
+                                <p class="grape"><span class="marker">용량</span> 10ml*8 + 10ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=9&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758677653-hans_ultra_claming_set_thumbnail_4.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758186241-hans_ultra_claming_set_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">SET <span class="bar">|</span> <span class="sub">SET</span></h2>
+                                <h1 class="title">SC 듀얼 울트라 카밍 부스팅 세트</h1>
+                                <p class="us_name">SC DUAL ULTRA CALMING BOOSTING SET</p>
+                                <p class="grape"><span class="marker">용량</span> 10ml*8 + 10ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=11&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1768786440-thumnail_set_ultralifting01.webp" class="bl">   
+                                                                            <img src="/hans/img_data/product/1768786440-thumnail_set_ultralifting03.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">SET <span class="bar">|</span> <span class="sub">SET</span></h2>
+                                <h1 class="title">SC 울트라 리프팅 부스팅 세트 </h1>
+                                <p class="us_name">SC ULTRA LIFTING BOOSTING SET</p>
+                                <p class="grape"><span class="marker">용량</span> 10ml*8+10ml+15g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=3963&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1770950674-thumnail_dualvibe01.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1769645314-thumnail_onhealdualcream02.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                    <div class="best">BEST</div>                                                                                                                                            </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">크림</span></h2>
+                                <h1 class="title">온힐 듀얼 바이브 크림</h1>
+                                <p class="us_name">ONHEAL DUAL VIBE CREAM</p>
+                                <p class="grape"><span class="marker">용량</span> 50g + 30g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                        <a href="/m/shop/view?num=3962&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1778025655-thumnail_onhealeyecream01.webp" class="bl">   
+                                                                            <img src="/hans/img_data/product/1778025655-thumnail_onhealeyecream03.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                    <div class="best">BEST</div>                                                                                                                                            </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">크림</span></h2>
+                                <h1 class="title">온힐 아이 릴렉스 크림</h1>
+                                <p class="us_name">ONHEAL EYE RELAX CREAM </p>
+                                <p class="grape"><span class="marker">용량</span> 20g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                               
+                            </a>
+                                    </div>
+            </div>
+        </div>
+                <div class="shop_white_box ">
+            <div class="incontain">
+                <div class="ad_2_box flexColumn">
+                    
+                    <a href="/m/shop/list?type=12-0" target="_self" class="item"><img src="/hans/img_data/main_section/1778049933_2394.jpg" class="bl"></a><a href="/m/shop/list?type=9-0" target="_self" class="item"><img src="/hans/img_data/main_section/1778049955_5832.jpg" class="bl"></a>                    
+                </div>
+            </div>
+        </div>
+                        
+        <div class="shop_banner_gray" style="background:#ede3dd; position:relative; margin-bottom:45px;">
+            <div class="imgbox"><img src="/hans/images/s18_bulk_order.png" class="bl"></div>
+            <div class="incontain">
+                <div class="text_wrap " style="margin:0;">
+                    <div class="item">
+                        <h1 class="title">기업회원 전용 구매 시스템 오픈!</h1>
+                        <p class="text">(기존회원의 대량구매는 해당하지 않습니다.)</p>
+                        <div class="remark">기업회원분들은 일반 회원 구매페이지에서 대량 구매가 불가능합니다. 
+                        다양한 행사, 경조사, 명절, 워크샵등 필요한 수량을 대량 주문할 수 있는 
+                        벌크오더 기능을 이용해 구매 주문해주시길 바랍니다.</div>
+                        <a href="/m/biz/request" target="_self" class="bulk_link flexColumnCenter">
+                            <span class="txt">주문하기</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shop_white_box">
+            <div class="incontain">
+                
+
+                <div class="title_box flexColumn">
+                    <div class="item">
+                        <h5 class="title">#2 선물하기 좋은 한스라벨르 프리미엄</h5>
+                        <h1 class="title">누군가에게 당신의 소중한 마음을 전하고 싶다면?</h1>
+                    </div>
+                    <div class="item">
+                                           </div>
+                </div>
+                <div class="product_raw_list_box flexColumn">
+                   
+                                        <a href="/m/shop/view?num=3910&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1761549083-hans_belle_coco_thumbnmail_3.png" class="bl">  
+                                                                            <img src="/hans/img_data/product/1761549083-hans_belle_coco_thumbnmail_2.png" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼퓸라인 <span class="bar">|</span> <span class="sub">향수</span></h2>
+                                <h1 class="title">벨르코코 퍼퓸</h1>
+                                <p class="us_name">Belle coco perfume</p>
+                                <p class="grape"><span class="marker">용량</span> 45ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        <a href="/m/shop/view?num=3911&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1761545305-hans_secret_garden_thumbnail_3.png" class="bl">  
+                                                                            <img src="/hans/img_data/product/1761545305-hans_secret_garden_thumbnail_2.png" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼퓸라인 <span class="bar">|</span> <span class="sub">향수</span></h2>
+                                <h1 class="title">시크릿가든 퍼퓸</h1>
+                                <p class="us_name">Secret garden perfume</p>
+                                <p class="grape"><span class="marker">용량</span> 45ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        <a href="/m/shop/view?num=3912&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1759396243-hans_diffuser_flower_thumbnail.png" class="bl">  
+                                                                            <img src="/hans/img_data/product/1759396243-hans_diffuser_flower_thumbnail_2.png" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼퓸라인 <span class="bar">|</span> <span class="sub">디퓨저</span></h2>
+                                <h1 class="title">디퓨저 터치 오브 플라워 </h1>
+                                <p class="us_name">DIFFUSER TOUCH OF FLOWER</p>
+                                <p class="grape"><span class="marker">용량</span> 200ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        <a href="/m/shop/view?num=3913&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1759396212-hans_diffuser_muscat_thumbnail.png" class="bl">  
+                                                                            <img src="/hans/img_data/product/1759396212-hans_diffuser_muscat_thumbnail_2.png" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼퓸라인 <span class="bar">|</span> <span class="sub">디퓨저</span></h2>
+                                <h1 class="title">디퓨저  머스캣 세레나데</h1>
+                                <p class="us_name">DIFFUSER MUSCAT SERENADE</p>
+                                <p class="grape"><span class="marker">용량</span> 200ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        <a href="/m/shop/view?num=3916&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1764740418-thumnail_handcream03.webp" class="bl">  
+                                                                            <img src="/hans/img_data/product/1764740339-thumnail_handcream02.webp" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">핸드 &amp; 풋</span></h2>
+                                <h1 class="title">로맨틱 핸드케어 세트</h1>
+                                <p class="us_name">ROMANTIC HANDCARE CREAM SET</p>
+                                <p class="grape"><span class="marker">용량</span> 60ml (2개)</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        <a href="/m/shop/view?num=3919&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1774254502-S스타일_바디워시_크림_세트_합성_02.webp" class="bl">  
+                                                                            <img src="/hans/img_data/product/1774254502-S스타일_바디크림_합성_01.webp" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">바디</span></h2>
+                                <h1 class="title">S스타일 바디워시크림세트</h1>
+                                <p class="us_name">Perfume BODY Wash set</p>
+                                <p class="grape"><span class="marker">용량</span> 250ml+250ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        <a href="/m/shop/view?num=3920&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1768550935-1761548980-thumnail_shampooSet02.webp" class="bl">  
+                                                                            <img src="/hans/img_data/product/1758177767-hans_hair_set_thumbnail_2.png" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">헤어</span></h2>
+                                <h1 class="title">에센셜 리페어 [샴푸 린스] 세트</h1>
+                                <p class="us_name">ESSENTIAL REPAIR SHAMPOO RINSE SET</p>
+                                <p class="grape"><span class="marker">용량</span> 350ml+350ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                <div class="price_soldout">SOLD OUT <span class="remark">매진</span></div>
+                                                            </a>
+                                        <a href="/m/shop/view?num=3923&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1768791127-thumnail_maskpack_box01.webp" class="bl">  
+                                                                            <img src="/hans/img_data/product/1768791127-thumnail_maskpack_box02.webp" class="bl secondary-img">
+                                           
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">마스크 팩</span></h2>
+                                <h1 class="title">SC 모이스처라이징 앰플 마스크 [24시트 10장] 박스포함</h1>
+                                <p class="us_name">SC MOISTURIZING AMPOULE MASK 24 PACK SET 10</p>
+                                <p class="grape"><span class="marker">용량</span> 30ml (24장)*10개_1세트</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                        
+                </div>
+            </div>
+        </div>
+
+                
+        <div class="shop_white_box">
+            <div class="incontain">
+                
+                <div class="title_box flexColumn">
+                    <div class="item">
+                        <h5 class="title">#3 스킨 31퓨어 쿨링 텍스처</h5>
+                        <h1 class="title">피부 적정 온도를 지키는 것이 내 피부를 지키는 탑 시크릿</h1>
+                    </div>
+                    <div class="item">
+                                           </div>
+                </div>
+                <div class="product_raw_list_box flexColumn">
+                                           
+                    <a href="/m/shop/view?num=3932&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758183275-foasu_sphere_cream_thumbnail.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758183275-foasu_sphere_cream_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 크림</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE CREAM</p>
+                                <p class="grape"><span class="marker">용량</span> 50g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3933&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758184405-foasu_sphere_ampoule_thumbnail.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758184405-foasu_sphere_ampoule_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 앰플</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE AMPOULE</p>
+                                <p class="grape"><span class="marker">용량</span> 35ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3934&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1761286816-thumnai_bubbleToner02.webp" class="bl">   
+                                                                            <img src="/hans/img_data/product/1761286903-thumnai_bubbleToner01.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 버블 토너</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE BUBBLE TONER</p>
+                                <p class="grape"><span class="marker">용량</span> 50g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3935&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1774582070-0G3A7004.webp" class="bl">   
+                                                                            <img src="/hans/img_data/product/1774582056-0G3A6999.webp" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 블루 토너 패드</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE BLUE TONER PAD</p>
+                                <p class="grape"><span class="marker">용량</span> 150ml_60매</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3936&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758185355-foasu_suncream_thumbnail.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758185355-foasu_suncream_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 선크림</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE SUN CREAM(</p>
+                                <p class="grape"><span class="marker">용량</span> 35ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3937&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758184542-foasu_cleansing_foam_thumbnail.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758184542-foasu_cleansing_foam_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 폼 클렌징</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE FOAM CLEANSING</p>
+                                <p class="grape"><span class="marker">용량</span> 110ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3938&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758185452-foasu_hairmist_thumbnail.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758185452-foasu_hairmist_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">스킨 31 퓨어 스피어 퍼퓸 헤어 미스트</h1>
+                                <p class="us_name">SKIN 31 PURE SPHERE PERFUME HAIR MIST</p>
+                                <p class="grape"><span class="marker">용량</span> 50ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                            
+                    <a href="/m/shop/view?num=3940&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758185048-foasu_vitamin_cream_thumbnail.png" class="bl">   
+                                                                            <img src="/hans/img_data/product/1758185048-foasu_vitamin_cream_thumbnail_2.png" class="bl secondary-img">
+                                          
+                                </div>
+                                <div class="label_box">
+                                    <div class="best">BEST</div>                                                                                                            <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">리파인 올인원 비타민 캡슐크림</h1>
+                                <p class="us_name">RE FINE ALL IN ONE VITAMIN CAPSULECREAM </p>
+                                <p class="grape"><span class="marker">용량</span> 45g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                
+                                                                                            </a>
+                                    </div>
+            </div>
+        </div>
+        
+        <div class="shop_white_box">
+            <div class="incontain">
+                
+                <div class="title_box flexColumn">
+                    <div class="item">
+                        <h5 class="title">#4 나를 지켜주는 뷰티 필수 아이템</h5>
+                        <h1 class="title">머리끝부터 발끝까지 한스의 뷰티케어 솔루션을 만나보세요</h1>
+                    </div>
+                    <div class="item">
+                                           </div>
+                </div>
+                <div class="product_raw_list_box flexColumn">
+                   
+                                      <a href="/m/shop/view?num=3896&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1761553622-thumnail_powderwash02.png" class="bl">    
+                                                                            <img src="/hans/img_data/product/1761553622-thumnail_powderwash01.png" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">클렌저</span></h2>
+                                <h1 class="title">SC 엔자임 올인원 파우더 워시</h1>
+                                <p class="us_name">SC ENZYME ALL IN ONE POWDER WASH</p>
+                                <p class="grape"><span class="marker">용량</span> 70g</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3901&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1764742510-thumnail_Yzone01.webp" class="bl">    
+                                                                            <img src="/hans/img_data/product/1764742510-thumnail_Yzone02.webp" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">바디</span></h2>
+                                <h1 class="title"> S스타일 시크릿 Y존 세럼</h1>
+                                <p class="us_name"> S STYLE SECRET Y ZONE SERUM</p>
+                                <p class="grape"><span class="marker">용량</span> 120ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3897&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758168154-hans_mist_thumbnail.png" class="bl">    
+                                                                            <img src="/hans/img_data/product/1758168154-hans_mist_thumbnail_2.png" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">미스트</span></h2>
+                                <h1 class="title">SC 핑크 스노우 카밍 앰플 미스트</h1>
+                                <p class="us_name">SC PINK SNOW CALMING AMPOULE MIST</p>
+                                <p class="grape"><span class="marker">용량</span> 120ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3902&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758175520-hans_hot_body_cream_thumbnail.png" class="bl">    
+                                                                            <img src="/hans/img_data/product/1758175520-hans_hot_body_cream_thumbnail_2.png" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">퍼스널케어 <span class="bar">|</span> <span class="sub">바디</span></h2>
+                                <h1 class="title"> S스타일 바디 온열 크림</h1>
+                                <p class="us_name">S STYLE PERFUME POWER BODY CREAM</p>
+                                <p class="grape"><span class="marker">용량</span> 120ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3918&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1764812635-thumnail_man01.webp" class="bl">    
+                                                                            <img src="/hans/img_data/product/1764812635-thumnail_man02.webp" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">앰플/세럼</span></h2>
+                                <h1 class="title">SC 남성 올인원 앰플 세럼</h1>
+                                <p class="us_name">SC MAN ALL IN ONE AMPOULE SERUM</p>
+                                <p class="grape"><span class="marker">용량</span> 120ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3903&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758175791-hans_madecaming_cream_thumbnail.png" class="bl">    
+                                                                            <img src="/hans/img_data/product/1758175791-hans_madecaming_cream_thumbnail_2.png" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">크림</span></h2>
+                                <h1 class="title">SC 마데카밍 센시티브 크림 </h1>
+                                <p class="us_name">SC Madecaming Sensitive Cream</p>
+                                <p class="grape"><span class="marker">용량</span> 200ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>미포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3900&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758175113-hans_spot_cream_thumbnail_3.png" class="bl">    
+                                                                            <img src="/hans/img_data/product/1758175113-hans_spot_cream_thumbnail_2.png" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">기타</span></h2>
+                                <h1 class="title">SC 링클스팟 레틴알 크림</h1>
+                                <p class="us_name">SC WRINKLE SPOT RETINAL CREAM</p>
+                                <p class="grape"><span class="marker">용량</span> 35ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                            </a>
+                                       <a href="/m/shop/view?num=3899&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758174968-hans_spot_cream_thumbnail.png" class="bl">    
+                                                                            <img src="/hans/img_data/product/1758174968-hans_spot_cream_thumbnail_2.png" class="bl secondary-img">
+                                         
+                                </div>
+                                <div class="label_box">
+                                                                                                                                                <div class="sophia_conicial_cup">재구매</div>                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">기타</span></h2>
+                                <h1 class="title">SC 다크스팟 잡티 크림</h1>
+                                <p class="us_name">SC DARK SPOT BLEMISH CREAM</p>
+                                <p class="grape"><span class="marker">용량</span> 35ml</p>
+                                <p class="opt"><span class="marker">박스</span>포함 <span class="marker2">기능성</span>포함</p>
+                               
+                                                                                                                            </a>
+                                    </div>
+            </div>
+        </div>
+
+      
+        <div class="shop_wide_roll_box flexColumn">
+            <div class="item">
+                <div class="title_box flexColumn">
+                    <div class="item">
+                        <h5 class="title">#5 신상품과 리뉴얼 아이템</h5>
+                        <h1 class="title">새로운 제품과 리뉴얼된 제품을 만나보세요</h1>
+                    </div>
+                    <div class="item">
+                                           </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="swiper mySwiper swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-android">
+                <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper" style="transition: all; transform: translate3d(-1437.5px, 0px, 0px);">
+                    <!-- Slides -->
+                       
+                                           <div class="swiper-slide" style="margin-right: 10px;">
+                            <a href="/m/shop/view?num=3904&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758175878-hans_BB_cream_thumbnail.png" class="bl">        
+                                </div>
+                                <h2 class="brand">메이크업 <span class="bar">|</span> <span class="sub">페이스</span></h2>
+                                <h1 class="title">SC 데일리 밸런스 BB 크림 <span class="opt">배송비별도</span></h1>
+                                <div class="txt"></div>
+                                
+                                                            </a>
+                        </div>
+                                                <div class="swiper-slide" style="margin-right: 10px;">
+                            <a href="/m/shop/view?num=3906&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1770877695-thumnnail_cushion_colorPetalP.png" class="bl">        
+                                </div>
+                                <h2 class="brand">메이크업 <span class="bar">|</span> <span class="sub">페이스</span></h2>
+                                <h1 class="title">[본품] 글로우핏 모이스톤 쿠션 페탈핑크 <span class="opt">배송비별도</span></h1>
+                                <div class="txt"></div>
+                                
+                                                            </a>
+                        </div>
+                                                <div class="swiper-slide" style="margin-right: 10px;">
+                            <a href="/m/shop/view?num=3939&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1763446707-thumnail_rollon02.webp" class="bl">        
+                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">프레스티지 리파인 올인원 비타민 세럼 <span class="opt">배송비별도</span></h1>
+                                <div class="txt"></div>
+                                
+                                                            </a>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-prev" style="margin-right: 10px;">
+                            <a href="/m/shop/view?num=3940&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1758185048-foasu_vitamin_cream_thumbnail.png" class="bl">        
+                                </div>
+                                <h2 class="brand">포어수 <span class="bar">|</span> <span class="sub">포어수</span></h2>
+                                <h1 class="title">리파인 올인원 비타민 캡슐크림 <span class="opt">배송비별도</span></h1>
+                                <div class="txt"></div>
+                                
+                                                            </a>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-active" style="margin-right: 10px;">
+                            <a href="/m/shop/view?num=3963&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1770950674-thumnail_dualvibe01.png" class="bl">        
+                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">크림</span></h2>
+                                <h1 class="title">온힐 듀얼 바이브 크림 <span class="opt">80g</span></h1>
+                                <div class="txt"></div>
+                                
+                                                            </a>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-next" style="margin-right: 10px;">
+                            <a href="/m/shop/view?num=3962&amp;page=1" target="_self" class="item">
+                                <div class="imgbox">
+                                    <img src="/hans/img_data/product/1778025655-thumnail_onhealeyecream01.webp" class="bl">        
+                                </div>
+                                <h2 class="brand">기초라인 <span class="bar">|</span> <span class="sub">크림</span></h2>
+                                <h1 class="title">온힐 아이 릴렉스 크림 <span class="opt">20g</span></h1>
+                                <div class="txt"></div>
+                                
+                                                            </a>
+                        </div>
+                                            </div>
+                    <div class="swiper-scrollbar" style="opacity: 1; transition: 400ms;"><div class="swiper-scrollbar-drag" style="transform: translate3d(302.342px, 0px, 0px); transition: all; width: 82.6577px;"></div></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                       
+                
+            </div>
+        </div>
+
+        <div class="shop_white_box">
+            <div class="incontain">
+                <div class="forum_box flexColumn">
+                    <div class="item">
+                        <h1 class="title">공지사항·뉴스</h1>
+                        <div class="forum_list">
+                                                       
+                                        <a href="/m/news/view?num=407&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">쇼핑몰 기존 회원 계정 로그인 방법 안내</span>
+                                            <span class="date">2026.05.22</span>
+                                        </a>
+                              
+                                        <a href="/m/news/view?num=406&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">4월 BEST 후기</span>
+                                            <span class="date">2026.05.07</span>
+                                        </a>
+                              
+                                        <a href="/m/news/view?num=405&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">2026년 5월 무이자 카드 할부 안내</span>
+                                            <span class="date">2026.05.04</span>
+                                        </a>
+                              
+                                        <a href="/m/news/view?num=404&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">5월 황금연휴 배송 안내</span>
+                                            <span class="date">2026.04.28</span>
+                                        </a>
+                              
+                                        <a href="/m/news/view?num=403&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">회원정보 미등록 시 수수료 지급 관련 안내</span>
+                                            <span class="date">2026.04.17</span>
+                                        </a>
+                           </div>
+                    </div>
+                    <div class="item">
+                        <h1 class="title">자주묻는질문</h1>
+                        <div class="forum_list">
+                                                                         <a href="/m/faq/view?num=391&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">인증이 안오신다구요</span>
+                                            <span class="date">회원</span>
+                                        </a>
+                                                                   <a href="/m/faq/view?num=378&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">배송비 정책 안내</span>
+                                            <span class="date">회원</span>
+                                        </a>
+                                                                   <a href="/m/faq/view?num=343&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">부분 배송 및 누락 안내</span>
+                                            <span class="date">배송</span>
+                                        </a>
+                                                                   <a href="/m/faq/view?num=341&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">교환/반품/환불 안내</span>
+                                            <span class="date">교환/환불</span>
+                                        </a>
+                                                                   <a href="/m/faq/view?num=340&amp;page=1" target="_self" class="context flexColumn">
+                                            <span class="subject">방문 수령을 하고 싶은데 어떻게 하나요?</span>
+                                            <span class="date">배송</span>
+                                        </a>
+                                                   </div>
+                        
+                    </div>
+
+                    <div class="item">
+                        <h1 class="title">입금계좌/배송 안내</h1>
+                        <div class="bankinfo flexColumn">
+                            <div class="iconbox"><img src="/hans/images/bank_hana.webp" class="bl"></div>
+                            <div class="textbox">
+                                <h1 class="title">하나은행</h1>
+                                <p class="text">558-910027-61104</p>
+                                <p class="name">(주)한스라벨르</p>
+                            </div>
+                        </div>
+
+                        <div class="deliverbox">
+                            <h1 class="title">한진택배 (TEL:1588-0000)</h1>
+                            <p class="text">배송정보는 해당 택배사를 통해 조회가 가능하십니다.</p>
+                            <a href="https://www.hanjin.co.kr/kor/CMS/DeliveryMgr/WaybillResult.do?mCode=MN038&amp;schLang=KR&amp;wblnum=" target="_blank" class="more_link flexColumnCenterMiddle">
+                                <span class="icon"><img src="/hans/images/go_icon_3.png" class="bl"></span>
+                                <span class="txt">배송위치 조회하기</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+       var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+    });
+              
+        </script>
+        <div class="footer_wrap">
+                <div class="incontain">
+                    <div class="footer_box flexColumn">
+                        <div class="item">
+                            <div class="logobox"><img src="/hans/images/s7_logo2.png" class="bl"></div>
+                            <div class="text">
+                                안전한 화장품을 제공하기 위하여 CGMP(우수화장품 제조관리기준) 및 KFDA(식품의약품안전처) 인증을 받아 믿을 수 있는 화장품 브랜드입니다.
+                            </div>
+                            <div class="snsbox flexColumnFlexStart">
+                                <div class="item">
+                                    <a href="#" target="_blank" class="sns_link flexColumnCenterMiddle"><img src="/hans/images/sns_new_icon_3.png" class="bl"></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank" class="sns_link flexColumnCenterMiddle"><img src="/hans/images/sns_new_icon_1.png" class="bl"></a>
+                                </div>
+                                <div class="item">
+                                    <a href="https://pf.kakao.com/_TEqxin/chat" target="_blank" class="sns_link flexColumnCenterMiddle"><img src="/hans/images/sns_new_icon_2.png" class="bl"></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank" class="sns_link flexColumnCenterMiddle"><img src="/hans/images/sns_2.png" class="bl"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h1 class="title">Instruction</h1>
+                            <ul class="footer_menu">
+                                <li><a href="/m/biz/aboutus" target="_self" class="go_link">회사소개</a></li>
+                                <li><a href="/m/custom/info" target="_self" class="go_link">고객센터</a></li>
+                                <li><a href="/m/" target="_self" class="go_link">처음화면</a></li>
+                                <li><a href="/m/page/terms" target="_self" class="go_link">이용약관</a></li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <h1 class="title">Community</h1>
+                            <ul class="footer_menu">
+                                <li><a href="/m/news/list" target="_self" class="go_link">뉴스 · 공지사항</a></li>
+                                <li><a href="/m/faq/list" target="_self" class="go_link">자주묻는질문</a></li>
+                                <li><a href="/m/planning/list" target="_self" class="go_link">기획전</a></li>
+                                <li><a href="/m/review/list" target="_self" class="go_link">구매후기(리뷰)</a></li>
+                                <li><a href="/m/page/privacy" target="_self" class="go_link">개인정보취급방침</a></li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <h1 class="title">Inquiry</h1>
+                            <p class="text">
+        한스라벨르 고객상담은 카카오톡 채널에서만<br>진행하고 있습니다.
+                       </p>
+                           <a href="#" target="_blank" class="tel_link" style="line-height:1.5;">070-4335-2285
+</a>
+                           <div class="text_2nd">
+                               평일운영시간 : AM 9:00 - PM 18:00<br>
+브레이크타임 : PM 12:30 - PM 13:30<br>
+
+휴무일안내 : 토.일.공휴일 휴무
+                           </div>
+                        </div>
+                    </div>
+                    <div class="footer_wide_text">
+                      상호: 주식회사 한스라벨르 <span class="dot">·</span> 대표: 김시연 <span class="dot">·</span>
+                      사업자등록번호: 112-88-02968 <span class="dot">·</span> 통신판매업신고번호: 제2018-인천남동구-0768호 <span class="dot">·</span>
+                      개인정보관리책임자: 조** <span class="dot">·</span> 전화: 070-4335-2285 <span class="dot">·</span> 이메일: labelle1935@hanscos.com
+<br>
+
+주소: 인천광역시 남동구 논현고잔로 97, B동 1층 <span class="dot">·</span> 호스팅제공자 : AWS
+                    </div>
+                    <div class="footer_text_wrap flexColumn">
+                        <div class="item">
+                            <p class="text">Copyright © 2025 HANSLABELLE. All Rights Reserved. </p>
+                        </div>
+                        <div class="item">
+                            <ul class="footer_menu flexColumnCenter">
+                                <li><a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1128802968" target="_blank" class="go_link">사업자정보확인</a></li>
+                                <li><a href="/m/page/terms" target="_self" class="go_link">이용약관</a></li>
+                                <li><a href="/m/page/privacy" target="_self" class="go_link">개인정보취급방침</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<script type="text/javascript">
+
+</script>        <style>
+    .footer_fix_menu{position: fixed; bottom:0px; left:0px; width:100%; height:68px; background: #fafafa; z-index: 999999; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);}
+    .footer_fix_menu > .incontain{position: relative; width:100%;}
+    .footer_fix_menu > .incontain > ul.footer_menu{margin:5px 0 0 0; padding:0; display: flex;}
+    .footer_fix_menu > .incontain > ul.footer_menu li{list-style-type: none; display: block; width:25%; flex: 1;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link:link{padding:10px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link:visited{padding:10px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link:active{padding:10px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link:hover{padding:10px 0; opacity: 1; background: #f0f0f0; border-radius: 8px;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link > .iconbox{width:100%; text-align: center; margin:0 0 5px 0;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link > .iconbox > i{font-size:22px; display: inline-block; color:#364856; transition: all 0.3s ease;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link:hover > .iconbox > i{color:#7c5650; transform: scale(1.1);}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link > .text{display:block; text-align: center; font-size:11px; padding:0; font-weight:500; color:#666; transition: all 0.3s ease; margin: 0;}
+    .footer_fix_menu > .incontain > ul.footer_menu li > a.go_link:hover > .text{color:#7c5650; font-weight: 600;}
+</style>
+
+<!-- Font Awesome CDN 추가 (head 태그에 추가하거나 여기에 포함) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="footer_fix_menu">
+    <div class="incontain">
+        <ul class="footer_menu">
+            <li>
+                <a href="/m/" target="_self" class="go_link">
+                    <div class="iconbox">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <p class="text">처음화면</p>
+                </a>
+            </li>
+            <li>
+                                <a href="/m/member/signin" target="_self" class="go_link">
+                    <div class="iconbox">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p class="text">로그인</p>
+                </a>
+                            </li>
+            <li>
+                <a href="/m/shop/cart" target="_self" class="go_link">
+                    <div class="iconbox">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <p class="text">장바구니</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" target="_self" class="go_link" id="gotothetop">
+                    <div class="iconbox">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <p class="text">맨위로</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $("#gotothetop").click(function(e){
+        e.stopPropagation();
+        e.preventDefault(); 
+        $('html, body').stop().animate({ scrollTop : 0 }, 500);
+    });
+});
+</script>    </div>
+        
+</div><style>
+/* 팝업 모달 스타일 */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999990;
+}
+
+.popup-modal {
+    position: fixed;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    z-index: 9999991;
+    display: none;
+    overflow: hidden;
+}
+
+.popup-header {
+    background: #f5f5f5;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-close:hover {
+    color: #333;
+}
+
+.popup-body {
+    position: relative;
+    overflow-y: auto;
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.popup-link {
+    display: block;
+    cursor: pointer;
+}
+
+.popup-footer {
+    padding: 10px 15px;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-today-close {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #666;
+}
+
+.popup-today-close input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.popup-footer-close {
+    padding: 5px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.popup-footer-close:hover {
+    background: #45a049;
+}
+
+/* 모바일 스타일 */
+@media (max-width: 768px) {
+    .popup-modal {
+        width: calc(100% - 20px) !important;
+        left: 10px !important;
+        right: 10px !important;
+        border-radius: 10px;
+        max-height: 80vh; /* 최대 높이 증가 */
+        height: auto !important; /* 자동 높이 */
+    }
+    
+    /* 모바일에서 팝업 위치 조정 */
+    .popup-modal[data-popup-num="1"] {
+        bottom: 20px !important;
+        top: auto !important;
+    }
+    
+    .popup-modal[data-popup-num="2"] {
+        top: 50% !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+    }
+    
+    .popup-modal[data-popup-num="3"] {
+        top: 20px !important;
+        bottom: auto !important;
+    }
+    
+    .popup-modal.mobile-mode {
+        animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* 모바일 팝업 바디 높이 자동 조정 */
+    .popup-body {
+        max-height: 70vh;
+        height: auto;
+    }
+    
+    /* 모바일 이미지는 가로 100%에 맞춰 세로 자동 조정 */
+    .popup-image {
+        width: 100%;
+        height: auto !important;
+    }
+}
+
+/* PC 스타일 */
+@media (min-width: 769px) {
+    .popup-modal {
+        animation: fadeIn 0.3s ease-out;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+/* 다중 팝업 z-index 관리 - 겹치지 않도록 */
+.popup-modal[data-popup-num="1"] { z-index: 9999993; }
+.popup-modal[data-popup-num="2"] { z-index: 9999992; }
+.popup-modal[data-popup-num="3"] { z-index: 9999991; }
+
+/* 팝업이 겹치지 않도록 위치 조정 */
+.popup-draggable {
+    cursor: move;
+}
+</style>
+<!-- 팝업 HTML -->
+<div class="popup-modal mobile-mode" id="popup-2" data-popup-num="2" style="height: 0px; bottom: 50%; transform: translateY(50%); display: block;">
+    <div class="popup-header popup-draggable">
+        <span class="popup-title">알림</span>
+        <button class="popup-close" onclick="closePopup(2)">×</button>
+    </div>
+    
+    <div class="popup-body">
+                    <a href="https://www.youtube.com/watch?v=OCthHaSNin4" target="_blank" class="popup-link">
+                
+        <!-- PC/모바일 이미지 구분 표시 -->
+                <img src="/hans/img_data/popup/popup_2_pc_1777366030.webp" alt="팝업 이미지" class="popup-image popup-image-pc" style="display: none;">
+                
+                <img src="/hans/img_data/popup/popup_2_mobile_1777366030.webp" alt="팝업 이미지" class="popup-image popup-image-mobile" style="display: block;">
+                
+                    </a>
+                
+            </div>
+    
+    <div class="popup-footer">
+        <label class="popup-today-close">
+            <input type="checkbox" id="today-close-2">
+            오늘 하루 보지 않기
+        </label>
+        <button class="popup-footer-close" onclick="closePopup(2)">닫기</button>
+    </div>
+</div>
+<div class="popup-modal mobile-mode" id="popup-3" data-popup-num="3" style="height: 0px; top: 20px; bottom: auto; display: block;">
+    <div class="popup-header popup-draggable">
+        <span class="popup-title">알림</span>
+        <button class="popup-close" onclick="closePopup(3)">×</button>
+    </div>
+    
+    <div class="popup-body">
+                    <a href="https://hanslabelle.com/m/news/view?num=398&amp;page=1" target="_blank" class="popup-link">
+                
+        <!-- PC/모바일 이미지 구분 표시 -->
+                <img src="/hans/img_data/popup/popup_3_pc_1773216044.jpg" alt="팝업 이미지" class="popup-image popup-image-pc" style="display: none;">
+                
+                <img src="/hans/img_data/popup/popup_3_mobile_1773216044.jpg" alt="팝업 이미지" class="popup-image popup-image-mobile" style="display: block;">
+                
+                    </a>
+                
+            </div>
+    
+    <div class="popup-footer">
+        <label class="popup-today-close">
+            <input type="checkbox" id="today-close-3">
+            오늘 하루 보지 않기
+        </label>
+        <button class="popup-footer-close" onclick="closePopup(3)">닫기</button>
+    </div>
+</div>
+
+<script>
+// 팝업 관리 스크립트
+(function() {
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    var activePopups = [{"0":"2","num":"2","1":"y","is_active":"y","2":"600","pc_width":"600","3":"700","pc_height":"700","4":"100","pc_top":"100","5":"150","pc_left":"150","6":"0","mobile_height":"0","7":"popup_2_pc_1777366030.webp","image_pc":"popup_2_pc_1777366030.webp","8":"popup_2_mobile_1777366030.webp","image_mobile":"popup_2_mobile_1777366030.webp","9":"","content":"","10":"https:\/\/www.youtube.com\/watch?v=OCthHaSNin4","link_url":"https:\/\/www.youtube.com\/watch?v=OCthHaSNin4","11":"y","show_today_close":"y","12":"2026-04-28 17:47:10","regist_day":"2026-04-28 17:47:10","13":"106.247.29.153","ip":"106.247.29.153"},{"0":"3","num":"3","1":"y","is_active":"y","2":"600","pc_width":"600","3":"700","pc_height":"700","4":"100","pc_top":"100","5":"150","pc_left":"150","6":"0","mobile_height":"0","7":"popup_3_pc_1773216044.jpg","image_pc":"popup_3_pc_1773216044.jpg","8":"popup_3_mobile_1773216044.jpg","image_mobile":"popup_3_mobile_1773216044.jpg","9":"","content":"","10":"https:\/\/hanslabelle.com\/hans\/news\/view?num=398&page=1","link_url":"https:\/\/hanslabelle.com\/hans\/news\/view?num=398&page=1","11":"y","show_today_close":"y","12":"2026-03-11 17:00:44","regist_day":"2026-03-11 17:00:44","13":"106.247.29.153","ip":"106.247.29.153"}];
+    var draggedPopup = null;
+    var dragOffset = { x: 0, y: 0 };
+    
+    // 쿠키 관련 함수
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+    
+    // 팝업 표시 함수
+    function showPopup(popupNum) {
+        var popup = document.getElementById('popup-' + popupNum);
+        
+        if (!popup) return;
+        
+        // 오늘 하루 보지 않기 체크
+        if (getCookie('popup_hide_' + popupNum) === 'true') {
+            return;
+        }
+        
+        // 이미지 선택 (PC/모바일)
+        var pcImage = popup.querySelector('.popup-image-pc');
+        var mobileImage = popup.querySelector('.popup-image-mobile');
+        
+        if (isMobile && mobileImage) {
+            mobileImage.style.display = 'block';
+            if (pcImage) pcImage.style.display = 'none';
+        } else if (pcImage) {
+            pcImage.style.display = 'block';
+            if (mobileImage) mobileImage.style.display = 'none';
+        }
+        
+        // 팝업 위치 및 크기 설정
+        var popupData = activePopups.find(function(p) { return p.num == popupNum; });
+        
+        if (isMobile) {
+            // 모바일: 지정된 위치에 표시
+            popup.classList.add('mobile-mode');
+            popup.style.height = popupData.mobile_height + 'px';
+            
+            // 모바일에서 팝업 위치 조정 (겹치지 않도록)
+            if (popupNum == 1) {
+                popup.style.bottom = '20px';
+            } else if (popupNum == 2) {
+                popup.style.bottom = '50%';
+                popup.style.transform = 'translateY(50%)';
+            } else if (popupNum == 3) {
+                popup.style.top = '20px';
+                popup.style.bottom = 'auto';
+            }
+        } else {
+            // PC: 지정된 위치
+            popup.style.width = popupData.pc_width + 'px';
+            popup.style.height = popupData.pc_height + 'px';
+            popup.style.top = popupData.pc_top + 'px';
+            popup.style.left = popupData.pc_left + 'px';
+            
+            // PC에서 팝업 위치 미세 조정 (완전히 겹치지 않도록)
+            var offset = (popupNum - 1) * 30;
+            popup.style.top = (parseInt(popupData.pc_top) + offset) + 'px';
+            popup.style.left = (parseInt(popupData.pc_left) + offset) + 'px';
+        }
+        
+        // 팝업 표시 (애니메이션 효과)
+        setTimeout(function() {
+            popup.style.display = 'block';
+        }, (popupNum - 1) * 200); // 순차적으로 표시
+    }
+    
+    // 팝업 닫기 함수 (전역)
+    window.closePopup = function(popupNum) {
+        var popup = document.getElementById('popup-' + popupNum);
+        var todayClose = document.getElementById('today-close-' + popupNum);
+        
+        // 오늘 하루 보지 않기 체크
+        if (todayClose && todayClose.checked) {
+            setCookie('popup_hide_' + popupNum, 'true', 1);
+        }
+        
+        // 팝업 숨기기
+        if (popup) {
+            popup.style.display = 'none';
+        }
+    };
+    
+    // 드래그 기능 (PC에서만)
+    if (!isMobile) {
+        document.querySelectorAll('.popup-draggable').forEach(function(header) {
+            header.addEventListener('mousedown', function(e) {
+                draggedPopup = header.closest('.popup-modal');
+                var rect = draggedPopup.getBoundingClientRect();
+                dragOffset.x = e.clientX - rect.left;
+                dragOffset.y = e.clientY - rect.top;
+                
+                // 드래그 중인 팝업을 최상위로
+                document.querySelectorAll('.popup-modal').forEach(function(p) {
+                    p.style.zIndex = '9999990';
+                });
+                draggedPopup.style.zIndex = '9999999';
+            });
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (draggedPopup) {
+                e.preventDefault();
+                draggedPopup.style.left = (e.clientX - dragOffset.x) + 'px';
+                draggedPopup.style.top = (e.clientY - dragOffset.y) + 'px';
+            }
+        });
+        
+        document.addEventListener('mouseup', function() {
+            draggedPopup = null;
+        });
+    }
+    
+    // ESC 키로 모든 팝업 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            activePopups.forEach(function(popup) {
+                closePopup(popup.num);
+            });
+        }
+    });
+    
+    // 페이지 로드시 모든 팝업 동시 표시
+    window.addEventListener('load', function() {
+        activePopups.forEach(function(popup) {
+            showPopup(popup.num);
+        });
+    });
+    
+    // 팝업 클릭시 최상위로 이동 (PC에서만)
+    if (!isMobile) {
+        document.querySelectorAll('.popup-modal').forEach(function(popup) {
+            popup.addEventListener('click', function() {
+                document.querySelectorAll('.popup-modal').forEach(function(p) {
+                    p.style.zIndex = p.getAttribute('data-popup-num') == popup.getAttribute('data-popup-num') ? '9999999' : '9999990';
+                });
+            });
+        });
+    }
+})();
+</script>
+
+
+
+</body></html>

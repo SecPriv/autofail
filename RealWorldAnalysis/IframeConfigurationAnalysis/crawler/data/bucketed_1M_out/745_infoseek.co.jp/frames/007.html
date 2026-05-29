@@ -1,0 +1,207 @@
+<!DOCTYPE html><html><head>
+    <meta name="robots" content="noindex, nofollow">
+<script>bazadebezolkohpepadr="925923765"</script><script type="text/javascript" src="https://www.rakuten.co.jp/akam/13/37307b66" defer=""></script></head>
+
+<body>
+    <script type="text/javascript">
+    (function() {
+        if (window == parent) {
+            return -1;
+        }
+
+        var acc = 461;
+        var aid = 1;
+        var ts = new Date().getTime().toString() + Math.floor(0x100000000 * Math.random()).toString(16);
+        var qs = encodeURIComponent('{"acc":' + acc + ',"aid":' + aid + ',"bid":"' + ts + '"}');
+        var imgTag = document.createElement('img');
+        imgTag.src = "https://rat.rakuten.co.jp/?cpkg_none=" + qs;
+        imgTag.style = "width:2px;height:2px;display:none;visibility:hidden";
+        imgTag.addEventListener('load', function() {
+            init();
+        })
+        document.body.appendChild(imgTag);
+
+        var whiteList = [],
+            sessCk, persCk;
+
+        function getQueryParam(param) {
+            function getUrlVars() {
+                var vars = [],
+                    hash;
+                var hashes = decodeURIComponent(window.location.search).substring(1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            var arr = getUrlVars();
+            return arr[param];
+        }
+        //parse cookie setting parameters
+        sessCk = getQueryParam('ckr') || 'Rp';
+        persCk = getQueryParam('ckp') || 'Rz';
+
+        //whitelist of domains where the message can be sent
+        whiteList = [
+            /^http[s]?:\/\/srdk\.rakuten\.jp$/,
+            /^http[s]?:\/\/edyviewer\.rakuten-edy\.co\.jp$/,
+            /^http[s]?:\/\/stg\.edyviewer\.rakuten-edy\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*travel\.rakuten\.(com|cn|fr)$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*travel\.rakuten\.com\.(tw|hk|my|sg)$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*travel\.rakuten\.co\.(kr|id|th)$/,
+            /^http[s]?:\/\/store\.jleague\.jp$/,
+            /^http[s]?:\/\/store-jleague\.faq\.rakuten\.ne\.jp$/,
+            /^http[s]?:\/\/rakuten\.e-gift\.co$/,
+            /^http[s]?:\/\/www\.rakuten-life\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*fril\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten-bank\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten-insurance\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*viber\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*viber\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten-card\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten-sec\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rental\.rakuten\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*developers\.rakuten\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuteneagles\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*eagles.\.allsports\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*tstar\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*vissel-kobe\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten\.ne\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*nikki\.ne\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*stylife\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuma\.rakuten\.com\.tw$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*infoseek\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*campaign\.rakuten\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.rebates\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten\.happywoman\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*global\.rakuten\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakuten-ron\.force\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*f-rakuten-ron\.cs5\.force\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.rakuten\.us$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*capital\.rakuten\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakutenghd1406254551\.zendesk\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*intra\.rakuten-it\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.homes\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.goo-net\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*gnavi\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*biccamera\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*card\.rakuten\.com\.tw$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*stay\.rakuten\.co\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*vacation-stay\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*109cinemas\.net$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*recommend\.marketplace\.rakuten\.net$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.katogolf\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*golf\.faq\.rakuten\.net$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*rakutenkoqml\.formstack\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*ai-med(?:\.co)?\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*reserve\.mobile\.rakuten\.net$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*jp\.account\.rakuten\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*event\-rakuten\.livepark\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*chichinohi\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*hahanohi\.me$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*furusato-nouzei\.tax$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*ash-hair\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*kumamoto\.guide$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*akumamoto\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*aimed\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*airdoor\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*kaigonoshigoto\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.gero\-spa\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*aoaokichijitsu\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*www\.okinawastory\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*kosokufest\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*japan\.rakutentickets\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*my-best\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*misignal\.jp$/,
+            /^http[s]?:\/\/www\.crocs\.co\.jp$/,
+            /^http[s]?:\/\/retreat\.gunma-kanko\.jp$/,
+            /^http[s]?:\/\/gunma-kanko\.jp$/,
+            /^http[s]?:\/\/www\.jcom\.co\.jp$/,
+            /^http[s]?:\/\/onlineshop\.jcom\.co\.jp$/,
+            /^http[s]?:\/\/mypage\.jcom\.co\.jp$/,
+            /^http[s]?:\/\/www\.myjcom\.jp$/,
+            /^http[s]?:\/\/lifull\.com$/,
+            /^http[s]?:\/\/www\.town\.iizuna\.nagano\.jp$/,
+            /^http[s]?:\/\/nagaoka-navi\.or\.jp$/,
+            /^http[s]?:\/\/www\.city\.nagaoka\.niigata\.jp$/,
+            /^http[s]?:\/\/na-nagaoka\.jp$/,
+            /^http[s]?:\/\/iju\.na-nagaoka\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*kenbiya\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*lifull-senior\.com$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*c-kurolabel\.jp$/,
+            /^http[s]?:\/\/(\w[-\w]*\.)*sapporobeer\.jp$/
+        ];
+
+        // whitelist for file protocol
+        var fileWhitelist = [
+            /^file:\/\/.*\/Rakuten(%20)? ?Link.app\/.*|^.*RakutenLink.*Electron.*$/
+        ]
+
+        function getCookie(name) {
+            var cookieValue, cookies, cookie, i, len;
+            if (document.cookie) {
+                cookies = document.cookie.split('; ');
+                for (i = 0, len = cookies.length; i < len; i++) {
+                    cookie = cookies[i];
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function sendData(data) {
+            var receiver, str, parentUrl,
+                query, protocol, parentHost, matches, n, len;
+
+            receiver = window.parent;
+
+            dataObj = {
+                'type': 'ratCk',
+                'data': data
+            };
+            str = JSON && JSON.stringify(dataObj);
+            if (str) {
+                // Check the parent host
+                parentUrl = getQueryParam('o-id');
+                len = whiteList.length;
+                for (n = 0; n < len; n++) {
+                    if (parentUrl && parentUrl.match(whiteList[n])) {
+                        receiver.postMessage(str, parentUrl);
+                        break;
+                    }
+                }
+                
+                // for Link
+                var userAgent = navigator.userAgent || '';
+                len = fileWhitelist.length;
+                for (n = 0; n < len; n++) {
+                    if (parentUrl.match(fileWhitelist[n]) || userAgent.match(fileWhitelist[n])) {
+                        receiver.postMessage(str, parentUrl);
+                        break;
+                    }
+                }
+            }
+        }
+
+        function init() {
+            var data = {},
+                ckp, dataStr;
+            data.cks = getCookie(sessCk);
+            ckp = getCookie(persCk);
+            if (ckp) {
+                data.ckp = ckp;
+            }
+            sendData(data);
+        }
+        init();
+    })();
+    </script><img src="https://rat.rakuten.co.jp/?cpkg_none=%7B%22acc%22%3A461%2C%22aid%22%3A1%2C%22bid%22%3A%2217795321257101b2b7d3d%22%7D" style="width: 2px; height: 2px; display: none; visibility: hidden;">
+<noscript><img src="https://www.rakuten.co.jp/akam/13/pixel_37307b66?a=dD1lNWQ3ODZmYTdkNDA5OThmMGM0ZmUyZDA2OWExZmU1NzM0ZmNiZWVhJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript>
+
+
+</body></html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Mini-Solaranlage von solago – Dein Solarenergie-Experte</title>
+    <script src="https://solago.de/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+/*
+IMPORTANT:
+1 - Edit the Project ID
+2 - (and, if necessary also change the API/eventNames of the goals below)
+*/
+
+const projectId = 96022868; //Use your project id!
+
+/*
+Use it this way:
+Settings > Customer Pixels > Click "Add Custom Pixel" > Name it "ABlyft Tracking" > Add pixel > Save > Connect it
+*/
+
+analytics.subscribe("all_events", async (event) => {
+    if(!event.name.startsWith("checkout_")) return false;
+
+    const d = document;
+    const w = window;
+
+    w.insideShopifyPixel = true;
+    w.ablyftAllowIframe = true;
+    let j = d.createElement("script");
+    j.async = true;
+    j.src = `https://cdn.ablyft.com/s/${projectId}.js`;
+
+    j.onload = async () => {
+        const url = (event).context.window.location.href;
+
+        let allEvents = [];
+
+        //default events
+        switch(event.name){
+            case "checkout_started":
+            case "checkout_completed":
+            case "checkout_shipping_info_submitted":
+            case "checkout_contact_info_submitted":
+            case "checkout_address_info_submitted":
+                allEvents = [
+                    {
+                        eventType: "custom",
+                        eventName: `shopify_event_${event.name}`
+                    }
+                ];
+                break;
+        }
+
+        //enrich for "checkout_completed" event
+        if(event.name === "checkout_completed"){
+            const productsCount = event.data.checkout.lineItems.reduce((accumulator, currentValue) => currentValue.quantity + accumulator, 0);
+            const purchaseEvents = [
+                {
+                    eventType: "revenue",
+                    eventName: "revenue",
+                    eventValue: event.data.checkout.totalPrice.amount
+                },
+                {
+                    eventType: "custom",
+                    eventName: "products-count", //use your own api name here
+                    eventValue: productsCount
+                },
+                {
+                    eventType: "custom",
+                    eventName: "purchase", //use your own api name here
+                }
+            ];
+            allEvents = allEvents.concat(purchaseEvents);
+        }
+
+        if(allEvents.length === 0) return false;
+
+        let userData = await browser.cookie.get("ablyft_uvs");
+        if(!userData){
+            userData = await browser.localStorage.getItem("ablyft_uvs");
+        }
+
+        const user = JSON.parse(userData);
+        let visitor_type = "new";
+        if (user && user.sessions && user.sessions > 1) {
+            visitor_type = "returning";
+        }
+
+        const attributes = {
+            device_type: w.ablyft.get("deviceType"),
+            visitor_type,
+            url: url,
+            user_agent: w.navigator.userAgent
+        };
+
+
+        let experimentsBucketData = await browser.cookie.get("ablyft_exps")
+        if(!experimentsBucketData){
+            experimentsBucketData = await browser.localStorage.getItem("ablyft_exps");
+        }
+        if(!experimentsBucketData){
+            console.log("ABlyft - Empty user bucketing - aborting");
+            return;
+        }
+        const experimentsBucket = JSON.parse(experimentsBucketData);
+
+        const userObject = {
+            attributes,
+            experimentsBucket
+        };
+
+        const experimentIds = Object.keys(experimentsBucket);
+        let variationIds = [];
+        for (let i = 0; i < experimentIds.length; i++) { variationIds.push(experimentsBucket[experimentIds[i]]); }
+
+        function createLockId() {
+            const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let text = "";
+            for (let i = 0; i < 10; i++) { text += possible.charAt(Math.floor(Math.random() * possible.length)); }
+            return text;
+        }
+
+        const goals = w.ablyft.get("goals");
+
+        const postObj = {
+            projectId: projectId,
+            source: "shopify-webpixel",
+            user: userObject,
+            events: allEvents.filter(event => goals.find(goal => goal.api_name === event.eventName)).map(event => {
+                const goalObject = goals.find(goal => goal.api_name === event.eventName);
+                return {
+                    "type": event.eventType,
+                    "value": event.eventValue,
+                    "timestamp": Math.floor(Date.now() / 1000),
+                    "locked": Math.floor(Date.now() / 1000),
+                    "lockId": createLockId(),
+                    "goal": {
+                        "id": goalObject.id,
+                        "variations": variationIds
+                    }
+                };
+            })
+        }
+
+        await fetch("https://log.ablyft.com", {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postObj),
+        });
+    };
+
+    d.getElementsByTagName("head")[0].appendChild(j);
+});
+});})(self.webPixelsManager.createShopifyExtend('221348214', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

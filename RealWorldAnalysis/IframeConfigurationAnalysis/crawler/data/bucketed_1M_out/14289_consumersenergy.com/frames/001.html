@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head>
+        <title>UsableNet Assistive Switch</title>
+        <script type="text/javascript">
+function bindEvent(element, eventName, eventHandler) {
+    if (element.addEventListener) {
+    	element.addEventListener(eventName, eventHandler, false);
+    } else if (element.attachEvent) {
+        element.attachEvent('on' + eventName, eventHandler);
+    }
+}
+var alerted = false;
+var sendMessage = function (msg, origin) {
+    window.parent.postMessage(msg, origin);
+};
+bindEvent(window, 'message', function (e) {	
+    var data = e.data;			
+    if(data.action === 'enableUsableNetAssistive') {
+        try {
+            localStorage.setItem(data.clientToken,1);
+            sendMessage('UsableNetAssistiveEnabled', e.origin);
+        } catch(e) {
+            if (!alerted) {
+                alerted = true;
+                alert('Your web browser privacy settings are preventing the accessibility mode to stay enabled. Try enabling third party cookies to ensure you receive accessible updates to the website.');
+            }
+        }
+    } else if (data.action === 'checkUsableNetAssistive') {
+        if(localStorage.getItem(data.clientToken)) {
+            sendMessage('UsableNetAssistiveEnabled', e.origin);
+        }
+    } else if(data.action === 'disableUsableNetAssistive') {
+        localStorage.removeItem(data.clientToken);
+        sendMessage('UsableNetAssistiveDisabled', e.origin);
+    }
+});
+		</script>
+    </head>
+    <body>
+
+</body></html>

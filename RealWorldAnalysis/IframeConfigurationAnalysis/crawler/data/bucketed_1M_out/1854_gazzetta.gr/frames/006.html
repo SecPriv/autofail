@@ -1,0 +1,172 @@
+<!DOCTYPE html><html><head>
+    <title>BannerFlow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript">var clickTag = '';</script>
+    <style type="text/css" media="screen">
+        html, body, div {
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+
+        body {
+            overflow: hidden
+        }
+    </style>
+<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    var isNewtonTokenSet = false;
+    var isTurtleXAdClick = false;
+    var reportingIds = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+
+            if (clkTag.eTldPlusOne) {
+              eTldPlusOnes[clkTag.url] = clkTag.eTldPlusOne;
+            }
+            if (clkTag.reportingId) {
+              reportingIds[clkTag.url] = clkTag.reportingId;
+            }
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+      if (isNewtonEnabled(eventData) && !isNewtonTokenSet) {
+        var newtonOt2Token = eventData.newtonOt2Token;
+        enableAttributionReportingApi(newtonOt2Token);
+      }
+      if (eventData.isTurtleXAdClick) {
+        isTurtleXAdClick = true;
+      }
+    };
+
+    var isNewtonEnabled = function(eventData) {
+      return 'newtonOt2Token' in eventData;
+    }
+
+    var enableAttributionReportingApi = function(originTrialToken) {
+      if (/Chrome/.test(window.navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.httpEquiv = 'origin-trial';
+        meta.content = String(originTrialToken);
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        isNewtonTokenSet = true;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          if (isTurtleXAdClick && !!reportingIds[url]) {
+            var message = {
+              'reportingId': reportingIds[url],
+              'clickX': urlParamMap[CLICK_X_URL_KEY],
+              'clickY': urlParamMap[CLICK_Y_URL_KEY],
+              'creativeDims': getCreativeDimensions()
+              };
+            parent.postMessage(JSON.stringify(message), '*');
+          }
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            var windowFeatures = '';
+
+            if (features) {
+              windowFeatures = windowFeatures.concat(features);
+            }
+            if (isNewtonTokenSet &&
+                !!document.featurePolicy?.allowedFeatures().includes(
+                  'attribution-reporting')) {
+              if (features) {
+                if (!features.includes('attributionsrc')) {
+                  windowFeatures = windowFeatures.concat(features, ', attributionsrc');
+                }
+              } else {
+                windowFeatures = windowFeatures.concat('attributionsrc');
+              }
+            }
+
+            if (windowFeatures) {
+              args.push(windowFeatures);
+            }
+            open.apply(window,args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script><link rel="preload" as="script" href="https://c.bannerflow.net/scripts/text.b3519451c5b18e2fd0a2.js" type="text/javascript"><script charset="utf-8" type="application/javascript" src="https://c.bannerflow.net/accounts/pgsm/57bc0e61b801ca3368315a91/published/16062084/18122902/data.00000006CDC42F.js"></script><script charset="utf-8" type="application/javascript" src="https://c.bannerflow.net/scripts/animated-creative.a99385df491c0735bd90.js"></script></head>
+<body>
+    <script>var onClickTag=window.setInterval(function (){if (window.clickTag){clearInterval(onClickTag); var c=document.createElement('div'); c.setAttribute('id', 'bannerflow'); document.body.appendChild(c); var s=document.createElement('script'); var scriptUri='https://c.bannerflow.net/a/66a7e4200c072bec31fa852e?did=5ced17d285b1c200019c3fe1&deeplink=on&'; s.setAttribute('src', scriptUri + '&redirecturl=' + encodeURIComponent(window.clickTag)); document.body.appendChild(s);}}, 50);</script>
+
+<div id="bannerflow"></div><script src="https://c.bannerflow.net/a/66a7e4200c072bec31fa852e?did=5ced17d285b1c200019c3fe1&amp;deeplink=on&amp;&amp;redirecturl=https%3A%2F%2Fpagead2.googlesyndication.com%2Fpcs%2Fclick%3Fxai%3DAKAOjsvhfOkXGccDs7XzEnfhWRl9xfUDQZqphGJ5rzCMEpP90mMbdH39MfP-Bqg7ivavyRdqEQ_UCBOmqGrgopX3UgWKyICEKRMOv04M1-9f3pP5kRu_A86bIIWfcWzoA2ZYtuCeVWFfB6Yo2RmQETXeOfERgbAVoSt8UAfWX2xtb5hm71kpssdp9XGHwrKQPAL9m6mJlR4EsQHkhuPmCUwKTd5NgWefhApjs5XxbLr1BQ214ZVfypI7HVqSBoJ9DheM6m6NQ9NK1ZdJeyrxY-Iz8cT78UpVSz5nsKc_es2rE-sTG0COwMx2ZPnt7slhSNumC5g7UxSjpVADQpazVvxQZ1wE485I4gTkrTXVPjTJh_5AuxDpE0tfv8BUtkLYPgoRri41vQGkgIVRBnMPpZH28IEjDlsAZlvr2occ2WEOjcyFyuE8zkVRpL4Q5nJ4CxWI28qpAnGlv-anIgols5iMcGYmOFkH9up-0m0SXrkr_RH_BRrRKj7G3XupAELn7MyalUOw8_beA4WvOpeA3uVj8R4YnzHCHggb3Ol9xt5FxxmKAqmQD2yu_8dJJuoSlXf6OXIj2hQp3tr2I_9UKrMmLIYKzvIwGnY7L3CbTRltU_G-U4Enfay7Wkawwt8u3_6QEB7yLBzFCAfMetl7xGqWvOdcLTfBJH3Dvq1SzaRFiQzMUu8CzR0TxaGdQChmeeD-Z4OM5HGQh_X5sVtuswNyoJBzfS8EgUGaALL6ue6k9gb8x_6X5aAWZxbsdwuYINjq31GTjASz3hdR5P4biscpSERngIbewh8Kudvm3bAKdRqxZNFMwdOpChN5C0XbwPVayJWV2CSNxJJpu8ab-kuS%26sig%3DCg0ArKJSzD-eVKUXLs5REAE%26cry%3D1%26fbs_aeid%3D%255Bgw_fbsaeid%255D%26urlfix%3D1%26rm_eid%3D%255Brm_exit_id%255D%26adurl%3Dhttps%253A%252F%252Fwww.bwin.gr%252Fel%252Fengage%252Flan%252Fsports%252Fgiga-welcome-offer%253Futm_source%253Ddisplay-gazzetta%2526utm_campaign%253Dgazzetta-all%2526utm_content%253Dc%253A26491.916%2526utm_medium%253Dgazzetta%2526utm_term%253D4543650-gazzettagrgr-bwin-sprts-gr-14-12-2020-el-brand-display--partner-gazzettagrgr-onside--rch-tweb-c%253A26491%2526tdpeh%253D4543650-gazzettagrgr-bwin-sprts-gr-14-12-2020-el-brand-display--partner-gazzettagrgr-onside-rch--tweb-c%25253A26491.916%2526wm%253D4543650%2526dclid%253D%2525edclid!%2526gad_source%253D7" data-rendered="true"></script><div style="display: inline-block; width: 1230px; height: 30px; position: relative; padding: 0px; margin: 0px;"><iframe scrolling="no" src="about:blank" style="height: 1px; width: 1px; min-height: 100%; max-width: 100%; min-width: 100%; filter: none; transform: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; outline: none; display: block; position: absolute; opacity: 0; top: 0px; left: 0px; transform-origin: 0px 0px; transition: opacity 0.2s;"></iframe></div><iframe style="position: absolute; pointer-events: none; left: 0px; top: 0px; opacity: 0; height: 0px; width: 0px;"></iframe></body></html>

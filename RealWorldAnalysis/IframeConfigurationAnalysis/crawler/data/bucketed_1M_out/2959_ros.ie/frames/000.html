@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en" class="no-js"><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><!--<![endif]--><head>
+    <base href="https://www.ros.ie/oidc/">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>ROS - Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="resources/js/lib/html5.js"></script>
+    <![endif]-->
+    
+	<link id="lex-web-ui-loader-css" type="text/css" rel="stylesheet" href="https://d1fmqadp3sfpx4.cloudfront.net/./lex-web-ui-loader.css"><link rel="stylesheet" type="text/css" href="resources/css/login-responsive.css?v=2310">
+	
+    <!-- favico -->
+    <link rel="shortcut icon" href="images/revenue_logo_favicon.jpg">
+
+    <!-- Load jQuery up here so that we can use in-page functions -->
+    <script type="text/javascript" src="webjars/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    <!-- Loads i18n for ROS language properties or i18n version for Mitre -->
+    
+  		
+    		<script type="text/javascript" src="webjars/jquery-i18n-properties/1.2.2/jquery.i18n.properties.min.js"></script>
+    		<script type="text/javascript">
+    			jQuery.i18n.properties({
+    				name : 'messages',
+    				path : 'https://www.ros.ie/oidc/'.replace(/\/$/, '')+'/resources/bundle/',
+    				mode : 'both',
+    				language : 'en'
+    			});
+    		</script>
+    		
+  		
+  		
+	
+    <script type="text/javascript">
+
+	    lang = "en";
+		langParameter = "lang";
+		clientid = "rosint_rp";
+		clientidParameter = "client_id";
+		issuer = "https://www.ros.ie/oidc/";
+
+		
+    	function setPageTitle(title) {
+    		document.title = "ROS - " + title;
+    	}
+
+		
+    	function getUserInfo() {
+    		return ;
+    	}
+
+		
+		function getUserAuthorities() {
+			return ["ROLE_ANONYMOUS"];
+		}
+
+		// is the current user an admin?
+		// NOTE: this is just for
+		function isAdmin() {
+			var auth = getUserAuthorities();
+			if (auth && _.contains(auth, "ROLE_ADMIN")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+    </script>
+    <link rel="stylesheet" type="text/css" href="resources/fonts/Fira/fira.css?v=2250">
+    <link rel="stylesheet" type="text/css" href="resources/css/login-style.css?v=2440">
+    
+
+
+
+
+
+
+
+    <script type="text/javascript" src="/availability.js?t=1779533411656"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(typeof isRosDown === "function" && isRosDown()==true){
+                window.location = "/sitedown.html";
+            }
+        });
+    </script>
+<script type="text/javascript" charset="utf-8" src="resources/js/forge-complete-min.js"></script>
+    
+    <script type="text/javascript" charset="utf-8" src="resources/js/revenue-openid-common.js?2440"></script>
+    <script type="text/javascript" charset="utf-8" src="resources/js/revenue-openid-login.js?2250"></script>
+
+    <link rel="stylesheet" type="text/css" href="webjars/chosen/1.4.2/chosen.min.css">
+    <script type="text/javascript" charset="utf-8" src="webjars/chosen/1.4.2/chosen.jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="resources/js/login-mode.js?2250"></script>
+
+    <script type="text/javascript" charset="utf-8" src="/js/ros/rosUtils.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="resources/css/helpcentre.css">
+    <script type="text/javascript" charset="utf-8" src="/helpcentre/js/warning_messages.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="resources/css/vendor.min.css?v=2250">
+
+    <link rel="stylesheet" type="text/css" href="resources/css/jquery-ui-1.10.3.custom.css?v=2250">
+    <script type="text/javascript" src="resources/js/jquery-ui-1.10.3.custom.min.js?2250"></script>
+    
+    <script>
+    $(document).ready(function() {
+        if(isIE()){
+            $('#login-news-section').hide();
+            $('#login-news-section-compatibility-warning').show();
+        }
+    });
+    
+    function isIE(){
+        var ua = window.navigator.userAgent; 
+        var msie = ua.indexOf('MSIE '); // IE 10 or older
+        var trident = ua.indexOf('Trident/'); //IE 11
+        
+        return (msie > 0 || trident > 0);
+    }
+    
+    </script>
+    
+    <script type="text/javascript" src="/js/ros/jquery.url.js"></script>
+            <script type="text/javascript" src="/js/ros/jquery.cookie.js"></script>
+            <script type="text/javascript" src="/js/ros/tabManager.js"></script>
+        
+</head>
+
+<body style="">
+
+<div id="wrap"><div class="container">
+    <div class="header ">
+        <div class="inner_container">
+            <div class="header-top">
+                <a href="https://www.revenue.ie"> <img class="logo" src="resources/css/images/revenue.png" laria-abel="Revenue Logo" alt="Revenue Logo" title="Revenue Logo">
+                </a>
+                <a href="https://www.ros.ie"> <img class="rosLogo" src="resources/css/images/ROS_logo.png" aria-label="ROS logo " alt="ROS logo " title="ROS logo ">
+                </a>
+            </div>
+            
+
+            <div class="top_links">
+                <ul class="lang_links">
+                    <li class="upper" lang="ga"><a href="/oidc/login?lang=ga&amp;client_id=rosint_rp" title="Athraíonn an nasc seo an téacs ar an leathanach seo go Gaeilge "> Gaeilge</a></li>
+                        </ul>
+            </div>
+        </div>
+        <br class="clear">
+        <div class="progress--section2">
+            <div class="inner_container heading_top">
+                <h1 class="progressText">
+                    Secure Sign In for Business Customers </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="grey-background-half">
+        <div class="inner_container">
+            <script type="text/javascript">
+    $(document).ready(function() {
+        try {
+            revenue.openidCommon.getAvailableCerts($('#certList'));
+        } catch(e) {
+            revenue.openidCommon.handleError(e);
+        }
+        revenue.openidCommon.rolloverPeriod=730;
+        
+        
+        
+        $("span.info_icon > a, span.info_icon_close > a").click(revenue.openidCommon.toggle_visibility);
+
+        if($('select#certList').val() == null){
+            $('select#certList>option:eq(0)').prop('selected', true);
+        }
+    });
+    
+   
+</script>
+
+<!-- Please Wait -->
+<div class="login loginbox" id="top_level_div" browser-compatible-mode="true" certs-loaded-mode="true" style="">
+<div class="row">
+    <div class="login-panel-form col-md-8">
+        <form id="uiForm" onsubmit="revenue.openidLogin.loginProcess(); return false;">
+
+            <div class="login-form-wrapper">
+            <div class="form_row_load_cert">
+                    <div class="form_label">
+                        <label for="certList"> Select Certificate</label>
+                    </div>
+                    <div class="form_input status-container">
+                        <select id="certList" name="certList" class="form-control login-input" title="List of all certificates loaded in this browser. Select the certificate you wish to use to login to ROS.">
+                            <option selected="" value="default">No Certificate loaded in this browser.</option>
+                        </select>
+                    </div>
+                    <div class="title_section certs_table">
+                        <div class="sub_links">
+                            <p class="link-info">
+                                You can load a digital certificate &gt;<a href="login/manage?lang=en&amp;client_id=rosint_rp" class="larger_text" title="Click &quot;Manage My Certificates&quot; button to load your ROS certificates into this browser and start using our new JavaScript solution." id="" target="">
+		    Manage My Certificates</a>
+	<span class="info_icon"> <a href="javascript:void[0]" for_box="loginInfoManageCertificates"> <img class="infoIcon infoIcon-login" src="resources/css/images/info_icon.png" title="Manage my certificate help" alt="Manage my certificate help"></a></span>
+                            </p>
+                        </div>
+    
+                        <div class="infoBox white-panel login-tooltip" id="loginInfoManageCertificates">
+                            <div class="infoBox-top">
+                                <p>
+                                    The correct ROS digital certificate must be loaded in the browser to login.<br><br>
+                                    Click on the Manage My Certificates link to locate the certificate you saved on your device and load it.</p>
+                                <br class="clear">
+                            </div>
+                            <div class="infoBox-bottom">
+                                <a href="https://www.revenue.ie/en/online-services/support/ros-help/something-is-not-working/issues-logging-into-ros/index.aspx" target="_blank" title="If you are having difficulty, try these suggestions">If you are having difficulty, try these suggestions</a>
+                            </div>
+    
+    
+                            <span class="close info_icon_close"> <a href="javascript:void(0)" for_box="loginInfoManageCertificates"> Close</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_row_password">
+                    <div class="form_label">
+                        <label for="password"> Enter Password</label>
+                    </div>
+                    <div class="form_input text status-container">
+                        <div class="password-icon-container">
+                            <input class="form-control login-input" placeholder="Enter Password" type="password" name="password" id="password" autocomplete="current-password">
+                            <a>
+                                <img id="show_or_hide_password_img" src="resources/css/images/select_enable_password.png">
+                            </a>
+                        </div>
+                    </div>
+
+	                <div class="title_section certs_table">
+	                    <div id="passwordManagementLinks" class="sub_links">
+	                        <p id="reset-login-link" class="link-info">
+	                            <a href="https://www.ros.ie/ros-registration-web/ros-registration?reissue=true&amp;lang=en&amp;client_id=rosint_rp" class="larger_text" title="Forgot Password" id="" target="">
+		    Forgot Password</a>
+	<span class="info_icon"> <a href="javascript:void[0]" for_box="loginInfoResetPassword"> <img class="infoIcon infoIcon-login" src="resources/css/images/info_icon.png" title="Forgot Password Tooltip" alt="Forgot Password Tooltip"></a></span> <br class="clear">
+	                        </p>
+	                    </div>
+	
+	                    <div class="infoBox white-panel login-tooltip" id="loginInfoResetPassword">
+	
+	                        <div class="infoBox-top">
+	                            <p>Incorrect password may occur if:</p>
+	                            <ul>
+	                                <li>
+	                                    <p>You are entering your password incorrectly.</p>
+	                                </li>
+	                                <li>
+	                                    <p>You have not loaded the most up to date copy of your certificate.</p>
+	                                </li>
+	                            </ul>
+	                            <br class="clear">
+	                        </div>
+	                        <span class="close info_icon_close"> <a href="javascript:void(0)" for_box="loginInfoResetPassword"> Close</a>
+	                        </span>
+	                    </div>
+	                </div>
+	            </div>
+	            <div id="error-message-placeholder" class="login-placeholder" aria-live="polite">
+	                <div id="message-box" class="message_parent login-message-box" style="display: none;">
+	                    <span id="js_message" class="message_box"></span> <span id="textMessage" class="message_box"></span>
+	                </div>
+	            </div>
+	            <div class="form_row_login_button">
+	                <input class="btn-primary btn-next login-button" type="submit" name="login" id="login" value="Login to ROS"> <span class="icon-arrow-right-bold" aria-hidden="true"></span>
+	            </div>
+	            <div class="form_row_login_button">
+	                <input class="btn-secondary btn-next login-button" id="forgotPassword" value="Trouble Logging In?" onclick="forgotPasswordClicked('https://www.ros.ie/ros-registration-web/ros-registration?reissue=true')"> <span class="icon-arrow-right-bold" aria-hidden="true"></span>
+	            </div>
+                </div>
+        </form>
+    </div>
+    <div id="loginPanalSidebar" class="loginPanalSidebar col-md-4">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-link register-for-ros">
+                <a href="https://www.ros.ie/ros-registration-web/ros-registration?lang=en" class="" title="Register for ROS" id="" target="">
+		    Register for ROS</a>
+	</div>
+    
+            <div class="sidebar-link">
+                <a id="help_link_play_icon" tabindex="0">
+                    <p class="sidebar-text">
+                        Digital certificate explained.<br>
+                        See How it Works<br>
+                        <img id="play_icon" alt="Click here to open a video explaining ROS certificates." src="resources/css/images/Play_Icon.png" width="50" height="50" title="Click here to open a video explaining ROS certificates.">
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<form id="loginForm" action="/oidc/j_spring_security_check" method="POST">
+    <input type="hidden" id="X509Certificate" name="X509Certificate">
+    <input type="hidden" id="data" name="data" value="0db98c07-04dd-4544-afdc-42f2a03bc7f2">
+    <input type="hidden" id="signeddata" name="signedData">
+    <input type="hidden" id="certnameused" name="local_cert_name">
+    <input type="hidden" id="ran" name="local_store_ran">
+    <input type="hidden" id="clientid" name="client_id" value="rosint_rp">
+</form>
+
+<script>
+    $(function() {
+        $('.chzn-select').chosen( {
+            disable_search : true,
+            search_contains : true
+        });
+    });
+    
+
+        
+    $( "#cert-video-modal" ).dialog({
+        create: function() {
+            $(this).closest('div.ui-dialog')
+                   .find('.ui-dialog-titlebar-close')
+                   .click(function(e) {
+                       var video = $("#videoIframe").attr("src");
+                       $("#videoIframe").attr("src","");
+                       $("#videoIframe").attr("src",video);
+                   });
+        },
+        resizable : false,
+        modal : true,
+        autoOpen : false,
+        draggable: false,
+        title : 'ROS certs explained',
+        tabindex: 0,
+    });
+    
+    $("#help_link_play_icon").keydown(function(event) {
+        if (event.keyCode === 13) {
+            $("#help_link_play_icon").click();
+        }
+    });
+
+    document.getElementById("show_or_hide_password_img").onclick = function() {
+            var passwordField = document.getElementById("password");
+            var img = document.getElementById("show_or_hide_password_img");
+            if(passwordField.type == "text") {
+                passwordField.type = "password";
+                img.src = "resources/css/images/select_disable_password.png";
+            } else {
+                passwordField.type = "text";
+                img.src = "resources/css/images/select_enable_password.png";
+            }
+    }
+    
+    document.getElementById("help_link_play_icon").onclick = function(){
+        var width;
+        if(window.innerWidth - 20 > 1080){
+            width=1080;
+        }else{
+            width = window.innerWidth - 20;
+        }       
+        var height = width / 16 * 9
+        $("#cert-video-modal").dialog( "option", "width", width );
+        $("#cert-video-modal").dialog( "option", "height", height );
+        $("#cert-video-modal").dialog('open');
+        
+        $("#cert-video-modal").parent().attr("id","cert-video-parent");
+    }
+    
+        
+</script></div>
+    </div>
+    <div class="inner_container">
+        <div class="col-lg-12&quot;">
+                <iframe id="login-news-section" title="Login information update section " src="https://www.revenue.ie/ros-content/ROS-Info-section-text-en.aspx" style="height: 290px;"></iframe>
+                <div id="login-news-section-compatibility-warning" style="display:none;">
+                <p class="login-compatibility-message">
+                    Unsupported Browser detected. Please change browser to view this information.<br>
+                    <a href="https://www.revenue.ie/en/online-services/support/technical-requirements/system-requirements/ros-system-requirements.aspx" class="" title="System Requirements" id="" target="_blank">
+		    Click here for more information on browser compatibility</a>
+	</p>        
+            </div>
+        </div>
+        <div class="links">
+                <div class="row">
+                    <div class="useful-links-row col-md-5">
+                        <h2 class="underline useful-links-heading">
+                            Useful Links</h2>
+                        <ul class="useful-links-list">
+                            <li class="useful-links"><a href="https://www.revenue.ie/en/news/index.aspx" class="" title="View Latest Revenue News" id="" target="">
+		    View Latest Revenue News</a>
+	</li>
+                            <li class="useful-links"><a href="https://www.revenue.ie/en/online-services/support/ros-help/getting-started-on-ros/about-ros/what-is-ros.aspx " class="" title="Learn about ROS" id="" target="">
+		    Learn about ROS</a>
+	</li>
+                            <li class="useful-links"><a href="https://www.ros.ie/EUVatLinks.jsp" class="" title="EU VAT Customers" id="" target="">
+		    EU VAT Customers</a>
+	</li>
+                            <li class="useful-links"><a href="https://www.ros.ie/devcentre/ros-developer-helpcentre.html" class="" title="ROS Developer Support" id="" target="">
+		    ROS Developer Support</a>
+	</li>
+                            <li class="useful-links"><a href="https://www.ros.ie/myaccount-web/sign_in.html?lang=en" class="" title="Login to myAccount" id="" target="">
+		    Login to myAccount</a>
+	</li>
+                            <li class="useful-links"><a href="https://www.ros.ie/devcentre/email-certificate.html" class="" title="Digital Certificate for Emails" id="" target="">
+		    Digital Certificate for Emails</a>
+	</li>
+                        </ul>
+                    </div>
+
+                    <div class="useful-links-row col-md-5">
+                        <h2 class="underline useful-links-heading">
+                            Return Preparation and Offline</h2>
+                        <ul class="useful-links-list">
+                            <li class="useful-links"><a href="https://www.ros.ie/rpf-web/rev/offline?lang=en" class="" title="Return Preparation Facility" id="" target="">
+		    Return Preparation Facility</a>
+	</li>
+                            <li class="useful-links"><a href="https://www.revenue.ie/en/companies-and-charities/corporation-tax-for-companies/third-party-returns/form-46g.aspx" class="" title="46g Return Tool" id="" target="">
+		    46g Return Tool</a>
+	</li> 
+                            <li class="useful-links"><span class="myrevenue-icons-arrow"></span><a href="https://www.revenue.ie/en/online-services/support/ros-help/ros-offline-application/return-preparation-options/index.aspx" class="" title="Which Application to Use?" id="" target="">
+		    Which Application to Use?</a>
+	</li> 
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="useful-links-help-text">
+                    <p class="ros-help-info">
+                        <img id="question-icon" alt="Question mark icon " src="resources/css/images/vectors/icon-question.svg" width="16" height="16" title="Question mark icon ">
+                        Step by step guides and solutions can be found at <a class="ros-help-link" href="/helpcentre/help.html#/?a=rosSecurityRefresh/load-cert&amp;lang=en" target="_blank" tabindex="0" title="This link opens a help page in a new window"> ROS Online Help<span class="icon-arrow-diagonal-regular" aria-hidden="true"></span>
+                    </a>
+                    </p>
+                </div>
+            </div>
+            <br class="clear">
+    </div>
+</div>
+<script>
+window.addEventListener('message', function(e) { 
+    if(e.origin === "https://www.revenue.ie"){
+        
+        // message that was passed from iframe page
+        let message = e.data;
+
+        document.getElementById('login-news-section').style.height = (message.height + 21) + 'px';
+    }
+});
+</script>
+
+<script src="https://d1fmqadp3sfpx4.cloudfront.net/lex-web-ui-loader.min.js"></script>
+    <script>
+    var loaderOpts = {
+      baseUrl: 'https://d1fmqadp3sfpx4.cloudfront.net',
+      shouldLoadMinDeps: true
+    };
+    var initialMinDone = false;
+    var initalTextSent = false;
+    var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+    var chatbotUiConfig = {
+            lex: {
+              sessionAttributes: {
+                lang: 'en'
+              }
+            }
+            
+          };
+    
+    try {
+      loader.load(chatbotUiConfig);
+    }catch(error){
+                    console.log(error);
+    };
+    
+    function onMessageFromChatBot(evt) {
+                    
+        if(evt.data.event == 'toggleMinimizeUi'){
+             if(initialMinDone && !initalTextSent){
+                             loader.api.postText('Login Help', loader.api.MESSAGE_TYPE_HUMAN)
+                             initalTextSent = true;
+             }
+             initialMinDone = true;
+        }
+    
+    }
+    
+    window.addEventListener('message', onMessageFromChatBot, false);
+                      
+      </script>
+    
+<div class="footer">
+<div class="col-lg-12 center">
+    <ul class="top_list">
+        <li>
+            <a href="https://www.revenue.ie" class="" title="This link will return you to www.revenue.ie" id="" target="">
+		    Revenue Home</a>
+	</li>
+        
+        <li>
+        	<span class="circle2">•</span>
+            <a href="https://www.ros.ie/helpcentre/help.html?lang=en" class="" title="This link opens a help file in a new window" id="" target="_blank">
+		    ROS Help</a>
+	</li>
+       
+        <li>
+        	<span class="circle2">•</span>
+        	<a href="https://www.revenue.ie/en/online-services/support/technical-requirements/accessibility-statement/ros.aspx" class="" title="This link opens the Accessibility Statement in a new window" id="" target="_blank">
+		    Accessibility</a>
+	</li>
+      
+        <li>
+        	<span class="circle2">•</span>
+        	<a href="https://www.revenue.ie/en/online-services/support/technical-requirements/system-requirements/ros-system-requirements.aspx" class="" title="System Requirements" id="" target="">
+		    System Requirements</a>
+	</li>
+        <li>
+            <span class="circle2">•</span>
+            <a href="https://www.revenue.ie/en/online-services/support/data-and-security/terms-and-conditions/ros.aspx" class="" title="This link opens a Terms and Conditions document in a new window" id="" target="_target">
+		    Terms &amp; Conditions</a>
+	</li>
+       
+        <li>
+         	<span class="circle2">•</span>
+        	<a href="https://www.revenue.ie/en/online-services/support/data-and-security/security/ros.aspx" class="" title="This link opens a PDF containing the privacy policy in a new window" id="" target="_blank">
+		    Privacy Policy</a>
+	</li>
+       
+        <li>
+        	<span class="circle2">•</span>
+        	<a href="https://www.revenue.ie/en/online-services/support/data-and-security/ros-policy-and-practice-statement.aspx" class="" title="This link opens the Certificate Policy and Practice Statements in a new window" id="" target="_blank">
+		    Certificate Policy and Practice Statements</a>
+	</li>
+    </ul>
+    </div>
+</div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front" tabindex="-1" role="dialog" aria-describedby="cert-video-modal" aria-labelledby="ui-id-1" style="display: none;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title">ROS certs explained</span><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title="close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">close</span></button></div><div id="cert-video-modal" tabindex="0" class="ui-dialog-content ui-widget-content">
+    <iframe id="videoIframe" tabindex="0" src="https://www.youtube-nocookie.com/embed/XdXDRwSw1hs" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen=""></iframe>
+</div></div><script id="aws-script" type="text/javascript" src="https://sdk.amazonaws.com/js/aws-sdk-2.903.0.min.js"></script><div class="lex-web-ui-iframe lex-web-ui-iframe--show lex-web-ui-iframe--minimize" id="lex-web-ui-iframe"><iframe src="https://d1fmqadp3sfpx4.cloudfront.net/index.html#/?lexWebUiEmbed=true" frameborder="0" scrolling="no" title="chatbot" allow="microphone"></iframe></div><div id="tabManagerOverlay" style="visibility: hidden; opacity: 0.5; position: absolute; z-index: 1000; background-color: rgb(0, 70, 76); width: 100%; height: 100%; left: 0px; top: 0px;"></div><div id="tabManagerTxtBoxContainer"><div id="tabManagerTxtBox" style="line-height: normal; border-radius: 6px; visibility: hidden; position: absolute; z-index: 1001; width: 90%; max-width:500px; min-width:270px; min-height: 145px; max-height:250px; padding-bottom:16px; margin-left: auto; margin-right: auto; top: 25px; left: 0px; right: 0px; border-width: 1px; border-style: solid; text-align: left; font-size: medium; background-color: #f3f3f3; color: #454545;"><div id="tabManagerTitlebar" style="display: table;width:100%;height:30px;color: rgb(255, 255, 255); margin-top: 0px; font-size: large; background-color: rgb(0, 70, 76);"><div style="background-image: url(/images/warning_24.gif); background-repeat: no-repeat; width: 24px; height: 24px; margin: 3px; display: inline-block; float: left;"></div><div style="padding-top: 5px; width:80%; text-align:center; font-family: Arial, Helvetica, sans-serif; display: inline-block; float: left;">New Window Detected</div></div><p style="padding: 3px;margin: 5px;font-size: 13px;font-family: Arial, Helvetica, sans-serif; text-align: center;">ROS does not support multiple windows or tabs.<br>Please choose the window you wish to continue using and close all other windows.<br>When all other windows are closed please click the button below to continue.</p><div style="text-align:center;"><button onclick="javascript: activateCurrentWindow();">Continue</button></div></div></div></body></html>

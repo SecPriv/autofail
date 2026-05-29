@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Mini-Solaranlage von solago – Dein Solarenergie-Experte</title>
+    <script src="https://solago.de/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+(function() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://t.adcell.com/js/trad.js';
+    script.async = true;
+
+    script.onload = function() {
+        console.log("Adcell tracking script has loaded successfully.");
+
+        if (typeof Adcell !== 'undefined' && Adcell.Tracking && Adcell.Tracking.track) {
+            Adcell.Tracking.track();
+        } else {
+            console.error("Adcell tracking function not found.");
+        }
+    };
+
+    document.body.appendChild(script);
+})();
+
+
+
+analytics.subscribe("checkout_completed", (event) => {
+    
+
+(function() {
+    var betrag = event.data.checkout.totalPrice.amount;
+    var referenz = event.data.checkout.order.id;
+
+    if (typeof betrag !== 'string') {
+        betrag = String(betrag); 
+    }
+
+    if (typeof referenz !== 'string') {
+        referenz = String(referenz); 
+    }
+
+    var finalUrl = 'https://t.adcell.com/t/track.js?pid=11766&eventid=14892&referenz=' + referenz + '&betrag=' + betrag;
+    
+    console.log("AdcellRequest URL:", finalUrl); 
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = finalUrl;
+    script.async = true;
+    document.body.appendChild(script);
+})();
+
+});
+
+
+
+
+
+
+});})(self.webPixelsManager.createShopifyExtend('131400020', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+<script type="text/javascript" src="https://t.adcell.com/js/trad.js" async=""></script></body></html>

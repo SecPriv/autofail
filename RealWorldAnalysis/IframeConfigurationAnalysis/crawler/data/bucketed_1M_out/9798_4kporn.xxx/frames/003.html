@@ -1,0 +1,523 @@
+<html><head><style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+    }
+
+    #cb_adtag_1 {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+    }
+
+        #cb_adtag_1 a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #cb_adtag_1 video,
+        #cb_adtag_1 img.cb-main-media {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            background: #000;
+        }
+
+        #cb_adtag_1 .cb-logo-overlay {
+            position: absolute;
+            top: 3%;
+            right: 3%;
+            width: clamp(70px, 30%, 220px);
+            max-height: clamp(40px, 18%, 140px);
+            height: auto;
+            object-fit: contain;
+            object-position: top right;
+            z-index: 12;
+            pointer-events: none;
+            display: block;
+        }
+</style>
+
+<style id="cbLiveStyles">@keyframes cbLivePulse {0% { transform: scale(1); opacity: 0.85; }70% { transform: scale(2.4); opacity: 0; }100% { transform: scale(2.4); opacity: 0; }}</style></head><body><div id="cb_adtag_1" style="position: fixed; inset: 0px; width: 100vw; height: 100vh; overflow: hidden; background: rgb(0, 0, 0);"><a target="_blank" rel="noopener noreferrer" href="https://chaturbate.com/in/?tour=yiMH&amp;campaign=X7hVR&amp;track=native_ws_4kporn_ww&amp;room=akina520"><video loop="" playsinline="" preload="auto" muted="" webkit-playsinline="" src="https://jpeg.live.mmcdn.com/roomad/akina520-15.mp4?f=637288088" style="object-fit: cover; display: none;"></video><img alt="" class="cb-main-media" data-fallback-src="https://thumb.live.mmcdn.com/ri/akina520.jpg" src="https://thumb.live.mmcdn.com/ri/akina520.jpg" style="object-fit: cover; display: block;"></a><div style="position: absolute; top: 10px; left: 10px; z-index: 10; pointer-events: none; display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: linear-gradient(rgba(25, 25, 25, 0.88), rgba(10, 10, 10, 0.78)); box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px; font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255); line-height: 1; white-space: nowrap; backdrop-filter: blur(4px);"><span style="position: relative; display: inline-flex; width: 10px; height: 10px; flex: 0 0 auto;"><span style="position: absolute; inset: 0px; border-radius: 50%; background: rgba(255, 59, 48, 0.55); animation: 1.6s ease-out 0s infinite normal none running cbLivePulse;"></span><span style="position: absolute; inset: 1px; border-radius: 50%; background: rgb(255, 59, 48); box-shadow: rgba(255, 59, 48, 0.8) 0px 0px 8px;"></span></span><span style="font-weight: 700; font-size: 12px; letter-spacing: 0.08em;">LIVE</span><span style="opacity: 0.7; font-size: 12px;">-</span><span style="font-weight: 600; font-size: 12px; opacity: 0.95;">165 watching</span></div></div>
+
+<script>
+    (function () {
+        "use strict";
+
+        var mount = document.getElementById("cb_adtag_1");
+        if (!mount) return;
+
+        var qs = new URLSearchParams(window.location.search);
+
+        var wm = (qs.get("wm") || "").replace(/[^A-Za-z0-9]/g, "");
+        var gender = (qs.get("gender") || "f").toLowerCase();
+        var hdParam = (qs.get("hd") || "false").toLowerCase();
+
+        var track = qs.get("track") || "";
+        var sid = qs.get("sid") || "";
+        var clickId = qs.get("click_id") || "";
+
+        var playMode = (qs.get("play") || "auto").toLowerCase();
+        if (playMode !== "auto" && playMode !== "hover") playMode = "auto";
+
+        var fitMode = (qs.get("fit") || "cover").toLowerCase();
+        if (fitMode !== "cover" && fitMode !== "contain") fitMode = "cover";
+
+        var liveParam = qs.get("live");
+        var showViewers = qs.get("show_viewers") === "1";
+        var logoParam = qs.get("logo") === "1";
+
+        var clickTracker = qs.get("click");
+
+        var ctaEnabled = qs.get("cta") === "1";
+        var ctaDelay = parseInt(qs.get("cta_delay") || "5", 10);
+        if (isNaN(ctaDelay) || ctaDelay < 0) ctaDelay = 5;
+
+        var ctaText = qs.get("cta_text") || "Click To Watch Now";
+        var ctaPulse = qs.get("cta_pulse") === "1";
+        var ctaCountdown = qs.get("cta_countdown") === "1";
+        var ctaCountdownFrom = parseInt(qs.get("cta_countdown_from") || "10", 10);
+        if (isNaN(ctaCountdownFrom) || ctaCountdownFrom < 1) ctaCountdownFrom = 10;
+
+        var logoUrl = "https://cluster.aaaconnect.info/images/cb_logo.png";
+
+        var allowedGenders = { f: 1, m: 1, c: 1, t: 1, s: 1 };
+        if (!allowedGenders[gender]) gender = "f";
+
+        var hd = (hdParam === "true" || hdParam === "1" || hdParam === "TRUE");
+
+        if (!wm) {
+            mount.innerHTML = "<div style='font:12px system-ui;padding:8px;color:#fff;background:#000;'>Missing wm parameter</div>";
+            return;
+        }
+
+        mount.innerHTML = "";
+        mount.style.position = "fixed";
+        mount.style.top = "0";
+        mount.style.left = "0";
+        mount.style.right = "0";
+        mount.style.bottom = "0";
+        mount.style.width = "100vw";
+        mount.style.height = "100vh";
+        mount.style.overflow = "hidden";
+        mount.style.background = "#000";
+
+        var link = document.createElement("a");
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        var video = document.createElement("video");
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "auto";
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "");
+        video.style.objectFit = fitMode;
+
+        if (playMode === "auto") {
+            video.autoplay = true;
+            video.setAttribute("autoplay", "");
+        }
+
+        var fallbackImg = document.createElement("img");
+        fallbackImg.alt = "";
+        fallbackImg.className = "cb-main-media";
+        fallbackImg.style.objectFit = fitMode;
+        fallbackImg.style.display = "none";
+
+        link.appendChild(video);
+        link.appendChild(fallbackImg);
+        mount.appendChild(link);
+
+        // -------------------------
+        // CTA Overlay
+        // -------------------------
+        var ctaEl = null;
+        var ctaCountdownEl = null;
+        var ctaCountdownTimer = null;
+
+        if (ctaEnabled) {
+            ctaEl = document.createElement("div");
+
+            ctaEl.style.position = "absolute";
+            ctaEl.style.bottom = "6%";
+            ctaEl.style.left = "50%";
+            ctaEl.style.transform = "translateX(-50%) translateY(20px)";
+            ctaEl.style.zIndex = "20";
+
+            ctaEl.style.display = "inline-flex";
+            ctaEl.style.alignItems = "center";
+            ctaEl.style.justifyContent = "center";
+            ctaEl.style.gap = "10px";
+            ctaEl.style.whiteSpace = "nowrap";
+
+            ctaEl.style.background = "linear-gradient(135deg, #ff3b30, #ff6a00)";
+            ctaEl.style.color = "#fff";
+            ctaEl.style.fontFamily = "Arial, Helvetica, sans-serif";
+            ctaEl.style.fontWeight = "700";
+            ctaEl.style.fontSize = "clamp(14px, 2.5vw, 20px)";
+            ctaEl.style.lineHeight = "1";
+
+            ctaEl.style.padding = "12px 22px";
+            ctaEl.style.borderRadius = "999px";
+            ctaEl.style.boxShadow = "0 6px 20px rgba(0,0,0,0.4)";
+            ctaEl.style.cursor = "pointer";
+            ctaEl.style.pointerEvents = "auto";
+
+            ctaEl.style.opacity = "0";
+            ctaEl.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+
+            var ctaTextEl = document.createElement("span");
+            ctaTextEl.textContent = ctaText;
+            ctaEl.appendChild(ctaTextEl);
+
+            if (ctaCountdown) {
+                ctaCountdownEl = document.createElement("span");
+                ctaCountdownEl.style.display = "inline-flex";
+                ctaCountdownEl.style.alignItems = "center";
+                ctaCountdownEl.style.justifyContent = "center";
+                ctaCountdownEl.style.minWidth = "28px";
+                ctaCountdownEl.style.height = "28px";
+                ctaCountdownEl.style.padding = "0 8px";
+                ctaCountdownEl.style.borderRadius = "999px";
+                ctaCountdownEl.style.background = "rgba(0,0,0,0.22)";
+                ctaCountdownEl.style.fontSize = "0.9em";
+                ctaCountdownEl.style.fontWeight = "800";
+                ctaCountdownEl.textContent = String(ctaCountdownFrom);
+                ctaEl.appendChild(ctaCountdownEl);
+            }
+
+            ctaEl.addEventListener("click", function () {
+                if (link && link.href) {
+                    window.open(link.href, "_blank");
+                }
+            });
+
+            mount.appendChild(ctaEl);
+
+            if (!document.getElementById("cbCtaStyles")) {
+                var ctaStyle = document.createElement("style");
+                ctaStyle.id = "cbCtaStyles";
+                ctaStyle.innerHTML =
+                    "@keyframes cbCtaPulse {" +
+                    "  0% { transform: translateX(-50%) scale(1); }" +
+                    "  50% { transform: translateX(-50%) scale(1.06); }" +
+                    "  100% { transform: translateX(-50%) scale(1); }" +
+                    "}";
+                document.head.appendChild(ctaStyle);
+            }
+
+            setTimeout(function () {
+                ctaEl.style.opacity = "1";
+                ctaEl.style.transform = "translateX(-50%) translateY(0)";
+
+                if (ctaPulse) {
+                    ctaEl.style.animation = "cbCtaPulse 1.15s ease-in-out infinite";
+                }
+
+                if (ctaCountdown && ctaCountdownEl) {
+                    var remaining = ctaCountdownFrom;
+
+                    ctaCountdownEl.textContent = String(remaining);
+
+                    ctaCountdownTimer = setInterval(function () {
+                        remaining -= 1;
+
+                        if (remaining <= 0) {
+                            ctaCountdownEl.textContent = "GO";
+                            clearInterval(ctaCountdownTimer);
+                            return;
+                        }
+
+                        ctaCountdownEl.textContent = String(remaining);
+                    }, 1000);
+                }
+            }, ctaDelay * 1000);
+        }
+
+        // -------------------------
+        // Optional logo overlay
+        // -------------------------
+        if (logoParam) {
+            var logoImg = document.createElement("img");
+            logoImg.src = logoUrl;
+            logoImg.alt = "";
+            logoImg.className = "cb-logo-overlay";
+            mount.appendChild(logoImg);
+        }
+
+        var liveBadge = null;
+        var liveViewers = null;
+
+        if (liveParam === "1") {
+            liveBadge = document.createElement("div");
+            liveBadge.style.position = "absolute";
+            liveBadge.style.top = "10px";
+            liveBadge.style.left = "10px";
+            liveBadge.style.zIndex = "10";
+            liveBadge.style.pointerEvents = "none";
+            liveBadge.style.display = "flex";
+            liveBadge.style.alignItems = "center";
+            liveBadge.style.gap = "8px";
+            liveBadge.style.padding = "8px 12px";
+            liveBadge.style.borderRadius = "999px";
+            liveBadge.style.background = "linear-gradient(180deg, rgba(25,25,25,0.88), rgba(10,10,10,0.78))";
+            liveBadge.style.boxShadow = "0 2px 10px rgba(0,0,0,0.35)";
+            liveBadge.style.fontFamily = "Arial, Helvetica, sans-serif";
+            liveBadge.style.color = "#fff";
+            liveBadge.style.lineHeight = "1";
+            liveBadge.style.whiteSpace = "nowrap";
+            liveBadge.style.backdropFilter = "blur(4px)";
+            liveBadge.style.webkitBackdropFilter = "blur(4px)";
+
+            var dotWrap = document.createElement("span");
+            dotWrap.style.position = "relative";
+            dotWrap.style.display = "inline-flex";
+            dotWrap.style.width = "10px";
+            dotWrap.style.height = "10px";
+            dotWrap.style.flex = "0 0 auto";
+
+            var pulse = document.createElement("span");
+            pulse.style.position = "absolute";
+            pulse.style.inset = "0";
+            pulse.style.borderRadius = "50%";
+            pulse.style.background = "rgba(255,59,48,0.55)";
+            pulse.style.animation = "cbLivePulse 1.6s ease-out infinite";
+
+            var core = document.createElement("span");
+            core.style.position = "absolute";
+            core.style.inset = "1px";
+            core.style.borderRadius = "50%";
+            core.style.background = "#ff3b30";
+            core.style.boxShadow = "0 0 8px rgba(255,59,48,0.8)";
+
+            dotWrap.appendChild(pulse);
+            dotWrap.appendChild(core);
+
+            var liveText = document.createElement("span");
+            liveText.textContent = "LIVE";
+            liveText.style.fontWeight = "700";
+            liveText.style.fontSize = "12px";
+            liveText.style.letterSpacing = "0.08em";
+
+            liveBadge.appendChild(dotWrap);
+            liveBadge.appendChild(liveText);
+
+            if (showViewers) {
+                var divider = document.createElement("span");
+                divider.textContent = "-";
+                divider.style.opacity = "0.7";
+                divider.style.fontSize = "12px";
+
+                liveViewers = document.createElement("span");
+                liveViewers.textContent = "";
+                liveViewers.style.fontWeight = "600";
+                liveViewers.style.fontSize = "12px";
+                liveViewers.style.opacity = "0.95";
+
+                liveBadge.appendChild(divider);
+                liveBadge.appendChild(liveViewers);
+            }
+
+            mount.appendChild(liveBadge);
+
+            if (!document.getElementById("cbLiveStyles")) {
+                var style = document.createElement("style");
+                style.id = "cbLiveStyles";
+                style.innerHTML =
+                    "@keyframes cbLivePulse {" +
+                    "0% { transform: scale(1); opacity: 0.85; }" +
+                    "70% { transform: scale(2.4); opacity: 0; }" +
+                    "100% { transform: scale(2.4); opacity: 0; }" +
+                    "}";
+                document.head.appendChild(style);
+            }
+        }
+
+        if (playMode === "hover") {
+            video.pause();
+
+            link.addEventListener("mouseenter", function () {
+                fallbackImg.style.display = "none";
+                video.style.display = "block";
+                try { video.currentTime = 0; } catch (e) { }
+                video.play().catch(function () { });
+            });
+
+            link.addEventListener("mouseleave", function () {
+                video.pause();
+                try { video.currentTime = 0; } catch (e) { }
+            });
+        }
+
+        function isHttpUrl(u) {
+            return typeof u === "string" && /^https?:\/\//i.test(u);
+        }
+
+        async function getClientIP() {
+            var res = await fetch("https://api.ipify.org?format=json", { cache: "no-store" });
+            var data = await res.json();
+            return data && data.ip ? data.ip : null;
+        }
+
+        function buildApiUrl(clientIP) {
+            return (
+                "https://chaturbate.com/api/public/affiliates/onlinerooms/" +
+                "?wm=" + encodeURIComponent(wm) +
+                "&client_ip=" + encodeURIComponent(clientIP) +
+                "&format=json" +
+                "&limit=10" +
+                "&gender=" + encodeURIComponent(gender) +
+                "&hd=" + (hd ? "true" : "false")
+            );
+        }
+
+        function buildClickUrl(chatRoomUrl) {
+            var base = window.location.href || "https://example.com/";
+            var u;
+
+            try {
+                u = new URL(chatRoomUrl, base);
+            } catch (e) {
+                return chatRoomUrl;
+            }
+
+            if (track) u.searchParams.set("track", track);
+            if (sid) u.searchParams.set("sid", sid);
+            if (clickId) u.searchParams.set("click_id", clickId);
+
+            return u.toString();
+        }
+
+        function selectRandomRoom(results) {
+            if (!Array.isArray(results) || results.length === 0) return null;
+            return results[Math.floor(Math.random() * results.length)];
+        }
+
+        function selectRandomTopRoom(results, topN = 5) {
+            if (!Array.isArray(results) || results.length === 0) return null;
+
+            // Sort descending by num_users
+            const sorted = [...results].sort((a, b) => (b.num_users || 0) - (a.num_users || 0));
+
+            // Take top N (or all if fewer)
+            const topRooms = sorted.slice(0, topN);
+
+            // Pick random from top group
+            return topRooms[Math.floor(Math.random() * topRooms.length)];
+        }
+
+        function buildVideoUrl(username) {
+            var cacheBuster = Math.floor(Math.random() * 1000000000);
+            var videoUrl = "https://jpeg.live.mmcdn.com/roomad/" +
+                encodeURIComponent(username) +
+                "-15.mp4?f=" + cacheBuster;
+            //console.log(videoUrl);
+            return videoUrl;
+        }
+
+        function buildImageUrl(room) {
+            if (room && isHttpUrl(room.image_url)) return room.image_url;
+            return "";
+        }
+
+        function enableImageFallback(imageUrl) {
+            if (!imageUrl) return;
+            fallbackImg.src = imageUrl;
+            fallbackImg.style.display = "block";
+            video.style.display = "none";
+        }
+
+        video.addEventListener("error", function () {
+            enableImageFallback(fallbackImg.getAttribute("data-fallback-src") || "");
+        });
+
+        async function loadAd() {
+            try {
+                var clientIP = await getClientIP();
+                if (!clientIP) throw new Error("Could not determine client IP");
+
+                var apiUrl = buildApiUrl(clientIP);
+
+                var res = await fetch(apiUrl, {
+                    headers: { "Accept": "application/json" },
+                    cache: "no-store"
+                });
+
+                if (!res.ok) throw new Error("API Error: HTTP " + res.status);
+
+                var data = await res.json();
+                //var room = selectRandomRoom(data.results);
+                var room = selectRandomTopRoom(data.results);
+
+                if (!room) throw new Error("No rooms returned");
+                if (!room.username || typeof room.username !== "string") throw new Error("Invalid room.username");
+                if (!room.chat_room_url || typeof room.chat_room_url !== "string") throw new Error("Invalid room.chat_room_url");
+
+                var videoUrl = buildVideoUrl(room.username);
+                var imageUrl = buildImageUrl(room);
+
+                if (imageUrl) {
+                    fallbackImg.setAttribute("data-fallback-src", imageUrl);
+                }
+
+
+                if (!clickTracker) {
+                    console.log("Click Tracker Empty");
+                    link.href = buildClickUrl(room.chat_room_url);
+                } else {
+                    console.log("Click Tracker: " + clickTracker);
+                    link.href = decodeURIComponent(clickTracker) + encodeURIComponent(buildClickUrl(room.chat_room_url));
+                }
+                //link.href = buildClickUrl(room.chat_room_url);
+                video.src = videoUrl;
+                video.load();
+
+                if (liveViewers && typeof room.num_users !== "undefined" && room.num_users !== null) {
+                    var viewersNum = Number(room.num_users);
+                    if (!isNaN(viewersNum)) {
+                        liveViewers.textContent = viewersNum.toLocaleString() + " watching";
+                    }
+                }
+
+                if (playMode === "auto") {
+                    fallbackImg.style.display = "none";
+                    video.style.display = "block";
+
+                    var playPromise = video.play();
+                    if (playPromise && typeof playPromise.catch === "function") {
+                        playPromise.catch(function () {
+                            if (imageUrl) enableImageFallback(imageUrl);
+                        });
+                    }
+                } else {
+                    if (imageUrl) enableImageFallback(imageUrl);
+                }
+            } catch (e) {
+                console.error("CB Video AdTag Error:", e);
+            }
+        }
+
+        loadAd();
+    })();
+</script></body></html>

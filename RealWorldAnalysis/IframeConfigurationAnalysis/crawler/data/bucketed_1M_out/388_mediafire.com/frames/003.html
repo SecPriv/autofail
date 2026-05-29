@@ -1,0 +1,174 @@
+<!DOCTYPE html><html><head>
+        <style>
+            html, body, a {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+            }
+
+            html {
+                font-size: 14px;
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                height: 100%;
+                padding: 2px;
+                box-sizing: border-box;
+            }
+
+            .show-focus-outlines :focus {
+                outline: 0;
+                box-shadow: inset 0 0 0 2px hsla(0,0%,100%,0.9), 0 0 0 2px #002369;
+                border-radius: 4px;
+                z-index: 1;
+            }
+
+            /* ==========================================================================
+               Button styles
+               ========================================================================== */
+
+            /* Core style */
+            .Btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 3px;
+                box-sizing: border-box;
+                font-family: 'Open Sans', sans-serif;
+                font-size: .79rem;
+                font-weight: normal;
+                height: auto;
+                min-height: 36px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 6px 12px;
+                border: 0;
+                outline: 0;
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: none;
+                transition: background-color .1s linear 0s;
+                -webkit-appearance: none;
+            }
+
+            /* Button modifier classes, use in addition to main class
+               ========================================================================== */
+
+            /* Green upgrade button */
+            .Btn--greenUpgrade {
+                color: #222835;
+                background-color: #33CC66;
+            }
+
+            .Btn--greenUpgrade:hover {
+                color: #222835;
+                background-color: HSL(140, 60%, 45%); /* --mf-green4, -5 L */
+            }
+
+            /* Red discount button */
+            .Btn--redDiscount {
+                color: #fff;
+                background-color: #D9173A;
+            }
+
+            .Btn--redDiscount:hover {
+                color: #fff;
+                background-color: HSL(349.2, 80.8%, 42%);
+            }
+
+            /* Button icons (24x24px)
+               ========================================================================== */
+
+            .Btn-icon {
+                display: inline-flex;
+                flex-shrink: 0;
+                height: 24px;
+                width: 24px;
+                background-image: url(//static.mediafire.com/images/icons/svg_dark/icons_sprite.svg);
+                background-repeat: no-repeat;
+                margin-right: 8px;
+            }
+
+            /* Icon modifier classes, use in addition to main class
+               ========================================================================== */
+
+            .Btn-icon--white {
+                background-image: url(//static.mediafire.com/images/icons/svg_light/icons_sprite.svg);
+            }
+
+            .Btn-icon--upgrade {
+                background-position: -792px 0;
+            }
+
+            /* Don't allow button to exceed width of iframe (varies due to translation)
+               ========================================================================== */
+            .Btn {
+                max-width: 100%;
+            }
+
+            .Btn span {
+                min-width: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            /* Media queries
+               ========================================================================== */
+            @media (max-width: 54px) {
+                .Btn span {
+                    display: none;
+                }
+
+                .Btn-icon {
+                    margin-right: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <a id="upgrade_acct" class="upgrade_acct Btn Btn--greenUpgrade" href="/upgrade" title="Upgrade now!" target="_top">
+            <i class="Btn-icon Btn-icon--upgrade" aria-hidden="true"></i>
+            <span>Upgrade</span>
+        </a>
+        <a class="upgrade_discount Btn Btn--redDiscount" href="/upgrade" title="50% off!" target="_top" style="display: none;">
+            <i class="Btn-icon Btn-icon--upgrade Btn-icon--white" aria-hidden="true"></i>
+            <span>50% off!</span>
+        </a>
+        <script type="text/javascript">
+            var bABTesting = true;
+            
+            function setPromo(bPromo)
+            {
+                if (!bABTesting) {
+                    return;
+                }
+
+                if (bPromo) {
+                    document.querySelector('#upgrade_acct').style.display = 'none';
+                    document.querySelector('.upgrade_discount').style.display = 'block';
+                } else {
+                    document.querySelector('#upgrade_acct').style.display = 'block';
+                    document.querySelector('.upgrade_discount').style.display = 'none';
+                }
+            }
+
+            // Keyboard focus styling
+            try {
+                document.addEventListener('keydown', function(e) {
+                    if (e.keyCode === 9) {
+                        document.body.classList.add('show-focus-outlines');
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    document.body.classList.remove('show-focus-outlines');
+                });
+            } catch (e) {}
+        </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0034a153f8f5db9',t:'MTc3OTUzMTIyMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+</body></html>

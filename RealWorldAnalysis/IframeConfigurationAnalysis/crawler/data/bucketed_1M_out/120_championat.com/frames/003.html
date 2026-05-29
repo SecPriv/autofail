@@ -1,0 +1,607 @@
+<!--mijskicr-djjfzzmbdts--><!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <base href="https://cdn.dsp-rambler.ru/imp/642003024/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var loadingScript = window.document.createElement("link");
+      var scriptURL = "https://cdn.dsp-rambler.ru/tpl/HTML/4.3.0/index.js";
+      if (
+          loadingScript.relList &&
+          loadingScript.relList.supports &&
+          loadingScript.relList.supports("preload")
+      ) {
+        loadingScript.href = scriptURL;
+        loadingScript.rel = "preload";
+        loadingScript.as = "script";
+        var docHead = window.document.querySelector("head");
+        docHead.appendChild(loadingScript);
+      }
+    })();
+  </script><link href="https://cdn.dsp-rambler.ru/tpl/HTML/4.3.0/index.js" rel="preload" as="script">
+  <style>/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+</style>
+  <style>/**
+ * In the past these styles were inserted by webpack into index.tpl, now they are
+ * inserted by the DSPTemplate super-class
+ */
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+</style>
+<script async="" src="https://cdn.dsp-rambler.ru/tpl/HTML/4.3.0/index.js"></script></head>
+<body marginwidth="0" marginheight="0">
+
+<script>
+  /**
+   * generates random string
+   */
+  function getRandom() {
+    var word = ((new Date()).getTime().toString(36) + "-" + Math.round(Math.random() * 1e16).toString(36)).toString().split("");
+    for (var i = 0; i < word.length; i++) {
+      if (isFinite(parseInt(word[i], 10))) {
+        word[i] = String.fromCharCode(word[i].charCodeAt(0) + 50);
+      }
+    }
+    return word.join("");
+  }
+
+  function checkError(errorMsg) {
+    if (errorMsg.indexOf("Protocols, domains, and ports must match.") !== -1) {
+      return null;
+    }
+  }
+  
+  var data = {
+    // mijskicr-djjfzzmbdts
+  "bid_id": "f4fc93c02e788060",
+  "campaign_oid": "641994123",
+  "flight_oid": "641994131",
+  "creative_oid": "642003024",
+  "creative_template_oid": "641777805",
+  "pixels_inline": ["https://mpx.rambler.ru/pixel/642003024/?url=AbSA7637Ny4nAOZsIZrCJvlSNU1aj5pvF0tP8JuVtuSd3bhvsDnKpihMBvD71-XiDjcz4Hxj6ZLa8DWaUu0rTaHZOPw-relTa0zC-naBgwaJovgmg-vGsdjW9nxmHhNNQNyFTurGND-ZpXqh6BZJ8Y2OXjZ6apN3ucVyj*qT5QPjv9qOxfoFdbEOAiD4izcbYS4FRjaIYY7Yel1u1-dZRQ00-bG6uBNzSehXZ7EmaJqG*DVyAvugnaux*nJu8A8Kn5pQzKsWoItaYsqFXHtSygHUClZ85GwbiP4t7gPFl*d5KVQ-h1w3qpDr3Wdrs8HCgkhm*k58uNXtjMpHun*D7gv10P6cOFDymepHh2mblhT1LHd7BlAgOj-bLKHmqx4FsVj16KftO1mEjRwJY1TAnzNnvQB70LV3hzIHyEQjF5bFiHEFvk6J0TdYiwgEKMYOHR004Lhm7LtI1XpyyARuWdRk9BbsOAwFQ8ARnIsZvZCe8HOzv0ykZ8TbY83HmL9jUHDhcHZUnUJYNXVPzC8ZY5Ea-UqgOAJLGY7rACCv0DWlL5mmpjKoB-0UiW7PxYGi7ekhrRdcF7C9xyhkXAFLS2o6Ux3ZYq7A*BHhdwzr2r9WiwqSPtZr5GSrYmHLrBnihDuwKoKoCSFatEDbHANpOJl1yF8BAnq7YLmTz*P5pVA8YwJzdxtY4f5bXy9OtFDG9PiTPz1Aa-0-F4DylLJ-HW-jsLSdKOtU4zjDzfzYHnYEl5eOe7QKxC*PPME9sHymhKaK*3JMPTivoebNwYBjzKimsDU160fCjdv7n*CvNraoo-ToYgKlBeCQAy68VUEAMmYPqvWmqapVIH-H0RmWuYWEVdPC8iVl4xk-qnzVzea2RGze6Ss0a*AIzgjP0eHJtqX56qTuKW*Wa-Li2n19hjL8A0TI9zVi8043yMRhrrLzlowG1msS6EXHcze6OfcOBcr7Rm06CRv8sK0FN*SP7uoL4nIRX6-f8jK8ewSe4gTdj7clNW5tr7wwqNIiP2DWu3HRR*O4G6OMKlv-dOepyK-22AzzfikxX02GjnWS7uSaHyMe8T96Fd8uEmNFq5vCFY54bF03yhbEqPS7Fpg9vN*3AIW18xXc558c*TTAJ0Ibhab7zurUbO7SoXMoRS8e-Vxu4jhUVuGZyzcCS2y8Ok7jkdMLPP9lIllBf1*GDBLOpYa6DGmg9kAWdB8Ier6o*3wKi3merJKAp0Zx7Hm8giC7FVqXHl*omsV1*t2aIfOrnZRoax0AF8rwZTMBwzII3Atm5qVshd*nW2BSqnsywl2yjVxUKaXYaiEzHqzzg9n8bCpqQDwZgBnIKh1bOZ6FEa8gyW0bK3*mB-FTNLu7-68Q8gF1UQfEpAqocaUNDECvukwj811oUMIRL62OUsltilWBRKpqDP7M2jesb0XFL7yK*sGVKO9jUoXrs4aqUTZ8w9H9PP-PjrGo0spghJAX8DEBujlaSiAKuUslSJqSZ6iyCLGK2CDgmbFzbSJxSQ2x-rUAFg1EnlIV-PRjd6N-FjjNwT1zH7m3jI7xc7HUTYJdaNg8k13Z4cVVg*F5KW4LsjtbZAPkaevl0Eveh2UUpPYW6hb8Tvwv9B7j-S8WMUbCAKNRMCwczkPXG-Sw9daa5jbdYxLrW*OMjzbvTB5baMlk1xectYls0ddOZSLIPWJtk9R-BSK*J9LEgYRstWDmJuAl0iSKMcaeTOrMJgGiCv16IW0sg6sqm*dFcOHjWXembgqLve28TpuOa8SB8x9hlpC6*eX2mKAHgTAnDkwFA9QZiRJx3Y3xr0I1DXCrT173l1eesJ7XvncIMr--4u9Ytr5TVqZNQ3jtWtO0JrMiRbCV4rFPSxP1kX2EOQHNUC1bhvxkHVIaMDycOkdk1g42D2m3HraxxBkj57wZkTeRQ*e1GWk54SoIZQS-kgovV4wgEnBBX5mbryDZF5yCJUCapd29PQd5WFKrgMufo4ibGS3GTkKC573Cc0GXTvbxXd2pZw7yByoZLaygNadWkikM7d-7-PvfSWZJxx0Z4Q5Rd-RtKm-NQEvOSQi8G-t5PLpdTlgR3mipomsVCNkjYvufkC9Pz6dddgtuGLkQbR0GyyL6E0ppZMGSUQvlp4enNkwmtnzGxGvOa8War3yvmzzSAwKRImC25X35jBKt3uy3-E-Uc*TGEiywvmnAqyYQLwIAAAC63LwKAAAAAA==&cost=0","https://pixel.rambler.ru/pixel/642003024/?url=AbSA7637Ny4nAOZsIZrCJvlSNU1aj5pvF0tP8JuVtuSd3bhvsDnKpihMBvD71-XiDjcz4Hxj6ZLa8DWaUu0rTaHZOPw-relTa0zC-naBgwaJovgmg-vGsdjW9nxmHhNNQNyFTurGND-ZpXqh6BZJ8Y2OXjZ6apN3ucVyj*qT5QPjv9qOxfoFdbEOAiD4izcbYS4FRjaIYY7Yel1u1-dZRQ00-bG6uBNzSehXZ7EmaJqG*DVyAvugnaux*nJu8A8Kn5pQzKsWoItaYsqFXHtSygHUClZ85GwbiP4t7gPFl*d5KVQ-h1w3qpDr3Wdrs8HCgkhm*k58uNXtjMpHun*D7gv10P6cOFDymepHh2mblhT1LHd7BlAgOj-bLKHmqx4FsVj16KftO1mEjRwJY1TAnzNnvQB70LV3hzIHyEQjF5bFiHEFvk6J0TdYiwgEKMYOHR004Lhm7LtI1XpyyARuWdRk9BbsOAwFQ8ARnIsZvZCe8HOzv0ykZ8TbY83HmL9jUHDhcHZUnUJYNXVPzC8ZY5Ea-UqgOAJLGY7rACCv0DWlL5mmpjKoB-0UiW7PxYGi7ekhrRdcF7C9xyhkXAFLS2o6Ux3ZYq7A*BHhdwzr2r9WiwqSPtZr5GSrYmHLrBnihDuwKoKoCSFatEDbHANpOJl1yF8BAnq7YLmTz*P5pVA8YwJzdxtY4f5bXy9OtFDG9PiTPz1Aa-0-F4DylLJ-HW-jsLSdKOtU4zjDzfzYHnYEl5eOe7QKxC*PPME9sHymhKaK*3JMPTivoebNwYBjzKimsDU160fCjdv7n*CvNraoo-ToYgKlBeCQAy68VUEAMmYPqvWmqapVIH-H0RmWuYWEVdPC8iVl4xk-qnzVzea2RGze6Ss0a*AIzgjP0eHJtqX56qTuKW*Wa-Li2n19hjL8A0TI9zVi8043yMRhrrLzlowG1msS6EXHcze6OfcOBcr7Rm06CRv8sK0FN*SP7uoL4nIRX6-f8jK8ewSe4gTdj7clNW5tr7wwqNIiP2DWu3HRR*O4G6OMKlv-dOepyK-22AzzfikxX02GjnWS7uSaHyMe8T96Fd8uEmNFq5vCFY54bF03yhbEqPS7Fpg9vN*3AIW18xXc558c*TTAJ0Ibhab7zurUbO7SoXMoRS8e-Vxu4jhUVuGZyzcCS2y8Ok7jkdMLPP9lIllBf1*GDBLOpYa6DGmg9kAWdB8Ier6o*3wKi3merJKAp0Zx7Hm8giC7FVqXHl*omsV1*t2aIfOrnZRoax0AF8rwZTMBwzII3Atm5qVshd*nW2BSqnsywl2yjVxUKaXYaiEzHqzzg9n8bCpqQDwZgBnIKh1bOZ6FEa8gyW0bK3*mB-FTNLu7-68Q8gF1UQfEpAqocaUNDECvukwj811oUMIRL62OUsltilWBRKpqDP7M2jesb0XFL7yK*sGVKO9jUoXrs4aqUTZ8w9H9PP-PjrGo0spghJAX8DEBujlaSiAKuUslSJqSZ6iyCLGK2CDgmbFzbSJxSQ2x-rUAFg1EnlIV-PRjd6N-FjjNwT1zH7m3jI7xc7HUTYJdaNg8k13Z4cVVg*F5KW4LsjtbZAPkaevl0Eveh2UUpPYW6hb8Tvwv9B7j-S8WMUbCAKNRMCwczkPXG-Sw9daa5jbdYxLrW*OMjzbvTB5baMlk1xectYls0ddOZSLIPWJtk9R-BSK*J9LEgYRstWDmJuAl0iSKMcaeTOrMJgGiCv16IW0sg6sqm*dFcOHjWXembgqLve28TpuOa8SB8x9hlpC6*eX2mKAHgTAnDkwFA9QZiRJx3Y3xr0I1DXCrT173l1eesJ7XvncIMr--4u9Ytr5TVqZNQ3jtWtO0JrMiRbCV4rFPSxP1kX2EOQHNUC1bhvxkHVIaMDycOkdk1g42D2m3HraxxBkj57wZkTeRQ*e1GWk54SoIZQS-kgovV4wgEnBBX5mbryDZF5yCJUCapd29PQd5WFKrgMufo4ibGS3GTkKC573Cc0GXTvbxXd2pZw7yByoZLaygNadWkikM7d-7-PvfSWZJxx0Z4Q5Rd-RtKm-NQEvOSQi8G-t5PLpdTlgR3mipomsVCNkjYvufkC9Pz6dddgtuGLkQbR0GyyL6E0ppZMGSUQvlp4enNkwmtnzGxGvOa8War3yvmzzSAwKRImC25X35jBKt3uy3-E-Uc*TGEiywvmnAqyYQLwIAAAC63LwKAAAAAA==&cost=0","https://www.tns-counter.ru/V13a****rambler_ad/ru/UTF-8/tmsec=rambler_cid558600225-posid1/"],
+  "view_url": "https://mpx.rambler.ru/view_dsp/642003024/?url=i8zReUVLBULyVcKNZJdYoxoUJ8QNIzbTCfIGhkeN1QHmuiFSj6Bg*knuTBKpgCysAK9voRCQnwP9wLKTMhbLbLNnQaeoQ7-MDDMuKxkCGCZxqFP9mAs3wDghisVOKaH-lsWKmgUeNnfG*RF0oFtPjWTngiADTayncdLmLDe7NPkDWbj2P-*mdhniQOmaRKhuuvhIQ3l8a5bVQZxRAmO2Xwx-lwPYAE2rofCs6ANWrX7DyiwLUhuqNBS5lb9furesW0eSazoBcvZjiH6L3-Fc*3UZg4ds9j-CMf7tcaXQoEovWFxe45fZdRbA1gRpx9dR2G8Cn6CyWrqWNhfS4Iewh2U6Eo7VV4oHmw-FN5jqcHR4Zsdhton2MHBQjAh9Iec9ZxJ*IuKiqQMzT2p9xVbt8yDvjoh-EY5hd-Tn2ZydhcZFBmYlPQ4eOke*Ge6hjKsQb7kJtHtL48De-e-XLFFLAmTrugexy7FDZzGryiL6lQJSIKHl-xvX2avCAzzav94d8nCABUxX3qnO2P47VKDlfHR6oX46FEi*pqY2boyFPUg2PfG90w1PF0paHtHSfqIXFXfdsEsjOW6qDOcFVMgzTCZeedE*EsCUs3WKiqy9itoIO3aSykD4QXFkUcO7eCO7UB9*m9Wwm9nxg3URBzvbRpXBBhgbahsSM4PsMWGinntLoirXvCr6lWUJw9KRbIzbowLhz0NljYclGUA9VYqc8e9Cs2kU9sbq9qtJPXf-X9RwLnfn7pTyLdOfUFDOZwObT3eOalrRDynglRMm-32wA*3XH0wVuGffYR-UZQhGealAtXVdWWeaZe1HLO8G5h8j6qHGs*TiBSH1E3x7*GrauvGRkSMLm1w5JKZdx226UTaAqmhgKtSNgPvL7uSkAdg5gxtg9M8wf77BIYj49rFs7SdIxwCjU3ChWnOuYKXhgbxhBWtCE2HBQ1MiaLYe-DJ55B3FdDTuevvKjTwaaU0tE1xow64AUJmnNxLonC8PDtyPemyBazX2ctAAedqXXB7qKDG*Nq1l3Gw4S01*msS0zf2AcQaVMND0v0RWIPdVqIQp5ObpIThXzwlaC-oH*MzEavVF5raJMuYOku543VFPZMRkwQpY92ToBk2eybNiNetd3dQHuSFGfXj2-DGYTsRnC9hyhmsi6uQJNmVW*Ar6u3-KAZpx7*GZGaMBR-DCc191nbMBGbYVE9sZSukElWYnh-*NllOyzygB47Hn--UuiD9rxr5zOVN54LIBNjkTKAr00pg8wlXdcJkcH0J0ZkCfIyhBY4Fz7sQUGjHPRKXSZydjpJpq-CFcY72jJnBTbvYIciaIn34U1ClfEZoV3kIdgEnwiFUNwePwr-1*oRKhjP674luYPi*nMgdLYOo1ggwAtZbobOTeY-UcKliPxeO8GbiHURQLSbIlm-gK4Pbi0hSSSZoKqUU0xzz7IzUEodMekBXJJYgTe6XKogj400bP*yvU-6snconhokTCZcyyjNC5YwXLXP8vmCr2usClWb8IIPVbGSZOUqTLEPBjkxZniwhkV*LA7BHXX8c6*d3wUyWsbgbqmK7dVrecnBh2Pbf2lewh5jh16jMF9WuJaclzdzXWJPsM8cOxP0ziJiggfdwxCgggfmOrSYNQBC*ObDsmA5AnMqsur-PLCn8FyjtkMSDZ-DHLKD7UE4fKYPVOFOHS9ec0-6JWZH0migvuFDZzdPWNotyKhkEGkXJAQfANlquz6JwqT2hMi4S89*NagskvjWu2BuWTBwrq2PaLXFUAHZJwX2eFZVJGrf9G1XlRVD6KSUc9pWw9W79sFxLK3Iji2D7YCMhnaJcTatKyZ8v-a8IaELR-kmmifZ84Aii5si6cQOtCz15q2zXOPr2tH3IJCV2dqRpN4siiOHbrWONcYOLz-0W4Gi*TNVskBoyg*fJH53jwkErhm04FXS*hel0NkWyZr0yof*Cn2qxFS9T2X-ya769gyndCc4hH8SZTiN1*ZMgmmiAzf12ad1UoM0QLZWZFcIvYiF5J5vq5updZexZluG7Td6hc4bu5TLZYhyAfx5bdn2VmPE43CTkiP9SUsnHrojy0Jlvy5nZcCsh4QgCA0dG*GXquld9hvefJSY7HqL0zKsF2J9VLJPjpHev1M2YesggjEd8m4zMkhztyqL1HT-xFJG430QQu0n7yDy-4riJ5zGkFyrqa-1RyOgIAAAC63LwKAAAAAA==",
+  "click_tracker": "",
+  "script": "https://cdn.dsp-rambler.ru/tpl/HTML/4.3.0/index.js",
+  "click_url_mode": "",
+  
+  "click_url": "https://mpx.rambler.ru/click?url=W0d4lkq*u52*9nY-eYghjy4L9p6WF0NcVkEGrUZvkC1SsEhlDXLoYlwS-BKLmDeJyqTy*otFveIa7-2Aj*GdRpfRq4GHUEvWQlfBp*ZT-kCbWxsWc5Uo-TBRucyhdlRFHqy3UeAFWChNTCaYAYrrzrFQ3KxBWhb99KFolu0sNpOo43HIvYeEo2Qeg*PX468qXp1lzva-9HfoWl0MCE0ZVd4eXnqMYSiJ5x4vuXXm1l4*87UGUEzS3H6O3ktqeogzsjfEsX1PXbgaHTjR1LlcWFotRfuDT2BObgqzBJP3mbFEn66hewnwurRVSLsXxM9cRCVqhHnvwujZifgsfW1zBBVosHYUGoN6PIQan9pwut9GFiYsKghW0J4qrWM1OzsYyj-v79qCLSoEqurtQ6396Jws8T7cM-O55JRa*sQ0hx*BFb7XPt95smigTpB9-NdzhyMO2h*V4X1jcCVk6yV*1qV1trDjFdmncas6uYFAIMjWh15WyfhyOC52Sy4dAHkPBwINbNJHNLu3O-VGtgXe4hZzwyOEmuLnQMgOyOrxmeCqTCs5QSeu0Tp5flsP78cvrxM7SGhWe6zhF3Ls9pnMfkdKSbDoO37f88zZHLG9qADkjf94B2wgmoNoKBDS8xwny*PoesCy43cEQgfxkGsXKHh6vKcSpBjd7y2P5x8rcLyz2tqajlLP7uRYH7WM61jS0pjT8H3b8Bkaxa7fRR19wSupIgBXHxYBkeSWwZ1XH6bkvStqfksARLHUX58PK9q9I4sB*YwtGmD1JwxUDmb2J-zP2KPdoIVNIODPrP-fyqQqavkXBmf4GOQYcpwHckUiqxcJtDGZctOvdC48Amr78GvNIc7djth1W78YqLYmAm*8ANFej7lhK0aqkGEMD1GPyLemFSp56bCmFGQBbZg4XjeamSMDG7i6gtisVD2s-ejOrRcCalFRTpsNtJ8a3nCkk8uAMohEqUQNtzOsSypwYf8K9Y4OGK4qDbp6dQ7bmgYwz3G9tz3rdNwSvDjLPXmhj1GRPGX0P-TkS5qelZqFGsmegOiOcpK94nvIWABeakmtxwqW35-V6a-mAlb5UN2c-ucyL85*zVOeKdmltJMnjTr3vhAyRh6dvcfOqlXWXixZixhTw*5Bm7l*TNFWqdfL1h8vo-I23TOCXP4VXF4-WBcATt-M1sS9g0D24YJYBFK4cuM1m*ssSCqFbbh83ww0lAyWFMrfdPav*ALkp1YpYVVCoqyin2ZKYeg1xssuJ-rqYsR8rWlzd92tRQGBVgvrojfn0tYCwRb61QZFYYOW*J6sbbhobLoT*8AJvJacsdt1EsIMM-RrO-s9JrgqYcEtzwIfC18ClhvOp4fEVC28m3r7IQH4un-nrgxHlnYyZu6mfvuzPWVE7iR1iNGMv*98wcLi3b9uOyLXdb8KsV2It9qZSClDTPKcLl5EESYrnYRoC4vALtEj7MRrqsC4HsDoo61O1CxwpMP6p8C5IOSsWgJaWYX*AyCBR162nbheUu*l9mnxou2do3ZzyO4HbW19cA8Nfl4owD7JpAi8Mtyu6FuLwTyHZMZzHpe3VlAXTGIackviumPuliyawLuMqu-XCj0oTJmd5FjSLfKXd*Rj-PiwFdFqRBMGN0MpOQVky8IX7YKEqs-YBredLxG6umUv4iVB40bX4HS6rrYWYdhFa8XqNvdO9oF5YNaa-6lIP1izZnqff9QUH6M3hX-HWprOytz8Xi4*IRIbhMMz4me0YtUC2bdjGMnwFOt9Ei*Hlzrx2G5tI057ZnCBUDLmCBPS4OV-tGsWirNovPI8kU6VUL1TZh3gmarTgmkTGQeL-zLuhjI-Zm3uROV0kdD3Kb*GgE*BOsEhB53T46I8q8MdWOJaAW9fEn8M7k-Qfxk9tJcub1GZtLNxKeSvXTk9zl3zxL8esHeAKGZzcq32Rvp9SOCxylrL4e7*95BwHYLzAGHX2YDcHUN*wgQamaVdbiotAgAAALrcvAoAAAAA&erid=",
+  
+  "width": "100%",
+  "height": "300px",
+  "content_type": "html",
+  "content": "%3C%21DOCTYPE+html%3E%0A%3C%21--%0A%09NOTES%3A%0A%091.+%D0%9F%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C+%D0%B1%D1%8B%D0%BB+%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D0%BD%2C+%D0%B0+%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE+%D0%BA%D1%83%D0%BF%D0%BB%D0%B5%D0%BD+%D0%B2+%D1%82%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC+%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B5+%40adobeAnimatecc%0A%092.+%D0%95%D1%81%D0%BB%D0%B8+%D1%83+%D0%B2%D0%B0%D1%81+%D0%B5%D1%81%D1%82%D1%8C+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B+%D1%82%D0%BE+%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5+%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C+%D0%B8%D0%B7+%D0%B2+%D1%87%D0%B0%D1%82%D0%B5+%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0+%40animateChat+%0A%093.+All+occurrences+of+existing+tokens+will+be+replaced+by+their+appropriate+values.%0A%094.+Blank+lines+will+be+removed+automatically.%0A%095.+Remove+unnecessary+comments+before+creating+your+template.%0A--%3E%0A%3Chtml%3E%0A%3Chead%3E%3Cbase+href%3D%22https%3A%2F%2Fcdn.dsp-rambler.ru%2Fimp%2F642003024%2F%22%2F%3E%0A%3Cmeta+charset%3D%22UTF-8%22%3E%0A%3Cmeta+name%3D%22authoring-tool%22+content%3D%22Adobe_Animate_CC%22%3E%0A%3Ctitle%3ELeto+3000-300%3C%2Ftitle%3E%0A%3Cmeta+name%3D%22ad.size%22+content%3D%22width%3D3000%2Cheight%3D300%22%3E%0A%3Cmeta+name%3D%22viewport%22+content%3D%22width%3Ddevice-width%2C+initial-scale%3D1%22%3E%0A%3Cscript+src%3D%22https%3A%2F%2Fcdn.dsp-rambler.ru%2Fjs%2Fcreatejs%2F1.0.0%2Fcreatejs.min.js%22%3E%3C%2Fscript%3E%0A%3Cscript+src%3D%22index.js%22%3E%3C%2Fscript%3E%0A%3Cscript%3E%0Avar+canvas%2C+stage%2C+exportRoot%2C+anim_container%2C+dom_overlay_container%2C+fnStartAnimation%3B%0Afunction+init%28%29+%7B%0A%09canvas+%3D+document.getElementById%28%22canvas%22%29%3B%0A%09anim_container+%3D+document.getElementById%28%22animation_container%22%29%3B%0A%09dom_overlay_container+%3D+document.getElementById%28%22dom_overlay_container%22%29%3B%0A%09var+comp%3DAdobeAn.getComposition%28%22C2FF4C35834A4122BCF87252FB971D31%22%29%3B%0A%09var+lib%3Dcomp.getLibrary%28%29%3B%0A%09var+loader+%3D+new+createjs.LoadQueue%28false%29%3B%0A%09loader.addEventListener%28%22fileload%22%2C+function%28evt%29%7BhandleFileLoad%28evt%2Ccomp%29%7D%29%3B%0A%09loader.addEventListener%28%22complete%22%2C+function%28evt%29%7BhandleComplete%28evt%2Ccomp%29%7D%29%3B%0A%09var+lib%3Dcomp.getLibrary%28%29%3B%0A%09loader.loadManifest%28lib.properties.manifest%29%3B%0A%7D%0Afunction+handleFileLoad%28evt%2C+comp%29+%7B%0A%09var+images%3Dcomp.getImages%28%29%3B%09%0A%09if+%28evt+%26%26+%28evt.item.type+%3D%3D+%22image%22%29%29+%7B+images%5Bevt.item.id%5D+%3D+evt.result%3B+%7D%09%0A%7D%0Afunction+handleComplete%28evt%2Ccomp%29+%7B%0A%09%2F%2FThis+function+is+always+called%2C+irrespective+of+the+content.+You+can+use+the+variable+%22stage%22+after+it+is+created+in+token+create_stage.%0A%09var+lib%3Dcomp.getLibrary%28%29%3B%0A%09var+ss%3Dcomp.getSpriteSheet%28%29%3B%0A%09var+queue+%3D+evt.target%3B%0A%09var+ssMetadata+%3D+lib.ssMetadata%3B%0A%09for%28i%3D0%3B+i%3CssMetadata.length%3B+i%2B%2B%29+%7B%0A%09%09ss%5BssMetadata%5Bi%5D.name%5D+%3D+new+createjs.SpriteSheet%28+%7B%22images%22%3A+%5Bqueue.getResult%28ssMetadata%5Bi%5D.name%29%5D%2C+%22frames%22%3A+ssMetadata%5Bi%5D.frames%7D+%29%0A%09%7D%0A%09exportRoot+%3D+new+lib._100300_des%28%29%3B%0A%09stage+%3D+new+lib.Stage%28canvas%29%3B%09%0A%09%2F%2FRegisters+the+%22tick%22+event+listener.%0A%09fnStartAnimation+%3D+function%28%29+%7B%0A%09%09stage.addChild%28exportRoot%29%3B%0A%09%09createjs.Ticker.framerate+%3D+lib.properties.fps%3B%0A%09%09createjs.Ticker.addEventListener%28%22tick%22%2C+stage%29%3B%0A%09%7D%09++++%0A%09%2F%2FCode+to+support+hidpi+screens+and+responsive+scaling.%0A%09AdobeAn.makeResponsive%28false%2C%27both%27%2Cfalse%2C1%2C%5Bcanvas%2Canim_container%2Cdom_overlay_container%5D%29%3B%09%0A%09AdobeAn.compositionLoaded%28lib.properties.id%29%3B%0A%09fnStartAnimation%28%29%3B%0A%7D%0A%3C%2Fscript%3E%0A%3C%21--+write+your+code+here+--%3E%0A%3Cstyle+type%3D%22text%2Fcss%22%3E%0A++++body%2Chtml%7B%0A++++++++overflow%3A+hidden%3B%0A++++++++width%3A+1px%3B%0A++++++++min-width%3A+100%25%3B%0A++++++++%2Awidth%3A+100%25%3B%0A%09%09height%3A+1px%3B%0A++++++++min-height%3A+100%25%3B%0A++++++++%2Aheight%3A+100%25%3B%0A++++%7D%0A%3C%2Fstyle%3E%0A%3C%2Fhead%3E%0A%3Cbody+onload%3D%22init%28%29%3B%22+style%3D%22margin%3A0px%3B%22%3E%3Ca+href%3D%22https%3A%2F%2Fmpx.rambler.ru%2Fclick%3Furl%3DVbEFC5O7hhWyLBL4qwvnKgPrvteeqFBvpoN2P9THNHkTuFx5jX-dfa%2AsrbwxoALgV2VlvuyGGe7bckhLUMFCZfjZae-TYv%2AYxiq91QnqMmWpUBGq5s3pwjm-CeGQGFIzU3lglrOHcEGrOx6-v%2AagzRQk1iXUoKI3hn34TmklbeOJ6oTJ2kf9wUqkHrosYTcjPJKS9YEc7uqBqXhdvf2opOBdFADb49ulUMH6SupexkWeELwWP46Ge38bYw%2AC9c4ybtaS1BTIgfxe8lmhDLRnmr0BMDNqFWIPXpWIfilBUqItOp0%2AmN2ast6TnK5iHrYe8YdnWxrJ9Hb9gfz9JyMlCiXfEPLeFZIG1MUed3Ej3WVWYR45cgW9EKte3DdhSlvdT13C3DaoEIjxSS1jHKZxH68HeUlUNpnpRK46%2AywpUHSsxUKB7R2d8FjCUZxDQSBlEQG7l94mKNMjX19VUGDyeno1IibyDpWsXZR1tDzFN5BLjiF8zx6MW7wKB-id58Hw2vOV6DacAj0jU9m36RVA3b2JahVaa86UA6bDr6ycnZOwGdWTqsUBT50HPwdSoKBCOiIPePgbn81AP6ieavPHgngdCN1L2BMzdCuA8hEPIrAEbqWvurqkFmbb9sFJdnehzxlMf7Qp5E6Ogp6C7hD-1CiPGl-ozk5%2AbaTBvrJyoTL9J1pQDhf76D%2An7Nlc3C4G7l5VQQNbdICqIB-F947QQfc8F-z7VmoRMewFUCplmxh5Wz6Dv3o35CRiFYhj1Gv641svdCxBas0t8tQ-hyCnRLwbPBy0-jinjZce2SXY3CaYgNQsRKnBuaL5IVTqz-NLXGkId3SlPK1V-AzLUp-hyGz9zyAtKsCdS3RcsYEoMw6luEnTAHIozrlC85NdgfOJOEF2R7vpin8DtVrUG5SoKbBUQU70Enugric7zFpSianjKKA%2A2bl04DLS4Hsw-nYm1PmUNe25oCqwM9l1UIy003o8Gdd63OoAc2WjPmw1ukS3cMGFmXQ8KWJM4j3qCKoR-6BwejqWyf2WRspr%2AD4GDIS3WtxO8DvYHn1ssINCozvII0XihPrrPdd1KbNrpXwIXgy6H%2AzoKWo3jGnlh3qWUcSsJs4PstHDnfq1Wf2fwxegoIAkVMfnZ%2Ae9ofTZY2%2AYS8IOaD4JdO8l9Wn86f1WKCGe9UT2vo-Xgd0fSEMNoAsMFvamMDeXDeaax0OjadGCSj2XDJFW2r07Zhr-ojT5pOSpdiK2LQ4B07miZZcN-3S8zt1h6xIBbq8tpvU3OPMp7Jnajm49FqrXyyhjfaNHmoUakEYhVG9qxdufekgoAEXWldSxjn2sT8FZAO0xZDWNd3d91XuYDZNY9jD292vffB-BIfnryVE8MFDgw-QqkTZeXmOGQ%2ATymqAOVCJYPT5dH9Uun4F0ZmpeayMWgT2qwidOhmh%2AiY9RR5LQYhD-HvVQL3TuN5il0S8JiMSD0gcBeniAzkWPtWt1205fKOCTQU5Z6JyzIz5jO22q-6cCg0McNdlxKb5f7aCzqaCHn7pRUOj9RpdzN3pd3T3w4YBYwmz0EAwdbVb3gSGEynkqdwDQ9qleLKX-96Y%2Aua8cmEF23fM5Le4Z0ya6tp3eEeIXLcx2%2A1QvLNRnqRTrrdroNxEWaoHN1cJjvWrZR0rR5CCbVUnqzqLr5%2AXr62yTD238mCeLfQNHedkQgTlvacKSmY%2AggsPbm48ffHLefHYc1vQ8Se0vq8zwzQzS7z7k-FTKFERRdSKlMLiLBG3WCUA36vN8pGHYPA6iGalTUZOtMGhFGkmNMGczKijhXuzJuG3JezLs9PJTs3UAYwdI2wlnnwcNCi1MMyX3XfmXtU8U0XtoArJQjU0ehhEL5TjFIVNtnwdbZfAO3lCPylb09qwIaV59PcecbVDwaZ0g2CNDYMfJD9HRWffslSaOtJABDyaORx8zA9-%2ABi1RyU3Ibc6EOwjmSZW1U0lA3vShb8aeFC34AgAAALrcvAoAAAAA%26erid%3D%22+target%3D%22_blank%22%3E%0A%09%3Cdiv+id%3D%22animation_container%22+style%3D%22background-color%3Argba%281%2C+1%2C+1%2C+1.00%29%3B+width%3A3000px%3B+height%3A300px%22%3E%0A%09%09%3Ccanvas+id%3D%22canvas%22+width%3D%223000%22+height%3D%22300%22+style%3D%22position%3A+absolute%3B+display%3A+block%3B+background-color%3Argba%281%2C+1%2C+1%2C+1.00%29%3B%22%3E%3C%2Fcanvas%3E%0A%09%09%3Cdiv+id%3D%22dom_overlay_container%22+style%3D%22pointer-events%3Anone%3B+overflow%3Ahidden%3B+width%3A3000px%3B+height%3A300px%3B+position%3A+absolute%3B+left%3A+0px%3B+top%3A+0px%3B+display%3A+block%3B%22%3E%0A%09%09%3C%2Fdiv%3E%0A%09%3C%2Fdiv%3E%0A%3C%2Fa%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E",
+  "normalize_html": "",
+  "audit_tag_type": "",
+  "audit_tag": "",
+  "ad_label_content": "false",
+  "adv_info": "",
+  "erid": "",
+  "age_limit": "",
+  "close_url": "https://mpx.rambler.ru/close/642003024/?url=Tz-5C7vQz4ZjMfNA5b-l2u0WK7a9PuMgp909IZ*I0--peHZaR3uco4oJQtelAVMsMmcSdGf4To*01-jChCnGcJoxB0V86FUXkPRShz2*oQwjqU6l3QL7dqwaehvjBxmx4Tdkjun8bj7P5nGeuR0o3sQCNRqE2EMu3Pa2-XvuSxESGFg4iq2lKl4PoPK*bjcLO4DnDbgdS3Zw2d-ZsgwI2OomgumP0bcgcjQNAgr6g4PjIcMgOuXqyBoKXfV*DF1MorK4ZRQS3CZQtEhUNin7SqM5yATk8fzqNBT0rDIWOQ6Ulu7MSB5wWCRXuw-*viB*qkSsw2pRmnAWlxB81gyh0SRemO076xiF8VwKIQTTxNbm2vIX3m6uwDUh*DMHDXeybT6wOzviIgwbga1YHX359OUm7ER6f9gp9w45q0YeliD00cHikaJxrGlg5sW3z8JdvQavkucL-T-9lG6JmvuABNVYiEmNuQdZZXtMstlrg0*gyKOEE*6dv78BBqV9a-393bFDGextmo9uL4Imr*gMxNsucYo-MEjYUH4BxxYe3QC7Bx12xYVa5dS*PuKSoHKKPkmbrMt8LRx3-NrF2TXGKTL6o2JMN2KxVUl8Pv-v3C*e83aODH7TCyeghgUe2Br5PzJ23OrdKJQu*m3qO2uCgWC9ReISHxgEQ5pHpbzn*ijjg7UzoeSk*YRO9-RXs3BVWKfH22l3QhzhGOcJDzkT2GRL4cOzCPe1v0QENUxp2n1gjYoaUDrjbDWwVOiUjf2TlcOMM3t7HAfA2xLYPD1gZf3c-6LrOTbRXBNALC0Tscnj7Nj0ZFXLTHjkBRg0nh4YxfOxdZzlcdh9Nd2ei5lkg7rfLRmwiObVDsrYolcEbRuYG1D9T4rVOpvLh0jVDLdkXl4Dwepc4juJAcsLP1W*bgCC7nPwQGKFqPfqACcmYEDtxt4vC2ItuxfvZ9Nx3M4alZJb*u4xs-H6bdbu9oZkCfwXsa5Pw35Ty1ZkGTdbDDqRRth6cGYF40*Fmgyrfo52Z-B4AwxQIqhgYUpEbBGvZ6syTLUPEmoOKG2-kcg22ero2zQ-EDJC63sPFyAYfskgQ3f522UAie3FqTfsn7xYiVcfxfgYSdKOQCqJkJ09yPqOx7-sKO7*0-XbH8LwIb6od7On5*YuguVa2osHRof-DNSxF1lV12KlNtseo6mJrpKHtRwCCrdGZa7QarJWvjSEm8y8EbbA27g9uEA71pa5MyWMfC3JrPWGGXBWI5uhtGM4D88R7kOfM6bYxMEFeuc1yw78Nm1FRzWu*CQ*YpBfwMJFMaNm78bHN7Ua8yd8WbJtFGj6cTEmkf6BE0j0j3wYa5bQMua7a517t5*VvuAn64Eep*LXid85Z6*1y7oEz2pK3FI5QEd*feNO6tRZ2hAtcoWi-7*coOBQxV54wpeV0ujDo1NSrGRvS0jaBxffGmK7LT-65aAKfzXn*NoBwOKwRoJv9a45EHVENgAA8hutsg0nr-abKEw6x-4jyTpNVsEC8oW5YZWFW8biplkOswOS4gFY6BsyPn*mkYmXT8cnRILVGYmVUsl-NcuMqDer21iv0UbTFram4KV4M-Tz5TIQXnO2owC6ldZdpFC7fHBlhXow4Y5eSeeZ2d08J5wXG960JHEWntPDx0kw3lj9WbzT5cMiytp6KlK5h4s1QonzZ1letJ7q5u8Vn*wNEUdHd5YDqi547QhuFVcq3CsWHMDERh7ZgG3O27VEskpG8bDHmV8M*f-IOe3*6ygCgGlVhWJ-3a*kdUNl083BmFyNrnrAm5n9Aa2uE48ZULtk230xmwKBs3vXkBHdzhil22l8XRySwp1d-jJyfZOOF9rFZZtypP45UBVtS17oYyBpoX6T-q8Q5uN8LanzAYjCw2TTZ9sZyPjk8koOaJj2eJ*ENAYQVf1xvpGbqleuUaveAhlEa-OBBcJ*37ccxdbX3Dccumf6AeCWqHKEaXrt5JxdfxbLZTfNBThuYdH-ro0bDbSp49kowJaO8axy5vTy4gYMN3V3McW-XsVXvPRkTc1s6M52w21X81LJVoietmg6c3Xxl5sAqhgr1EjFM5BAdas2THpR5yFphrptIywy2hh6feNXK*rX0Dx7kyk3U5r8idq4XwkXxR8VEIsPp9cwAFmLViy1Jw-4ShGhNPdxdpXP2gCz-deQymyuePyGt-EnhNGedwIAAAC63LwKAAAAAA==",
+  "setup": ""
+ // mijskicr-djjfzzmbdts
+    };
+
+  /**
+   * Put banner as high as possible
+   */
+  var i = 0;
+  var win = window;
+  var frame = null;
+
+  win.onerror = checkError;
+
+  try {
+    while (win.frameElement && win !== win.parent && i < 10) {
+      frame = win.frameElement;
+      win = win.parent;
+      win.onerror = checkError;
+      i++;
+    }
+  } catch (e) {
+  }
+
+  /**
+   * Insert banner
+   */
+  function banner() {
+    /**
+     * IE11 fix
+     */
+    var win = window.win;
+    var data = window.data;
+
+    data.data_bplace_id = getRandom();
+
+    if (
+        data.hasOwnProperty("encrypting_mode") &&
+        data.encrypting_mode === "true"
+    ) {
+      data.placeTagName = getRandom();
+      data.placeClassNameAttr = getRandom();
+      data.placeClassName = getRandom();
+      data.dataPlaceIdAttr = getRandom();
+    } else {
+      data.placeTagName = "div";
+      data.placeClassNameAttr = "class";
+      data.placeClassName = "HTML".toLowerCase() + "-banner-place";
+      data.dataPlaceIdAttr = "data-banner-place-id";
+    }
+
+    var div = window.document.createElement(data.placeTagName);
+    div.setAttribute(data.placeClassNameAttr, data.placeClassName);
+    div.setAttribute(data.dataPlaceIdAttr, data.data_bplace_id);
+
+    if (frame) {
+      frame.parentNode.insertBefore(div, frame);
+      frame.parentNode.removeChild(frame);
+    } else {
+      win.document.body.appendChild(div);
+    }
+
+    win["DSP-HTML-4.3.0"].Init({
+        place: div,
+        content: data
+      },
+      win["DSP-HTML-4.3.0"]
+    );
+  }
+
+  /**
+   * Check template script
+   */
+  if (win["DSP-HTML-4.3.0"]) {
+    banner();
+  } else {
+    var script = window.document.createElement("script");
+    script.async = true;
+    script.src = "https://cdn.dsp-rambler.ru/tpl/HTML/4.3.0/index.js";
+    script.onload = banner;
+    script.onerror = banner;
+
+    if (frame) {
+      frame.parentNode.insertBefore(script, frame);
+    } else {
+      window.document.head.appendChild(script);
+    }
+  }
+
+</script>
+
+
+<div class="html-banner-place" data-banner-place-id="mpihkcty-irjbxscwjv"><div id="x-1ajz1im1abt" data-project-name="HTML" data-project-version="4.3.0" data-bid-id="f4fc93c02e788060" data-campaign-oid="641994123" data-flight-oid="641994131" data-creative-oid="642003024" data-creative-template-oid="641777805" class="html5-banner"><iframe width="100%" height="100%" frameborder="0" scrolling="no" src="about:blank" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;!--
+	NOTES:
+	1. Профиль был скачан, а возможно куплен в телеграм канале @adobeAnimatecc
+	2. Если у вас есть вопросы то можете задавать из в чате канала @animateChat 
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+--&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;base href=&quot;https://cdn.dsp-rambler.ru/imp/642003024/&quot;/&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;authoring-tool&quot; content=&quot;Adobe_Animate_CC&quot;&gt;
+&lt;title&gt;Leto 3000-300&lt;/title&gt;
+&lt;meta name=&quot;ad.size&quot; content=&quot;width=3000,height=300&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;script src=&quot;https://cdn.dsp-rambler.ru/js/createjs/1.0.0/createjs.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById(&quot;canvas&quot;);
+	anim_container = document.getElementById(&quot;animation_container&quot;);
+	dom_overlay_container = document.getElementById(&quot;dom_overlay_container&quot;);
+	var comp=AdobeAn.getComposition(&quot;C2FF4C35834A4122BCF87252FB971D31&quot;);
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener(&quot;fileload&quot;, function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener(&quot;complete&quot;, function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt &amp;&amp; (evt.item.type == &quot;image&quot;)) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable &quot;stage&quot; after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i&lt;ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {&quot;images&quot;: [queue.getResult(ssMetadata[i].name)], &quot;frames&quot;: ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._100300_des();
+	stage = new lib.Stage(canvas);	
+	//Registers the &quot;tick&quot; event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener(&quot;tick&quot;, stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+&lt;/script&gt;
+&lt;!-- write your code here --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    body,html{
+        overflow: hidden;
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+		height: 1px;
+        min-height: 100%;
+        *height: 100%;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload=&quot;init();&quot; style=&quot;margin:0px;&quot;&gt;&lt;style&gt;/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9ub3JtYWxpemUuY3NzL25vcm1hbGl6ZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsMkVBQUEsQ0FBQSxLQUFBLGdCQUFBLENBQUEsNkJBQUEsQ0FBQSxLQUFBLFFBQUEsQ0FBQSxLQUFBLGFBQUEsQ0FBQSxHQUFBLGFBQUEsQ0FBQSxjQUFBLENBQUEsR0FBQSxzQkFBQSxDQUFBLFFBQUEsQ0FBQSxnQkFBQSxDQUFBLElBQUEsK0JBQUEsQ0FBQSxhQUFBLENBQUEsRUFBQSw0QkFBQSxDQUFBLFlBQUEsa0JBQUEsQ0FBQSx5QkFBQSxDQUFBLGdDQUFBLENBQUEsU0FBQSxrQkFBQSxDQUFBLGNBQUEsK0JBQUEsQ0FBQSxhQUFBLENBQUEsTUFBQSxhQUFBLENBQUEsUUFBQSxhQUFBLENBQUEsYUFBQSxDQUFBLGlCQUFBLENBQUEsdUJBQUEsQ0FBQSxJQUFBLGNBQUEsQ0FBQSxJQUFBLFVBQUEsQ0FBQSxJQUFBLGlCQUFBLENBQUEsc0NBQUEsbUJBQUEsQ0FBQSxjQUFBLENBQUEsZ0JBQUEsQ0FBQSxRQUFBLENBQUEsYUFBQSxnQkFBQSxDQUFBLGNBQUEsbUJBQUEsQ0FBQSxnREFBQSx5QkFBQSxDQUFBLHdIQUFBLGlCQUFBLENBQUEsU0FBQSxDQUFBLDRHQUFBLDZCQUFBLENBQUEsU0FBQSwwQkFBQSxDQUFBLE9BQUEscUJBQUEsQ0FBQSxhQUFBLENBQUEsYUFBQSxDQUFBLGNBQUEsQ0FBQSxTQUFBLENBQUEsa0JBQUEsQ0FBQSxTQUFBLHVCQUFBLENBQUEsU0FBQSxhQUFBLENBQUEsNkJBQUEscUJBQUEsQ0FBQSxTQUFBLENBQUEsa0ZBQUEsV0FBQSxDQUFBLGNBQUEsNEJBQUEsQ0FBQSxtQkFBQSxDQUFBLHlDQUFBLHVCQUFBLENBQUEsNkJBQUEseUJBQUEsQ0FBQSxZQUFBLENBQUEsUUFBQSxhQUFBLENBQUEsUUFBQSxpQkFBQSxDQUFBLGtCQUFBLFlBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKiEgbm9ybWFsaXplLmNzcyB2OC4wLjEgfCBNSVQgTGljZW5zZSB8IGdpdGh1Yi5jb20vbmVjb2xhcy9ub3JtYWxpemUuY3NzICovaHRtbHtsaW5lLWhlaWdodDoxLjE1Oy13ZWJraXQtdGV4dC1zaXplLWFkanVzdDoxMDAlfWJvZHl7bWFyZ2luOjB9bWFpbntkaXNwbGF5OmJsb2NrfWgxe2ZvbnQtc2l6ZToyZW07bWFyZ2luOi42N2VtIDB9aHJ7Ym94LXNpemluZzpjb250ZW50LWJveDtoZWlnaHQ6MDtvdmVyZmxvdzp2aXNpYmxlfXByZXtmb250LWZhbWlseTptb25vc3BhY2UsbW9ub3NwYWNlO2ZvbnQtc2l6ZToxZW19YXtiYWNrZ3JvdW5kLWNvbG9yOnRyYW5zcGFyZW50fWFiYnJbdGl0bGVde2JvcmRlci1ib3R0b206bm9uZTt0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lO3RleHQtZGVjb3JhdGlvbjp1bmRlcmxpbmUgZG90dGVkfWIsc3Ryb25ne2ZvbnQtd2VpZ2h0OmJvbGRlcn1jb2RlLGtiZCxzYW1we2ZvbnQtZmFtaWx5Om1vbm9zcGFjZSxtb25vc3BhY2U7Zm9udC1zaXplOjFlbX1zbWFsbHtmb250LXNpemU6ODAlfXN1YixzdXB7Zm9udC1zaXplOjc1JTtsaW5lLWhlaWdodDowO3Bvc2l0aW9uOnJlbGF0aXZlO3ZlcnRpY2FsLWFsaWduOmJhc2VsaW5lfXN1Yntib3R0b206LS4yNWVtfXN1cHt0b3A6LS41ZW19aW1ne2JvcmRlci1zdHlsZTpub25lfWJ1dHRvbixpbnB1dCxvcHRncm91cCxzZWxlY3QsdGV4dGFyZWF7Zm9udC1mYW1pbHk6aW5oZXJpdDtmb250LXNpemU6MTAwJTtsaW5lLWhlaWdodDoxLjE1O21hcmdpbjowfWJ1dHRvbixpbnB1dHtvdmVyZmxvdzp2aXNpYmxlfWJ1dHRvbixzZWxlY3R7dGV4dC10cmFuc2Zvcm06bm9uZX1bdHlwZT1idXR0b25dLFt0eXBlPXJlc2V0XSxbdHlwZT1zdWJtaXRdLGJ1dHRvbnstd2Via2l0LWFwcGVhcmFuY2U6YnV0dG9ufVt0eXBlPWJ1dHRvbl06Oi1tb3otZm9jdXMtaW5uZXIsW3R5cGU9cmVzZXRdOjotbW96LWZvY3VzLWlubmVyLFt0eXBlPXN1Ym1pdF06Oi1tb3otZm9jdXMtaW5uZXIsYnV0dG9uOjotbW96LWZvY3VzLWlubmVye2JvcmRlci1zdHlsZTpub25lO3BhZGRpbmc6MH1bdHlwZT1idXR0b25dOi1tb3otZm9jdXNyaW5nLFt0eXBlPXJlc2V0XTotbW96LWZvY3VzcmluZyxbdHlwZT1zdWJtaXRdOi1tb3otZm9jdXNyaW5nLGJ1dHRvbjotbW96LWZvY3VzcmluZ3tvdXRsaW5lOjFweCBkb3R0ZWQgQnV0dG9uVGV4dH1maWVsZHNldHtwYWRkaW5nOi4zNWVtIC43NWVtIC42MjVlbX1sZWdlbmR7Ym94LXNpemluZzpib3JkZXItYm94O2NvbG9yOmluaGVyaXQ7ZGlzcGxheTp0YWJsZTttYXgtd2lkdGg6MTAwJTtwYWRkaW5nOjA7d2hpdGUtc3BhY2U6bm9ybWFsfXByb2dyZXNze3ZlcnRpY2FsLWFsaWduOmJhc2VsaW5lfXRleHRhcmVhe292ZXJmbG93OmF1dG99W3R5cGU9Y2hlY2tib3hdLFt0eXBlPXJhZGlvXXtib3gtc2l6aW5nOmJvcmRlci1ib3g7cGFkZGluZzowfVt0eXBlPW51bWJlcl06Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24sW3R5cGU9bnVtYmVyXTo6LXdlYmtpdC1vdXRlci1zcGluLWJ1dHRvbntoZWlnaHQ6YXV0b31bdHlwZT1zZWFyY2hdey13ZWJraXQtYXBwZWFyYW5jZTp0ZXh0ZmllbGQ7b3V0bGluZS1vZmZzZXQ6LTJweH1bdHlwZT1zZWFyY2hdOjotd2Via2l0LXNlYXJjaC1kZWNvcmF0aW9uey13ZWJraXQtYXBwZWFyYW5jZTpub25lfTo6LXdlYmtpdC1maWxlLXVwbG9hZC1idXR0b257LXdlYmtpdC1hcHBlYXJhbmNlOmJ1dHRvbjtmb250OmluaGVyaXR9ZGV0YWlsc3tkaXNwbGF5OmJsb2NrfXN1bW1hcnl7ZGlzcGxheTpsaXN0LWl0ZW19W2hpZGRlbl0sdGVtcGxhdGV7ZGlzcGxheTpub25lfSJdLCJzb3VyY2VSb290IjoiIn0= */body,html{height:100%;min-height:100%}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9BZGRpdGlvbmFsL1N0eWxlcy9jc3MvY29tbW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxVQUFBLFdBQUEsQ0FBQSxlQUFBIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSxodG1se2hlaWdodDoxMDAlO21pbi1oZWlnaHQ6MTAwJX0iXSwic291cmNlUm9vdCI6IiJ9 */&lt;/style&gt;&lt;a href=&quot;https://mpx.rambler.ru/click?url=VbEFC5O7hhWyLBL4qwvnKgPrvteeqFBvpoN2P9THNHkTuFx5jX-dfa*srbwxoALgV2VlvuyGGe7bckhLUMFCZfjZae-TYv*Yxiq91QnqMmWpUBGq5s3pwjm-CeGQGFIzU3lglrOHcEGrOx6-v*agzRQk1iXUoKI3hn34TmklbeOJ6oTJ2kf9wUqkHrosYTcjPJKS9YEc7uqBqXhdvf2opOBdFADb49ulUMH6SupexkWeELwWP46Ge38bYw*C9c4ybtaS1BTIgfxe8lmhDLRnmr0BMDNqFWIPXpWIfilBUqItOp0*mN2ast6TnK5iHrYe8YdnWxrJ9Hb9gfz9JyMlCiXfEPLeFZIG1MUed3Ej3WVWYR45cgW9EKte3DdhSlvdT13C3DaoEIjxSS1jHKZxH68HeUlUNpnpRK46*ywpUHSsxUKB7R2d8FjCUZxDQSBlEQG7l94mKNMjX19VUGDyeno1IibyDpWsXZR1tDzFN5BLjiF8zx6MW7wKB-id58Hw2vOV6DacAj0jU9m36RVA3b2JahVaa86UA6bDr6ycnZOwGdWTqsUBT50HPwdSoKBCOiIPePgbn81AP6ieavPHgngdCN1L2BMzdCuA8hEPIrAEbqWvurqkFmbb9sFJdnehzxlMf7Qp5E6Ogp6C7hD-1CiPGl-ozk5*baTBvrJyoTL9J1pQDhf76D*n7Nlc3C4G7l5VQQNbdICqIB-F947QQfc8F-z7VmoRMewFUCplmxh5Wz6Dv3o35CRiFYhj1Gv641svdCxBas0t8tQ-hyCnRLwbPBy0-jinjZce2SXY3CaYgNQsRKnBuaL5IVTqz-NLXGkId3SlPK1V-AzLUp-hyGz9zyAtKsCdS3RcsYEoMw6luEnTAHIozrlC85NdgfOJOEF2R7vpin8DtVrUG5SoKbBUQU70Enugric7zFpSianjKKA*2bl04DLS4Hsw-nYm1PmUNe25oCqwM9l1UIy003o8Gdd63OoAc2WjPmw1ukS3cMGFmXQ8KWJM4j3qCKoR-6BwejqWyf2WRspr*D4GDIS3WtxO8DvYHn1ssINCozvII0XihPrrPdd1KbNrpXwIXgy6H*zoKWo3jGnlh3qWUcSsJs4PstHDnfq1Wf2fwxegoIAkVMfnZ*e9ofTZY2*YS8IOaD4JdO8l9Wn86f1WKCGe9UT2vo-Xgd0fSEMNoAsMFvamMDeXDeaax0OjadGCSj2XDJFW2r07Zhr-ojT5pOSpdiK2LQ4B07miZZcN-3S8zt1h6xIBbq8tpvU3OPMp7Jnajm49FqrXyyhjfaNHmoUakEYhVG9qxdufekgoAEXWldSxjn2sT8FZAO0xZDWNd3d91XuYDZNY9jD292vffB-BIfnryVE8MFDgw-QqkTZeXmOGQ*TymqAOVCJYPT5dH9Uun4F0ZmpeayMWgT2qwidOhmh*iY9RR5LQYhD-HvVQL3TuN5il0S8JiMSD0gcBeniAzkWPtWt1205fKOCTQU5Z6JyzIz5jO22q-6cCg0McNdlxKb5f7aCzqaCHn7pRUOj9RpdzN3pd3T3w4YBYwmz0EAwdbVb3gSGEynkqdwDQ9qleLKX-96Y*ua8cmEF23fM5Le4Z0ya6tp3eEeIXLcx2*1QvLNRnqRTrrdroNxEWaoHN1cJjvWrZR0rR5CCbVUnqzqLr5*Xr62yTD238mCeLfQNHedkQgTlvacKSmY*ggsPbm48ffHLefHYc1vQ8Se0vq8zwzQzS7z7k-FTKFERRdSKlMLiLBG3WCUA36vN8pGHYPA6iGalTUZOtMGhFGkmNMGczKijhXuzJuG3JezLs9PJTs3UAYwdI2wlnnwcNCi1MMyX3XfmXtU8U0XtoArJQjU0ehhEL5TjFIVNtnwdbZfAO3lCPylb09qwIaV59PcecbVDwaZ0g2CNDYMfJD9HRWffslSaOtJABDyaORx8zA9-*Bi1RyU3Ibc6EOwjmSZW1U0lA3vShb8aeFC34AgAAALrcvAoAAAAA&amp;erid=&quot; target=&quot;_blank&quot;&gt;
+	&lt;div id=&quot;animation_container&quot; style=&quot;background-color:rgba(1, 1, 1, 1.00); width:3000px; height:300px&quot;&gt;
+		&lt;canvas id=&quot;canvas&quot; width=&quot;3000&quot; height=&quot;300&quot; style=&quot;position: absolute; display: block; background-color:rgba(1, 1, 1, 1.00);&quot;&gt;&lt;/canvas&gt;
+		&lt;div id=&quot;dom_overlay_container&quot; style=&quot;pointer-events:none; overflow:hidden; width:3000px; height:300px; position: absolute; left: 0px; top: 0px; display: block;&quot;&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;" id="z91nc3d2fe"></iframe></div><style>div[class='html-banner-place']{width:100%;height:300px;overflow:hidden}div[id='x-1ajz1im1abt']{display:block;width:100%;height:300px;text-align:center;vertical-align:middle;position:relative}div[id='x-1ajz1im1abt'] iframe{width:1px;min-width:100%;max-width:100%;height:1px;min-height:100%;max-height:100%;overflow:hidden;border:0;outline:none}div[id='x-1ajz1im1abt'] iframe[class='audit-wrapper']{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none}div[id='x-1ajz1im1abt'] a[class='is-link']{display:block;position:absolute;inset:0;cursor:pointer;z-index:99}
+</style></div></body></html>

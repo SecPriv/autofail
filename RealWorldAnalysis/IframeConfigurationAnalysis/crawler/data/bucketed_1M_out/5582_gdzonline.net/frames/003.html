@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head>
+</head>
+<body>
+<script>
+  (function () {
+    var AM_UID = "am-uid";
+    var COOKIE_ENABLED = "cookieEnabled";
+    window.addEventListener("message", function (event) {
+      try {
+        var message = event.data;
+        var amUid = message[AM_UID];
+        if (amUid) {
+          localStorage.setItem(AM_UID, amUid);
+        }
+      } catch (e) {
+      }
+    });
+    var message = {};
+    try {
+      message[COOKIE_ENABLED] = navigator.cookieEnabled;
+      message[AM_UID] = localStorage.getItem(AM_UID);
+    } catch (e) {
+      message[AM_UID] = null;
+    }
+    finally {
+        window.parent.postMessage(message, "*");
+    }
+  })();
+</script>
+
+
+</body></html>

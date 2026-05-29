@@ -1,0 +1,32 @@
+<html><counters></counters><head><script>
+(function()
+{
+  var pingWrapper = document.createElement("counters");
+  document.documentElement.insertBefore(pingWrapper, document.documentElement.firstChild);
+  var url = "https://1gr.cz/log/redir.aspx?log=hax&r=sphtouch_sasraw_x1&from=https%3A%2F%2Fwww.idnes.cz%2F&ver=&url=https%3A%2F%2Fwww.idnes.cz%2F&rnd=" + Math.random() + "&grp=bos";
+  pingUrl(url);
+  function pingUrl(url)
+  {
+    var tempImg = new Image();
+    var stopInsert;
+    tempImg.onload = tempImg.onerror = function()
+    {
+      stopInsert = true;
+      tempImg.onload = tempImg.onerror = null;
+    };
+    tempImg.src = url;
+    tempImg.style.cssText = "position: fixed; left: 0px; top: 0px; width: 1px; height: 1px; opacity: 0.01";
+    if(stopInsert || window.ScriptEngine && typeof html.style.boxSizing != "undefined") return;
+    pingWrapper.insertBefore(tempImg, pingWrapper.firstChild);
+    tempImg.onload = tempImg.onerror = function()
+    {
+      pingWrapper.removeChild(tempImg);
+      tempImg.onload = tempImg.onerror = null;
+    };
+  };
+})()
+</script>
+<!--SASF_FCID=145983 SASF_CAMPID=12802 SASF_PRODUCTID=0 SASF_ADVERTISERID=6-->
+<!--SASF_WIDTH=1 SASF_HEIGHT=1-->
+<script></script>
+</head><body></body></html>

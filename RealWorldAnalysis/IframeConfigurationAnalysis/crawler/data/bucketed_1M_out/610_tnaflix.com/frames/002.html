@@ -1,0 +1,410 @@
+<!DOCTYPE html><html style="width:100%;height:100%;margin:0;" data-embedded-into-iframe=""><head>
+            		<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PBL5RMNP"></script><script type="text/javascript">
+			var pageLoadStart = Date.now();
+		</script>
+		            <meta charset="UTF-8">
+
+            
+                <link rel="dns-prefetch" href="//galleryn0.vcmdiawe.com">
+                <link rel="dns-prefetch" href="//galleryn1.vcmdiawe.com">
+                <link rel="dns-prefetch" href="//galleryn2.vcmdiawe.com">
+                <link rel="dns-prefetch" href="//galleryn3.vcmdiawe.com">
+        
+		        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            window.forceGTMClass = 'force-gtm';
+
+            window.aweReportEvent = function (eventData) {
+                window.dataLayer.push(eventData);
+            }
+        </script>
+        		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-PBL5RMNP');</script>
+		<!-- End Google Tag Manager -->
+		
+                <script type="text/javascript" src="//pt-static3.jsmsat.com/npe/_common/script/incognito/di.min.5f896.js"></script>
+        
+        <script type="text/javascript" src="//pt-static4.jsmsat.com/npe/_common/script/adblock/ad_left_.17b19.js"></script>
+        <script type="text/javascript">
+            window.reportCreativeImpression = function() {
+                window.reportCreativeImpression = function() {};
+
+                
+                function extendUrlsWithParameters() {
+                                    }
+
+                function extendReportDataWithBandwidthInformations(reportData) {
+                    if (aweConfig && aweConfig.bandwidthTester) {
+                        if (typeof aweConfig.bandwidthTester.bandwidth === 'number') {
+                            reportData['bandwidth'] = aweConfig.bandwidthTester.bandwidth;
+                        }
+
+                        var connection = navigator.connection;
+
+                        if (connection) {
+                            if (typeof connection.downlink === 'number') {
+                                // convert megabits per sec to kilobits per sec
+                                reportData['nc-downlink'] = connection.downlink * 1000;
+                            }
+
+                            if (typeof connection.effectiveType === 'string') {
+                                reportData['nc-effectiveType'] = connection.effectiveType;
+                            }
+
+                            if (typeof connection.type === 'string') {
+                                reportData['nc-type'] = connection.type;
+                            }
+
+                            if (typeof connection.saveData === 'boolean') {
+                                reportData['nc-saveData'] = connection.saveData;
+                            }
+                        }
+                    }
+                }
+
+                function sendContentView() {
+                    var noBlocker = typeof window.noBlocker !== 'undefined';
+                                        var contentName = window.location.href;
+
+                    if (typeof pstool !== 'undefined' && contentName.indexOf('pstool=') === -1) {
+                        contentName += (contentName.indexOf('?') === -1 ? '?pstool=' : '&pstool=') + pstool;
+                    }
+
+                    var mainContentContainer = document.querySelector('.content') ||
+                        document.querySelector('.container');
+                    var mainContentContainerHeight = mainContentContainer && mainContentContainer.offsetHeight || 0;
+                    var mainContentContainerWidth = mainContentContainer && mainContentContainer.offsetWidth || 0;
+
+                    var reportData = {
+                        'event'                : 'content-view',
+                        'contentName'          : contentName,
+                        'noBlocker'            : noBlocker,
+                        'screenOrientation'    : (window.innerHeight > window.innerWidth)
+                            ? 'portrait'
+                            : 'landscape',
+                        'containerOrientation' : (mainContentContainerHeight > mainContentContainerWidth)
+                            ? 'portrait'
+                            : 'landscape',
+                        'windowWidth'          : window.innerWidth,
+                        'windowHeight'         : window.innerHeight,
+                    };
+
+                    extendReportDataWithBandwidthInformations(reportData);
+
+                    window.aweReportEvent(reportData);
+                }
+
+                function extendPixelUrl(url) {
+                    var url = new URL((url.indexOf("//") === 0 ? location.protocol : "") + url);
+                    var urlParams = url.searchParams;
+                    ["keyword", "keywords"].forEach(function(key) {
+                        urlParams.delete(key);
+                    });
+                    urlParams.set("s", window.innerWidth + "x" + window.innerHeight);
+                    urlParams.set("if", window.top === window ? 0 : 1);
+                    return url.toString();
+                }
+
+                function setPixelImages() {
+                    document.querySelectorAll('.pixel').forEach(function(el) {
+                        var src = el.getAttribute('data-dp');
+                        if (src) {
+                            if (window.overridePixelDpidHash) {
+                                src = window.overridePixelDpidHash(src);
+                            }
+                            if (window.overrideQueryParams) {
+                                src = window.overrideQueryParams(src);
+                            }
+                            src = extendPixelUrl(src);
+                            el.removeAttribute('data-dp');
+                            el.src = src;
+                            el.style.display = 'block';
+                        }
+                    });
+                }
+
+                function initPixels() {
+                                        (function checkIncognito() {
+                        var mode = 2; // error
+                        return detectIncognito()
+                            .then(function(result) {
+                                mode = +result.isPrivate;
+                            })
+                            .catch(function(error) {
+                                mode = 2;
+                            })
+                            .finally(function() {
+                                document.querySelectorAll('.pixel').forEach(function(el) {
+                                    var src = el.getAttribute('data-dp');
+                                    if (src) {
+                                        var paramPrefix = src.includes('?') ? '&' : '?';
+                                        src += paramPrefix + 'im=' + mode;
+                                        el.setAttribute('data-dp', src);
+                                    }
+                                });
+                            });
+                    })().then(setPixelImages);
+                                    }
+
+                function init() {
+                    sendContentView();
+                    extendUrlsWithParameters();
+                    initPixels();
+                }
+
+                document.readyState === 'complete'
+                    ? init()
+                    : window.addEventListener('load', init, { once: true });
+            }
+
+                    </script>
+        
+            <link rel="icon" href="//pt-static4.jsmsat.com/npe/image/jsm/favicon.f280c.ico">
+        <link rel="apple-touch-icon" href="//pt-static4.jsmsat.com/npe/image/jsm/apple-touch-icon.1ff49.png">
+    
+        		<script type="text/javascript">
+			window.aweConfig = {"alternatePostitialLogic":true,"preload":true,"useSendBeaconForBI":true};
+		</script>
+		<meta name="viewPort" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LiveJasmin.com - Hot Live Sex Shows!</title><link rel="stylesheet" type="text/css" href="//pt-static4.jsmsat.com/npe/pu/top-talent/css/model-review.e3acd.css" media="screen">
+<script type="text/javascript" src="//pt-static4.jsmsat.com/npe/pu/top-talent/script/pu.tt.a9a1a.js"></script>
+        </head>
+                <body style="width:100%;height:100%;margin:0;" data-category="girl" data-site="jsm" class="mobile" data-ha-protection="1" data-ga-category="postitial - livejasmin - post/more/joi" data-ga-label="background" data-ga-redirect-url="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=background&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;lang=en">
+                        <script type="text/javascript">
+                        document.body.classList.add("mobile");
+                                                document.body.setAttribute('data-ha-protection', '1');
+                    </script>
+        
+        		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBL5RMNP&nojscript=true" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		
+        <script type="text/javascript">
+            window.playerConfigs = {"shared":{"data":{"pstool":"400_2133","relay":{"url":"wss:\/\/dss-relay-{$sbIpSplit}.dditscdn.com\/{$roomName}?psid=ed_tnaflixintmob&pstool=400_2133","connection":{"brandID":"jasmin","cobrandId":"","sessionID":"AWELiveFeedGuest","siteName":"LiveJasmin","subbrand":"LiveJasmin","isPassive":false,"platform":"mobile","correlationId":"XJvH4Hnvuq9UzwZA","siteUrl":""},"registration":{"userType":"user","chatID":"freechat","clientRevision":"","gravityCookieId":"","passparam":"","playerVer":"awe-live-stream-player","promotoolsPlayerVersion":"awe-live-stream-player","jasmin2App":true,"livefeedtype":null,"livejasminTvmember":false,"newApplet":true,"isPassive":false,"sessionID":"AWELiveFeedGuest"},"jsm2SessionId":"g01529980625254727960881057541476","clientInstanceId":"81461170501434530470598334119217","sessionID":"AWELiveFeedGuest"},"apigw":{"debugUrl":"\/\/api-protected.protoawegw.com\/v2\/player\/performer\/search?includeTestAccounts=&product=livejasmin&siteId=jsm&category=girl&forcedPerformers={$performerId}&preferredPerformers=CristinaRous,IrisDavis,Innes,KimberlyJoy&bannedPerformers=&profilePictureSize=896x504,504x896&withSb=1&psid=ed_tnaflixintmob&pstool=400_2133&presets=&certified=&hotDeal=&hotDealExpireMin=&preVipShow=&preVipShowRemainingSec=&ngs=1&session=g01529980625254727960881057541476&liveTags=","searchPerformerUrl":"\/\/api-protected.protoawegw.com\/v2\/player\/performer\/search?includeTestAccounts=&product=livejasmin&siteId=jsm&category=girl&forcedPerformers=&preferredPerformers=CristinaRous,IrisDavis,Innes,KimberlyJoy&bannedPerformers=&profilePictureSize=896x504,504x896&withSb=1&psid=ed_tnaflixintmob&pstool=400_2133&presets=&certified=&hotDeal=&hotDealExpireMin=&preVipShow=&preVipShowRemainingSec=&ngs=1&session=g01529980625254727960881057541476&liveTags=&mitigable=1&searchText=","profilePictureKeys":{"landscape":"896x504","portrait":"504x896"},"getPerformerUrl":"\/\/api-protected.protoawegw.com\/v2\/player\/performer\/get?includeTestAccounts=&product=livejasmin&siteId=jsm&category=girl&withSb=1&psid=ed_tnaflixintmob&pstool=400_2133&profilePictureSize=896x504,504x896&ngs=1&performerIds[]={$performerId}&session=g01529980625254727960881057541476&liveTags="}}}};
+        </script>
+
+        
+        
+        <script>``
+            window.creativeDescriptor = {
+                mainPerformer         : {
+                    displayName : 'PromotionPerformer',
+                    performerId : 'PromotionPerformer',
+                },
+                videoData             : {
+                    contentHash      : 'efae4e5ef4414f08ab87e57404f16b50',
+                    originalFileName : 'a_PromotionPerformer_efae4e5ef4414f08ab87e57404f16b50_leok',
+                },
+            };
+        </script>
+
+        <div class="container">
+                    <pt-wrapper for="header" data-ga-layout-section="header">
+
+            <pt-wrapper for="video-player">
+                <pt-profile-image src="//pt-static2.jsmsat.com/npe/image/joi_fallback.1225c.jpg" style="background-image: url(&quot;//pt-static2.jsmsat.com/npe/image/joi_fallback.1225c.jpg&quot;);"></pt-profile-image>
+                                    <pt-video-wrapper object-fit="cover" style="">
+                        <video loop="" playsinline="" webkit-playsinline="" preload="metadata" muted="" poster="//pt-static2.jsmsat.com/npe/image/joi_fallback.1225c.jpg" data-ch="efae4e5ef4414f08ab87e57404f16b50" src="//galleryn3.vcmdiawe.com/f8d2e11bd6c43618af00d6f28c91232a1c/542b3b96a217302df6663736153280d2.mp4?pstool=400_2133&amp;psid=ed_tnaflixintmob" style="width: auto; height: 100%; flex: 0 0 auto; transform: rotate(0deg);"></video>
+                    </pt-video-wrapper>
+                                <pt-play-button hidden=""></pt-play-button>
+            </pt-wrapper>
+
+                    <pt-redirect-layer for="video-player" href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=video&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-label="video" data-ga-video-file="a_PromotionPerformer_efae4e5ef4414f08ab87e57404f16b50_leok"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=video&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+        
+                    <pt-wrapper class="mobile" for="logo">
+            <pt-icon></pt-icon>
+            <pt-base-logo></pt-base-logo>
+                    <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=logo&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-label="logo"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=logo&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                </pt-wrapper>
+                    <pt-wrapper for="text-content">
+                        <pt-wrapper class="desktop" for="logo">
+            <pt-icon></pt-icon>
+            <pt-base-logo></pt-base-logo>
+                    <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=logo&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-label="logo"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=logo&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                </pt-wrapper>
+                        <h2 class="title">
+                    THE BEST JERK OFF INSTRUCTORS                    <img src="//pt-static4.jsmsat.com/npe/_common/image/eggplant.173e4.svg">
+                    <img src="//pt-static2.jsmsat.com/npe/_common/image/splash.a4a43.svg">
+                </h2>
+                <h2 class="text">
+                    These hotties are experts of orgasms according to LiveJasmin users. Follow their every word to cum harder than ever!                </h2>
+                        <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=logo&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-label="headline"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=logo&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                    </pt-wrapper>
+        </pt-wrapper>
+                <pt-wrapper for="performer-list">
+                    <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=background&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-layout-section="body" data-ga-label="background" utm-content="background"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=background&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+        
+                                            <pt-wrapper for="performer">
+                    <pt-wrapper for="performer-content">
+                        <pt-wrapper for="performer-container">
+                            <pt-wrapper for="performer-profile-image">
+                                <pt-profile-image landscape="" src="//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f18/8dc222f4067144e81b9a0c3769b68715_glamour_896x504.jpg?cno=8ff9" style="background-image: url(&quot;//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f18/8dc222f4067144e81b9a0c3769b68715_glamour_896x504.jpg?cno=8ff9&quot;);">
+                                </pt-profile-image>
+                                <pt-profile-image portrait="" src="//galleryn2.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f18/8dc222f4067144e81b9a0c3769b68715_glamour_324x576.jpg?cno=8ff9" style="background-image: url(&quot;//galleryn2.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f18/8dc222f4067144e81b9a0c3769b68715_glamour_324x576.jpg?cno=8ff9&quot;);">
+                                </pt-profile-image>
+                            </pt-wrapper>
+                        </pt-wrapper>
+
+                        <pt-live-preroll-player class="for-hover" id="live-preroll-player-0" base-url="https://gallery.vcmdiawe.com/lpp" performer-id="a9e6671a-000c-4174-b122-467682bf06c2" muted="" loop="" disabled-for-hover=""><pt-video-wrapper id="live-preroll-player-0-video-wrapper" style="opacity: 0;"><video loop="" playsinline="playsinline" webkit-playsinline="webkit-playsinline" muted="" style="width: 100%; height: 100%;"></video></pt-video-wrapper></pt-live-preroll-player>
+
+                        <div class="shade"></div>
+
+                        <div class="live-signal">
+                            Live                        </div>
+                    </pt-wrapper>
+                    <pt-wrapper for="info-content">
+                                                    <div class="endorsements">
+                                Endorsed by 23 users                            </div>
+                                                <div class="title">CristinaRous: A Curly-Haired Temptress</div>
+                        <div class="description">CristinaRous is a curly-haired, athletic enchantress with an angelic face hiding a devilish side. As a girly dildo master, she expertly guides you through a session filled with playful yet commanding instructions. Cristina's athletic prowess and sultry charm make every encounter feel like a sinful delight, pushing you to a climax that feels like pure heaven.</div>
+                    </pt-wrapper>
+                            <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=CristinaRous&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=CristinaRous&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="CristinaRous" data-ga-performer-name="a9e6671a-000c-4174-b122-467682bf06c2" data-ga-display-name="CristinaRous"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=CristinaRous&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=CristinaRous&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            <pt-cta-button for="performers" value="JERK OFF WITH HER">
+                                <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=CristinaRous&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=CristinaRous&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="CristinaRous" data-ga-performer-name="a9e6671a-000c-4174-b122-467682bf06c2" data-ga-display-name="CristinaRous"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=CristinaRous&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=CristinaRous&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            </pt-cta-button>
+                </pt-wrapper>
+                                            <pt-wrapper for="performer">
+                    <pt-wrapper for="performer-content">
+                        <pt-wrapper for="performer-container">
+                            <pt-wrapper for="performer-profile-image">
+                                <pt-profile-image landscape="" src="//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f15/50e53a36b5b88679a5e0134f98cadc15_glamour_896x504.jpg?cno=498e" style="background-image: url(&quot;//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f15/50e53a36b5b88679a5e0134f98cadc15_glamour_896x504.jpg?cno=498e&quot;);">
+                                </pt-profile-image>
+                                <pt-profile-image portrait="" src="//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f15/50e53a36b5b88679a5e0134f98cadc15_glamour_324x576.jpg?cno=498e" style="background-image: url(&quot;//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f15/50e53a36b5b88679a5e0134f98cadc15_glamour_324x576.jpg?cno=498e&quot;);">
+                                </pt-profile-image>
+                            </pt-wrapper>
+                        </pt-wrapper>
+
+                        <pt-live-preroll-player class="for-hover" id="live-preroll-player-1" base-url="https://gallery.vcmdiawe.com/lpp" performer-id="IrisDiamond" muted="" loop="" disabled-for-hover=""><pt-video-wrapper id="live-preroll-player-1-video-wrapper" style="opacity: 0;"><video loop="" playsinline="playsinline" webkit-playsinline="webkit-playsinline" muted="" style="width: 100%; height: 100%;"></video></pt-video-wrapper></pt-live-preroll-player>
+
+                        <div class="shade"></div>
+
+                        <div class="live-signal">
+                            Live                        </div>
+                    </pt-wrapper>
+                    <pt-wrapper for="info-content">
+                                                    <div class="endorsements">
+                                Endorsed by 25 users                            </div>
+                                                <div class="title">IrisDavis: Finger Play Fantasia and JOI</div>
+                        <div class="description">IrisDavis is a delightful mix of beauty and playfulness, with her tall stature and big breasts leaving you eager for her touch. Her warm eyes and expert finger play create an inviting atmosphere where you can let loose and enjoy. Iris has a knack for making every session feel unique and exciting, like a rollercoaster ride that’s both thrilling and fun. Her wild side will keep you guessing, while her sense of humor ensures you’re smiling all the way to your climax. She’s the perfect blend of naughty and nice, leaving you feeling thoroughly entertained and satisfied.</div>
+                    </pt-wrapper>
+                            <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=IrisDavis&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=IrisDavis&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="IrisDavis" data-ga-performer-name="IrisDiamond" data-ga-display-name="IrisDavis"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=IrisDavis&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=IrisDavis&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            <pt-cta-button for="performers" value="JERK OFF WITH HER">
+                                <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=IrisDavis&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=IrisDavis&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="IrisDavis" data-ga-performer-name="IrisDiamond" data-ga-display-name="IrisDavis"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=IrisDavis&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=IrisDavis&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            </pt-cta-button>
+                </pt-wrapper>
+                                            <pt-wrapper for="performer">
+                    <pt-wrapper for="performer-content">
+                        <pt-wrapper for="performer-container">
+                            <pt-wrapper for="performer-profile-image">
+                                <pt-profile-image landscape="" src="//galleryn2.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1f/f781d8d76fb0c7caafb27470c9bdc688_glamour_896x504.jpg?cno=dc9b" style="background-image: url(&quot;//galleryn2.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1f/f781d8d76fb0c7caafb27470c9bdc688_glamour_896x504.jpg?cno=dc9b&quot;);">
+                                </pt-profile-image>
+                                <pt-profile-image portrait="" src="//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1f/f781d8d76fb0c7caafb27470c9bdc688_glamour_324x576.jpg?cno=dc9b" style="background-image: url(&quot;//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1f/f781d8d76fb0c7caafb27470c9bdc688_glamour_324x576.jpg?cno=dc9b&quot;);">
+                                </pt-profile-image>
+                            </pt-wrapper>
+                        </pt-wrapper>
+
+                        <pt-live-preroll-player class="for-hover" id="live-preroll-player-2" base-url="https://gallery.vcmdiawe.com/lpp" performer-id="815e7a88-fe66-44dc-8749-7c8af3047571" muted="" loop="" disabled-for-hover=""><pt-video-wrapper id="live-preroll-player-2-video-wrapper" style="opacity: 0;"><video loop="" playsinline="playsinline" webkit-playsinline="webkit-playsinline" muted="" style="width: 100%; height: 100%;"></video></pt-video-wrapper></pt-live-preroll-player>
+
+                        <div class="shade"></div>
+
+                        <div class="live-signal">
+                            Live                        </div>
+                    </pt-wrapper>
+                    <pt-wrapper for="info-content">
+                                                    <div class="endorsements">
+                                Endorsed by 47 users                            </div>
+                                                <div class="title">Innes: Intense Finger Play with a Seductive Siren!</div>
+                        <div class="description">Innes is a seductive siren with athletic curves and innocent eyes that will make you weak in the knees. Her charming smile will draw you in as she guides you through a tantalizing finger play session that will leave you gasping for more. Get ready for an intense and pleasurable experience with this irresistible beauty who knows exactly how to push all your buttons and lead you to a mind-blowing climax.</div>
+                    </pt-wrapper>
+                            <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=Innes&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=Innes&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="Innes" data-ga-performer-name="815e7a88-fe66-44dc-8749-7c8af3047571" data-ga-display-name="Innes"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=Innes&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=Innes&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            <pt-cta-button for="performers" value="JERK OFF WITH HER">
+                                <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=Innes&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=Innes&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="Innes" data-ga-performer-name="815e7a88-fe66-44dc-8749-7c8af3047571" data-ga-display-name="Innes"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=Innes&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=Innes&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            </pt-cta-button>
+                </pt-wrapper>
+                                            <pt-wrapper for="performer">
+                    <pt-wrapper for="performer-content">
+                        <pt-wrapper for="performer-container">
+                            <pt-wrapper for="performer-profile-image">
+                                <pt-profile-image landscape="" src="//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1a/a9d1b57d0a1c39efee30c6b01bd7e3a9_glamour_896x504.jpg?cno=e1ff" style="background-image: url(&quot;//galleryn3.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1a/a9d1b57d0a1c39efee30c6b01bd7e3a9_glamour_896x504.jpg?cno=e1ff&quot;);">
+                                </pt-profile-image>
+                                <pt-profile-image portrait="" src="//galleryn1.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1a/a9d1b57d0a1c39efee30c6b01bd7e3a9_glamour_324x576.jpg?cno=e1ff" style="background-image: url(&quot;//galleryn1.vcmdiawe.com/ff268cab8d9fbae1ed7506f97496274f1a/a9d1b57d0a1c39efee30c6b01bd7e3a9_glamour_324x576.jpg?cno=e1ff&quot;);">
+                                </pt-profile-image>
+                            </pt-wrapper>
+                        </pt-wrapper>
+
+                        <pt-live-preroll-player class="for-hover" id="live-preroll-player-3" base-url="https://gallery.vcmdiawe.com/lpp" performer-id="KimberlyJoy" muted="" loop="" disabled-for-hover=""><pt-video-wrapper id="live-preroll-player-3-video-wrapper" style="opacity: 0;"><video loop="" playsinline="playsinline" webkit-playsinline="webkit-playsinline" muted="" style="width: 100%; height: 100%;"></video></pt-video-wrapper></pt-live-preroll-player>
+
+                        <div class="shade"></div>
+
+                        <div class="live-signal">
+                            Live                        </div>
+                    </pt-wrapper>
+                    <pt-wrapper for="info-content">
+                                                    <div class="endorsements">
+                                Endorsed by 25 users                            </div>
+                                                <div class="title">KimberlyJoy: Sensual Stripper Will Make You Jerk</div>
+                        <div class="description">KimberlyJoy is a romantic at heart, with her big brown eyes and sensual lips drawing you into her world of classy allure. Her sporty nature and talent for stripping and dancing make her sessions a graceful display of elegance and desire. Kimberly’s genuine personality and polite wit ensure you feel comfortable and engaged throughout, leaving you with a sense of warmth and satisfaction. She’s the perfect blend of class and seduction, ready to sweep you off your feet and into a world of blissful enjoyment.</div>
+                    </pt-wrapper>
+                            <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=KimberlyJoy&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=KimberlyJoy&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="KimberlyJoy" data-ga-performer-name="KimberlyJoy" data-ga-display-name="KimberlyJoy"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=KimberlyJoy&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=KimberlyJoy&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            <pt-cta-button for="performers" value="JERK OFF WITH HER">
+                                <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=KimberlyJoy&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=KimberlyJoy&amp;lang=en" target="_blank" data-ga-layout-section="cam model toplist" data-ga-label="KimberlyJoy" data-ga-performer-name="KimberlyJoy" data-ga-display-name="KimberlyJoy"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=KimberlyJoy&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=freechat&amp;performerName=KimberlyJoy&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                            </pt-cta-button>
+                </pt-wrapper>
+                    </pt-wrapper>
+                <pt-wrapper for="bottom-cta-container">
+            <pt-cta-button value="SEE MORE JOI">
+                        <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=see+more+joi&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-layout-section="footer" data-ga-label="see more joi" utm-content="see more joi"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=see+more+joi&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                    </pt-cta-button>
+        </pt-wrapper>
+                <pt-wrapper for="footer" data-ga-layout-section="footer">
+            <pt-wrapper for="complience-wrapper">
+                        <pt-logo type="simple">
+                  </pt-logo>
+                        <pt-label>
+                    The site contains sexually explicit material. Enter ONLY if you are at least 18 years old and agree to our cookie rules.                </pt-label>
+                <pt-label>
+                    18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement                 </pt-label>
+                        <pt-redirect-layer href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=footer+text&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank" data-ga-label="footer text" utm-content="footer text"><a href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=footer+text&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=listpage&amp;filters=joi&amp;lang=en" target="_blank"></a></pt-redirect-layer>
+                    </pt-wrapper>
+                    <pt-footer data-ga-layout-section="footer">
+            <span>        <div class="text-wrapper">
+            © 2026 livejasmin.com - All Rights Reserved!        </div>
+        <div class="links-wrapper">
+            <a class="link" href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=terms+and+conditions&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=terms&amp;lang=en" target="_blank" data-ga-label="terms and conditions">
+                Terms &amp; Conditions            </a>
+            <a class="link" href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=privacy+policy&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=privacy&amp;lang=en" target="_blank" data-ga-label="privacy policy">
+                Privacy Policy            </a>
+            <a class="link" href="//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&amp;params%5Bpstool%5D=400_2133&amp;params%5Butm_source%5D=tr&amp;params%5Butm_medium%5D=partner&amp;params%5Butm_campaign%5D=post%2Fmore%2Fjoi&amp;params%5Butm_content%5D=cookie+rules&amp;params%5BjumpReferrer%5D=www.tnaflix.com&amp;params%5Bms_rnd%5D=1779531787.79626&amp;params%5Bdpid%5D=14aKJ%2F3og&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;siteId=jsm&amp;pageName=functionality&amp;lang=en" target="_blank" data-ga-label="cookie rules">
+                Cookie Policy            </a>
+        </div>
+        </span>
+        </pt-footer>
+                </pt-wrapper>
+                </div>
+
+                <script type="text/javascript">
+            var ccsConfig = {
+                selectorName         : 'ccs-image',
+                delay                : 4000,
+                urls                 : [],
+                cookieCheckTimeoutMs : 2000            };
+                                    ccsConfig.urls.push("https://ccs.livejasmin.com/ccs.php?ccs=1&psid=ed_tnaflixintmob&subAffId=0652798808bc61f38e52ac&psref=www.tnaflix.com&pstool=400_2133");
+                                </script>
+        
+		<script type="text/javascript">
+												document.body.setAttribute('data-ga-category', 'postitial - livejasmin - post/more/joi');
+																document.body.setAttribute('data-ga-label', 'background');
+																document.body.setAttribute('data-ga-redirect-url', '//jsmcrptjmp.com/?params%5Bpsid%5D=ed_tnaflixintmob&params%5Bpstool%5D=400_2133&params%5Butm_source%5D=tr&params%5Butm_medium%5D=partner&params%5Butm_campaign%5D=post%2Fmore%2Fjoi&params%5Butm_content%5D=background&params%5BjumpReferrer%5D=www.tnaflix.com&params%5Bms_rnd%5D=1779531787.79626&params%5Bdpid%5D=14aKJ%2F3og&categoryName=girl&subAffId=0652798808bc61f38e52ac&siteId=jsm&pageName=listpage&lang=en');
+									</script>
+
+		
+                                    <img class="pixel" data-dp="//crmkt.livejasmin.com/14aKJ/3og.gif?ms_rnd=1779531787.79626&amp;pstool=400_2133&amp;psid=ed_tnaflixintmob&amp;utm_source=tr&amp;site=jsm&amp;utm_medium=partner&amp;preload=1&amp;smartVisibility=1&amp;__trctx=0652798808bc61f38e52ac&amp;origin=www.tnaflix.com&amp;mr=0&amp;categoryName=girl&amp;subAffId=0652798808bc61f38e52ac&amp;vp%5BautoPlay%5D=0" alt="" width="1" height="1" border="0" style="display:none;position:absolute;left:0;top:0;">
+                                
+        
+        </body></html>

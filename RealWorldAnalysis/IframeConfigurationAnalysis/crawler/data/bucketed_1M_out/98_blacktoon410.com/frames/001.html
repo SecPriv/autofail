@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Bookmark</title>
+    
+</head>
+<body>
+	
+	
+	<script type="text/javascript">
+	var fn = function(){};
+	fn.prototype = {
+		setLocal:function(key,value){
+			localStorage.setItem(key,value);
+		},
+		getLocal:function(key){
+			return localStorage.getItem(key);
+		},
+		removeLocal:function(key){
+			localStorage.removeItem(key);
+		},
+		bindEvent:function(){
+			var self = this;
+			window.addEventListener('message',function(e){
+				if(window.parent!=e.source) return;
+				var option = JSON.parse(e.data);
+				if(option.type.toLowerCase()=="get"){
+					var data = self.getLocal(option.key);
+					
+					window.parent.postMessage(JSON.stringify({key:option.key,value:data}),'*');
+				}
+				option.type.toLowerCase()=="set"&&self.setLocal(option.key,option.value);
+				option.type.toLowerCase()=="remove"&&self.removeLocal(option.key);
+			})
+		},
+		init:function(){
+			var self = this;
+			self.bindEvent();
+		}
+	}
+	var tools = new fn();
+	tools.init();
+		//tools.setLocal('bookmark','12,34,567,000');
+		//console.log(tools.getLocal('bookmark'));
+		//console.log(tools.getLocal('bookmark1'));
+</script>
+	
+	
+	
+    
+
+</body></html>

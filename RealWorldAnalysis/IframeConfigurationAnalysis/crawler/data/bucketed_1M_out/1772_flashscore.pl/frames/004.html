@@ -1,0 +1,10 @@
+<html><head></head><body style="margin: 0px; overflow: hidden;"><script>
+ wataId = '13317'; // ID of WATA banner, if value is empty random banner will be displayed (banner rotation)
+ projectId = '3'; // ID of project banner, placeholder 3 is replaced by default
+ 
+ // do NOT change the lines bellow
+ // placeholders will be replaced by banner handler
+ exports = {};
+ Object.defineProperty(exports, "__esModule", { value: true });exports.BoxOverContentIframe = void 0;var BoxOverContentIframe = (function () {function BoxOverContentIframe(parentElement) {this.parentElement = parentElement;}BoxOverContentIframe.prototype.renderIframe = function (projectUrl, projectId, wataId) {var _a;var officeUrl = projectUrl.match(/[^.]+(\.fst\.okubefs1\.kube)?\.lsoffice\.cz/);var devUrl = (_a = projectUrl.match(/(\.(fs[fm]|wt[fm]|dc[pr]|sr[ow]))\./)) !== null && _a !== void 0 ? _a : '';var bocHost = 'https://static' + (devUrl ? devUrl[1] : '') + '.flashscore.com' + (officeUrl ? '.' + officeUrl[0] : '');var bocUrl = bocHost + "/box-over-content/" + projectId + (wataId != "" ? "/" + wataId : "") + "/?url=" + projectUrl;var iframe = document.createElement('iframe');iframe.style.width = '100%';iframe.style.height = '100%';iframe.style.border = 'none';iframe.src = bocUrl;this.parentElement.append(iframe);};return BoxOverContentIframe;}());exports.BoxOverContentIframe = BoxOverContentIframe;
+ new BoxOverContentIframe(document.body).renderIframe('https://www.flashscore.pl', projectId, wataId);
+ </script><iframe src="https://static.flashscore.com/box-over-content/3/13317/?url=https://www.flashscore.pl" style="width: 100%; height: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial;"></iframe></body></html>

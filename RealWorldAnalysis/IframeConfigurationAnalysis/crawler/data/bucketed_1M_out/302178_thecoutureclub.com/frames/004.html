@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Men's &amp; Women's Clothing | The Couture Club</title>
+    <script src="https://www.thecoutureclub.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+
+
+const script = document.createElement('script');
+script.setAttribute('src', '//cdn.feedoptimise.com/fo.js#1407');
+script.setAttribute('async', '');
+document.head.appendChild(script);
+
+analytics.subscribe("checkout_completed", (event) => {
+
+var _fo = _fo || [];
+_fo.push(["orderTotal",event.data?.checkout?.totalPrice]);
+_fo.push(["orderId", event.data?.checkout?.token]);
+
+});
+
+
+});})(self.webPixelsManager.createShopifyExtend('25526324', 'custom'));
+
+</script>
+
+  <script src="//cdn.feedoptimise.com/fo.js#1407" async=""></script></head>
+  <body>
+
+</body></html>

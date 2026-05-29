@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="P3P" content="CP=&quot;CAO PSA OUR&quot;">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+<!--
+function checkWebStorage() {
+    var keyName = 'vg_check_webstorage';
+    if(('localStorage' in window) && window['localStorage'] !== null
+    && ('sessionStorage' in window) && window['sessionStorage'] !== null){
+        try {
+            localStorage.setItem(keyName, 1);
+            if (!localStorage.getItem(keyName)) {
+                return false;
+            }
+            localStorage.removeItem(keyName);
+
+            sessionStorage.setItem(keyName, 1);
+            if (!sessionStorage.getItem(keyName)) {
+                return false;
+            }
+            sessionStorage.removeItem(keyName);
+
+        } catch(e) {
+            return false;
+        }
+    }else{
+        return false;
+    }
+
+    return true;
+}
+
+if (checkWebStorage()) {
+    parent.postMessage('chatdealer_create','*');
+} else {
+    parent.postMessage('chatdealer_webstorage_error','*');
+}
+//-->
+</script>
+</head>
+<body>
+</body></html>

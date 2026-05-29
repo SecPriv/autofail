@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en-us" role="en-us"><head><script type="text/javascript">try { document.__defineGetter__("referrer",function(){return "https://asrock.com/";}); } catch (exception) {try {Object.defineProperties(document, {referrer:   { get: function() { return "https://asrock.com/"; } } } );} catch (exception) {} } </script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11,IE=EDGE">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="ASRock">
+	<title>ASRock</title>
+	<link rel="shortcut Icon" href="/favicon.ico">
+	<link rel="bookmark" href="/favicon.ico">
+	<link rel="stylesheet" href="/silver.css?v=20220923">
+	<script type="text/javascript" src="/includes/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/includes/jquery.slick.1.8.1.min.js"></script>
+	<link rel="stylesheet" href="/includes/jquery.slick.1.8.1.css">
+	<script type="application/ld+json">
+	[{
+		"@context":"https://schema.org",
+		"@type":"WebSite",
+		"name":"ASRock",
+		"url":"https://www.asrock.com"
+	},{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "ASRock Inc.",
+		"url": "https://www.asrock.com/index.us.asp",
+		"logo":"https://www.asrock.com/Images/logo-default.png",
+		"foundingDate": "2002",
+		"description": "ASRock Inc. is a global leading manufacturer of motherboards, graphics cards, mini PCs, gaming monitors, PSUs, and AIO liquid coolers. Since 2002, ASRock has been committed to pushing the boundaries of innovation, delivering premium hardware and cutting-edge technology that empowers gamers and professionals worldwide.",
+		"brand":{"@type":"Brand","name": "ASRock"},
+		"address":{
+			"@type":"PostalAddress",
+			"addressRegion": "Taipei",
+			"postalCode":"112",
+			"addressCountry":"TW",
+		},"sameAs":[
+			"https://www.facebook.com/ASRockInfo",
+			"https://www.youtube.com/@ASRockInfo",
+			"https://www.instagram.com/asrock_official/"
+		]
+	}]
+	</script>
+	<!--[if lt IE 9]>
+	<script src="/includes/html5shiv.js"></script>
+	<script src="/includes/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body style="">
+
+<section id="Header" role="navigation">
+	<a href="/index.us.asp"><div id="Logo"><h1 style="display:none;">ASRock</h1></div></a>
+	<div id="Menu"><img src="/images/menu.gif" alt="Menu button"> Menu</div>
+	<div class="nav">
+		<ul>
+			<li><a onclick="$('#Products').slideToggle();">Products</a></li>
+			<li><a href="/news/index.us.asp">News</a></li>
+			<li><a href="/support/index.us.asp">Support</a></li>
+			<li><a href="/general/buy.us.asp">Where to Buy</a></li>
+			<li><form action="/support/index.us.asp"><label for="SearchAll" style="display:none;">Search</label><input type="text" name="Model" id="SearchAll" placeholder="Model"><input type="submit" id="SearchBtn" value="&nbsp;"></form></li>
+			<li><a onclick="location.href='https://asrock.com/index.html';"><div id="Language"></div></a></li>
+		</ul>
+	</div>
+</section>
+<section class="Products-wrapper wrapper" id="Products" role="product_type">
+	<div class="inner">
+		<div><a href="/mb/index.us.asp"><img src="/images/menu-MB.png" class="image" alt="Motherboards button"><br>Motherboards</a></div>
+		<div><a href="/Graphics-Card/index.us.asp"><img src="/images/menu-GraphicsCard.png" class="image" alt="Graphics Card button"><br>Graphics Card</a></div>
+		<div><a href="/Monitors/index.us.asp"><img src="/images/menu-Monitors.png" class="image" alt="Monitors button"><br>Gaming Monitor</a></div>
+		<div><a href="/Power-Supply/index.asp" target="_blank"><img src="/images/menu-PSU.png" class="image" alt="Power Supply button"><br>Power Supply</a></div>
+		<div><a href="/nettop/index.us.asp"><img src="/images/menu-MiniPC.png" class="image" alt="Mini PC button"><br>Mini PC</a></div>
+		<div><a href="/CPU-Coolers/index.us.asp"><img src="/images/menu-CPU-Coolers.png" class="image" alt="AIO Liquid Coolers button"><br>AIO Liquid Coolers</a></div>
+		<div><a href="https://www.asrockind.com/"><img src="/images/menu-IPC.png" class="image" alt="Industrial PC button"><br>Industrial PC</a></div>
+		<div><a href="https://www.asrockrack.com/" target="_blank"><img src="/images/menu-Server.png" class="image" alt="Server/WS button"><br>Server/WS</a></div>
+	</div>
+</section>
+
+<img src="/images/loading.svg" id="loading" alt="Loading" style="z-index: 100; left: 49%; top: 49%; position: fixed; filter: drop-shadow(black 5px 5px 10px); margin-top: -30px; margin-left: -30px; display: none;">
+
+<a id="GoTop" onclick="$('html,body').animate({scrollTop:0}, 'slow');"></a>
+
+<script>
+var url=document.location.href; if(url.indexOf('http://')==0 && url.indexOf('66.')==-1 && url.indexOf('localhost')==-1){window.location.replace(url.replace('http://', 'https://').replace('.tw/', '/'))};
+
+$(function(){
+	$('#Menu').click(function() { $('#Header>.nav').slideToggle('fast'); if($('#Products').is(':visible')){$('#Products').fadeOut();} });
+	$(window).on('resize', function(){if($(window).width()>1024){$('#Header>.nav').fadeIn()};});
+	$(window).scroll(function(event){if($(window).scrollTop()>100){$('#GoTop').show()}else{$('#GoTop').hide()};});
+	$('#SearchAll').hover(function(){$(this).focus().animate({width:'120'}, 'slow', 'linear')}, function(){$(this).animate({width:'100'}, 'fast')})
+	$(window).load(function(){$('#loading').fadeOut('normal');});
+});
+function SetCookie(name,value){var exp=new Date();exp.setTime(exp.getTime()+30*24*60*60*1000);if($("#AnalysisConfirm").prop('checked',)==true){alysCon='true';}else{alysCon='false';};if($("#MrktConfirm").prop('checked',)==true){mrktCon='true';}else{mrktCon='false';};if($("#SoclConfirm").prop('checked',)==true){soclCon='true';}else{soclCon='false';};document.cookie=name+"="+escape(value)+";expires="+exp.toGMTString()+";path=/";document.cookie="AnalysisConfirm="+escape(alysCon)+";expires="+exp.toGMTString()+";path=/";document.cookie="MrktConfirm="+escape(mrktCon)+";expires="+exp.toGMTString()+";path=/";document.cookie="SoclConfirm="+escape(soclCon)+";expires="+exp.toGMTString()+";path=/";document.cookie = '_fbp' + '=; Path=/; Domain=.asrock.com; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';}
+function getCookie(name){const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift();}
+</script>
+
+<section id="AcceptCookies" role="accpet cookies">
+	<p style="padding:20px 10px;">
+		We use cookies to offer you a more personalized and smoother experience. <br>By visiting this website, you agree to our use of cookies. If you prefer not to accept cookies or require more information, please visit our <a href="/general/TermsPrivacy.us.asp?cat=Privacy" style="color:#6cf;-webkit-text-stroke-width: thin;text-underline-position: under;text-decoration-thickness: 2px;">Privacy Policy</a>.
+		<input type="Button" class="Buttons" value="Accept" onclick="SetCookie('AcceptCookies', 'Yes');$('#AcceptCookies').fadeOut();">
+		<input type="Button" class="Buttons" value="Setting" onclick="$('#AcceptCookies2').fadeIn();$('#AcceptCookies').fadeOut();">
+	</p>
+</section>
+<section id="AcceptCookies2" role="accpet cookies" style="display:none;">
+	<p style="padding:20px 10px;">
+		<font style="font-weight:bold;font-size:1.2em;">Necessary cookies</font><br>These cookies are essential for the proper functioning of the website and cannot be turned off.<br>
+		<font style="font-weight:bold;font-size:1.2em;">Analytics cookies</font><br>These cookies help us understand how visitors use our website.&nbsp;<label for="AnalysisConfirm"><input type="checkbox" name="AnalysisConfirm" id="AnalysisConfirm" value="true" checked="">Agree?</label><br>
+		<font style="font-weight:bold;font-size:1.2em;">Marketing cookies</font><br>These cookies are used to track visitors and display relevant advertisements.&nbsp;<label for="MrktConfirm"><input type="checkbox" name="MrktConfirm" id="MrktConfirm" value="true" checked="">Agree?</label><br>
+		<font style="font-weight:bold;font-size:1.2em;">Social media cookies</font><br>These cookies allow you to share pages and content on social media.&nbsp;<label for="SoclConfirm"><input type="checkbox" name="SoclConfirm" id="SoclConfirm" value="true" checked="">Agree?</label><br><br>
+		<input type="Button" class="Buttons" value="Save and Submit" onclick="SetCookie('AcceptCookies', 'Yes');$('#AcceptCookies2').fadeOut();">
+	</p>
+</section>
+
+
+<style>
+#AcceptCookies p{font-family: 'Saira';position:fixed;bottom:0;background: rgb(0 23 37 / 90%);z-index:999; border-top:1px solid #fff;width:100%;color:white;}
+#AcceptCookies .Buttons {color:#fff;border-color:#888;} #AcceptCookies .Buttons:hover {color:#ff0;}
+#AcceptCookies2 p{font-family: 'Saira';position:fixed;bottom:0;background: rgb(0 23 37 / 90%);z-index:999; border-top:1px solid #fff;width:100%;color:white;}
+#AcceptCookies2 .Buttons {color:#fff;border-color:#888;} #AcceptCookies2 .Buttons:hover {color:#ff0;}
+</style>
+
+
+<section class="posRelative">
+	<div class="slider-nav">
+		<div class="slider-right slick-arrow" style="display: block;"></div>
+		<div class="slider-left slick-arrow" style="display: block;"></div>
+	</div>
+	<div class="slider slick-initialized slick-slider slick-dotted">
+		<div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 7467px; transform: translate3d(-1179px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/news/index.us.asp?iD=5550" tabindex="-1"><img src="/images/index_Intel ArcB-Series.jpg" alt="Intel Arc B-serese Launch" class="desktop"><img src="/images/index_Intel ArcB-Seriesm.jpg" alt="Intel Arc B-serese Launch" class="mobile"></a></div><div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00" style="width: 393px;"><a href="/mb/AMD/X870E%20Taichi%20White/index.us.asp" tabindex="-1"><img src="/images/index_X870ETaichiWhite.jpg" alt="X870E Taichi White Launch" class="desktop"><img src="/images/index_X870ETaichiWhitem.jpg" alt="X870E Taichi White Launch" class="mobile"></a></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01" style="width: 393px;"><a href="/mb/index.us.asp#Rock" tabindex="-1"><img src="/images/index_B850RockSeries.jpg" alt="B850 Rock Series" class="desktop"><img src="/images/index_B850RockSeriesm.jpg" alt="B850 Rock Series" class="mobile"></a></div><div class="slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02" style="width: 393px;"><a href="/CPU-Coolers/index.us.asp" tabindex="0"><img src="/images/index_2026-AIO-AllSeries.jpg" alt="2026-AIO-AllSeries"><img src="/images/index_2026-AIO-AllSeriesm.jpg" alt="2026-AIO-AllSeries" class="mobile"></a></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03" style="width: 393px;"><a href="/Graphics-Card/AMD/Radeon RX 9070 XT Taichi White 16GB OC/index.us.asp" tabindex="-1"><img src="/images/index_RX9070XT_TCW_16GO.jpg" alt="Radeon RX 9070 XT Taichi White 16GB OC" class="desktop"><img src="/images/index_RX9070XT_TCW_16GOm.jpg" alt="Radeon RX 9070 XT Taichi White 16GB OC" class="mobile"></a></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide04" aria-describedby="slick-slide-control04" style="width: 393px;"><a href="/microsite/ASRockWhiteLab/index.asp" target="_blank" tabindex="-1"><img src="/images/index_ASRockWhiteLab.jpg" alt="2026 ASRock White LAB" class="desktop"><img src="/images/index_ASRockWhiteLabm.jpg" alt="2026 ASRock White LAB" class="mobile"></a></div><div class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide05" aria-describedby="slick-slide-control05" style="width: 393px;"><a href="/news/index.us.asp?id=5641" tabindex="-1"><img src="/images/index_DeskMiniB860X600USB4.jpg" alt="DeskMini B860 &amp; X600/USB4 Series" class="desktop"><img src="/images/index_DeskMiniB860X600USB4m.jpg" alt="DeskMini B860 &amp; X600/USB4 Series" class="mobile"></a></div><div class="slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide06" aria-describedby="slick-slide-control06" style="width: 393px;"><a href="/Power-Supply/index.asp" target="_blank" tabindex="-1"><img src="/images/index_2025PSUReady.jpg" alt="2025 PSU Ready" class="desktop"><img src="/images/index_2025PSUReadym.jpg" alt="2025 PSU Ready" class="mobile"></a></div><div class="slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide07" aria-describedby="slick-slide-control07" style="width: 393px;"><a href="/Monitors/index.us.asp#tOLED" tabindex="-1"><img src="/images/index_OLEDMonitors.jpg" alt="OLED Monitors" class="desktop"><img src="/images/index_OLEDMonitorsm.jpg" alt="OLED Monitors" class="mobile"></a></div><div class="slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide08" aria-describedby="slick-slide-control08" style="width: 393px;"><a href="/news/index.us.asp?iD=5550" tabindex="-1"><img src="/images/index_Intel ArcB-Series.jpg" alt="Intel Arc B-serese Launch" class="desktop"><img src="/images/index_Intel ArcB-Seriesm.jpg" alt="Intel Arc B-serese Launch" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/mb/AMD/X870E%20Taichi%20White/index.us.asp" tabindex="-1"><img src="/images/index_X870ETaichiWhite.jpg" alt="X870E Taichi White Launch" class="desktop"><img src="/images/index_X870ETaichiWhitem.jpg" alt="X870E Taichi White Launch" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/mb/index.us.asp#Rock" tabindex="-1"><img src="/images/index_B850RockSeries.jpg" alt="B850 Rock Series" class="desktop"><img src="/images/index_B850RockSeriesm.jpg" alt="B850 Rock Series" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/CPU-Coolers/index.us.asp" tabindex="-1"><img src="/images/index_2026-AIO-AllSeries.jpg" alt="2026-AIO-AllSeries"><img src="/images/index_2026-AIO-AllSeriesm.jpg" alt="2026-AIO-AllSeries" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/Graphics-Card/AMD/Radeon RX 9070 XT Taichi White 16GB OC/index.us.asp" tabindex="-1"><img src="/images/index_RX9070XT_TCW_16GO.jpg" alt="Radeon RX 9070 XT Taichi White 16GB OC" class="desktop"><img src="/images/index_RX9070XT_TCW_16GOm.jpg" alt="Radeon RX 9070 XT Taichi White 16GB OC" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/microsite/ASRockWhiteLab/index.asp" target="_blank" tabindex="-1"><img src="/images/index_ASRockWhiteLab.jpg" alt="2026 ASRock White LAB" class="desktop"><img src="/images/index_ASRockWhiteLabm.jpg" alt="2026 ASRock White LAB" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/news/index.us.asp?id=5641" tabindex="-1"><img src="/images/index_DeskMiniB860X600USB4.jpg" alt="DeskMini B860 &amp; X600/USB4 Series" class="desktop"><img src="/images/index_DeskMiniB860X600USB4m.jpg" alt="DeskMini B860 &amp; X600/USB4 Series" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/Power-Supply/index.asp" target="_blank" tabindex="-1"><img src="/images/index_2025PSUReady.jpg" alt="2025 PSU Ready" class="desktop"><img src="/images/index_2025PSUReadym.jpg" alt="2025 PSU Ready" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="16" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/Monitors/index.us.asp#tOLED" tabindex="-1"><img src="/images/index_OLEDMonitors.jpg" alt="OLED Monitors" class="desktop"><img src="/images/index_OLEDMonitorsm.jpg" alt="OLED Monitors" class="mobile"></a></div><div class="slick-slide slick-cloned" data-slick-index="17" aria-hidden="true" tabindex="-1" style="width: 393px;"><a href="/news/index.us.asp?iD=5550" tabindex="-1"><img src="/images/index_Intel ArcB-Series.jpg" alt="Intel Arc B-serese Launch" class="desktop"><img src="/images/index_Intel ArcB-Seriesm.jpg" alt="Intel Arc B-serese Launch" class="mobile"></a></div></div></div>
+		
+		
+		
+		
+		
+		
+		
+		
+	<ul class="slick-dots" style="display: block;" role="tablist"><li class="" role="presentation"><button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 9" tabindex="-1">1</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 9" tabindex="-1">2</button></li><li role="presentation" class="slick-active"><button type="button" role="tab" id="slick-slide-control02" aria-controls="slick-slide02" aria-label="3 of 9" tabindex="0" aria-selected="true">3</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control03" aria-controls="slick-slide03" aria-label="4 of 9" tabindex="-1">4</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control04" aria-controls="slick-slide04" aria-label="5 of 9" tabindex="-1">5</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control05" aria-controls="slick-slide05" aria-label="6 of 9" tabindex="-1">6</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control06" aria-controls="slick-slide06" aria-label="7 of 9" tabindex="-1">7</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control07" aria-controls="slick-slide07" aria-label="8 of 9" tabindex="-1">8</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control08" aria-controls="slick-slide08" aria-label="9 of 9" tabindex="-1">9</button></li></ul></div>
+</section>
+
+<section class="wrapper" style="background:url('/images/bg_index.jpg') repeat-x;">
+	<div class="inner">
+		<div class="wide-25 left"><a href="/nettop/index.us.asp"><img src="/images/index-MPC.png" alt="Mini PC" class="image TransIn"></a></div>
+		<div class="wide-25 left"><a href="/mb/index.us.asp"><img src="/images/index-MB.us.png" alt="Motherboards" class="image TransIn"></a></div>
+		<div class="wide-25 left"><a href="/CPU-Coolers/index.us.asp"><img src="/images/index-AIO.png" alt="CPU-Coolers" class="image TransIn"></a></div>
+		<div class="wide-25 left"><a href="/Graphics-Card/index.us.asp"><img src="/images/index-GraphicsCard.png" alt="Graphics Card" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="https://www.asrockrack.com/" target="_blank"><img src="/images/index-Server.png" alt="Server/WS" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="https://www.asrockind.com/en-gb/"><img src="/images/index-IPC.png" alt="industrial Computer" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="/Monitors/index.us.asp"><img src="/images/index-Monitors.png" alt="Monitors" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="/Power-Supply/index.asp" target="_blank"><img src="/images/index-PSU.png" alt="Power Supply" class="image TransIn"></a></div>
+		<!--<div class="wide-25 left"><a href="/networking/index.asp" target=_blank><img src="/images/index-Networking.png" alt="Networking" class="image TransIn"></a></div>-->
+	</div>
+	<div class="clear"></div>
+</section>
+
+<section id="footer">
+	<div class="inner">
+		<ul class="left wide-25-2">
+			<li>ABOUT</li>
+			<li><a href="/general/about.us.asp">About ASRock</a></li>
+			<li><a href="/general/about.us.asp?cat=Contact">Contact Us</a></li>
+			<li><a href="/general/about.us.asp?cat=Organization">Organization</a></li>
+			<li><a href="/general/about.us.asp?cat=Responsibility">Corporate Social Responsibility</a></li>
+			<li><a href="/general/about.us.asp?cat=Proposition65">About California Proposition 65</a></li>
+		</ul>
+		<ul class="left wide-25-2">
+			<li>NEWS</li>
+			<li><a href="/news/index.us.asp">Press Release</a></li>
+			<li><a href="/news/index.us.asp?cat=Awards">Awards</a></li>
+			
+			<li>&nbsp;</li>
+			<li>&nbsp;</li>
+		</ul>
+		<ul class="left wide-25-2">
+			<li>SUPPORT</li>
+			<li><a href="/support/index.us.asp">Download</a></li>
+			<li><a href="/support/faq.us.asp">FAQ</a></li>
+			<li><a href="https://event.asrock.com/tsd.asp" target="_blank">Technical Support</a></li>
+			
+		</ul>
+		<ul class="left wide-25-2">
+			<li>COMMUNITY</li>
+			
+			<li><a href="https://www.facebook.com/ASRockInfo" target="_blank">Facebook</a></li>
+			<li><a href="https://www.youtube.com/user/ASRockInfo" target="_blank">YouTube</a></li>
+			<li><a href="https://www.instagram.com/asrock_official/" target="_blank">Instagram</a></li>
+			
+			<li><a href="/support/forum.asp">Forum</a></li>
+			<li><a href="https://event.asrock.com/Dealer/" target="_blank">Dealer &amp; Media Zone</a></li>
+			<li><a href="/general/wallpaper.us.asp">Wallpaper</a></li>
+		</ul>
+		<div class="copyright clear">© 2026 ASRock Inc. All rights reserved. Information published on ASRock.com is subject to change without notice.&nbsp;|&nbsp;<a href="/general/TermsPrivacy.us.asp">Terms of Use Notice</a>&nbsp;|&nbsp;<a href="/general/TermsPrivacy.us.asp?cat=Privacy">Privacy Policy</a></div>
+	</div>
+</section>
+
+
+
+<script>
+function Open2(url1,url2){window.open(url1);window.location.replace(url2);}
+$(function(){$('.slider').slick({autoplay: true, dots: true, speed: 1000, prevArrow: $('.slider-left'), nextArrow: $('.slider-right')});});
+
+</script>
+
+</body></html>

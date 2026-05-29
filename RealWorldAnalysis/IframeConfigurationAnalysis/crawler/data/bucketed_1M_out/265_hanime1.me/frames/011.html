@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>AdZone v20250123 for  SiteID: 263924 ZoneID: 962789 | 8.12 --&gt;</title>
+<script>
+    var l = "",
+    m = this,
+    Fb = document,
+    K = window,
+    eM = K.addEventListener ? "addEventListener" : "attachEvent";
+var jsgo = {
+    th: this,
+    aE: function(c, b, a) {
+        if (c.addEventListener) {
+            c.addEventListener(b, a, false)
+        } else {
+            if (c.attachEvent) {
+                c["e" + b + a] = a;
+                c[b + a] = function() {
+                    c["e" + b + a](K.event)
+                };
+                c.attachEvent("on" + b, c[b + a])
+            }
+        }
+    },
+    gT: function(b) {
+        l = Fb.getElementsByTagName(b);
+        for (var c = 0, a = l.length; c < a; c++) {
+            if (l[c].getAttribute("href") && !l[c].getAttribute("data-report")) {
+                jsgo.aE(l[c], "mousedown", jsgo.mD);
+                jsgo.aE(l[c], "touchstart", jsgo.tS)
+            }
+        }
+        jsgo.rsm()
+    },
+    mD: function(a) {
+        a.touches = [{
+            clientX: a.clientX,
+            clientY: a.clientY
+        }];
+        jsgo.tS(a)
+    },
+    tS: function(c) {
+        t = c.target || c.srcElement;
+        var a = t.parentNode.getAttribute("href");
+        var b = a.split("&jurl");
+        t.parentNode.href = b[0] + "&jmx=" + c.clientX + "&jmy=" + c.clientY + "&jurl" + b[1];
+    },
+    qs: function(b) {
+        var a = K.location.search.substring(1);
+        var d = a.split("&");
+        for (var c = 0; c < d.length; c++) {
+            var e = d[c].split("=");
+            if (e[0] == b) {
+                return e[1]
+            }
+        }
+        return (false)
+    },
+    rsm: function() {
+        var b = jsgo.qs("adzone") + "_" + document.body.scrollHeight + "_" + document.body.scrollWidth;
+        try {
+           // window.parent.postMessage(b, "*")
+        } catch (a) {
+            window.location.hash = b
+        }
+    }
+};
+document.addEventListener("DOMContentLoaded", function() {
+    jsgo.gT("a")
+});
+</script>
+<style>
+    A:link {color: #0000ff; text-decoration: none}
+    A:visited {color: #0000ff; text-decoration: none}
+    A:active {color: #0000ff; text-decoration: none}
+    A:hover {color: #0000ff; text-decoration: none}
+    .adtitle {color: #0066cc}
+    .adtext {color: #000000}
+    .row {display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; justify-content: center;}
+    .row:not(:last-child):has(div.adtext) + .row {padding-top: 6px;}
+    .row:nth-child(n+2):has(div.adtext):not(:last-child) {padding-bottom: 6px;}
+    .column {display: flex; flex-direction: column; flex-basis: 100%; flex: 1; justify-content: center; align-items: center;}
+</style>
+</head>
+<body style="margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; padding:0; background-color: transparent;" marginwidth="0" marginheight="0">
+
+<div class="row">
+    <div class="column">
+    <div style="width: 300px; height: 250px; position: relative; margin-bottom: 20px; ">
+        <div style="position: absolute; top: 2px; right: 2px;">
+            <a href="//ck.juicyads.com/getjuicy_3.php?z=962789&amp;report=v2d4b4u2a453t214v2z2245303r2y2z284c4z223r2" target="_blank" data-report="true">
+                <img src="16x16/info-icon-16x16-05.png" style="position: relative; top: 0; right: 0; width:16px; height:16px;" alt="Ad Info &amp; Reporting">
+            </a>
+        </div>
+        
+        <!-- Campaign#: 69083 start-->
+        <iframe referrerpolicy="no-referrer" data-link="https://t.nettrck.store/s1/d74853b6-42d3-4b5d-b2d6-d7e9452309df?externalId={extPlaceholder}&amp;cost={costPlaceholder}&amp;cv1={dynamicCON}&amp;cv2=AT&amp;cv3=161755&amp;cv4=263924&amp;cv5=962789&amp;cv6=69083" src="javascript:window.location.replace(this.frameElement.dataset.link)" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+        <!-- Campaign#: 69083 end-->
+
+    </div>
+    </div>
+</div>
+<!-- O1 -->
+
+
+</body></html>

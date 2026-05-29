@@ -1,0 +1,2666 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- add seo and favicon -->
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-BQ6W1BF0H8&amp;cx=c&amp;gtm=4e65k1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WDGWS9P"></script><script>(function() {
+    function createMap() {
+        var map = {};
+        var els = document.getElementsByClassName('nocache');
+        for (var i = 0; i < els.length; i++) {
+            var section = els[i].getAttribute('data-nocache');
+            map[section] = els[i];
+        }
+        return map;
+    }
+
+    function replaceElement(el, html) {
+        const tmp = document.createElement('div');
+        const fragment = document.createDocumentFragment();
+
+        tmp.setHTMLUnsafe(html);
+
+        while (tmp.firstChild) {
+            fragment.appendChild(tmp.firstChild);
+        }
+
+        el.replaceWith(fragment);
+    }
+
+    var map = createMap();
+
+    fetch('/!/nocache', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            url: window.location.href.split('#')[0],
+            sections: Object.keys(map)
+        })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        map = createMap();
+
+        const regions = data.regions;
+        for (var key in regions) {
+            if (map[key]) replaceElement(map[key], regions[key]);
+        }
+
+        for (const input of document.querySelectorAll('input[value="AuTf3sG6wnNiBkcyjzFokXF0ef6jHRFZP5CrCHcc"]')) {
+            input.value = data.csrf;
+        }
+
+        for (const meta of document.querySelectorAll('meta[content="AuTf3sG6wnNiBkcyjzFokXF0ef6jHRFZP5CrCHcc"]')) {
+            meta.content = data.csrf;
+        }
+
+        for (const input of document.querySelectorAll('script[data-csrf="AuTf3sG6wnNiBkcyjzFokXF0ef6jHRFZP5CrCHcc"]')) {
+            input.setAttribute('data-csrf', data.csrf);
+        }
+
+        if (window.hasOwnProperty('livewire_token')) {
+            window.livewire_token = data.csrf
+        }
+
+        if (window.hasOwnProperty('livewireScriptConfig')) {
+            window.livewireScriptConfig.csrf = data.csrf
+        }
+
+        document.dispatchEvent(new CustomEvent('statamic:nocache.replaced', { detail: data }));
+    });
+})();</script><link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- <title>Homepage</title> -->
+    <title>KCB Group</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Homepage">
+<meta property="og:url" content="https://kcbgroup.com">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Homepage">
+<link href="https://kcbgroup.com" rel="home">
+<link href="https://kcbgroup.com" rel="canonical">
+
+    <!-- Resource Hints: Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <link rel="stylesheet" href="/css/google-fonts.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- <link rel="stylesheet" href="/css/country.css"> -->
+    <!-- <link rel="stylesheet" href="/vendor/cookie-byte/css/ddmcb.css"> -->
+
+    <link rel="stylesheet" href="/css/cookie-consent.css">
+
+    <!-- Livewire Styles --><style>[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+    <script>
+    console.warn('Livewire: The published Livewire assets are out of date\n See: https://livewire.laravel.com/docs/installation#publishing-livewires-frontend-assets')
+</script>
+<script src="https://kcbgroup.com/vendor/livewire/livewire.min.js?id=8f29b734" data-csrf="AuTf3sG6wnNiBkcyjzFokXF0ef6jHRFZP5CrCHcc" data-module-url="https://kcbgroup.com/livewire-c8b4874b" data-update-uri="https://kcbgroup.com/livewire-c8b4874b/update" data-navigate-once="true"></script><style>/* Make clicks pass-through */
+
+    #nprogress {
+      pointer-events: none;
+    }
+
+    #nprogress .bar {
+      background: var(--livewire-progress-bar-color, #29d);
+
+      position: fixed;
+      z-index: 1031;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+    }
+
+    /* Fancy blur effect */
+    #nprogress .peg {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px var(--livewire-progress-bar-color, #29d), 0 0 5px var(--livewire-progress-bar-color, #29d);
+      opacity: 1.0;
+
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+          -ms-transform: rotate(3deg) translate(0px, -4px);
+              transform: rotate(3deg) translate(0px, -4px);
+    }
+
+    /* Remove these to get rid of the spinner */
+    #nprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+
+    #nprogress .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+
+      border: solid 2px transparent;
+      border-top-color: var(--livewire-progress-bar-color, #29d);
+      border-left-color: var(--livewire-progress-bar-color, #29d);
+      border-radius: 50%;
+
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+              animation: nprogress-spinner 400ms linear infinite;
+    }
+
+    .nprogress-custom-parent {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nprogress-custom-parent #nprogress .spinner,
+    .nprogress-custom-parent #nprogress .bar {
+      position: absolute;
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes nprogress-spinner {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+
+    <link rel="preload" as="style" href="https://kcbgroup.com/build/assets/site-OcLjqtQP.css"><link rel="stylesheet" href="https://kcbgroup.com/build/assets/site-OcLjqtQP.css" data-navigate-track="reload">
+
+
+    
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDGWS9P');</script>
+<!-- End Google Tag Manager -->
+    
+
+    
+    
+
+    
+    
+    <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BQ6W1BF0H8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BQ6W1BF0H8');
+</script>
+    
+
+    
+
+
+<link rel="modulepreload" as="script" crossorigin="" href="/build/assets/owl.carousel.min-CQ29qYYK.js"><link rel="modulepreload" as="script" crossorigin="" href="/build/assets/utils-CeCSZVER.js"></head>
+
+<body>
+
+    
+<!--====================  header area ====================-->
+<div class="header-area">
+  <div class="header-top-bar-info bg-gray d-none d-lg-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-bar-wrap">
+
+            <div class="top-bar-left">
+              <div class="top-bar-text">
+                <!-- top left navigation -->
+                
+              </div>
+            </div>
+
+            <div class="top-bar-right">
+              <!-- top right navigation -->
+              
+
+              <!-- country sites dropdown -->
+              
+              <div class="language-menu" style="position: relative; display: inline-block;">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                  <li class="country-dropdown-item" style="position: relative;">
+                    <a href="javascript:void(0);" class="country-dropdown-trigger" style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: #333; text-decoration: none; cursor: pointer; border-radius: 4px; transition: background-color 0.3s;">
+                      <img class="ls-flag" src="/images/flags/kcb.png" alt="en" title="KCB Group" loading="eager" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                      <span class="wpml-ls-native">KCB Group</span>
+                    </a>
+                    <ul class="ls-sub-menu country-submenu" style="position: absolute; top: 100%; right: 0; min-width: 220px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; border-radius: 4px; margin-top: 5px; display: none; z-index: 1000; list-style: none; padding: 8px 0;">
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://kcbgroup.com" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/kcb.png" alt="KCB Group" title="KCB Group" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">KCB Group</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://bpr.rw" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-rwanda.png" alt="Rwanda" title="Rwanda" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">Rwanda</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://bi.kcbgroup.com/en" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-burundi.png" alt="Burundi (en)" title="Burundi (en)" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">Burundi (en)</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://ug.kcbgroup.com" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-uganda.png" alt="Uganda (en)" title="Uganda (en)" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">Uganda (en)</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://kcbbank.co.tz" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-tanzania.png" alt="Tanzania (en)" title="Tanzania (en)" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">Tanzania (en)</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://ss.kcbgroup.com" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-ssd.png" alt="South Sudan (en)" title="South Sudan (en)" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">South Sudan (en)</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="https://ke.kcbgroup.com" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-kenya.png" alt="Kenya (en)" title="Kenya (en)" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">Kenya (en)</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      <li>
+                        <a href="" class="dropdown-item-link" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #333; text-decoration: none; transition: all 0.2s;">
+                          <img class="ls-flag" src="/images/flags/flag-kenya.png" alt="KCB Bancassurance" title="KCB Bancassurance" loading="lazy" style="width: 24px; height: 24px; object-fit: cover; border-radius: 50%;">
+                          <span class="wpml-ls-native">KCB Bancassurance</span>
+                        </a>
+                      </li>
+                      
+                      
+                      
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              
+
+              <!-- subsidiary dropdown -->
+              
+<div class="subs-nav-wrapper" id="subs-nav-wrapper">
+    <div class="subs-nav-trigger" id="subs-nav-trigger">
+        <span>Subsidiaries</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor">
+            <path d="M1 1l4 4 4-4"></path>
+        </svg>
+    </div>
+    <ul class="subs-nav-dropdown" id="subs-nav-dropdown">
+        
+        <li><a href="https://insurance.kcbgroup.com/">KCB Bancassurance Intermediary</a></li>
+        
+        <li><a href="https://foundation.kcbgroup.com/">KCB Foundation</a></li>
+        
+    </ul>
+</div>
+
+<style>
+    .header-top-bar-info {
+        position: relative;
+        z-index: 1001;
+    }
+
+    .subs-nav-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .subs-nav-trigger {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 12px;
+        color: #141414;
+        font-size: 15px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .subs-nav-trigger svg {
+        transition: transform 0.2s;
+    }
+
+    .subs-nav-wrapper.open .subs-nav-trigger svg {
+        transform: rotate(180deg);
+    }
+
+    .subs-nav-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 240px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        list-style: none;
+        padding: 8px 0;
+        margin: 0;
+        display: none;
+        z-index: 1002;
+    }
+
+    .subs-nav-wrapper.open .subs-nav-dropdown {
+        display: block;
+    }
+
+    .subs-nav-dropdown li a {
+        display: block;
+        padding: 10px 16px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.15s, color 0.15s;
+    }
+
+    .subs-nav-dropdown li a:hover,
+    .subs-nav-dropdown li a:focus {
+        background-color: #003D4C;
+        color: #7CC142;
+    }
+</style>
+
+<script>
+    (function () {
+        const wrapper = document.getElementById('subs-nav-wrapper');
+        const trigger = document.getElementById('subs-nav-trigger');
+
+        if (!wrapper || !trigger) return;
+
+        // Toggle on click
+        trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            wrapper.classList.toggle('open');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!wrapper.contains(e.target)) {
+                wrapper.classList.remove('open');
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                wrapper.classList.remove('open');
+            }
+        });
+    })();
+</script>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Dropdown items hover - white text on dark background */
+    .country-submenu li .dropdown-item-link:hover {
+      background-color: #003d5c !important;
+      color: #8CC63F !important;
+    }
+
+    .country-submenu li .dropdown-item-link:hover .wpml-ls-native {
+      color: #8CC63F !important;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdownItem = document.querySelector('.country-dropdown-item');
+      var submenu = document.querySelector('.country-submenu');
+
+      if (dropdownItem && submenu) {
+        dropdownItem.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        submenu.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (submenu && !e.target.closest('.language-menu')) {
+          submenu.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <div class="header-bottom-wrap header-sticky bg-primary">
+    <div class="container-auto">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header position-relative">
+
+            <!-- brand logo -->
+            <div class="header__logo">
+              <a href="https://kcbgroup.com">
+                
+                <img src="https://kcbgroup.com/imgs/kcb-logo.png" aria-label="" loading="eager" class="img-fluid" alt="">
+                
+              </a>
+            </div>
+            <div class="header-right">
+
+              <!-- navigation menu -->
+              <div class="header__navigation menu-style-three d-none d-xl-block main-menu navbar-expand-md navbar-light">
+
+                <nav class="navigation-menu">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="mmenu navigation">
+                      
+
+                      
+                      <li class=" active "><a href="/">Home</a></li>
+                      
+                      
+
+                      
+
+
+                      <li class="dropdown has-mega-menu"> <a href="/about-us"><span>Who We Are</span></a>
+                        <div class="mega-menu" data-width="100%" style="width: 100%;">
+                          <div class="mega-menu-bar row">
+                            <div class="menu-inside">
+                              <ul class="mega-menu--multiLevel">
+                                
+                                
+
+                                <li>
+                                  <a href="javascript:void(0);" class="" aria-haspopup="true">About KCB Group</a>
+                                  <ul class="menu menu-list">
+                                    
+                                    
+                                    <li><a href="/about-us">Overview</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/our-history">History</a></li>
+                                    
+
+                                    
+                                    
+
+                                    <li>
+                                      <a href="/policies-and-codes-of-conduct" aria-haspopup="true">Policies &amp; Codes of Conduct</a>
+                                      <ul class="menu menu-list">
+                                        
+                                        <li><a href="/ethics">Ethics</a></li>
+                                        
+                                        <li><a href="/compliance">Compliance</a></li>
+                                        
+                                        <li><a href="/anti-money-laundering">AML – Anti-Money Laundering</a></li>
+                                        
+                                        <li><a href="/sustainability-policy">Sustainability Policy</a></li>
+                                        
+                                        <li><a href="/supply-chain-policy">Supply Chain Policy</a></li>
+                                        
+                                        <li><a href="/technology-policy">Technology Policy</a></li>
+                                        
+                                        <li><a href="/whistle-blowing-procedures">Whistle Blowing Procedures</a></li>
+                                        
+
+                                      </ul>
+                                    </li>
+
+                                    
+
+                                    
+
+                                  </ul>
+                                </li>
+
+                                
+
+                                
+                                
+
+                                <li>
+                                  <a href="javascript:void(0);" class="" aria-haspopup="true">Leadership</a>
+                                  <ul class="menu menu-list">
+                                    
+                                    
+                                    <li><a href="/group-board-of-directors">Group Board of Directors</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/group-executive-management">Group Executive Management</a></li>
+                                    
+
+                                    
+                                    
+
+                                    <li>
+                                      <a href="#" aria-haspopup="true">Governance</a>
+                                      <ul class="menu menu-list">
+                                        
+                                        <li><a href="https://kcbgroup.com/download/eyJpdiI6ImFQaVE0QXVoTHFnaTZxVStoQW9tUnc9PSIsInZhbHVlIjoiRjRVQmVCOFlna1BNc3MxZDE1ak1TT25ZNEhmbUI3cHprWnNwU1c2UmtxbDNSWEtYQnl0N0tFVzAvY21uOSs4ayIsIm1hYyI6ImVjMzBmZmQ5ODVjZTlhYzdlY2MyYmE5ZDY3MTE4YjBhYWFiMGVlYWUwZWIxYTRlZjIwNTMwNTc2ZjczMTRkZGYiLCJ0YWciOiIifQ==?signature=0b58fcb2133da86dd3748f84dc82c98f5a30d315ee26be6ea362efba3b81c800">KCB Board Charter of Commitment</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/download/eyJpdiI6IkQ1N2pnTTBiUEZaTjY5WFRsRnhONHc9PSIsInZhbHVlIjoiL2hlNCtSNXZLc2t6R2c1clJCWDIvL3hxblZMWlVCYXNlWDlleHd1aEQyMm93VXdFSGw2ckJ3Zi9GcTZoSzdUby9vRHIxS1dZQVFENHU4QmRYMFBrUGRFc3VSQ3Vjd0tQaEN3blhBdXRPMVU9IiwibWFjIjoiZDg4NDc2NjI2MTBiYzZjNGMzZmEyNDFmN2E4MTBkMDZkZWE5MGM1ZmU0YWYwMThiMmFlODcxMWRmZGY3OGZkMiIsInRhZyI6IiJ9?signature=1db9689b2fcf208a5f28c17bfc8a31a68996f66a78577dd273c3a736ee0d151c">Board Directors Attraction and Retention</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/download/eyJpdiI6IjFCYlVkZ1RES3pvTXZuTGZCam05eXc9PSIsInZhbHVlIjoiTmc5SDFkSWh1Z3RVa0dTdzFWaFJvQlhqSEtpbEsyZXBxWUhodGJucWJXQmo2ZURiWExmd2NxU0t4UzFYc3hVam1UZjRFazFBbE0vSmQ1dWRZMXhhNVE9PSIsIm1hYyI6ImNlZGNmNjQ0NjkyNzIzMWU2Yjk0YzFjMDY1M2JlY2QyMDcxYWNiMzAzZWQxNGZiZTQ0NDM1YmEyZWM0YTU5MTciLCJ0YWciOiIifQ==?signature=53461996c16cf6aab9366538978474c522c3f97e09bc63410bf0c9309f2f0dad">Corporate Disclosure Policy</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/download/eyJpdiI6IlY0ZnBpUnBDVmFRcndjSFJkV1JzZmc9PSIsInZhbHVlIjoiekdXcmpkMEVIUU5kbkw1VDZEOGdJYkFJaS9zR3ZLYlBsbWZjbEdKRlBrSFZ6WGZPREtjYm1iSWV5aHN1a0pGYWY0VnI2ejJiMit0Y1Z0QXo2OXUrbkE9PSIsIm1hYyI6IjllZjk5NTkzZTlkZGNjNGQ1OGY5OGFlMDk5NDNlYjM3NGM2MTdlNGQ3ODg2YTg0NjIzYzIxOGUyOGU2YjYzNmEiLCJ0YWciOiIifQ==?signature=4204ee6936cc1327f22d479848b33a26e900a3c403b28c462fe2f43783a80678">Dispute Resolution Policy</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/download/eyJpdiI6Im9tdld3c2lTZjNlcUNJOGxNK00ydUE9PSIsInZhbHVlIjoiMlBqbUxrdkFyb29SUStKOHlHVjZ0dGUwR2ExckFTNG8vVDNybmpkS3VCNkF3a3dETlREK2J5cXQ4UzZiQTg4VzhPZFNZbFlmZWdlSzVsaEpkL2hQOVE9PSIsIm1hYyI6IjZmOGRiODgyMzU1ODVkMWUzNTQwMmI4N2ZhMTFhZDMyMjYzOWRjMjI0NjNkODI5NzdjZWMzZDI4ODg2YzkxNjYiLCJ0YWciOiIifQ==?signature=b6e585a622d65480e2ba0187e03005427b2f3f48a1ce4c59fa6b0dd456ddde36">NED Remuneration Policy</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/download/eyJpdiI6Ik4zL1JndWZlU2V3S2R0eldvQS9WMXc9PSIsInZhbHVlIjoidXkxMEhnVHIxd3VlR1d2QkRsbVlOY05TMmNYNXIwWEE1Q2I0cGhtZ1orbU5DSkhvNzRjN0QrS3hxYmZRQk9kcUVTS0JTeWpXSzc1QVRWd2RKL0xjRGc9PSIsIm1hYyI6ImIyYzA5MjkyY2E2NmRhNjVhYmQxMDhlNmM1MDY0NjgyOWRlNTc1MGE4NjdhNDYzNzQ1NDQ0ZDNhMzIyYTUxMDEiLCJ0YWciOiIifQ==?signature=1a24723c11f28bdff5ba040161a4fe5dd3b633246301c8bcffaaa0c9376a4b14">Stakeholder Communication Policy</a></li>
+                                        
+
+                                      </ul>
+                                    </li>
+
+                                    
+
+                                    
+
+                                  </ul>
+                                </li>
+
+                                
+
+                                
+                                
+
+                                <li>
+                                  <a href="javascript:void(0);" class="" aria-haspopup="true">Subsidiaries</a>
+                                  <ul class="menu menu-list">
+                                    
+                                    
+
+                                    <li>
+                                      <a href="https://ke.kcbgroup.com/" aria-haspopup="true">Kenya</a>
+                                      <ul class="menu menu-list">
+                                        
+                                        <li><a href="https://ke.kcbgroup.com/">KCB Kenya Ltd</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/foundation/">KCB Foundation</a></li>
+                                        
+                                        <li><a href="https://insurance.kcbgroup.com/">KCB Bancassurance Intermediary</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/capital/">KCB Investment Bank</a></li>
+                                        
+                                        <li><a href="https://kcbgroup.com/capital/">KCB Asset Management</a></li>
+                                        
+
+                                      </ul>
+                                    </li>
+
+                                    
+
+                                    
+                                    
+                                    <li><a href="https://ug.kcbgroup.com/">Uganda</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="https://tz.kcbgroup.com/">Tanzania</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="https://bpr.rw/">Rwanda</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="https://bi.kcbgroup.com/">Burundi</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="https://ss.kcbgroup.com/">South Sudan</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="https://tmb.cd/en/">DRC</a></li>
+                                    
+
+                                    
+
+                                  </ul>
+                                </li>
+
+                                
+
+                                
+                                
+                                <li><a href="/careers">Careers</a></li>
+                                
+
+                                
+
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      
+
+                      
+
+
+                      <li class="dropdown has-mega-menu"> <a href="/investor-relations"><span>Investor Relations</span></a>
+                        <div class="mega-menu" data-width="100%" style="width: 100%;">
+                          <div class="mega-menu-bar row">
+                            <div class="menu-inside">
+                              <ul class="mega-menu--multiLevel">
+                                
+                                
+
+                                <li>
+                                  <a href="javascript:void(0);" class="" aria-haspopup="true">Financials</a>
+                                  <ul class="menu menu-list">
+                                    
+                                    
+                                    <li><a href="/financial-statements">Financial Statements</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/investor-presentations">Investor Presentations</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/press-release">Press Release</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/subsidiary-financial-statements">Subsidiary Financial Statements</a></li>
+                                    
+
+                                    
+
+                                  </ul>
+                                </li>
+
+                                
+
+                                
+                                
+
+                                <li>
+                                  <a href="javascript:void(0);" class="" aria-haspopup="true">Investor</a>
+                                  <ul class="menu menu-list">
+                                    
+                                    
+                                    <li><a href="/shareholder-profile">Shareholder Profile</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/shareholder-meetings">Shareholder Meetings</a></li>
+                                    
+
+                                    
+                                    
+                                    <li><a href="/dividends">Dividends</a></li>
+                                    
+
+                                    
+
+                                  </ul>
+                                </li>
+
+                                
+
+                                
+                                
+
+                                <li>
+                                  <a href="javascript:void(0);" class="" aria-haspopup="true">Events</a>
+                                  <ul class="menu menu-list">
+                                    
+                                    
+                                    <li><a href="/investor-calendar">Investor Calendar</a></li>
+                                    
+
+                                    
+
+                                  </ul>
+                                </li>
+
+                                
+
+                                
+                                
+                                <li><a href="/integrated-reports">Integrated Reports</a></li>
+                                
+
+                                
+                                
+                                <li><a href="/contact-us">Contact Us</a></li>
+                                
+
+                                
+
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      
+
+                      
+                      <li class=""><a href="/sustainability-page">Sustainability</a></li>
+                      
+                      
+
+                      
+                      <li class=""><a href="https://kcbgroup.com/blog">News</a></li>
+                      
+                      
+
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+              <!-- mobile menu -->
+              <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger"> <i></i> </div>
+            </div>
+            <div class="header__login menu-style-three">
+              <div class="header-search-form-two">
+                <div class="search-box">
+                  <button class="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--====================  End of header area  ====================-->
+<!-- Header Search -->
+<!-- Header Search -->
+<div class="search-popup"> 
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-12">
+            <span class="search-back-drop"></span>
+            <div class="search-inner">
+                <div class="upper-text">
+                  <button class="close-search"><span class="fa fa-times"></span></button>
+                </div>
+                <form action="/search-results">
+                    
+                  <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <button type="submit">Search <i class="las la-arrow-right"></i></button>
+                  </div>
+                </form>
+                  <div class="searchtags">
+                  <h3>You might be looking for...</h3>
+                  <ul>
+                    
+                    <li><a href="/">Homepage</a></li>
+                    
+                   
+                  </ul>
+                </div>
+                <!-- <div class="searchtags">
+                  <h3>Your recent searches:</h3>
+                  <ul>
+                    <li><a href="#">Current Account</a></li>
+                    <li><a href="#">Jinue Account</a></li>
+                    <li><a href="#">Gold Master Card</a></li>
+                    <li><a href="#">Classic Visa Card</a></li>
+                    <li><a href="#">Corporate Card</a></li>
+                  </ul>
+                </div> -->
+                <div class="searchtags">
+                  <h3>Commonly Searched pages</h3>
+                  <ul>
+                    
+                    <li><a href="/">Homepage</a></li>
+                    
+                    <li><a href="/about-us">Overview</a></li>
+                    
+                    <li><a href="/careers">Careers</a></li>
+                    
+                    <li><a href="/subsidiaries">Subsidiaries</a></li>
+                    
+                    <li><a href="/group-board-of-directors">Group Board of Directors</a></li>
+                    
+                    <li><a href="/ethics">Ethics</a></li>
+                    
+                    <li><a href="/our-history">History</a></li>
+                    
+                    <li><a href="/investor-relations">Investor Relations</a></li>
+                    
+                    <li><a href="/financial-statements">Financial Statements</a></li>
+                    
+                    <li><a href="/investor-presentations">Investor Presentations</a></li>
+                    
+                    <li><a href="/press-release">Press Release</a></li>
+                    
+                    <li><a href="/subsidiary-financial-statements">Subsidiary Financial Statements</a></li>
+                    
+                    <li><a href="/shareholder-profile">Shareholder Profile</a></li>
+                    
+                    <li><a href="/shareholder-meetings">Shareholder Meetings</a></li>
+                    
+                    <li><a href="/dividends">Dividends</a></li>
+                    
+                    <li><a href="/contacts">Contacts</a></li>
+                    
+                    <li><a href="/location">Location</a></li>
+                    
+                    <li><a href="/integrated-reports">Integrated Reports</a></li>
+                    
+                    <li><a href="/blog">Blog</a></li>
+                    
+                    <li><a href="/group-executive-management">Group Executive Management</a></li>
+                    
+                    <li><a href="/compliance">Compliance</a></li>
+                    
+                    <li><a href="/anti-money-laundering">AML – Anti-Money Laundering</a></li>
+                    
+                    <li><a href="/write-to-us">Write To Us</a></li>
+                    
+                    <li><a href="/contact-us">Contact Us</a></li>
+                    
+                    <li><a href="/investor-calendar">Investor Calendar</a></li>
+                    
+                    <li><a href="/kcb-group-aml-kyc-sanctions-policy-statement-2024">KCB Group AML-KYC-Sanctions Policy Statement 2024</a></li>
+                    
+                    <li><a href="/event-recap">Event Recap</a></li>
+                    
+                    <li><a href="/social-media-disclaimer">Social Media Disclaimer</a></li>
+                    
+                    <li><a href="/privacy-statement">KCB Group Plc Data Privacy Statement</a></li>
+                    
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    
+                    <li><a href="/policies-and-codes-of-conduct">Policies &amp; Codes of Conduct</a></li>
+                    
+                    <li><a href="/sustainability-page">Sustainability</a></li>
+                    
+                    <li><a href="/gceo-statement">GCEO Statement</a></li>
+                    
+                    <li><a href="/supply-chain-policy">Supply Chain Policy</a></li>
+                    
+                    <li><a href="/sustainability-policy">Sustainability Policy</a></li>
+                    
+                    <li><a href="/technology-policy">Technology Policy</a></li>
+                    
+                    <li><a href="/whistle-blowing-procedures">Whistle Blowing Procedures</a></li>
+                    
+                    <li><a href="/search-results">Search Results</a></li>
+                    
+                    <li><a href="/terms-of-access">Terms of Access</a></li>
+                    
+                    <li><a href="/kcb-group-plc-cookie-policy">KCB Group Plc Cookie Policy</a></li>
+                    
+                    <li><a href="/test">Test -p</a></li>
+                    
+                    <li><a href="/governance">Governance</a></li>
+                    
+                    <li><a href="/earning-calendar">Events</a></li>
+                    
+                    <li><a href="/environmental">Environmental</a></li>
+                    
+                    <li><a href="/social">Social</a></li>
+                    
+                    <li><a href="/leadership-center">Leadership Center</a></li>
+                    
+                    
+                  </ul>
+                </div>
+               
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Header Search -->
+
+<!-- End Header Search -->
+<!--====================  mobile menu overlay ====================-->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+  <div class="mobile-menu-overlay__inner">
+    <div class="mobile-menu-overlay__header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-8 p-0">
+            <!-- logo -->
+            <div class="logo">
+              <a href="https://kcbgroup.com">
+                
+                <img src="/assets/kcb-logo.png" class="img-fluid" alt="" loading="lazy">
+                
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-4">
+            <!-- mobile menu content -->
+            <div class="mobile-menu-content text-end"> <span class="mobile-navigation-close-icon" id="mobile-menu-close-trigger"></span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-overlay__body">
+      <nav class="offcanvas-navigation">
+        <ul>
+          
+
+          
+          <li><a href="/">Home</a></li>
+          
+
+          
+
+          
+
+          <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="/about-us">Who We Are</a>
+            <ul class="sub-menu" style="display: none;">
+              
+
+              
+
+              <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="#"><span>About KCB Group</span></a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                  
+                  <li><a href="/about-us">Overview</a></li>
+                  
+                  
+                  
+                  <li><a href="/our-history">History</a></li>
+                  
+                  
+                  
+                  <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span><a href="/policies-and-codes-of-conduct">Policies &amp; Codes of Conduct</a>
+                    <ul class="sub-menu" style="display: none;">
+                      
+                      <li><a href="/ethics">Ethics</a></li>
+                      
+                      <li><a href="/compliance">Compliance</a></li>
+                      
+                      <li><a href="/anti-money-laundering">AML – Anti-Money Laundering</a></li>
+                      
+                      <li><a href="/sustainability-policy">Sustainability Policy</a></li>
+                      
+                      <li><a href="/supply-chain-policy">Supply Chain Policy</a></li>
+                      
+                      <li><a href="/technology-policy">Technology Policy</a></li>
+                      
+                      <li><a href="/whistle-blowing-procedures">Whistle Blowing Procedures</a></li>
+                      
+
+                    </ul>
+                  </li>
+                  
+                  
+
+                </ul>
+              </li>
+
+              
+
+              
+
+              
+
+              <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="#"><span>Leadership</span></a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                  
+                  <li><a href="/group-board-of-directors">Group Board of Directors</a></li>
+                  
+                  
+                  
+                  <li><a href="/group-executive-management">Group Executive Management</a></li>
+                  
+                  
+                  
+                  <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span><a href="#">Governance</a>
+                    <ul class="sub-menu" style="display: none;">
+                      
+                      <li><a href="https://kcbgroup.com/download/eyJpdiI6ImtPbnhHekJNRlJUQjNZTEtoNUM1ekE9PSIsInZhbHVlIjoibmI4NHVOOUZKUFBCTnVod0lHWWpPaWxHOVFYUFFBM0Q2RG5MRXpXTzdPdll6TkNMQVRjRTJrQ01rWGx6SENSQSIsIm1hYyI6ImZkMTFiNjEwZDNmNjFkMGJiNzIwMGIxMTQ4Y2UwMmE0ZWQ4NzlmMzk3OGNmMWNlMTNjZjFkZmE1OTNiMGUyZTEiLCJ0YWciOiIifQ==?signature=77ae9e05ffbb8a5e791e2c0e6110288dd02465c8bdb5963f672857434d4c4cee">KCB Board Charter of Commitment</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/download/eyJpdiI6Ik5RbXVDUDlkTzV3eTBtQzVRVU4vZ1E9PSIsInZhbHVlIjoiNHhXTUd3VVRmRnBoQWZxYmM5NGM2VWppUTBlQy9yQmcxSmc3MXNGWHJidDVNODZERkFjbG5nQUZjUGFBQ1pxTGNDT0U5MHZaM3NubjJrZkpwSFN3bDcvWGJma0VkcTFtOU42dm5Lb1ZWZUk9IiwibWFjIjoiMGUxZjE0YzRkYjQyOGY3ODgwMjFlZDdmYzQyNDIwZDVmMjIyY2UwN2Y3MjJkMjI5ODdjZjYxNjliODMwY2Y3NCIsInRhZyI6IiJ9?signature=693e5c04d24ebcc200d8a374ae9eb33250551d74338edffa0e3f9ed718a3872d">Board Directors Attraction and Retention</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/download/eyJpdiI6IkwvVXBrckJuVktaZVdta3QrVzc2S3c9PSIsInZhbHVlIjoiM001Rk1jdEQvNGVSUWJmZFFnNHZTMXNBKys2WGpzbGVlMnNnNmRqNzNFWFg3VjBkNnMxelB6ajNpYWUzajcxRGtKV2RCYVpDRzd0Z1lHMnVvSy96L3c9PSIsIm1hYyI6Ijc3ZWZjZjcyZGQyYTQ4NDRlYTI1ODdjYmM5NTZjYzcxMTczMzRkMmEzNTJjMjFmMDFhMGQ5MmY1ZDIxMWQ1MzYiLCJ0YWciOiIifQ==?signature=d5142dc3c36e20961c387b0e018f16a8070813405dff23ab12209f3c23dafaf6">Corporate Disclosure Policy</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/download/eyJpdiI6Ilp2ek5YbSsxVjNyWlRUMkJWWEJodXc9PSIsInZhbHVlIjoiaDRNNE0zVCtjMnhkRFFwWDBYU3dLR3M2cDhvU3I0REpKVVZuL2pValpPOGtpT0d1YldsbXQ3amNCcUpGME9kYUFtYjFHWUhJTytwY2NRRW13OC9nMmc9PSIsIm1hYyI6ImYwYWM1YjZjNzIyYjZmYjAzYmQxODMxOTQ2MmZkZGZiYTI5MzNhZGFkZDYwZGE4ZGE3ZjFiZjZjYWNjNzMzODAiLCJ0YWciOiIifQ==?signature=33f4be0d6227ae99f9d7aa7d9a305012b17457bd644cbcd643285b0fa4be4c98">Dispute Resolution Policy</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/download/eyJpdiI6InM5MzErWVIrZ3NHYmp1VEVrVXdORWc9PSIsInZhbHVlIjoicnpKR3gzRVUrb090ZFJXd1pnVTFwbUsyS1l6cWE2bEF1SVlrSnJYeTd4QlNUSjdMalREMjNNY1prQ0MrcGNBRmVyM0ZxQ21XVXlGeWRJbDZaYUtvOFE9PSIsIm1hYyI6IjQwM2E0MWJhYzc5NDM4OTM5MWQyYzI2MWMzMTg5NDU1NWM5M2EwNWZkMWY0YTRlODI2ZmQ2MWJmMGRiOGFkN2UiLCJ0YWciOiIifQ==?signature=271ebf22fe7fe57126d09db00924c5d6c20762c3f6ce6140fd2b147ba5180ca5">NED Remuneration Policy</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/download/eyJpdiI6ImYvbFIwRitEQnh2UFdOVHBIVXFSWnc9PSIsInZhbHVlIjoiT3EvS0NFQzk3NGVnSXhVUTYwcUNtR0tETzBraHYyMFpkSEttMGcwcEt2bTdUdUpOQnQvcnZ0MWl2NWdITDhaYmxac0hPNVVRNnJZZENRTDROTWFpS1E9PSIsIm1hYyI6IjI5OGZjYTdjYTVmNWRiMWQ5YmFhMWY4MTY0NDUzNTliZTc1N2E5NjdlNjE1NWJjNWU2MDIyMmE3OGNkNzBkYWYiLCJ0YWciOiIifQ==?signature=bd59f537e037e57890af9c5802c507ff67d78ef3b4d835f5c68aa6dfbca34b2f">Stakeholder Communication Policy</a></li>
+                      
+
+                    </ul>
+                  </li>
+                  
+                  
+
+                </ul>
+              </li>
+
+              
+
+              
+
+              
+
+              <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="/subsidiaries"><span>Subsidiaries</span></a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                  
+                  <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span><a href="https://ke.kcbgroup.com/">Kenya</a>
+                    <ul class="sub-menu" style="display: none;">
+                      
+                      <li><a href="https://ke.kcbgroup.com/">KCB Kenya Ltd</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/foundation/">KCB Foundation</a></li>
+                      
+                      <li><a href="https://insurance.kcbgroup.com/">KCB Bancassurance Intermediary</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/capital/">KCB Investment Bank</a></li>
+                      
+                      <li><a href="https://kcbgroup.com/capital/">KCB Asset Management</a></li>
+                      
+
+                    </ul>
+                  </li>
+                  
+                  
+                  
+                  <li><a href="https://ug.kcbgroup.com/">Uganda</a></li>
+                  
+                  
+                  
+                  <li><a href="https://tz.kcbgroup.com/">Tanzania</a></li>
+                  
+                  
+                  
+                  <li><a href="https://bpr.rw/">Rwanda</a></li>
+                  
+                  
+                  
+                  <li><a href="https://bi.kcbgroup.com/">Burundi</a></li>
+                  
+                  
+                  
+                  <li><a href="https://ss.kcbgroup.com/">South Sudan</a></li>
+                  
+                  
+                  
+                  <li><a href="https://tmb.cd/en/">DRC</a></li>
+                  
+                  
+
+                </ul>
+              </li>
+
+              
+
+              
+
+              
+              <li><a href="/careers">Careers</a></li>
+              
+
+              
+
+            </ul>
+          </li>
+
+          
+
+          
+
+          
+
+          <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="/investor-relations">Investor Relations</a>
+            <ul class="sub-menu" style="display: none;">
+              
+
+              
+
+              <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="#"><span>Financials</span></a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                  
+                  <li><a href="/financial-statements">Financial Statements</a></li>
+                  
+                  
+                  
+                  <li><a href="/investor-presentations">Investor Presentations</a></li>
+                  
+                  
+                  
+                  <li><a href="/press-release">Press Release</a></li>
+                  
+                  
+                  
+                  <li><a href="/subsidiary-financial-statements">Subsidiary Financial Statements</a></li>
+                  
+                  
+
+                </ul>
+              </li>
+
+              
+
+              
+
+              
+
+              <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="#"><span>Investor</span></a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                  
+                  <li><a href="/shareholder-profile">Shareholder Profile</a></li>
+                  
+                  
+                  
+                  <li><a href="/shareholder-meetings">Shareholder Meetings</a></li>
+                  
+                  
+                  
+                  <li><a href="/dividends">Dividends</a></li>
+                  
+                  
+
+                </ul>
+              </li>
+
+              
+
+              
+
+              
+
+              <li class="has-children"><span class="menu-expand" role="button" tabindex="0" aria-label="Expand submenu"><i class="icofont-rounded-down"></i></span> <a href="#"><span>Events</span></a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                  
+                  <li><a href="/investor-calendar">Investor Calendar</a></li>
+                  
+                  
+
+                </ul>
+              </li>
+
+              
+
+              
+
+              
+              <li><a href="/integrated-reports">Integrated Reports</a></li>
+              
+
+              
+
+              
+              <li><a href="/contact-us">Contact Us</a></li>
+              
+
+              
+
+            </ul>
+          </li>
+
+          
+
+          
+
+          
+          <li><a href="/sustainability-page">Sustainability</a></li>
+          
+
+          
+
+          
+          <li><a href="https://kcbgroup.com/blog">News</a></li>
+          
+
+          
+
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile-menu-overlay__body">
+      
+      <div class="language-switcher">
+        <select onchange="window.location.href = this.value">
+          <option value="" selected="" disabled="">Countries</option>
+          
+          
+          
+          
+          <option value="https://kcbgroup.com">KCB Group</option>
+          
+          
+          
+          
+          
+          
+          
+          <option value="https://bpr.rw">Rwanda</option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option value="https://bi.kcbgroup.com/en">Burundi (en)</option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option value="https://ug.kcbgroup.com">Uganda (en)</option>
+          
+          
+          
+          
+          
+          
+          
+          <option value="https://kcbbank.co.tz">Tanzania (en)</option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option value="https://ss.kcbgroup.com">South Sudan (en)</option>
+          
+          
+          
+          
+          
+          
+          
+          <option value="https://ke.kcbgroup.com">Kenya (en)</option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option value="">KCB Bancassurance</option>
+          
+          
+          
+          
+        </select>
+      </div>
+      
+
+      
+      <div class="language-switcher">
+        <select onchange="window.location.href = this.value">
+          <option value="" selected="" disabled="">Subsidiaries</option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </select>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!--====================  End of mobile menu overlay  ====================-->
+
+
+
+
+    <!-- Home Slider Start -->
+<section class="home_banner">
+    <div class="home-carousel owl-theme owl-carousel owl-loaded owl-drag">
+      
+      
+      
+
+
+    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all; width: 393px;"><div class="owl-item active" style="width: 393px;"><div class="slide-item">
+
+
+
+
+        <div style="background-image:url(https://kcbgroup.com/imgs/main-banner-investor-relations.jpg)" class="image-layer"></div>
+
+
+
+        <div class="auto-container">
+          <div class="row clearfix">
+            <div class="col-xl-8 col-lg-12 col-md-12 content-column">
+              <div class="content-box">
+                <h1 class="home-carousel-title">KCB Group Plc 2025 Integrated Report and Financial Statements</h1>
+                <div class="home-carousel-text"><span><p>The report provides our stakeholders with an integrated view of how our company operates.</p>
+</span></div>
+                <div class="slider-btn-box mt-5">
+
+                  
+                  <a href="https://kcbgroup.com/download/eyJpdiI6InhKU0thZVNIQlUwLzEzQzM2ZkxKR0E9PSIsInZhbHVlIjoiRmovMDNiVWN1TGd0TzRXOGN4aXl0YTFUazVuYndFR2ZKRFExMEVnVkl5dmg5MXBHTnN6Y0JSYnVuZXRvdFNrdFZCQXArSVFUUlRCU29HWWRZN2R4WWdPV2RoOUE1ckdEZ1Q3RXc5MFRPYTg9IiwibWFjIjoiNGZlM2UzZTY0MjIxOWExZDkxNGM1NjM5NGViZjc5OGUzMDVhNWY3N2IxZGNjZmQxYzA1OWRjZTk5MWE4ZTA1ZCIsInRhZyI6IiJ9?signature=f81524a21e5b539c0b1a24faa9d6cc59630c66188e4e88bd58b7c2142137bb43" class="border-btn">Download Here</a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="icofont-rounded-left" aria-hidden="true"></i></button><button type="button" role="presentation" class="owl-next"><i class="icofont-rounded-right" aria-hidden="true"></i></button></div><div class="owl-dots disabled"></div></div>
+  </section>
+  <!-- Home Slider End -->
+
+
+
+
+    <section class="report-section p-30 ">
+    <div class="container">
+
+        <!-- <div class="sec-title centred mb_70">
+            <h6>Latest News</h6>
+            <h2>Our Latest Media Update</h2>
+        </div> -->
+
+        <div class="row clearfix">
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="report-block wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box" style="background-image: url(https://kcbgroup.com/imgs/kcb-group-plc-q1-2023-financials.jpg);">
+                        <div class="content-box">
+                        
+                            <h3><a href="https://kcbgroup.com/download/eyJpdiI6IlExc2pNVGRvMUdGU2JNV3NQN1lhUWc9PSIsInZhbHVlIjoiNVlHM1N2TE52SnJWOWl6VGRFbjJvNnZDT2pYdGg3Qit6Tndjd2FoKytGU05SS0dQOXZDYjZlSWRkVGdlVUhMYlF6U0JsNlNZZzdFUXA1L2cydXFkUjlUcU1sR2t6UG9QaVU2NzRCVis1NWs9IiwibWFjIjoiNmUxZDBmMThiYmFiZGYwNTExZjM5ZGRjMmRhYTJiOGU0ZmNhNzRkMTY4MTNlMGUwZjc3YzY0YzM2NjNmZjljYiIsInRhZyI6IiJ9?signature=44a30494884aea2a293e04abdb736b9dcc4baa0370b23df0e6f176a23c9eab6b">KCB Group Plc 2025 Integrated Report and Financial Statements</a></h3>
+                            <div class="btn-box"><a href="https://kcbgroup.com/download/eyJpdiI6Im5KQlFhNmlmRWVERGkrK3dsMVVuWnc9PSIsInZhbHVlIjoiL25QYXlpVFc0ZGNxWnE5YWdOV3BEZjVETWpRd1MxMkxKUlVTRUpPeEREWTMxUlVua1lVWUpyOTlkbnpXNE1kQ0VUTHpvaDV1eTVDL05GYmNIVlNVRVNxYWs4N2Y3T0FsTzQwRUJxQVFZZEE9IiwibWFjIjoiMjk0MzM2M2YzZmFkZjRjMDY3OTMxZmM1NTEzOGM1ZDAxOTA3MmYzNDk0YTYyMDcxNjlkYjE2OGYyNmNjMGZmZiIsInRhZyI6IiJ9?signature=1dcb019d0a147213c642348ee83e2694739cdce037ecfddc2be6f4ed5070cfac" class="theme-btn"><i class="las la-arrow-down"></i></a></div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="report-block wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box" style="background-image: url(https://kcbgroup.com/imgs/kcb-group-shareholder-profile-june-2023.jpg);">
+                        <div class="content-box">
+                        
+                            <h3><a href="https://kcbgroup.com/download/eyJpdiI6InAzdnEreW9iMmliWk9zY3loaE1hc1E9PSIsInZhbHVlIjoiUEo1TTN0dTVIR3NMSHlyME04UUx6a2t3eUo5RnhnblFzSlBjcWR5aGpoUkFKYTR1Y2JnZGtMdWt1OWlXTHM1dVFCeXJPQ1FReUY5K0NTc0prNmwxM2VFTkxSbDZQdVpkTHNUblFlcjhMOGQ5SG90VExuMWhhbm40N0Y1VnNueXdjVDJ4K1duS3RFUlVwQkNBZEY3b0phbVVVSkNTTkZ1NGdSblN6dUJMN1VFPSIsIm1hYyI6ImE4ZjM4MmU5MzE1MGYzNDI1MzkwYjE4N2YzZTUwOTFhYzEzMTBjYWRiMWZhYTgzZjZhZTZiOGNlMGRmM2E4NzkiLCJ0YWciOiIifQ==?signature=0c1b132fa0c407bf433b2297d9634402527441743ede7d04c73b524a13652de5">KCB Group PLC Signs Agreement on Proposed Acquisition of a Minority Stake in Pesapal</a></h3>
+                            <div class="btn-box"><a href="https://kcbgroup.com/download/eyJpdiI6Ik16QlhJSWNVaENJZWlnVjZyS0RXd2c9PSIsInZhbHVlIjoiTXV5SzBGb053b0lYc1IycERWY3FlUjdNN2RUMEo4enFQWU5PQ0w1bk5OVHVNV0M1ZXVwK3lOblpWaE5sZnliRHE0QzlIdjkxclI0VWE5blpoT3Z5dUhCL2N6TDdzNitJQXZ3djhpTHFzTHpvamdDeGdrQWtONURnYVNlY05EL3YrUXRXRWNWcXBiTFoyUmZ4U3RWYlRmR3ZDbTJRdzQ5TC90SkFySlA1YWZRPSIsIm1hYyI6IjU1NjhmYzQxNGVkZjg1YjFmYjgzZDI1ZTdkMDdjYTcwYzUxMDViMGMzY2ZkYWQzMDJmZGQ4NDlkYTlkZDQ2NjUiLCJ0YWciOiIifQ==?signature=ea9669dffaa667376a5e2268e11022e54cae59ad33a2960b9e0db95b0c6fdd77" class="theme-btn"><i class="las la-arrow-down"></i></a></div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="report-block wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box" style="background-image: url(https://kcbgroup.com/imgs/55th-agm-photo.jpeg);">
+                        <div class="content-box">
+                        
+                            <h3><a href="#">KCB Group Shareholders Approve KShs. 22.5 Billion Dividend Payout</a></h3>
+                            <div class="btn-box"><a href="#" class="theme-btn"><i class="las la-arrow-down"></i></a></div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- <div class="col-lg-12">
+              <div class="btn-area text-center">
+                <a class="border-btn" href="reports.html">View all Reports <i class="las la-arrow-right"></i></a>
+              </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+
+
+
+    <section class="report-section pb-5">
+    <div class="container">
+
+<div class="row clearfix">
+
+    <div class="col-lg-12">
+        <div class="btn-area text-center"> 
+          <a class="border-btn" href="/investor-relations">View Investor Relations <i class="las la-arrow-right"></i></a> 
+        </div>
+      </div>
+
+</div>
+
+</div>
+</section>
+
+
+
+
+      <section class="sustainabilityblock p-60">
+    <div class="container">
+
+      <div class="box-shadow lg-box-content ">
+        <div class="row align-items-center p-0">
+          <div class="content-column col-lg-7 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="600ms">
+            <div class="inner-column bg-white">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="three-slides owl-carousel owl-theme slidenav-center owl-loaded owl-drag">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                  <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-768px, 0px, 0px); transition: 0.25s; width: 1152px;"><div class="owl-item" style="width: 369px; margin-right: 15px;"><div>
+                      <div class="single-feature p-4 text-center mt-3"> <a href="#">
+                        <div class="feature-img icon-center"> <img src="https://kcbgroup.com/imgs/environmental.png" loading="lazy"> </div>
+                        <h3 class="h5">Environmental</h3>
+                        </a> </div>
+                    </div></div><div class="owl-item" style="width: 369px; margin-right: 15px;"><div>
+                      <div class="single-feature p-4 text-center mt-3"> <a href="#">
+                        <div class="feature-img icon-center"> <img src="https://kcbgroup.com/imgs/social.png" loading="lazy"> </div>
+                        <h3 class="h5">Social</h3>
+                        </a> </div>
+                    </div></div><div class="owl-item active" style="width: 369px; margin-right: 15px;"><div>
+                      <div class="single-feature p-4 text-center mt-3"> <a href="#">
+                        <div class="feature-img icon-center"> <img src="https://kcbgroup.com/imgs/governance.png" loading="lazy"> </div>
+                        <h3 class="h5">Governance</h3>
+                        </a> </div>
+                    </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icofont-rounded-left"></i></button><button type="button" role="presentation" class="owl-next disabled"><i class="icofont-rounded-right"></i></button></div><div class="owl-dots disabled"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image-column col-lg-5 col-md-12 col-sm-12">
+            <div class="inner-column bg-main wow fadeInLeft">
+              <div class="whiteinfo">
+                <h3>SUSTAINABILITY</h3>
+                <div class="prose prose-invert max-w-none"><p>At KCB, sustainability is about ensuring long-term business success while contributing towards economic and social development, a healthy environment, and a stable society. We have therefore embraced Environmental, Social, and Governance (ESG) considerations in our operations and decision-making processes.</p>
+</div>
+                
+                <div class="btn-area btn-transparent text-center">
+                  <a class="border-btn" href="/sustainability-page">Learn more about our Sustainability Initiatives<i class="las la-arrow-right"></i></a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+    
+<!-- Counter Area-->
+<section class="counter-wrap p-60">
+    <div class="container">
+      <div class="section-title style1 text-center mb-40">
+        <div class="row">
+          <div class="col-lg-9 col-md-12 mx-auto">
+            
+            <h2>Our Group</h2>
+            
+            
+            <span><p>KCB Group Plc is a registered non-operating holding company that oversees KCB Bank Kenya and all the regional subsidiaries. It also owns KCB Bancassurance Intermediary limited, KCB Investment Bank, KCB Asset Management, KCB Foundation and other associate companies. The Group has an asset base of KShs 2.0 trillion, the largest branch network in the region with 528 branches, 1,313 ATMs, 1.2 million bank and Vooma merchants and agents offering banking services on a 24/7 basis in East Africa.</p>
+</span> 
+            
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="facts-slides owl-carousel owl-theme slidenav-center owl-loaded owl-drag">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           
+          <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1017px, 0px, 0px); transition: 0.25s; width: 2034px;"><div class="owl-item cloned" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 29.5" style="enable-background:new 0 0 34 29.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000159448101794050419590000017878407845319755422_">
+	<g id="Layer_1-2">
+		<line class="st0" x1="13.8" y1="29.5" x2="13.8" y2="26.2"></line>
+		<line class="st0" x1="20.2" y1="26.2" x2="20.2" y2="29.5"></line>
+		<line class="st0" x1="13.8" y1="26.2" x2="13.8" y2="17.3"></line>
+		<path class="st0" d="M21.8,26.2c1.1,0,1.9-1.5,1.9-2.5l0,0v-7.8c-0.1-1.7-1.3-3.2-3-3.5l0,0c-2.4-0.6-4.9-0.6-7.4,0l0,0
+			c-1.7,0.3-2.9,1.8-3,3.5v7.8l0,0c0,1.1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="20.2" y1="17.3" x2="20.2" y2="26.2"></line>
+		<line class="st0" x1="4.5" y1="25.4" x2="4.5" y2="22.5"></line>
+		<line class="st0" x1="4.5" y1="22.5" x2="4.5" y2="16"></line>
+		<path class="st0" d="M11.4,11.3L11.4,11.3c-2.4-0.6-4.9-0.6-7.4,0h0c-1.7,0.3-2.9,1.8-3,3.5V20l0,0c0,1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="29.5" y1="25.4" x2="29.5" y2="22.5"></line>
+		<line class="st0" x1="29.5" y1="22.5" x2="29.5" y2="16"></line>
+		<path class="st0" d="M22.6,11.3L22.6,11.3c2.4-0.6,4.9-0.6,7.4,0l0,0c1.7,0.3,2.9,1.8,3,3.5V20l0,0c0,1.1-0.9,2.5-1.9,2.5"></path>
+		<path class="st0" d="M5.6,5.8L5.6,5.8c0,0.8,0.6,1.4,1.4,1.4h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0H7.1
+			C6.3,4.4,5.7,3.8,5.6,3l0,0c0-0.8,0.6-1.4,1.4-1.5c0,0,0,0,0.1,0h1.3c0.8,0,1.4,0.6,1.4,1.4c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="7.7" y1="1.3" x2="7.7" y2="0"></line>
+		<line class="st0" x1="7.7" y1="8.8" x2="7.7" y2="7.4"></line>
+		<path class="st0" d="M14.9,7.1L14.9,7.1c0,0.8,0.6,1.4,1.4,1.4l0,0h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0h-1.3
+			c-0.8,0-1.4-0.6-1.4-1.4c0,0,0,0,0,0l0,0c0-0.8,0.6-1.4,1.4-1.4c0,0,0,0,0,0h1.3c0.8,0,1.4,0.6,1.4,1.4l0,0l0,0"></path>
+		<line class="st0" x1="17" y1="2.7" x2="17" y2="1.3"></line>
+		<line class="st0" x1="17" y1="10.1" x2="17" y2="8.8"></line>
+		<path class="st0" d="M24.2,5.8L24.2,5.8c0,0.8,0.6,1.4,1.4,1.4H27c0.8,0,1.4-0.7,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4h-1.4
+			c-0.8,0-1.4-0.6-1.4-1.4l0,0c0-0.8,0.6-1.4,1.4-1.4H27c0.8,0,1.4,0.7,1.4,1.4l0,0"></path>
+		<line class="st0" x1="26.3" y1="1.3" x2="26.3" y2="0"></line>
+		<line class="st0" x1="26.3" y1="8.8" x2="26.3" y2="7.4"></line>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        33M
+                        
+                    </div>
+                  </div>
+                  <h3>Customers</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.5 32.3" style="enable-background:new 0 0 33.5 32.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#C1C6C8;stroke-width:2.0034;stroke-linejoin:round;stroke-miterlimit:4.0068;}
+</style>
+<g id="Layer_2_00000065036246324699873310000005242902616922379450_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.5,28.9c1.2-0.7,2.6-1,4-0.8l9.4,1.2c0.2,0,0.4,0,0.5-0.1L32.1,21c0.3-0.2,0.4-0.6,0.2-1l0,0
+			c-0.8-1.3-2.4-1.8-3.7-1.1l-8.4,4.2"></path>
+		<path class="st0" d="M13.6,23.6l4.7,0.5c1.1,0.1,2-0.7,2.1-1.7l0,0c0.1-1.1-0.7-2-1.7-2.1l-4.1-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2C10.7,18,8,18,5.8,19.2l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,20.4 2.9,19.4 7.2,30.2 4.3,31.4 		"></polyline>
+		<line class="st0" x1="1.2" y1="22.3" x2="2.2" y2="21.9"></line>
+		<line class="st0" x1="29.1" y1="19.2" x2="29.1" y2="19.2"></line>
+		<path class="st0" d="M9.4,17L7.1,8c-0.2-0.8,0.2-1.6,1-1.8L27.7,1c0.8-0.2,1.6,0.3,1.8,1c0,0,0,0,0,0L32.4,13
+			c0.2,0.8-0.2,1.6-1,1.8l-13.1,3.4"></path>
+		<line class="st0" x1="13.6" y1="15.9" x2="12.1" y2="16.2"></line>
+		<rect x="11.2" y="8.5" transform="matrix(0.9684 -0.2496 0.2496 0.9684 -2.1302 3.5516)" class="st1" width="3.6" height="3.3"></rect>
+		<line class="st0" x1="16.4" y1="15.1" x2="15" y2="15.5"></line>
+		<line class="st0" x1="19.3" y1="14.3" x2="17.9" y2="14.7"></line>
+		<line class="st0" x1="22.2" y1="13.6" x2="20.7" y2="14"></line>
+		<circle class="st0" cx="26.6" cy="11.1" r="1.3"></circle>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        1.1T
+                        
+                    </div>
+                  </div>
+                  <h3>Net Loans &amp; Advances (in Ksh.)</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.1 33.6" style="enable-background:new 0 0 33.1 33.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000047033223572416092070000016104609993886981031_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.4,30.3c1.2-0.7,2.6-1,3.9-0.8l9.3,1.2c0.2,0,0.4,0,0.5-0.1l11.7-8.2c0.3-0.2,0.4-0.6,0.2-0.9l0,0
+			c-0.7-1.3-2.4-1.8-3.7-1.1L20,24.5"></path>
+		<path class="st0" d="M13.4,25l4.7,0.5c1,0.1,2-0.7,2.1-1.7l0,0c0.1-1-0.7-2-1.7-2.1c0,0,0,0,0,0l-4-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2c-2.2-1.2-4.9-1.2-7.1,0l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,21.8 2.9,20.8 7.1,31.6 4.3,32.7 		"></polyline>
+		<line class="st0" x1="1.2" y1="23.7" x2="2.2" y2="23.3"></line>
+		<line class="st0" x1="28.8" y1="20.7" x2="28.8" y2="20.7"></line>
+		<path class="st0" d="M11.4,20.3C9.9,13.7,17.4,6,17.4,6h4.5c0.1,0,0.1,0,0.2,0.1c0.8,0.9,7.3,8,6,14.2"></path>
+		<path class="st0" d="M17.5,16L17.5,16c0,0.9,0.7,1.6,1.5,1.6c0,0,0,0,0,0h1.5c0.9,0,1.5-0.7,1.5-1.6c0,0,0,0,0,0l0,0
+			c0-0.9-0.7-1.5-1.5-1.6c0,0,0,0,0,0H19c-0.9,0-1.5-0.7-1.5-1.5c0,0,0,0,0,0l0,0c0-0.9,0.7-1.5,1.5-1.5c0,0,0,0,0,0h1.5
+			c0.9,0,1.5,0.7,1.5,1.5c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="19.7" y1="11.4" x2="19.7" y2="10"></line>
+		<line class="st0" x1="19.7" y1="18.9" x2="19.7" y2="17.6"></line>
+		<path class="st0" d="M17.5,6.1L15.8,2L18,1.1c0.6-0.3,1.3,0,1.7,0.5l0,0c0.3,0.5,0.9,0.7,1.5,0.6l3.3-0.8l-2.4,4.7"></path>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        1.5T
+                        
+                    </div>
+                  </div>
+                  <h3>Customer Deposits (in Ksh.)</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.1 33.6" style="enable-background:new 0 0 33.1 33.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000047033223572416092070000016104609993886981031_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.4,30.3c1.2-0.7,2.6-1,3.9-0.8l9.3,1.2c0.2,0,0.4,0,0.5-0.1l11.7-8.2c0.3-0.2,0.4-0.6,0.2-0.9l0,0
+			c-0.7-1.3-2.4-1.8-3.7-1.1L20,24.5"></path>
+		<path class="st0" d="M13.4,25l4.7,0.5c1,0.1,2-0.7,2.1-1.7l0,0c0.1-1-0.7-2-1.7-2.1c0,0,0,0,0,0l-4-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2c-2.2-1.2-4.9-1.2-7.1,0l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,21.8 2.9,20.8 7.1,31.6 4.3,32.7 		"></polyline>
+		<line class="st0" x1="1.2" y1="23.7" x2="2.2" y2="23.3"></line>
+		<line class="st0" x1="28.8" y1="20.7" x2="28.8" y2="20.7"></line>
+		<path class="st0" d="M11.4,20.3C9.9,13.7,17.4,6,17.4,6h4.5c0.1,0,0.1,0,0.2,0.1c0.8,0.9,7.3,8,6,14.2"></path>
+		<path class="st0" d="M17.5,16L17.5,16c0,0.9,0.7,1.6,1.5,1.6c0,0,0,0,0,0h1.5c0.9,0,1.5-0.7,1.5-1.6c0,0,0,0,0,0l0,0
+			c0-0.9-0.7-1.5-1.5-1.6c0,0,0,0,0,0H19c-0.9,0-1.5-0.7-1.5-1.5c0,0,0,0,0,0l0,0c0-0.9,0.7-1.5,1.5-1.5c0,0,0,0,0,0h1.5
+			c0.9,0,1.5,0.7,1.5,1.5c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="19.7" y1="11.4" x2="19.7" y2="10"></line>
+		<line class="st0" x1="19.7" y1="18.9" x2="19.7" y2="17.6"></line>
+		<path class="st0" d="M17.5,6.1L15.8,2L18,1.1c0.6-0.3,1.3,0,1.7,0.5l0,0c0.3,0.5,0.9,0.7,1.5,0.6l3.3-0.8l-2.4,4.7"></path>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        2.0T
+                        
+                    </div>
+                  </div>
+                  <h3>Total Assets (in Ksh.)</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 29.5" style="enable-background:new 0 0 34 29.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000159448101794050419590000017878407845319755422_">
+	<g id="Layer_1-2">
+		<line class="st0" x1="13.8" y1="29.5" x2="13.8" y2="26.2"></line>
+		<line class="st0" x1="20.2" y1="26.2" x2="20.2" y2="29.5"></line>
+		<line class="st0" x1="13.8" y1="26.2" x2="13.8" y2="17.3"></line>
+		<path class="st0" d="M21.8,26.2c1.1,0,1.9-1.5,1.9-2.5l0,0v-7.8c-0.1-1.7-1.3-3.2-3-3.5l0,0c-2.4-0.6-4.9-0.6-7.4,0l0,0
+			c-1.7,0.3-2.9,1.8-3,3.5v7.8l0,0c0,1.1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="20.2" y1="17.3" x2="20.2" y2="26.2"></line>
+		<line class="st0" x1="4.5" y1="25.4" x2="4.5" y2="22.5"></line>
+		<line class="st0" x1="4.5" y1="22.5" x2="4.5" y2="16"></line>
+		<path class="st0" d="M11.4,11.3L11.4,11.3c-2.4-0.6-4.9-0.6-7.4,0h0c-1.7,0.3-2.9,1.8-3,3.5V20l0,0c0,1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="29.5" y1="25.4" x2="29.5" y2="22.5"></line>
+		<line class="st0" x1="29.5" y1="22.5" x2="29.5" y2="16"></line>
+		<path class="st0" d="M22.6,11.3L22.6,11.3c2.4-0.6,4.9-0.6,7.4,0l0,0c1.7,0.3,2.9,1.8,3,3.5V20l0,0c0,1.1-0.9,2.5-1.9,2.5"></path>
+		<path class="st0" d="M5.6,5.8L5.6,5.8c0,0.8,0.6,1.4,1.4,1.4h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0H7.1
+			C6.3,4.4,5.7,3.8,5.6,3l0,0c0-0.8,0.6-1.4,1.4-1.5c0,0,0,0,0.1,0h1.3c0.8,0,1.4,0.6,1.4,1.4c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="7.7" y1="1.3" x2="7.7" y2="0"></line>
+		<line class="st0" x1="7.7" y1="8.8" x2="7.7" y2="7.4"></line>
+		<path class="st0" d="M14.9,7.1L14.9,7.1c0,0.8,0.6,1.4,1.4,1.4l0,0h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0h-1.3
+			c-0.8,0-1.4-0.6-1.4-1.4c0,0,0,0,0,0l0,0c0-0.8,0.6-1.4,1.4-1.4c0,0,0,0,0,0h1.3c0.8,0,1.4,0.6,1.4,1.4l0,0l0,0"></path>
+		<line class="st0" x1="17" y1="2.7" x2="17" y2="1.3"></line>
+		<line class="st0" x1="17" y1="10.1" x2="17" y2="8.8"></line>
+		<path class="st0" d="M24.2,5.8L24.2,5.8c0,0.8,0.6,1.4,1.4,1.4H27c0.8,0,1.4-0.7,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4h-1.4
+			c-0.8,0-1.4-0.6-1.4-1.4l0,0c0-0.8,0.6-1.4,1.4-1.4H27c0.8,0,1.4,0.7,1.4,1.4l0,0"></path>
+		<line class="st0" x1="26.3" y1="1.3" x2="26.3" y2="0"></line>
+		<line class="st0" x1="26.3" y1="8.8" x2="26.3" y2="7.4"></line>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        528
+                        
+                    </div>
+                  </div>
+                  <h3>Branches</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.5 32.3" style="enable-background:new 0 0 33.5 32.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#C1C6C8;stroke-width:2.0034;stroke-linejoin:round;stroke-miterlimit:4.0068;}
+</style>
+<g id="Layer_2_00000065036246324699873310000005242902616922379450_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.5,28.9c1.2-0.7,2.6-1,4-0.8l9.4,1.2c0.2,0,0.4,0,0.5-0.1L32.1,21c0.3-0.2,0.4-0.6,0.2-1l0,0
+			c-0.8-1.3-2.4-1.8-3.7-1.1l-8.4,4.2"></path>
+		<path class="st0" d="M13.6,23.6l4.7,0.5c1.1,0.1,2-0.7,2.1-1.7l0,0c0.1-1.1-0.7-2-1.7-2.1l-4.1-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2C10.7,18,8,18,5.8,19.2l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,20.4 2.9,19.4 7.2,30.2 4.3,31.4 		"></polyline>
+		<line class="st0" x1="1.2" y1="22.3" x2="2.2" y2="21.9"></line>
+		<line class="st0" x1="29.1" y1="19.2" x2="29.1" y2="19.2"></line>
+		<path class="st0" d="M9.4,17L7.1,8c-0.2-0.8,0.2-1.6,1-1.8L27.7,1c0.8-0.2,1.6,0.3,1.8,1c0,0,0,0,0,0L32.4,13
+			c0.2,0.8-0.2,1.6-1,1.8l-13.1,3.4"></path>
+		<line class="st0" x1="13.6" y1="15.9" x2="12.1" y2="16.2"></line>
+		<rect x="11.2" y="8.5" transform="matrix(0.9684 -0.2496 0.2496 0.9684 -2.1302 3.5516)" class="st1" width="3.6" height="3.3"></rect>
+		<line class="st0" x1="16.4" y1="15.1" x2="15" y2="15.5"></line>
+		<line class="st0" x1="19.3" y1="14.3" x2="17.9" y2="14.7"></line>
+		<line class="st0" x1="22.2" y1="13.6" x2="20.7" y2="14"></line>
+		<circle class="st0" cx="26.6" cy="11.1" r="1.3"></circle>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        1,313
+                        
+                    </div>
+                  </div>
+                  <h3>ATMs</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item active" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 29.5" style="enable-background:new 0 0 34 29.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000159448101794050419590000017878407845319755422_">
+	<g id="Layer_1-2">
+		<line class="st0" x1="13.8" y1="29.5" x2="13.8" y2="26.2"></line>
+		<line class="st0" x1="20.2" y1="26.2" x2="20.2" y2="29.5"></line>
+		<line class="st0" x1="13.8" y1="26.2" x2="13.8" y2="17.3"></line>
+		<path class="st0" d="M21.8,26.2c1.1,0,1.9-1.5,1.9-2.5l0,0v-7.8c-0.1-1.7-1.3-3.2-3-3.5l0,0c-2.4-0.6-4.9-0.6-7.4,0l0,0
+			c-1.7,0.3-2.9,1.8-3,3.5v7.8l0,0c0,1.1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="20.2" y1="17.3" x2="20.2" y2="26.2"></line>
+		<line class="st0" x1="4.5" y1="25.4" x2="4.5" y2="22.5"></line>
+		<line class="st0" x1="4.5" y1="22.5" x2="4.5" y2="16"></line>
+		<path class="st0" d="M11.4,11.3L11.4,11.3c-2.4-0.6-4.9-0.6-7.4,0h0c-1.7,0.3-2.9,1.8-3,3.5V20l0,0c0,1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="29.5" y1="25.4" x2="29.5" y2="22.5"></line>
+		<line class="st0" x1="29.5" y1="22.5" x2="29.5" y2="16"></line>
+		<path class="st0" d="M22.6,11.3L22.6,11.3c2.4-0.6,4.9-0.6,7.4,0l0,0c1.7,0.3,2.9,1.8,3,3.5V20l0,0c0,1.1-0.9,2.5-1.9,2.5"></path>
+		<path class="st0" d="M5.6,5.8L5.6,5.8c0,0.8,0.6,1.4,1.4,1.4h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0H7.1
+			C6.3,4.4,5.7,3.8,5.6,3l0,0c0-0.8,0.6-1.4,1.4-1.5c0,0,0,0,0.1,0h1.3c0.8,0,1.4,0.6,1.4,1.4c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="7.7" y1="1.3" x2="7.7" y2="0"></line>
+		<line class="st0" x1="7.7" y1="8.8" x2="7.7" y2="7.4"></line>
+		<path class="st0" d="M14.9,7.1L14.9,7.1c0,0.8,0.6,1.4,1.4,1.4l0,0h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0h-1.3
+			c-0.8,0-1.4-0.6-1.4-1.4c0,0,0,0,0,0l0,0c0-0.8,0.6-1.4,1.4-1.4c0,0,0,0,0,0h1.3c0.8,0,1.4,0.6,1.4,1.4l0,0l0,0"></path>
+		<line class="st0" x1="17" y1="2.7" x2="17" y2="1.3"></line>
+		<line class="st0" x1="17" y1="10.1" x2="17" y2="8.8"></line>
+		<path class="st0" d="M24.2,5.8L24.2,5.8c0,0.8,0.6,1.4,1.4,1.4H27c0.8,0,1.4-0.7,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4h-1.4
+			c-0.8,0-1.4-0.6-1.4-1.4l0,0c0-0.8,0.6-1.4,1.4-1.4H27c0.8,0,1.4,0.7,1.4,1.4l0,0"></path>
+		<line class="st0" x1="26.3" y1="1.3" x2="26.3" y2="0"></line>
+		<line class="st0" x1="26.3" y1="8.8" x2="26.3" y2="7.4"></line>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        33M
+                        
+                    </div>
+                  </div>
+                  <h3>Customers</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item active" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.5 32.3" style="enable-background:new 0 0 33.5 32.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#C1C6C8;stroke-width:2.0034;stroke-linejoin:round;stroke-miterlimit:4.0068;}
+</style>
+<g id="Layer_2_00000065036246324699873310000005242902616922379450_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.5,28.9c1.2-0.7,2.6-1,4-0.8l9.4,1.2c0.2,0,0.4,0,0.5-0.1L32.1,21c0.3-0.2,0.4-0.6,0.2-1l0,0
+			c-0.8-1.3-2.4-1.8-3.7-1.1l-8.4,4.2"></path>
+		<path class="st0" d="M13.6,23.6l4.7,0.5c1.1,0.1,2-0.7,2.1-1.7l0,0c0.1-1.1-0.7-2-1.7-2.1l-4.1-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2C10.7,18,8,18,5.8,19.2l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,20.4 2.9,19.4 7.2,30.2 4.3,31.4 		"></polyline>
+		<line class="st0" x1="1.2" y1="22.3" x2="2.2" y2="21.9"></line>
+		<line class="st0" x1="29.1" y1="19.2" x2="29.1" y2="19.2"></line>
+		<path class="st0" d="M9.4,17L7.1,8c-0.2-0.8,0.2-1.6,1-1.8L27.7,1c0.8-0.2,1.6,0.3,1.8,1c0,0,0,0,0,0L32.4,13
+			c0.2,0.8-0.2,1.6-1,1.8l-13.1,3.4"></path>
+		<line class="st0" x1="13.6" y1="15.9" x2="12.1" y2="16.2"></line>
+		<rect x="11.2" y="8.5" transform="matrix(0.9684 -0.2496 0.2496 0.9684 -2.1302 3.5516)" class="st1" width="3.6" height="3.3"></rect>
+		<line class="st0" x1="16.4" y1="15.1" x2="15" y2="15.5"></line>
+		<line class="st0" x1="19.3" y1="14.3" x2="17.9" y2="14.7"></line>
+		<line class="st0" x1="22.2" y1="13.6" x2="20.7" y2="14"></line>
+		<circle class="st0" cx="26.6" cy="11.1" r="1.3"></circle>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        1.1T
+                        
+                    </div>
+                  </div>
+                  <h3>Net Loans &amp; Advances (in Ksh.)</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.1 33.6" style="enable-background:new 0 0 33.1 33.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000047033223572416092070000016104609993886981031_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.4,30.3c1.2-0.7,2.6-1,3.9-0.8l9.3,1.2c0.2,0,0.4,0,0.5-0.1l11.7-8.2c0.3-0.2,0.4-0.6,0.2-0.9l0,0
+			c-0.7-1.3-2.4-1.8-3.7-1.1L20,24.5"></path>
+		<path class="st0" d="M13.4,25l4.7,0.5c1,0.1,2-0.7,2.1-1.7l0,0c0.1-1-0.7-2-1.7-2.1c0,0,0,0,0,0l-4-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2c-2.2-1.2-4.9-1.2-7.1,0l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,21.8 2.9,20.8 7.1,31.6 4.3,32.7 		"></polyline>
+		<line class="st0" x1="1.2" y1="23.7" x2="2.2" y2="23.3"></line>
+		<line class="st0" x1="28.8" y1="20.7" x2="28.8" y2="20.7"></line>
+		<path class="st0" d="M11.4,20.3C9.9,13.7,17.4,6,17.4,6h4.5c0.1,0,0.1,0,0.2,0.1c0.8,0.9,7.3,8,6,14.2"></path>
+		<path class="st0" d="M17.5,16L17.5,16c0,0.9,0.7,1.6,1.5,1.6c0,0,0,0,0,0h1.5c0.9,0,1.5-0.7,1.5-1.6c0,0,0,0,0,0l0,0
+			c0-0.9-0.7-1.5-1.5-1.6c0,0,0,0,0,0H19c-0.9,0-1.5-0.7-1.5-1.5c0,0,0,0,0,0l0,0c0-0.9,0.7-1.5,1.5-1.5c0,0,0,0,0,0h1.5
+			c0.9,0,1.5,0.7,1.5,1.5c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="19.7" y1="11.4" x2="19.7" y2="10"></line>
+		<line class="st0" x1="19.7" y1="18.9" x2="19.7" y2="17.6"></line>
+		<path class="st0" d="M17.5,6.1L15.8,2L18,1.1c0.6-0.3,1.3,0,1.7,0.5l0,0c0.3,0.5,0.9,0.7,1.5,0.6l3.3-0.8l-2.4,4.7"></path>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        1.5T
+                        
+                    </div>
+                  </div>
+                  <h3>Customer Deposits (in Ksh.)</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.1 33.6" style="enable-background:new 0 0 33.1 33.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000047033223572416092070000016104609993886981031_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.4,30.3c1.2-0.7,2.6-1,3.9-0.8l9.3,1.2c0.2,0,0.4,0,0.5-0.1l11.7-8.2c0.3-0.2,0.4-0.6,0.2-0.9l0,0
+			c-0.7-1.3-2.4-1.8-3.7-1.1L20,24.5"></path>
+		<path class="st0" d="M13.4,25l4.7,0.5c1,0.1,2-0.7,2.1-1.7l0,0c0.1-1-0.7-2-1.7-2.1c0,0,0,0,0,0l-4-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2c-2.2-1.2-4.9-1.2-7.1,0l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,21.8 2.9,20.8 7.1,31.6 4.3,32.7 		"></polyline>
+		<line class="st0" x1="1.2" y1="23.7" x2="2.2" y2="23.3"></line>
+		<line class="st0" x1="28.8" y1="20.7" x2="28.8" y2="20.7"></line>
+		<path class="st0" d="M11.4,20.3C9.9,13.7,17.4,6,17.4,6h4.5c0.1,0,0.1,0,0.2,0.1c0.8,0.9,7.3,8,6,14.2"></path>
+		<path class="st0" d="M17.5,16L17.5,16c0,0.9,0.7,1.6,1.5,1.6c0,0,0,0,0,0h1.5c0.9,0,1.5-0.7,1.5-1.6c0,0,0,0,0,0l0,0
+			c0-0.9-0.7-1.5-1.5-1.6c0,0,0,0,0,0H19c-0.9,0-1.5-0.7-1.5-1.5c0,0,0,0,0,0l0,0c0-0.9,0.7-1.5,1.5-1.5c0,0,0,0,0,0h1.5
+			c0.9,0,1.5,0.7,1.5,1.5c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="19.7" y1="11.4" x2="19.7" y2="10"></line>
+		<line class="st0" x1="19.7" y1="18.9" x2="19.7" y2="17.6"></line>
+		<path class="st0" d="M17.5,6.1L15.8,2L18,1.1c0.6-0.3,1.3,0,1.7,0.5l0,0c0.3,0.5,0.9,0.7,1.5,0.6l3.3-0.8l-2.4,4.7"></path>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        2.0T
+                        
+                    </div>
+                  </div>
+                  <h3>Total Assets (in Ksh.)</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 29.5" style="enable-background:new 0 0 34 29.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+</style>
+<g id="Layer_2_00000159448101794050419590000017878407845319755422_">
+	<g id="Layer_1-2">
+		<line class="st0" x1="13.8" y1="29.5" x2="13.8" y2="26.2"></line>
+		<line class="st0" x1="20.2" y1="26.2" x2="20.2" y2="29.5"></line>
+		<line class="st0" x1="13.8" y1="26.2" x2="13.8" y2="17.3"></line>
+		<path class="st0" d="M21.8,26.2c1.1,0,1.9-1.5,1.9-2.5l0,0v-7.8c-0.1-1.7-1.3-3.2-3-3.5l0,0c-2.4-0.6-4.9-0.6-7.4,0l0,0
+			c-1.7,0.3-2.9,1.8-3,3.5v7.8l0,0c0,1.1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="20.2" y1="17.3" x2="20.2" y2="26.2"></line>
+		<line class="st0" x1="4.5" y1="25.4" x2="4.5" y2="22.5"></line>
+		<line class="st0" x1="4.5" y1="22.5" x2="4.5" y2="16"></line>
+		<path class="st0" d="M11.4,11.3L11.4,11.3c-2.4-0.6-4.9-0.6-7.4,0h0c-1.7,0.3-2.9,1.8-3,3.5V20l0,0c0,1,0.9,2.5,1.9,2.5"></path>
+		<line class="st0" x1="29.5" y1="25.4" x2="29.5" y2="22.5"></line>
+		<line class="st0" x1="29.5" y1="22.5" x2="29.5" y2="16"></line>
+		<path class="st0" d="M22.6,11.3L22.6,11.3c2.4-0.6,4.9-0.6,7.4,0l0,0c1.7,0.3,2.9,1.8,3,3.5V20l0,0c0,1.1-0.9,2.5-1.9,2.5"></path>
+		<path class="st0" d="M5.6,5.8L5.6,5.8c0,0.8,0.6,1.4,1.4,1.4h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0H7.1
+			C6.3,4.4,5.7,3.8,5.6,3l0,0c0-0.8,0.6-1.4,1.4-1.5c0,0,0,0,0.1,0h1.3c0.8,0,1.4,0.6,1.4,1.4c0,0,0,0,0,0l0,0"></path>
+		<line class="st0" x1="7.7" y1="1.3" x2="7.7" y2="0"></line>
+		<line class="st0" x1="7.7" y1="8.8" x2="7.7" y2="7.4"></line>
+		<path class="st0" d="M14.9,7.1L14.9,7.1c0,0.8,0.6,1.4,1.4,1.4l0,0h1.3c0.8,0,1.4-0.6,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4l0,0h-1.3
+			c-0.8,0-1.4-0.6-1.4-1.4c0,0,0,0,0,0l0,0c0-0.8,0.6-1.4,1.4-1.4c0,0,0,0,0,0h1.3c0.8,0,1.4,0.6,1.4,1.4l0,0l0,0"></path>
+		<line class="st0" x1="17" y1="2.7" x2="17" y2="1.3"></line>
+		<line class="st0" x1="17" y1="10.1" x2="17" y2="8.8"></line>
+		<path class="st0" d="M24.2,5.8L24.2,5.8c0,0.8,0.6,1.4,1.4,1.4H27c0.8,0,1.4-0.7,1.4-1.4l0,0c0-0.8-0.6-1.4-1.4-1.4h-1.4
+			c-0.8,0-1.4-0.6-1.4-1.4l0,0c0-0.8,0.6-1.4,1.4-1.4H27c0.8,0,1.4,0.7,1.4,1.4l0,0"></path>
+		<line class="st0" x1="26.3" y1="1.3" x2="26.3" y2="0"></line>
+		<line class="st0" x1="26.3" y1="8.8" x2="26.3" y2="7.4"></line>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        528
+                        
+                    </div>
+                  </div>
+                  <h3>Branches</h3>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 139.5px; margin-right: 30px;"><div class="facts-slider-box">
+              <div class="counter-list">
+                <div class="counter-text">
+                  <div class="count-number count-number-white"> 
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.5 32.3" style="enable-background:new 0 0 33.5 32.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#C1C6C8;stroke-width:2;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#C1C6C8;stroke-width:2.0034;stroke-linejoin:round;stroke-miterlimit:4.0068;}
+</style>
+<g id="Layer_2_00000065036246324699873310000005242902616922379450_">
+	<g id="Layer_1-2">
+		<path class="st0" d="M6.5,28.9c1.2-0.7,2.6-1,4-0.8l9.4,1.2c0.2,0,0.4,0,0.5-0.1L32.1,21c0.3-0.2,0.4-0.6,0.2-1l0,0
+			c-0.8-1.3-2.4-1.8-3.7-1.1l-8.4,4.2"></path>
+		<path class="st0" d="M13.6,23.6l4.7,0.5c1.1,0.1,2-0.7,2.1-1.7l0,0c0.1-1.1-0.7-2-1.7-2.1l-4.1-0.4c-0.5,0-0.9-0.2-1.3-0.4
+			l-0.4-0.2C10.7,18,8,18,5.8,19.2l-2.4,1.2"></path>
+		<polyline class="st0" points="0.4,20.4 2.9,19.4 7.2,30.2 4.3,31.4 		"></polyline>
+		<line class="st0" x1="1.2" y1="22.3" x2="2.2" y2="21.9"></line>
+		<line class="st0" x1="29.1" y1="19.2" x2="29.1" y2="19.2"></line>
+		<path class="st0" d="M9.4,17L7.1,8c-0.2-0.8,0.2-1.6,1-1.8L27.7,1c0.8-0.2,1.6,0.3,1.8,1c0,0,0,0,0,0L32.4,13
+			c0.2,0.8-0.2,1.6-1,1.8l-13.1,3.4"></path>
+		<line class="st0" x1="13.6" y1="15.9" x2="12.1" y2="16.2"></line>
+		<rect x="11.2" y="8.5" transform="matrix(0.9684 -0.2496 0.2496 0.9684 -2.1302 3.5516)" class="st1" width="3.6" height="3.3"></rect>
+		<line class="st0" x1="16.4" y1="15.1" x2="15" y2="15.5"></line>
+		<line class="st0" x1="19.3" y1="14.3" x2="17.9" y2="14.7"></line>
+		<line class="st0" x1="22.2" y1="13.6" x2="20.7" y2="14"></line>
+		<circle class="st0" cx="26.6" cy="11.1" r="1.3"></circle>
+	</g>
+</g>
+</svg>
+
+                    <div class=""> 
+                        1,313
+                        
+                    </div>
+                  </div>
+                  <h3>ATMs</h3>
+                </div>
+              </div>
+            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icofont-rounded-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icofont-rounded-right"></i></button></div><div class="owl-dots disabled"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Counter Area--> 
+
+
+
+    <!-- Join Group Area-->
+<section class="why-choose-us p-60">
+    <div class="container">
+      <div class="box-shadow lg-box-content">
+        <div class="row align-items-center">
+          <div class="content-column col-lg-6 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="600ms">
+            <div class="inner-column">
+              <div class="sec-title">
+                <h2>Join KCB Group</h2>
+                <div class="prose max-w-none"><p>We are committed to attracting, nurturing, developing, and retaining the most talented people available and supporting them in expanding their skills and capabilities to ensure that the KCB Group is the destination of choice for the brightest talents in the industry.</p>
+</div>
+                <div class="btn-area text-left">
+                  <a class="border-btn" href="/careers">Join our talent network<i class="las la-arrow-right"></i></a>
+                </div>
+                <!-- <div class="btn-box green-border text-left"> <a class="btn-one" href="about.html"> <span class="txt"> Join our talent network <i class="las la-arrow-right"></i> </span> </a> </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="image-column col-lg-6 col-md-12 col-sm-12">
+            <div class="inner-column wow fadeInLeft">
+              <figure class="image overlay-anim wow fadeInUp"><img src="https://kcbgroup.com/imgs/join-group.jpg" alt="" loading="lazy"> </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Join Group Area-->
+
+
+
+
+
+<!-- Footer Area-->
+<footer class="footer-area footer-one p-r z-1 pt-110">
+  <div class="topfooter">
+    <div class="container-fluid">
+      <!--=== Footer Widget Area ===-->
+      <div class="footer-widget-area">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="row">
+              
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <!--=== Footer Widget ===-->
+                <div class="footer-widget mb-40">
+                  <h4 class="widget-title">INVESTOR RELATIONS</h4>
+                  <div class="footer-content hoverlink">
+                    <ul class="footer-widget-nav">
+                      
+                      
+                      <li><a href="/financial-statements">Financial Statements</a></li>
+                      
+                      <li><a href="/investor-presentations">Investor Presentations</a></li>
+                      
+                      <li><a href="/shareholder-profile">Shareholder Profile</a></li>
+                      
+                      <li><a href="/earning-calendar">Events</a></li>
+                      
+                      <li><a href="/integrated-reports">Integrated Reports</a></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <!--=== Footer Widget ===-->
+                <div class="footer-widget mb-40">
+                  <h4 class="widget-title">INFORMATION</h4>
+                  <div class="footer-content hoverlink">
+                    <ul class="footer-widget-nav">
+                      
+                      
+                      <li><a href="/about-us">What We Do</a></li>
+                      
+                      <li><a href="/careers">Careers</a></li>
+                      
+                      <li><a href="/write-to-us">Contact Us</a></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <!--=== Footer Widget ===-->
+                <div class="footer-widget mb-40">
+                  <h4 class="widget-title">SUSTAINABILITY</h4>
+                  <div class="footer-content hoverlink">
+                    <ul class="footer-widget-nav">
+                      
+                      
+                      <li><a href="/sustainability-page">Impact Stories</a></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="row">
+              
+              <div class="col-lg-6 col-md-6">
+                <!--=== Footer Widget ===-->
+                <div class="footer-widget mb-40">
+                  <h4 class="widget-title">SUBSIDIARIES</h4>
+                  <div class="footer-content hoverlink">
+                    <ul class="footer-widget-nav">
+                      
+                      
+                      <li><a href="https://insurance.kcbgroup.com/"> KCB Bancassurance Intermediary </a></li>
+                      
+                      <li><a href="https://foundation.kcbgroup.com/"> KCB Foundation </a></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6 col-md-6">
+                <!--=== Footer Widget ===-->
+                <div class="footer-widget mb-40">
+                  <h4 class="widget-title">LOCATIONS</h4>
+                  <div class="footer-content hoverlink">
+                    <ul class="footer-widget-nav">
+                      
+                      
+                      <li><a href="https://ke.kcbgroup.com/"> Kenya </a></li>
+                      
+                      <li><a href="https://ug.kcbgroup.com/"> Uganda </a></li>
+                      
+                      <li><a href="https://tz.kcbgroup.com/"> Tanzania </a></li>
+                      
+                      <li><a href="https://bpr.rw/"> Rwanda </a></li>
+                      
+                      <li><a href="https://bi.kcbgroup.com/"> Burundi </a></li>
+                      
+                      <li><a href="https://ss.kcbgroup.com/"> South Sudan </a></li>
+                      
+                      <li><a href="https://tmb.cd/en/"> DRC </a></li>
+                      
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=== Footer Copyright ===-->
+  <div class="footer-copyright">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-5">
+          <!--=== Footer Nav ===-->
+          <div class="footer-nav hoverlink">
+            <ul>
+              
+              <li><a href="/social-media-disclaimer">Social Media Disclaimer</a></li>
+              
+              <li><a href="/privacy-policy">Privacy Statement</a></li>
+              
+              <li><a href="">Terms of Access</a></li>
+              
+              <li><a href="">Cookie Policy</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <!--=== Footer Text ===-->
+          <div class="footer-text">
+            <p>Regulated by the Central Bank of Kenya | © 2026 KCB Group Limited. All Rights Reserved.</p>
+
+            <div class="social-box">
+              <ul class="social-link">
+                
+                <li><a href="https://www.facebook.com/kcbgroup/" target="_blank"><p><i class="fa-brands fa-facebook"></i></p>
+</a></li>
+                
+                <li><a href="https://twitter.com/KCBGroup?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><p><i class="fa-brands fa-x-twitter"></i></p>
+</a></li>
+                
+                <li><a href="https://www.linkedin.com/company/kcb-bank-group?originalSubdomain=ke" target="_blank"><p><i class="fab fa-linkedin-in"></i></p>
+</a></li>
+                
+                <li><a href="https://www.youtube.com/channel/UC3REin1loCe8bxtZJClwZ2A" target="_blank"><p><i class="fa-brands fa-youtube"></i></p>
+</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer Area-->
+
+
+    
+<div class="ddm ddmcm back-none" style="display: block; opacity: 1;">
+	<div class="ddmcm-wrapper">
+		<div class="ddmcm-box left bottom">
+			<div class="ddmcm-content">
+
+				<h2 class="ddmcm-title">Cookie Consent</h2>
+				
+					<p>We use cookies to give you the best experience on our website. You can choose which cookies you want to allow below. You can find more details in our privacy policy.</p>
+				
+
+				<div class="ddmcm-categories ddmcm-accordion">
+
+					
+					
+						<div class="ddmcm-category">
+
+							<div class="checkbox">
+								<input type="checkbox" id="cookie-category-session-cookies" name="session-cookies" data-ddmcm-category="session-cookies" disabled="" checked="">
+								<label for="cookie-category-session-cookies"></label>
+								
+							</div>
+
+							<div class="ddmcm-accordion-item has-content">
+								<label class="ddmcm-accordion-toggle">
+									Session Cookies
+									
+										<input type="checkbox">
+										<span class="ddmcm-accordion-arrow"></span>
+									
+								</label>
+								
+									<div class="ddmcm-accordion-content">
+										
+											<p>These are cookies are created temporarily in your browser's subfolder while you are visiting a website. These cookies expire and are automatically deleted when you close your internet browser.</p>
+										
+									</div>
+								
+							</div>
+
+						</div>
+				
+					
+					
+						<div class="ddmcm-category">
+
+							<div class="checkbox">
+								<input type="checkbox" id="cookie-category-persistent-cookies" name="persistent-cookies" data-ddmcm-category="persistent-cookies">
+								<label for="cookie-category-persistent-cookies"></label>
+								
+							</div>
+
+							<div class="ddmcm-accordion-item has-content">
+								<label class="ddmcm-accordion-toggle">
+									Persistent Cookies
+									
+										<input type="checkbox">
+										<span class="ddmcm-accordion-arrow"></span>
+									
+								</label>
+								
+									<div class="ddmcm-accordion-content">
+										
+											<p>They remain in your browser’s subfolder and are activated again once you visit the website that created that particular cookie. A persistent cookie does not expire when you close your browser, it remains in the browser’s subfolder for the duration period set within the cookie’s file.</p>
+										
+									</div>
+								
+							</div>
+
+						</div>
+				
+					
+					
+						<div class="ddmcm-category">
+
+							<div class="checkbox">
+								<input type="checkbox" id="cookie-category-perfomance-cookies" name="perfomance-cookies" data-ddmcm-category="perfomance-cookies">
+								<label for="cookie-category-perfomance-cookies"></label>
+								
+							</div>
+
+							<div class="ddmcm-accordion-item has-content">
+								<label class="ddmcm-accordion-toggle">
+									Perfomance Cookies
+									
+										<input type="checkbox">
+										<span class="ddmcm-accordion-arrow"></span>
+									
+								</label>
+								
+									<div class="ddmcm-accordion-content">
+										
+											<p>These are cookies used specifically for gathering data on how you use our website e.g., which pages of the website are visited most often, or if you get error messages on web pages. These cookies monitor only the performance of the site as the user interacts with it. These cookies don’t collect identifiable information on visitors, which means all the data collected is anonymous and only used to improve the functionality of a website.</p>
+										
+									</div>
+								
+							</div>
+
+						</div>
+				
+					
+					
+						<div class="ddmcm-category">
+
+							<div class="checkbox">
+								<input type="checkbox" id="cookie-category-third-party-cookies" name="third-party-cookies" data-ddmcm-category="third-party-cookies">
+								<label for="cookie-category-third-party-cookies"></label>
+								
+							</div>
+
+							<div class="ddmcm-accordion-item has-content">
+								<label class="ddmcm-accordion-toggle">
+									Third Party Cookies
+									
+										<input type="checkbox">
+										<span class="ddmcm-accordion-arrow"></span>
+									
+								</label>
+								
+									<div class="ddmcm-accordion-content">
+										
+											<p>Third-party cookies are installed by some of our third parties with the aim of collecting certain information from web users to carry out research into, for example, behaviour, demographics or spending habits.</p>
+										
+									</div>
+								
+							</div>
+
+						</div>
+				
+					
+					
+						<div class="ddmcm-category">
+
+							<div class="checkbox">
+								<input type="checkbox" id="cookie-category-functionality-cookies" name="functionality-cookies" data-ddmcm-category="functionality-cookies">
+								<label for="cookie-category-functionality-cookies"></label>
+								
+							</div>
+
+							<div class="ddmcm-accordion-item has-content">
+								<label class="ddmcm-accordion-toggle">
+									Functionality Cookies
+									
+										<input type="checkbox">
+										<span class="ddmcm-accordion-arrow"></span>
+									
+								</label>
+								
+									<div class="ddmcm-accordion-content">
+										
+											<p>Functionality cookies allow KCB Group website to remember the user's site preferences and choices they make on the site including username, region, and language. This allows the website to provide personalized features/ products if you share your location. They are anonymous and don’t track browsing activity across other websites.</p>
+										
+									</div>
+								
+							</div>
+
+						</div>
+				
+					
+				</div>
+
+				<div class="ddmcm-buttons">
+					<button id="ddmcm-button-all" class="ddm-button">select all</button>
+					<button id="ddmcm-button-selected" class="ddm-button inverted">confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+    <script src="/js/jquery.min.js?v=2.0.3"></script>
+    <script src="/vendor/cookie-byte/js/ddmcb.min.js"></script>
+
+    <link rel="modulepreload" as="script" href="https://kcbgroup.com/build/assets/site-D_nETYmu.js"><link rel="modulepreload" as="script" href="https://kcbgroup.com/build/assets/utils-CeCSZVER.js"><link rel="modulepreload" as="script" href="https://kcbgroup.com/build/assets/vendor-TnWlcdk9.js"><link rel="modulepreload" as="script" href="https://kcbgroup.com/build/assets/ui-C35840Ih.js"><script type="module" src="https://kcbgroup.com/build/assets/site-D_nETYmu.js" data-navigate-track="reload"></script>
+
+
+
+    <script type="text/javascript">
+        (function ($) {
+            $("#ip-container").inlinePopup({
+                itemSelector: ".article"
+            })
+        })(jQuery)
+    </script>
+
+    <script>
+    function updateAllCookiesToSecure() {
+        const cookies = document.cookie.split(';');
+        const relevantCookies = cookies.filter(cookie => cookie.trim().startsWith('cookie-byte-'));
+        const expiryDate = new Date();
+        expiryDate.setTime(expiryDate.getTime() + (360 * 24 * 60 * 60 * 1000));
+
+        relevantCookies.forEach(cookie => {
+            let [name, value] = cookie.split('=');
+            name = name.trim();
+            value = value ? value.trim() : '';
+            document.cookie = `${name}=${value}; path=/; Secure; SameSite=Strict; expires=${expiryDate.toUTCString()}`;
+        });
+    }
+    updateAllCookiesToSecure();
+</script>
+
+
+
+    
+
+    
+
+    
+
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDGWS9P"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+
+    
+
+    
+
+    
+
+
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;5301ceb9805347548b9c5b80469484fe&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

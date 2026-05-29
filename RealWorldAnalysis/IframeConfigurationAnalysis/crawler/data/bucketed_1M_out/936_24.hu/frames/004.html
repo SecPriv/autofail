@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head></head><body>
+    <script type="text/javascript">
+        (() => {
+            const canUseLocalStore = (typeof localStorage === 'object');
+            //allowed domains
+            const whitelist = [
+                '24.hu', '50plusz.hu',
+                'akcios-ujsag.hu',
+                'cafeblog.hu',
+                'firstclass.hu', 'gyerekszoba.hu',
+                'hazipatika.com', 'hirstart.hu',
+                'kremmania.hu', 'lap.hu', 'lapklub.hu',
+                'marieclaire.hu', 'meglepetes.hu', 'ng.hu', 'ng.24.hu', 'nlc.hu', 'nosalty.hu', 'noklapja.hu',
+                'sorhat.hu', 'startlap.hu',
+                'startlapjatekok.hu', 'startlapkupon.hu', 'story.hu',
+                'terkep24.hu', 'vezess.hu', 'wellandfit.hu', 'refresher.hu', 'mc.hu'
+            ];
+
+            const verifyOrigin = (origin) => {
+                const originParts = origin.replace(/^http(s)?:\/\//ig, '').split('.');
+                const topLevelDomain = originParts.slice(-2).join('.');
+                return whitelist.includes(topLevelDomain);
+            };
+
+            const handleRequest = (event) => {
+                if (verifyOrigin(event.origin) && typeof event.data === 'string') {
+                    const data = JSON.parse(event.data);
+
+                    switch (data.method) {
+                        case 'get':
+                            if (typeof data.key !== 'undefined') {
+                                /* send back data */
+                                event.source.postMessage(JSON.stringify({ id: data.id, key: data.key, value: dataGet(data.key), type: 'get' }), event.origin);
+                            }
+                            break;
+                        case 'set':
+                            if (typeof data.key !== 'undefined' && typeof data.val !== 'undefined') {
+                                /* got key and value, doing store */
+                                dataSet(data.key, data.val);
+                                event.source.postMessage(JSON.stringify({ id: data.id, key: data.key, value: 'OK', type: 'set' }), event.origin);
+                            }
+                            break;
+                        case 'clear':
+                            /* no need for further check-up, doing clearing */
+                            dataClear();
+                            event.source.postMessage(JSON.stringify({ id: data.id, value: 'OK', type: 'clear' }), event.origin);
+                            break;
+                    }
+                }
+            };
+
+            const dataSet = (key, value) => {
+                if (canUseLocalStore) {
+                    localStorage.setItem(key, value);
+                } else {
+                    setCookie(key, value);
+                }
+            };
+            /* clear localStore data */
+            const dataGet = (key) => {
+                return (canUseLocalStore) ? localStorage.getItem(key) : getCookie(key);
+            };
+
+            const dataClear = () => {
+                if (canUseLocalStore) {
+                    localStorage.clear();
+                }
+                /* clear cookie data */
+                clearCookies();
+            };
+
+            const setCookie = (cname, cvalue) => {
+                const d = new Date();
+                d.setTime(d.getTime() + (this.segmentValid * 1000));
+                const expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + "; " + expires;
+            }
+
+            const getCookie = (cname) => {
+                const name = cname + "=";
+                const ca = document.cookie.split(';');
+                for (const element of ca) {
+                    let c = element.trim();
+                    if (c.indexOf(name) === 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return null;
+            };
+
+            const clearCookies = () => {
+                document.cookie.split(";").forEach((c) => {
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+                });
+            }
+
+            window.addEventListener("message", handleRequest, false);
+        })();
+
+    </script>
+
+
+</body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html><html><head>
+                
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+               
+        window.addEventListener('message', (event) => {
+            
+        const getTargetStorage = (targetStorage) => {
+            if (targetStorage === 'local') {
+                return localStorage
+            }
+
+            if (targetStorage === 'session') {
+                return sessionStorage
+            }
+
+            return null
+        }
+    
+            
+        if (event.data.action === 'gorgiasSyncStorage') {
+            if(!event.data.payload || !event.data.payload.targetStorage || !event.data.payload.entries) {
+                return
+            }
+
+            const storage = getTargetStorage(event.data.payload.targetStorage)
+            if (!storage) {
+                return
+            }
+
+            for (const key of Object.keys(storage)) {
+                if (key && key.includes('gorgias')) {
+                    storage.removeItem(key)
+                }
+            }
+
+            for (const { key, value } of event.data.payload.entries) {
+                if (key.includes('gorgias')) {
+                    storage.setItem(key, value)
+                }
+            }
+        }
+    
+            
+        if (event.data.action === 'gorgiasSaveToStorage') {
+            if(!event.data.payload || !event.data.payload.targetStorage || !event.data.payload.entries) {
+                return
+            }
+
+            const storage = getTargetStorage(event.data.payload.targetStorage)
+            if (!storage) {
+                return
+            }
+
+            for (const { key, value } of event.data.payload.entries) {
+                if (key.includes('gorgias')) {
+                    storage.setItem(key, value)
+                }
+            }
+        }
+    
+            
+        if (event.data.action === 'gorgiasRemoveFromStorage') {
+            if(!event.data.payload || !event.data.payload.targetStorage || !event.data.payload.keys) {
+                return
+            }
+
+            const storage = getTargetStorage(event.data.payload.targetStorage)
+            if (!storage) {
+                return
+            }
+    
+            for (const key of event.data.payload.keys) {
+                storage.removeItem(key)
+            }
+        }
+    
+            
+        if (event.data.action === 'gorgiasCheckoutStorageRequest') {
+            const storageData = {
+                localStorage: {},
+                sessionStorage: {},
+            }
+
+            for (const key of Object.keys(localStorage)) {
+                if (!key || !key.includes('gorgias')) {
+                    continue
+                }
+
+                const value = localStorage.getItem(key)
+                if (value) {
+                    storageData.localStorage[key] = value
+                }
+            }
+
+            for (const key of Object.keys(sessionStorage)) {
+                if (!key || !key.includes('gorgias')) {
+                    continue
+                }
+
+                const value = sessionStorage.getItem(key)
+                if (value) {
+                    storageData.sessionStorage[key] = value
+                }
+            }
+
+            window.parent.postMessage(
+                {
+                    action: 'gorgiasCheckoutStorageResponse',
+                    storageData,
+                },
+                '*',
+            )
+        }
+    
+        });
+    
+            });
+        </script>
+    
+            </head>
+        <body>
+    </body></html>

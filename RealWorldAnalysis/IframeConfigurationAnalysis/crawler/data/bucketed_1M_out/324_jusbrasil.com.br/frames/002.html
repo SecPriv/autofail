@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+
+  <body>
+    <script>
+      (function () {
+        var qsArgs = location.search.substr(1).split('&');
+        var found = qsArgs.filter(function (qs) {
+          return /^v=/.test(qs);
+        })[0] || '';
+        var value = found.split('=')[1] || '';
+        var version = /^\d+\.\d+\.\d+$/.test(value) ? value : '1.1.1';
+        var script = document.createElement('script');
+        script.src = 'https://static.jusbr.com/libs/snowpiercer-' + version + '.min.js';
+        document.body.appendChild(script);
+      })();
+    </script><script src="https://static.jusbr.com/libs/snowpiercer-3.1.1.min.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a00345c74f035bb9',t:'MTc3OTUzMTA0NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+</body></html>

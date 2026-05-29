@@ -1,0 +1,500 @@
+<!--?xml version='1.0' encoding='UTF-8' ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="margin-top: 130px;"><head id="head"><link type="text/css" rel="stylesheet" href="/eVisa/javax.faces.resource/theme.css.evisa?ln=primefaces-aristo"><link type="text/css" rel="stylesheet" href="/eVisa/javax.faces.resource/components.css.evisa?ln=primefaces&amp;v=6.0"><script type="text/javascript" src="/eVisa/javax.faces.resource/jquery/jquery.js.evisa?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/eVisa/javax.faces.resource/core.js.evisa?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/eVisa/javax.faces.resource/components.js.evisa?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/eVisa/javax.faces.resource/validation/validation.js.evisa?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/eVisa/javax.faces.resource/validation/beanvalidation.js.evisa?ln=primefaces&amp;v=6.0"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en';PrimeFaces.settings.validateEmptyFields=true;PrimeFaces.settings.considerEmptyStringNull=false;}</script>
+        <title>Egypt e-Visa Portal</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="plugins/revolution/css/settings.css">
+        <link rel="stylesheet" href="plugins/revolution/css/layers.css">
+        <link rel="stylesheet" href="plugins/revolution/css/navigation.css">
+        <link href="plugins/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <script src="JavaScriptServlet"></script></head><body id="body" elementname="body"><div class="buorg" id="buorg" style="cursor: pointer;"><div class="buorg-pad" role="status" aria-live="polite"><span class="buorg-icon"> </span><b class="buorg-mainmsg">Your web browser (Chrome 99) has a serious security vulnerability!</b> <span class="buorg-moremsg">Update your browser for more security, speed and the best experience on this site.</span> <span class="buorg-buttons"><a id="buorgul" href="https://browser-update.org/update-browser.html#3.3.66:visa2egypt.gov.eg" target="_blank" rel="noopener">Update browser</a> <a id="buorgig" role="button" tabindex="0">Ignore</a></span></div><style>.buorg-icon {width: 22px; height: 16px; vertical-align: middle; position: relative; top: -0.05em; display: inline-block; background: no-repeat 0px center url(https://browser-update.org/static/img/small/c.png);}</style><style>.buorg {position:absolute;position:fixed;z-index:111111; width:100%; top:0px; left:0px; border-bottom:1px solid #A29330; text-align:center;  color:#000; background-color: #fff8ea; font: 18px Calibri,Helvetica,sans-serif; box-shadow: 0 0 5px rgba(0,0,0,0.2);animation: buorgfly 1s ease-out 0s;}.buorg-pad { padding: 9px;  line-height: 1.7em; }.buorg-buttons { display: block; text-align: center; }#buorgig,#buorgul,#buorgpermanent { color: #fff; text-decoration: none; cursor:pointer; box-shadow: 0 0 2px rgba(0,0,0,0.4); padding: 1px 10px; border-radius: 4px; font-weight: normal; background: #5ab400;    white-space: nowrap;    margin: 0 2px; display: inline-block;}#buorgig { background-color: #edbc68;}@media only screen and (max-width: 700px){.buorg div { padding:5px 12px 5px 9px; line-height: 1.3em;}}@keyframes buorgfly {from {opacity:0;transform:translateY(-50px)} to {opacity:1;transform:translateY(0px)}}.buorg-fadeout {transition: visibility 0s 8.5s, opacity 8s ease-out .5s;}</style></div>
+    <style>
+        @media only screen and (max-width : 766px) {
+            .topbar-responsive {
+                min-width: 100% !important; 
+            }
+            .hidden-responsive {
+                display: none !important;
+            }
+        }
+
+    </style><div id="j_idt4" class="ui-outputpanel ui-widget">
+        <div id="top-bar" class="visible-sm visible-xs visible-md visible-lg home topbar-responsive">
+            <div style="max-width: 100%" class="zt-container">
+                <div class="social-top pull-left"><a href="/eVisa/Home?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt6" class="hidden-responsive">
+                        <img src="images/logo.png" alt=""></a>
+                </div>
+                <div style="position: absolute !important; text-align: left;  color: #000;    font-weight: bold;margin-left: 90px" class=" hidden-responsive login pull-left">
+                    <h2 class="hidden-responsive" style="    font-size: 11px;                         line-height: 1px;">
+                        Arab Republic Of Egypt</h2>
+                    <br>
+                    <h2 class="hidden-responsive" style="line-height: 1px;margin-top: -38px;font-size: 21px;">
+                        Electronic Visa Portal</h2>
+                </div>
+                <div class="top-bar-wrap">
+
+                    <div style="padding:12px" class="login pull-right">
+                        <ul>
+                            <li><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt10">Sign In
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/SignUp?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt14" style="border-right: none;padding-left: 9px;">Sign Up
+                                    </a>
+                            </li>
+<form id="lang_frm" name="lang_frm" method="post" action="/eVisa/Home?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE&amp;VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" enctype="application/x-www-form-urlencoded" style="display: inline-block">
+<input type="hidden" name="lang_frm" value="lang_frm">
+<select name="lang_frm:j_idt18" class="selectone" size="1" style="background-image: none !important;background: black; color: #fff;border: none;padding: 7px;" onchange="submit();">	<option value="en" selected="selected">English</option>
+	<option value="ar">العربية</option>
+	<option value="fr">Français</option>
+	<option value="ru">Pусский</option>
+	<option value="zh">中文</option>
+	<option value="de">Deutsch</option>
+	<option value="it">Italiano</option>
+	<option value="es">Español</option>
+</select><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-559657116080658534:-8946075974861506686" autocomplete="off">
+<input type="hidden" name="VISTK" value="KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE"></form>                            
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div></div>
+
+    <style>
+        @media only screen and (max-width : 425px) {
+            .lang-menu {
+                display: inline-block;  
+                padding: 8px !important;
+                float: right;
+            }
+            .lang-menu select {
+                height: 35px !important;
+            }
+        }
+
+        @media only screen and (min-width : 767px) {
+            .lang-menu {
+                display: none !important;  
+            }
+        }
+    </style>
+    <!--outofthedatepluginscript-->
+<script>function $buo_f(){var e=document.createElement("script");e.src="//browser-update.org/update.min.js",document.body.appendChild(e)}var $buoop={notify:{i:10,f:54,o:46,s:9,c:59},unsecure:!0,unsupported:!1,api:5};try{document.addEventListener("DOMContentLoaded",$buo_f,!1)}catch(e){window.attachEvent("onload",$buo_f)}</script>
+    <header id="header" class="stricky home-three">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                    </button>
+                    <div style="float: left;border: none;width: 113px;padding-top: 0px; width: 84px" class="navbar-toggle collapsed" aria-expanded="false"><a href="/eVisa/Home?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt54">
+                            <img src="images/logo.png" alt=""></a>
+
+                    </div>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse no-r-p-l no-r-p-r" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav">
+
+
+                        <ul class="nav navbar-nav">
+                            <li style="margin-right: -14px;margin-top: 9px;"><a href="/eVisa/Home?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt58" onclick="return false;" style="pointer-events: none; cursor: default">
+                                    <img style="width: 21px" src="images/liicon.png" alt=""></a></li>
+                            <li><a href="/eVisa/Home?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt62">Home
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/About-Egypt?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt66">About Egypt
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/HowDoIApply?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt70">How to Apply
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/Disclaimer?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt74">Disclaimer
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt78">Apply Now
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/FAQ?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt82">FAQ
+                                    </a>
+                            </li>
+                            <li><a href="/eVisa/ContactUs?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt86">Contact Us
+                                    </a>
+                            </li>
+
+
+
+                        </ul>
+
+                    </ul>
+
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </header>
+
+
+        <section class="rev_slider_wrapper slider1">
+            <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item slides">
+                        <div class="slide-1"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt91" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">
+                        <div class="slide-2"></div>
+                        <div class="hero">        
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt95" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides active">
+                        <div class="slide-3"></div>
+                        <div class="hero">        
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt99" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>      
+                        </div>
+                    </div>
+                    <div class="item slides">                
+                        <div class="slide-4"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt103" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">               
+                        <div class="slide-5"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt107" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">                 
+                        <div class="slide-6"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt111" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">             
+                        <div class="slide-7"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt115" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">             
+                        <div class="slide-8"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt119" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">              
+                        <div class="slide-9"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt123" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                    <div class="item slides">              
+                        <div class="slide-10"></div>
+                        <div class="hero">
+                            <hgroup>
+                                <h3>Welcome to</h3>        
+                            </hgroup>
+                            <hgroup>
+                                <h1>Egypt e-Visa Portal</h1>
+                            </hgroup><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt127" style="text-align: center" class="btn btn-warning btn-lg">Get your e-Visa now &nbsp;
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i></a>     
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+        </section>
+
+
+
+        <section class="filter-tour home-two">
+
+            <div class="zt-container">
+                <div class="filter-wrap">
+
+                    <form class="form-inline filter-box">
+
+                        <div class="col-md-12">
+
+                            <h1 style="color:#fff;text-align: center;text-shadow:1px 2px #000">e-Visa processing steps</h1>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="popular-services sec-padding sec-bg-default home-two">
+            <div class="zt-container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="tour-list-box text-center">
+                            <div class="img-box zt-circl">
+                                <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                                    <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                                    </div>
+                                </div>
+                                <img width="62px" height="72px" src="images/SingUp.png" alt="">
+                            </div>
+                            <div class="box-content">
+                                <h3>Sign Up</h3>
+
+                                <div style="height:212px" class="excert">
+                                    Take a few seconds to get yourself signed up. All you need is your email address and some complementary information.
+                                </div><a href="/eVisa/SignUp?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt131" style="width:100%" class="btn btn-apply btn-lg">Sign Up
+                                    </a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="tour-list-box text-center">
+                            <div class="img-box zt-circl">
+                                <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                                    <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                                    </div>
+                                </div>
+                                <img src="images/SingIn.png" alt="">
+                            </div>
+                            <div class="box-content">
+                                <h3>Sign In</h3>
+
+                                <div style="height:212px" class="excert">
+                                    Sign into your account and get access to your pending application(s), or apply for new application.
+                                </div><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt135" style="width:100%" class="btn btn-warning btn-lg">Sign In
+                                    </a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="tour-list-box text-center">
+                            <div class="img-box zt-circl">
+                                <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                                    <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+                                    </div>
+                                </div>
+                                <img src="images/ApplyAndPayOnline.png" alt="">
+                            </div>
+                            <div class="box-content">
+                                <h3>Apply and pay online</h3>
+
+                                <div style="height:212px" class="excert">
+                                    Fill in the application form and pay using Visa card, MasterCard or other debit cards. You have to create an e-Visa application at least 7 days before your departure.
+                                </div><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt139" style="width:100%" class="btn btn-success btn-lg">Apply and pay online
+                                    </a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="tour-list-box text-center">
+                            <div class="img-box zt-circl">
+                                <div class="zt-overlay-panel zt-flex zt-flex-right text-center">
+                                    <div class="box-wrap-img zt-overlay-background zt-flex zt-flex-middle">
+
+                                    </div>
+                                </div>
+                                <img src="images/ApplicationProcessing.png" alt="">
+                            </div>
+                            <div class="box-content">
+                                <h3>Application processing</h3>
+
+                                <div style="height:212px" class="excert">
+                                    After you have completed your application and made the payment, your application will be processed. As soon as your visa application has been processed, you will receive an email informing you, with the current application status.
+                                </div><a href="/eVisa/SignIn?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt143" style="width:100%" class="btn btn-primary btn-lg">Application processing
+                                    </a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer style="background-color: #000; padding: 25px;background-image: url('images/footer.jpg')" id="footer" class="sec-padding">
+            <div class="zt-container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-3 col-xs-12">
+                        <div class="footer-widget notitle about-widget" style="padding-top: 35px;">
+                            <div class="title">
+                            </div>
+                            <h3 style="color:#4ea0d2"></h3>
+                            <ul class="social-footer">
+                                <li style="padding: 16px">  <a href="https://www.accuweather.com/en/eg/egypt-weather" target="_blank"><img src="images/WeatherZone.png" width="157" height="60"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div style="padding-top: 45px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="footer-widget gallery-widget">
+                            <div class="title">
+                            </div>
+                            <ul id="gallerywidget" class="list-unstyled">
+                                <li data-src="images/tour/3.jpg">
+                                    <h3 style="color:Orange; font-size:35px; letter-spacing:6px;">EGYPT</h3>
+                                    <h3 style="color: #fff;font-size: 20px">Where it all begins</h3>
+
+                                </li>
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <div class="footer-bottom text-white home-three">
+        <div class="zt-container">
+            <div class="row">
+
+                <div class="col-md-1 col-sm-12 col-xs-12">
+                    <img src="images/flag.png" width="54" height="50">
+
+                </div>
+
+                <div class="col-md-8 col-sm-12 col-xs-12">
+
+                    <p>©
+                        <script language="JavaScript" type="text/javascript">
+                            /* <![CDATA[ */
+                            now = new Date;
+                            theYear = now.getYear();
+
+                            if (theYear < 1900) {
+                                theYear = theYear + 1900;
+                            }
+                            document.write(theYear);
+                            /* ]]> */
+                        </script>2026- Ministry of Interior - Arab Republic of Egypt - All Rights Reserved</p>
+
+                </div>
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <div class="right-text pull-right">
+                        <ul style="margin-top: 10px" class="menu-footer ">
+                            <li><a href="/eVisa/TermsOfUse?VISTK=KSYY-ARN2-G20A-ODH6-I013-39DL-4LAQ-F2HV-VSUV-KWUG-F9PK-145A-OVXM-8B7K-VZ7W-NXWE" id="j_idt148">Terms of Use
+                                    </a> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        <script src="plugins/jquery/jquery-1.12.4.min.js"></script>
+        <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="plugins/jquery-ui-1.12.1/jquery-ui.js"></script> 
+        <script src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="js/main.js"></script>
+<script src="//browser-update.org/update.min.js"></script><script src="//browser-update.org/update.show.min.js"></script></body></html>

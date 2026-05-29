@@ -1,0 +1,1657 @@
+<!DOCTYPE html><html dir="ltr" lang="bg" class="wf-opensans-n6-active wf-active"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> - Форум</title>
+
+	<link rel="alternate" type="application/atom+xml" title="Фийд - " href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822">	<link rel="alternate" type="application/atom+xml" title="Фийд - Новини" href="/app.php/feed/news?sid=01919f093bcc3fd640df61d9432c9822">	<link rel="alternate" type="application/atom+xml" title="Фийд - Всички форуми" href="/app.php/feed/forums?sid=01919f093bcc3fd640df61d9432c9822">	<link rel="alternate" type="application/atom+xml" title="Фийд - Нови Теми" href="/app.php/feed/topics?sid=01919f093bcc3fd640df61d9432c9822">	<link rel="alternate" type="application/atom+xml" title="Фийд - Активни Теми" href="/app.php/feed/topics_active?sid=01919f093bcc3fd640df61d9432c9822">			
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js" async=""></script><script type="text/javascript">
+	WebFontConfig = {
+		google: {
+			families: ['Open+Sans:600:cyrillic-ext,latin,greek-ext,greek,vietnamese,latin-ext,cyrillic']
+		}
+	};
+
+	(function(d) {
+		var wf = d.createElement('script'), s = d.scripts[0];
+		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+		wf.async = true;
+		s.parentNode.insertBefore(wf, s);
+	})(document);
+</script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="./styles/se_square_left/theme/stylesheet.css?assets_version=203" rel="stylesheet">
+<link href="./styles/se_square_left/theme/bg/stylesheet.css?assets_version=203" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/se_square_left/theme/tweaks.css?assets_version=203" rel="stylesheet">
+<![endif]-->
+
+	
+ 	
+			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+			<script type="text/javascript">
+// <![CDATA[
+	function switchProfiles() {
+		var pss_cont = $('#page-body');
+		var pss_btn = $('#profile-switcher');
+		var pss_url = pss_btn.attr('href');
+		var pss_left = pss_cont.hasClass('leftsided');
+
+		phpbb.addAjaxCallback('pss', function(res) {
+			if (res.success) {
+				if(pss_left) {
+					pss_cont.removeClass('leftsided');
+					pss_btn.parent('li').attr('class', 'small-icon icon-pss-left');
+					pss_btn.html('Postprofile on the left');
+					pss_url = pss_url.substring(0, pss_url.length - 1) + '1';
+				} else {
+					pss_cont.addClass('leftsided');
+					pss_btn.parent('li').attr('class', 'small-icon icon-pss-right');
+					pss_btn.html('Postprofile on the right');
+					pss_url = pss_url.substring(0, pss_url.length - 1) + '0';
+				}
+				pss_btn.attr('href', pss_url);
+			}
+		});
+	}
+// ]]>
+</script>
+
+	
+<link href="./ext/david63/sitelogo/styles/prosilver/theme/site_logo_sitename.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/david63/sitelogo/styles/prosilver/theme/site_logo_centre.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/dmzx/filedownload/styles/prosilver/theme/filedownload.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/hifikabin/quotethumbnails/styles/prosilver/theme/quotethumbnails.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/matu58/onlinestatus/styles/all/theme/onlinestatus.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/paul999/mention/styles/all/theme/mention.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/paybas/breadcrumbmenu/styles/all/theme/breadcrumb-menu.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/phpbb/boardrules/styles/prosilver/theme/boardrules_common.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/phpbb/collapsiblecategories/styles/se_square_left/theme/collapsiblecategories.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/rmcgirr83/elonw/styles/all/theme/elonw.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/rmcgirr83/topfive/styles/prosilver/theme/topfive.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/spaceace/forumlegend/styles/prosilver/theme/forumlegend.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/tatiana5/profileSideSwitcher/styles/prosilver/theme/profile_side_switcher.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/tatiana5/profileSideSwitcher/styles/prosilver/theme/en/profile_side_switcher.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/vse/abbc3/styles/all/theme/abbc3.min.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/vse/lightbox/styles/all/template/lightbox/css/lightbox.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+<link href="./ext/vse/scrolltotop/styles/all/theme/scrolltotop.css?assets_version=203" rel="stylesheet" type="text/css" media="screen">
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600&amp;subset=cyrillic-ext,latin,greek-ext,greek,vietnamese,latin-ext,cyrillic" media="all"></head>
+<body id="phpbb" class="section-index ltr hasjs hastouch" style="">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar" role="banner">
+					<div class="inner">
+
+			<div id="site-description" class="site-description">
+				<a id="logo" class="logo" href="http://www.fenixforum.net/" title="Начало"><span class="site_logo"></span></a>
+				<h1></h1>
+				<p></p>
+				<p class="skiplink"><a href="#start_here">Пропусни</a></p>
+			</div>
+
+									
+			</div>
+					</div>
+				<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-main" class="nav-main linklist" role="menubar">
+
+		<li id="quick-links" class="quick-links dropdown-container responsive-menu" data-skip-responsive="true" style="">
+			<a href="#" class="dropdown-trigger dropdown-toggle">
+				<i class="icon fa-bars fa-fw" aria-hidden="true"></i><span>Бързи връзки</span>
+			</a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					
+					
+											<li class="separator"></li>
+													<li>
+								<a href="./memberlist.php?sid=01919f093bcc3fd640df61d9432c9822" role="menuitem">
+									<i class="icon fa-group fa-fw" aria-hidden="true"></i><span>Потребители</span>
+								</a>
+							</li>
+																			<li>
+								<a href="./memberlist.php?mode=team&amp;sid=01919f093bcc3fd640df61d9432c9822" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>Екип</span>
+								</a>
+							</li>
+																<li class="separator"></li>
+
+									</ul>
+			</div>
+		</li>
+
+				<li data-skip-responsive="true">
+			<a href="/app.php/help/faq?sid=01919f093bcc3fd640df61d9432c9822" rel="help" title="Често задавани въпроси" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>Въпроси/Отговори</span>
+			</a>
+		</li>
+						
+			<li class="rightside" data-skip-responsive="true">
+			<a href="./ucp.php?mode=login&amp;sid=01919f093bcc3fd640df61d9432c9822" title="Влез" accesskey="x" role="menuitem">
+				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>Влез</span>
+			</a>
+		</li>
+					<li class="rightside" data-skip-responsive="true">
+				<a href="./ucp.php?mode=register&amp;sid=01919f093bcc3fd640df61d9432c9822" role="menuitem">
+					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>Регистрация</span>
+				</a>
+			</li>
+						</ul>
+
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+						<li class="breadcrumbs">
+							<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="http://www.fenixforum.net/" itemprop="url" data-navbar-reference="home" title="Начало"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span itemprop="title">Начало</span></a></span>
+										<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="./index.php?sid=01919f093bcc3fd640df61d9432c9822" itemprop="url" accesskey="h" data-navbar-reference="index" title="Форум"><span itemprop="title">Форум</span></a></span>
+
+								</li>
+		
+			</ul>
+
+	</div>
+</div>
+	</div>
+
+	
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" class="leftsided" role="main">
+		
+			<script type="text/javascript">
+	// <![CDATA[
+		var pss_cont = document.getElementById('page-body');
+		pss_cont.className = 'leftsided';
+	// ]]>
+	</script>
+
+
+<p class="right responsive-center time">Дата и час: 23 Май 2026, 17:06</p>
+
+	<div class="forabg" id="top_five">
+	<div class="inner">
+	<ul class="topiclist">
+		<li class="header">
+			<dl>
+				<dt><div class="list-inner">Newest Posts</div></dt>
+				<dd class="topics tf-active-header">Top Active Users</dd>
+				<dd class="lastpost"><span>Newest Users</span></dd>
+			</dl>
+		</li>
+	</ul>
+	<ul class="topiclist topics">
+		<li class="row bg1">
+			<dl>
+				<dt>
+					<div class="list-inner">
+						<ul>
+															<li>
+																			<a href="viewtopic.php?f=16&amp;p=319468&amp;sid=01919f093bcc3fd640df61d9432c9822#p319468" class="topictitle subforum read">Отбраната на Нова Европа</a><span class="meta">от <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a> » 23 Май 2026, 17:04 » In&nbsp;<a href="viewforum.php?f=16&amp;sid=01919f093bcc3fd640df61d9432c9822">Съвременни конфликти</a></span>
+																											</li>
+															<li>
+																			<a href="viewtopic.php?f=16&amp;p=319467&amp;sid=01919f093bcc3fd640df61d9432c9822#p319467" class="topictitle subforum read">Войната в Украйна</a><span class="meta">от <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a> » 23 Май 2026, 16:30 » In&nbsp;<a href="viewforum.php?f=16&amp;sid=01919f093bcc3fd640df61d9432c9822">Съвременни конфликти</a></span>
+																											</li>
+															<li>
+																			<a href="viewtopic.php?f=3&amp;p=319459&amp;sid=01919f093bcc3fd640df61d9432c9822#p319459" class="topictitle subforum read">Сериали</a><span class="meta">от <a href="./memberlist.php?mode=viewprofile&amp;u=255&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">rki</a> » 23 Май 2026, 11:11 » In&nbsp;<a href="viewforum.php?f=3&amp;sid=01919f093bcc3fd640df61d9432c9822">Музика, филми, култура</a></span>
+																											</li>
+															<li>
+																			<a href="viewtopic.php?f=1&amp;p=319457&amp;sid=01919f093bcc3fd640df61d9432c9822#p319457" class="topictitle subforum read">Пропагандата - лични впечатления.</a><span class="meta">от <a href="./memberlist.php?mode=viewprofile&amp;u=104&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Almasy</a> » 23 Май 2026, 10:38 » In&nbsp;<a href="viewforum.php?f=1&amp;sid=01919f093bcc3fd640df61d9432c9822">Общи приказки</a></span>
+																											</li>
+															<li>
+																			<a href="viewtopic.php?f=27&amp;p=319456&amp;sid=01919f093bcc3fd640df61d9432c9822#p319456" class="topictitle subforum read">Икономиката на САЩ и външната им политика</a><span class="meta">от <a href="./memberlist.php?mode=viewprofile&amp;u=255&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">rki</a> » 23 Май 2026, 09:52 » In&nbsp;<a href="viewforum.php?f=27&amp;sid=01919f093bcc3fd640df61d9432c9822">Икономика</a></span>
+																											</li>
+													</ul>
+					</div>
+				</dt>
+				<dd class="topics tf-most-active">
+					<ul>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a><span><br>&nbsp;&nbsp;Мнения: <a href="search.php?author_id=48&amp;sr=posts&amp;sid=01919f093bcc3fd640df61d9432c9822">56,717</a></span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=255&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">rki</a><span><br>&nbsp;&nbsp;Мнения: <a href="search.php?author_id=255&amp;sr=posts&amp;sid=01919f093bcc3fd640df61d9432c9822">25,061</a></span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=83&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">iasen ianakiev</a><span><br>&nbsp;&nbsp;Мнения: <a href="search.php?author_id=83&amp;sr=posts&amp;sid=01919f093bcc3fd640df61d9432c9822">20,920</a></span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=85&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">vassiln</a><span><br>&nbsp;&nbsp;Мнения: <a href="search.php?author_id=85&amp;sr=posts&amp;sid=01919f093bcc3fd640df61d9432c9822">11,754</a></span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=50&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Thorn</a><span><br>&nbsp;&nbsp;Мнения: <a href="search.php?author_id=50&amp;sr=posts&amp;sid=01919f093bcc3fd640df61d9432c9822">11,672</a></span></span>
+							</li>
+											</ul>
+				</dd>
+				<dd class="lastpost tf-newest">
+					<ul>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=671&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">raeteal12</a><span><br>&nbsp;&nbsp;Регистриран на: 01 Май 2026, 16:37</span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=670&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">SLOKA</a><span><br>&nbsp;&nbsp;Регистриран на: 27 Апр 2026, 14:12</span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=669&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Kirko0008</a><span><br>&nbsp;&nbsp;Регистриран на: 05 Мар 2026, 18:40</span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=668&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Kirko008</a><span><br>&nbsp;&nbsp;Регистриран на: 05 Мар 2026, 18:39</span></span>
+							</li>
+													<li>
+								<span class="meta"><a href="./memberlist.php?mode=viewprofile&amp;u=667&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Kirko</a><span><br>&nbsp;&nbsp;Регистриран на: 05 Мар 2026, 18:38</span></span>
+							</li>
+											</ul>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+	</div>
+</div>
+
+
+	
+		<a class="category" id="category8" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=8&amp;sid=01919f093bcc3fd640df61d9432c9822">Общи приказки</a></div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_8?hash=6cc9d271&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Общи приказки" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=1">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Общи приказки</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=1&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Общи приказки</a>
+						<br>Място за разтуха													<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=259&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">pnp5q</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>140</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">140 <dfn>Теми</dfn></dd>
+					<dd class="posts">59441 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=1&amp;p=319457&amp;sid=01919f093bcc3fd640df61d9432c9822#p319457" title="Re: Пропагандата - лични впечатления." class="lastsubject">Re: Пропагандата - лични впеча</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=104&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Almasy</a>
+																	<a href="./viewtopic.php?f=1&amp;p=319457&amp;sid=01919f093bcc3fd640df61d9432c9822#p319457" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>23 Май 2026, 10:38
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Музика, филми, култура" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=3">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Музика, филми, култура</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=3&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Музика, филми, култура</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>35</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">35 <dfn>Теми</dfn></dd>
+					<dd class="posts">5145 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=3&amp;p=319459&amp;sid=01919f093bcc3fd640df61d9432c9822#p319459" title="Re: Сериали" class="lastsubject">Re: Сериали</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=255&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">rki</a>
+																	<a href="./viewtopic.php?f=3&amp;p=319459&amp;sid=01919f093bcc3fd640df61d9432c9822#p319459" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>23 Май 2026, 11:11
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read_subforum">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Игри" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=34">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Игри</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=34&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Игри</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>
+																										<br><strong>Под форум:</strong>
+															<a href="./viewforum.php?f=43&amp;sid=01919f093bcc3fd640df61d9432c9822" class="subforum read" title="Няма непрочетени мнения">
+									<i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Симулации и обсъждане на сценарии
+								</a>
+																												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>98</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">98 <dfn>Теми</dfn></dd>
+					<dd class="posts">2860 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=34&amp;p=318474&amp;sid=01919f093bcc3fd640df61d9432c9822#p318474" title="Re: Хобита, играчки и интересни джаджи" class="lastsubject">Re: Хобита, играчки и интересн</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=502&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Пепеляев</a>
+																	<a href="./viewtopic.php?f=34&amp;p=318474&amp;sid=01919f093bcc3fd640df61d9432c9822#p318474" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>22 Апр 2026, 12:21
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Икономика" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=27">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Икономика</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=27&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Икономика</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>19</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">19 <dfn>Теми</dfn></dd>
+					<dd class="posts">24762 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=27&amp;p=319456&amp;sid=01919f093bcc3fd640df61d9432c9822#p319456" title="Re: Икономиката на САЩ и външната им политика" class="lastsubject">Re: Икономиката на САЩ и външн</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=255&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">rki</a>
+																	<a href="./viewtopic.php?f=27&amp;p=319456&amp;sid=01919f093bcc3fd640df61d9432c9822#p319456" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>23 Май 2026, 09:52
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+		<a class="category" id="category47" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=47&amp;sid=01919f093bcc3fd640df61d9432c9822">Наука</a></div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_47?hash=ea762a56&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Наука" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=35">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Наука</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=35&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Наука</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>28</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">28 <dfn>Теми</dfn></dd>
+					<dd class="posts">2851 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=35&amp;p=318880&amp;sid=01919f093bcc3fd640df61d9432c9822#p318880" title="Re: Електрически и безшофьорни автомобили" class="lastsubject">Re: Електрически и безшофьорни</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a>
+																	<a href="./viewtopic.php?f=35&amp;p=318880&amp;sid=01919f093bcc3fd640df61d9432c9822#p318880" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>04 Май 2026, 11:58
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Космос" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=30">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Космос</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=30&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Космос</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>21</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">21 <dfn>Теми</dfn></dd>
+					<dd class="posts">4897 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=30&amp;p=318969&amp;sid=01919f093bcc3fd640df61d9432c9822#p318969" title="Re: Снимки и клипчета (Космос)" class="lastsubject">Re: Снимки и клипчета (Космос)</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=90&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Archer</a>
+																	<a href="./viewtopic.php?f=30&amp;p=318969&amp;sid=01919f093bcc3fd640df61d9432c9822#p318969" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>08 Май 2026, 08:34
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Гражданска авиация" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=48">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Гражданска авиация</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Гражданска авиация</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>8</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">8 <dfn>Теми</dfn></dd>
+					<dd class="posts">4405 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=48&amp;p=319446&amp;sid=01919f093bcc3fd640df61d9432c9822#p319446" title="Re: Гражданска авиация" class="lastsubject">Re: Гражданска авиация</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=379&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Маркони</a>
+																	<a href="./viewtopic.php?f=48&amp;p=319446&amp;sid=01919f093bcc3fd640df61d9432c9822#p319446" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>22 Май 2026, 22:10
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Литература" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=49">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Литература</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=49&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Литература</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>5</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">5 <dfn>Теми</dfn></dd>
+					<dd class="posts">260 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=49&amp;p=318534&amp;sid=01919f093bcc3fd640df61d9432c9822#p318534" title="Re: Интересно за четене" class="lastsubject">Re: Интересно за четене</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=49&amp;p=318534&amp;sid=01919f093bcc3fd640df61d9432c9822#p318534" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>23 Апр 2026, 19:37
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+		<a class="category" id="category13" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=13&amp;sid=01919f093bcc3fd640df61d9432c9822">За Родината</a></div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_13?hash=8f382bf5&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read_subforum">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Българска история" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=14">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Българска история</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=14&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Българска история</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=193&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">ISTORIK</a>
+																										<br><strong>Под форуми:</strong>
+															<a href="./viewforum.php?f=44&amp;sid=01919f093bcc3fd640df61d9432c9822" class="subforum read" title="Няма непрочетени мнения">
+									<i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Нова История
+								</a>
+								, 															<a href="./viewforum.php?f=45&amp;sid=01919f093bcc3fd640df61d9432c9822" class="subforum read" title="Няма непрочетени мнения">
+									<i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Османско Владичество
+								</a>
+								, 															<a href="./viewforum.php?f=46&amp;sid=01919f093bcc3fd640df61d9432c9822" class="subforum read" title="Няма непрочетени мнения">
+									<i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Средновековие
+								</a>
+																												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>75</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">75 <dfn>Теми</dfn></dd>
+					<dd class="posts">4462 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=14&amp;p=319418&amp;sid=01919f093bcc3fd640df61d9432c9822#p319418" title="Re: Генезис на българите и прабългарите" class="lastsubject">Re: Генезис на българите и пра</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=470&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sasel</a>
+																	<a href="./viewtopic.php?f=14&amp;p=319418&amp;sid=01919f093bcc3fd640df61d9432c9822#p319418" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>22 Май 2026, 10:44
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+		<a class="category" id="category15" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=15&amp;sid=01919f093bcc3fd640df61d9432c9822">За Света</a></div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_15?hash=a1acb053&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Съвременни конфликти" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=16">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Съвременни конфликти</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=16&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Съвременни конфликти</a>
+						<br>1990-													<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=193&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">ISTORIK</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>100</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">100 <dfn>Теми</dfn></dd>
+					<dd class="posts">156937 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=16&amp;p=319468&amp;sid=01919f093bcc3fd640df61d9432c9822#p319468" title="Re: Отбраната на Нова Европа" class="lastsubject">Re: Отбраната на Нова Европа</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a>
+																	<a href="./viewtopic.php?f=16&amp;p=319468&amp;sid=01919f093bcc3fd640df61d9432c9822#p319468" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>23 Май 2026, 17:04
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Студена война и деколонизация" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=18">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Студена война и деколонизация</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=18&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Студена война и деколонизация</a>
+						<br>1945-1989												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>40</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">40 <dfn>Теми</dfn></dd>
+					<dd class="posts">1362 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=18&amp;p=319273&amp;sid=01919f093bcc3fd640df61d9432c9822#p319273" title="Re: Любопитно (Студената война и Деколонизацията)" class="lastsubject">Re: Любопитно (Студената война</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=255&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">rki</a>
+																	<a href="./viewtopic.php?f=18&amp;p=319273&amp;sid=01919f093bcc3fd640df61d9432c9822#p319273" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>19 Май 2026, 06:54
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Втора световна война" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=17">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Втора световна война</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=17&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Втора световна война</a>
+						<br>1939-1945												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>69</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">69 <dfn>Теми</dfn></dd>
+					<dd class="posts">2566 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=17&amp;p=318826&amp;sid=01919f093bcc3fd640df61d9432c9822#p318826" title="Re: Любопитно (Втората световна война)" class="lastsubject">Re: Любопитно (Втората световн</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=70&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">centara</a>
+																	<a href="./viewtopic.php?f=17&amp;p=318826&amp;sid=01919f093bcc3fd640df61d9432c9822#p318826" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>02 Май 2026, 10:22
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Междувоенен период" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=42">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Междувоенен период</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=42&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Междувоенен период</a>
+						<br>1919-1938												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>18</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">18 <dfn>Теми</dfn></dd>
+					<dd class="posts">539 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=42&amp;p=293109&amp;sid=01919f093bcc3fd640df61d9432c9822#p293109" title="Re: Любопитно междувоенен период" class="lastsubject">Re: Любопитно междувоенен пери</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=42&amp;p=293109&amp;sid=01919f093bcc3fd640df61d9432c9822#p293109" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>30 Яну 2025, 03:22
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Първа световна война" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=19">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Първа световна война</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=19&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Първа световна война</a>
+						<br>1914-1918												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>18</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">18 <dfn>Теми</dfn></dd>
+					<dd class="posts">239 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=19&amp;p=274240&amp;sid=01919f093bcc3fd640df61d9432c9822#p274240" title="Снимки ПСВ" class="lastsubject">Снимки ПСВ</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=19&amp;p=274240&amp;sid=01919f093bcc3fd640df61d9432c9822#p274240" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>17 Май 2024, 03:16
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Ренесанс и революции" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=20">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Ренесанс и революции</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=20&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Ренесанс и революции</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=193&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">ISTORIK</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>25</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">25 <dfn>Теми</dfn></dd>
+					<dd class="posts">313 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=20&amp;p=208421&amp;sid=01919f093bcc3fd640df61d9432c9822#p208421" title="Re: Любопитно (Ренесанс)" class="lastsubject">Re: Любопитно (Ренесанс)</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=20&amp;p=208421&amp;sid=01919f093bcc3fd640df61d9432c9822#p208421" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>08 Май 2022, 08:05
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Средновековие" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=21">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Средновековие</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=21&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Средновековие</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=193&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">ISTORIK</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>18</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">18 <dfn>Теми</dfn></dd>
+					<dd class="posts">180 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=21&amp;p=293750&amp;sid=01919f093bcc3fd640df61d9432c9822#p293750" title="Re: Новини (Средновековие)" class="lastsubject">Re: Новини (Средновековие)</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=259&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">pnp5q</a>
+																	<a href="./viewtopic.php?f=21&amp;p=293750&amp;sid=01919f093bcc3fd640df61d9432c9822#p293750" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>09 Фев 2025, 21:13
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Античност" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=22">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Античност</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=22&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Античност</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=193&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">ISTORIK</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>19</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">19 <dfn>Теми</dfn></dd>
+					<dd class="posts">455 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=22&amp;p=278506&amp;sid=01919f093bcc3fd640df61d9432c9822#p278506" title="Икономика (Античност)" class="lastsubject">Икономика (Античност)</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=22&amp;p=278506&amp;sid=01919f093bcc3fd640df61d9432c9822#p278506" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>20 Юли 2024, 23:06
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read_subforum">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Алтернативна история" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=40">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Алтернативна история</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=40&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Алтернативна история</a>
+																																<br><strong>Под форум:</strong>
+															<a href="./viewforum.php?f=41&amp;sid=01919f093bcc3fd640df61d9432c9822" class="subforum read" title="Няма непрочетени мнения">
+									<i class="icon fa-file-o fa-fw  icon-blue icon-md" aria-hidden="true"></i>Морски алтернативки
+								</a>
+																												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>35</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">35 <dfn>Теми</dfn></dd>
+					<dd class="posts">708 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=40&amp;p=314316&amp;sid=01919f093bcc3fd640df61d9432c9822#p314316" title="Re: Ако нацистите бяха спечелили?" class="lastsubject">Re: Ако нацистите бяха спечели</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=485&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">deaf</a>
+																	<a href="./viewtopic.php?f=40&amp;p=314316&amp;sid=01919f093bcc3fd640df61d9432c9822#p314316" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>31 Яну 2026, 12:40
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+		<a class="category" id="category23" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=23&amp;sid=01919f093bcc3fd640df61d9432c9822">Оръжие и военна Техника</a></div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_23?hash=a67480eb&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Съвременно въоръжение" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=24">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Съвременно въоръжение</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=24&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Съвременно въоръжение</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>44</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">44 <dfn>Теми</dfn></dd>
+					<dd class="posts">3638 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=24&amp;p=318375&amp;sid=01919f093bcc3fd640df61d9432c9822#p318375" title="Re: Българска армия" class="lastsubject">Re: Българска армия</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=271&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">mitkohr</a>
+																	<a href="./viewtopic.php?f=24&amp;p=318375&amp;sid=01919f093bcc3fd640df61d9432c9822#p318375" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>20 Апр 2026, 11:11
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Хладни, метателни оръжия и брони" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=25">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Хладни, метателни оръжия и брони</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=25&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Хладни, метателни оръжия и брони</a>
+																			<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>10</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">10 <dfn>Теми</dfn></dd>
+					<dd class="posts">107 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=25&amp;p=312005&amp;sid=01919f093bcc3fd640df61d9432c9822#p312005" title="Re: Лък и Арбалет" class="lastsubject">Re: Лък и Арбалет</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=25&amp;p=312005&amp;sid=01919f093bcc3fd640df61d9432c9822#p312005" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>21 Дек 2025, 05:09
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Военна авиация" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=36">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Военна авиация</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=36&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Военна авиация</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>44</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">44 <dfn>Теми</dfn></dd>
+					<dd class="posts">9332 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=36&amp;p=319354&amp;sid=01919f093bcc3fd640df61d9432c9822#p319354" title="Re: Клипчета и снимки (военна авиация)" class="lastsubject">Re: Клипчета и снимки (военна </a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=470&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sasel</a>
+																	<a href="./viewtopic.php?f=36&amp;p=319354&amp;sid=01919f093bcc3fd640df61d9432c9822#p319354" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>20 Май 2026, 19:31
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Сухопътно въоръжение" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=37">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Сухопътно въоръжение</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=37&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Сухопътно въоръжение</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>50</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">50 <dfn>Теми</dfn></dd>
+					<dd class="posts">4310 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=37&amp;p=318781&amp;sid=01919f093bcc3fd640df61d9432c9822#p318781" title="Re: Съвременна бронирана техника" class="lastsubject">Re: Съвременна бронирана техни</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=90&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Archer</a>
+																	<a href="./viewtopic.php?f=37&amp;p=318781&amp;sid=01919f093bcc3fd640df61d9432c9822#p318781" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>01 Май 2026, 08:11
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Военноморски раздел" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=38">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Военноморски раздел</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=38&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Военноморски раздел</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>49</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">49 <dfn>Теми</dfn></dd>
+					<dd class="posts">3427 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=38&amp;p=319043&amp;sid=01919f093bcc3fd640df61d9432c9822#p319043" title="Re: Български ВМС" class="lastsubject">Re: Български ВМС</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=38&amp;p=319043&amp;sid=01919f093bcc3fd640df61d9432c9822#p319043" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>11 Май 2026, 21:37
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Оръжия на бъдещето и концептуални въоръжения" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=39">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Оръжия на бъдещето и концептуални въоръжения</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=39&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Оръжия на бъдещето и концептуални въоръжения</a>
+																			<br><strong>Модератори:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=57&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Sharana</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>10</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">10 <dfn>Теми</dfn></dd>
+					<dd class="posts">402 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=39&amp;p=317838&amp;sid=01919f093bcc3fd640df61d9432c9822#p317838" title="Re: Електромагнитно оръдие (railgun)" class="lastsubject">Re: Електромагнитно оръдие (ra</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=52&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Amazon</a>
+																	<a href="./viewtopic.php?f=39&amp;p=317838&amp;sid=01919f093bcc3fd640df61d9432c9822#p317838" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>07 Апр 2026, 17:00
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+		<a class="category" id="category31" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=31&amp;sid=01919f093bcc3fd640df61d9432c9822">Библиотека</a></div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_31?hash=88bb304f&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Статии" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=32">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Статии</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=32&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Статии</a>
+						<br>Авторски												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>21</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">21 <dfn>Теми</dfn></dd>
+					<dd class="posts">252 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=32&amp;p=256955&amp;sid=01919f093bcc3fd640df61d9432c9822#p256955" title="Re: Израелският танк &quot;Меркава&quot;" class="lastsubject">Re: Израелският танк "Меркава"</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a>
+																	<a href="./viewtopic.php?f=32&amp;p=256955&amp;sid=01919f093bcc3fd640df61d9432c9822#p256955" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>19 Сеп 2023, 21:53
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Архив" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=33">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Архив</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=33&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Архив</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>1</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">1 <dfn>Теми</dfn></dd>
+					<dd class="posts">1 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=33&amp;p=150670&amp;sid=01919f093bcc3fd640df61d9432c9822#p150670" title="Войната в Сирия: видео-архив на опозицията" class="lastsubject">Войната в Сирия: видео-архив н</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a>
+																	<a href="./viewtopic.php?f=33&amp;p=150670&amp;sid=01919f093bcc3fd640df61d9432c9822#p150670" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>22 Фев 2020, 22:30
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+		<a class="category" id="category12" style="display: none; height: 0"></a>
+			<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner">Форум</div></dt>
+						<dd class="topics">Теми</dd>
+						<dd class="posts">Мнения</dd>
+						<dd class="lastpost"><span>&nbsp;Последно мнение</span></dd>
+					</dl>
+						<a href="/app.php/collapse/fid_12?hash=2aea3de1&amp;sid=01919f093bcc3fd640df61d9432c9822" class="collapse-btn collapse-hide" data-hidden="" data-ajax="phpbb_collapse" data-overlay="true" title="Toggle visibility of this forum category" style="line-height: 0;"></a>
+				</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+					<li class="row">
+						<dl class="row-item forum_read">
+				<dt title="Няма непрочетени мнения">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Фийд - Работен форум" href="/app.php/feed?sid=01919f093bcc3fd640df61d9432c9822?f=12">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Фийд - Работен форум</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=12&amp;sid=01919f093bcc3fd640df61d9432c9822" class="forumtitle">Работен форум</a>
+						<br>Място за съобщения и предложения относно форума													<br><strong>Модератор:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=51&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Ksantip</a>
+												
+												<div class="responsive-show" style="display: none;">
+															Теми: <strong>20</strong>
+													</div>
+											</div>
+				</dt>
+									<dd class="topics">20 <dfn>Теми</dfn></dd>
+					<dd class="posts">7416 <dfn>Мнения</dfn></dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>&nbsp;Последно мнение</dfn>
+																										<a href="./viewtopic.php?f=12&amp;p=319077&amp;sid=01919f093bcc3fd640df61d9432c9822#p319077" title="Re: Сигнали за нарушения" class="lastsubject">Re: Сигнали за нарушения</a> <br>
+																	от <a href="./memberlist.php?mode=viewprofile&amp;u=50&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Thorn</a>
+																	<a href="./viewtopic.php?f=12&amp;p=319077&amp;sid=01919f093bcc3fd640df61d9432c9822#p319077" title="Преглежда последните мнения">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Преглежда последните мнения</span>
+									</a>
+																<br>13 Май 2026, 02:14
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+				</ul>
+
+			</div>
+		</div>
+		
+
+<div class="responsive-hide">
+	<div class="legend-index navbar">
+		<div class="aligncenter valign">
+			<span class="imageset forum_unread" title="Непрочетени мнения">Непрочетени мнения</span>&nbsp;Непрочетени мнения&nbsp;&nbsp;
+			<span class="imageset forum_read" title="Няма непрочетени мнения">Няма непрочетени мнения</span>&nbsp;Няма непрочетени мнения&nbsp;&nbsp;
+			<span class="imageset forum_read_locked" title="Няма непрочетени мнения [ Заключени ]">Няма непрочетени мнения [ Заключени ]</span>&nbsp;Заключен форум
+		</div>
+	</div>
+</div>
+
+	<form method="post" action="./ucp.php?mode=login&amp;sid=01919f093bcc3fd640df61d9432c9822" class="headerspace">
+	<h3><a href="./ucp.php?mode=login&amp;sid=01919f093bcc3fd640df61d9432c9822">Влез</a>&nbsp; • &nbsp;<a href="./ucp.php?mode=register&amp;sid=01919f093bcc3fd640df61d9432c9822">Регистрация</a></h3>
+		<fieldset class="quick-login">
+			<label for="username"><span>Потребителско име:</span> <input type="text" tabindex="1" name="username" id="username" size="10" class="inputbox" title="Потребителско име"></label>
+			<label for="password"><span>Парола:</span> <input type="password" tabindex="2" name="password" id="password" size="10" class="inputbox" title="Парола" autocomplete="off"></label>
+							<a href="./ucp.php?mode=sendpassword&amp;sid=01919f093bcc3fd640df61d9432c9822">Забравих си паролата</a>
+										<span class="responsive-hide">|</span> <label for="autologin">Запомни ме <input type="checkbox" tabindex="4" name="autologin" id="autologin"></label>
+						<input type="submit" tabindex="5" name="login" value="Влез" class="button2">
+			<input type="hidden" name="redirect" value="./index.php?sid=01919f093bcc3fd640df61d9432c9822">
+
+		</fieldset>
+	</form>
+
+
+	<div class="stat-block online-list">
+		<h3><a href="./viewonline.php?sid=01919f093bcc3fd640df61d9432c9822">Кой е на линия</a></h3>		<p>
+						Общо на линия са <strong>3</strong> потребители ::  (Информацията се обновява на всеки 5 минути)<br>На 26 Сеп 2016, 10:53 е имало общо <strong>74</strong> посетители наведнъж.<br> <br>Регистрирани потребители: <span style="color: #9E8DA7;" class="username-coloured">Bing [Bot]</span>, <a href="./memberlist.php?mode=viewprofile&amp;u=48&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">Dinain</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=511&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">kraychev</a>
+			<br><em>Легенда: <a style="color:#400000" href="./memberlist.php?mode=group&amp;g=5&amp;sid=01919f093bcc3fd640df61d9432c9822">Администратори</a>, <a href="./memberlist.php?mode=group&amp;g=4&amp;sid=01919f093bcc3fd640df61d9432c9822">Глобални модератори</a>, <a href="./memberlist.php?mode=group&amp;g=2&amp;sid=01919f093bcc3fd640df61d9432c9822">Регистрирани потребители</a></em>					</p>
+	</div>
+
+
+	<div class="stat-block statistics">
+		<h3>Статистика</h3>
+		<p>
+			<strong>3712</strong> visits • 			TOTAL_POSTS_COUNT • TOTAL_TOPICS • TOTAL_USERS • Най-нов <strong><a href="./memberlist.php?mode=viewprofile&amp;u=671&amp;sid=01919f093bcc3fd640df61d9432c9822" class="username">raeteal12</a></strong>
+					</p>
+	</div>
+
+
+		<div class="responsive-hide">
+	</div>
+	</div>
+
+
+<div id="page-footer" class="page-footer" role="contentinfo">
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+							<span class="crumb"><a href="http://www.fenixforum.net/" data-navbar-reference="home" title="Начало"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span>Начало</span></a></span>									<span class="crumb"><a href="./index.php?sid=01919f093bcc3fd640df61d9432c9822" data-navbar-reference="index" title="Форум"><span>Форум</span></a></span>					</li>
+		
+				<li class="responsive-menu rightside dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"><li class="clone clone-first">Часовете са според зоната UTC_OFFSET Europe/Sofia</li><li class="clone clone-first">
+				<a href="./ucp.php?mode=delete_cookies&amp;sid=01919f093bcc3fd640df61d9432c9822" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Изтрий всички бисквитки</span>
+				</a>
+			</li></ul></div></li><li class="rightside hidden">Часовете са според зоната UTC_OFFSET Europe/Sofia</li>
+							<li class="rightside hidden">
+				<a href="./ucp.php?mode=delete_cookies&amp;sid=01919f093bcc3fd640df61d9432c9822" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Изтрий всички бисквитки</span>
+				</a>
+			</li>
+							<li class="rightside" data-last-responsive="true">
+					<a href="./memberlist.php?sid=01919f093bcc3fd640df61d9432c9822" title="Виж всички потребители" role="menuitem">
+						<i class="icon fa-group fa-fw" aria-hidden="true"></i><span>Потребители</span>
+					</a>
+				</li>
+												<li class="rightside" data-last-responsive="true">
+				<a href="./memberlist.php?mode=team&amp;sid=01919f093bcc3fd640df61d9432c9822" role="menuitem">
+					<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>Екип</span>
+				</a>
+			</li>
+							</ul>
+
+	</div>
+</div>
+
+	<div class="copyright">
+				Форума се задвижва от <a href="https://www.phpbb.com/" onclick="window.open(this.href);return false;" rel="nofollow" title="Opens in new window" class="elonw">phpBB</a>® Forum Software © phpBB Limited | SE Square Left by <a href="http://www.phpbb3bbcodes.com/" onclick="window.open(this.href);return false;" rel="nofollow" title="Opens in new window" class="elonw">PhpBB3 BBCodes</a>
+									</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX_ERROR_TITLE" data-ajax-error-text="AJAX_ERROR_TEXT" data-ajax-error-text-abort="AJAX_ERROR_TEXT_ABORT" data-ajax-error-text-timeout="AJAX_ERROR_TEXT_TIMEOUT" data-ajax-error-text-parsererror="AJAX_ERROR_TEXT_PARSERERROR">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="ERROR" data-l-timeout-processing-req="TIMEOUT_PROCESSING_REQ">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('\x3Cscript src="./assets/javascript/jquery.min.js?assets_version=203">\x3C/script>');</script><script type="text/javascript" src="./assets/javascript/core.js?assets_version=203"></script>
+	<script type="text/javascript">
+		(function($){
+			var $fa_cdn = $('head').find('link[rel="stylesheet"]').first(),
+				$span = $('<span class="fa" style="display:none"></span>').appendTo('body');
+			if ($span.css('fontFamily') !== 'FontAwesome' ) {
+				$fa_cdn.after('<link href="./assets/css/font-awesome.min.css" rel="stylesheet">');
+				$fa_cdn.remove();
+			}
+			$span.remove();
+		})(jQuery);
+	</script>
+
+
+<div id="breadcrumb-menu">
+	<ul id="crumb-index" class="hidden">
+		<li class="children"><a href="./index.php?sid=01919f093bcc3fd640df61d9432c9822">Форуми</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li class="children"><a href="./viewforum.php?f=8&amp;sid=01919f093bcc3fd640df61d9432c9822">Общи приказки</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=1&amp;sid=01919f093bcc3fd640df61d9432c9822">Общи приказки</a></li>
+<li><a href="./viewforum.php?f=3&amp;sid=01919f093bcc3fd640df61d9432c9822">Музика, филми, култура</a></li>
+<li class="children"><a href="./viewforum.php?f=34&amp;sid=01919f093bcc3fd640df61d9432c9822">Игри</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=43&amp;sid=01919f093bcc3fd640df61d9432c9822">Симулации и обсъждане на сценарии</a></li>
+</ul></li>
+<li><a href="./viewforum.php?f=27&amp;sid=01919f093bcc3fd640df61d9432c9822">Икономика</a></li>
+</ul></li>
+<li class="children"><a href="./viewforum.php?f=47&amp;sid=01919f093bcc3fd640df61d9432c9822">Наука</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=35&amp;sid=01919f093bcc3fd640df61d9432c9822">Наука</a></li>
+<li><a href="./viewforum.php?f=30&amp;sid=01919f093bcc3fd640df61d9432c9822">Космос</a></li>
+<li><a href="./viewforum.php?f=48&amp;sid=01919f093bcc3fd640df61d9432c9822">Гражданска авиация</a></li>
+<li><a href="./viewforum.php?f=49&amp;sid=01919f093bcc3fd640df61d9432c9822">Литература</a></li>
+</ul></li>
+<li class="children"><a href="./viewforum.php?f=13&amp;sid=01919f093bcc3fd640df61d9432c9822">За Родината</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li class="children"><a href="./viewforum.php?f=14&amp;sid=01919f093bcc3fd640df61d9432c9822">Българска история</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=44&amp;sid=01919f093bcc3fd640df61d9432c9822">Нова История</a></li>
+<li><a href="./viewforum.php?f=45&amp;sid=01919f093bcc3fd640df61d9432c9822">Османско Владичество</a></li>
+<li><a href="./viewforum.php?f=46&amp;sid=01919f093bcc3fd640df61d9432c9822">Средновековие</a></li>
+</ul></li>
+</ul></li>
+<li class="children"><a href="./viewforum.php?f=15&amp;sid=01919f093bcc3fd640df61d9432c9822">За Света</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=16&amp;sid=01919f093bcc3fd640df61d9432c9822">Съвременни конфликти</a></li>
+<li><a href="./viewforum.php?f=18&amp;sid=01919f093bcc3fd640df61d9432c9822">Студена война и деколонизация</a></li>
+<li><a href="./viewforum.php?f=17&amp;sid=01919f093bcc3fd640df61d9432c9822">Втора световна война</a></li>
+<li><a href="./viewforum.php?f=42&amp;sid=01919f093bcc3fd640df61d9432c9822">Междувоенен период</a></li>
+<li><a href="./viewforum.php?f=19&amp;sid=01919f093bcc3fd640df61d9432c9822">Първа световна война</a></li>
+<li><a href="./viewforum.php?f=20&amp;sid=01919f093bcc3fd640df61d9432c9822">Ренесанс и революции</a></li>
+<li><a href="./viewforum.php?f=21&amp;sid=01919f093bcc3fd640df61d9432c9822">Средновековие</a></li>
+<li><a href="./viewforum.php?f=22&amp;sid=01919f093bcc3fd640df61d9432c9822">Античност</a></li>
+<li class="children"><a href="./viewforum.php?f=40&amp;sid=01919f093bcc3fd640df61d9432c9822">Алтернативна история</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=41&amp;sid=01919f093bcc3fd640df61d9432c9822">Морски алтернативки</a></li>
+</ul></li>
+</ul></li>
+<li class="children"><a href="./viewforum.php?f=23&amp;sid=01919f093bcc3fd640df61d9432c9822">Оръжие и военна Техника</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=24&amp;sid=01919f093bcc3fd640df61d9432c9822">Съвременно въоръжение</a></li>
+<li><a href="./viewforum.php?f=25&amp;sid=01919f093bcc3fd640df61d9432c9822">Хладни, метателни оръжия и брони</a></li>
+<li><a href="./viewforum.php?f=36&amp;sid=01919f093bcc3fd640df61d9432c9822">Военна авиация</a></li>
+<li><a href="./viewforum.php?f=37&amp;sid=01919f093bcc3fd640df61d9432c9822">Сухопътно въоръжение</a></li>
+<li><a href="./viewforum.php?f=38&amp;sid=01919f093bcc3fd640df61d9432c9822">Военноморски раздел</a></li>
+<li><a href="./viewforum.php?f=39&amp;sid=01919f093bcc3fd640df61d9432c9822">Оръжия на бъдещето и концептуални въоръжения</a></li>
+</ul></li>
+<li class="children"><a href="./viewforum.php?f=31&amp;sid=01919f093bcc3fd640df61d9432c9822">Библиотека</a><div class="touch-trigger button"></div>
+<ul class="fly-out dropdown-contents hidden"><li><a href="./viewforum.php?f=32&amp;sid=01919f093bcc3fd640df61d9432c9822">Статии</a></li>
+<li><a href="./viewforum.php?f=33&amp;sid=01919f093bcc3fd640df61d9432c9822">Архив</a></li>
+</ul></li>
+<li><a href="./viewforum.php?f=12&amp;sid=01919f093bcc3fd640df61d9432c9822">Работен форум</a></li>
+</ul></li>
+
+
+		
+						
+																																
+			</ul>
+</div>
+
+<script type="text/javascript">
+var elonw_title = 'Opens\x20in\x20new\x20window';
+(function($) {
+	source=removeSubdomain(location.hostname);
+	$('a[href^="http://"], a[href^="https://"], a[href^="ftp://"]').filter(function(){return this.hostname&&removeSubdomain(this.hostname)!==source}).attr("onclick","window.open(this.href);return false;").attr("rel", "nofollow").attr("title", elonw_title).addClass("elonw");
+})(jQuery);
+function removeSubdomain(a,b){return a.split(".").slice(-(b||2)).join(".")};
+</script>
+									<script type="text/javascript">
+		var vseLightbox = {};
+		vseLightbox.resizeWidth = 800;
+		vseLightbox.lightboxGal = 1;
+		vseLightbox.lightboxSig = 1;
+	</script>
+<div class="scroll-btn"><div class="scroll-btn-arrow"></div></div>
+
+<script type="text/javascript">
+
+(function($) { // Avoid conflicts with other libraries
+
+'use strict';
+
+$(function() {
+	var settings = {
+			min: 200,
+			scrollSpeed: 400
+		},
+		toTop = $('.scroll-btn'),
+		toTopHidden = true;
+
+	$(window).scroll(function() {
+		var pos = $(this).scrollTop();
+		if (pos > settings.min && toTopHidden) {
+			toTop.stop(true, true).fadeIn();
+			toTopHidden = false;
+		} else if(pos <= settings.min && !toTopHidden) {
+			toTop.stop(true, true).fadeOut();
+			toTopHidden = true;
+		}
+	});
+
+	toTop.bind('click touchstart', function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, settings.scrollSpeed);
+	});
+});
+
+})(jQuery);
+
+</script>
+
+
+
+
+<script type="text/javascript" src="./ext/phpbb/collapsiblecategories/styles/all/template/js/collapsiblecategories.js?assets_version=203"></script>
+<script type="text/javascript" src="./ext/tatiana5/profileSideSwitcher/styles/prosilver/template/profile_side_switcher.js?assets_version=203"></script>
+<script type="text/javascript" src="./styles/prosilver/template/forum_fn.js?assets_version=203"></script>
+<script type="text/javascript" src="./styles/prosilver/template/ajax.js?assets_version=203"></script>
+<script type="text/javascript" src="./ext/paybas/breadcrumbmenu/styles/all/template/jquery-ui-1.11.2.custom.min.js?assets_version=203"></script>
+<script type="text/javascript" src="./ext/paybas/breadcrumbmenu/styles/all/template/breadcrumb-menu.js?assets_version=203"></script>
+<script type="text/javascript" src="./ext/vse/abbc3/styles/all/template/js/abbc3.min.js?assets_version=203"></script>
+<script type="text/javascript" src="./ext/vse/lightbox/styles/all/template/js/resizer.js?assets_version=203"></script>
+<script type="text/javascript" src="./ext/vse/lightbox/styles/all/template/lightbox/js/lightbox.min.js?assets_version=203"></script>
+             
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

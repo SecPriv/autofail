@@ -1,0 +1,369 @@
+<!DOCTYPE html><html><head>
+  <title>Operated by Clickadu Advertisement Network</title>
+  <link rel="shortcut icon" href="https://clickadu.com/favicon.ico">
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <style type="text/css">
+    * {
+      line-height: 1.5;
+      margin: 0;
+      padding: 0
+    }
+    *, :after, :before {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box
+    }
+    html {
+      -webkit-text-size-adjust: none;
+      block-size: 100%;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      background-color: #fff;
+      color: rgb(44, 62, 80);
+      min-block-size: 100%;
+      text-rendering: optimizeSpeed
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      width: 6.5rem;
+      height: 4px;
+      background-color: #e16f3c;
+      display: block;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    hr {
+      border-color: #ccc;
+      margin: 1rem 0;
+    }
+
+    ol, ul {
+      padding-left: 2rem;
+    }
+
+    li {
+      margin-bottom: .25rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .mb-5 {
+      margin-bottom: 3rem;
+    }
+
+    .collapse:not(.show) {
+      display: none;
+    }
+
+    .collapse-container {
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      padding: 1rem;
+    }
+
+    .unsubscribe-btn {
+      position: relative;
+      padding: 5px 10px;
+      background: #29aae1;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #ffffff;
+    }
+
+    .unsubscribe-btn:active {
+      background: #1e8bba;
+    }
+
+    .unsubscribe-btn__text {
+      transition: all 0.2s;
+    }
+
+    .unsubscribe-btn--loading .unsubscribe-btn__text {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .unsubscribe-btn--loading::after {
+      border: 4px solid transparent;
+      border-top-color: #ffffff;
+      border-radius: 50%;
+
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 16px;
+      height: 16px;
+      margin: auto;
+
+      animation: unsubscribe-btn-spinner 1s ease infinite;
+    }
+
+    @keyframes unsubscribe-btn-spinner {
+      from { transform: rotate(0turn); }
+      to { transform: rotate(1turn); }
+    }
+
+    #unsubscribeStatus.success { color: #0a7a07; }
+    #unsubscribeStatus.error { color: #b00020; }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">
+    <img style="height: 90px" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMTgwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MDAgMTgwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNNTk0LjYyMyAxNTcuNzg3Yy0xLjI1MiAyLjUwNS0zLjEzIDQuNjk3LTUuMzIzIDYuMjYzcy00LjY5NyAyLjgxOC03LjUxNSAzLjc1Ny01LjYzNiAxLjI1My04LjQ1NCAxLjI1My01LjYzNi0uMzEzLTguNDU0LTEuMjUzYy0yLjgxOC0uOTQtNS4zMjMtMi4xOTItNy41MTUtMy43NTdzLTQuMDctMy43NTgtNS4zMjMtNi4yNjNjLTEuMjUyLTIuNTA1LTIuMTkyLTUuNjM2LTIuMTkyLTkuMDh2LTMwLjA2YzAtLjkzOS4zMTMtMS44NzggMS4yNTMtMy4xMy45MzktLjk0IDIuMTkyLTEuNTY2IDQuMzgzLTEuNTY2IDEuODggMCAzLjQ0NS4zMTMgNC4zODQgMS4yNTJzMS4yNTIgMS44NzkgMS4yNTIgMy4xMzF2MjQuNzM3YzAgMi41MDUuMzE0IDQuNjk3LjYyNyA2LjU3NS4zMTMgMS44NzkuOTQgMy40NDUgMS44NzggNS4wMS45NCAxLjI1MyAyLjE5MiAyLjUwNSAzLjc1OCAzLjEzMSAxLjU2NS42MjcgMy43NTcgMS4yNTMgNi4yNjIgMS4yNTMgMi41MDUgMCA0LjM4NC0uMzEzIDUuOTUtLjk0IDEuNTY1LS42MjYgMi44MTgtMS44NzggMy43NTctMy4xMy45NC0xLjI1MyAxLjU2Ni0yLjgxOSAxLjg3OS01LjAxLjMxMy0xLjg4LjYyNi00LjA3MS42MjYtNi41NzZ2LTI0LjczN2MwLS45MzkuMzEzLTEuODc4IDEuMjUyLTMuMTMuOTQtLjk0IDIuMTkyLTEuNTY2IDQuMzg0LTEuNTY2IDEuODc5IDAgMy40NDQuMzEzIDQuMzg0IDEuMjUyLjk0Ljk0IDEuMjUyIDEuODc5IDEuMjUyIDMuMTMxdjMwLjA2Yy0uNjI2IDMuNzU3LTEuMjUyIDYuODg4LTIuNTA1IDkuMzkzem0tNjYuNjk0IDEuODhjLTIuMTkyIDIuNTA0LTQuNjk3IDQuNjk2LTcuODI4IDUuOTQ4LTMuMTMyIDEuNTY2LTYuODg5IDIuMTkyLTEwLjk2IDIuMTkyaC0xNS45NjljLTEuODc4IDAtMy4xMy0uMzEzLTMuNzU3LS45NC0uNjI2LS42MjUtLjk0LTEuNTY1LS45NC0yLjgxN3YtNDUuMDljMC0xLjI1Mi4zMTQtMi4xOTEuNjI3LTIuODE4LjYyNi0uNjI2IDEuODc4LS45MzkgMy43NTctLjkzOWgxNS42NTZjNC4zODQgMCA4LjE0MS42MjYgMTEuMjczIDIuMTkyIDMuMTMgMS41NjYgNS45NDkgMy40NDQgNy44MjggNi4yNjIgMi4xOTEgMi41MDUgMy40NDQgNS42MzYgNC42OTYgOS4zOTQgMS44OCA2Ljg4OSAyLjE5MiA5LjM5NCAwIDE3LjIyMi0uOTM5IDMuNzU3LTIuNTA1IDYuODg4LTQuMzgzIDkuMzkzem0tNS42MzYtMjMuNzk4Yy0uNjI3LTIuNTA1LTEuMjUzLTQuNjk3LTIuNTA1LTYuNTc2LTEuMjUzLTEuODc4LTIuODE5LTMuMTMtNS4wMS00LjA3LTEuODgtLjk0LTQuNjk3LTEuMjUzLTcuODI4LTEuMjUzaC03LjUxNXYzNS4wN2g5LjcwNmM0LjY5NyAwIDguMTQyLTEuODc5IDEwLjMzNC01LjMyMyA1Ljk0OS04Ljc2OCAyLjUwNC0xOC43ODcgMi44MTgtMTcuODQ4em0tNDkuNDc0IDMxLjMxMmMtLjYyNi42MjYtLjkzOS45NC0xLjg3OCAxLjI1My0uNjI2LjMxMy0xLjU2Ni4zMTMtMi41MDUuMzEzLTEuODc5IDAtMy4xMzEtLjMxMy0zLjc1OC0xLjI1My0uOTM5LS45NC0xLjU2NS0xLjg3OS0xLjg3OC0yLjgxOGwtNC4wNzEtMTAuMzMzaC0xNy4yMjJsLTMuNzU3IDkuNzA3Yy0uNjI2IDEuMjUyLTEuMjUzIDIuNTA1LTIuMTkyIDMuMTMxLS45NC45NC0yLjE5MiAxLjI1My00LjA3IDEuMjUzLTEuODggMC0zLjEzMi0uNjI3LTQuMDcxLTEuNTY2LS45NC0uOTQtMS4yNTItMi41MDUtLjMxMy01LjAxbDE3LjUzNS00NC40NjNjLjMxMy0uOTQuOTM5LTEuNTY2IDEuODc4LTIuNTA1Ljk0LS42MjYgMi4xOTItLjk0IDMuNzU4LS45NCAxLjU2NSAwIDIuODE4LjMxNCAzLjc1Ny45NC45NC42MjYgMS41NjYgMS41NjYgMS44NzkgMi41MDVsMTcuNTM1IDQ0LjQ2M2MuMzEzLjk0LjMxMyAxLjg3OS4zMTMgMi44MThhMTAuNTk5IDEwLjU5OSAwIDAgMS0uOTQgMi41MDV6bS0yMi41NDQtMzYuNjM1LTYuNTc2IDE0LjQwM2gxMy4xNTFsLTYuNTc1LTE0LjQwM3ptLTM3Ljg4OCAzNi4wMDljLTEuMjUyIDEuMjUyLTIuNTA1IDIuMTkyLTMuNzU3IDIuMTkyLTEuMjUzIDAtMi41MDUtLjYyNy0zLjc1OC0xLjg4bC0yMS45MTgtMTYuMjgxdjE0LjQwM2MwIC45NC0uMzEzIDEuODc5LTEuMjUzIDIuNTA1LS45MzkuNjI2LTIuMTkxIDEuMjUzLTQuMzgzIDEuMjUzLTEuODc5IDAtMy40NDUtLjMxMy00LjM4NC0xLjI1My0uOTQtLjYyNi0xLjI1Mi0xLjU2NS0xLjI1Mi0yLjUwNVYxMTguOTZjMC0uOTM5LjMxMy0xLjg3OCAxLjI1Mi0zLjEzLjk0LS45NCAyLjE5Mi0xLjU2NiA0LjM4NC0xLjU2NiAxLjg3OSAwIDMuNDQ0LjMxMyA0LjA3IDEuMjUyLjk0Ljk0IDEuMjUzIDEuODc5IDEuMjUzIDMuMTMxdjE2LjkwOWwxOS43MjYtMTkuMWMxLjU2Ni0xLjU2NiAyLjgxOC0yLjE5MiA0LjA3MS0yLjUwNSAxLjI1Mi0uMzE0IDIuNTA1LjYyNiA0LjA3IDIuMTkxIDEuMjUzIDEuMjUzIDEuNTY2IDIuNTA1IDEuMjUzIDMuNzU4LS4zMTMgMS4yNTItMS4yNTIgMi41MDUtMi41MDUgMy40NDRsLTIwLjk3OSAxOS40MTQgMjEuOTE4IDE0LjcxNmMuOTQuOTQgMS41NjYgMS41NjYgMi4xOTIgMi41MDUuNjI3LjYyNy45NCAxLjI1MyAxLjI1MyAyLjE5Mi4zMTMuNjI2LjMxMyAxLjI1MyAwIDIuMTkyIDAgLjYyNi0uMzEzIDEuMjUyLTEuMjUzIDIuMTkyek0zNTUuNCAxNjIuMTdjLS45MzkgMS4yNTMtMi4xOTIgMi4xOTItMy43NTcgMy40NDQtMS41NjYgMS4yNTMtMy43NTggMi4xOTItNS45NSAyLjgxOS0yLjE5MS45MzktNS4wMSAxLjI1Mi03LjgyNyAxLjI1Mi00LjM4NCAwLTguMTQyLS42MjYtMTEuODk5LTIuMTkyLTMuNzU3LTEuNTY1LTYuODg5LTMuNDQ0LTkuMzk0LTYuMjYyLTIuNTA1LTIuODE4LTQuNjk2LTUuOTUtNi4yNjItMTAuMDItNS45NS0xNS4zNDMgNC4wNy0yNy41NTUgNS45NS0yOS40MzMgMi41MDQtMi44MTggNS4zMjItNC42OTcgOC43NjctNi4yNjMgMy40NDQtMS41NjUgNi44ODgtMi4xOTIgMTAuOTU5LTIuMTkyIDIuODE4IDAgNS4zMjMuMzEzIDcuNTE1Ljk0IDIuMTkyLjYyNiA0LjM4MyAxLjU2NSA1Ljk1IDIuNTA1IDEuNTY1LjkzOSAzLjEzIDIuMTkxIDQuMDcgMy40NDQuOTM5IDEuMjUyIDEuNTY1IDIuMTkyIDEuNTY1IDMuMTMxdjEuODc5Yy0uMzEzLjYyNi0uMzEzLjk0LS4zMTMgMS4yNTJsLS45NC45NGMtLjMxMi4zMTMtLjkzOS42MjYtMS41NjUuOTQtLjk0LjMxMi0yLjE5Mi4zMTItMy4xMzEgMC0uOTQtLjYyNy0xLjg3OS0xLjI1My0zLjEzMS0xLjg4LTEuMjUzLS42MjYtMi41MDUtMS41NjUtNC4wNy0yLjE5MS0xLjU2Ni0uNjI3LTMuNDQ1LS45NC01Ljk1LS45NHMtNS4wMS42MjYtNy4yMDIgMS44NzljLTIuMTkyIDEuMjUyLTMuNzU3IDIuODE4LTUuMDEgNC42OTctMS4yNTIgMS44NzgtMi41MDUgNC4zODMtMy4xMzEgNi44ODgtMS44NzkgNi41NzYuOTQgMTIuODM4IDMuNzU3IDE2LjI4MyAxLjU2NiAyLjE5MSAzLjQ0NSAzLjc1NyA1Ljk1IDUuMDEgMi4xOTIgMS4yNTIgNS4wMSAxLjg3OCA4LjE0IDEuODc4IDEuNTY2IDAgMi44MTktLjMxMyA0LjA3MS0uNjI2IDEuMjUzLS4zMTMgMi4xOTItLjYyNiAzLjEzMi0xLjI1My45MzktLjYyNiAxLjU2NS0uOTM5IDIuNTA1LTEuNTY1LjYyNi0uNjI2IDEuNTY1LS45NCAyLjE5MS0xLjU2Ni42MjctLjYyNiAxLjI1My0uOTQgMi4xOTItLjk0LjYyNiAwIDEuNTY2IDAgMS44NzkuMzE0IDEuMjUyLjYyNiAyLjE5MiAxLjI1MyAyLjUwNSAyLjE5Mi4zMTMuOTQuNjI2IDEuODc5LjYyNiAyLjgxOC0uOTQuNjI2LTEuNTY1IDEuNTY2LTIuMTkyIDIuODE4em0tNjguODg2IDYuNTc2Yy0xLjg3OSAwLTMuNDQ0LS4zMTMtNC4wNy0xLjI1My0uOTQtLjk0LTEuMjUzLTIuMTkyLTEuMjUzLTQuMDdWMTE5LjljMC0zLjc1OCAxLjg3OC01LjMyMyA1LjMyMy01LjMyMyAxLjg3OSAwIDMuMTMxLjMxMyA0LjA3IDEuMjUyLjk0Ljk0IDEuNTY2IDIuMTkyIDEuNTY2IDQuMDd2NDMuNTI1YzAgMS44NzgtLjMxMyAzLjEzLTEuMjUyIDQuMDctLjk0LjYyNi0yLjUwNSAxLjI1My00LjM4NCAxLjI1M3ptLTI0LjQyNC0uOTRoLTIxLjYwNWMtMS44NzkgMC0zLjQ0NC0uNjI2LTQuMzg0LTEuODc4LS45MzktMS4yNTMtMS41NjUtMi41MDUtMS41NjUtNC4zODR2LTQyLjg5OGMwLTEuMjUyLjYyNi0yLjUwNSAxLjU2NS0zLjEzLjk0LS42MjcgMi41MDUtMS4yNTMgMy43NTgtMS4yNTMgMS41NjUgMCAyLjgxOC4zMTMgNC4wNyAxLjI1Mi45NC42MjYgMS41NjYgMS44NzkgMS41NjYgMy4xMzF2MzkuMTRoMTYuNTk1YzEuMjUzIDAgMi4xOTIuMzE0IDMuMTMyIDEuMjUzLjkzOS42MjYgMS4yNTIgMS44NzkgMS4yNTIgMy43NTcgMCAxLjg4LS42MjYgMy4xMzItMS41NjUgMy43NTgtLjYyNy45NC0xLjU2NiAxLjI1Mi0yLjgxOSAxLjI1MnptLTQ0LjE1LTUuNjM2Yy0uOTM5IDEuMjUzLTIuMTkxIDIuMTkyLTMuNzU3IDMuNDQ0LTEuNTY2IDEuMjUzLTMuNzU3IDIuMTkyLTUuOTUgMi44MTktMi4xOTEuOTM5LTUuMDEgMS4yNTItNy44MjcgMS4yNTItNC4zODQgMC04LjE0MS0uNjI2LTExLjg5OS0yLjE5Mi0zLjc1Ny0xLjU2NS02Ljg4OS0zLjQ0NC05LjM5My02LjI2Mi0yLjUwNS0yLjgxOC00LjY5Ny01Ljk1LTYuMjYzLTEwLjAyLTUuOTUtMTUuMzQzIDQuMDctMjcuNTU1IDUuOTUtMjkuNDMzIDIuNTA0LTIuODE4IDUuMzIyLTQuNjk3IDguNzY3LTYuMjYzIDMuNDQ0LTEuNTY1IDYuODg4LTIuMTkyIDEwLjk1OS0yLjE5MiAyLjgxOCAwIDUuMzIzLjMxMyA3LjUxNS45NCAyLjE5Mi42MjYgNC4zODQgMS41NjUgNS45NSAyLjUwNSAxLjU2NS45MzkgMy4xMyAyLjE5MSA0LjA3IDMuNDQ0Ljk0IDEuMjUyIDEuNTY1IDIuMTkyIDEuNTY1IDMuMTMxdjEuODc5Yy0uMzEzLjYyNi0uMzEzLjk0LS4zMTMgMS4yNTJsLS45NC45NGMtLjMxMi4zMTMtLjkzOS42MjYtMS41NjUuOTQtLjk0LjMxMi0yLjE5Mi4zMTItMy4xMyAwLS45NC0uNjI3LTEuODgtMS4yNTMtMy4xMzItMS44OHMtMi41MDUtMS41NjUtNC4wNy0yLjE5MS0zLjQ0NS0uOTQtNS45NS0uOTQtNS4wMS42MjYtNy4yMDIgMS44NzljLTIuMTkyIDEuMjUyLTMuNzU3IDIuODE4LTUuMDEgNC42OTdzLTIuNTA1IDQuMzgzLTMuMTMgNi44ODhjLTIuNTA2IDYuNTc2LjMxMiAxMi44MzggMy4xMyAxNi4yODMgMS41NjYgMi4xOTEgMy40NDUgMy43NTcgNS45NSA1LjAxIDIuMTkxIDEuMjUyIDUuMDEgMS44NzggOC4xNCAxLjg3OCAxLjU2NiAwIDIuODE5LS4zMTMgNC4wNzEtLjYyNiAxLjI1My0uMzEzIDIuMTkyLS42MjYgMy4xMzEtMS4yNTMuOTQtLjYyNiAxLjU2Ni0uOTM5IDIuNTA1LTEuNTY1LjYyNy0uNjI2IDEuNTY2LS45NCAyLjE5Mi0xLjU2Ni42MjctLjYyNiAxLjI1My0uOTQgMi4xOTItLjk0LjYyNiAwIDEuMjUzIDAgMS44NzkuMzE0IDEuMjUyLjYyNiAyLjE5MiAxLjI1MyAyLjUwNSAyLjE5Mi4zMTMuOTQuNjI2IDEuODc5LjYyNiAyLjgxOC0uMzEzLjYyNi0uOTQgMS41NjYtMS41NjYgMi44MTh6IiBzdHlsZT0iZmlsbDojMjIxZjFmIi8+PHBhdGggc3R5bGU9ImZpbGw6IzcwYWM0MyIgZD0ibTIyNC43NTkgNTQuOTA2LTUwLjk0NC0zLjk2My0yLjgzIDMyLjgzMXoiLz48cGF0aCBzdHlsZT0iZmlsbDojZjI2ZDI1IiBkPSJtMTQxLjU1MSA4My43NzQgMTQuNzE3LTE0LjcxN0w4Ni42NDUgMHY4My43NzRoMjAuMzc4eiIvPjxwYXRoIHN0eWxlPSJmaWxsOiMwMzdkYWQiIGQ9Im0xNzMuODE1IDUwLjk0My0xNy41NDcgMTguMTE0LTE0LjcxNyAxNC43MTdIMTcwLjk4NWwyLjgzLTMyLjgzMS41NjYtLjU2NnoiLz48cGF0aCBzdHlsZT0iZmlsbDojNzJhZjQ0IiBkPSJtNDcuNTg5IDE4MCAzOS4wNTYtMTEuODg3LTE0LjcxNy0xNC43MTd6Ii8+PHBhdGggc3R5bGU9ImZpbGw6IzFhYTVkZSIgZD0iTTE3MC40MTkgODMuNzc0aC02My4zOTZsLTcuOTI1IDQuNTI4LTU4LjMwMiAzMy4zOTZMMi44NzIgODMuNzc0bDY5LjA1NiA2OS42MjIgMTQuNzE3IDE0LjcxNyA4NC4zNC04NC4zMzl6Ii8+PHBhdGggc3R5bGU9ImZpbGw6IzRjYmRlYyIgZD0iTTg2LjY0NSA4My43NzRIMi44NzJsMzcuOTI0IDM3LjkyNCA1OC4zMDItMzMuMzk2IDcuOTI1LTQuNTI4eiIvPjwvc3ZnPg0K" align="center">
+  </div>
+  <div class="mb-5">
+    <h1>Privacy Policy Overview</h1>
+    <p>
+      Clickadu s.r.o. is committed to protecting the privacy of Internet users. This Privacy Statement presents our privacy policy, including our privacy practices. Below is information regarding our commitment to protecting the privacy of Internet users.
+      <a href="https://www.clickadu.com/privacy" target="_blank">More...</a>
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h1>Information We Collect</h1>
+    <p>
+      We do not collect the online user’s personally identifiable information ("PII") through our Services. Non-Personally Identifiable Information ("Non-PII") may be collected to offer a range of Services that allow advertisers and publishers to show online users the most useful and relevant ads.
+      <a href="https://www.clickadu.com/privacy" target="_blank">More...</a>
+
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h1>Use of Cookies and Pixels</h1>
+    <p>
+      We collect Non-PII through the use of cookies and pixels. No personally identifiable information is collected or used in this process. Cookies are used by our affiliates, service providers or tracking utility company which is not covered by our Privacy Policy.
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h1>Subscription Management Guide</h1>
+    <p>
+      Learn how to stop receiving push notifications from specific websites in Chromium. Follow step-by-step instructions for both desktop and mobile versions to adjust notification settings or use a direct settings link for quick management.
+      <a href="" id="btnCollapse">More...</a>
+    </p>
+    <div id="collapseContainer" class="collapse">
+      <div class="collapse-container">
+        <h3>For Chromium Browser on Desktop: </h3>
+        <ol>
+          <li>
+            <b>Launch the Browser:</b><br> Open the Chromium browser on your computer.
+          </li>
+          <li>
+            <b>Access the Settings Menu:</b>
+            <ul>
+              <li>Click the three-dot menu icon in the top-right corner of the browser window.</li>
+              <li>Choose "Settings" from the dropdown options.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Navigate to Privacy Options:</b>
+            <ul>
+              <li>In the left-hand sidebar, click on "Privacy and security."</li>
+              <li>Select "Site Settings" under this section.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Adjust Notification Preferences:</b>
+            <ul>
+              <li>Scroll down to the "Notifications" section.</li>
+              <li>Locate the site you want to stop receiving notifications from, e.g., sample_domain.com.</li>
+              <li>Click on the site name, then select "Remove" or "Block" to disable notifications.</li>
+            </ul>
+          </li>
+        </ol>
+        <hr>
+        <h3>For Chromium Browser on Mobile Devices: </h3>
+        <ol>
+          <li>
+            <b>Open the Browser App:</b><br> Launch the Chromium browser on your smartphone or tablet.
+          </li>
+          <li>
+            <b>Enter the Settings Menu:</b>
+            <ul>
+              <li>Tap the three-dot menu in the top-right corner of the screen.</li>
+              <li>Select "Settings" from the menu.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Go to Notification Settings:</b>
+            <ul>
+              <li>Scroll to the "Advanced" section and tap on "Site Settings."</li>
+              <li>Then, open the "Notifications" option.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Modify Notification Permissions:</b>
+            <ul>
+              <li>Find the website you want to manage, such as sample_domain.com.</li>
+              <li>Tap the domain and choose either "Block" or "Remove" to stop notifications.</li>
+            </ul>
+          </li>
+        </ol>
+        <hr>
+        <h3>Additional Tip:</h3>
+        <p>
+          If managing notifications through the menu doesn’t work, you can use the direct settings link. Open the following URL in your browser and replace example_domain.com with the website you wish to manage:
+        </p>
+        <pre>chrome://settings/content/notifications?search=sample_domain.com</pre>
+        <br>
+        <p>Remember to substitute the example domain with the specific site you want to modify. From this page, you can customize or remove notification permissions for any site as needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <h1>Disclosure of Information</h1>
+    <p>
+      We do not sell, rent, or share PII collected on our customer’s websites to non-affiliated third parties. Non-PII collected through our Services, and information derived from it, may be disclosed to our customers.
+      <a href="https://www.clickadu.com/privacy" target="_blank">More...</a>
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h1>User Choice and Opt-Out</h1>
+    <p>
+      You may at all times adjust your computer’s web browser settings to refuse all cookies or opt out of receiving interest-based advertising.
+      <a href="https://www.clickadu.com/privacy" target="_blank">More...</a>
+    </p>
+
+    <div style="margin-top:12px;">
+      <button id="unsubscribeBtn" type="button" class="unsubscribe-btn">
+        <span class="unsubscribe-btn__text">Unsubscribe</span>
+      </button>
+
+      <div id="unsubscribeStatus" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <h1>Information Security</h1>
+    <p>
+      We follow generally accepted industry standards to protect against the unauthorized access to, retention of, and disclosure of data. This includes necessary physical, electronic, and management activities required to protect data integrity, access, and use.
+      <a href="https://www.clickadu.com/privacy" target="_blank">More...</a>
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h1>Children’s Privacy</h1>
+    <p>
+      Our website, products, and Services are neither developed for, nor directed at, children. If you believe your child has provided us with personally identifiable data, please
+      <a href="https://www.clickadu.com/contact" style="text-decoration: none" target="_blank">contact</a> us for removal.
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <h1>Contacts</h1>
+    <p>
+      Clickadu s.r.o.<br> Zenklova 32/28, Praha 8 - Libe, 180 00<br> Czech Republic<br> Tax ID number 04066260<br>
+      <a href="https://www.clickadu.com/contact" style="text-decoration: none" target="_blank">contact</a>
+    </p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btnCollapse = document.getElementById('btnCollapse');
+    var collapseContainer = document.getElementById('collapseContainer');
+
+    btnCollapse.addEventListener('click', function(e) {
+      e.preventDefault();
+      collapseContainer.classList.toggle('show');
+    });
+
+    var btn = document.getElementById('unsubscribeBtn');
+    var status = document.getElementById('unsubscribeStatus');
+
+    function showStatus(text, cls) {
+      status.textContent = text;
+      status.className = cls || '';
+    }
+
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      btn.classList.add('unsubscribe-btn--loading');
+      btn.disabled = true;
+      showStatus('', '');
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/unsubscribe', true);
+      xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== 4) return;
+
+        btn.disabled = false;
+        btn.classList.remove('unsubscribe-btn--loading');
+
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            var data = JSON.parse(xhr.responseText);
+
+            if (data && data.ok) {
+              showStatus('Unsubscribed', 'success');
+            }
+          } catch (err) {
+            console.error('Invalid JSON response:', err);
+            showStatus('Request failed', 'error');
+          }
+        } else {
+          console.error('Unsubscribe request failed:', xhr.status);
+          showStatus('Request failed', 'error');
+        }
+      };
+
+      xhr.onerror = function() {
+        btn.disabled = false;
+        btn.classList.remove('unsubscribe-btn--loading');
+        console.error('Network error during unsubscribe request');
+        showStatus('Request failed', 'error');
+      };
+
+      xhr.send(JSON.stringify({ ts: Date.now() }));
+    });
+  });
+</script>
+
+
+
+</body></html>

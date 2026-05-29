@@ -1,0 +1,217 @@
+<!DOCTYPE html><html ng-app="iApp" ng-controller="frameController as fc" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title class="ng-binding">HICKORY WEATHER</title>
+	<meta name="description" content="HICKORY WEATHER - WeatherWidget.io">
+	<meta name="viewport" content="width=device-width">
+	<meta name="robots" content="noindex, follow">
+	<base href="https://weatherwidget.io/w/" target="_parent">
+	<link rel="stylesheet" href="css/if_w.css">
+	<link rel="stylesheet" ng-href="">
+
+	<style ww-index-style="" class="ng-binding ng-isolate-scope">
+					
+					
+					
+					html {
+					font-size: 16px;
+					}
+					#weatherWidget {
+					color: #ffffff;
+					background-color: #1f567c;
+					background-image: none;
+					background-size: unset;
+					background-position: unset;
+					text-shadow: none;
+					}
+					#weatherWidgetInner {
+					background-color: #1f567c;
+					}
+					#weatherWidget .locationName {
+					color: #ffffff;
+					}
+					#weatherWidget .locationName span {
+					color: #ffffff;
+					}
+					#weatherWidget .currentTemp {
+					color: #ffffff;
+					}
+					#weatherWidget .currentDesc {
+					color: #ffffff;
+					}
+					#weatherWidget .dayName {
+					color: #ffffff;
+					}
+					#weatherWidget .day:nth-child(odd) {
+					background: rgba(255, 255, 255, 0.02);
+					}
+					#weatherWidget .day .dayTempMax{
+					color: #ffb4b4;
+					}
+					#weatherWidget .day .dayTempMin {
+					color: #93bffe;
+					}
+				
+					/* Icon Colors */
+					#weatherWidget .w-icon .sun {
+					fill: #febc2f;
+					}
+				
+					#weatherWidget .w-icon .moon {
+					fill: #ffffff;
+					}
+				
+					#weatherWidget .w-icon .cloud {
+					fill: #dfdede;
+					}
+					#weatherWidget .w-icon .cloudfill {
+					fill: #1f567c;
+					}
+					#weatherWidget .w-icon .fogLine {
+					fill: #dfdede;
+					}
+					#weatherWidget .w-icon .lightning {
+					fill: #febc2f;
+					}
+					#weatherWidget .w-icon .drizzle {
+					fill: #93bffe;
+					}
+				
+					#weatherWidget .w-icon .flake {
+					fill: #dfdede;
+					}
+					
+					#weatherWidget  .w-icon .hail {
+					fill: #dfdede;
+					}
+				
+					#weatherWidget .w-icon .air {
+					fill: #dfdede;
+					}
+				
+					/* Open Weather Colors */
+					#openWeather svg {
+					fill: #ffffff;
+					stroke: #1f567c;
+					}
+				
+					/* Font */
+					#weatherWidget {
+					font-family: Tahoma,Arial,Verdana,Segoe,sans-serif;
+					font-size: 1rem;
+					
+					
+					}
+					
+					/* SVG Shadow */
+					#weatherWidget .w-icon {
+						-webkit-filter: none;
+						filter: none;
+					}
+					</style>
+
+</head>
+<body>
+
+<div id="weatherWidget" class="" lang="en" style="display: block;">
+	<!-- ngInclude: '//weatherwidget.io/w/img/ui/open.svg' --><span id="openWeather" ng-include="'//weatherwidget.io/w/img/ui/open.svg'" class="ng-scope"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" width="76" height="76" viewBox="0 0 76 76" enable-background="new 0 0 76.00 76.00" xml:space="preserve" class="ng-scope">
+  <path fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" d="M44.33 19L57 19 57 31.67 52.25 36.42 52.25 27.71 34.83 45.13 30.88 41.17 48.29 23.75 39.58 23.75 44.33 19ZM19 25.33L42.75 25.33 38 30.08 23.75 30.08 23.75 52.25 45.92 52.25 45.92 38 50.67 33.25 50.67 57 19 57 19 25.33Z"></path>
+</svg>
+</span>
+	<div id="weatherWidgetInner" ng-class="[o.language.dir, o.widgetMode.class, o.forecastDaysNum.class, {noLabel: !(o.label_1 || o.label_2), yesLabel: o.label_1 || o.label_2}]" class="ltr both forDays-7 yesLabel">
+	<a class="weatherInfo" href="//forecast7.com/en/35d73n81d34/hickory/?unit=us" target="_blank" onmouseenter="more(1)" onmouseleave="more(0)" mg-show="o.weather">
+		<div class="currentWeather" mg-show="!(!o.widgetMode.current &amp;&amp; !(o.label_1 || o.label_2))">
+			<h1 class="locationName ng-binding" mg-show="o.label_1 || o.label_2">HICKORY<span class="ng-binding"> WEATHER</span></h1>
+
+			<!-- ngRepeat: hacky in o.weather.forecast | limitTo:1 --><div class="currentWeatherIcon ng-scope" ng-repeat="hacky in o.weather.forecast | limitTo:1" mg-show="o.widgetMode.current">
+
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+currentIcon()+'.html' --><div id="icon" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+currentIcon()+'.html'" title="heavy intensity rain" class="ng-scope"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+
+			</div><!-- end ngRepeat: hacky in o.weather.forecast | limitTo:1 -->
+
+			<div class="currentConditions" mg-show="o.widgetMode.current">
+				<div class="currentTemp ng-binding">57°F</div>
+				<div class="currentDesc ng-binding">heavy intensity rain</div>
+			</div>
+
+		</div>
+
+		<div class="weatherForecast" mg-show="o.widgetMode.forecast">
+			<!-- ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Saturday</span><span class="abrDayName ng-binding">Sat</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon0" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="heavy intensity rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">70°F</div>
+					<div class="dayTempMin ng-binding">57°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Sunday</span><span class="abrDayName ng-binding">Sun</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon1" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="light rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">75°F</div>
+					<div class="dayTempMin ng-binding">57°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Monday</span><span class="abrDayName ng-binding">Mon</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon2" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="moderate rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">81°F</div>
+					<div class="dayTempMin ng-binding">64°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Tuesday</span><span class="abrDayName ng-binding">Tue</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon3" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="heavy intensity rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">84°F</div>
+					<div class="dayTempMin ng-binding">66°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Wednesday</span><span class="abrDayName ng-binding">Wed</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon4" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="moderate rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">88°F</div>
+					<div class="dayTempMin ng-binding">66°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Thursday</span><span class="abrDayName ng-binding">Thu</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon5" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="moderate rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">88°F</div>
+					<div class="dayTempMin ng-binding">66°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 --><div class="day ng-scope" ng-repeat="day in o.weather.forecast | limitTo:7">
+				<div class="dayName"><span class="fullDayName ng-binding">Friday</span><span class="abrDayName ng-binding">Fri</span></div>
+				<!-- ngInclude: '//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html' --><div class="dayIcon ng-scope" id="icon6" ng-include="'//weatherwidget.io/w/img/icons/'+o.iconSet.url+day.icon+'.html'" title="moderate rain"><div class="w-icon iconvault rain ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><path class="cloud" d="m253.5 184c0 10.3-3.6 19.1-10.7 26.2-7.2 7.2-15.7 10.7-25.6 10.7-.8 0-1.6 0-2.4 0h-13.7c-.4 0-.8 0-1.2 0-3.6-.8-5.4-2.8-5.4-6 0-2 .6-3.6 1.8-4.8 1.2-1.2 2.6-1.8 4.2-1.8h.6 14.3c.8 0 1.4 0 1.8 0 6.4 0 11.9-2.4 16.7-7.2 4.8-4.8 7.2-10.5 7.2-17.3 0-5.6-1.8-10.6-5.4-15.2-3.6-4.6-8.3-7.4-14.3-8.6l-5.4-.6.6-6c.4-2 .6-4 .6-6 0-16.7-6-31-17.9-42.9-11.9-11.9-26.4-17.9-43.5-17.9-13.5 0-25.7 4.1-36.6 12.2-10.9 8.1-18.2 18.8-21.8 31.9l-1.2 4.2-4.2.6c-9.5.8-17.5 4.7-23.8 11.6-6.4 7-9.5 15.2-9.5 24.7 0 8 2.4 15.2 7.2 21.8 4.8 6.6 10.9 11 18.5 13.4 3.6.4 5.4 2.4 5.4 6 0 1.6-.6 3-1.8 4.2s-2.8 1.8-4.8 1.8c-.8 0-1.6-.2-2.4-.6-9.9-2.8-18.2-8.5-24.7-17.3-6.6-8.7-9.8-18.5-9.8-29.2 0-12.7 4.4-23.8 13.1-33.4 7.5-7.9 16.7-12.9 27.4-14.9 5.2-14.7 14.1-26.6 26.8-35.8 12.7-9.1 26.8-13.7 42.3-13.7 20.3 0 37.5 7.2 51.8 21.5 14.3 14.3 21.5 31.6 21.5 51.8 0 .8 0 1.4 0 1.8 7.2 2.8 13 7.4 17.6 13.7 4.5 6.6 6.7 13.6 6.7 21.1"></path><path class="drizzle" d="m125.1 233.5c-4.1.9-7.8.3-11.2-1.9-3.4-2.1-5.6-5.2-6.7-9.1-1.1-3.9-.5-7.7 1.6-11.2 2.8-4.6 7.9-9.9 15.2-15.8 7.3-5.9 12.6-7.9 15.8-6.1 2.5 3.2 2.8 9.1 1.1 17.6-1.8 8.6-3.9 15.2-6.4 19.8-2.2 3.6-5.3 5.8-9.4 6.7"></path><path class="drizzle" d="m154.8 227.4c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.1-6.9 19.8-2.1 3.6-5.2 5.9-9.1 6.9-3.9 1.1-7.7.5-11.2-1.6-3.6-2.1-5.9-5.3-6.9-9.4-1.1-4.1-.5-7.9 1.6-11.5 2.8-4.3 7.9-9.4 15.2-15.5 7.2-6 12.5-8.1 15.7-6.3"></path><path class="drizzle" d="m180.4 179.3c2.8 3.2 3.4 9.1 1.6 17.6-1.8 8.6-4.1 15.2-6.9 19.8-2.1 3.6-5.2 5.8-9.1 6.7-3.9.9-7.7.3-11.2-1.9-3.6-2.1-5.8-5.2-6.7-9.1-.9-3.9-.3-7.7 1.9-11.2 2.8-4.6 7.8-9.9 15-15.8 7-5.9 12.2-7.9 15.4-6.1"></path></svg></div></div>
+				<div class="temps">
+					<div class="dayTempMax ng-binding">72°F</div>
+					<div class="dayTempMin ng-binding">64°F</div>
+				</div>
+			</div><!-- end ngRepeat: day in o.weather.forecast | limitTo:7 -->
+		</div>
+	</a>
+	</div>
+</div>
+
+<script>
+
+	function more(over) {
+		if(over){
+			document.getElementById("openWeather").className = "highlight";
+
+		} else {
+			document.getElementById("openWeather").className = "";
+
+		}
+	}
+
+</script>
+
+<!-- Angular https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js -->
+<script src="/w/js/angular-1.5.8.min.js"></script>
+
+<!-- Weather Widget Frame app -->
+<script src="/w/js/iApp.min.js"></script>
+
+
+
+</body></html>

@@ -1,0 +1,9 @@
+<html><head></head><body>
+    <script>
+        if (window.parent) {
+            const cVal = "_ce3rdPCSD=store";
+            document.cookie = `${cVal}; Max-Age=86400; SameSite=None; Secure`;
+            window.parent.postMessage(JSON.stringify({ _ce3rdPCBlckd: !document.cookie.includes(cVal) }), '*');
+        }
+    </script>
+</body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Mini-Solaranlage von solago – Dein Solarenergie-Experte</title>
+    <script src="https://retrack-kupona.kuponacdn.de/customers/86317.min.js"></script><script src="//tm706.container.webgains.link/tm/a/container/eval/de57f57680.js?sid=406pbji9auvh46v05e91a7em2h&amp;rnd=16231644&amp;macroData[transactionId]=&amp;macroData[tcfGdpr]=-1&amp;macroData[tcfGdprConsent]=&amp;macroData[searchTerm]=&amp;macroData[products]=&amp;macroData[productPrice]=&amp;macroData[productName]=&amp;macroData[productId]=&amp;macroData[pageUrl]=https%3A%2F%2Fsolago.de%2Fweb-pixels%4034f07b34w0f0599d7pa9bdc545m9e2c49eb%2Fcustom%2Fweb-pixel-278266230%401%2Fsandbox%2Fmodern%2F&amp;macroData[pageType]=homepage&amp;macroData[pageName]=&amp;macroData[orderValue]=&amp;macroData[categoryName]=&amp;macroData[categoryId]=" async=""></script><script async="" src="https://tm.container.webgains.link/tm/a/container/init/de57f57680.js?&amp;rnd=93018918"></script><script src="https://solago.de/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+var wbgNeoryId = "de57f57680";
+
+analytics.subscribe("page_viewed", event => { 
+	 
+	if (event.context.document.location.pathname == "/"){
+
+		window.ntmData=window.ntmData||[];
+		window.ntmData.push({
+			gdpr: "-1", /* 0 if GDPR does not apply, 1 if GDPR applies */
+			gdprConsent: "", /* IAB TCF 2.0 consent string */
+			pageType:"homepage"
+		});
+
+		(function(n,e,o,r,y){n[r]=n[r]||[];n[r].push({'event':'ntmInit','t':new Date().getTime()});var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';s.async=true;s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);f.parentNode.insertBefore(s,f);})(window,document,'script','ntmData', wbgNeoryId);
+	}
+});
+
+
+analytics.subscribe("search_submitted", (event) => {
+	
+	var products = event.data.searchResult.productVariants;
+	var wgProductList = "[";
+	for (i=0; i < products.length; i++) {
+		if (i > 0){
+			wgProductList = wgProductList + ",";
+		}
+		wgProductList = wgProductList + "{id: '" + products[i].id + "' }";
+	}
+	wgProductList = wgProductList + "]";
+    
+	window.ntmData=window.ntmData||[];
+	window.ntmData.push({
+		gdpr: "-1", /* 0 if GDPR does not apply, 1 if GDPR applies */
+		gdprConsent: "", /* IAB TCF 2.0 consent string */
+		pageType:"searchresult",
+		searchTerm: event.data.searchResult.query,
+		products: wgProductList
+	});
+	(function(n,e,o,r,y){n[r]=n[r]||[];n[r].push({'event':'ntmInit','t':new Date().getTime()});var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';s.async=true;s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);f.parentNode.insertBefore(s,f);})(window,document,'script','ntmData',wbgNeoryId);
+});
+
+
+analytics.subscribe("collection_viewed", event => { 
+ 	window.ntmData=window.ntmData||[];
+	window.ntmData.push({
+		gdpr: "-1", /* 0 if GDPR does not apply, 1 if GDPR applies */
+		gdprConsent: "", /* IAB TCF 2.0 consent string */
+		pageType:"category",
+		categoryId: event.data.collection.id,
+        categoryName: event.data.collection.title
+	});
+  
+(function(n,e,o,r,y){n[r]=n[r]||[];n[r].push({'event':'ntmInit','t':new Date().getTime()});var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';s.async=true;s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);f.parentNode.insertBefore(s,f);})(window,document,'script','ntmData',wbgNeoryId);
+});
+
+analytics.subscribe("product_viewed", event => { 
+	window.ntmData=window.ntmData||[];
+	window.ntmData.push({
+		gdpr: "-1", /* 0 if GDPR does not apply, 1 if GDPR applies */
+		gdprConsent: "", /* IAB TCF 2.0 consent string */
+		pageType:"product",
+		categoryId: event.data.productVariant.product.type,
+		productId: event.data.productVariant.id,
+		productPrice: event.data.productVariant.price.amount,
+		productName:  event.data.productVariant.product.title
+
+	});
+	(function(n,e,o,r,y){
+	n[r]=n[r]||[];
+	n[r].push({'event':'ntmInit','t':new Date().getTime()});
+	var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';
+	s.async=true;
+	s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);
+	f.parentNode.insertBefore(s,f);
+	})(window,document,'script','ntmData',wbgNeoryId);
+});
+
+analytics.subscribe("cart_viewed", event => { 
+	var cart = event.data.cart;
+	var products = cart.lines;
+	var wgProductList = "[";
+	for (i=0; i < products.length; i++) {
+		if (i > 0){
+			wgProductList = wgProductList + ",";
+		}
+		wgProductList = wgProductList + "{id: '" + products[i].merchandise.product.id + "', qty: '" + products[i].quantity + "', price: '" + products[i].merchandise.price.amount + "', name: '" + products[i].merchandise.product.title + "' }";
+	}
+	wgProductList = wgProductList + "]";
+	var uniqueDataLayerName = "ntmData"+Math.floor(Math.random()*10e12);
+	window[uniqueDataLayerName] = [];
+	window[uniqueDataLayerName].push({
+		gdpr: "-1", 
+		gdprConsent: "", /* IAB TCF 2.0 consent string */
+		pageType:"basket",
+		products: wgProductList
+	});
+	(function(n,e,o,r,y){n[r]=n[r]||[];n[r].push({'event':'ntmInit','t':new Date().getTime()});var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';s.async=true;s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);f.parentNode.insertBefore(s,f);})(window,document,'script',uniqueDataLayerName,wbgNeoryId);
+});
+
+
+analytics.subscribe("checkout_started", event => { 
+ 	var docLocation =  event.context.document.location;	
+	
+	var checkout = event.data.checkout;
+	var products = checkout.lineItems;
+	var wgProductList = "[";
+	for (i=0; i < products.length; i++) {
+		if (i > 0){
+			wgProductList = wgProductList + ",";
+		}
+		wgProductList = wgProductList + "{id: '" + products[i].id + "', qty: '" + products[i].quantity + "', price: '" + products[i].finalLinePrice.amount + "', name: '" + products[i].title + "' }";
+	}
+	wgProductList = wgProductList + "]";
+
+	var uniqueDataLayerName = "ntmData"+Math.floor(Math.random()*10e12);
+	window[uniqueDataLayerName] = [];
+	window[uniqueDataLayerName].push({
+		gdpr: "-1", 
+		gdprConsent: "", /* IAB TCF 2.0 consent string */
+		pageType:"basket",
+		products: wgProductList
+	});
+	(function(n,e,o,r,y){n[r]=n[r]||[];n[r].push({'event':'ntmInit','t':new Date().getTime()});var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';s.async=true;s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);f.parentNode.insertBefore(s,f);})(window,document,'script',uniqueDataLayerName,wbgNeoryId);
+	
+});
+
+analytics.subscribe("checkout_completed", event => { 
+
+	var products = event.data.checkout.lineItems;
+	var wgProductList = "[";
+	for (i=0; i < products.length; i++) {
+	  if (i > 0){
+		wgProductList = wgProductList + ",";
+	  }
+	  wgProductList = wgProductList + "{id: '" + products[i].id + "', qty: '" + products[i].quantity + "', price: '" + products[i].variant.price.amount + "', name: '" + products[i].title + "' }";
+	}
+	wgProductList = wgProductList + "]";
+	var uniqueDataLayerName = "ntmData"+Math.floor(Math.random()*10e12);
+	window[uniqueDataLayerName] = [];
+	window[uniqueDataLayerName].push({
+		gdpr: "-1", /* 0 if GDPR does not apply, 1 if GDPR applies */
+		gdprConsent: "", /* IAB TCF 2.0 consent string */
+		pageType:"order",
+		transactionId: event.data.checkout.order.id,
+		orderValue: event.data.checkout.subtotalPrice.amount,
+		products: wgProductList
+	});
+	(function(n,e,o,r,y){n[r]=n[r]||[];n[r].push({'event':'ntmInit','t':new Date().getTime()});var f=e.getElementsByTagName(o)[0],s=e.createElement(o),d=r!='ntmData'?'&ntmData='+r:'';s.async=true;s.src='http'+(document.location.protocol=='https:'?'s':'')+'://tm.container.webgains.link/tm/a/container/init/'+y+'.js?'+d+'&rnd='+Math.floor(Math.random()*100000000);f.parentNode.insertBefore(s,f);})(window,document,'script',uniqueDataLayerName,wbgNeoryId);
+});
+
+});})(self.webPixelsManager.createShopifyExtend('278266230', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+</body></html>

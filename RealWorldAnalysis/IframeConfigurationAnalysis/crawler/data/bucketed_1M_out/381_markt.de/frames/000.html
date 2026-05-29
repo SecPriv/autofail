@@ -1,0 +1,755 @@
+<!DOCTYPE html><html class="cmp-modal-open" lang="de"><head><style>
+        html.cmp-modal-open {
+            // overflow: hidden !important; // Disabled to prevent CLS caused by late scrollbar removal
+            // height: 100vh !important;
+            // position: absolute !important;
+        }
+        body.cmp-modal-open {
+            // overflow: hidden !important; // Disabled to prevent CLS caused by late scrollbar removal
+            // height: 100vh !important;
+            // position: absolute !important;
+        }
+    </style>
+    <link href="https://static.markt.de" rel="preconnect" crossorigin="anonymous">
+    <link href="https://static.markt.de" rel="preconnect">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="✓ Kostenlose und schnelle Anzeigenaufgabe ✓ In Millionen gewerblichen und privaten Kleinanzeigen suchen ✓ Neu oder gebraucht ✓ In Deutschland und Umgebung">
+    <meta name="robots" content="index, follow">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light dark">
+    <link href="https://www.markt.de/manifest.json" rel="manifest">
+    <link href="https://static.markt.de/bundles/8gcbead7/image/pwa/partner/markt.de/favicons/favicon.ico" rel="icon" type="image/x-icon" sizes="any">
+    <link href="https://static.markt.de/bundles/acfde79i/image/pwa/partner/markt.de/favicons/icon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://static.markt.de/bundles/9b8bffg/image/pwa/partner/markt.de/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://static.markt.de/bundles/hjda7af7/fonts/pwa/roboto-v18-latin-ext_latin-regular.woff2" rel="preload" type="font/woff2" integrity="sha384-BTHcutPeQ3HXfxxPoEwm9LcjbLjKYngZGDAPakE45jUsUyCXoQBVvqQC3s8evh1i" crossorigin="anonymous" as="font">
+    <link href="https://static.markt.de/bundles/hec8kd/fonts/pwa/roboto-v18-latin-ext_latin-italic.woff2" rel="preload" type="font/woff2" integrity="sha384-7Ungdvr0FkqaQPFNQoZBZ8iR1vAqIGLZNTPOfVMRl3yshqMIITFXdp2ewbf8a1No" crossorigin="anonymous" as="font">
+    <link href="https://static.markt.de/bundles/kjjhieac/fonts/pwa/roboto-v18-latin-ext_latin-700.woff2" rel="preload" type="font/woff2" integrity="sha384-Kt+nkQ5b/MAYb1cS8uo0JKyQDGV6HcjzRqxT1V4TTTfqxZVtm+QRajb5hvVriBW9" crossorigin="anonymous" as="font">
+    <link href="https://www.markt.de/" rel="canonical">
+    <link href="https://www.markt.de/" rel="alternate" hreflang="de-DE">
+    <link href="https://www.markt.ch/" rel="alternate" hreflang="de-CH">
+    <link href="https://www.markt.de/" rel="alternate" hreflang="x-default">
+    <link href="https://static.markt.de/bundles/kcadfidd/css/pwa/bundle-pwa.css" rel="stylesheet" type="text/css" integrity="sha384-rZsIP16fhqUUU4kmi1eBmwUHlUK5tVjI4PhBeeNqTGVKkyjKWdTTPTcgMdOLY1uK" crossorigin="anonymous">
+    <link href="https://static.markt.de/webjars/fancybox/3.5.7-MARKT-amd-r2/jquery.fancybox.min.css" rel="stylesheet" type="text/css" integrity="sha384-Q8BgkilbsFGYNNiDqJm69hvDS7NCJWOodvfK/cwTyQD4VQA0qKzuPpvqNER1UC0F" crossorigin="anonymous">
+    <link href="https://static.markt.de/webjars/fancybox-legacy/3.3.5-MARKT-amd-r2/jquery.fancybox.min.css" rel="stylesheet" type="text/css" integrity="sha384-/dUIqcuZmn0/Nt1CGyvylCjqPYa/w0/SdIVpbqBxsxYmfwd7PXM9Gt7PsRKRj9Xy" crossorigin="anonymous">
+    <link href="https://static.markt.de/webjars/bxslider-4/4.2.15-MARKT-amd-r3/jquery.bxslider.min.css" rel="stylesheet" type="text/css" integrity="sha384-IkdhMx7cUuSY2YdhG0ZdD2Ib2xP97yB7dlkn4WdBwqh1r2WK2YAnnK2REMagj1fj" crossorigin="anonymous">
+    <link href="https://static.markt.de/webjars/pintura/8.96.3-MARKT-r5/pintura.css" rel="stylesheet" type="text/css" integrity="sha384-Eiji/cmA/dpI9V6aQRXaTJIDoZPYWwK+W9vzjiVRXJjc5PL5TMxZGkm5CjuYiEdo" crossorigin="anonymous">
+    <link href="https://static.markt.de/bundles/8fhfi7jd/css/pwa/home.css" rel="stylesheet" type="text/css" integrity="sha384-cZVbSJioeX7J+3Ux3Ku3Qwummk/Fg0DHQEjfbaLHRnlVmgZDVhGqfJoPJ+jPA81q" crossorigin="anonymous">
+    <title>Kostenlose Kleinanzeigen in Deutschland | markt.de</title>
+    <script async="" type="text/javascript" src="https://cdntrf.com/lib/templates/index.js"></script><script async="" type="text/javascript" src="https://cdntrf.com/markt.de_RESPONSIVE_LIVE.js"></script><script src="https://cdn.opencmp.net/tcf-v2/cmp-stub-latest.js" id="open-cmp-stub"></script><script src="https://cdn.opencmp.net/tcf-v2/platforms/legacy/cmp-latest.js"></script>
+    <script src="https://static.markt.de/webjars/requirejs/2.3.6/require.min.js" integrity="sha384-Z9JQUtAaWmYKd6d4DNdwKbqQjtvpcd4f/QmJSoaDxeRg4hWHtyyF6BwCsrnLcG1F" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+/* <![CDATA[ */
+
+          requirejs.config({
+            paths: {"clsy-blocks_age-verification-api":"https://static.markt.de/bundles/gbge96lk/kotlinjs/clsy-blocks_age-verification-api","clsy-blocks_classyads":"https://static.markt.de/bundles/eb8l7lff/kotlinjs/clsy-blocks_classyads","clsy-blocks_ippen-userid-integration":"https://static.markt.de/bundles/8l9a79l7/kotlinjs/clsy-blocks_ippen-userid-integration","clsy-blocks_violation":"https://static.markt.de/bundles/96elg9le/kotlinjs/clsy-blocks_violation","clsy-frontend":"https://static.markt.de/bundles/bc7g9ge6/kotlinjs/clsy-frontend","clsy-util":"https://static.markt.de/bundles/iagbc66k/kotlinjs/clsy-util","kotlin-kotlin-stdlib":"https://static.markt.de/bundles/g6ji98kl/kotlinjs/kotlin-kotlin-stdlib","kotlin-kotlinx-atomicfu-runtime":"https://static.markt.de/bundles/8l9a79l7/kotlinjs/kotlin-kotlinx-atomicfu-runtime","kotlin_de_markt_mbuild_api":"https://static.markt.de/bundles/8l9a79l7/kotlinjs/kotlin_de_markt_mbuild_api","kotlin_org_jetbrains_kotlin_kotlin_dom_api_compat":"https://static.markt.de/bundles/ab869egl/kotlinjs/kotlin_org_jetbrains_kotlin_kotlin_dom_api_compat","kotlinx-atomicfu":"https://static.markt.de/bundles/7cjdgbg6/kotlinjs/kotlinx-atomicfu","kotlinx-coroutines-core":"https://static.markt.de/bundles/gkaaelkc/kotlinjs/kotlinx-coroutines-core","kotlinx-html":"https://static.markt.de/bundles/jfflllbh/kotlinjs/kotlinx-html","kotlinx-serialization-kotlinx-serialization-core":"https://static.markt.de/bundles/kagdijek/kotlinjs/kotlinx-serialization-kotlinx-serialization-core","kotlinx-serialization-kotlinx-serialization-json":"https://static.markt.de/bundles/ha96gajg/kotlinjs/kotlinx-serialization-kotlinx-serialization-json","markt-frontend":"https://static.markt.de/bundles/9i9jc8dg/kotlinjs/markt-frontend","markt-frontend_browserDataDeletion":"https://static.markt.de/bundles/jgbg97e/kotlinjs/markt-frontend_browserDataDeletion","markt-frontend_captcha":"https://static.markt.de/bundles/k8lfcgij/kotlinjs/markt-frontend_captcha","markt-frontend_carousel":"https://static.markt.de/bundles/ig9egl9b/kotlinjs/markt-frontend_carousel","markt-frontend_categoryarticle":"https://static.markt.de/bundles/bhbffl7f/kotlinjs/markt-frontend_categoryarticle","markt-frontend_core":"https://static.markt.de/bundles/76j6l6jf/kotlinjs/markt-frontend_core","markt-frontend_csvimportexport":"https://static.markt.de/bundles/bace978h/kotlinjs/markt-frontend_csvimportexport","markt-frontend_errorlogger":"https://static.markt.de/bundles/fi8jclge/kotlinjs/markt-frontend_errorlogger","markt-frontend_expose":"https://static.markt.de/bundles/db6i996e/kotlinjs/markt-frontend_expose","markt-frontend_favourites":"https://static.markt.de/bundles/ibkjcfi7/kotlinjs/markt-frontend_favourites","markt-frontend_home":"https://static.markt.de/bundles/fiblcalg/kotlinjs/markt-frontend_home","markt-frontend_insertion":"https://static.markt.de/bundles/886jd9if/kotlinjs/markt-frontend_insertion","markt-frontend_login":"https://static.markt.de/bundles/bcjebkbj/kotlinjs/markt-frontend_login","markt-frontend_mailbox":"https://static.markt.de/bundles/cf9kefka/kotlinjs/markt-frontend_mailbox","markt-frontend_manageadverts":"https://static.markt.de/bundles/b8ii6gjk/kotlinjs/markt-frontend_manageadverts","markt-frontend_manageinvoices":"https://static.markt.de/bundles/9klcka6k/kotlinjs/markt-frontend_manageinvoices","markt-frontend_marktlet":"https://static.markt.de/bundles/f7e86dbe/kotlinjs/markt-frontend_marktlet","markt-frontend_payment":"https://static.markt.de/bundles/blfc67de/kotlinjs/markt-frontend_payment","markt-frontend_premiumLandingPage":"https://static.markt.de/bundles/ibdaf9fc/kotlinjs/markt-frontend_premiumLandingPage","markt-frontend_savedSearches":"https://static.markt.de/bundles/bhj6ijdb/kotlinjs/markt-frontend_savedSearches","markt-frontend_search":"https://static.markt.de/bundles/ajkeicli/kotlinjs/markt-frontend_search","markt-frontend_service":"https://static.markt.de/bundles/ljlh6egc/kotlinjs/markt-frontend_service","markt-frontend_settings":"https://static.markt.de/bundles/iajjjddd/kotlinjs/markt-frontend_settings","markt-frontend_subscription":"https://static.markt.de/bundles/8l9a79l7/kotlinjs/markt-frontend_subscription","markt-frontend_upload":"https://static.markt.de/bundles/ddhblb8b/kotlinjs/markt-frontend_upload","markt-frontend_user":"https://static.markt.de/bundles/dbd6dd67/kotlinjs/markt-frontend_user","markt-frontend_userContactList":"https://static.markt.de/bundles/8e667bb/kotlinjs/markt-frontend_userContactList","markt-frontend_violationReport":"https://static.markt.de/bundles/7h6aedbl/kotlinjs/markt-frontend_violationReport","markt-frontend_websharetarget":"https://static.markt.de/bundles/8l9a79l7/kotlinjs/markt-frontend_websharetarget","markt-frontend_widget":"https://static.markt.de/bundles/ajefjbfl/kotlinjs/markt-frontend_widget","js-cookie":"https://static.markt.de/webjars/js-cookie/3.0.1/js.cookie.min","lodash":"https://static.markt.de/webjars/lodash/4.17.11-MARKT-r2/lodash.min","plupload":"https://static.markt.de/webjars/plupload/2.3.6-MARKT-r2/plupload.full.min","google-recaptcha-2":"https://static.markt.de/webjars/google-recaptcha-2/0.0.1-MARKT-min-r2/google-recaptcha.min","jquery":"https://static.markt.de/webjars/jquery/3.7.1/jquery.min","jquery.fancybox":"https://static.markt.de/webjars/fancybox/3.5.7-MARKT-amd-r2/jquery.fancybox.min.amd","jquery.fancybox-3.3.5":"https://static.markt.de/webjars/fancybox-legacy/3.3.5-MARKT-amd-r2/jquery.fancybox.min.amd","jquery.bxslider":"https://static.markt.de/webjars/bxslider-4/4.2.15-MARKT-amd-r3/jquery.bxslider.min.amd","scroll-lock":"https://static.markt.de/webjars/scroll-lock/2.1.2-MARKT-r2/scroll-lock.min","Siema":"https://static.markt.de/webjars/siema/1.5.1-MARKT-r2/siema.min","ckeditor":"https://static.markt.de/webjars/ckeditor/4.22.1-MARKT-amd-r2/ckeditor","zxcvbn":"https://static.markt.de/webjars/zxcvbn/1.0.0-MARKT-r3/zxcvbn","sortablejs":"https://static.markt.de/webjars/sortablejs/1.15.6/Sortable.min","fpxd":"https://static.markt.de/webjars/fingerprintjs/3.4.2-MARKT-r1/fp.umd.min","spark-md5":"https://static.markt.de/webjars/spark-md5/3.0.2/spark-md5.min","tantum-socket-io-js":"https://widget.tantumpay.com/socket.io","easyqrcodejs":"https://static.markt.de/webjars/EasyQRCodeJS/dist/easy.qrcode.min"},
+            onNodeCreated: function(node, config, module, path) {
+              var sri = {"clsy-blocks_age-verification-api":"sha384-fBu+foevkgNK2toc2KbqcbiFBuZBPugDaw8f/lTbDfyPwx5UAhLs2EVWuCQ4BDZM","clsy-blocks_classyads":"sha384-YlE9qJ7NChfJyL9FL7Gi70CdyfNsbHThutCfROnRo/+SvTZ8JEh+D1FL/nNs18Wq","clsy-blocks_ippen-userid-integration":"sha384-RqO6xaHGyReSVss82JazWKP/DASO8LUa01WX7WA7+hYzaIIKYIo07fV6+MwsIGRH","clsy-blocks_violation":"sha384-J7G/+PbAWVPLboDonPLnAm+K6Oy8/ltzFgSXNf04IpJD2PVA5SmqJpv8idaxpo11","clsy-frontend":"sha384-aEz3wOJ6yZtnZHZ2IuIbLFer3lULhJQsa8q6kdr5EubD+QpCbl5Q+zKbTDPBceST","clsy-util":"sha384-uvCD88ESAdHbE+1zWlwWgxVM4jqJd9FZZ086bSf4W2oDVed5YHB1n/QT0QaMV7Rc","kotlin-kotlin-stdlib":"sha384-Ft5yHtgkrtHAnEr1b862mWYiqkbJHHgIci2TqEvuSpQTue0hKNWXnTKD206yI+qJ","kotlin-kotlinx-atomicfu-runtime":"sha384-RqO6xaHGyReSVss82JazWKP/DASO8LUa01WX7WA7+hYzaIIKYIo07fV6+MwsIGRH","kotlin_de_markt_mbuild_api":"sha384-RqO6xaHGyReSVss82JazWKP/DASO8LUa01WX7WA7+hYzaIIKYIo07fV6+MwsIGRH","kotlin_org_jetbrains_kotlin_kotlin_dom_api_compat":"sha384-BZGSd2qaQRmBgqAEI7wkuZvMrRivoHU0I5LebUoPQoWsC8bRws8mpXktqynXYAQj","kotlinx-atomicfu":"sha384-aOELZD1zRBtFxwsx/IacPkpEhy2jPwuAM+I8IgXzx5erUytw7TKDMvFaUOsZ5gms","kotlinx-coroutines-core":"sha384-XzUG+zYaRyMmake35IZV8Azy1wrgt7d2/2+LB+NayeuAzd9HLIynY+JlAPhEklUi","kotlinx-html":"sha384-+OSDXNyMOQB9ivwB71wA+oZjQ4kxrsFmrurXYgVm4E/WTMBSYi8n61Rp2m5YZW5m","kotlinx-serialization-kotlinx-serialization-core":"sha384-EFrJAE12wE6Fc6kTu154JGQ8Uzir4s3wFWxPVdNY8YQ7V0kRQrlMAg7rZ326lRmW","kotlinx-serialization-kotlinx-serialization-json":"sha384-W3pJmfNX1c/v3caQGxnPHCZWBmABSkQ3tgD/HPuk1aSpXJI5AjBxavmDygPLU4DF","markt-frontend":"sha384-355ShCajCAxE7Pl2jxFTfL07C3csD44t3IKQQRH11rUBs3Bi2z37xb1yb0KNnmzm","markt-frontend_browserDataDeletion":"sha384-rNXjf8fPxhcio4ygegaiNsvnp1XZS7Hj2kxpgX3iZt5ClTq99gRLS5ocVc1LC00o","markt-frontend_captcha":"sha384-SX7I72KAuXO6wThDDwTC6UcgOA9D954HRRrTt09gPvOWKDGhsl9rilujFBSh2gfI","markt-frontend_carousel":"sha384-OlABnV+UThRTxyJHzSsWziq8NDw1GHUvobbK4P8ckLqB0debpx03sYif06zxR9oJ","markt-frontend_categoryarticle":"sha384-iUkxG7UE0I25VmCkYhgaB6XNZvIMZoc1f8KAuYqlJBYw7uTGqQJboPIAoaG3REpI","markt-frontend_core":"sha384-A86E3TLBrwX9OQavpWRmmh3LEEUvva3CUJgxzK+mrJIa6BXjcQtZR3n+Uj0fz81l","markt-frontend_csvimportexport":"sha384-1OgNsLoa60BP1iXOdSISGZyrYGVa7D8U8tzJswekraXY6fGXHzgS5SIGSZHigFwH","markt-frontend_errorlogger":"sha384-SJyaTgpY+A4uEEeqIcsxP3cvglpLG8q1nCJgTMaf1K/cg2H2SseGYcu403qlqoDH","markt-frontend_expose":"sha384-pdIUrG2WxnOazAOAKD73lHNBoz0Jt9TGiBlLdrQX1EQqD0EUsffaJLIrkCPbomF3","markt-frontend_favourites":"sha384-IP/8jnFljfMKh3PqXtwFmx3mmXuV+TWLDPED7/OIVKdMeyO3wm1dGrAukSwkOCH8","markt-frontend_home":"sha384-BojccApD0jcK+bkpxTeI4unM4qy7xBNv0pFJibdxpGr78rowEzxMTtpqxz6RLJu3","markt-frontend_insertion":"sha384-vt32xDGeOrLzqiwHhzjOg9ryiaQrNSjAr03M1+GaultK0c/1JikEGgiVWn2/kSh9","markt-frontend_login":"sha384-/lwQjJbjgAe4TEFxxVzUpLQa663OY/qDctzyxDXaVepaQ8AQyYxUi/P6BiOrOk4U","markt-frontend_mailbox":"sha384-UHiDhFKd0Y1XmRIuWS4/Xz5+MUIfIZJpd3fQMwqIoi7dEEyTjPAIyw+OzHKVvx7y","markt-frontend_manageadverts":"sha384-yM89sZftUt6dx55TfcxQ1ypMDSN4WOEyRRt5V+FHm6YpDJEHoZodWtxVTArNXPV8","markt-frontend_manageinvoices":"sha384-OlQrvWuEYIWNABniP5mDbJx9hCvC7Ow6dXTIMrGm/AB0Rrw6yAIXDRe/WMRJrF/v","markt-frontend_marktlet":"sha384-Wv8xiECASqcsx0QjnoYwf//QpT4rlhXhNJiks+/hDNU8cxkgcqk7xxYah45H+c4Z","markt-frontend_payment":"sha384-FlcvoBWSup9p+BhyQDwJio2DzE7izDUNa1Mc3h/pk3Xt4T2LLC32ASkh/X544CHU","markt-frontend_premiumLandingPage":"sha384-FUnmYSJbpUaJwHwVR9RDw8rpPYolPn5U1FX/YplffSe75M9Uwx33dxx38RRrnw7+","markt-frontend_savedSearches":"sha384-IJ/6YnNIlPCaMKIqV9QK1nygiT7qUkUOCW7L5N6K06fA6u7cu2n85ey4doRo4FLv","markt-frontend_search":"sha384-Tcy/GeDaUGFGGj77nwb/fLvoCulnm0h66rv178yZWwtWnBMQ5zetz/+H9Hg2eDEw","markt-frontend_service":"sha384-Z72u9JIKS31pXDb3+JceN1V0ff99mqp0F0Z26xnqGmHDlxQw+EP/nX7KHznnjiTH","markt-frontend_settings":"sha384-13LVLe3gABwOiK4Jti9alkr+XWPwbGVEnerpdjlmfeIcdZ6aJ1vYWsF+26kqr0Mi","markt-frontend_subscription":"sha384-RqO6xaHGyReSVss82JazWKP/DASO8LUa01WX7WA7+hYzaIIKYIo07fV6+MwsIGRH","markt-frontend_upload":"sha384-p0n1bX8H+AOP5qJFVxaiAcKiuR19tzK69/KMoY9W3mJfr9At4zdWcOCPoJDFXthI","markt-frontend_user":"sha384-dW5jwwejMKV1IYq01IGSWsXvY9CLju1i21AQTsyZEah/MACbtYHEP2U4UCsAVU15","markt-frontend_userContactList":"sha384-X+KYQ0N7/YhWmY6iDvHtW3hXt4ww9BzTlyC8L7fIt+JFUYr0vxhzus37NtjO5FKx","markt-frontend_violationReport":"sha384-PeRiOgDKsM5yOm5t7lD2Houd1t/kZ8LsxkMBQCjPklPqVovlqIvnGiFJBsBGnPXH","markt-frontend_websharetarget":"sha384-RqO6xaHGyReSVss82JazWKP/DASO8LUa01WX7WA7+hYzaIIKYIo07fV6+MwsIGRH","markt-frontend_widget":"sha384-PUuwoYU8r9lAUHqt9cqF1KsYKvrTv+UN6Iwltkr8vdJJFWzw2RFSJRcksjlFuTl1","js-cookie":"sha384-ETDm/j6COkRSUfVFsGNM5WYE4WjyRgfDhy4Pf4Fsc8eNw/eYEMqYZWuxTzMX6FBa","lodash":"sha384-pw/QDCjcQWvq1g06mTcOesmluxheSyF+6YkU6Pe2wFw6eY6qvNj1RU9z4d7nx1nS","plupload":"sha384-PlFQ/ew6Hus7ZaqQHr7Uncb7qq7bCSD2i+vDeDcjNkwdohiQKL7cZghBGYdEmG8C","google-recaptcha-2":"sha384-ADoLPI4C4vc3Dpg1QgaZfor0LUG2Jy6za1wTFbK9fEBnbMb66BtiS8WfybRIOkfX","jquery":"sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs","jquery.fancybox":"sha384-gUGm586T6IMcvS3INn/HXEV30qgoJN2uZceA+XwyZi/bV89YtsjNZTh6biw5Idkz","jquery.fancybox-3.3.5":"sha384-cx+mwieC7leF+NtgTuckM/CGV8vPm6qshHn8qiA4okvTxdQa0vLNMR+bCvi+KPnC","jquery.bxslider":"sha384-r1E4H+kH0jder1lGDpc/bo0lt9KayOBRx+DEtZp4RweilfCfUrOMeodLvxvMRlWU","scroll-lock":"sha384-3qVvy8FZKXQODnM8vnaXpF8ASgNt45OGKncSOMOmiqg4f8dJrV02sr9+aVlCaGfq","Siema":"sha384-HhBSqDRI/i3l5GIv6Uw13O3TBg0zxdGJn0xPAWowfyudL2lrd7B91R52QLw+yanw","ckeditor":"sha384-9kZFxdSZJ1KoJ6+CwPyP3yYY1Y6wptfLNIS0Wdr5O9ouRaDf+ZVa3gznEb9zbBSe","zxcvbn":"sha384-fYuBnouEjKjEsazA1jkbn9h+j+Uqe4w5309R4oZOw3SrsqgX7J7J6HpcbiZDbVv/","sortablejs":"sha384-HZZ/fukV+9G8gwTNjN7zQDG0Sp7MsZy5DDN6VfY3Be7V9dvQpEpR2jF2HlyFUUjU","fpxd":"sha384-+my9E1hnYS3AupUUMVnHHcnXS2ClhhKa5fLvGKsXeWIkExFSmv/XJEF5D8sXJH6R","spark-md5":"sha384-WAahC3S+69Co45zyyuhCjvdMwo7a42Yn0mM0IgZIUlYNebG24AVkPUltj3BQnM85","easyqrcodejs":"sha384-zIbrewSLFQUxNJnqFkHQ6q8hkvi84+DZPzD8aI9w7h5jByuv0sq5iA2UFszatXN7"};
+
+              if (sri[module]) {
+                node.setAttribute('integrity', sri[module]);
+                node.setAttribute('crossorigin', 'anonymous');
+              }
+            }
+          });
+        
+/* ]]> */
+</script>
+    <script type="importmap">{"imports":{"pintura":"https://static.markt.de/webjars/pintura/8.96.3-MARKT-r5/pintura.js","pintura_locale_de_DE":"https://static.markt.de/webjars/pintura/8.96.3-MARKT-r5/locale/de_DE/index.js"},"integrity":{"https://static.markt.de/webjars/pintura/8.96.3-MARKT-r5/pintura.js":"sha384-kHxb7gAcl381FtLQPP//BWhsPcSlggMLxBFFUXXlRjjKWpG/fcVI/k+QhXH8ByvE","https://static.markt.de/webjars/pintura/8.96.3-MARKT-r5/locale/de_DE/index.js":"sha384-v5TjJtfnyGnjWmD8E9xZlunqemLBTYw1674H0Udyrv3PLRn8/Vg8HAK8kg6rSjnV"}}</script>
+    <script type="text/javascript">
+/* <![CDATA[ */
+window.clsyDataLayer = [{"pageClass":"START","loggedIn":false,"geoId":"01","country":"Deutschland","partner":"markt.de","sessionId":"74262571-60d2-42e3-b7b4-819b5b012850"}];
+/* ]]> */
+</script>
+    <script type="application/ld+json">{"":"de.classyfi.pwa.social.SchemaOrgOrganization","@type":"Organization","@context":"https://schema.org","name":"markt.de","description":"Markt.de ist ein Anzeigennetzwerk für Kleinanzeigen. Die Markt.de GmbH & Co. KG mit Hauptsitz in München und Niederlassung in Essen ist eine Tochtergesellschaft der Markt Gruppe.","url":"https://www.markt.de/","logo":"https://static.markt.de/bundles/eddd7lbf/image/pwa/markt_logo_ohne_claim.svg","email":"hilfe-portal@markt.de","address":{"@type":"PostalAddress","postalCode":"80335","addressLocality":"München","addressCountry":"DE","streetAddress":"Nymphenburger Straße 14"},"foundingDate":"2005-09-01","sameAs":["https://www.facebook.com/markt.de","https://www.instagram.com/markt.de_kleinanzeigen/","https://www.pinterest.de/marktde/","https://twitter.com/marktde?lang=de"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","email":"hilfe-portal@markt.de","url":"https://www.markt.de/"}]}</script>
+    <script id="trfAdSetup" type="text/javascript" src="//cdntrf.com/markt.de_RESPONSIVE.js" async="async" data-traffectiveconf="{&quot;dfpAdUrl&quot;:&quot;/307308315,11893755/markt.de/homepage&quot;,&quot;targeting&quot;:[{&quot;key&quot;:&quot;zone&quot;,&quot;value&quot;:&quot;homepage&quot;,&quot;values&quot;:null},{&quot;key&quot;:&quot;pagetype&quot;,&quot;value&quot;:&quot;homepage&quot;,&quot;values&quot;:null},{&quot;key&quot;:&quot;programmatic_ads&quot;,&quot;value&quot;:&quot;true&quot;,&quot;values&quot;:null},{&quot;key&quot;:&quot;ads&quot;,&quot;value&quot;:&quot;true&quot;,&quot;values&quot;:null}],&quot;clientAlias&quot;:&quot;markt-de-marktplatz&quot;,&quot;adLoadRootMargin&quot;:&quot;120px 0px 120px 0px&quot;}"></script>
+    <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core","kotlin-kotlin-stdlib","clsy-frontend"], function (module, rm_1, rm_2) {
+          var destub = module.de.classyfi.frontend.templates.destubCore;
+          module.de.classyfi.pwa.App.initOnPageTop(false,"/onlineCheck",destub('de.classyfi.pwa.user.UserProfile', 'markt-frontend_core', null, false),destub('de.classyfi.util.CookieSettings', 'clsy-frontend', {"defaultCookieDomain":".markt.de","subdomains":["www.","erotik."]}, false));
+        });
+/* ]]> */
+</script>
+    <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core","kotlin-kotlin-stdlib"], function (module, rm_1) {
+          module.de.classyfi.pwa.tagmanager.GoogleTagManagerClient.initialize("clsyDataLayer",true,["GTM-TMG6CF9"]);
+        });
+/* ]]> */
+</script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kostenlose Kleinanzeigen in Deutschland | markt.de">
+    <meta property="og:description" content="✓ Kostenlose und schnelle Anzeigenaufgabe ✓ In Millionen gewerblichen und privaten Kleinanzeigen suchen ✓ Neu oder gebraucht ✓ In Deutschland und Umgebung">
+    <meta property="og:url" content="https://www.markt.de/">
+    <meta property="og:site_name" content="markt.de">
+    <meta property="og:image" content="https://static.markt.de/bundles/7a6glfbk/image/markt/openGraphImages/default_1200x627.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:locale" content="de_DE">
+    <meta property="fb:app_id" content="325988921697">
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="markt-frontend_core" src="https://static.markt.de/bundles/76j6l6jf/kotlinjs/markt-frontend_core.js" integrity="sha384-A86E3TLBrwX9OQavpWRmmh3LEEUvva3CUJgxzK+mrJIa6BXjcQtZR3n+Uj0fz81l" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlin-kotlin-stdlib" src="https://static.markt.de/bundles/g6ji98kl/kotlinjs/kotlin-kotlin-stdlib.js" integrity="sha384-Ft5yHtgkrtHAnEr1b862mWYiqkbJHHgIci2TqEvuSpQTue0hKNWXnTKD206yI+qJ" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="clsy-frontend" src="https://static.markt.de/bundles/bc7g9ge6/kotlinjs/clsy-frontend.js" integrity="sha384-aEz3wOJ6yZtnZHZ2IuIbLFer3lULhJQsa8q6kdr5EubD+QpCbl5Q+zKbTDPBceST" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="clsy-blocks_classyads" src="https://static.markt.de/bundles/eb8l7lff/kotlinjs/clsy-blocks_classyads.js" integrity="sha384-YlE9qJ7NChfJyL9FL7Gi70CdyfNsbHThutCfROnRo/+SvTZ8JEh+D1FL/nNs18Wq" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="markt-frontend_marktlet" src="https://static.markt.de/bundles/f7e86dbe/kotlinjs/markt-frontend_marktlet.js" integrity="sha384-Wv8xiECASqcsx0QjnoYwf//QpT4rlhXhNJiks+/hDNU8cxkgcqk7xxYah45H+c4Z" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="https://static.markt.de/webjars/jquery/3.7.1/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlinx-serialization-kotlinx-serialization-core" src="https://static.markt.de/bundles/kagdijek/kotlinjs/kotlinx-serialization-kotlinx-serialization-core.js" integrity="sha384-EFrJAE12wE6Fc6kTu154JGQ8Uzir4s3wFWxPVdNY8YQ7V0kRQrlMAg7rZ326lRmW" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="clsy-util" src="https://static.markt.de/bundles/iagbc66k/kotlinjs/clsy-util.js" integrity="sha384-uvCD88ESAdHbE+1zWlwWgxVM4jqJd9FZZ086bSf4W2oDVed5YHB1n/QT0QaMV7Rc" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlinx-serialization-kotlinx-serialization-json" src="https://static.markt.de/bundles/ha96gajg/kotlinjs/kotlinx-serialization-kotlinx-serialization-json.js" integrity="sha384-W3pJmfNX1c/v3caQGxnPHCZWBmABSkQ3tgD/HPuk1aSpXJI5AjBxavmDygPLU4DF" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="scroll-lock" src="https://static.markt.de/webjars/scroll-lock/2.1.2-MARKT-r2/scroll-lock.min.js" integrity="sha384-3qVvy8FZKXQODnM8vnaXpF8ASgNt45OGKncSOMOmiqg4f8dJrV02sr9+aVlCaGfq" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lodash" src="https://static.markt.de/webjars/lodash/4.17.11-MARKT-r2/lodash.min.js" integrity="sha384-pw/QDCjcQWvq1g06mTcOesmluxheSyF+6YkU6Pe2wFw6eY6qvNj1RU9z4d7nx1nS" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="sortablejs" src="https://static.markt.de/webjars/sortablejs/1.15.6/Sortable.min.js" integrity="sha384-HZZ/fukV+9G8gwTNjN7zQDG0Sp7MsZy5DDN6VfY3Be7V9dvQpEpR2jF2HlyFUUjU" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="easyqrcodejs" src="https://static.markt.de/webjars/EasyQRCodeJS/dist/easy.qrcode.min.js" integrity="sha384-zIbrewSLFQUxNJnqFkHQ6q8hkvi84+DZPzD8aI9w7h5jByuv0sq5iA2UFszatXN7" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlinx-html" src="https://static.markt.de/bundles/jfflllbh/kotlinjs/kotlinx-html.js" integrity="sha384-+OSDXNyMOQB9ivwB71wA+oZjQ4kxrsFmrurXYgVm4E/WTMBSYi8n61Rp2m5YZW5m" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlinx-coroutines-core" src="https://static.markt.de/bundles/gkaaelkc/kotlinjs/kotlinx-coroutines-core.js" integrity="sha384-XzUG+zYaRyMmake35IZV8Azy1wrgt7d2/2+LB+NayeuAzd9HLIynY+JlAPhEklUi" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlin_org_jetbrains_kotlin_kotlin_dom_api_compat" src="https://static.markt.de/bundles/ab869egl/kotlinjs/kotlin_org_jetbrains_kotlin_kotlin_dom_api_compat.js" integrity="sha384-BZGSd2qaQRmBgqAEI7wkuZvMrRivoHU0I5LebUoPQoWsC8bRws8mpXktqynXYAQj" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="markt-frontend_home" src="https://static.markt.de/bundles/fiblcalg/kotlinjs/markt-frontend_home.js" integrity="sha384-BojccApD0jcK+bkpxTeI4unM4qy7xBNv0pFJibdxpGr78rowEzxMTtpqxz6RLJu3" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="js-cookie" src="https://static.markt.de/webjars/js-cookie/3.0.1/js.cookie.min.js" integrity="sha384-ETDm/j6COkRSUfVFsGNM5WYE4WjyRgfDhy4Pf4Fsc8eNw/eYEMqYZWuxTzMX6FBa" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kotlinx-atomicfu" src="https://static.markt.de/bundles/7cjdgbg6/kotlinjs/kotlinx-atomicfu.js" integrity="sha384-aOELZD1zRBtFxwsx/IacPkpEhy2jPwuAM+I8IgXzx5erUytw7TKDMvFaUOsZ5gms" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="markt-frontend_carousel" src="https://static.markt.de/bundles/ig9egl9b/kotlinjs/markt-frontend_carousel.js" integrity="sha384-OlABnV+UThRTxyJHzSsWziq8NDw1GHUvobbK4P8ckLqB0debpx03sYif06zxR9oJ" crossorigin="anonymous"></script></head>
+  <body class="">
+    <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core","kotlin-kotlin-stdlib"], function (module, rm_1) {
+          module.de.classyfi.pwa.sift.SiftJSSnippet.execute("1272406e19","","74262571-60d2-42e3-b7b4-819b5b012850");
+        });
+/* ]]> */
+</script>
+    <script src="https://static.markt.de/bundles/7idjhd69/js/gocam-avs/avsJsSdkV1.js"></script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMG6CF9" height="0" width="0" style="display: none; visibility: hidden;"></iframe></noscript>
+    <script>function processPrg() {
+  const prgForm = $('#prg_form'); 
+  const newTab = prgForm.attr('target') === '_blank';
+  
+  if (newTab) {
+    const inputField = $('#prg_input_url'); 
+    const redirectUrl = inputField.val();
+    const varName = inputField.attr('name');
+    const url = prgForm.attr('action');
+    window.open(url + '?' + varName + '=' + redirectUrl, '_blank', 'noopener');
+    return false;
+  } else {
+    return true;
+  }
+  
+}</script>
+    <form id="prg_form" method="post" action="/urlMaskingRedirect.htm" onsubmit="return processPrg();"><input id="prg_input_url" type="hidden" name="targetUrl"></form>
+    <div id="clsy-body-components-top"><style>@media screen {
+#clsy-clsds-cont-home_mobile_below_galerie{ display: flex;min-height: 210px; }
+#clsy-clsds-cont-home_top_sticky{ display: flex; }
+#clsy-clsds-cont-main_skyscraper{ display: none; }
+}
+@media screen and (min-height: 300px) {
+#clsy-clsds-cont-home_mobile_bottom{ display: flex;height: 360px; }
+}
+@media screen and (min-width: 700px) {
+#clsy-clsds-cont-home_mobile_below_galerie, #clsy-clsds-cont-home_top_sticky{ display: none; }
+}
+@media screen and (min-width: 767px) {
+#clsy-clsds-cont-home_mobile_bottom{ display: none; }
+}
+@media screen and (min-width: 872px) {
+#clsy-clsds-cont-main_skyscraper{ display: flex; }
+}
+@media screen and (min-width: 1052px) {
+#clsy-clsds-cont-main_skyscraper{ display: flex; }
+}
+</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core","kotlin-kotlin-stdlib"], function (module, rm_1) {
+          module.de.classyfi.pwa.advertisement.classyads.ClassyAdsClientHelper.init("https://www.markt.de/");
+        });
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core","clsy-blocks_classyads"], function (module, rm_1) {
+          var destub = module.de.classyfi.frontend.templates.destubCore;
+          module.de.classyfi.pwa.advertisement.classyads.TraffectiveClassyAdsClient.Companion.init(destub('de.classyfi.classyads.JsExportableSetupData', 'clsy-blocks_classyads', {"id":"traffective2020","s":["{\"aup\":\"/307308315,11893755/markt.de/homepage\",\"psn\":\"HOME_MOBILE_BELOW_GALERIE\",\"aun\":\"Slider\",\"dims\":[{\"width\":0,\"exclude\":false,\"heightConfig\":{\"type\":\"de.classyfi.classyads.BreakpointRule.HeightConfig.MinHeight\",\"value\":\"150px\"}},{\"width\":700,\"exclude\":true,\"heightConfig\":null}],\"scfg\":{\"divId\":\"traffective-ad-Slider\",\"loadEager\":false}}","{\"aup\":\"/307308315,11893755/markt.de/homepage\",\"psn\":\"HOME_MOBILE_BOTTOM\",\"aun\":\"Mobile_Pos2\",\"dims\":[{\"width\":0,\"exclude\":false,\"heightConfig\":{\"type\":\"de.classyfi.classyads.BreakpointRule.HeightConfig.FixedHeight\",\"value\":\"300px\"}},{\"width\":767,\"exclude\":true,\"heightConfig\":null}],\"scfg\":{\"adLoadRootMargin\":\"0px 0px 0px 0px\",\"intersectionThreshold\":0.6}}","{\"aup\":\"/307308315,11893755/markt.de/homepage\",\"psn\":\"HOME_TOP_STICKY\",\"aun\":\"Mobile_Sticky\",\"dims\":[{\"width\":0,\"exclude\":false,\"heightConfig\":{\"type\":\"de.classyfi.classyads.BreakpointRule.HeightConfig.MinHeight\",\"value\":\"0px\"}},{\"width\":700,\"exclude\":true,\"heightConfig\":null}],\"scfg\":{\"adLoadRootMargin\":\"50px 0px 50px 0px\"}}","{\"aup\":\"/307308315,11893755/markt.de/homepage\",\"psn\":\"MAIN_SKYSCRAPER\",\"aun\":\"Skyscraper\",\"dims\":[{\"width\":0,\"exclude\":true,\"heightConfig\":null},{\"width\":872,\"exclude\":false,\"heightConfig\":{\"type\":\"de.classyfi.classyads.BreakpointRule.HeightConfig.MinHeight\",\"value\":\"0px\"}},{\"width\":1052,\"exclude\":false,\"heightConfig\":{\"type\":\"de.classyfi.classyads.BreakpointRule.HeightConfig.MinHeight\",\"value\":\"0px\"}}]}"],"t":"{\"zone\":[\"homepage\"],\"pagetype\":[\"homepage\"],\"programmatic_ads\":[\"true\"],\"ads\":[\"true\"]}","c":"{\"clientAlias\":\"markt-de-marktplatz\",\"adLoadRootMargin\":\"120px 0px 120px 0px\"}"}, false));
+        });
+/* ]]> */
+</script>
+</div>
+    <div class="clsy-c-i18nMessageSource" data-clsy-pwa-word-ok="OK" data-clsy-pwa-word-cancel="Abbrechen" data-clsy-pwa-word-close="schließen" data-clsy-pwa-word-open="öffnen" data-clsy-pwa-shell-pressbacktoclosepage="Zurück drücken um Seite zu schließen." data-clsy-pwa-shell-pressbacktocloseapp="Zurück drücken um App zu schließen." data-clsy-pwa-shell-app-install-prompt="Als App installieren" data-clsy-pwa-default-error="Ein Fehler ist aufgetreten" data-clsy-pwa-default-tryagain="Erneut versuchen" data-clsy-pwa-default-login-error-handler-dialog-title="Login Fehler" data-clsy-pwa-default-login-error-handler-dialog-text="Die Aktion konnte nicht ausgeführt werden, da Du nicht mehr eingeloggt bist." data-clsy-pwa-default-feature-not-unsupported-by-browser="Dein Browser unterstützt diese Funktion leider nicht." data-clsy-pwa-default-copy-to-clipboard-success="Text in Zwischenablage kopiert." data-clsy-pwa-default-copy-to-clipboard-failed="Fehler beim Kopieren in die Zwischenablage." data-clsy-pwa-carousel-rotation-stop="automatische Rotation beenden" data-clsy-pwa-carousel-rotation-start="automatische Rotation starten" data-clsy-pwa-carousel-liveregion-text-suffix="Einträge werden angezeigt." data-clsy-pwa-carousel-liveregion-text-prefix-next="Nächste" data-clsy-pwa-carousel-liveregion-text-prefix-prev="Vorhergehende" data-clsy-pwa-field-mandatory="(Pflichtangabe)" data-clsy-pwa-word-more="mehr" data-clsy-pwa-word-less="weniger" data-clsy-pwa-word-save="Speichern" data-clsy-pwa-word-saved="Gespeichert" data-clsy-pwa-word-delete="Löschen" data-clsy-pwa-word-undo="Rückgängig" data-clsy-pwa-ckeditor-fontsize-config="Sehr Klein/0.7em;Klein/0.8em;Normal/1em;Groß/1.3em;Sehr Groß/1.6em" data-clsy-pwa-word-next="weiterblättern" data-clsy-pwa-word-previous="zurückblättern" data-clsy-pwa-word-member="Mitglied" data-clsy-pwa-incognitomode-locked-info="Diese Einstellung ist für Dich nicht verfügbar. Bitte werde Premium-Mitglied, um den diskreten Modus nutzen zu können. Im diskreten Modus kannst Du Dich auf der Plattform bewegen, ohne dass andere Mitglieder sehen, dass Du online bist." data-clsy-pwa-incognitomode-locked-dialog-title="Diskreter Modus nicht verfügbar" data-markt-common-premium-button-label="Premium Mitglied werden"></div>
+    <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core"], function (module) {
+          module.de.classyfi.pwa.App.initOnBodyTop();
+        });
+/* ]]> */
+</script>
+    <div class="clsy-l-pagecontainer clsy-c-pagecontainer">
+      <div class="clsy-skiplinks"><a href="#main" class="clsy-skiplink clsy-c-btn clsy-c-btn--secondary-restrained">Zum Hauptinhalt springen</a></div>
+      <header class="clsy-header" data-scroll-lock-fill-gap="">
+        <div class="clsy-header__inner">
+          <div class="clsy-header__main-header">
+            <div class="clsy-header__logo-box"><a title="markt.de Startseite" href="https://www.markt.de/" rel="nofollow" class="clsy-header__home-link">
+                <div class="clsy-header__logo-wrapper"><img src="https://static.markt.de/bundles/dceglgfd/image/pwa/markt_logo_ohne_claim.svg" class="clsy-header__logo clsy-header__logo--light" alt="markt.de Kostenlose Kleinanzeigen Kleinanzeigen Logo"><img src="https://static.markt.de/bundles/gh7a6e6i/image/pwa/markt_logo_ohne_claim_dm.svg" class="clsy-header__logo clsy-header__logo--dark" alt="markt.de Kostenlose Kleinanzeigen Kleinanzeigen Logo"></div>
+              </a>
+              <div class="clsy-header__region">Kleinanzeigen</div>
+            </div>
+            <nav class="clsy-header__toolbar" aria-label="Hauptnavigation">
+              <ul class="clsy-header__toolbar-list">
+                <li class="clsy-header__toolbar-item"><button type="submit" form="prg_form" title="Nachrichten abrufen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiB2FW42mqAbYNLO3HfvbtitFo5HHVIihhV197UJfJ1LJ" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-header__image-button clsy-header__image-button--mailbox clsy-outline-offset-negative">Postfach</button></li>
+                <li class="clsy-header__toolbar-item"><button aria-expanded="false" aria-controls="clsy-navigation-drawer" title="weitere Links" class="clsy-header__image-button clsy-outline-offset-negative clsy-header__image-button--nav-trigger clsy-interactive clsy-interactive--not-yet"><span class="clsy-header__navtrigger-icon--top"></span><span class="clsy-header__navtrigger-icon--middle"></span><span class="clsy-header__navtrigger-icon--bottom"></span><span class="clsy-header__navtrigger-label">mehr</span></button></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="clsy-navigation-drawer" id="clsy-navigation-drawer">
+        <ul class="clsy-c-navigation">
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--login"><button type="submit" form="prg_form" title="bei markt.de anmelden" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiHJpna-1iH-WsuOBgOwmJqE=" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-navigation__link clsy-outline-offset-negative">Anmelden</button></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--register"><a class="clsy-c-navigation__link clsy-outline-offset-negative" href="https://www.markt.de/registrieren.htm" title="ein neues Nutzerkonto anlegen">Neu registrieren</a></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--insertion clsy-offline-indicator-transparency"><a class="clsy-c-navigation__link clsy-outline-offset-negative" href="https://www.markt.de/benutzer/inserieren.htm" title="neue Anzeige aufgeben">Anzeige erstellen</a></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--advert-admin clsy-offline-indicator-transparency"><button type="submit" form="prg_form" title="eigene Anzeigen verwalten" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiE89AYtLanNacTCfCXJagL0VpZFHqYS7DjGDfYvzY2LK" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-navigation__link clsy-outline-offset-negative">Meine Anzeigen</button></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--contacts clsy-offline-indicator-transparency"><button type="submit" form="prg_form" title="Meine Kontakte aufrufen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiE89AYtLanNacTCfCXJagL1dUbRcpu5RB6H7MQWCR_on" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-navigation__link clsy-outline-offset-negative"><span class="clsy-premium-marker">Meine Kontakte</span><span class="clsy-visually-hidden">Premium Vorteil</span></button></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--favorites"><button type="submit" form="prg_form" title="gemerkte Anzeigen aufrufen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiGgGJPOwklDyG2ZwgFLeuirAzHtNma0AbBS9QGuEWrQI" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-navigation__link clsy-outline-offset-negative">Merkliste</button></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--settings clsy-offline-indicator-transparency" id="drawer-item-settings"><button type="submit" form="prg_form" title="Helle oder dunkle Ansicht wählen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiOgxlVbUFxcBGp91PeaJqeKP9auMR0FdZgjqpnDj-ycW" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-navigation__link clsy-outline-offset-negative">Darstellung</button></li>
+          <li class="clsy-c-navigation__item clsy-c-navigation__item--security clsy-offline-indicator-transparency" id="drawer-item-security"><button type="submit" form="prg_form" title="Sicherheitseinstellungen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiJ3LbU8JHiL-WH9N2mJOTxgafjWBJ64ewWz-eh6h3HmpcUIPxJP3K3eU7SBgiHsmHA==" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-navigation__link clsy-outline-offset-negative">Sicherheit</button></li>
+        </ul>
+        <div class="clsy-offline-notice">
+          <div class="clsy-c-message clsy-c-message--warning clsy-offline-notice--offline">
+            <div>Du bist offline.</div>
+          </div>
+          <div class="clsy-c-message clsy-c-message--warning clsy-offline-notice--maintenance">
+            <div>Dringende Wartungsarbeiten. markt.de läuft vorübergehend im Offline-Modus.</div>
+          </div>
+          <div class="clsy-c-message clsy-c-message--info clsy-offline-notice--connecting">
+            <div>Verbindung wird hergestellt...</div>
+          </div>
+          <div class="clsy-c-message clsy-c-message--success clsy-offline-notice--online">
+            <div>Verbindung hergestellt.</div>
+          </div>
+        </div>
+        <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core"], function (module) {
+        new module.de.classyfi.pwa.offline.OfflineNoticeClient();
+      });
+/* ]]> */
+</script>
+        <div class="clsy-c-navigation__marktlet">
+          <div id="markt_marktletWrapper_NAVIGATION_DRAWER" class="clsy-marktlet-wrapper" data-marktlet-slot-id="NAVIGATION_DRAWER" data-marktlet-cms-id="rectangle-warnhinweis-betrug-zu-guenstig-26"><a href="/ratgeber/haus-garten/betrugsmuster-tipps/"><div class="cmsImageRightFloat"><img class="cmsImage" src="https://bilder.markt.de/images/cms/marktlet_300x250/300x250-warnhinweis-betrug-zu-guenstig-26-2.png" alt="Achtung vor Betrug!" width="300" height="250" srcset="https://bilder.markt.de/images/cms/marktlet_300x250/300x250-warnhinweis-betrug-zu-guenstig-26-2_compr25kb.png 414w, https://bilder.markt.de/images/cms/marktlet_300x250/300x250-warnhinweis-betrug-zu-guenstig-26-2.png 300w" sizes="(max-width: 414px) 414px, 300px"></div> </a>
+            <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_marktlet","kotlin-kotlin-stdlib","markt-frontend_core"], function (module, rm_1, core) {
+        new module.de.classyfi.frontend.pwa.marktlet.MarktletClient("markt_marktletWrapper_NAVIGATION_DRAWER");
+      });
+/* ]]> */
+</script>
+          </div>
+        </div>
+        <div class="clsy-c-breadcrumbs">
+          <nav aria-label="Breadcrumbs" aria-hidden="true" id="clsy-breadcrumbs-container"></nav>
+        </div>
+      </div>
+      <div class="clsy-c-search-menu" data-ajax-url="https://www.markt.de/ajax/searchMenu" data-save-search-ajax-url="https://www.markt.de/ajax/saveSearchDialog" data-scroll-lock-scrollable="">
+        <div class="clsy-c-i18nMessageSource" data-clsy-pwa-search-menu-button-submit-default-label="Suchen" data-clsy-pwa-search-menu-error-gps-permission-missing="Bitte aktiviere die Berechtigung zum Ortsabruf in Deinem Browser." data-clsy-pwa-search-save-search-toast-saved="Suche wurde gespeichert" data-clsy-pwa-search-save-search-toast-updated="Gespeicherte Suche wurde aktualisiert" data-clsy-pwa-search-save-search-toast-deleted="Gespeicherte Suche wurde gelöscht"></div>
+        <div class="clsy-c-search-menu__content">
+          <div class="clsy-c-dialog__buttonbar--sentinel"></div>
+          <div class="clsy-c-dialog__buttonbar clsy-c-dialog__buttonbar--sticky"><button class="clsy-c-search-menu__cancel clsy-c-btn clsy-c-btn--icon-only" type="button"><span class="clsy-visually-hidden">Abbrechen</span></button>
+            <div class="clsy-c-dialog__buttonbar-action-container"><button class="clsy-c-search-menu__submit clsy-c-btn clsy-c-btn--cta" data-url="aHR0cHM6Ly93d3cubWFya3QuZGUvc3VjaGUuaHRt" type="button">Suchen</button></div>
+          </div>
+          <div id="clsy-c-search-menu__keywords" class="clsy-c-search-menu__input-container clsy-c-form__fields">
+            <div class="clsy-c-search-menu__input-text">
+              <div class="clsy-c-form__field-wrapper clsy-c-search-menu__blur-updates"><label class="clsy-c-form__label " for="clsy-c-search-menu__keywords-input-0" id="lbl-clsy-c-search-menu__keywords-input-0"><span class="clsy-c-form__label-main">Suchbegriff, z.B. Laptop</span></label><input class="clsy-c-form__smartLabeledField " id="clsy-c-search-menu__keywords-input-0" type="text" name="keywords" autocomplete="off" data-autocomplete-url="/ajax/keywordsAutoCompleter" data-autocomplete-scrollparent=".clsy-c-search-menu" enterkeyhint="search">
+                <div class="clsy-c-form__actionbuttons"><button class="clsy-c-form__clear clsy-c-btn clsy-c-btn--icon-only" type="button"><span class="clsy-visually-hidden">Löschen</span></button></div>
+              </div>
+            </div>
+          </div>
+          <div id="clsy-c-search-menu__region" class="clsy-c-search-menu__input-container clsy-c-form__fields">
+            <div class="clsy-c-search-menu__input-text">
+              <div class="clsy-c-form__field-wrapper clsy-c-search-menu__blur-updates"><label class="clsy-c-form__label " for="clsy-c-search-menu__region-input-0" id="lbl-clsy-c-search-menu__region-input-0"><span class="clsy-c-form__label-main">PLZ / Ort</span></label><input class="clsy-c-form__smartLabeledField " id="clsy-c-search-menu__region-input-0" type="text" name="geoName" autocomplete="off" data-autocomplete-url="/ajax/geoAutoCompleter" data-autocomplete-scrollparent=".clsy-c-search-menu" enterkeyhint="search">
+                <div class="clsy-c-form__actionbuttons"><button class="clsy-c-form__clear clsy-c-btn clsy-c-btn--icon-only" type="button"><span class="clsy-visually-hidden">Löschen</span></button></div>
+              </div>
+            </div>
+<button class="clsy-c-search-menu__gps clsy-c-btn clsy-c-btn--icon-only" type="button"><span class="clsy-visually-hidden">aktueller Standort</span></button></div>
+          <div id="clsy-c-search-menu__radius" class="clsy-c-search-menu__input-container clsy-c-form__fields">
+            <div class="clsy-slider-input"><input aria-label="Suchradius" type="range" min="0" max="10" step="1" value="0" data-slider-input-list="[&quot;0&quot;,&quot;5&quot;,&quot;10&quot;,&quot;15&quot;,&quot;20&quot;,&quot;25&quot;,&quot;50&quot;,&quot;100&quot;,&quot;150&quot;,&quot;200&quot;,&quot;250&quot;]"><input type="hidden" name="radius" value="0">
+              <div class="clsy-slider-input__display">+&nbsp;<span>0</span>&nbsp;km</div>
+            </div>
+          </div>
+          <div id="clsy-c-search-menu__category" class="clsy-c-search-menu__input-container clsy-c-form__fields">
+            <div class="clsy-c-search-menu__input-text">
+              <div class="clsy-c-form__field-wrapper clsy-c-search-menu__input-hidden"><label class="clsy-c-form__label " for="clsy-c-search-menu__category-input-0" id="lbl-clsy-c-search-menu__category-input-0"><span class="clsy-c-form__label-main">Kategorie</span></label><input class=" " id="clsy-c-search-menu__category-input-0" type="hidden" name="categoryId" enterkeyhint="search"></div>
+            </div>
+<button class="clsy-c-search-menu__open-category-picker clsy-c-btn clsy-c-btn--secondary-restrained" type="button">Alle Kategorien</button>
+            <div class="clsy-c-search-menu-category-picker" data-scroll-lock-scrollable="">
+              <div class="clsy-c-search-menu-category-picker__content">
+                <div class="clsy-c-dialog__buttonbar"><button class="clsy-c-search-menu-category-picker__button-close clsy-c-btn clsy-c-btn--icon-only" data-closes-picker="clsy-c-search-menu--category-picker-open" type="button"><span class="clsy-visually-hidden">abbrechen</span></button></div>
+                <ul class="clsy-list-multicolumn">
+                  <li><button type="submit" form="prg_form" title="Fahrzeuge" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiEcSGoBVc0IJLJOjt_4H-kA=" data-category-id="2000000000" data-input-suggestion="2000000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Fahrzeuge</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Tiere" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiKzwvS65TYrkWvIAbXSRcfM=" data-category-id="2100000000" data-input-suggestion="2100000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Tiere</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Haus &amp; Garten" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiF0j8GlqTEnEpWTeLe27RxBDr9xVC6HgDMpyhDtv2iaL" data-category-id="2200000000" data-input-suggestion="2200000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Haus &amp; Garten</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Hobby, Freizeit &amp; Lernen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiN6UFjrt2Uk3rCmgr-3-g3QbXQd6wMNxSgu11V3mW3fR" data-category-id="2300000000" data-input-suggestion="2300000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Hobby, Freizeit &amp; Lernen</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Elektronik &amp; Technik" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiNO-DSr_eHNdfYGc_EVWmQXqlsTl1DP_VpmwV3OXlSmK" data-category-id="2400000000" data-input-suggestion="2400000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Elektronik &amp; Technik</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Immobilien" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiPc7EuYHLIXjybBDPujbX_oyniX0cQsgvZUyrfsfgbY2" data-category-id="2500000000" data-input-suggestion="2500000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Immobilien</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Jobs" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiNS2lAsgnhBSs9uv10B1yuw=" data-category-id="2600000000" data-input-suggestion="2600000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Jobs</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Dienstleistungen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiJLXU3VkhaCC-gysy9lR1BTrzDb2mT4sLLPuoqlHK-yH" data-category-id="2700000000" data-input-suggestion="2700000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Dienstleistungen</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Kontaktanzeigen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiAtrlPnuT-6I-ISAt4rVpMZFy4aFAW1pqbGiG88kRf0v" data-category-id="2800000000" data-input-suggestion="2800000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Kontaktanzeigen</span></button></li>
+                  <li><button type="submit" form="prg_form" title="Erotik" role="link" data-targeturl="ZrSiBOwXUXqFNeUIK5UmH0o3aOdcmKJaFmTv7kd_QU-hRHnBFP_CwWm9opQEviMJ" data-category-id="3000000000" data-input-suggestion="3000000000" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-search-menu-category-picker__category clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-outline-offset-negative"><span class="clsy-c-search-menu-category-picker__category-label">Erotik</span></button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="clsy-c-search-menu__price" class="clsy-c-search-menu__input-container clsy-c-form__fields"></div>
+          <div id="clsy-c-search-menu__price-type" class="clsy-c-search-menu__input-container clsy-c-form__fields"></div>
+          <div class="clsy-c-search-menu__generic-criteria"></div>
+        </div>
+      </div>
+      <main id="main" tabindex="-1" class="clsy-main-home">
+        <div class="clsy-search-header clsy-c-scrollObserver" role="search" data-scroll-lock-fill-gap="">
+          <div class="clsy-search-header__inner">
+            <div class="clsy-search-header__first-row"><button type="button" class="clsy-search-header__search-input clsy-interactive clsy-interactive--not-yet clsy-search-header__search-input--empty" data-search-menu-trigger-focus="clsy-c-search-menu__keywords" disabled="disabled" title="Suche öffnen"><span>Suchen</span></button></div>
+          </div>
+        </div>
+        <div class="clsy-home">
+          <div class="clsy-c-advsection clsy-c-advsection--reloadable" id="clsy-clsds-cont-home_top_sticky" data-advsection-adtype="CLASSYADS" data-advsection-setupid="traffective2020" data-advsection-displayid="clsy-clsds-div-home_top_sticky">
+            <div id="clsy-clsds-div-home_top_sticky" style="display: none;" class="Mobile_Sticky"></div>
+          </div>
+          <div id="clsy-home-marktletTop">
+            <div class="clsy-home-marktlet-wrapper-top-multicol clsy-hide-on-singlecol">
+              <div id="markt_marktletWrapper_HOME_TOP_LEFT" class="clsy-marktlet-wrapper" data-marktlet-slot-id="HOME_TOP_LEFT" data-marktlet-cms-id="premium2-werbefreiheit-nonerotik-640x320-v2"><a href="/premium-anmeldung.htm"><div class="cmsImageRightFloat"><img class="cmsImage" src="https://bilder.markt.de/images/cms/marktlet_640x320/640x320-premium2-werbefreiheit-nonerotik-v2.png" alt="Premium Werbefreiheit - Deine Anzeige ohne Werbung" width="640" height="320" srcset="https://bilder.markt.de/images/cms/marktlet_640x320/640x320-premium2-werbefreiheit-nonerotik-v2_compr25kb.png 414w, https://bilder.markt.de/images/cms/marktlet_640x320/640x320-premium2-werbefreiheit-nonerotik-v2.png 640w" sizes="(max-width: 414px) 414px, 640px"></div></a>
+                <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_marktlet","kotlin-kotlin-stdlib","markt-frontend_core"], function (module, rm_1, core) {
+        new module.de.classyfi.frontend.pwa.marktlet.MarktletClient("markt_marktletWrapper_HOME_TOP_LEFT");
+      });
+/* ]]> */
+</script>
+              </div>
+              <div id="markt_marktletWrapper_HOME_TOP_RIGHT" class="clsy-marktlet-wrapper" data-marktlet-slot-id="HOME_TOP_RIGHT" data-marktlet-cms-id="home-top-right-inserieren-urlaubskasse-26"><a href="https://www.markt.de/benutzer/step,prefill/inserieren.htm"><div class="cmsImageRightFloat"><img class="cmsImage" src="https://bilder.markt.de/images/cms/marktlet_320x320/320x320-urlaubskasse-26.jpg" alt="Mann mit Kayak auf einem See, Urlaubsstimmung" width="320" height="320" srcset="https://bilder.markt.de/images/cms/marktlet_320x320/320x320-urlaubskasse-26_compr25kb.jpg 414w, https://bilder.markt.de/images/cms/marktlet_320x320/320x320-urlaubskasse-26.jpg 320w" sizes="(max-width: 414px) 414px, 320px"></div> </a>
+                <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_marktlet","kotlin-kotlin-stdlib","markt-frontend_core"], function (module, rm_1, core) {
+        new module.de.classyfi.frontend.pwa.marktlet.MarktletClient("markt_marktletWrapper_HOME_TOP_RIGHT");
+      });
+/* ]]> */
+</script>
+              </div>
+            </div>
+          </div>
+<a class="clsy-c-sticky-button clsy-c-scrollObserver clsy-c-scrollObserver--up clsy-c-btn clsy-c-btn--smaller" href="https://www.markt.de/benutzer/inserieren.htm">Gratis Anzeige erstellen</a>
+          <section class="clsy-contentsection clsy-contentsection--vert-padding clsy-contentsection--hor-padding" id="clsy-home-gallery" aria-labelledby="clsy-home-gallery__heading">
+            <div class="clsy-c-carousel-wrapper clsy-c-home-gallery">
+              <div class="clsy-c-carousel__header">
+                <h2 id="clsy-home-gallery__heading">Kleinanzeigen Galerie</h2>
+                <div class="clsy-c-carousel__controls"></div>
+              </div>
+              <div class="clsy-c-carousel" data-max-items-per-slide="6" data-loader-ajaxurl="https://www.markt.de/loadUpsellingHomeGalleryAds.ajx" data-loader-geourlid="deutschland" data-loader-partnerid="1" data-item-teaser-hidden="true" data-item-location-hidden="true" data-loader-nextoffset="4" data-loader-thumbwidth="160" data-mq-items-visible="{&quot;1&quot;:1,&quot;185&quot;:2,&quot;355&quot;:3,&quot;525&quot;:4,&quot;700&quot;:3,&quot;810&quot;:4,&quot;1250&quot;:5,&quot;1650&quot;:6}" data-loader-thumbcropped="true">
+                <div class="clsy-c-carousel__slides">
+                  <div class="clsy-c-carousel__item markt_upselling_pushup" data-item-id="record-efe1049f" title="Klassische Massage – Für Wohlbefinden und Regeneration"><button type="submit" form="prg_form" title="Klassische Massage – Für Wohlbefinden und Regeneration" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiDfKmFHbcOCT8eTWlAOCR1TyXE3XX-df9vLs0b4wd8i7w9Ka27ASpUp0ki7kVraPKGF48Q0xfIMA2yaJycdfnBadefe4ZYVXt1TzlV6yeSYtUvHxXYF8num-sjjiIVUxVw==" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/DkYLForGyj9ZErYxjB7t2CTU_28=/260x340/images_classifieds/a3/00/11ab-d19b-4306-855f-2882c46f0498/image" alt="" width="260" height="340"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Klassische Massage – Für Wohlbefinden und Regeneration</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">85 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-f5e75f56" title="Kaufe alte Orden und ganze Nachlässe ."><button type="submit" form="prg_form" title="Kaufe alte Orden und ganze Nachlässe ." role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiM-E09PnvBtQadI0X2G5sTZcBGnrgJSFFGPnJvSx1whFsq0TtzqPatKIK0ZkzZUx723EaDZJVvjxvfogr_vgwxiGgKHHXuin-XkIaS8SbGWI" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/yFUOuNB3k6pFvD5WN3FaCEa2UV8=/260x340/images_classifieds/97/1e/1ae9-683c-441a-9fec-58c99098ed37/image" alt="" width="260" height="340"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Kaufe alte Orden und ganze Nachlässe .</span>
+                        <div class="clsy-c-carousel__item-price"></div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-f6ff2cdc" title="Die nächste Bielefelder SCHMUCKAUKTION am 16. Mai 2026"><button type="submit" form="prg_form" title="Die nächste Bielefelder SCHMUCKAUKTION am 16. Mai 2026" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiMqYdsflNGTSgfbC063Iemcvemgdp4txlAZXEeyBU16nKHMbqlA8b3EVtxpSAphGxvk4KffLJp5QZ_WQxyL112bhzgEQnLeTQ2S9W4q5Nb_Gb78ZM7_CX8Fqmmi_rTBVZw==" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/hSznehh2YnEWgf37cIVKUIqVUew=/260x340/images_classifieds/54/2b/7a3d-6179-45cb-878d-9e850c3db589/image" alt="" width="260" height="340"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Die nächste Bielefelder SCHMUCKAUKTION am 16. Mai 2026</span>
+                        <div class="clsy-c-carousel__item-price"></div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-f8c8339b" title="Chinesische Oriental-Massage"><button type="submit" form="prg_form" title="Chinesische Oriental-Massage" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiJUGO1jiurgzWGEJhtwNeq9kpg9jcaLlKMxPYWUzyfNuigzSGG4XwykPv5Po0QeMRrKLNggbd0Z0FHzSoLO3kWxDcVm_NMfYqynBs4VY-iPb" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/9hxaOP1qnyMjLWgPs5egi5gdVSM=/260x340/images_classifieds/66/36/cbb0-1786-4f4d-b3a6-0b45afaebef0/image" alt="" width="260" height="340"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Chinesische Oriental-Massage</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">50 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Stundensatz</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item markt_upselling_pushup" data-item-id="record-f9307136" title="Zwergspitzwelpen Pomeranianwelpen von der Soerheide"><button type="submit" form="prg_form" title="Zwergspitzwelpen Pomeranianwelpen von der Soerheide" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiEx7sOHW57cSzYD4tuCqayVcUSav0QiAwqo1upUW-oqNstloNMXTqTDx4loC7ZOAlEEs9o-NQf7-gfrvzBAh2b59q3XKPyBehWNoVI0Iui41y-YawIX1BDjQqQh41vR7YQ==" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/Dr3Yz4OJe3yUJuA-4Xq-MQlH2JQ=/260x340/images_classifieds/20/3c/4e32-9fd7-40ef-b0b2-d3a3ba2c3eb4/image" alt="" width="260" height="340"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Zwergspitzwelpen Pomeranianwelpen von der Soerheide</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">1.600 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-fa08c2bf" title="Seriöse ANTI-CELLULITE-MASSAGE"><button type="submit" form="prg_form" title="Seriöse ANTI-CELLULITE-MASSAGE" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiBnEjPpY-4PihNRh-s_apaE4Z8jh9lYM3XygPnE9lXaZntWBq0euDjYrvWhBDbFTYmafOhc3XILq1ytLSuofY87VEk-uCynKdXvCy_RxGfzo" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/9yKwB2vUlZyCLVoPI0URXp9bykQ=/260x340/images_classifieds/39/83/6b73-eb2d-435f-9844-e81e983a2074/image" alt="" width="260" height="340"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Seriöse ANTI-CELLULITE-MASSAGE</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">69 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-fa8bc0cb" title="Britisch Kurzhaar Trio"><button type="submit" form="prg_form" title="Britisch Kurzhaar Trio" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiDP687j0a6Ltn0aRmXbJGKUMl6W0T3-0F6jaTbBo6YV4AkH0R-Iicbhs9xLy6kxNejEsKAfkEaTUBaMxNXso4so=" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/g_BlCY4pGXLmvTpaRgBChfUetOw=/260x340/images_classifieds/c4/96/a513-69a9-47c0-99e6-81896b3b4e63/image" alt="" width="260" height="340" loading="lazy"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Britisch Kurzhaar Trio</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">600 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-fc2c2065" title="Süße Heilige Birma Kätzchen suchen neues Zuhause."><button type="submit" form="prg_form" title="Süße Heilige Birma Kätzchen suchen neues Zuhause." role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiEy-QqLazhsqHKsTvi8kAICqoBBquaGuq_JFNzWzH9aJIRTEhlJ6fsjBC955CkD9DdkIC8VSGx-XeciCMDyfyWNo-qhSl4qAu7MderwzXMAshfknraV-0uoh4gt_KZDuTg==" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/W3ekcOQmEr0TX5sH4yFH0cgsX1Y=/260x340/images_classifieds/d1/a6/556f-b151-4da6-b38d-794c0dc6a153/image" alt="" width="260" height="340" loading="lazy"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Süße Heilige Birma Kätzchen suchen neues Zuhause.</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">450 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-03b4c26b" title="Modulare XXL Lounge-/Schlafcouch – modern, kaum genutzt, inkl. Kissen"><button type="submit" form="prg_form" title="Modulare XXL Lounge-/Schlafcouch – modern, kaum genutzt, inkl. Kissen" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiJd0kRNFWpI2SXw0vsP2AdUOLk_ULCCDgoegnMOFasRHqLXJd6_gLL5Ke1vA9XeTOH7ZHpGtXGc9pJaEARKcqPJaYUYBZApd_h93VkjV37wkI_6xiQVU3W28zBERon5rf8DgDySQS7Nm3-aR7trgj7s=" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/Bz7mPWmRuvbyt82Qs_71gMNcfoU=/260x340/images_classifieds/9b/60/d3f2-70e7-4140-aa5e-a3cc4fdd345d/image" alt="" width="260" height="340" loading="lazy"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Modulare XXL Lounge-/Schlafcouch – modern, kaum genutzt, inkl. Kissen</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">800 €</div>
+                          <div class="clsy-c-carousel__item-price-label">VB</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item markt_upselling_pushup" data-item-id="record-062faad9" title="Pudelwelpe"><button type="submit" form="prg_form" title="Pudelwelpe" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiFtHdWtaY8gt_2GqIAY5gA_WiPWTkuw0-N2oicztSFhpPj18OYelTT1LdSQXYFWgr3nAMw67ilJQ9suwziM8jJA=" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/sdszNcV3uvu3utYczaP0fk36F6Q=/260x340/images_classifieds/2e/85/948b-e1ff-493f-a801-9af39ede2c7d/image" alt="" width="260" height="340" loading="lazy"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Pudelwelpe</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">2.500 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-0656b4c4" title="Australien shepherd Welpen Reservierung möglich"><button type="submit" form="prg_form" title="Australien shepherd Welpen Reservierung möglich" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiD3uAMg2DPoYKHXW_D_9S2hrN4K-Y_PbpknFKHxuZSqPKkGCSzG0cImH3pWnpi2hSQdUEJw9M_U-GwZPwYrkIg908CXqU6jF8_79SMRfzJeTCKAR2lM0F9vD1mowknSizQ==" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/YqPWQkb_co7SloY_5hDIi6zXroY=/260x340/images_classifieds/ef/33/e455-74d2-4b8f-8979-cd3c08e74763/image" alt="" width="260" height="340" loading="lazy"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">Australien shepherd Welpen Reservierung möglich</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">2.100 €</div>
+                          <div class="clsy-c-carousel__item-price-label">VB</div>
+                        </div>
+                      </div>
+                    </button></div>
+                  <div class="clsy-c-carousel__item " data-item-id="record-0943b932" title="4 Süße Yorkshire Terrier Welpen suchen eine neue liebevolle Familie"><button type="submit" form="prg_form" title="4 Süße Yorkshire Terrier Welpen suchen eine neue liebevolle Familie" role="link" data-targeturl="EpFPH8ZMLDiZRL4Y7dUOiNevkkhqg0xkBoHjx1xr3V4D-zSgUgogUm338UzsQky_GyUnq2ZHKelicTwz9obqH8CRTZ-5UbkV3GvLHuPbkzkQhFgxBxlYXnYIJnZ1AD8lZvYhbqn6LLcthVUaX5qMGlpiTBlI0Tfeyrlf4Eq1FfI=" onclick="$('#prg_form').attr('target', null); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-carousel__content">
+                      <div class="clsy-c-carousel__item-image"><span class="clsy-c-carousel__item-image-imgwrapper"><img src="https://imagecache.markt.de/7knF5Mri4o8qhy_WUW9oKpFCRQk=/260x340/images_classifieds/d7/56/9c3b-90b2-4ed0-9036-f3c89863b9c8/image" alt="" width="260" height="340" loading="lazy"></span></div>
+                      <div class="clsy-c-carousel__item-text"><span class="clsy-c-carousel__item-subject">4 Süße Yorkshire Terrier Welpen suchen eine neue liebevolle Familie</span>
+                        <div class="clsy-c-carousel__item-price">
+                          <div class="clsy-c-carousel__item-price-value">1.100 €</div>
+                          <div class="clsy-c-carousel__item-price-label">Festpreis</div>
+                        </div>
+                      </div>
+                    </button></div>
+                </div>
+              </div>
+              <div class="clsy-a11y-announce clsy-visually-hidden" role="status" aria-live="polite" aria-atomic="true" id="clsy-carousel__live-region"></div>
+            </div>
+          </section>
+          <div class="clsy-c-advsection clsy-c-advsection--reloadable" id="clsy-clsds-cont-home_mobile_below_galerie" data-advsection-adtype="CLASSYADS" data-advsection-setupid="traffective2020" data-advsection-displayid="traffective-ad-Slider">
+            <div id="traffective-ad-Slider" style="display: none;" class="Slider"></div>
+          </div>
+          <div id="clsy-advsection-outer--home-bottom" class="clsy-advsection-outer">
+            <div class="clsy-c-advsection clsy-c-advsection--reloadable" id="clsy-clsds-cont-home_mobile_bottom" data-advsection-adtype="CLASSYADS" data-advsection-setupid="traffective2020" data-advsection-displayid="clsy-clsds-div-home_mobile_bottom">
+              <div id="clsy-clsds-div-home_mobile_bottom" style="display: none;" class="Mobile_Pos2"></div>
+            </div>
+          </div>
+          <div id="clsy-home-categories-block">
+            <section class="clsy-contentsection clsy-contentsection--vert-padding clsy-contentsection--hor-padding" id="clsy-home-categories" aria-labelledby="clsy-home-categories__heading">
+              <h2 id="clsy-home-categories__heading">Kategorien</h2>
+              <div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2200000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Haus &amp; Garten</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/haus-garten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Haus &amp; Garten</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/antiquitaeten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Antiquitäten</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/aufbewahrung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Aufbewahrung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/baustoffe-bauzubehoer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Baustoffe &amp; Bauzubehör</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/briefkaesten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Briefkästen</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/dekoration/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Dekoration</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/eisenwaren/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Eisenwaren</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/garten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Garten</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/gewerbe-industrie/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Gewerbe &amp; Industrie</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/haushaltswaren/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Haushaltswaren</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/holz/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Holz</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kamine/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kamine</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kuechenutensilien/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Küchenutensilien</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/lebensmittel/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Lebensmittel</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/moebel/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Möbel</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/sicherheitstechnik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sicherheitstechnik</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/sonnenschutz-sichtschutz/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sonnenschutz &amp; Sichtschutz</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/tore-zaeune/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Tore &amp; Zäune</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/werkstatteinrichtung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Werkstatteinrichtung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/werkzeug/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Werkzeug</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/wohntextilien/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Wohntextilien</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2300000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Hobby, Freizeit &amp; Lernen</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Hobby, Freizeit &amp; Lernen</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/basteln/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Basteln</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/buecher/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Bücher</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/buerobedarf/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Bürobedarf</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/freizeitaktivitaeten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Freizeitaktivitäten</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/modellbau/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Modellbau</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/musikinstrumente/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Musikinstrumente</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/reisen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Reisen</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/sammeln/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sammeln</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/sport/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sport</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2100000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Tiere</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/tiere/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Tiere</a></li>
+                    <li><a href="https://www.markt.de/tiere/aquaristik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Aquaristik</a></li>
+                    <li><a href="https://www.markt.de/tiere/entlaufen-zugelaufen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Entlaufen &amp; Zugelaufen</a></li>
+                    <li><a href="https://www.markt.de/tiere/hunde/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Hunde</a></li>
+                    <li><a href="https://www.markt.de/tiere/katzen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Katzen</a></li>
+                    <li><a href="https://www.markt.de/tiere/kleintiere/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kleintiere</a></li>
+                    <li><a href="https://www.markt.de/tiere/nutztiere/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Nutztiere</a></li>
+                    <li><a href="https://www.markt.de/tiere/pferde/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Pferde</a></li>
+                    <li><a href="https://www.markt.de/tiere/terraristik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Terraristik</a></li>
+                    <li><a href="https://www.markt.de/tiere/tierdienstleistungen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Tierdienstleistungen</a></li>
+                    <li><a href="https://www.markt.de/tiere/tiervermittlung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Tiervermittlung</a></li>
+                    <li><a href="https://www.markt.de/tiere/voegel/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Vögel</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--fashion-beauty clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Mode &amp; Beauty</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/accessoires/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Accessoires</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/damenkleidung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Damenkleidung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/herrenkleidung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Herrenkleidung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/kinderkleidung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kinderkleidung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kleidung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/pflegeartikel/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Pflegeartikel</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/accessoires/schmuck/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Schmuck</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/schuhe/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Schuhe</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/taschen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Taschen</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/accessoires/uhren/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Uhren</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--child-baby clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Kind &amp; Baby</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/babykleidung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Babykleidung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/babypflege/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Babypflege</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/babyphone/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Babyphone</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/fahrraeder/kinderfahrraeder/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kinderfahrräder</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/kinderkleidung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kinderkleidung</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kleidung/schuhe/kinderschuhe/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kinderschuhe</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/kinderwagen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kinderwagen</a></li>
+                    <li><a href="https://www.markt.de/haus-garten/moebel/kinderzimmer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kinderzimmer</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/buerobedarf/schreibwaren/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Schulbedarf</a></li>
+                    <li><a href="https://www.markt.de/hobby-freizeit-lernen/spielzeug/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Spielzeug</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2400000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Elektronik &amp; Technik</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/elektronik-technik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Elektronik &amp; Technik</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/buerotechnik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Bürotechnik</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/camcorder-videokameras/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Camcorder &amp; Videokameras</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/computer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Computer</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/elektroinstallationen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Elektroinstallationen</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/haushaltsgeraete/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Haushaltsgeräte</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/kameras/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kameras</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/kamerazubehoer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kamerazubehör</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/kuechengeraete/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Küchengeräte</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/optik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Optik</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/studioequipment/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Studioequipment</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/telekommunikation/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Telekommunikation</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/unterhaltungselektronik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Unterhaltungselektronik</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/veranstaltungstechnik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Veranstaltungstechnik</a></li>
+                    <li><a href="https://www.markt.de/elektronik-technik/wellness-technik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Wellness Technik</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2000000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Fahrzeuge</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/fahrzeuge/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Fahrzeuge</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/autos/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Autos</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/boote/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Boote</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/campingfahrzeuge/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Campingfahrzeuge</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/e-scooter/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">E-Scooter</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/fahrraeder/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Fahrräder</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/garagen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Garagen</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/kfz-ersatzteile/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">KFZ-Ersatzteile</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/kfz-service/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">KFZ-Service</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/mofas/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Mofas</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/motorraeder/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Motorräder</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/motorroller/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Motorroller</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/nutzfahrzeuge/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Nutzfahrzeuge</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/pkw-anhaenger/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">PKW-Anhänger</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/pkw-zubehoer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">PKW-Zubehör</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/quads/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Quads</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/rikschas/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Rikschas</a></li>
+                    <li><a href="https://www.markt.de/fahrzeuge/stellplaetze/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Stellplätze</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2500000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Immobilien</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/immobilien/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Immobilien</a></li>
+                    <li><a href="https://www.markt.de/immobilien/mieten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Mieten</a></li>
+                    <li><a href="https://www.markt.de/immobilien/kaufen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kaufen</a></li>
+                    <li><a href="https://www.markt.de/immobilien/immobilienservice/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Immobilienservice</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2600000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Jobs</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/jobs/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Jobs</a></li>
+                    <li><a href="https://www.markt.de/jobs/stellengesuche/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Stellengesuche</a></li>
+                    <li><a href="https://www.markt.de/jobs/assistenz/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Assistenz</a></li>
+                    <li><a href="https://www.markt.de/jobs/ausbildungsplaetze/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Ausbildungsplätze</a></li>
+                    <li><a href="https://www.markt.de/jobs/bankkaufleute/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Bankkaufleute</a></li>
+                    <li><a href="https://www.markt.de/jobs/bauwesen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Bauwesen</a></li>
+                    <li><a href="https://www.markt.de/jobs/buchhaltung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Buchhaltung</a></li>
+                    <li><a href="https://www.markt.de/jobs/callcenter/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Callcenter</a></li>
+                    <li><a href="https://www.markt.de/jobs/consulting/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Consulting</a></li>
+                    <li><a href="https://www.markt.de/jobs/dienstleistungsberufe/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Dienstleistungsberufe</a></li>
+                    <li><a href="https://www.markt.de/jobs/einkauf/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Einkauf</a></li>
+                    <li><a href="https://www.markt.de/jobs/einzelhandel/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Einzelhandel</a></li>
+                    <li><a href="https://www.markt.de/jobs/finanzwesen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Finanzwesen</a></li>
+                    <li><a href="https://www.markt.de/jobs/freiberufler/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Freiberufler</a></li>
+                    <li><a href="https://www.markt.de/jobs/gastronomie/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Gastronomie</a></li>
+                    <li><a href="https://www.markt.de/jobs/gebaeudemanagement/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Gebäudemanagement</a></li>
+                    <li><a href="https://www.markt.de/jobs/geschaeftsfuehrung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Geschäftsführung</a></li>
+                    <li><a href="https://www.markt.de/jobs/gesundheitswesen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Gesundheitswesen</a></li>
+                    <li><a href="https://www.markt.de/jobs/handwerksberufe/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Handwerksberufe</a></li>
+                    <li><a href="https://www.markt.de/jobs/immobilienverwaltung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Immobilienverwaltung</a></li>
+                    <li><a href="https://www.markt.de/jobs/it/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">IT</a></li>
+                    <li><a href="https://www.markt.de/jobs/kraftfahrer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kraftfahrer</a></li>
+                    <li><a href="https://www.markt.de/jobs/kuenstlerische-berufe/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Künstlerische Berufe</a></li>
+                    <li><a href="https://www.markt.de/jobs/landwirtschaft/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Landwirtschaft</a></li>
+                    <li><a href="https://www.markt.de/jobs/lehrkraefte/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Lehrkräfte</a></li>
+                    <li><a href="https://www.markt.de/jobs/logistik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Logistik</a></li>
+                    <li><a href="https://www.markt.de/jobs/marketing/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Marketing</a></li>
+                    <li><a href="https://www.markt.de/jobs/minijobs/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Minijobs</a></li>
+                    <li><a href="https://www.markt.de/jobs/oeffentlicher-dienst/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Öffentlicher Dienst</a></li>
+                    <li><a href="https://www.markt.de/jobs/paedagogen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Pädagogen</a></li>
+                    <li><a href="https://www.markt.de/jobs/personalwesen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Personalwesen</a></li>
+                    <li><a href="https://www.markt.de/jobs/praktikanten/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Praktikanten</a></li>
+                    <li><a href="https://www.markt.de/jobs/rechtsberufe/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Rechtsberufe</a></li>
+                    <li><a href="https://www.markt.de/jobs/sicherheit/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sicherheit</a></li>
+                    <li><a href="https://www.markt.de/jobs/steuern/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Steuern</a></li>
+                    <li><a href="https://www.markt.de/jobs/touristik/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Touristik</a></li>
+                    <li><a href="https://www.markt.de/jobs/trainees/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Trainees</a></li>
+                    <li><a href="https://www.markt.de/jobs/versicherungswesen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Versicherungswesen</a></li>
+                    <li><a href="https://www.markt.de/jobs/vertrieb/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Vertrieb</a></li>
+                    <li><a href="https://www.markt.de/jobs/verwaltungsangestellte/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Verwaltungsangestellte</a></li>
+                    <li><a href="https://www.markt.de/jobs/wissenschaft/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Wissenschaft</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2700000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Dienstleistungen</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/dienstleistungen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Dienstleistungen</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/betreuung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Betreuung</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/bueroservice/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Büroservice</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/gastronomie/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Gastronomie</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/gesundheit-wellness/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Gesundheit &amp; Wellness</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/handwerk/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Handwerk</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/hochzeit/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Hochzeit</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/it-dienstleistungen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">IT Dienstleistungen</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/kunst-kultur/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Kunst &amp; Kultur</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/rechtsberatung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Rechtsberatung</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/steuerberatung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Steuerberatung</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/transportdienstleistungen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Transportdienstleistungen</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/trauer/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Trauer</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/unterricht/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Unterricht</a></li>
+                    <li><a href="https://www.markt.de/dienstleistungen/versicherungsberatung/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Versicherungsberatung</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--2800000000 clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Kontaktanzeigen</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/kontaktanzeigen/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Alle in Kontaktanzeigen</a></li>
+                    <li><a href="https://www.markt.de/kontaktanzeigen/er-sucht-ihn/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Er sucht Ihn</a></li>
+                    <li><a href="https://www.markt.de/kontaktanzeigen/er-sucht-sie/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Er sucht Sie</a></li>
+                    <li><a href="https://www.markt.de/kontaktanzeigen/sie-sucht-ihn/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sie sucht Ihn</a></li>
+                    <li><a href="https://www.markt.de/kontaktanzeigen/sie-sucht-sie/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Sie sucht Sie</a></li>
+                    <li><a href="https://www.markt.de/kontaktanzeigen/weitere-beziehungsmodelle/" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Weitere Beziehungsmodelle</a></li>
+                  </ul>
+                </div>
+                <div class="clsy-c-cat"><a href="https://erotik.markt.de/" rel="nofollow" class="clsy-c-cat__root-link clsy-cat--3000000000 clsy-c-blocklink"><span>Erotik</span></a></div>
+                <div class="clsy-c-cat clsy-c-collapsibleelement clsy-c-collapsibleelement--collapsed collapsible_noPageImpression"><button class="clsy-c-cat__root-link clsy-cat--free-offers clsy-c-collapsibleelement__header chevron-collapse clsy-c-btn" type="button">Verschenken &amp; Tauschen</button>
+                  <ul class="clsy-c-cat__sub clsy-c-collapsibleelement__body">
+                    <li><a href="https://www.markt.de/verschenken/suche.htm" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Verschenken</a></li>
+                    <li><a href="https://www.markt.de/tauschen/suche.htm" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor">Tauschbörse</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <section class="clsy-contentsection clsy-contentsection--vert-padding clsy-contentsection--hor-padding" id="clsy-home-latest-items" aria-labelledby="clsy-home-latest-items__heading">
+            <h2 id="clsy-home-latest-items__heading">Neueste Kleinanzeigen - Deutschland</h2>
+            <ul class="clsy-c-latest-adverts clsy-list-multicolumn">
+              <li><a title="Löwenköpfchen" href="https://www.markt.de/loewenkoepfchen/a/d113e9d5/?geoUrlId=hohenmoelsen" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">Löwenköpfchen</span><span class="clsy-c-latest-advert__date">36 sek.</span></a></li>
+              <li><a title="RAGDOLL Kitten" href="https://www.markt.de/ragdoll-kitten/a/796246e2/?geoUrlId=brieselang" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">RAGDOLL Kitten</span><span class="clsy-c-latest-advert__date">50 sek.</span></a></li>
+              <li><a title="Russisch blau kitten reinrassig , günstig zu verkaufen" href="https://www.markt.de/russisch-blau-kitten-reinrassig-guenstig-zu-verkaufen/a/c1c2b08d/?geoUrlId=doerentrup" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">Russisch blau kitten reinrassig , günstig zu verkaufen</span><span class="clsy-c-latest-advert__date">1 min.</span></a></li>
+              <li><a title="🐾 Süßer BKH Kater (getigert) sucht liebevolles Zuhause 🐾" href="https://www.markt.de/suesser-bkh-kater-getigert-sucht-liebevolles-zuhause/a/2a53367e/?geoUrlId=koeln" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">🐾 Süßer BKH Kater (getigert) sucht liebevolles Zuhause 🐾</span><span class="clsy-c-latest-advert__date">1 min.</span></a></li>
+              <li><a title="Bungalow in bester Lage" href="https://www.markt.de/bungalow-in-bester-lage/a/7e35186a/?geoUrlId=thuine" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">Bungalow in bester Lage</span><span class="clsy-c-latest-advert__date">1 min.</span></a></li>
+              <li><a title="Puma Ferrari Kapuzenpullover Rot Größe 56/58 NEU Neupreis 129€" href="https://www.markt.de/puma-ferrari-kapuzenpullover-rot-groesse-56-58-neu-neupreis-129/a/fde59c01/?geoUrlId=gifhorn" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">Puma Ferrari Kapuzenpullover Rot Größe 56/58 NEU Neupreis 129€</span><span class="clsy-c-latest-advert__date">2 min.</span></a></li>
+              <li><a title="Kleine Kätzchen zur Reservierung" href="https://www.markt.de/kleine-kaetzchen-zur-reservierung/a/02f6536d/?geoUrlId=duisburg" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">Kleine Kätzchen zur Reservierung</span><span class="clsy-c-latest-advert__date">2 min.</span></a></li>
+              <li><a title="Sympathische Frau zwischen 30-45 Jahren gesucht." href="https://www.markt.de/sympathische-frau-zwischen-30-45-jahren-gesucht/a/314c4cea/?geoUrlId=erfurt" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">Sympathische Frau zwischen 30-45 Jahren gesucht.</span><span class="clsy-c-latest-advert__date">2 min.</span></a></li>
+              <li><a title="85m² Wohnung in Straubing Süd zu vermieten" href="https://www.markt.de/85m-wohnung-in-straubing-sued-zu-vermieten/a/b0f89da8/?geoUrlId=irlbach" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">85m² Wohnung in Straubing Süd zu vermieten</span><span class="clsy-c-latest-advert__date">3 min.</span></a></li>
+              <li><a title="BKH Mix black golden shaded ticked tabby" href="https://www.markt.de/bkh-mix-black-golden-shaded-ticked-tabby/a/b00a08be/?geoUrlId=ingolstadt" rel="nofollow" class="clsy-c-blocklink clsy-c-blocklink--padding-hor-fixed clsy-c-latest-advert"><span class="clsy-c-latest-advert__title">BKH Mix black golden shaded ticked tabby</span><span class="clsy-c-latest-advert__date">4 min.</span></a></li>
+            </ul>
+<a title="Weitere neueste Kleinanzeigen aus Deutschland" href="https://www.markt.de/neuestekleinanzeigen.htm" rel="nofollow">Weitere neueste Kleinanzeigen aus Deutschland</a></section>
+          <div id="markt_marktletWrapper_HOME_SEO_FOOTER_ABOVE" class="clsy-marktlet-wrapper" data-marktlet-slot-id="HOME_SEO_FOOTER_ABOVE" data-marktlet-cms-id="ratgeber-startseite-3"><div class="clsy-cms-article-teasers clsy-cms-article-teasers--fixed-image-aspect-ratio"><h2 class="clsy-cms-article-teasers__heading">Aktuelle Ratgeber von markt.de</h2><div class="clsy-cms-article-teasers__content"><div class="clsy-cms-article-teaser" onclick="location.href='https://www.markt.de/ratgeber/festkleidung/dresscode-hochzeit/';"><div class="clsy-cms-article-teaser__image-outer"><img class="clsy-cms-article-teaser__image" loading="lazy" src="https://bilder.markt.de/images/cms/hochzeit/hochzeit_dresscode_gross_1.png" alt="" width="800" height="600"></div><div class="clsy-cms-article-teaser__content"><h3 class="clsy-cms-article-teaser__heading"><a class="clsy-cms-article-teaser__heading-link" href="https://www.markt.de/ratgeber/festkleidung/dresscode-hochzeit/">Dresscode für die Hochzeit</a></h3><p>Wie ist man anlässlich einer Hochzeit angemessen angezogen? Und welche "No-Gos" gibt es bei der Kleidung? Erfahre das und viele weitere Tipps hier.</p></div></div><div class="clsy-cms-article-teaser" onclick="location.href='https://www.markt.de/ratgeber/freizeit/wissenswertes-ueber-biergaerten/';"><div class="clsy-cms-article-teaser__image-outer"><img class="clsy-cms-article-teaser__image" loading="lazy" src="https://bilder.markt.de/images/cms/oktoberfest/biergarten_gross.png" alt="" width="800" height="600"></div><div class="clsy-cms-article-teaser__content"><h3 class="clsy-cms-article-teaser__heading"><a class="clsy-cms-article-teaser__heading-link" href="https://www.markt.de/ratgeber/freizeit/wissenswertes-ueber-biergaerten/">Wissenswertes über Bier und Biergärten</a></h3><p>Du willst nicht nur im Biergarten sitzen, sondern auch etwas darüber erfahren?  Wissenswertes über Bier und Biergärten findest Du in unserem Ratgeber.</p></div></div><div class="clsy-cms-article-teaser" onclick="location.href='https://www.markt.de/ratgeber/katzenhaltung/balkon-sicherung-fuer-katzen/';"><div class="clsy-cms-article-teaser__image-outer"><img class="clsy-cms-article-teaser__image" loading="lazy" src="https://bilder.markt.de/images/cms/tiere/balkonsicherung_fuer_katzen_grafik_gross.png" alt="" width="800" height="600"></div><div class="clsy-cms-article-teaser__content"><h3 class="clsy-cms-article-teaser__heading"><a class="clsy-cms-article-teaser__heading-link" href="https://www.markt.de/ratgeber/katzenhaltung/balkon-sicherung-fuer-katzen/">Balkonsicherung für Katzen &amp; Alternativen [Tipps]</a></h3><p>Mit einer Balkonsicherung für Katzen bietest Du Deinem Haustier frische Luft und mehr Auslauf, ohne Gefahr für die Katze. Hier findest Du alle Tipps.</p></div></div><div class="clsy-cms-article-teaser" onclick="location.href='https://www.markt.de/ratgeber/fahrraeder/radtour-mit-hund/';"><div class="clsy-cms-article-teaser__image-outer"><img class="clsy-cms-article-teaser__image" loading="lazy" src="https://bilder.markt.de/images/cms/fahrrad/radtour_hund_fahrradkorb.png" alt="" width="380" height="285"></div><div class="clsy-cms-article-teaser__content"><h3 class="clsy-cms-article-teaser__heading"><a class="clsy-cms-article-teaser__heading-link" href="https://www.markt.de/ratgeber/fahrraeder/radtour-mit-hund/">Tipps für die Radtour mit dem Hund</a></h3><p>Radfahren mit dem Hund - in unserem Ratgeber erhältst Du wertvolle Tipps und Tricks, damit die Radtour für Hund und Mensch ein echtes Vergnügen wird.</p></div></div><div class="clsy-cms-article-teaser" onclick="location.href='https://www.markt.de/ratgeber/sportveranstaltungen/walken/';"><div class="clsy-cms-article-teaser__image-outer"><img class="clsy-cms-article-teaser__image" loading="lazy" src="https://bilder.markt.de/images/cms/sport/walken_gross.png" alt="" width="800" height="600"></div><div class="clsy-cms-article-teaser__content"><h3 class="clsy-cms-article-teaser__heading"><a class="clsy-cms-article-teaser__heading-link" href="https://www.markt.de/ratgeber/sportveranstaltungen/walken/">Was ist Walken und was braucht man hierfür?</a></h3><p>Walken ist die perfekte Alterntative zum Joggen. Wie Du es richtig machst und welche Ausrüstung Du hierfür benötigst erfährst Du in diesem Ratgeber. </p></div></div><div class="clsy-cms-article-teaser" onclick="location.href='https://www.markt.de/ratgeber/spielzeug/schaukel-selber-bauen/';"><div class="clsy-cms-article-teaser__image-outer"><img class="clsy-cms-article-teaser__image" loading="lazy" src="https://bilder.markt.de/images/cms/diy/diy_schaukel_gross.png" alt="" width="800" height="600"></div><div class="clsy-cms-article-teaser__content"><h3 class="clsy-cms-article-teaser__heading"><a class="clsy-cms-article-teaser__heading-link" href="https://www.markt.de/ratgeber/spielzeug/schaukel-selber-bauen/">Eine Schaukel selber bauen</a></h3><p>Eine Schaukel selber zu bauen ist nicht schwer. Erfahre hier, wie Du Deinen Kindern ganz leicht eine tolle Schaukel in den Garten zaubern kannst.</p></div></div></div></div> <a class="markt_cmsCustom_inlineBlocklink" href="/ratgeber/">Alle markt.de Ratgeber</a>
+            <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_marktlet","kotlin-kotlin-stdlib","markt-frontend_core"], function (module, rm_1, core) {
+        new module.de.classyfi.frontend.pwa.marktlet.MarktletClient("markt_marktletWrapper_HOME_SEO_FOOTER_ABOVE");
+      });
+/* ]]> */
+</script>
+          </div>
+          <div id="clsy-home-footer" class="clsy-home-footer">
+            <div class="clsy-c-collapsible-more-block" data-clsy-cmb-collapsible-content-selector="#regiontextcollapsed" data-clsy-cmb-cookie-name="pwaHomeFooterCollapsed"><h1>Kleinanzeigen </h1> <p>Als Kleinanzeigen  besonders beliebt sind: <a href="https://erotik.markt.de/anzeigen/er-sucht-ihn/sextreffen/" title="Gay Sextreffen Erotikanzeigen">Sextreffen</a>, <a href="https://erotik.markt.de/anzeigen/er-sucht-sie/" title="Er sucht Sie: Sex &amp; heiße Dates Erotikanzeigen">Er sucht Sie</a>, <a href="/haus-garten/kleidung/damenkleidung/" title="Damen-Kleidung gebraucht">Damenkleidung</a>. Für Deutschland bietet markt.de Anzeigen jeder Art von Autoanzeigen privater Gebrauchtwagen bis Immobilienanzeigen für günstige Wohnungen . Gerade für junge Familien mit Kindern sind kostenlose Kleinanzeigen von gebrauchten <a href="/haus-garten/kinderwagen/" title="Gebrauchte Kinderwagen &amp; Babytragen günstig kaufen &amp; verkaufen">Kinderwagen, Tragen</a> und fast neuer <a href="/haus-garten/kleidung/babykleidung/" title="Gebrauchte Babykleidung günstig kaufen &amp; verkaufen">Kleidung</a> hilfreich. Gebrauchte Möbel wie <a href="/haus-garten/moebel/schraenke-kommoden/" title="Schränke, Vitrinen günstig kaufen &amp; verkaufen">Schränke, Vitrinen</a> oder günstige <a href="/haus-garten/moebel/tische/" title="Tische, Esszimmergarnituren kaufen &amp; verkaufen">Tische, Esszimmergarnituren</a> lassen sich über kostenlose Kleinanzeigen der Nachbarn  preisgünstig kaufen.Innerhalb von Deutschland sind Kleinanzeigen in <a href="https://www.markt.de/berlin/">Berlin</a>, <a href="https://www.markt.de/hamburg/">Hamburg</a>, <a href="https://www.markt.de/muenchen/">München</a> besonders stark vertreten.</p> <div id="regiontextcollapsed"> <h2>Tiere adoptieren </h2> <p>Wer Welpen  kaufen bzw. adoptieren möchte, findet unter <a href="/tiere/hunde/rassehunde/" title="Rassehunde kaufen">Rassehunde</a> aktuell die meisten Hundeanzeigen. Zum Katzenbabys kaufen sind folgende Kategorien am beliebtesten: <a href="/tiere/katzen/rassekatzen/" title="Rassekatzen kaufen">Rassekatzen</a>. Interessenten sollten das Tier vor Ort beim Hunde- oder Katzen-Züchter  besuchen, bevor sie den Welpen oder die Katzen kaufen. Für den Reitsport gibt es Angebote für <a href="/tiere/tierdienstleistungen/reitbeteiligung/" title="Reitbeteiligung, Reitpartner biete, suche">Reitbeteiligung, Reitpartner</a> . Reinrassige <a href="/tiere/pferde/grosspferde/" title="Pferdekauf, Großpferde &amp; Fohlen kaufen &amp; verkaufen">Großpferde</a> und liebe <a href="/tiere/pferde/ponys/" title="Ponys, Kleinpferde kaufen, verkaufen &amp; zu verschenken">Ponys, Kleinpferde</a> werden über Pferdeanzeigen vermittelt. Gerade <a href="/tiere/pferde/pferdezubehoer/" title="Pferdezubehör kaufen &amp; verkaufen">Zubehör für Pferde</a> wie secondhand <a href="/tiere/pferde/pferdezubehoer/saettel/" title="Sattel, Pferdesattel - gebraucht &amp; neu kaufen &amp; verkaufen">Sättel, Sattelzubehör</a> sind gebraucht sehr günstig zu kaufen.</p> <h2>Gebrauchte Elektronik und Secondhand Kleidung</h2> <p>Schauen Sie sich auch gebrauchte <a href="/haus-garten/" title="Kleinanzeigen Angebote">Haus &amp; Garten</a>, <a href="/haus-garten/kleidung/damenkleidung/damenoberteile/" title="Vintage Oberteile Damen">Damenoberteile</a>  an. Besonders Elektronik wie <a href="/elektronik-technik/telekommunikation/smartphones-handys/" title="Gebrauchte Smartphones, Handys, Mobiltelefone kaufen &amp; verkaufen">Handys</a> oder günstige Computer wie <a href="/elektronik-technik/computer/laptops/" title="Laptops Kleinanzeigen">Laptops</a> oder <a href="/elektronik-technik/unterhaltungselektronik/tv/fernseher/" title="Fernseher kaufen &amp; verkaufen">Fernseher</a> lassen sich gebraucht preisgünstig kaufen.Wer attraktive Kleidung kaufen möchte, sollte sich überlegen diese secondhand über Kleinanzeigen günstig zu kaufen. Inserate der <a href="/haus-garten/kleidung/damenkleidung/" title="Damenmode, Damenbekleidung günstig kaufen &amp; verkaufen">Damenmode</a> oder <a href="/haus-garten/kleidung/herrenkleidung/" title="Herrenmode, Herrenbekleidung günstig kaufen &amp; verkaufen">Herrenmode</a> bieten vom Designer-Stiefel bis zur modischen Jeans ganze Gaderoben.Auch preiswerte Restposten lassen sich über Kleinanzeigen vielfach sehr günstig kaufen. Einzelne Kleinanzeigen bieten Kleider oder Elektronikartikel aus zweiter Hand sogar zu verschenken an.</p> <h2>Kaufen und Verkaufen über Kleinanzeigen</h2> <div>Wenn Sie bei den Kleinanzeigen  noch nicht fündig wurden, schauen Sie sich die Kleinanzeigen aus den Nachbarregionen <a href="https://www.markt.de/schweiz/">Schweiz</a> an oder suchen Sie allgemein unter den Kleinanzeigen von <a href="https://www.markt.de/dach-region/">DACH Region</a>. Achten Sie bei Fernkäufen darauf, dass das Profil des Anbieters verifiziert wurde. Oder einfach ein Gesuch über eine kostenlose Kleinanzeige  gratis inserieren, dann erhält man ganz bequem über das Internet Angebote per E-Mail.</div> <p><a href="/allekategorien.htm">Alle Kategorien</a></p> </div><button class="clsy-c-collapsible-more-block__toggle"><span class="clsy-c-collapsible-more-block__toggle-label-more">mehr</span><span class="clsy-c-collapsible-more-block__toggle-label-less">weniger</span></button></div>
+          </div>
+        </div>
+        <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_home"], function (module) {
+          module.de.classyfi.pwa.home.HomeClient.init();
+        });
+/* ]]> */
+</script>
+      </main>
+      <div class="clsy-c-advsection clsy-c-advsection--reloadable clsy-slot-skyscraper" id="clsy-clsds-cont-main_skyscraper" data-advsection-adtype="CLASSYADS" data-advsection-setupid="traffective2020" data-advsection-displayid="clsy-clsds-div-main_skyscraper">
+        <div id="clsy-clsds-div-main_skyscraper" style="display: none;" class="Skyscraper" role="complementary"></div>
+      </div>
+      <div class="clsy-c-footer">
+        <footer>
+          <ul class="clsy-c-footer__links">
+            <li><a href="https://www.markt.de/nutzungsbedingungen.htm" class="clsy-c-footer__link"><span class="">Nutzungsbedingungen</span></a></li>
+            <li><a href="https://www.markt.de/datenschutzerklaerung.htm" class="clsy-c-footer__link"><span class="">Datenschutz</span></a></li>
+            <li><a href="https://www.markt.de/barrierefreiheit.htm" class="clsy-c-footer__link"><span class="">Barrierefreiheit</span></a></li>
+            <li><a href="https://www.markt.de/impressum.htm" class="clsy-c-footer__link"><span class="">Impressum</span></a></li>
+            <li><a href="https://www.markt.de/service.htm" class="clsy-c-footer__link"><span class="">Kontakt</span></a></li>
+            <li><a href="https://www.markt.de/contentId,Hilfe/inhalt.htm" class="clsy-c-footer__link"><span class="">Hilfe</span></a></li>
+            <li><a href="https://www.markt.de/ratgeber/haus-garten/sicherheitshinweise/" class="clsy-c-footer__link"><span class="">Sicherheit</span></a></li>
+            <li><a href="https://www.markt.de/contentId,Hilfe/inhalt.htm#jugendschutz" class="clsy-c-footer__link"><span class="">Jugendschutz</span></a></li>
+            <li><a href="https://www.markt.de/nichtangemeldet.htm" class="clsy-c-footer__link"><span class="">Login</span></a></li>
+            <li><a href="https://www.markt.de/benutzer/kontoloeschen.htm" class="clsy-c-footer__link"><span class="">Konto löschen</span></a></li>
+            <li><a href="https://www.markt.de/premium-anmeldung.htm" class="clsy-c-footer__link"><span class="">Premium buchen</span></a></li>
+            <li><a href="https://www.markt.de/premiumKuendigen.htm" class="clsy-c-footer__link"><span class="">Abo kündigen</span></a></li>
+            <li><a href="https://www.markt.de/benutzer/newsletter.htm" class="clsy-c-footer__link"><span class="">Newsletter</span></a></li>
+            <li><a href="https://www.markt.de/ratgeber/" class="clsy-c-footer__link"><span class="">Ratgeber</span></a></li>
+            <li><a href="https://www.markt.de/region.htm" onclick="window.location='https://www.markt.de/region.htm';return false; " class="clsy-c-footer__link"><span class="">Regionen</span></a></li>
+            <li><a href="https://www.markt.de/contentId,ueberuns/inhalt.htm" class="clsy-c-footer__link"><span class="">Über uns</span></a></li>
+            <li><a href="https://www.markt.de/contentId,jobs/inhalt.htm" class="clsy-c-footer__link"><span class="">Jobs</span></a></li>
+            <li><a href="https://www.markt.de/contentId,werbung/inhalt.htm" class="clsy-c-footer__link"><span class="">Werbung</span></a></li>
+            <li><button type="submit" form="prg_form" role="link" data-targeturl="BWe2v4nDkAuQp9KOV6NZA578cVfi15XN27ZCItCjA7w_4bos9K3QZpb2ncaLLgS_" onclick="$('#prg_form').attr('target', '_blank'); $('#prg_input_url').val($(this).attr('data-targeturl')); return true;" class="clsy-c-link clsy-c-link__plain clsy-c-footer__link"><span class="">Facebook</span></button></li>
+            <li><a href="https://www.markt.de/benutzer/widgetkonfiguration.htm" class="clsy-c-footer__link"><span class="">Widget erstellen</span></a></li>
+          </ul>
+          <div class="clsy-c-footer__compliance"><a title="Jugendschutzprogramm" href="https://www.jugendschutzprogramm.de/" target="_blank" rel="nofollow" class="clsy-c-link--image-only"><img src="https://static.markt.de/bundles/baebi7b/image/pwa/3rdparty/jusprog-logo.png" alt="Jugendschutzprogramm JUSPROG" loading="lazy"></a></div>
+          <p class="clsy-c-footer__brand"><span class="clsy-c-footer__brand-claim"><a href="https://www.markt.de/">markt.de</a>&nbsp;ist ein Angebot von © markt.de GmbH &amp; Co. KG - Dein Portal für kostenlose Kleinanzeigen aus Deutschland.</span></p>
+        </footer>
+      </div>
+    </div><iframe name="__tcfapiLocator" style="display: none;"></iframe>
+    <div id="clsy-body-components-bottom"><script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core"], function (module) {
+          module.de.classyfi.pwa.advertisement.classyads.ClassyAdsClientHelper.onInitialSlotsRendered();
+        });
+/* ]]> */
+</script>
+</div>
+    <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core"], function (module) {
+          module.de.classyfi.pwa.tracking.DataLayer.addDynamicPageImpressionListener();
+        });
+/* ]]> */
+</script>
+    <script type="text/javascript">
+/* <![CDATA[ */
+requirejs(["markt-frontend_core"], function (module) {
+          var destub = module.de.classyfi.frontend.templates.destubCore;
+          module.de.classyfi.pwa.App.initOnBodyBottom(destub('de.classyfi.pwa.BodyBottomSettings', 'markt-frontend_core', {"cookieConsentSettings":{"consentHandlerConfiguration":{"consentHandlerActiveMapping":{"FacebookConnect":true,"GoogleAnalytics360":true,"GoogleTagManager":true,"GoogleAdsense":true,"GoogleAds":true,"Adspirit":true,"Youtube":true,"Vimeo":true,"InfOnline":false,"Criteo":true,"Solads":true,"EmarsysWebextend":true,"MicrosoftAds":true,"RTBHouse":true,"SpotifyAds":true,"MicrosoftClarity":true},"consentHandlerVendorIdMapping":{"FacebookConnect":198,"GoogleAnalytics360":182,"GoogleTagManager":575,"GoogleAdsense":594,"GoogleAds":938,"Adspirit":598,"Youtube":613,"Vimeo":612,"Criteo":704,"Solads":703,"EmarsysWebextend":848,"MicrosoftAds":1192,"RTBHouse":1424,"SpotifyAds":1499,"MicrosoftClarity":2032},"consentSeverityMapping":{"FacebookConnect":"Light","GoogleAnalytics360":"Light","GoogleTagManager":"Light","GoogleAdsense":"Light","GoogleAds":"Light","Adspirit":"Light","Youtube":"Light","Vimeo":"Light","Criteo":"Light","Solads":"Hard","EmarsysWebextend":"Light","MicrosoftAds":"Light","RTBHouse":"Light","SpotifyAds":"Light","MicrosoftClarity":"Light"}},"legacyCookies":["solads-opt-out","adsp-opt-out","eb-opt-out","criteo-opt-out","emrsyswbxtnd-opt-out","fb-opt-out","gads-opt-out","gadsense-opt-out","ga-opt-out","gtm-opt-out","infonl-opt-out","vimeo-opt-out","youtube-opt-out"]}}, false));
+        });
+/* ]]> */
+</script>
+    <!--server: "app18p"
+build: "markt-webapp @ markt_v2026.13.04 5081fd1eff643aeff43b15d1da2d9eac694655e6"-->
+
+<img width="1" height="1" src="https://d2wu036mkcz52n.cloudfront.net/i?v=1&amp;sr=393x851&amp;vp=393x851&amp;cd=24&amp;md=true&amp;h=12&amp;t=12%3A13%3A29&amp;d=2026-05-23&amp;u=https%253A%252F%252Fwww.markt.de%252F&amp;do=www.markt.de&amp;type=%22cd%22&amp;pr=-1&amp;tte=2&amp;app=false&amp;platform=%22browser%22&amp;domain=%22markt.de%22&amp;amp=0&amp;uc=%22US%22&amp;ud=%22a17qwBe3Y4TdmFct3PcM%22&amp;vrnts=" style="display: none;"><img width="1" height="1" src="https://d2wu036mkcz52n.cloudfront.net/i?v=1&amp;sr=393x851&amp;vp=393x851&amp;cd=24&amp;md=true&amp;h=12&amp;t=12%3A13%3A31&amp;d=2026-05-23&amp;u=https%253A%252F%252Fwww.markt.de%252F&amp;do=www.markt.de&amp;type=%22pw%22&amp;pr=1&amp;tte=1860&amp;app=false&amp;platform=%22browser%22&amp;domain=%22markt.de%22&amp;amp=0&amp;uc=%22US%22&amp;ud=%22a17qwBe3Y4TdmFct3PcM%22&amp;vrnts=" style="display: none;"><div class="cmp-root-container" style="font-size: 12px;"></div></body></html>

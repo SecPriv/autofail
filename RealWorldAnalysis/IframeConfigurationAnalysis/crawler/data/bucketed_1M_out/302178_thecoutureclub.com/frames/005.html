@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Men's &amp; Women's Clothing | The Couture Club</title>
+    <script async="" src="https://svht.tradedoubler.com/tr_sdk.js?org=2386403&amp;prog=362440&amp;dr=true&amp;rand=0.6589954694638083"></script><script src="https://www.thecoutureclub.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+// Step 1. Initialize the JavaScript pixel SDK (make sure to exclude HTML)
+
+(function(i,s,o,g,r,a,m){i.TDConversionObject=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script', 'https://svht.tradedoubler.com/tr_sdk.js?org=2386403&prog=362440&dr=true&rand='+Math.random(), 'tdconv');
+
+// Step 2. Subscribe to customer events with analytics.subscribe(), and add tracking
+//  analytics.subscribe("all_standard_events", event => {
+//    console.log("Event data ", event?.data);
+//  });
+
+
+analytics.subscribe("checkout_completed", (event) => {
+
+  tdconv('init', '2386403', {'element': 'iframe' });
+  
+  tdconv('track', 'sale', {'transactionId':event.data?.checkout?.token, 'ordervalue':event.data?.checkout?.totalPrice.amount, 'voucher':event.data?.checkout?.discountApplications[0].title, 'currency':event.data?.checkout?.currencyCode, 'event':449725});
+  
+});
+});})(self.webPixelsManager.createShopifyExtend('34177076', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+<script src="https://swrap.tradedoubler.com/AAXiVcRGQ0HwVicIm3-0Z7_KMOwJBqExh0QQXOSosk_whzDXkscVPX1KaUxBc7uKcAek6x3xO9pLcFFAvShedIdTVWc1.v1" async="" style="width: 1px; height: 1px; border: 0px;"></script></body></html>

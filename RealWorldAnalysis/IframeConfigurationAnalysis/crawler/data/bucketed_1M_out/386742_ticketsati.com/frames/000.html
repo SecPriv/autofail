@@ -1,0 +1,2065 @@
+<!DOCTYPE html><html lang="es"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+  <!-- Google tag (gtag.js) -->
+  <script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/Br0hYqpfWeFzYCAXLD4UuCIV/recaptcha__es_419.js" crossorigin="anonymous" integrity="sha384-sCuh1qnzBjbzGzwtNjmxatT+9ByKzyGe7kzdlmSaznMQaXCaHL5bNikXqPh0oO/J"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7M1G9MDKP8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7M1G9MDKP8');
+  </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketsATI - Venta de Tickets para Eventos</title>
+
+
+    <meta property="og:title" content="TicketsATI - Venta de tickets para eventos">
+    <meta property="og:description" content="La plataforma de venta de entradas para eventos en latinoamérica. Encuentra tus eventos favoritos y compra tus entradas de manera rápida y segura.">
+    <meta property="og:image" content="https://ticketsati.com/assets/images/logo-ico.png">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+
+    <!-- ECharts -->  
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <link href="/assets/lightbox2/dist/css/lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="/v2/css/v2.css">
+</head><body>
+    <!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top no-print">
+    <div id="navbar-container" class="container">
+        <a class="navbar-brand" href="/">
+            <img src="https://ticketsati.s3.us-east-1.amazonaws.com/global/logo.png" alt="TicketsATI" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/events">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#como-comprar">Cómo comprar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#comienza-ahora">Organizadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://fotos.ticketsati.com/">Fotos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#contacto">Contacto</a>
+                </li>
+            </ul>
+            <div class="country-flags">
+                <a href="#" title="Chile"><span class="fi fi-cl"></span></a>
+                <a href="#" title="Argentina"><span class="fi fi-ar"></span></a>
+                <a href="#" title="Uruguay"><span class="fi fi-uy"></span></a>
+            </div>
+                            <div class="ms-2">
+                    <a id="btnLogin" class="btn btn-secondary">Iniciar sesión</a>
+                </div>
+                    </div>
+    </div></nav> 
+    
+    <!-- Hero Section with Search -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center mb-5">
+                    <h1 class="display-4 fw-bold mb-3">Encuentra los mejores eventos</h1>
+                    <p class="lead mb-4">Descubre conciertos, festivales, teatro, deportes y más en un solo lugar</p>
+                </div>
+                <div class="col-md-10">
+                    <div class="search-box">
+                        <form id="form_search_eventos" action="/events" method="post">
+                            <div class="row g-3">
+                                <div class="col-md-5 col-12 mb-3 mb-md-0">
+                                    <input name="search" type="text" class="form-control form-control-lg" placeholder="¿Qué evento buscas?">
+                                </div>
+                                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                                    <select name="tipo" class="form-select form-select-lg">
+                                        <option value="0" selected="">Todas las categorías</option>
+                                                                                    <option value="fiesta">Fiesta</option>
+                                                                                    <option value="esquinautico">Esquí náutico</option>
+                                                                                    <option value="transporte">Transporte</option>
+                                                                                    <option value="espectaculos">Espectáculos</option>
+                                                                                    <option value="obstaculos">Obstáculos</option>
+                                                                                    <option value="duatlon">Duatlón</option>
+                                                                                    <option value="familia">Familia</option>
+                                                                                    <option value="ciclismo">Ciclismo</option>
+                                                                                    <option value="futbol">Fútbol</option>
+                                                                                    <option value="natacion">Natación</option>
+                                                                                    <option value="musica">Música</option>
+                                                                                    <option value="triatlon">Triatlón</option>
+                                                                                    <option value="rally">Rally</option>
+                                                                                    <option value="corporativos">Corporativos</option>
+                                                                                    <option value="trail">Trail</option>
+                                                                                    <option value="running">Running</option>
+                                                                                    <option value="boliche">Boliche</option>
+                                                                                    <option value="trailrunning">Trail running</option>
+                                                                            </select>
+                                </div>
+                                <div class="col-md-3 col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Eventos Section -->
+    <section id="eventos" class="py-5">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Próximos Eventos</h2>
+            <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card rally destacado">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/desafio-del-desierto-2026">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_172_1770909948.jpeg" class="card-img-top" alt="Desafío del Desierto 2026">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-motorcycle"></i> Rally</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/desafio-del-desierto-2026">
+                            <h5 class="card-title">Desafío del Desierto 2026</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Copiapó, Chile</span></p>
+                        <p class="card-text">Súmate a la historia.📍 copiapó📅 25 al 28 de junio🏨 base del rally: hotel maray🏁🌵 desafío del d...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>24 de junio</span>
+                            <a target="_blank" href="/event/desafio-del-desierto-2026" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card running destacado">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/maraton-ciudad-de-lanus-xxx-edicion">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_184_1774621782.jpeg" class="card-img-top" alt="MARATON CIUDAD DE LANÚS XXX EDICIÓN">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/maraton-ciudad-de-lanus-xxx-edicion">
+                            <h5 class="card-title">MARATON CIUDAD DE LANÚS XXX EDICIÓN</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Ramón Cabrero 2007, Lanús Este</span></p>
+                        <p class="card-text">🏃‍♂️🏃‍♀️ ¡llega la xxx edición de la tradicional carrera de calle del club atlético lanús! 🔴⚫dec...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>8 de julio</span>
+                            <a target="_blank" href="/event/maraton-ciudad-de-lanus-xxx-edicion" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card running destacado">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/zenith-trail-race">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_168_1765582381.png" class="card-img-top" alt="Zenith Trail Race">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/zenith-trail-race">
+                            <h5 class="card-title">Zenith Trail Race</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Santa Maria de Punilla</span></p>
+                        <p class="card-text">Si vos entrenás en cordoba , te desafiás y te mides en la montaña todos los fines de semana, entonc...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>12 de septiembre</span>
+                            <a target="_blank" href="/event/zenith-trail-race" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card trail destacado">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/run-altas-cumbres-2027">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_186_1776981924.jpg" class="card-img-top" alt="Run Altas Cumbres">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Trail</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/run-altas-cumbres-2027">
+                            <h5 class="card-title">Run Altas Cumbres</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Cura Brochero</span></p>
+                        <p class="card-text">Run altas cumbres es la carrera de running de montaña que te propone superarte disfrutando de un re...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2027</span><br>19 de marzo</span>
+                            <a target="_blank" href="/event/run-altas-cumbres-2027" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card running,duatlon">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/gorina-corre-extreme">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_175_1772110752.jpg" class="card-img-top" alt="Gorina Corre Extreme">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Running</span><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-biking"></i> Duatlón</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/gorina-corre-extreme">
+                            <h5 class="card-title">Gorina Corre Extreme</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Joaquin Gorina, La Plata</span></p>
+                        <p class="card-text">🏁 modalidades y horarios de largada🔹 21k / 10k competitivos🕘 largada: 9:00 hs🔹 2k participativo...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>6 de junio</span>
+                            <a target="_blank" href="/event/gorina-corre-extreme" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card trailrunning">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/un-desafio-x-fae">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_195_1779503569.png" class="card-img-top" alt="Un Desafío X FAE">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="ph ph-ticket"></i> Trail running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/un-desafio-x-fae">
+                            <h5 class="card-title">Un Desafío X FAE</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Rivadavia 101 - Gral. Madariaga - Pcia. Bs As.</span></p>
+                        <p class="card-text">🏃‍♂️🔥 fae madariaga 2026 🔥🏃‍♀️la pasión por correr vuelve a sentirse en las calles de general m...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>5 de septiembre</span>
+                            <a target="_blank" href="/event/un-desafio-x-fae" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card running">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/media-maraton-el-trapiche-la-florida">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_188_1776454793.jpg" class="card-img-top" alt="Media Maraton El Trapiche • La Florida">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/media-maraton-el-trapiche-la-florida">
+                            <h5 class="card-title">Media Maraton El Trapiche • La Florida</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Parador El Parque (Ex Hotel Class) - El Trapiche - San Luis</span></p>
+                        <p class="card-text">🏃‍♂️ media maratón el trapiche – la florida 2026📅 4 de octubre de 2026📍 el trapiche – la florida...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>3 de octubre</span>
+                            <a target="_blank" href="/event/media-maraton-el-trapiche-la-florida" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card obstaculos">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/cross-aventura-con-obstaculos-7ma-edicion">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_182_1773514468.jpg" class="card-img-top" alt="Cross Aventura con Obstáculos 7ma Edición ">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="ph ph-ticket"></i> Obstáculos</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/cross-aventura-con-obstaculos-7ma-edicion">
+                            <h5 class="card-title">Cross Aventura con Obstáculos 7ma Edición </h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Arroyo Urquiza, Camping El Viejo Molino. Colón Provincia de Entre Ríos </span></p>
+                        <p class="card-text">Preparate para sentir adrenalina y diversiÓn ❗️❗️❗️ 💣💥vuelve la cross aventura con obstÁculos🏃‍♀...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>3 de octubre</span>
+                            <a target="_blank" href="/event/cross-aventura-con-obstaculos-7ma-edicion" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card running">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/potrero-corre-2026">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_176_1773971708.jpeg" class="card-img-top" alt="POTRERO CORRE">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/potrero-corre-2026">
+                            <h5 class="card-title">POTRERO CORRE</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Potrero de los Funes</span></p>
+                        <p class="card-text">Prepárate para vivir una nueva edición de potrero corre 🏃‍♂️🔥llega la 9ª edición, organizada por ...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>6 de noviembre</span>
+                            <a target="_blank" href="/event/potrero-corre-2026" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card running">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/san-martin-corre-x-zaira">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_185_1775484763.png" class="card-img-top" alt="San Martín Corre x Zaira">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/san-martin-corre-x-zaira">
+                            <h5 class="card-title">San Martín Corre x Zaira</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">25 de Mayo y Francia</span></p>
+                        <p class="card-text">Corre por zaira – 5ª edición 💜🏃‍♀️🏃‍♂️este domingo 15 de noviembre ⏰ 8 hs te esperamos para vivi...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>14 de noviembre</span>
+                            <a target="_blank" href="/event/san-martin-corre-x-zaira" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card trail">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/q-trail">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_180_1773096954.png" class="card-img-top" alt="Q TRAIL ">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Trail</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/q-trail">
+                            <h5 class="card-title">Q TRAIL </h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">Esquel Chubut Patagonia Argentina </span></p>
+                        <p class="card-text">🏔️ q trail esquel es un evento de trail running que se desarrollará el 6 de diciembre, durante un ...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>5 de diciembre</span>
+                            <a target="_blank" href="/event/q-trail" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 event-card trail,trailrunning">
+                <div class="card">
+                    <div class="position-relative">
+                        <a target="_blank" href="/event/desafio_wayra">
+                            <img src="https://ticketsati.s3.amazonaws.com/eventos/portada_167_1766775234.jpg" class="card-img-top" alt="Desafio Wayra">
+                        </a>
+                        <div class="position-absolute top-0 end-0 d-flex flex-wrap gap-1 m-2"><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="fas fa-running"></i> Trail</span><span class="type-event bg-primary text-white px-3 py-1 rounded"><i class="ph ph-ticket"></i> Trail running</span></div>
+                    </div>
+                    <div class="card-body">
+                        <a style="text-decoration: none !important; color: #2c3e50;" target="_blank" href="/event/desafio_wayra">
+                            <h5 class="card-title">Desafio Wayra</h5>
+                        </a>
+                        <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i><span class="location-event">El Bolson</span></p>
+                        <p class="card-text">DesafÍo wayra – 12 y 12 de diciembre – el bolson, patagonia argentinadesafío wayra es una competenc...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-secondary" style="line-height: 1;"><span class="text-muted small">2026</span><br>12 de diciembre</span>
+                            <a target="_blank" href="/event/desafio_wayra" class="btn btn-secondary info-event"><i class="ph ph-hand-tap"></i> Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+            <div class="text-center mt-4">
+                <a id="load-more" class="btn btn-primary">Cargar más</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Cómo Comprar Section -->
+    <section id="como-comprar" class="how-to-buy">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <h2 class="section-title text-center">Cómo Comprar</h2>
+                    <p class="lead">Comprar tus entradas es rápido y seguro con estos simples pasos</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>1. Busca</h4>
+                        <p>Encuentra tu evento favorito usando nuestro buscador o navegando por categorías</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h4>2. Selecciona</h4>
+                        <p>Elige la cantidad de entradas y la ubicación que prefieras</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h4>3. Disfruta</h4>
+                        <p>Recibe tus entradas por email y preséntate en el evento con tu código QR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section" id="comienza-ahora">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">¿Organizas eventos?</h2>
+                    <p class="lead mb-4">Únete a nuestra plataforma y vende tus entradas de manera fácil y segura</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-stretch align-items-sm-center">
+                        <a id="btn-comienza-ahora" class="btn btn-light btn-lg px-5"><i class="ph ph-hand-tap"></i> Comienza ahora</a>
+                        <a href="/organizadores" class="btn btn-outline-light btn-lg px-5"><i class="ph ph-info"></i> Más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizadores — carrusel tipo landing organizadores -->
+    <section id="organizadores" class="organizers home-logos-marquee">
+        <div class="container">
+            <h2 class="section-title text-center">Organizadores</h2>
+            <p class="text-center mb-5" style="margin-top:1rem">Grandes organizadores de eventos que ya están vendiendo con nosotros.</p>
+        </div>
+        <div class="logos-marquee">
+            <div class="logos-marquee-track">
+                                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/altascumbres_1756426320.png" alt="RAC" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/effie_1756426326.png" alt="Effie" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/desafio_1756426321.png" alt="Desafio del Desierto" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/lanus_1756426329.png" alt="CAL" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.us-east-1.amazonaws.com/organizadores/logo_waterski.png" alt="IWWF" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/merlo_1756426334.png" alt="Merlo" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.us-east-1.amazonaws.com/organizadores/PED+-+logo-03.png" alt="Patagones eventos deportivos" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sincronia_1756426341.png" alt="Sincronía deportiva" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sani_1756426340.png" alt="San Isidro" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/laplata_1756426332.png" alt="La Plata" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/martur_1756426333.png" alt="Martur" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sportimer_1756426343.png" alt="SportTimer" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/rafaela.png" alt="rafaela" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/banfield.png" alt="banfield" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/misiondxt_1756426336.png" alt="MDXT" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/tupungato.png" alt="tupungato" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/estatus.png" alt="estatus" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sportfocus.png" alt="sportfocus" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/adrenaline.png" alt="Adrenaline Time" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/club-nautico.png" alt="Club Náutico Lago Argentino" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/totem.png" alt="Totem Boulevard" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/rotary_1756426338.png" alt="Rotary" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                                                        <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/altascumbres_1756426320.png" alt="RAC" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/effie_1756426326.png" alt="Effie" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/desafio_1756426321.png" alt="Desafio del Desierto" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/lanus_1756426329.png" alt="CAL" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.us-east-1.amazonaws.com/organizadores/logo_waterski.png" alt="IWWF" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/merlo_1756426334.png" alt="Merlo" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.us-east-1.amazonaws.com/organizadores/PED+-+logo-03.png" alt="Patagones eventos deportivos" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sincronia_1756426341.png" alt="Sincronía deportiva" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sani_1756426340.png" alt="San Isidro" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/laplata_1756426332.png" alt="La Plata" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/martur_1756426333.png" alt="Martur" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sportimer_1756426343.png" alt="SportTimer" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/rafaela.png" alt="rafaela" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/banfield.png" alt="banfield" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/misiondxt_1756426336.png" alt="MDXT" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/tupungato.png" alt="tupungato" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/estatus.png" alt="estatus" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/sportfocus.png" alt="sportfocus" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/adrenaline.png" alt="Adrenaline Time" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/club-nautico.png" alt="Club Náutico Lago Argentino" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/totem.png" alt="Totem Boulevard" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                    <div class="logo-item" aria-hidden="true">
+                    <img src="https://ticketsati.s3.amazonaws.com/organizadores/rotary_1756426338.png" alt="Rotary" loading="lazy" width="160" height="80" decoding="async">
+                </div>
+                                                </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+        <!-- Footer -->
+    <footer id="contacto" class="no-print">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="https://ticketsati.s3.us-east-1.amazonaws.com/global/logo.png" alt="ticketsati" class="mb-4" style="max-height: 50px;">
+                    <p>La plataforma de venta de entradas para eventos en latinoamérica. Encuentra tus eventos favoritos y compra tus entradas de manera rápida y segura.</p>
+                    <div class="social-icons mt-4">
+                        <a target="_blank" href="https://www.instagram.com/tickets.ati/"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/ticketsati/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 mb-4 footer-links">
+                    
+                </div>
+                <div class="col-md-2 col-sm-6 mb-4 footer-links">
+                </div>
+                <div class="col-md-4 mb-4 footer-links">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><i class="fas fa-envelope me-2"></i> info@ticketsati.com</li>
+                    </ul>
+                    <form id="newsletterForm">
+                        <div class="input-group">
+                            <input id="emailNewsletter" type="email" class="form-control" placeholder="Tu email">
+                            <button id="btnNewsletter" class="btn btn-primary" type="button">Suscribirse</button>
+                        </div>
+                        <p id="newsletterAlert" style="margin-top: 4px; padding: 0.3em; font-size:14px; text-align: center;" class="alert alert-danger d-none rounded-3" role="alert">
+                            <i class="fas fa-exclamation-triangle me-2"></i> Verifique su email
+                        </p>
+                    </form>
+
+                    <div class="mt-4">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#tycModal" style="font-size: 12px;">Términos y condiciones</a><br>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#defensaConsumidorModal" style="font-size: 12px;">Defensa al consumidor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="d-flex justify-content-between">
+                    <p id="copyright-text">© 2026 ticketsati. Todos los derechos reservados - Un producto de Energy Motion S.A.</p>
+                    <div id="legal-links">
+                    <a target="_blank" href="https://www.argentina.gob.ar/aaip/datospersonales/reclama/30718847024--RL-2025-66272559-APN-DNPDP#AAIP">
+                        <img class="img-pdp" src="https://www.argentina.gob.ar/sites/default/files/aaip-isologo.png" alt="AAIP RNBD" style="max-height:30px; bottom: 20px!important; margin-right: 1em;">
+                    </a>
+                    <a style="float: right;" href="http://qr.afip.gob.ar/?qr=7FoVsH9q9m08Bj1Ww-BXLg,," target="_F960AFIPInfo">
+                        <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" &nbsp;border="0" style="max-height:30px; margin-bottom: 0px!important; bottom: 20px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <img src="https://ticketsati.s3.us-east-1.amazonaws.com/global/logo.png" alt="ticketsati" style="max-height: 60px;">
+                    </div>
+                    <div id="loginAlert" style="font-size:14px; text-align: center;" class="alert alert-danger d-none rounded-3" role="alert">
+                        <!-- Error messages will appear here -->
+                    </div>
+                    <form id="loginForm">
+                        <div class="mb-4 floating-label">
+                            <label for="emailLogin" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control form-control-lg rounded-3 border-0 bg-light" id="emailLogin" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="passwordLogin" class="form-label">Contraseña</label>    
+                            <input type="password" class="form-control form-control-lg rounded-3 border-0 bg-light" id="passwordLogin" placeholder=" " required="">
+                            <div class="invalid-feedback">La contraseña es requerida.</div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-primary btn-lg rounded-3" id="loginButton">
+                                <span class="spinner-border spinner-border-sm d-none" id="loginSpinner" role="status" aria-hidden="true"></span>
+                                <span id="loginButtonText">Iniciar sesión</span>
+                            </button>
+                        </div>
+                        <div class="mt-4 form-check" style="padding:0px">
+                            <a style="width:100%; text-align: center; font-size:14px;" href="/reset-password" class="text-decoration-none float-end text-muted">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        
+                    </form>
+                    <div class="text-center mt-4 pt-3 border-top">
+                        <p class="text-muted mb-3">¿No tienes cuenta?</p>
+                        <button class="btn btn-secondary rounded-3 px-4" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Crear cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <img src="https://ticketsati.s3.us-east-1.amazonaws.com/global/logo.png" alt="ticketsati" style="max-height: 60px;">
+                        <h4 class="mt-3 fw-light">Crear cuenta</h4>
+                    </div>
+                    <div id="registerAlert" style="font-size:14px; text-align: center;" class="alert alert-danger d-none rounded-3" role="alert">
+                        <!-- Error messages will appear here -->
+                    </div>
+                    <form id="registerForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 floating-label">
+                                <label for="nombreRegister" class="form-label">Nombre</label>
+                                <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light" id="nombreRegister" placeholder=" " required="">
+                                <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                            </div>
+                            <div class="col-md-6 mb-3 floating-label">
+                                <label for="apellidoRegister" class="form-label">Apellido</label>
+                                <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light" id="apellidoRegister" placeholder=" " required="">
+                                <div class="invalid-feedback">Por favor ingresa tu apellido.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="documentRegister" class="form-label">Documento de identidad</label>
+                            <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light" id="documentRegister" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa tu documento de identidad.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="emailRegister" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control form-control-lg rounded-3 border-0 bg-light" id="emailRegister" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="passwordRegister" class="form-label">Contraseña</label>    
+                            <input type="password" class="form-control form-control-lg rounded-3 border-0 bg-light" id="passwordRegister" placeholder=" " required="">
+                            <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
+                        </div>
+                        <div class="mb-4 floating-label">
+                            <label for="confirmPassword" class="form-label">Confirmar contraseña</label>    
+                            <input type="password" class="form-control form-control-lg rounded-3 border-0 bg-light" id="confirmPassword" placeholder=" " required="">
+                            <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required="">
+                            <label class="form-check-label" for="termsCheck" style="font-size:14px;">
+                                Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a>
+                            </label>
+                            <div class="invalid-feedback">Debes aceptar los términos y condiciones.</div>
+                        </div>
+
+                        <div class="captcha-wrapper" style="display: flex; justify-content: center; margin: 15px 0;">
+                            <div class="g-recaptcha" data-sitekey="6Ld6mOYsAAAAANtkyBGsI-Uq7EKeIdJL3rwieAgy"></div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-primary btn-lg rounded-3" id="registerButton">
+                                <span class="spinner-border spinner-border-sm d-none" id="registerSpinner" role="status" aria-hidden="true"></span>
+                                <span id="registerButtonText">Crear cuenta</span>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-4 pt-3 border-top">
+                        <p class="text-muted mb-3">¿Ya tienes una cuenta?</p>
+                        <button class="btn btn-secondary rounded-3 px-4" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <img src="https://ticketsati.s3.us-east-1.amazonaws.com/global/logo.png" alt="ticketsati" style="max-height: 60px;">
+                        <h4 class="mt-3 fw-light"><i class="fas fa-headset me-2"></i> Centro de ayuda</h4>
+                    </div>
+                    <div id="supportAlert" style="font-size:14px; text-align: center;" class="alert alert-danger d-none rounded-3" role="alert">
+                        <!-- Error messages will appear here -->
+                    </div>
+                    <form id="supportForm">
+                        <div class="mb-3 floating-label">
+                            <label for="nameSupport" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light " id="nameSupport" placeholder=" " value=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa tu nombre completo.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="emailSupport" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control form-control-lg rounded-3 border-0 bg-light " id="emailSupport" placeholder=" " value="" required="">
+                            <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="subjectSupport" class="form-label">Asunto</label>    
+                            <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light" id="subjectSupport" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa el asunto.</div>
+                        </div>
+                        <div class="mb-4 floating-label">
+                            <label for="messageSupport" class="form-label">Mensaje</label>    
+                            <textarea class="form-control form-control-lg rounded-3 border-0 bg-light" id="messageSupport" rows="4" placeholder=" " required=""></textarea>
+                            <div class="invalid-feedback">Por favor ingresa tu mensaje.</div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-primary btn-lg rounded-3" id="supportButton">
+                                <span class="spinner-border spinner-border-sm d-none" id="supportSpinner" role="status" aria-hidden="true"></span>
+                                <span id="supportButtonText"><i class="fas fa-envelope me-2"></i> Enviar mensaje</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Organizadores Modal -->
+    <div class="modal fade" id="organizadoresModal" tabindex="-1" aria-labelledby="organizadoresModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <img src="https://ticketsati.s3.us-east-1.amazonaws.com/global/logo.png" alt="ticketsati" style="max-height: 60px;">
+                        <h4 class="mt-3 fw-light">Organiza tu evento</h4>
+                        <p class="text-muted">¿Eres organizador y quieres vender entradas para tu evento? ¡Contáctanos!</p>
+                    </div>
+                    <div id="organizadoresAlert" style="font-size:14px; text-align: center;" class="alert alert-danger d-none rounded-3" role="alert">
+                        <!-- Error messages will appear here -->
+                    </div>
+                    <form id="organizadoresForm">
+                        <div class="mb-3 floating-label">
+                            <label for="nombreOrganizador" class="form-label">Nombre</label>
+                            <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light" id="nombreOrganizador" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="emailOrganizador" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control form-control-lg rounded-3 border-0 bg-light" id="emailOrganizador" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="telefonoOrganizador" class="form-label">Teléfono</label>    
+                            <input type="tel" class="form-control form-control-lg rounded-3 border-0 bg-light" id="telefonoOrganizador" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa tu número de teléfono.</div>
+                        </div>
+                        <div class="mb-3 floating-label">
+                            <label for="eventoOrganizador" class="form-label">Nombre del evento</label>    
+                            <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light" id="eventoOrganizador" placeholder=" " required="">
+                            <div class="invalid-feedback">Por favor ingresa el nombre de tu evento.</div>
+                        </div>
+                        <div class="mb-4 floating-label">
+                            <label for="mensajeOrganizador" class="form-label">Mensaje</label>    
+                            <textarea class="form-control form-control-lg rounded-3 border-0 bg-light" id="mensajeOrganizador" rows="4" required=""></textarea>
+                            <div class="invalid-feedback">Por favor ingresa información sobre tu evento.</div>
+                        </div>
+                        
+                        <div class="captcha-wrapper" style="display: flex; justify-content: center; margin: 15px 0;">
+                            <div class="g-recaptcha" data-sitekey="6LfQjOMsAAAAAPRGjcFvK_w-6q0611Yz2M7mBhtk"></div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-primary btn-lg rounded-3" id="organizadoresButton">
+                                <span class="spinner-border spinner-border-sm d-none" id="organizadoresSpinner" role="status" aria-hidden="true"></span>
+                                <span id="organizadoresButtonText"><i class="fas fa-paper-plane me-2"></i> Enviar solicitud</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de error -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h4 class="mt-3 fw-bold">No pudimos crear la inscripción</h4>
+                        <p id="errorMessage" class="text-muted">Por favor, intenta nuevamente.</p>
+                    </div>
+                    <div class="d-grid gap-2">
+                    <a href="javascript:void(0)" class="btn btn-primary btn-md rounded-3" data-bs-dismiss="modal">
+                        <i class="fas fa-arrow-left me-2"></i> Entendido
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de datos incompletos -->
+    <div class="modal fade" id="incompleteDataModal" tabindex="-1" aria-labelledby="incompleteDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h4 class="mt-3 fw-bold">Datos incompletos</h4>
+                        <p class="text-muted">Para inscribirte en este evento, necesitamos que completes tu información personal.</p>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="/account#datos-personales" class="btn btn-primary btn-md rounded-3">
+                            <i class="fas fa-user-edit me-2"></i> Completar mis datos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de datos incompletos -->
+    <div class="modal fade" id="inscriptionExistsModal" tabindex="-1" aria-labelledby="inscriptionExistsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body px-5 py-4">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <h4 class="mt-3 fw-bold">Ya tienes una inscripción</h4>
+                        <p class="text-muted">Ya tienes una inscripción en este evento. Este evento permite solo una inscripción por persona.</p>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="/" class="btn btn-primary btn-md rounded-3">
+                            <i class="fas fa-arrow-left me-2"></i> Volver al inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Términos y Condiciones -->
+<div class="modal fade" id="tycModal" tabindex="-1" aria-labelledby="tycModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold" id="tycModalLabel" style="text-align: center; width: 100%;">Términos y condiciones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body px-5 py-4" style="max-height: 70vh; overflow-y: auto;">
+                <p class="text-justify small">
+                    Accediendo utilizar los Servicios de ticketsati.com, aceptás cumplir y estar sujeto a estos Términos, según corresponda.
+                    <br><br>
+                    Los productos, las funciones y las ofertas que están en nuestro "Sitio"; a través de aplicaciones móviles, páginas web, interfaces de programación de aplicaciones y subdominios y se denominan colectivamente "Propiedades de ticketsati.com " o nuestros "Servicios".
+                    <br><br>
+                    El material, la información, los datos, el texto, el contenido editorial, los elementos de diseño, el aspecto, el formato, los gráficos, las imágenes, las fotografías, los vídeos, la música, los sonidos y otro tipo de contenido incluido o entregado a través de los Servicios o puesto a disposición de otro modo por ticketsati.com representa el "Contenido del sitio".
+                    <br><br>
+                    El "Organizador" o creadores de eventos que usan los Servicios de ticketsati.com para crear eventos mostrados en nuestras plataformas para consumir información o asistir a Eventos, o con cualquier otro fin, los Organizadores, los Consumidores y los terceros que utilizan nuestros Servicios se denominan colectivamente en este Acuerdo "Usuarios".
+                    <br><br>
+                    ticketsati.com no es el creador, organizador ni el propietario de los eventos listados en nuestras plataformas. Por el contrario, ticketsati.com ofrece sus Servicios, que permiten a los Organizadores y Usuarios administrar la venta de entradas y la inscripción, y promocionar sus eventos.
+                    <br><br>
+                    El Organizador es el único responsable de garantizar que cualquier página que muestre un evento en los Servicios (y el evento mismo) cumpla todas las leyes, normas y reglamentaciones locales, estatales, provinciales, nacionales y de otro tipo, y que los bienes y servicios descritos en la página del evento se entregan como se describe y de una manera satisfactoria y precisa.
+                    <br><br>
+                    El Organizador de un evento de pago selecciona el método de procesamiento de pagos para su evento. Los Consumidores deben usar cualquier método de procesamiento de pagos <b>que seleccione el Organizador</b>. Si el Organizador selecciona un método de procesamiento de pagos que emplea a un tercero para procesar los pagos, <b>ni ticketsati.com ni sus socios de procesamiento de pagos procesarán la transacción</b>, sino que transmitiremos los detalles de pago del Consumidor al proveedor de servicios de pago designado por el Organizador.
+                    <br><br>
+                    Si sos un Organizador, declarás, garantizás y aceptás que cumplirás en todo momento todas las leyes, normas y reglamentaciones locales, estatales, provinciales, nacionales y de otro tipo con respecto a la información que recopiles (o recibas sobre) consumidores, y cumplirás en todo momento las políticas aplicables publicadas en los Servicios con respecto a la información que recopiles de (o recibas sobre) los consumidores.
+                    <br><br>
+                    Estos Términos se te aplican tan pronto como accedas a ticketsati.com por cualquier medio y continúan en vigor hasta que finalicen.
+                    <br><br>
+                    ticketsati.com puede rescindir tu derecho a utilizar nuestras plataformas en cualquier momento si infringes o incumples estos Términos; si haces un uso incorrecto o mal uso de los Servicios, o usás los Servicios de una manera no prevista o permitida por ticketsati.com; o si permitirte el acceso y uso de los Servicios infringiría cualquier ley, reglamentación y regulación local, estatal, provincial, nacional y de otro tipo, o expondría a ticketsati.com a responsabilidad legal.
+                    <br><br>
+                    ticketsati.com puede optar por dejar de ofrecer los Servicios, o cualquier porción particular del Servicio, o modificar o reemplazar cualquier aspecto del Servicio, en cualquier momento. Haremos todos los esfuerzos razonables para enviarte un aviso de nuestra cancelación de tu acceso a los Servicios, a <b>exclusivo criterio de ticketsati.com</b>. Aceptás que ticketsati.com <b>no será responsable</b> ante vos o ante otra parte de cualquier finalización de tu derecho a usar o, de otro modo, acceder a los Servicios.
+                    <br><br>
+                    Si sos un Consumidor que usa los Servicios sin una cuenta registrada, <b>tu única opción</b> para que estos Términos ya no se apliquen es dejar de acceder a los Servicios de forma indefinida.
+                    <br><br>
+                    Por el presente documento <b>aceptás exonerar a ticketsati.com de todos los daños</b> (ya sean directos, indirectos, fortuitos, consecuentes o de otro tipo), pérdidas, responsabilidades, costos y gastos de cualquier tipo y naturaleza, conocidos y desconocidos, que surjan de algún modo de disputas entre vos y terceros (incluidos otros Usuarios), o estén relacionados con estas, en lo relativo a los Servicios u otro evento indicado en los Servicios.
+                    <br><br>
+                    Indemnización. <b>Aceptás defender, indemnizar y liberar de responsabilidades a ticketsati.com</b> y a cada uno de sus ejecutivos, directores, agentes, socios de marca compartida, licenciatarios, socios de procesamiento de pagos y demás socios y empleados de todos los daños (ya sean directos, indirectos, fortuitos, derivados o de otra naturaleza), pérdidas, responsabilidades, costos y gastos (incluidos, sin limitación, los honorarios razonables de contadores y abogados) que resulten de cualquier reclamo, demanda, acción, procedimiento (ya sea ante un árbitro, tribunal, mediador u otro) o investigación realizada por cualquier tercero (cada una un "Reclamo") y haya surgido de lo siguiente o se deba a ello: el incumplimiento por tu parte de los presentes Términos (incluidos cualquier término, acuerdo o política incorporada en estos Términos); tu uso de los Servicios en infracción de estos Términos o de otras políticas que publiquemos o pongamos a disposición; la infracción por tu parte de las leyes, normativas o regulaciones locales, estatales, provinciales, nacionales o de otro tipo que resulten aplicables o de los derechos de un tercero, si sos un Organizador, tus eventos.
+                    <br><br>
+                    <b>Comprendés que ticketsati.com no garantiza ni tiene control sobre la calidad, la seguridad, la precisión o la legalidad de cualquier evento o Contenido asociado con un evento</b>; la autenticidad o la precisión de cualquier información proporcionada por los Usuarios (incluida la información personal del Consumidor compartida con Organizadores en conexión con eventos), ni la capacidad de cualquier Usuario de realizar o completar realmente una transacción. <b>ticketsati.com no tiene ninguna responsabilidad para con vos, y por el presente documento renunciás</b> a toda responsabilidad derivada de los actos u omisiones de los terceros que ticketsati.com requiera para proporcionar los Servicios o que un Organizador elija para ayudar con un evento, o que vos decidas contratar al utilizar los Servicios.
+                    <br><br>
+                    Comprendés y aceptás que algunos eventos pueden conllevar un riesgo inherente, y al participar en esos eventos, elegís asumir esos riesgos voluntariamente.
+                    <br><br>
+                    Puesto que todas las transacciones se realizan entre un Organizador y sus respectivos participantes, <b>ticketsati.com solicita a todos los Consumidores que se pongan en contacto con el Organizador del evento en cuestión para solicitar reembolsos</b>.
+                    <br><br>
+                    Si sos un Consumidor, comprendés que al recibir un reembolso por tu entrada, tenés que descartar toda entrada que nosotros o el Organizador te haya entregado, y no podrás usarla (ni una copia de ella) para asistir al evento. <b>La infracción de lo anterior constituye fraude</b>. Reconocés que siempre se debe seguir el procedimiento aplicable para verificar la validez de la entrada. <b>ticketsati.com no será responsable bajo ninguna circunstancia de los costos</b> derivados del incumplimiento por parte de los Organizadores de los procedimientos aplicables que deban implementar los Organizadores para verificar la validez de las entradas. <b>ticketsati.com no será responsable bajo ninguna circunstancia</b> de los costos y/o daños asociados con las entradas surgidos de situaciones fraudulentas y/o por daños asociados con la compra de la entrada a través de medios no oficiales, tales como terceros.
+                    <br><br>
+                    Si sos un Organizador, comprendés que siempre se debe seguir el procedimiento aplicable para verificar la validez de la entrada. <b>ticketsati.com no será responsable bajo ninguna circunstancia</b> de los costes derivados del incumplimiento por parte de los Organizadores de los <b>procedimientos aplicables que deban implementar los Organizadores para verificar la validez de las entradas. ticketsati.com no será responsable bajo ninguna circunstancia</b> de los costos y/o daños asociados con las entradas surgidos de situaciones con fraude y/o por daños asociados con la compra de la entrada a través de medios no oficiales, tales como terceros.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Modal Defensa al Consumidor -->
+<div class="modal fade" id="defensaConsumidorModal" tabindex="-1" aria-labelledby="defensaConsumidorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold" id="defensaConsumidorModalLabel" style="text-align: center; width: 100%;">Defensa al Consumidor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body px-5 py-4">
+                <p class="text-justify">
+                    El consumidor tiene derecho a revocar la aceptación durante el plazo de diez (10) días corridos a partir de la fecha en que se entregue el bien o se celebre el contrato, lo último que ocurra, sin responsabilidad alguna. Esta facultad no puede ser dispensada ni renunciada. Dado que TicketsATI actúa como intermediario y por cuenta y orden del Organizador estos reclamos deberán ser ejercidos ante el Organizador del evento. Sin perjuicio de ello, TicketsATI, sin asegurar garantía alguna, ofrecerá sus servicios en base a esfuerzos razonables para gestionar dichos reclamos.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal de registro -->
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/v2/js/functions.js?v=1779544800"></script> 
+
+    <script>
+        $(document).ready(function() {
+            $('#incompleteDataModal').on('hidden.bs.modal', function() {
+                if(window.completo == false){
+                    window.location.href = '/account#datos-personales';
+                }else{
+                    console.log("cerrado");
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            // Open support modal
+            $('#btn-contactar-soporte').on('click', function(e) {
+                e.preventDefault();
+                $('#supportModal').modal('show');
+            });
+            
+            // Support form submission
+            $('#supportButton').on('click', function(e) {
+                e.preventDefault();
+                
+                // Reset previous validation states
+                $('#supportForm').find('.is-invalid').removeClass('is-invalid');
+                $('#supportAlert').addClass('d-none').html('');
+                
+                // Show loading spinner
+                $('#supportButtonText').addClass('d-none');
+                $('#supportSpinner').removeClass('d-none');
+                $(this).prop('disabled', true);
+                
+                // Get form data
+                const name = $('#nameSupport').val().trim();
+                const email = $('#emailSupport').val().trim();
+                const subject = $('#subjectSupport').val().trim();
+                const message = $('#messageSupport').val().trim();
+                
+                // Basic validation
+                let isValid = true;
+                
+                if (!name) {
+                    $('#nameSupport').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    $('#emailSupport').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!subject) {
+                    $('#subjectSupport').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!message) {
+                    $('#messageSupport').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    $('#supportButtonText').removeClass('d-none');
+                    $('#supportSpinner').addClass('d-none');
+                    $(this).prop('disabled', false);
+                    return;
+                }
+                
+                // Send data via AJAX
+                $.ajax({
+                    url: '/v2/controllers/soporte.php',
+                    type: 'POST',
+                    data: {
+                        action: 'send_support',
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            $('#supportForm')[0].reset();
+                            showNotification('success', 'Mensaje enviado correctamente. Te contactaremos pronto.');
+                            $('#supportModal').modal('hide');
+                        } else {
+                            $('#supportAlert').removeClass('d-none').html(response.message || 'Ha ocurrido un error. Por favor intenta nuevamente.');
+                        }
+                    },
+                    error: function() {
+                        $('#supportAlert').removeClass('d-none').html('Ha ocurrido un error. Por favor intenta nuevamente.');
+                    },
+                    complete: function() {
+                        $('#supportButtonText').removeClass('d-none');
+                        $('#supportSpinner').addClass('d-none');
+                        $('#supportButton').prop('disabled', false);
+                    }
+                });
+            });
+            
+            // Open organizadores modal
+            $('#btn-comienza-ahora').on('click', function(e) {
+                e.preventDefault();
+                $('#organizadoresModal').modal('show');
+            });
+
+            // Organizadores form submission
+            $('#organizadoresButton').on('click', function(e) {
+                e.preventDefault();
+                
+                // Reset previous validation states
+                $('#organizadoresForm').find('.is-invalid').removeClass('is-invalid');
+                $('#organizadoresAlert').addClass('d-none').html('');
+                
+                // Show loading spinner
+                $('#organizadoresButtonText').addClass('d-none');
+                $('#organizadoresSpinner').removeClass('d-none');
+                $(this).prop('disabled', true);
+                
+                // Get form data
+                const nombre = $('#nombreOrganizador').val().trim();
+                const email = $('#emailOrganizador').val().trim();
+                const telefono = $('#telefonoOrganizador').val().trim();
+                const evento = $('#eventoOrganizador').val().trim();
+                const mensaje = $('#mensajeOrganizador').val().trim();
+                
+                // Basic validation
+                let isValid = true;
+                
+                if (!nombre) {
+                    $('#nombreOrganizador').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    $('#emailOrganizador').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!telefono) {
+                    $('#telefonoOrganizador').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!evento) {
+                    $('#eventoOrganizador').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!mensaje) {
+                    $('#mensajeOrganizador').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    $('#organizadoresButtonText').removeClass('d-none');
+                    $('#organizadoresSpinner').addClass('d-none');
+                    $(this).prop('disabled', false);
+                    return;
+                }
+
+                if (typeof grecaptcha === 'undefined' || !grecaptcha || typeof grecaptcha.getResponse !== 'function') {
+                    $('#organizadoresAlert')
+                        .removeClass('d-none')
+                        .html('El captcha todavía está cargando. Esperá unos segundos e intentá nuevamente.');
+                    $('#organizadoresButtonText').removeClass('d-none');
+                    $('#organizadoresSpinner').addClass('d-none');
+                    $('#organizadoresButton').prop('disabled', false);
+                    return;
+                }
+
+                var captchaResponse = window.getRecaptchaResponseForForm('organizadoresForm');
+                if (!captchaResponse) {
+                    $('#organizadoresAlert')
+                        .removeClass('d-none')
+                        .html('Por favor completá el captcha.');
+
+                    $('#organizadoresButtonText').removeClass('d-none');
+                    $('#organizadoresSpinner').addClass('d-none');
+                    $('#organizadoresButton').prop('disabled', false);
+                    return;
+                }
+                
+                // Send data via AJAX
+                $.ajax({
+                    url: '/v2/controllers/organizadores.php',
+                    type: 'POST',
+                    data: {
+                        action: 'send_organizador',
+                        nombre: nombre,
+                        email: email,
+                        telefono: telefono,
+                        evento: evento,
+                        mensaje: mensaje,
+                        'g-recaptcha-response': captchaResponse
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            $('#organizadoresForm')[0].reset();
+                            window.resetRecaptchaForForm('organizadoresForm');
+                            showNotification('success', 'Solicitud enviada correctamente. Te contactaremos pronto.');
+                            $('#organizadoresModal').modal('hide');
+                        } else {
+                            $('#organizadoresAlert').removeClass('d-none').html(response.message || 'Ha ocurrido un error. Por favor intenta nuevamente.');
+                        }
+                    },
+                    error: function() {
+                        $('#organizadoresAlert').removeClass('d-none').html('Ha ocurrido un error. Por favor intenta nuevamente.');
+                    },
+                    complete: function() {
+                        $('#organizadoresButtonText').removeClass('d-none');
+                        $('#organizadoresSpinner').addClass('d-none');
+                        $('#organizadoresButton').prop('disabled', false);
+                    }
+                });
+            });
+            
+            // Register form submission
+            $('#registerButton').on('click', function(e) {
+                e.preventDefault();
+                
+                // Reset previous validation states
+                $('#registerForm').find('.is-invalid').removeClass('is-invalid');
+                $('#registerAlert').addClass('d-none').html('');
+                
+                // Show loading spinner
+                $('#registerButtonText').addClass('d-none');
+                $('#registerSpinner').removeClass('d-none');
+                $(this).prop('disabled', true);
+                
+                // Get form data
+                const nombre = $('#nombreRegister').val().trim();
+                const apellido = $('#apellidoRegister').val().trim();
+                const email = $('#emailRegister').val().trim();
+                const password = $('#passwordRegister').val().trim();
+                const confirmPassword = $('#confirmPassword').val().trim();
+                const documentRegister = $('#documentRegister').val().trim();
+
+                if (typeof grecaptcha === 'undefined' || !grecaptcha || typeof grecaptcha.getResponse !== 'function') {
+                    $('#registerAlert')
+                        .removeClass('d-none')
+                        .html('El captcha todavía está cargando. Esperá unos segundos e intentá nuevamente.');
+                    $('#registerButtonText').removeClass('d-none');
+                    $('#registerSpinner').addClass('d-none');
+                    $('#registerButton').prop('disabled', false);
+                    return;
+                }
+
+                var captchaResponse = window.getRecaptchaResponseForForm('registerForm');
+                if (!captchaResponse) {
+                    $('#registerAlert')
+                        .removeClass('d-none')
+                        .html('Por favor completá el captcha.');
+                    $('#registerButtonText').removeClass('d-none');
+                    $('#registerSpinner').addClass('d-none');
+                    $('#registerButton').prop('disabled', false);
+                    return;
+                }
+
+                // Basic validation
+                let isValid = true;
+                
+                if (!nombre) {
+                    $('#nombreRegister').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!apellido) {
+                    $('#apellidoRegister').addClass('is-invalid');
+                    isValid = false;
+                }
+
+                if (!documentRegister) {
+                    $('#documentRegister').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (documentRegister && !/^[a-zA-Z0-9\-]+$/.test(documentRegister)) {
+                    $('#documentRegister').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    $('#emailRegister').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!password || password.length < 6) {
+                    $('#passwordRegister').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (password !== confirmPassword) {
+                    $('#confirmPassword').addClass('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    $('#registerButtonText').removeClass('d-none');
+                    $('#registerSpinner').addClass('d-none');
+                    $(this).prop('disabled', false);
+                    return;
+                }
+                
+                // Send data via AJAX
+                $.ajax({
+                    url: '/v2/controllers/usuarios.php',
+                    type: 'POST',
+                    data: {
+                        action: 'register',
+                        nombre: nombre,
+                        apellido: apellido,
+                        documento: documentRegister,
+                        email: email,
+                        password: password,
+                        'g-recaptcha-response': captchaResponse
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            $('#registerForm')[0].reset();
+                            window.resetRecaptchaForForm('registerForm');
+                            showNotification('success', 'Registro exitoso. Ya puedes iniciar sesión.');
+                            $('#registerModal').modal('hide');
+                            $('#loginModal').modal('show');
+                            $('#registerButton').html('Crear cuenta');
+                        } else {
+                            $('#registerAlert').removeClass('d-none').html(response.message || 'Ha ocurrido un error. Por favor intenta nuevamente.');
+                        }
+
+                        if (window.location.pathname.replace(/\/$/, '') === '/checkout') {
+                            verificarDatos();
+                            verificarInscripcion();
+                        }
+                    },
+                    error: function() {
+                        $('#registerAlert').removeClass('d-none').html('Ha ocurrido un error. Por favor intenta nuevamente.');
+                        $('#registerButtonText').removeClass('d-none');
+                        $('#registerSpinner').addClass('d-none');
+                        $('#registerButton').prop('disabled', false);
+                    },
+                    complete: function() {
+                        $('#registerButtonText').removeClass('d-none');
+                        $('#registerSpinner').addClass('d-none');
+                        $('#registerButton').prop('disabled', false);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+            
+            // Highlight active nav item on scroll
+            $(window).scroll(function() {
+                var scrollDistance = $(window).scrollTop();
+                
+                $('section').each(function(i) {
+                    if ($(this).position().top <= scrollDistance + 100) {
+                        $('.navbar-nav a.active').removeClass('active');
+                        $('.navbar-nav a').eq(i).addClass('active');
+                    }
+                });
+            }).scroll();
+
+            $('#btnLogin,#btnLoginCheckout,#btnLoginInvitacion').on('click', function() {
+                $('#loginModal').modal('show');
+            }); 
+
+            $('#btnRegistroInvitacion').on('click', function() {
+                $('#registerModal').modal('show');
+            });
+
+            // Login form validation and AJAX submission
+            $('#loginButton').on('click', function(e) {
+                e.preventDefault();
+                
+                // Reset previous validation states
+                $(this).find('.is-invalid').removeClass('is-invalid');
+                $('#loginAlert').addClass('d-none').html('');
+                
+                // Get form data
+                const email = $('#emailLogin').val().trim();
+                const password = $('#passwordLogin').val().trim();
+                const rememberMe = $('#rememberMe').is(':checked');
+                
+                // Validate email
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    $('#emailLogin').addClass('is-invalid');
+                    return false;
+                }
+                // Validate password
+                if (!password) {
+                    $('#passwordLogin').addClass('is-invalid');
+                    return false;
+                }
+                // Show loading state
+                $('#loginButton').attr('disabled', true);
+                $('#loginSpinner').removeClass('d-none');
+                $('#loginButtonText').text('Procesando...');
+                // Send AJAX request
+                $.ajax({
+                    url: '/v2/controllers/usuarios.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        action: 'login',
+                        email: email,
+                        password: password,
+                        rememberMe: rememberMe
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            // Redirect on successful login
+                            console.log("login exitoso");
+                            $('#loginModal').modal('hide');
+
+                            $("#navbar").load("/v2/navbar-container.php");
+
+                            if($("#login_invitacion_container").length > 0){
+                                $("#login_invitacion_container").load(" #login_invitacion");
+                            }
+                            
+                            if(page == "checkout"){
+                                $("#form-checkout").load("/v2/checkout-form.php", function() {
+                                    $('#formulario-extras').fadeIn(300);
+                                    $('#btn-payment').fadeIn(300);
+                                    if($('#btn-payment-cuotas').length > 0){
+                                        $('#btn-payment-cuotas').fadeIn(300);
+                                    }
+
+                                    getCategoria(); 
+                                    window.calcularEdad();
+                                });
+                            }
+
+                            if (window.location.pathname.replace(/\/$/, '') === '/checkout') {
+                                verificarDatos();
+                                verificarInscripcion();
+                            }
+                            
+                        } else {
+                            // Show error message
+                            $('#loginAlert').removeClass('d-none').html(response.error || 'Usuario o contraseña incorrectos.');
+                            
+                            // Reset button state
+                            $('#loginButton').attr('disabled', false);
+                            $('#loginSpinner').addClass('d-none');
+                            $('#loginButtonText').text('Ingresar');
+                        }
+                    },
+                    error: function() {
+                        // Show generic error message
+                        $('#loginAlert').removeClass('d-none').html('Error de conexión. Por favor, intenta nuevamente más tarde.');
+                        
+                        // Reset button state
+                        $('#loginButton').attr('disabled', false);
+                        $('#loginSpinner').addClass('d-none');
+                        $('#loginButtonText').text('Ingresar');
+                    },
+                    complete: function() {
+                        $('#loginButton').attr('disabled', false);
+                        $('#loginSpinner').addClass('d-none');
+                        $('#loginButtonText').text('Ingresar');
+                    }
+                });
+            });
+
+            $('input.readonly').on('keydown', function(e) {
+                e.preventDefault();
+            });
+
+            $('#newsletterForm').on('submit', function(e){
+                e.preventDefault();
+                $('#btnNewsletter').click();
+                return false;
+            });
+
+            $('#btnNewsletter').click(function(e){
+                e.preventDefault();
+                var email = $('#emailNewsletter').val();
+                if(email == ''){
+                    $('#newsletterAlert').removeClass('d-none').html('<i class="fas fa-exclamation-triangle me-2"></i> Por favor, ingrese su email');
+                    return;
+                }
+                if(!validateEmail(email)){
+                    $('#newsletterAlert').removeClass('d-none').html('<i class="fas fa-exclamation-triangle me-2"></i> Por favor, ingrese un email válido');
+                    return;
+                }
+                $.ajax({
+                    url: '/v2/controllers/index.php',
+                    type: 'POST',
+                    data: {
+                        action: 'suscribir_email',
+                        email: email
+                    },
+                    success: function(response){
+                        if(response){
+                            $('#newsletterAlert').removeClass('d-none').removeClass('alert-danger').addClass('alert-success').html('<i class="fas fa-check-circle me-2"></i> Email suscrito correctamente');
+                            $('#emailNewsletter').val('');
+                        }else{
+                            $('#newsletterAlert').removeClass('d-none').removeClass('alert-success').addClass('alert-danger').html('<i class="fas fa-exclamation-triangle me-2"></i> Error al suscribir el email');
+                            $('#emailNewsletter').val('');
+                        }
+                    }
+                });
+            });
+
+            $('#emailNewsletter').on('input', function(){
+                $('#newsletterAlert').addClass('d-none');
+            });
+        });
+
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        
+    </script>
+
+    <script src="/assets/lightbox2/dist/js/lightbox.js"></script>
+    <script>
+        (function () {
+            window.__recaptchaWidgetIds = window.__recaptchaWidgetIds || {};
+
+            window.__renderRecaptchaIfNeeded = function (container) {
+                if (typeof grecaptcha === 'undefined' || !grecaptcha || typeof grecaptcha.render !== 'function') {
+                    return false;
+                }
+                if (typeof jQuery === 'undefined') {
+                    return false;
+                }
+                var $el = jQuery(container);
+                if (!$el.length) {
+                    return true;
+                }
+                if ($el.data('recaptchaRendered')) {
+                    return true;
+                }
+                var sitekey = $el.attr('data-sitekey');
+                if (!sitekey) {
+                    return true;
+                }
+                try {
+                    var widgetId = grecaptcha.render($el[0], { sitekey: sitekey });
+                    $el.data('recaptchaRendered', true);
+                    $el.data('recaptchaWidgetId', widgetId);
+                    var $form = $el.closest('form');
+                    if ($form.length && $form.attr('id')) {
+                        window.__recaptchaWidgetIds[$form.attr('id')] = widgetId;
+                    }
+                } catch (err) {
+                    console.error('reCAPTCHA render', err);
+                    return false;
+                }
+                return true;
+            };
+
+            window.getRecaptchaResponseForForm = function (formId) {
+                if (typeof grecaptcha === 'undefined' || !grecaptcha || typeof grecaptcha.getResponse !== 'function') {
+                    return '';
+                }
+                var widgetId = (window.__recaptchaWidgetIds || {})[formId];
+                if (typeof widgetId === 'number') {
+                    return grecaptcha.getResponse(widgetId);
+                }
+                return grecaptcha.getResponse();
+            };
+
+            window.resetRecaptchaForForm = function (formId) {
+                if (typeof grecaptcha === 'undefined' || !grecaptcha || typeof grecaptcha.reset !== 'function') {
+                    return;
+                }
+                var widgetId = (window.__recaptchaWidgetIds || {})[formId];
+                if (typeof widgetId === 'number') {
+                    return grecaptcha.reset(widgetId);
+                }
+                return grecaptcha.reset();
+            };
+
+            window.onRecaptchaLoadCallback = function () {
+                if (typeof jQuery === 'undefined') {
+                    setTimeout(window.onRecaptchaLoadCallback, 50);
+                    return;
+                }
+                jQuery(function ($) {
+                    if (!window.__recaptchaModalShownBound) {
+                        window.__recaptchaModalShownBound = true;
+                        $('#registerModal, #organizadoresModal').on('shown.bs.modal', function () {
+                            $(this).find('.g-recaptcha').each(function () {
+                                var el = this;
+                                var tries = 0;
+                                function attempt() {
+                                    tries++;
+                                    if (window.__renderRecaptchaIfNeeded(el)) {
+                                        $(window).trigger('resize');
+                                        return;
+                                    }
+                                    if (tries < 50) {
+                                        setTimeout(attempt, 100);
+                                    }
+                                }
+                                attempt();
+                            });
+                        });
+                    }
+
+                    $('.g-recaptcha').each(function () {
+                        var $modal = $(this).closest('.modal');
+                        if ($modal.length) {
+                            return;
+                        }
+                        window.__renderRecaptchaIfNeeded(this);
+                    });
+                    $('.modal.show').find('.g-recaptcha').each(function () {
+                        window.__renderRecaptchaIfNeeded(this);
+                    });
+                });
+            };
+        })();
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoadCallback&amp;render=explicit&amp;hl=es-419" async="" defer=""></script>
+
+    <script>
+        function activarLightboxEnEventTabs() {
+            const $eventTabs = $('#event-tabs');
+
+            if ($eventTabs.length) {
+                let num = 1;
+
+                $eventTabs.find('img').each(function () {
+                const $img = $(this);
+
+                if (!$img.parent().is('a')) {
+                    const src = $img.attr('src');
+                    $img.wrap(`<a href="${src}" data-lightbox="image-${num}"></a>`);
+                    num++;
+                }
+                });
+            }
+        }
+    </script>
+
+ 
+
+<div class="whatsapp-float-container">
+    <div id="whatsapp-chat" class="whatsapp-chat">
+        <div class="whatsapp-chat-header">
+            <div class="whatsapp-chat-avatar">
+                <img src="/v2/images/almundo_2.png" alt="Almundo">
+            </div>
+            <div class="whatsapp-chat-info">
+                <h5>Viajes &amp; Hospedaje</h5>
+                <span class="whatsapp-status">En línea</span>
+            </div>
+            <button class="whatsapp-close" onclick="toggleWhatsAppChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="whatsapp-chat-body">
+            <div class="whatsapp-message">
+                <p>¡Hola! 👋 ¿Necesitas ayuda con <strong>Viajes &amp; Hospedaje</strong>?</p>
+                <p>Haz clic en el botón de abajo para contactarnos por WhatsApp</p>
+            </div>
+        </div>
+        <div class="whatsapp-chat-footer">
+            <a href="https://wa.me/5491123530028?text=Hola,%20los%20vi%20en%20TicketsATI%20y%20me%20interesa%20información%20sobre%20Viajes%20%26%20Hospedaje" target="_blank" class="whatsapp-chat-button" onclick="registerClickOpen(event)">
+                <i class="fab fa-whatsapp" style="font-size: 20px!important;"></i> Abrir WhatsApp
+            </a>
+        </div>
+    </div>
+    <div class="whatsapp-button-wrapper">
+        <div class="whatsapp-label" id="whatsapp-label" onclick="toggleWhatsAppChat()">Viajes &amp; Hospedaje</div>
+        <button id="whatsapp-button" class="whatsapp-button" onclick="toggleWhatsAppChat()">
+            <i class="fab fa-whatsapp" style="font-size: 24px!important;"></i>
+            <span class="whatsapp-pulse"></span>
+        </button>
+    </div>
+</div>
+
+<style>
+.whatsapp-float-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.whatsapp-label {
+    display: flex;
+    gap: 4px;
+    background: #fff;
+    padding: 10px 16px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    animation: fadeInLabel 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-label:hover {
+    transform: translateX(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-label i{
+    color: green;
+    font-size: 20px;
+}
+
+@keyframes fadeInLabel {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.whatsapp-button {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25D366;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.whatsapp-chat {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+.whatsapp-chat.active {
+    display: flex;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-chat-header {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.whatsapp-chat-avatar {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.whatsapp-chat-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.whatsapp-chat-info {
+    flex: 1;
+}
+
+.whatsapp-chat-info h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.whatsapp-status {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.whatsapp-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.whatsapp-close:hover {
+    opacity: 1;
+}
+
+.whatsapp-chat-body {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.whatsapp-message {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.whatsapp-message p {
+    margin: 8px 0;
+    color: #333;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.whatsapp-message p:first-child {
+    margin-top: 0;
+}
+
+.whatsapp-message p:last-child {
+    margin-bottom: 0;
+}
+
+.whatsapp-chat-footer {
+    padding: 15px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.whatsapp-chat-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+    font-size: 14px;
+}
+
+.whatsapp-chat-button:hover {
+    background: #128C7E;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-chat {
+        width: 280px;
+        right: -10px;
+    }
+    
+    .whatsapp-float-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-label {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .whatsapp-button {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+}
+</style>
+
+<script>
+function toggleWhatsAppChat() {
+    const chat = document.getElementById('whatsapp-chat');
+    const label = document.getElementById('whatsapp-label');
+    chat.classList.toggle('active');
+    
+    // Ocultar el label cuando el chat está abierto
+    if (chat.classList.contains('active')) {
+        label.style.display = 'none';
+        
+        // Registrar el click solo cuando se abre el chat
+        registerClick();
+    } else {
+        label.style.display = 'block';
+    }
+}
+
+function registerClick() {
+    // Obtener la página actual
+    const page = window.location.pathname.replace(/^\//, '').replace(/\/$/, '') || 'index';
+    
+    // Realizar la llamada AJAX para registrar el click
+    $.ajax({
+        url: '/v2/controllers/clicks.php',
+        type: 'POST',
+        data: {
+            action: 'register_click',
+            element: 'almundo_whatsapp_button',
+            page: page
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.success) {
+                console.log('Click registrado:', data);
+            } else {
+                console.error('Error al registrar click:', data.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error AJAX al registrar click:', error);
+        }
+    });
+}
+
+function registerClickOpen(event) {
+    // Obtener la página actual
+    const page = window.location.pathname.replace(/^\//, '').replace(/\/$/, '') || 'index';
+    
+    // Realizar la llamada AJAX para registrar el click
+    $.ajax({
+        url: '/v2/controllers/clicks.php',
+        type: 'POST',
+        data: {
+            action: 'register_click',
+            element: 'almundo_whatsapp_button_open',
+            page: page
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.success) {
+                console.log('Click en botón abrir registrado:', data);
+            } else {
+                console.error('Error al registrar click:', data.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error AJAX al registrar click:', error);
+        }
+    });
+}
+
+// Cerrar el chat al hacer clic fuera de él
+document.addEventListener('click', function(event) {
+    const container = document.querySelector('.whatsapp-float-container');
+    const chat = document.getElementById('whatsapp-chat');
+    const label = document.getElementById('whatsapp-label');
+    
+    if (chat.classList.contains('active') && 
+        !container.contains(event.target)) {
+        chat.classList.remove('active');
+        label.style.display = 'block';
+    }
+});
+</script><script>
+    var page = "inicio";
+    var searchPost = '';
+    var tipoPost = 0;
+</script>
+
+
+<script src="/v2/js/tz_buenos_aires.js?v=1"></script>
+<script src="/v2/js/inicio.js?v=1779544800"></script>
+<script src="/v2/js/eventos.js?v=1779544800"></script>
+
+
+
+ <div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href=""></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href=""></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div></body></html><!-- WhatsApp Floating Button -->

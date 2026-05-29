@@ -1,0 +1,1587 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <title>PHC- Case Flow Management System </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="https://peshawarhcmb.gov.pk/favicon.ico">  
+        <meta name="description" content="Peshawar High Court, Mingora Bench, Dar-ul-Qaza Swat, situated at Sangota Mingora, Swat. The web application facilitates the stakeholders with file status check and daily Ordersheets / Judgment files. Now all the litigants can view their case files through web browsers/ mobile devices from anywhere in the world.">
+        <meta name="keywords" content="Peshawar High Court, PHC,phc,Mingora, Sangota, Swat, Saidu Sharif, Courts, High Court,Judiciary, Pakistan, Judicial Officers, Lawyers, Law, Shah Hussain, shahhussain305@gmail.com">
+        <meta name="author" content="Shah Hussain, shahhussain305@gmail.com, 03139371236">
+        <meta name="google-site-verification" content="1U614ya6tfwIBKptYN84S-3Hv0q3B7Zg1g6Myfq-g8Q">
+        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/bootstrap/css/bootstrap.min.css">        
+        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/bootstrap/css/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/font_awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/mod/mod_css/custom_public.css">
+        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/mod/mod_css/stylish_checkbox_radio.css">
+        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/mod/mod_css/pretty-checkbox.min.css">
+        <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script src="https://peshawarhcmb.gov.pk/bootstrap/js/jquery.min.js"></script>
+        <script src="https://peshawarhcmb.gov.pk/bootstrap/js/jquery-ui.js"></script>
+        <script src="https://peshawarhcmb.gov.pk/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://peshawarhcmb.gov.pk/bootstrap/js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="https://peshawarhcmb.gov.pk/mod/mod_js/public/jQuery_custom.js"></script>
+        <script type="text/javascript" src="https://peshawarhcmb.gov.pk/libs/notify/bootstrap-notify.min.js"></script>
+        <!--<script src="/libs/marquee/jquery.scrollbox.min.js"></script>-->
+        <script src="/libs/marquee/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>     
+                <link href="https://peshawarhcmb.gov.pk/libs/news_tracker/css/jquery.jConveyorTicker.min.css" rel="stylesheet">
+        <script src="https://peshawarhcmb.gov.pk/libs/news_tracker/js/jquery.jConveyorTicker.min.js"></script>
+                <script language="javascript">var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=.",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/rn/g,"n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}};</script>        <script src="https://peshawarhcmb.gov.pk/mod/mod_js/enc_dec.js" type="text/javascript"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://peshawarhcmb.gov.pk/bootstrap/js/html5shiv.min.js"></script>
+        <script src="https://peshawarhcmb.gov.pk/bootstrap/js/respond.min.js"></script>
+        <![endif]-->
+    <style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/y2/r/onuUJj0tCqE.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style></head>
+    <body class="bg">
+    <style>.bg{background-color: #ffffff !important;}</style>
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+    <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v8.0&amp;appId=651528368882210&amp;autoLogAppEvents=1" nonce="zV7m9dxP"></script>
+       <div class="news-top-wrapper container" style="background-color:#fff;">
+        <div class="row">
+        <div class="col-md-3 col-lg-3 col-xs-6 col-sm-3" style="background: #ffffff;position: relative;top: 6px;height: 20px;">
+        
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+            <div class="fb-like fb_iframe_widget fb_iframe_widget_fluid" data-href="https://peshawarhcmb.gov.pk" data-layout="button_count" data-action="like" data-size="small" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=651528368882210&amp;container_width=343&amp;href=https%3A%2F%2Fpeshawarhcmb.gov.pk%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;size=small"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="fe905bedfbd6372c7" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v8.0/plugins/like.php?action=like&amp;app_id=651528368882210&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df642a4de28bdb7129%26domain%3Dpeshawarhcmb.gov.pk%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fpeshawarhcmb.gov.pk%252Ff8f8a17b3780ef642%26relation%3Dparent.parent&amp;container_width=343&amp;href=https%3A%2F%2Fpeshawarhcmb.gov.pk%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;size=small" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: visible; width: 0px; height: 0px;"></iframe></span></div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+            <div class="fb-share-button fb_iframe_widget fb_iframe_widget_fluid" data-href="https://peshawarhcmb.gov.pk" data-layout="button_count" data-size="small" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=651528368882210&amp;container_width=343&amp;href=https%3A%2F%2Fpeshawarhcmb.gov.pk%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;size=small"><span style="vertical-align: bottom; width: 89px; height: 20px;"><iframe name="f7fd9eddf9903447c" width="1000px" height="1000px" data-testid="fb:share_button Facebook Social Plugin" title="fb:share_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v8.0/plugins/share_button.php?app_id=651528368882210&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df738fa9cce4792946%26domain%3Dpeshawarhcmb.gov.pk%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fpeshawarhcmb.gov.pk%252Ff8f8a17b3780ef642%26relation%3Dparent.parent&amp;container_width=343&amp;href=https%3A%2F%2Fpeshawarhcmb.gov.pk%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;size=small" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: visible; width: 89px; height: 20px;" class=""></iframe></span></div>
+        </div>
+
+    </div>    
+    <div class="col-md-9 col-lg-9 col-xs-6 col-sm-8 col-sm-push-1">
+        
+        <div class="quick_news js-conveyor-1 jctkr-wrapper jctkr-initialized">
+            <div class="news-lbl">Quick News: </div>
+            <ul style="width: 1976px; left: -213.08px;">
+                                        <li>
+                            <span style="padding-right:3em;">
+                                Directions                                                                    <a target="_blank" href="https://peshawarhcmb.gov.pk/quick_news/201022022940pm2890.pdf" alt="Download / View attached file">
+                                        <span style="font-size:10px;">Download</span>
+                                    </a>
+                                                                <sub style="font-size:10px;color:#bbbbbb">Dated: 22-10-2020</sub>
+                            </span></li>
+                                        <li>
+                            <span style="padding-right:3em;">
+                                Order                                                                    <a target="_blank" href="https://peshawarhcmb.gov.pk/quick_news/201022023013pm1208.pdf" alt="Download / View attached file">
+                                        <span style="font-size:10px;">Download</span>
+                                    </a>
+                                                                <sub style="font-size:10px;color:#bbbbbb">Dated: 22-10-2020</sub>
+                            </span></li>
+                                        <li>
+                            <span style="padding-right:3em;">
+                                Vacant Post [Driver BPS-06]                                                                    <a target="_blank" href="https://peshawarhcmb.gov.pk/quick_news/220203103716am462.pdf" alt="Download / View attached file">
+                                        <span style="font-size:10px;">Download</span>
+                                    </a>
+                                                                <sub style="font-size:10px;color:#bbbbbb">Dated: 03-02-2022</sub>
+                            </span></li>
+                            <li class="clone">
+                            <span style="padding-right:3em;">
+                                Directions                                                                    <a target="_blank" href="https://peshawarhcmb.gov.pk/quick_news/201022022940pm2890.pdf" alt="Download / View attached file">
+                                        <span style="font-size:10px;">Download</span>
+                                    </a>
+                                                                <sub style="font-size:10px;color:#bbbbbb">Dated: 22-10-2020</sub>
+                            </span></li><li class="clone">
+                            <span style="padding-right:3em;">
+                                Order                                                                    <a target="_blank" href="https://peshawarhcmb.gov.pk/quick_news/201022023013pm1208.pdf" alt="Download / View attached file">
+                                        <span style="font-size:10px;">Download</span>
+                                    </a>
+                                                                <sub style="font-size:10px;color:#bbbbbb">Dated: 22-10-2020</sub>
+                            </span></li><li class="clone">
+                            <span style="padding-right:3em;">
+                                Vacant Post [Driver BPS-06]                                                                    <a target="_blank" href="https://peshawarhcmb.gov.pk/quick_news/220203103716am462.pdf" alt="Download / View attached file">
+                                        <span style="font-size:10px;">Download</span>
+                                    </a>
+                                                                <sub style="font-size:10px;color:#bbbbbb">Dated: 03-02-2022</sub>
+                            </span></li></ul>    
+
+            </div>
+        </div>        </div>
+        </div>
+        <div style="width: 100%; overflow-x: hidden;">
+            <header style="background:#5b9bd5;">
+<!--                <div id="ytWidget"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=dark&autoMode=false" type="text/javascript"></script>-->
+                <img src="https://peshawarhcmb.gov.pk/sys_images/logos/banner.jpg" class="img-responsive" style="width: 100%;" alt="" oncontextmenu="return false;">
+            </header>
+                <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand hm" href="https://peshawarhcmb.gov.pk/home.phc" style="padding-top:8px !important;font-size: 27px !important;"><i class="fa fa-home"></i></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown"><a href="#" data-toggle="dropdown"><i class="fa fa-user-plus"></i> About Us <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="https://peshawarhcmb.gov.pk/history.phc"><i class="fa fa-newspaper-o"></i> History</a></li>
+                  <!--li><a href="< ?php echo(SG::getBaseUrl()); ?>/sitting_judges.phc">< ?php echo($icon->fa_graduation_cap); ? > Sitting Judges</a></li-->
+                  <li><a href="https://peshawarhcmb.gov.pk/contact_us.phc"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
+              </ul>
+          </li>  
+          <li class="dropdown"><a href="#" data-toggle="dropdown"><i class="fa fa-calendar"></i> Cause Lists <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="https://peshawarhcmb.gov.pk/calendar_causelist.phc"><i class="fa fa-calendar"></i> Cause List Calendar</a></li>
+                  <li><a href="https://peshawarhcmb.gov.pk/tentative_causelist_calendar.phc"><i class="fa fa-calendar"></i> Tentative Cause List </a></li>
+                  <li><a href="https://peshawarhcmb.gov.pk/daily_causelist.phc"><span class="glyphicon glyphicon-list"></span> Cause List Benchwise</a></li>                  
+                  <li><a href="https://peshawarhcmb.gov.pk/archive_causelist.phc"><span class="glyphicon glyphicon-list"></span> Archive Cause Lists Benchwise</a></li>
+                  <li><a href="https://peshawarhcmb.gov.pk/causelist_screens.phc"><span class="glyphicon glyphicon-list"></span> Cause List Screens </a></li>
+              </ul>
+          </li>          
+	                   <li class="dropdown"><a href="#" data-toggle="dropdown">Case Searches <span class="caret"></span></a>
+              <ul class="dropdown-menu"> 
+                  <li><a href="https://peshawarhcmb.gov.pk/search_cases.phc"><span class="glyphicon glyphicon-search"></span> Search Case with Party Details, Auto #</a></li>
+                  <li><a href="https://peshawarhcmb.gov.pk/search_with_fir.phc"><span class="glyphicon glyphicon-search"></span> Search Case with FIR No.</a></li>
+                  <li><a href="https://peshawarhcmb.gov.pk/advanced_search.phc"><span class="glyphicon glyphicon-search"></span> Search case with Case #</a></li> 
+          </ul>
+          </li>       
+          <li><a href="https://peshawarhcmb.gov.pk/downloads.phc"><i class="fa fa-download"></i> Downloads</a></li>
+          <li><a href="https://peshawarhcmb.gov.pk/case_status.phc"><span class="glyphicon glyphicon-tasks"></span> Case Status</a></li>
+          <li><a href="https://peshawarhcmb.gov.pk/jobs.phc"><i class="fa fa-graduation-cap"></i> Jobs</a></li>
+          <li><a href="https://peshawarhcmb.gov.pk/counsel_cases_list.phc" title="click here to search full list of registered cases against counsel S.No"><span class="glyphicon glyphicon-tasks"></span> List of Counsel's Cases </a></li>
+          <li><a href="https://peshawarhcmb.gov.pk/list_objection.phc"><span class="glyphicon glyphicon-tasks"></span> Objection List</a></li>
+<!--          <li><a href="https://peshawarhcmb.gov.pk/list_of_counsels.phc">< ?php echo($icon->gl_tasks); ? > List of Counsels</a></li>
+          <li><a href="https://peshawarhcmb.gov.pk/signup.phc"><i class="fa fa-user"></i> Signup</a></li>-->
+      </ul>
+        <form class="navbar-form navbar-left" role="search" method="GET" action="https://peshawarhcmb.gov.pk/home.phc">
+          <input type="hidden" name="cmd" value="search_cases">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Case with Party Name etc" name="srch_term" id="srch_term">
+            <div class="input-group-btn">
+              <button class="btn btn-default search-btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </form>
+      </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>            <section>
+                <div class="panel-body pageBody op">
+                <!--<div><script async src='https://cse.google.com/cse.js?cx=partner-pub-7267003407185491:8134637947'></script><div class="gcse-searchbox-only"></div></div>-->
+                
+<style>
+    body {
+        background: #f4f6f9;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    /* =========================================================
+   COMMON PANEL
+========================================================= */
+
+    .phc-panel {
+        border: none !important;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 15px !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        transition: all .3s ease;
+        background: #fff;
+    }
+
+    .phc-panel:hover {
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .phc-panel .panel-heading {
+        background: #67b176 !important;
+        color: #fff !important;
+        border: none !important;
+        padding: 14px 18px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .phc-panel .panel-body {
+        padding: 18px;
+        background: #fff;
+    }
+
+    /* =========================================================
+   MESSAGE
+========================================================= */
+
+    .chief-message {
+        text-align: center;
+        padding: 10px 15px;
+    }
+
+    .chief-message em {
+        font-size: 22px;
+        color: #2c3e50;
+        font-style: italic;
+    }
+
+    /* =========================================================
+   PROFILE
+========================================================= */
+
+    .profile-card {
+        text-align: center;
+    }
+
+    .profile-card img {
+        width: 171px;
+        height: 192px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #67b176;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        margin-bottom: 15px;
+    }
+
+    .profile-card h4 {
+        margin: 0;
+        color: #2c3e50;
+        font-weight: 700;
+    }
+
+    .profile-card p {
+        color: #777;
+        margin-top: 5px;
+    }
+
+    /* =========================================================
+   NEWS
+========================================================= */
+
+    .news-card {
+        background: #f9f9f9;
+        border: 1px solid #e5e5e5;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        transition: all .3s ease;
+    }
+
+    .news-card:hover {
+        background: #fff;
+        transform: translateY(-2px);
+    }
+
+    .news-date {
+        background: #67b176;
+        color: #fff;
+        text-align: center;
+        min-height: 90px;
+        padding-top: 12px;
+    }
+
+    .news-date .month {
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .news-date .day {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .news-content {
+        padding: 12px;
+    }
+
+    .news-content strong {
+        color: #2e7d32;
+    }
+
+    .news-content a {
+        color: #337ab7;
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .news-content a:hover {
+        color: #23527c;
+    }
+
+    /* =========================================================
+   SERVICE BOXES
+========================================================= */
+
+    .service-box {
+        min-height: 210px;
+        text-align: center;
+    }
+
+    .service-box .icon {
+        font-size: 42px;
+        color: #67b176;
+        margin-bottom: 10px;
+    }
+
+    .service-box h4 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .service-box p {
+        color: #666;
+        min-height: 70px;
+    }
+
+    /* =========================================================
+   EVENTS
+========================================================= */
+
+    .event-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .event-item:last-child {
+        border-bottom: none;
+    }
+
+    .event-item img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    /* =========================================================
+   VIDEO
+========================================================= */
+
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 320px;
+        overflow: hidden;
+    }
+
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* =========================================================
+   ALERTS
+========================================================= */
+
+    .news-alerts {
+        padding-left: 15px;
+    }
+
+    .news-alerts li {
+        margin-bottom: 12px;
+    }
+
+    .news-alerts a {
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* =========================================================
+   MOBILE
+========================================================= */
+
+    @media (max-width: 991px) {
+        .service-box {
+            min-height: auto !important;
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        /* Fix banner scaling */
+        header img {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        /* Fix horizontal scroll and spacing */
+        .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        /* Fix Quick News overlap at the top */
+        .news-top-wrapper .col-xs-6 {
+            width: 100% !important;
+            float: none !important;
+            text-align: center !important;
+            height: auto !important;
+            top: 0 !important;
+            padding: 5px !important;
+        }
+
+        .quick_news {
+            width: 100% !important;
+            margin-top: 5px;
+        }
+
+        .news-lbl {
+            position: static !important;
+            display: inline-block !important;
+            width: auto !important;
+            border-radius: 4px !important;
+            padding: 2px 10px !important;
+            margin-bottom: 5px;
+        }
+
+        /* Pagination scroll for wide tables/lists */
+        div.pagination {
+            overflow-x: auto;
+            white-space: nowrap;
+            display: block;
+            padding-bottom: 15px !important;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Ensure profile cards don't take too much space */
+        .profile-card img {
+            width: 100px !important;
+            height: 100px !important;
+        }
+
+        .chief-message em {
+            font-size: 18px !important;
+        }
+
+        /* Fix news date boxes on mobile */
+        .news-date {
+            min-height: auto !important;
+            padding: 8px 0 !important;
+        }
+
+        .news-date .day {
+            font-size: 24px !important;
+        }
+        
+        .pageBody {
+            padding: 10px !important;
+        }
+
+        /* Recent Judgments container scroll */
+        #decided_cases {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Ensure all panel images are responsive */
+        .phc-panel img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
+<!-- ========================================================= -->
+<!-- Message -->
+<!-- ========================================================= -->
+
+<div class="panel panel-success phc-panel">
+
+    <div class="panel-heading">
+        <strong>
+            <span class="glyphicon glyphicon-pencil"></span>
+            Message of the Honourable Chief Justice
+        </strong>
+    </div>
+
+    <div class="panel-body chief-message">
+
+        <em>
+            “If we do not maintain justice, Justice will not maintain us”
+        </em>
+
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- MAIN ROW -->
+<!-- ========================================================= -->
+
+<div class="row">
+
+    <!-- ===================================================== -->
+    <!-- LEFT COLUMN -->
+    <!-- ===================================================== -->
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+
+        <!-- Profile -->
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-body profile-card">
+
+                <img src="judges/ar_2026.jpg">
+
+                <h4>Syed Yasir Shabbir</h4>
+
+                <p>Additional Registrar</p>
+
+            </div>
+
+        </div>
+
+        <!-- Notifications -->
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+
+                <strong>
+                    <i class="fa fa-gavel"></i>
+                    Notifications &amp; Updates
+                </strong>
+
+            </div>
+
+            <div class="panel-body">
+
+                <div id="newsContainer">
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    May
+                </div>
+
+                <div class="day">
+                    22
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Order</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1237')">
+
+                        Transfer of officers/ officials of the District Judiciary
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    May
+                </div>
+
+                <div class="day">
+                    19
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Notification</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1236')">
+
+                        Notification regarding Amendments
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    May
+                </div>
+
+                <div class="day">
+                    02
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Order</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1235')">
+
+                        Posting Transfer Order
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    Apr
+                </div>
+
+                <div class="day">
+                    27
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Notification</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1233')">
+
+                        Promotion of Additional District &amp; Sessions Judges/ Izafi Zilla Qazis
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    Apr
+                </div>
+
+                <div class="day">
+                    21
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Report</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1232')">
+
+                        Seniority List of Judicial Officers
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    Apr
+                </div>
+
+                <div class="day">
+                    15
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Obituary</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1229')">
+
+                        Mother of Syed Wahaj Ali Shah, Civil Judge passed away
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    Apr
+                </div>
+
+                <div class="day">
+                    02
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>Obituary</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1228')">
+
+                        Mother of Mr. Altaf Hussain, ADJ Swat passed away
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    Mar
+                </div>
+
+                <div class="day">
+                    31
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>News</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('1227')">
+
+                        Peshawar High Court invites EOI from the scheduled Commercial Bank
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        </div>
+
+                <div class="text-right" style="margin-top:10px;">
+
+                    <a href="https://peshawarhighcourt.gov.pk/app/site/17/p/All_News_and_Events.html" target="_blank" class="btn btn-primary btn-xs">
+
+                        Show All
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CENTER COLUMN -->
+    <!-- ===================================================== -->
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+
+        <!-- Daily Cause List -->
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+                <strong>
+                    <i class="fa fa-calendar"></i>
+                    Daily Cause List
+                </strong>
+            </div>
+
+            <div class="panel-body service-box">
+
+                <div class="icon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+
+                <h4>Judicial Calendar</h4>
+
+                <p>
+                    View daily and old cause lists through judicial calendar.
+                </p>
+
+                <a href="https://peshawarhcmb.gov.pk/calendar_causelist.phc" class="btn btn-success">
+
+                    Open Calendar
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Search Cases -->
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+                <strong>
+                    <i class="fa fa-search"></i>
+                    Search Cases
+                </strong>
+            </div>
+
+            <div class="panel-body service-box">
+
+                <div class="icon">
+                    <i class="fa fa-search"></i>
+                </div>
+
+                <h4>Case Search</h4>
+
+                <p>
+                    Search case details, orders, judgments and history.
+                </p>
+
+                <a href="https://peshawarhcmb.gov.pk/search_cases.phc" class="btn btn-success">
+
+                    Search Cases
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Tentative Cause List -->
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+                <strong>
+                    <i class="fa fa-calendar-check-o"></i>
+                    Tentative Fixed Cases
+                </strong>
+            </div>
+
+            <div class="panel-body service-box">
+
+                <div class="icon">
+                    <i class="fa fa-calendar-check-o"></i>
+                </div>
+
+                <h4>Tentative Cause List</h4>
+
+                <p>
+                    View tentative fixed cases and statuses through calendar.
+                </p>
+
+                <a href="https://peshawarhcmb.gov.pk/tentative_causelist_calendar.phc" class="btn btn-success">
+
+                    View List
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- RIGHT COLUMN -->
+    <!-- ===================================================== -->
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+
+        <!-- Latest Events -->
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+                <strong>
+                    <i class="fa fa-calendar"></i>
+                    Latest Events
+                </strong>
+            </div>
+
+            <div class="panel-body">
+
+                
+                        <div class="row event-item">
+
+                            <div class="col-xs-4">
+
+                                
+                                    <img src="https://peshawarhcmb.gov.pk/sys_images/img.gif">
+
+                                
+                            </div>
+
+                            <div class="col-xs-8">
+
+                                <a href="https://peshawarhighcourt.gov.pk/notifications/0N2f6ttNdkY?feature=share" target="_blank">
+
+                                    Double Docket Courts
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    
+                        <div class="row event-item">
+
+                            <div class="col-xs-4">
+
+                                
+                                    <img src="https://peshawarhighcourt.gov.pk/notifications/260421041812pm4205.jpg">
+
+                                
+                            </div>
+
+                            <div class="col-xs-8">
+
+                                <a href="https://peshawarhighcourt.gov.pk/notifications/260421041812pm2150.pdf" target="_blank">
+
+                                    Meeting regarding Security
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    
+                        <div class="row event-item">
+
+                            <div class="col-xs-4">
+
+                                
+                                    <img src="https://peshawarhighcourt.gov.pk/notifications/260421041733pm5366.jpg">
+
+                                
+                            </div>
+
+                            <div class="col-xs-8">
+
+                                <a href="https://peshawarhighcourt.gov.pk/notifications/260421041733pm3257.pdf" target="_blank">
+
+                                    Meeting of the Hon'ble IT Judges with IT Staff
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    
+                        <div class="row event-item">
+
+                            <div class="col-xs-4">
+
+                                
+                                    <img src="https://peshawarhighcourt.gov.pk/notifications/260409031024pm807.jpg">
+
+                                
+                            </div>
+
+                            <div class="col-xs-8">
+
+                                <a href="https://peshawarhighcourt.gov.pk/notifications/260409031024pm940.pdf" target="_blank">
+
+                                    HCJ meeting with UN delegation
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    
+                        <div class="row event-item">
+
+                            <div class="col-xs-4">
+
+                                
+                                    <img src="https://peshawarhighcourt.gov.pk/notifications/260406105114am3880.jpg">
+
+                                
+                            </div>
+
+                            <div class="col-xs-8">
+
+                                <a href="https://peshawarhighcourt.gov.pk/notifications/260406105113am2188.pdf" target="_blank">
+
+                                    Meeting Regarding Trainings in Justice Sector
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    
+                    <a href="https://peshawarhcmb.gov.pk/show_all_news.phc" class="btn btn-success btn-xs pull-right">
+
+                        Show All
+
+                    </a>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- SECOND ROW -->
+<!-- ========================================================= -->
+
+<div class="row">
+
+    <!-- Recent Judgments -->
+    <div class="col-md-7 col-sm-12">
+
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+
+                <strong>
+                    <i class="fa fa-balance-scale"></i>
+                    Recent Judgments (Dar-ul-Qaza, Swat)
+                </strong>
+
+            </div>
+
+            <div class="panel-body" style="min-height:350px;" id="decided_cases">                <ul class="judgments-alerts" style="font-family: 'Book Antiqua'; font-size:14px;">
+	                                 <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/74254/caseFullDtlByCaseSno.phc">
+                                         Mokamin Khan V/S Mst. Sajida Bibi etc                                     </a>
+                                     (Dated: 21-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDM1MDMwcG0xODUucGRm&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTAzNTAzMHBtMTg1LnBkZg==&amp;cid=NzQyNTQ=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/40980/caseFullDtlByCaseSno.phc">
+                                         Gul Zamin through L.Rs V/S Shehzada through L.Rs                                     </a>
+                                     (Dated: 21-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDQwMzAzcG0yMTI5LnBkZg==&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTA0MDMwM3BtMjEyOS5wZGY=&amp;cid=NDA5ODA=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/81463/caseFullDtlByCaseSno.phc">
+                                         Said Amin &amp; others V/S Sar Zamin Khan &amp; others                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDIyNTQ0cG01MTA3LnBkZg==&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTAyMjU0NHBtNTEwNy5wZGY=&amp;cid=ODE0NjM=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/78968/caseFullDtlByCaseSno.phc">
+                                         Ijaz Ahmad &amp; 1 other V/S Govt. of Khyber Pakhtunkhwa through Secretary Health &amp; othesr                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDIxODIycG0yMDQ1LnBkZg==&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTAyMTgyMnBtMjA0NS5wZGY=&amp;cid=Nzg5Njg=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/82468/caseFullDtlByCaseSno.phc">
+                                         Khan Zaid Gul V/S The State through A.A.G &amp; others                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDI0MzAycG0xMTc1LnBkZg==&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTAyNDMwMnBtMTE3NS5wZGY=&amp;cid=ODI0Njg=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/83154/caseFullDtlByCaseSno.phc">
+                                         Fazal Wahid &amp; others V/S Govt. of Khyber Pakhtunkhwa through Secretary Elementary &amp; Secondary Education &amp; &amp; others                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDIzNzUycG00NDMzLnBkZg==&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTAyMzc1MnBtNDQzMy5wZGY=&amp;cid=ODMxNTQ=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/83139/caseFullDtlByCaseSno.phc">
+                                         Said Amin &amp; others V/S Sar Zamin Khan &amp; others                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=&amp;filePath=&amp;cid=ODMxMzk=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/82741/caseFullDtlByCaseSno.phc">
+                                         Saeed Khan V/S The State through AAG &amp; others                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=&amp;filePath=&amp;cid=ODI3NDE=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                                         <li class="judgments-item title-font">
+                                     <a target="_blank" href="https://peshawarhcmb.gov.pk/reports/82740/caseFullDtlByCaseSno.phc">
+                                         Saeed Khan V/S The State through AAG &amp; others                                     </a>
+                                     (Dated: 20-05-2026) &nbsp; 
+                                     <a title="Click to download file" target="_blank" href="https://peshawarhcmb.gov.pk/mod/mod_public/pages/ajaxPhp/download_judgment.php?fileName=MjYwNTIxMDgxNjUxYW0zMzM0LnBkZg==&amp;filePath=MjAyNi8yMDI2XzA1XzIxLzI2MDUyMTA4MTY1MWFtMzMzNC5wZGY=&amp;cid=ODI3NDA=">
+                                         <strong class="text-danger"><i class="fa fa-download"></i> download</strong>
+                                     </a>
+                                 </li>
+                                            </ul>
+                <div class="pagination"><span class="disabled">« First</span><span class="disabled">« Previous&nbsp;&nbsp;</span><span class="current">1</span><a href="javascript:void(0);" onclick="change_page(2);">2</a><a href="javascript:void(0);" onclick="change_page(3);">3</a><a href="javascript:void(0);" onclick="change_page(4);">4</a><a href="javascript:void(0);" onclick="change_page(5);">5</a><a href="javascript:void(0);" onclick="change_page(6);">6</a><a href="javascript:void(0);" onclick="change_page(7);">7</a>...<a href="javascript:void(0);" onclick="change_page(6567);"> 6567</a><a href="javascript:void(0);" onclick="change_page(6568);">6568</a><a href="javascript:void(0);" onclick="change_page(2);">Next »</a><a href="javascript:void(0);" title="this is last" onclick="change_page(6568);">Last »</a></div></div>
+
+        </div>
+
+    </div>
+
+    <!-- News Alerts -->
+    <div class="col-md-5 col-sm-12">
+
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+
+                <strong>
+                    <i class="fa fa-newspaper-o"></i>
+                    News &amp; Alerts
+                </strong>
+
+            </div>
+
+            <div class="panel-body">
+
+                <ul class="news-alerts animated zoomInRight" style="overflow-y: hidden; height: 0px;">
+
+                    
+                <undefined style="display: inline-block;" class="undefined">undefined</undefined><undefined style="display:none;" class="undefined">undefined</undefined></ul>
+
+            </div>
+
+        <div class="panel-footer"><ul class="pagination pull-right" style="margin: 0px;"><li><a href="#" class="prev"><span class="glyphicon glyphicon-chevron-down"></span></a></li><li><a href="#" class="next"><span class="glyphicon glyphicon-chevron-up"></span></a></li></ul><div class="clearfix"></div></div></div>
+
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- VIDEOS -->
+<!-- ========================================================= -->
+
+<div class="row">
+
+    <div class="col-md-6 col-sm-12">
+
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+
+                <strong>
+                    <i class="fa fa-question-circle"></i>
+                    Need Help in searching case details?
+                </strong>
+
+            </div>
+
+            <div class="panel-body videoWrapper">
+
+                <iframe src="https://www.youtube.com/embed/vWHn7vLUT_U?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+
+        <div class="panel panel-success phc-panel">
+
+            <div class="panel-heading">
+
+                <strong>
+                    <i class="fa fa-question-circle"></i>
+                    How to serve e-notices?
+                </strong>
+
+            </div>
+
+            <div class="panel-body videoWrapper">
+
+                <iframe src="https://www.youtube.com/embed/kx8gw_oSZog?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- NEWS FETCH & DECIDED CASES -->
+<!-- ========================================================= -->
+
+<script>
+
+    $(document).ready(function () {
+
+        fetchNews();
+        loadDecidedCases(0);
+
+    });
+
+    /* ---------------------------------------------------------
+       NEWS: fetch directly from PHC API (CORS allowed for this domain)
+    --------------------------------------------------------- */
+
+    function fetchNews() {
+
+        fetch(
+            "https://peshawarhighcourt.gov.pk/classes/API_For_Benches/notification.php",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-API-KEY": '$2y$10$pLn6kgLnjwUc6/LNxfezz.hAxBv2VbmPEHjYiKIAAC3QHsQbc5Pmy'
+                },
+                body: new URLSearchParams({ opt: "ltd" })
+            }
+        )
+
+            .then(response => {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                return response.json();
+            })
+
+            .then(response => {
+
+                if (response.status === true) {
+
+                    renderNews(response.data.list);
+
+                } else {
+
+                    $("#newsContainer").html(`
+                        <div class="alert alert-danger">
+                            ${response.message || 'No news available.'}
+                        </div>
+                    `);
+
+                }
+
+            })
+
+            .catch(error => {
+
+                console.error('News fetch error:', error);
+
+                $("#newsContainer").html(`
+                    <div class="alert alert-danger">
+                        Failed to load news. Please try again later.
+                    </div>
+                `);
+
+            });
+
+    }
+
+    function renderNews(newsList) {
+
+        if (!newsList) return;
+
+        // Handle case where API returns object instead of array
+        const list = Array.isArray(newsList) ? newsList : Object.values(newsList);
+
+        let html = '';
+
+        list.forEach(news => {
+
+            const dateObj = new Date(news.for_date);
+
+            const day = String(dateObj.getDate()).padStart(2, '0');
+
+            const month = dateObj.toLocaleString('default', {
+                month: 'short'
+            });
+
+            let newsType = '';
+
+            switch (parseInt(news.news_type)) {
+
+                case 1:
+                    newsType = 'Event';
+                    break;
+
+                case 2:
+                    newsType = 'News';
+                    break;
+
+                case 4:
+                    newsType = 'Documentary';
+                    break;
+
+                case 5:
+                    newsType = 'Notification';
+                    break;
+
+                case 6:
+                    newsType = 'Order';
+                    break;
+
+                case 7:
+                    newsType = 'Minutes';
+                    break;
+
+                case 8:
+                    newsType = 'Obituary';
+                    break;
+
+                case 9:
+                    newsType = 'Press Release';
+                    break;
+
+                case 10:
+                    newsType = 'Judicial Conference';
+                    break;
+
+                case 11:
+                    newsType = 'Judicial Reforms';
+                    break;
+
+                case 12:
+                    newsType = 'Report';
+                    break;
+
+                case 13:
+                    newsType = 'Vacancies';
+                    break;
+
+                case 14:
+                    newsType = 'Notice';
+                    break;
+
+                case 15:
+                    newsType = 'Nomination';
+                    break;
+
+                case 16:
+                    newsType = 'Message';
+                    break;
+
+                case 17:
+                    newsType = 'Corrigendum';
+                    break;
+
+                case 18:
+                    newsType = 'COVID-19 Updates';
+                    break;
+
+                case 19:
+                    newsType = 'Condolence';
+                    break;
+
+                case 20:
+                    newsType = 'Directives';
+                    break;
+
+                case 21:
+                    newsType = 'Meeting';
+                    break;
+
+                case 22:
+                    newsType = 'Case Law [Online Edition]';
+                    break;
+
+                case 23:
+                    newsType = 'Handbook';
+                    break;
+
+                case 24:
+                    newsType = 'Job Alert';
+                    break;
+
+                case 25:
+                    newsType = 'Summer Vacations Roster';
+                    break;
+
+                default:
+                    newsType = 'Notification';
+            }
+
+
+            html += `
+
+        <div class="row news-card">
+
+            <div class="col-xs-3 news-date">
+
+                <div class="month">
+                    ${month}
+                </div>
+
+                <div class="day">
+                    ${day}
+                </div>
+
+            </div>
+
+            <div class="col-xs-9 news-content">
+
+                <strong>${newsType}</strong>
+
+                <p style="margin-top:5px;">
+
+                    <a href="javascript:void(0);" onclick="showNewsDetails('${news.sno}')">
+
+                        ${escapeHtml(news.news_title)}
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        `;
+        });
+
+        $("#newsContainer").html(html);
+    }
+
+    /* ---------------------------------------------------------
+       DECIDED CASES: fetch via local AJAX endpoint
+    --------------------------------------------------------- */
+
+    function loadDecidedCases(pageId) {
+
+        var container = document.getElementById('decided_cases');
+        if (!container) return;
+
+        container.innerHTML = '<div class="text-center" style="padding:40px;"><img src="https://peshawarhcmb.gov.pk/sys_images/loaders/spin.gif" alt="Loading..."> Loading...</div>';
+
+        fetch("../../mod/mod_public/pages/ajaxPhp/decided_cases.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({ page_id: pageId })
+        })
+
+            .then(response => {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                return response.text();
+            })
+
+            .then(html => {
+                container.innerHTML = html;
+            })
+
+            .catch(error => {
+                console.error('Decided cases error:', error);
+                container.innerHTML = '<div class="alert alert-danger">Failed to load recent judgments.</div>';
+            });
+
+    }
+
+    // Global alias so pagination links in decided_cases.php can call it
+    function change_page(pageId) {
+        loadDecidedCases(pageId);
+    }
+
+    /* ---------------------------------------------------------
+       UTILITY
+    --------------------------------------------------------- */
+
+    function escapeHtml(text) {
+
+        return $('<div>').text(text).html();
+
+    }
+
+</script>                </div>
+            </section>
+            <div class="footerDiv" style="text-align:left !important;">
+                <!--strong class="pull-left footer-text">Total Hits: < ?php echo($db->getHitCounter()); ? ></strong-->
+<span class="footer-text" style="float:right;">
+	2015 - 2026 All rights are reserved @ Peshawar High Court, Peshawar
+</span>
+<span class="clearfix"></span>            </div>
+        </div>
+        
+				<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+				  <div class="modal-dialog">
+					<div class="modal-content">
+					  <div class="modal-header alert-default" style="border-radius: 7px 7px 0 0;">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<font class="modal-title" id="myModalLabel"> Mingora Bench, Swat </font>
+					  </div>
+					  <div class="modal-body">
+						<div id="box"></div>
+					  </div>
+					  <div class="modal-footer">  http://peshawarhcmb.gov.pk </div>
+					</div>
+				  </div>
+				</div>        <link rel="stylesheet" type="text/css" href="https://peshawarhcmb.gov.pk/bootstrap/css/jquery-ui.css">
+                <script type="text/javascript">
+            $(function() {
+            $('.js-conveyor-1').jConveyorTicker({
+                anim_duration: 500
+            });
+            });
+        </script>
+            
+</body></html>

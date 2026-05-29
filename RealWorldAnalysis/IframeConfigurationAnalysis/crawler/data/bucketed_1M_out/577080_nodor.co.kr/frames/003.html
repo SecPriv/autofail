@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CAFE24 Analytics</title>
+</head>
+<body>
+<script>
+    (function() {
+        const permanentStorageKey = "cafe24_permanent_id";
+        const sessionStorageKey = "cafe24_session_id";
+
+        const getPermanentId = () => {
+            const storageId = localStorage.getItem(permanentStorageKey);
+            if (storageId) return storageId;
+
+            const newId = "6215c37f273e4a04b9763bf33e540b42.57f1fe1bcfcc69e4";
+            localStorage.setItem(permanentStorageKey, newId);
+            return newId;
+        };
+
+        const getSessionId = () => {
+            const storageId = sessionStorage.getItem(sessionStorageKey);
+            if (storageId) return storageId;
+
+            const newId = "89c1f53791d84f9d86a7851dfd1469c9.5f04bff883ad4178";
+            sessionStorage.setItem(sessionStorageKey, newId);
+            return newId;
+        };
+
+        const permanentId = getPermanentId();
+        const sessionId = getSessionId();
+
+        parent.postMessage(JSON.stringify({
+            method: "setIds",
+            params: {
+                permanentId: permanentId,
+                sessionId: sessionId
+            }
+        }), '*');
+    })();
+</script>
+
+
+</body></html>

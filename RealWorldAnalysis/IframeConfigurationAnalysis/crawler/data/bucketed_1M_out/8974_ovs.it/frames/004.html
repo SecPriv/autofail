@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><!--  This is a test page for logging purposes only. We want to test this page in steam environments.  
+    ESW team needs this page for loading an iframe in fab.js for making a rest call to /chat urls .--><head>
+        <meta charset="UTF-8">
+		<script src="channelMenuLogging.js"></script>
+		<script>
+				// Window level object to be referenced inside channelMenuLogging script. 
+				var parentOrigin; 
+				/**
+				* Add the window-level event listener for  accepting messages.
+				*
+				* Outgoing messages have the same restriction, but the feature name needs to be the client name,
+				* not the frame name.
+				*/
+				window.addEventListener("message", function(message) {
+					var payload = message.data;
+					var payloadDomainOrigin;
+					var domainStart;
+					var originDomain;
+		
+					if(payload) {
+						// Remove protocol from origin domain.
+						domainStart = message.origin.indexOf("://") + 3;
+						originDomain = message.origin.substring(domainStart);
+		
+						// Remove port if exists.
+						originDomain = originDomain.split(":")[0];
+		
+						// Store a copy of the payload's domain to not change the content of payload during domain validation.
+						payloadDomainOrigin = payload.domain;
+						// If message origin domain is a community, only use the origin of payload.domain
+						if(payloadDomainOrigin && originDomain.substr(-".force.com".length) === ".force.com") {
+							payloadDomainOrigin = payloadDomainOrigin.split("/")[0];
+						}
+
+						// Confirm logging domain must be origin or a subdomain of payload domain.
+						if(originDomain !== payloadDomainOrigin && originDomain.indexOf("." + payloadDomainOrigin, originDomain.length - payloadDomainOrigin.length - 1) === -1) {
+							console.log("Logging domain (" + payload.domain + ") must be a parent of message origin domain (" + originDomain + ")!");
+							
+							return;
+						}
+						//after all validations finally handle the messages to post to splunk.
+						esw_logger.handleMessage(payload);
+					}
+				}, false); 
+
+				// Get the domain stored in the window's location.
+				window.location.search.replace(/([a-zA-Z0-9]+)=([\S]+)/g, function(match, key, value) {
+					if(key === "parent") {
+						// Only take the parts between the first instance of // and the / following it.
+						parentOrigin = value;
+					}
+				});
+
+				window.onload = function(){
+					parent.postMessage("LogFrameLoaded", parentOrigin);
+				}
+
+		</script>
+        <title> Channel Menu Page for logging</title>
+    </head>
+<body></body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>로켓배송 상품, 오늘주문! 내일도착!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://api.ootoo.co.kr/cou/iframe/css_300x250.css?2">
+<script>
+var data_imsi = [
+	{
+	"productId": 2091620993,
+	"name": "쿠팡·쿠팡이츠 기프트카드",
+  "imagePath": "https://ads-partners.coupang.com/openapi/image/Z1iTseY_ZsroMoGfZ0BbRwd8GXVubTjpFa7BYmKV0hoCjeCOWnnIxs2C571grWDUQXlbA-rNeEmuGOqmSUMhnTRXqk7gK5a2FY8EuB8wP2-kj_1AnD8iayn8s0DKWbSt-OnfM0a_4koqW3kDTj3BALCBFzgF0_4MpXn35v_fax-VGGVQfmGNe6BnL74C79NWS46plIyXmIRMOfqcvM1dkG4iFkNLUrfHnlTLoYoLuWL3M8_ev3KiuXnakrIoIyBik6uLidTLR490eTy9vdN0ydKTWvjTWhu4Bnpu2JGqhcJqMu2zez19I15H5hhkcRwMhtcLhQ_W6J3UrYzNMY9-r38q5MOfzUv3rCRsiQKhDBUqwX-GYechsQ5JLWNQFLPiDV8=",
+  "landingUrl": "https://api.ootoo.co.kr/cou/land.php?code=ambb300250iv&click_type=2&land=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSDP%3Flptag%3DAF0603729%26subid%3Dambb300250iv%26pageKey%3D2091620993%26itemId%3D3554656572%26vendorItemId%3D71540558483%26traceid%3DV0-193-a3f1cae077daf69c%26requestId%3D20260523191016941224068268%26tsource%3Dhttps%253A%252F%252Fwww.inven.co.kr%26token%3D57579E%26puidType%3DPUID%26subparam%3D",
+  "priceText": ""	}
+,	{
+	"productId": 8522615082,
+	"name": "메오르 하드코팅 강화액정 휴대폰 보호필름 2p 세트",
+  "imagePath": "https://ads-partners.coupang.com/openapi/image/zk_TNvyQHUMgILPwzhFxAiLSO7ka-tUcCCdJQSMuOFaEB1XzBgcvoevJ4bUF-zdA9p5Wr07pHaXuGO_hPxcMfZyrCkIJ_PNOCRh8LiTR-L3Q6XyqyHQsOrnE-aEXl1q2Xyz0Z61CL5zRMXP_tmHrwC1l9bE2CYJdwWk4h8Prk7sYPDuLoDl_ZiIu8muFuslAKknuXX5flZxKTW_5RoIC0ku6R3NOdQfnfs76zZpFNuT5Jvx_x-9BknYxGyE-oWTyW-Ugchw1XMPVkKLNXh01BPDxXUPUwNacW67jnCAuUpD2BLlBPR1fIsNXJpmnwCs40ecHEvHUJGAjBCK62n6oiMzVKe0Of5aiqzyONO94fgnUQnxfRsdxPuC-u5I=",
+  "landingUrl": "https://api.ootoo.co.kr/cou/land.php?code=ambb300250iv&click_type=2&land=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSDP%3Flptag%3DAF0603729%26subid%3Dambb300250iv%26pageKey%3D8522615082%26itemId%3D24733650018%26vendorItemId%3D91855400016%26traceid%3DV0-193-8bf86471a9845665%26requestId%3D20260523191016941224068268%26tsource%3Dhttps%253A%252F%252Fwww.inven.co.kr%26token%3D57579E%26puidType%3DPUID%26subparam%3D",
+  "priceText": ""	}
+,	{
+	"productId": 7751139469,
+	"name": "잘풀리는집 클래식 3겹 무형광화장지 25m 6롤 1팩",
+  "imagePath": "https://ads-partners.coupang.com/openapi/image/e-HeU0e1Lc1foMToew9xHJlaVCI4zFSZB0oQzeDA-5lY4NZsgkR8MgS5Lu7PhhymMAmZWmg2jQ7xqPSlilrOpGkUo1ZjTg9IBkYMMsnSfQbjmKrPMcxLqaTkSXMaeW9rTaTonVTBBQ6MyRfUtpUDzvAza7kRsuNkU7WJTi6jGZFIvs9p3WdCjSvdFFTf_PN18Gi5JdAP6FocQVtSozn1-jX-lkENBRze7Nf_5a0dJxo4atIfE6AEDC10a3squRv7_yMbEmnBfR8ET1pmepzM1PtxVX3mcQhOvf23PL85U-q4uEN7-zdp5LdgRoEHwjH_uAdCt05-KMIt6e1l0KS0rLAlFB6jJZys1Zygh73lVdIkToxnoxq5gJAP4Tc=",
+  "landingUrl": "https://api.ootoo.co.kr/cou/land.php?code=ambb300250iv&click_type=2&land=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSDP%3Flptag%3DAF0603729%26subid%3Dambb300250iv%26pageKey%3D7751139469%26itemId%3D14000177761%26vendorItemId%3D75647450170%26traceid%3DV0-193-a9a59779038196fb%26requestId%3D20260523191016941224068268%26tsource%3Dhttps%253A%252F%252Fwww.inven.co.kr%26token%3D57579E%26puidType%3DPUID%26subparam%3D",
+  "priceText": ""	}
+];
+var data = [data_imsi.map(item => [item])];
+
+function checkAdBlocker() {
+  var adBlockEnabled = false;
+  var testAd = document.createElement('div');
+  testAd.innerHTML = '&nbsp;';
+  testAd.className = 'advertising';
+  document.body.appendChild(testAd);
+  if (testAd.offsetHeight === 0) { adBlockEnabled = true; }
+  document.body.removeChild(testAd);
+  return adBlockEnabled;
+}
+
+function displayContent() {
+  if (checkAdBlocker()) { console.log('광고 차단 기능이 감지되었습니다. 컨텐츠가 제공되지 않습니다.'); } else { console.log('컨텐츠가 정상적으로 제공됩니다.'); }
+}
+</script></head>
+
+
+<body style="margin:0;padding:0;" class="vsc-initialized" onload="displayContent()">
+  <div id="container" class="bordered container" coupang="vertical" mode="slide" carousel="vertical" style="border-color: rgb(219, 219, 219);">
+        <div class="wiseSlideWrap" data-url="">
+      <div id="slideshow-container">
+      <div class="mySlides" style="display: none; cursor: pointer;"><img src="https://ads-partners.coupang.com/openapi/image/Z1iTseY_ZsroMoGfZ0BbRwd8GXVubTjpFa7BYmKV0hoCjeCOWnnIxs2C571grWDUQXlbA-rNeEmuGOqmSUMhnTRXqk7gK5a2FY8EuB8wP2-kj_1AnD8iayn8s0DKWbSt-OnfM0a_4koqW3kDTj3BALCBFzgF0_4MpXn35v_fax-VGGVQfmGNe6BnL74C79NWS46plIyXmIRMOfqcvM1dkG4iFkNLUrfHnlTLoYoLuWL3M8_ev3KiuXnakrIoIyBik6uLidTLR490eTy9vdN0ydKTWvjTWhu4Bnpu2JGqhcJqMu2zez19I15H5hhkcRwMhtcLhQ_W6J3UrYzNMY9-r38q5MOfzUv3rCRsiQKhDBUqwX-GYechsQ5JLWNQFLPiDV8=" alt="" width="0" data-landing-url="https://api.ootoo.co.kr/cou/land.php?code=ambb300250iv&amp;click_type=2&amp;land=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSDP%3Flptag%3DAF0603729%26subid%3Dambb300250iv%26pageKey%3D2091620993%26itemId%3D3554656572%26vendorItemId%3D71540558483%26traceid%3DV0-193-a3f1cae077daf69c%26requestId%3D20260523191016941224068268%26tsource%3Dhttps%253A%252F%252Fwww.inven.co.kr%26token%3D57579E%26puidType%3DPUID%26subparam%3D"></div><div class="mySlides" style="display: block; cursor: pointer;"><img src="https://ads-partners.coupang.com/openapi/image/zk_TNvyQHUMgILPwzhFxAiLSO7ka-tUcCCdJQSMuOFaEB1XzBgcvoevJ4bUF-zdA9p5Wr07pHaXuGO_hPxcMfZyrCkIJ_PNOCRh8LiTR-L3Q6XyqyHQsOrnE-aEXl1q2Xyz0Z61CL5zRMXP_tmHrwC1l9bE2CYJdwWk4h8Prk7sYPDuLoDl_ZiIu8muFuslAKknuXX5flZxKTW_5RoIC0ku6R3NOdQfnfs76zZpFNuT5Jvx_x-9BknYxGyE-oWTyW-Ugchw1XMPVkKLNXh01BPDxXUPUwNacW67jnCAuUpD2BLlBPR1fIsNXJpmnwCs40ecHEvHUJGAjBCK62n6oiMzVKe0Of5aiqzyONO94fgnUQnxfRsdxPuC-u5I=" alt="" width="0" data-landing-url="https://api.ootoo.co.kr/cou/land.php?code=ambb300250iv&amp;click_type=2&amp;land=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSDP%3Flptag%3DAF0603729%26subid%3Dambb300250iv%26pageKey%3D8522615082%26itemId%3D24733650018%26vendorItemId%3D91855400016%26traceid%3DV0-193-8bf86471a9845665%26requestId%3D20260523191016941224068268%26tsource%3Dhttps%253A%252F%252Fwww.inven.co.kr%26token%3D57579E%26puidType%3DPUID%26subparam%3D"></div><div class="mySlides" style="display: none; cursor: pointer;"><img src="https://ads-partners.coupang.com/openapi/image/e-HeU0e1Lc1foMToew9xHJlaVCI4zFSZB0oQzeDA-5lY4NZsgkR8MgS5Lu7PhhymMAmZWmg2jQ7xqPSlilrOpGkUo1ZjTg9IBkYMMsnSfQbjmKrPMcxLqaTkSXMaeW9rTaTonVTBBQ6MyRfUtpUDzvAza7kRsuNkU7WJTi6jGZFIvs9p3WdCjSvdFFTf_PN18Gi5JdAP6FocQVtSozn1-jX-lkENBRze7Nf_5a0dJxo4atIfE6AEDC10a3squRv7_yMbEmnBfR8ET1pmepzM1PtxVX3mcQhOvf23PL85U-q4uEN7-zdp5LdgRoEHwjH_uAdCt05-KMIt6e1l0KS0rLAlFB6jJZys1Zygh73lVdIkToxnoxq5gJAP4Tc=" alt="" width="0" data-landing-url="https://api.ootoo.co.kr/cou/land.php?code=ambb300250iv&amp;click_type=2&amp;land=https%3A%2F%2Flink.coupang.com%2Fre%2FAFFSDP%3Flptag%3DAF0603729%26subid%3Dambb300250iv%26pageKey%3D7751139469%26itemId%3D14000177761%26vendorItemId%3D75647450170%26traceid%3DV0-193-a9a59779038196fb%26requestId%3D20260523191016941224068268%26tsource%3Dhttps%253A%252F%252Fwww.inven.co.kr%26token%3D57579E%26puidType%3DPUID%26subparam%3D"></div></div>
+    </div>
+    <div class="coupang">
+      <div class="coupang-inner">
+        <span id="coupang-content" class="clickable coupang-content">
+          <img class="logo" src="https://static.coupangcdn.com/image/coupang/common/logo_coupang_w350.png">
+          <span class="slogan">로켓배송 상품, 오늘주문! 내일도착!</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    try { var jsonData = data[0]; } catch (error) { var jsonData = []; }
+
+    function initSlideShow() {
+      var slideshowContainer = document.getElementById("slideshow-container");
+
+      jsonData.forEach(function(productList) {
+        var slide = document.createElement("div");
+        slide.className = "mySlides";
+        productList.forEach(function(product) {
+          var img = document.createElement("img");
+          img.src = product.imagePath;
+          img.alt = '';
+          img.width = '100%';
+          img.setAttribute('data-landing-url', product.landingUrl);
+          img.addEventListener("click", function(event) {
+            $('.wiseSlideWrap').attr('data-url', product.landingUrl);
+	    window.open(product.landingUrl, "_blank");
+
+            event.stopPropagation();
+          });
+          slide.appendChild(img);
+          if (product.priceText) {
+            var price = document.createElement("button");
+            price.type = "button";
+            price.className = "craken-price-badge";
+            price.textContent = product.priceText;
+            price.addEventListener("click", function(event) {
+              $('.wiseSlideWrap').attr('data-url', product.landingUrl);
+              window.open(product.landingUrl, "_blank");
+              event.stopPropagation();
+            });
+            slide.appendChild(price);
+          }
+        });
+        slideshowContainer.appendChild(slide);
+      });
+      showSlides();
+    }
+
+    var slideIndex = 0;
+    
+    function showSlides() {
+      // Use global window object to clear timer from ANY previous execution
+      if (window.slideTimer) clearTimeout(window.slideTimer);
+
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      slides[slideIndex - 1].style.cursor = "pointer";
+      
+      // Store timer globally
+      window.slideTimer = setTimeout(showSlides, 3500);
+    }
+
+    initSlideShow();
+
+  });
+  </script>
+
+
+
+</body></html>

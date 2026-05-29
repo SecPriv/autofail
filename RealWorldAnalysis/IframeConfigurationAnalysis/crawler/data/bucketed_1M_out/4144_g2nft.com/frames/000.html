@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta name="landing-name" content="no-brand">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Information</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f5f6f8;
+      color: #2c2c2c;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e5ea;
+      border-radius: 10px;
+      max-width: 680px;
+      width: 100%;
+      padding: 44px 48px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    h1, h2 {
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 8px 0 20px 0;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 3px 0 3px 20px;
+      position: relative;
+      color: #4b5563;
+    }
+
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #9ca3af;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 28px 0;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e2e5ea;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover {
+      color: #4a5fc1;
+    }
+
+    @media (max-width: 540px) {
+      .card {
+        padding: 32px 24px;
+      }
+    }
+
+    .contact-form {
+      display: block;
+      margin: auto;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+      .contact-form {
+        max-width: 100%;
+      }
+    }
+
+    .contact-form button,
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid #e2e5ea;
+      border-radius: 4px;
+      font-size: 16px;
+      padding: 0 8px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+    }
+
+    .contact-form button, .contact-form input {
+      height: 32px;
+    }
+  </style>
+  <script>
+    (() => {
+      const EMAIL_TO = 'gscreporter@gmail.com';
+
+      const getMailToUrl = (subject, message) => {
+        return `mailto:${EMAIL_TO}?subject=${subject}&body=${message}`;
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('.contact-form');
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.querySelector('#name');
+            const email = document.querySelector('#email');
+            const subject = document.querySelector('#subject');
+            const message = document.querySelector('#message');
+
+
+            if (name && email && subject && message) {
+              const subjectEncoded = encodeURIComponent(subject.value);
+              const bodyEncoded = encodeURIComponent(`${message.value}\n\nBest regards,\n${name.value}\n${email.value}`);
+
+              window.open(getMailToUrl(subjectEncoded, bodyEncoded));
+            }
+          });
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <main>
+    <div class="card">
+      <h1>Domain Information Page</h1>
+      <p>This domain is part of the infrastructure of an online advertising platform.</p>
+      <p>It is used to serve and route advertising content, including but not limited to:</p>
+      
+      <ul>
+        <li>ad delivery</li>
+        <li>tracking and attribution</li>
+        <li>campaign optimization</li>
+      </ul>
+      
+      <p>This includes the technical delivery of advertising content to end-user devices as part of programmatic and direct advertising ecosystems.</p>
+      <p>This domain is not intended for direct interaction by users and does not provide any user-facing services or content. Accessing this domain does not create any contractual relationship with the operator.</p>
+      <p>This domain does not host malicious content, phishing pages, or harmful software.</p>
+      <p>All advertising materials are subject to internal moderation and compliance checks, however, such materials may originate from third-party advertisers for whom the operator does not assume full responsibility.</p>
+      <p>The operator does not guarantee the accuracy, legality, or compliance of third-party content and disclaims liability to the fullest extent permitted by applicable law.</p>
+
+      <hr>
+
+      <p>If you have reached this page directly, it is likely due to:</p>
+      <ul>
+        <li>a technical redirect</li>
+        <li>ad verification or scanning process</li>
+        <li>security or reputation checks</li>
+        <li>automated requests, including those generated by browsers, applications, or advertising systems</li>
+      </ul>
+      <p>Some requests to this domain may involve automated processing, including fraud detection, security filtering, and invalid traffic prevention.</p>
+
+      <hr>
+
+      <h2>Abuse &amp; Security Contact</h2>
+      <p>If you believe this domain is associated with suspicious or unwanted activity, please fill the contact form provided below.</p>
+      <p>Reports will be reviewed and handled in accordance with applicable laws and industry standards.</p>
+      
+      <form id="contact-form" class="contact-form" action="#" method="post">
+        <p>
+          <input id="name" name="name" type="text" placeholder="Name" autocomplete="off" required="">
+        </p>
+        <p>
+          <input id="email" name="email" type="email" placeholder="Email address" autocomplete="off" required="">
+        </p>
+        <p>
+          <input id="subject" name="subject" type="text" placeholder="Subject" autocomplete="off" required="">
+        </p>
+        <p>
+          <textarea id="message" name="message" rows="5" placeholder="Message" autocomplete="off" required=""></textarea>
+        </p>
+        <p>
+          <button type="submit">Submit Report</button>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <nav class="footer-links">
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="cookies-policy.html">Cookies Policy</a>
+    </nav>
+  </footer>
+
+
+
+</body></html>

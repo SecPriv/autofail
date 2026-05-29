@@ -1,0 +1,726 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Wilout - Connexion</title>
+  <link rel="icon" type="image/x-icon" href="https://wilout-img.s3.eu-west-2.amazonaws.com/favicon-2026.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Google Tag Manager -->
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-9L6HGB6SJ1&amp;cx=c&amp;gtm=4e65k1h1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-798476450&amp;cx=c&amp;gtm=4e65k1h1"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NWWJKN8"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NWWJKN8');</script>
+  <!-- End Google Tag Manager -->
+    <style>
+      @font-face {
+          font-family: 'Camphor';
+          src: url("https://custom-fonts-public.s3.eu-west-2.amazonaws.com/camphor/%40font-face-light/fb4b3fc0253f9898cdcb1b7ad0898477.ttf") format("truetype");
+          font-weight: 200;
+          font-style: normal;
+      }
+      @font-face {
+          font-family: 'Camphor';
+          src: url("https://custom-fonts-public.s3.eu-west-2.amazonaws.com/camphor/%40font-face-regular/22f912b4b10a938d5f28b7fe79ed7466.ttf") format("truetype");
+          font-weight: 400;
+          font-style: normal;
+      }
+      @font-face {
+          font-family: 'Camphor';
+          src: url("https://custom-fonts-public.s3.eu-west-2.amazonaws.com/camphor/%40font-face-medium/4dbaa3adcaa1e0b2b87ff13dabcf5bfb.ttf") format("truetype");
+          font-weight: 600;
+          font-style: normal;
+      }
+      @font-face {
+          font-family: 'Camphor';
+          src: url("https://custom-fonts-public.s3.eu-west-2.amazonaws.com/camphor/%40font-face-bold/009603073ddf1e34906b33601671b0fb.ttf") format("truetype");
+          font-weight: 800;
+          font-style: normal;
+      }
+      @font-face {
+          font-family: 'Camphor';
+          src: url("https://custom-fonts-public.s3.eu-west-2.amazonaws.com/camphor/%40font-face-heavy/7cbdcf23b48549bbb15b3e920e7316ca.ttf") format("truetype");
+          font-weight: 900;
+          font-style: normal;
+      }
+      :root {
+        --primary-color: #00b797;
+        --dark-color: #002f36;
+        --medium-color: #007773;
+        --light-color: #b4bec2;
+      }
+      body, html {
+        background-color: #f6f9fb;
+        font-family: "Camphor", sans-serif;
+        color: var(--dark-color);
+      }
+      .login-container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0px;
+        box-sizing: border-box;
+      }
+      .login-box {
+        width: 90%;
+        max-width: 380px;
+        margin: 0px;
+        padding: 30px;
+        padding-top: 27px;
+        background-color: #fff;
+        box-shadow: 0px 15px 45px -3px rgba(0,0,0,0.12);
+        border-radius: 22px;
+      }
+      .login-header {
+        text-align: center;
+      }
+      .logo {
+        width: 50px;
+      }
+      .boname{
+        margin-top: 7px;
+        font-weight: 900;
+        font-size: 28px;
+      }
+      .title{
+        margin-top: 10px;
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--primary-color);
+      }
+      .instructions{
+        margin-top: 25px;
+        font-weight: 400;
+        font-size: 14.4px;
+      }
+      .form-container{
+        margin-top: 30px;
+      }
+      .form-group{
+        margin-bottom: 15px;
+      }
+      .reduced-form-group{
+        height: 0px;
+        margin-bottom: 5px;
+        opacity: 0;
+      }
+      .form-label{
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .password-rules{
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .form-control{
+        height: 50px;
+        border-radius: 14px;
+        border: solid 1px #eceff2;
+        background-color: #f7f9fb;
+        line-height: 50px;
+        font-size: 15px;
+        font-weight: 400;
+        box-shadow: none;
+        outline: none;
+        color: var(--dark-color);
+        transition-duration: 0.3s;
+      }
+      .form-control::placeholder{
+        color: var(--light-color);
+        transition-duration: 0.3s;
+      }
+      .form-control:focus{
+        box-shadow: none !important;
+        outline: none !important;
+        border-color: #ddd;
+        background-color: #ffffff;
+        transition-duration: 0.3s;
+      }
+      .form-control:focus::placeholder{
+        opacity: 0;
+        padding-left: 10px;
+      }
+      .forgot-pass-container{
+        margin-top: -5px;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .forgot-pass{
+        cursor: pointer;
+        color: var(--dark-color);
+      }
+      .forgot-pass:hover{
+        text-decoration: underline;
+        color: var(--primary-color);
+      }
+      .link-signup-login{
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+      .link-signup-login:hover{
+        color: var(--primary-color);
+      }
+      .captcha-container {
+        display: none;
+        text-align : center;
+      }
+      .error-message {
+        margin-top: 20px;
+        padding: 14px;
+    		border: 1px solid transparent;
+    		border-radius: 12px;
+				color: #ce3836;
+    		background-color: #f2dede;
+    		border-color: #da9695;
+        text-align: center;
+        display: none;
+        white-space: break-spaces;
+      }
+      .success-message {
+        margin-top: 20px;
+        padding: 14px;
+    		border: 1px solid transparent;
+    		border-radius: 12px;
+				color: #17ae8c;
+    		background-color: #daede9;
+    		border-color: #beebe1;
+        text-align: center;
+        display: none;
+        white-space: break-spaces;
+      }
+      .btn{
+        position: relative;
+      	width: 100%;
+        height: 50px;
+        padding: 0px;
+        border-radius: 14px;
+        border: none !important;
+        outline: none !important;
+        text-align: center;
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: 800;
+        user-select: none;
+        transition-duration: 0.3s;
+      }
+      .btn-primary{
+        margin-top: 20px;
+        margin-bottom: 25px;
+        z-index: 20;
+        box-sizing: content-box;
+        background-color: var(--dark-color) !important;
+        background-image: linear-gradient(to right, var(--primary-color),var(--medium-color),var(--dark-color),var(--dark-color));
+        background-size: 300%;
+    		background-position: 80%;
+        border-bottom: solid 4px var(--primary-color) !important;
+        box-shadow: 0px 8px 20px -2px rgba(0,0,0,0.3);
+      }
+      .btn-primary:hover{
+        background-position: 0% !important;
+      }
+      .btn-primary:active{
+        background-image: linear-gradient(to right, var(--primary-color),var(--medium-color),var(--dark-color),var(--dark-color)) !important;
+        background-position: 0% !important;
+        transform: scale(0.98);
+        box-shadow: 0px 3px 8px -2px rgba(0,0,0,0.3);
+        opacity: 0.8;
+      }
+      .return-to-login-container{
+        padding-right: 5px;
+        text-align : center;
+        font-weight: 600;
+        user-select: none;
+      }
+      .return-to-login{
+        cursor: pointer;
+        color: var(--dark-color);
+      }
+      .return-to-login:hover{
+        text-decoration: underline;
+        color: var(--primary-color);
+      }
+      .switch-form-container{
+        margin-bottom: 25px;
+        text-align : center;
+        color: var(--dark-color);
+        font-weight: 600;
+        user-select: none;
+      }
+      .separator{
+        z-index: 10;
+        height: 1px;
+        margin-bottom: 27px;
+        display: flex;
+        justify-content: center;
+        background-color: #e3e3e3;
+      }
+      .separator-text{
+        margin-top: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #fff;
+        text-align: center;
+        color: var(--light-color);
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .btn-secondary{
+        margin-top: 5px;
+        height: 40px;
+        background-color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 40px;
+        color: #012d30;
+        box-shadow: 0px 4px 15px -2px rgba(0,0,0,0.1);
+      }
+      .btn-secondary:hover{
+        background-color: #fff;
+        color: var(--primary-color);
+      }
+      .btn-secondary:active{
+        transform: scale(0.98);
+        box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.1);
+      }
+      .invisible {
+        display: none !important;
+      }
+      .password-wrapper {
+        position: relative;
+      }
+      .password-wrapper .form-control {
+        padding-right: 46px;
+      }
+      .toggle-password {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: var(--light-color);
+        display: flex;
+        align-items: center;
+        transition-duration: 0.2s;
+      }
+      .toggle-password:hover {
+        color: var(--dark-color);
+      }
+    </style>
+  </head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <img class="logo" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo%2Bcouleurweb%2Btransparent.png">
+        <div class="boname" id="boname">Espace cashless</div>
+        <div class="title" id="title">
+          Connexion
+        </div>
+        <div class="instructions" id="instructions">
+          Veuillez saisir vos identifiants pour vous connecter
+        </div>
+      </div>
+      <div class="form-container">
+        <form onsubmit="return false;" method="post">
+          <div class="form-group">
+           <label for="name" class="form-label">Adresse e-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="john.doe@exemple.com">
+          </div>
+          <div class="form-group first-form-group">
+            <label for="name" class="form-label">Mot de passe <span class="password-rules invisible" id="password-rules">(8 caractères minimum)</span></label>
+            <div class="password-wrapper">
+              <input type="password" class="form-control" id="password" placeholder="exemple1234">
+              <button type="button" class="toggle-password" id="toggle-password" tabindex="-1" aria-label="Afficher le mot de passe">
+                <svg id="icon-eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="18px"><path fill="currentColor" d="M320 128C179.2 128 90.7 256 64 320C90.7 384 179.2 512 320 512C460.8 512 549.3 384 576 320C549.3 256 460.8 128 320 128zM127.4 176.6C174.5 132.8 239.2 96 320 96C400.8 96 465.5 132.8 512.6 176.6C559.4 220.1 590.7 272 605.6 307.7C608.9 315.6 608.9 324.4 605.6 332.3C590.7 368 559.4 420 512.6 463.4C465.5 507.1 400.8 544 320 544C239.2 544 174.5 507.2 127.4 463.4C80.6 419.9 49.3 368 34.4 332.3C31.1 324.4 31.1 315.6 34.4 307.7C49.3 272 80.6 220 127.4 176.6zM320 416C373 416 416 373 416 320C416 276.7 387.3 240.1 347.9 228.1C350.6 236.9 352 246.3 352 256C352 309 309 352 256 352C246.3 352 236.9 350.6 228.1 347.9C240 387.3 276.7 416 320 416zM192.2 327.8C192 325.2 192 322.6 192 320C192 307.8 193.7 296.1 196.9 285C197.2 284.1 197.4 283.2 197.7 282.3C210.1 241.9 242 210.1 282.4 197.6C294.3 193.9 307 192 320.1 192C322.6 192 325.1 192.1 327.5 192.2L327.9 192.2C395 196.2 448.1 251.9 448.1 320C448.1 390.7 390.8 448 320.1 448C252 448 196.3 394.8 192.3 327.8zM224.3 311.7C233.6 317 244.4 320.1 255.9 320.1C291.2 320.1 319.9 291.4 319.9 256.1C319.9 244.6 316.9 233.8 311.5 224.5C265.1 228.5 228.2 265.4 224.2 311.8z"></path></svg>
+                <svg id="icon-eye-slash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="18px" style="display:none"><path fill="currentColor" d="M59.3 36.8C53.1 30.6 42.9 30.6 36.7 36.8C30.5 43 30.5 53.2 36.7 59.4L580.7 603.4C586.9 609.6 597.1 609.6 603.3 603.4C609.5 597.2 609.5 587 603.3 580.8L498.4 475.9C503.3 471.8 508 467.7 512.5 463.4C559.3 419.9 590.6 368 605.5 332.3C608.8 324.4 608.8 315.6 605.5 307.7C590.6 272 559.3 220 512.5 176.6C465.4 132.9 400.7 96 319.9 96C259.9 96 208.8 116.3 167.1 144.7L59.3 36.8zM190.3 167.8C226.7 144.1 270 128 320 128C460.8 128 549.3 256 576 320C562.7 352 533.9 400 490.8 440C485.9 444.5 480.9 448.9 475.7 453.2L421.1 398.6C438 376.9 448 349.7 448 320.1C448 249.4 390.7 192.1 320 192.1C290.4 192.1 263.1 202.1 241.5 219L190.3 167.8zM398.2 375.7L264.3 241.8C280 230.6 299.2 224 320 224C373 224 416 267 416 320C416 340.8 409.4 360 398.2 375.7zM106.8 197.3C71.3 235.8 47.1 277.5 34.5 307.7C31.2 315.6 31.2 324.4 34.5 332.3C49.4 368 80.7 420 127.5 463.4C174.6 507.1 239.3 544 320.1 544C360.7 544 397.2 534.7 429.5 519.9L405 495.5C379.2 505.8 350.9 512 320 512C179.2 512 90.7 384 64 320C75.2 293.2 97.2 255.1 129.4 219.9L106.8 197.3z"></path></svg>
+              </button>
+            </div>
+          </div>
+        	<div class="captcha-container form-group" style="display: none;"></div>
+          <div class="forgot-pass-container" id="forgot-pass-container">
+            <span class="forgot-pass" id="forgot-pass">Mot de passe oublié ?</span>
+          </div>
+          <div id="error-message" class="error-message">
+      		</div>
+          <div id="success-message" class="success-message">
+      		</div>
+        	<button type="submit" id="btn-login" class="btn btn-primary">
+              Connexion &nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="21px" style="transform: translateY(5.5px);"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M265 159L409 303C418.4 312.4 418.4 327.6 409 336.9L265 481C258.1 487.9 247.8 489.9 238.8 486.2C229.8 482.5 224 473.7 224 464L224 400L112 400C85.5 400 64 378.5 64 352L64 288C64 261.5 85.5 240 112 240L224 240L224 176C224 166.3 229.8 157.5 238.8 153.8C247.8 150.1 258.1 152.2 265 159zM272 376L272 406.1L358.1 320L272 233.9L272 264C272 277.3 261.3 288 248 288L112 288L112 352L248 352C254.4 352 260.5 354.5 265 359C269.5 363.5 272 369.6 272 376zM408 496L480 496C506.5 496 528 474.5 528 448L528 192C528 165.5 506.5 144 480 144L408 144C394.7 144 384 133.3 384 120C384 106.7 394.7 96 408 96L480 96C533 96 576 139 576 192L576 448C576 501 533 544 480 544L408 544C394.7 544 384 533.3 384 520C384 506.7 394.7 496 408 496z"></path></svg>
+          </button>
+          <button type="button" id="btn-signup" class="btn btn-primary invisible">
+              Confirmer &nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="19px" style="transform: translateY(3.5px);"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z"></path></svg>
+          </button>
+          <button type="button" id="btn-reset-pass" class="btn btn-primary invisible">
+              Confirmer &nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="19px" style="transform: translateY(3.5px);"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z"></path></svg>
+          </button>
+          <div class="return-to-login-container invisible" id="return-to-login-container">
+            <span class="return-to-login" id="return-to-login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="15px" style="transform: translateX(2px) translateY(3px);"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"></path></svg>&nbsp; Retour à la page de connexion</span>
+          </div>
+          <div class="switch-form-container" id="switch-form-container">
+            <span id="login-signup-msg">Vous n'avez pas de compte ? </span> <a class="link-signup-login" id="link-signup-login"> Inscription </a>
+          </div>
+          <div class="separator">
+            <div class="separator-text">
+            	OU
+            </div>
+          </div>
+          <button type="button" id="btn-google-login" class="btn btn-secondary btn-google">
+              <img style="width: 18px; transform: translateY(-1px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-google-min.png">&nbsp; Se connecter avec Google
+          </button>
+          <button type="button" id="btn-apple-login" class="btn btn-secondary btn-apple">
+              <img style="width: 18px; transform: translateY(-2px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-apple-min.png">&nbsp; Se connecter avec Apple
+          </button>
+          <button type="button" id="btn-facebook-login" class="btn btn-secondary btn-facebook">
+              <img style="width: 19px; transform: translateY(-1px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-facebook-min.png">&nbsp; Se connecter avec Facebook
+          </button>
+      	</form>
+    	</div>
+    </div>
+  </div>
+
+  <!--[if IE 8]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 9]>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/base64.min.js"></script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/es5-shim.min.js"></script>
+  <![endif]-->
+
+  <script src="https://cdn.auth0.com/js/auth0/9.28/auth0.min.js"></script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+
+      var config = JSON.parse(
+        decodeURIComponent(escape(window.atob('eyJpY29uIjoiaHR0cHM6Ly93aWxvdXQtaW1nLnMzLmV1LXdlc3QtMi5hbWF6b25hd3MuY29tL2xvZ28lMkJjb3VsZXVyd2ViJTJCdHJhbnNwYXJlbnQucG5nIiwiYXNzZXRzVXJsIjoiIiwiYXV0aDBEb21haW4iOiJsb2dpbi53aWxvdXQuY29tIiwiYXV0aDBUZW5hbnQiOiJ3aWxvdXQiLCJjbGllbnRDb25maWd1cmF0aW9uQmFzZVVybCI6Imh0dHBzOi8vbG9naW4ud2lsb3V0LmNvbS8iLCJjYWxsYmFja09uTG9jYXRpb25IYXNoIjpmYWxzZSwiY2FsbGJhY2tVUkwiOiJodHRwczovL3dpbG91dC1wYXkuY29tIiwiY2RuIjoiaHR0cHM6Ly9jZG4uYXV0aDAuY29tLyIsImNsaWVudElEIjoiTzFBaTFpZWJkMXBUYXRKQzAxc0tzSGhOR0o2WjhrNEoiLCJkaWN0Ijp7InNpZ25pbiI6eyJ0aXRsZSI6IkZyb250IEJvIHBheSJ9fSwiZXh0cmFQYXJhbXMiOnsicHJvdG9jb2wiOiJvYXV0aDIiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXVkaWVuY2UiOiJodHRwczovL2FwaS1wYXkucHJvZC53aWxvdXQtaW50ZXJuYWwuY29tIiwicmVzcG9uc2VfdHlwZSI6ImNvZGUiLCJyZXNwb25zZV9tb2RlIjoicXVlcnkiLCJub25jZSI6IlpsOHVVRmxOTUU1UFJUaHFibWhUT0hvNFNHVnRUV0o0TFRVME1sRm1SMk5NTjFkNWEycEJabVphYmc9PSIsImNvZGVfY2hhbGxlbmdlIjoiLXFyb0FmNm5UVVpBM1FUZEgyM2NITTFGZmRtN19lNmRtZ1NjOTlxblBsVSIsImNvZGVfY2hhbGxlbmdlX21ldGhvZCI6IlMyNTYiLCJhdXRoMENsaWVudCI6ImV5SnVZVzFsSWpvaVFHRjFkR2d3TDJGMWRHZ3dMV0Z1WjNWc1lYSWlMQ0oyWlhKemFXOXVJam9pTWk0eUxqTWlMQ0psYm5ZaU9uc2lZVzVuZFd4aGNpOWpiM0psSWpvaU1UZ3VNaTR4TXlKOWZRPT0iLCJfY3NyZiI6IjZOdHJISGh4LVJWQ2JzeWEyaUFiMno2RUdsd2tfM0FtX1ByYyIsIl9pbnRzdGF0ZSI6ImRlcHJlY2F0ZWQiLCJzdGF0ZSI6ImhLRm8yU0JJYTFWc2NrWTJMWFJxVFRFNVFXTlBTbGcwV21kdlUzZzRURTFMWkVaSU1xRnVwV3h2WjJsdW8zUnBaTmtnU1hBME5sWldZbFJGZUhKNlMybElSMmhOWldFMFdsOUpWMEZvVGpVMUxUQ2pZMmxrMlNCUE1VRnBNV2xsWW1ReGNGUmhkRXBETURGelMzTklhRTVIU2paYU9HczBTZyJ9LCJpbnRlcm5hbE9wdGlvbnMiOnsicHJvdG9jb2wiOiJvYXV0aDIiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXVkaWVuY2UiOiJodHRwczovL2FwaS1wYXkucHJvZC53aWxvdXQtaW50ZXJuYWwuY29tIiwicmVzcG9uc2VfdHlwZSI6ImNvZGUiLCJyZXNwb25zZV9tb2RlIjoicXVlcnkiLCJub25jZSI6IlpsOHVVRmxOTUU1UFJUaHFibWhUT0hvNFNHVnRUV0o0TFRVME1sRm1SMk5NTjFkNWEycEJabVphYmc9PSIsImNvZGVfY2hhbGxlbmdlIjoiLXFyb0FmNm5UVVpBM1FUZEgyM2NITTFGZmRtN19lNmRtZ1NjOTlxblBsVSIsImNvZGVfY2hhbGxlbmdlX21ldGhvZCI6IlMyNTYiLCJhdXRoMENsaWVudCI6ImV5SnVZVzFsSWpvaVFHRjFkR2d3TDJGMWRHZ3dMV0Z1WjNWc1lYSWlMQ0oyWlhKemFXOXVJam9pTWk0eUxqTWlMQ0psYm5ZaU9uc2lZVzVuZFd4aGNpOWpiM0psSWpvaU1UZ3VNaTR4TXlKOWZRPT0iLCJfY3NyZiI6IjZOdHJISGh4LVJWQ2JzeWEyaUFiMno2RUdsd2tfM0FtX1ByYyIsIl9pbnRzdGF0ZSI6ImRlcHJlY2F0ZWQiLCJzdGF0ZSI6ImhLRm8yU0JJYTFWc2NrWTJMWFJxVFRFNVFXTlBTbGcwV21kdlUzZzRURTFMWkVaSU1xRnVwV3h2WjJsdW8zUnBaTmtnU1hBME5sWldZbFJGZUhKNlMybElSMmhOWldFMFdsOUpWMEZvVGpVMUxUQ2pZMmxrMlNCUE1VRnBNV2xsWW1ReGNGUmhkRXBETURGelMzTklhRTVIU2paYU9HczBTZyJ9LCJ3aWRnZXRVcmwiOiJodHRwczovL2Nkbi5hdXRoMC5jb20vdzIvYXV0aDAtd2lkZ2V0LTUuMi5taW4uanMiLCJpc1RoaXJkUGFydHlDbGllbnQiOmZhbHNlLCJhdXRob3JpemF0aW9uU2VydmVyIjp7InVybCI6Imh0dHBzOi8vbG9naW4ud2lsb3V0LmNvbSIsImlzc3VlciI6Imh0dHBzOi8vbG9naW4ud2lsb3V0LmNvbS8ifSwiY29sb3JzIjp7InBhZ2VfYmFja2dyb3VuZCI6IiNmZmZmZmYiLCJwcmltYXJ5IjoiIzAwMDAwMCJ9fQ==')))
+      );
+
+      var leeway = config.internalOptions.leeway;
+      if (leeway) {
+        var convertedLeeway = parseInt(leeway);
+
+        if (!isNaN(convertedLeeway)) {
+          config.internalOptions.leeway = convertedLeeway;
+        }
+      }
+
+      var params =  {
+        overrides: {
+          __tenant: config.auth0Tenant,
+          __token_issuer: config.authorizationServer.issuer
+        },
+        domain: config.auth0Domain,
+        clientID: config.clientID,
+        redirectUri: config.callbackURL,
+        responseType: 'code',
+        scope: config.internalOptions.scope,
+        _csrf: config.internalOptions._csrf,
+        state: config.internalOptions.state,
+        _intstate: config.internalOptions._intstate
+      };
+      var boname = document.getElementById('boname');
+      if(params.redirectUri === "https://bo-online.dev.wilout-internal.com" || params.redirectUri === "https://wilout-online.com"){
+        boname.innerHTML = "Espace billetterie";
+      } else if (params.redirectUri === "https://bo-pay.dev.wilout-internal.com" || params.redirectUri === "https://wilout-pay.com"){
+        boname.innerHTML = "Espace cashless";
+      } else if (params.redirectUri === "https://bo-control.dev.wilout-internal.com" || params.redirectUri === "https://wilout-control.com"){
+      	boname.innerHTML = "Gestion des accès";
+      } else {
+        boname.innerHTML = "Votre espace";
+      };
+      var triggerCaptcha = null;
+      var signupCaptcha = null;
+      var webAuth = new auth0.WebAuth(params);
+      var databaseConnection = 'Username-Password-Authentication';
+      var captcha = webAuth.renderCaptcha(
+        document.querySelector('.captcha-container'),
+        null,
+        (error, payload) => {
+          if (payload) {
+            triggerCaptcha = payload.triggerCaptcha;
+          }
+        }
+      );
+
+      function login(e) {
+        e.preventDefault();
+        hideMessage();
+        var button = this;
+        var username = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if(!username){
+          displayError({description:'Veuillez renseigner une adresse e-mail'});
+          return true;
+        }
+        if(!password){
+          displayError({description:'Veuillez saisir votre mot de passe'});
+          return true;
+        }
+        button.disabled = true;
+        var request = () => {
+          webAuth.login({
+            realm: databaseConnection,
+            username: username,
+            password: password,
+            captcha: captcha.getValue()
+          }, function(err) {
+            if (err) displayError(err);
+            button.disabled = false;
+          });
+        };
+        if (triggerCaptcha) {
+          triggerCaptcha(request);
+        } else {
+          request();
+        }
+      }
+
+      function toggleSignupLogin(e) {
+        e.preventDefault();
+        hideMessage();
+        var title = document.getElementById('title');
+        var instructions = document.getElementById('instructions');
+        var passwordRules = document.getElementById('password-rules');
+        var forgotPassContainer = document.getElementById('forgot-pass-container');
+        var loginSignupLink = e.target;
+        var loginBtn = document.getElementById('btn-login');
+        var signupBtn = document.getElementById('btn-signup');
+        var msg = document.getElementById('login-signup-msg');
+        var btnGoogle = document.querySelector('.btn-google');
+        var btnApple = document.querySelector('.btn-apple');
+        var btnFacebook = document.querySelector('.btn-facebook');
+        loginBtn.classList.toggle('invisible');
+        signupBtn.classList.toggle('invisible');
+        passwordRules.classList.toggle('invisible');
+        forgotPassContainer.classList.toggle('invisible');
+        if (signupBtn.classList.contains('invisible')) {
+          title.innerHTML = "Connexion";
+          instructions.innerHTML = "Veuillez saisir vos identifiants pour vous connecter";
+          loginSignupLink.innerHTML = "Inscription";
+          msg.innerHTML = "Vous n'avez pas de compte ?";
+          btnGoogle.id = 'btn-google-login';
+          btnApple.id = 'btn-apple-login';
+          btnFacebook.id = 'btn-facebook-login';
+          btnGoogle.innerHTML = '<img style="width: 18px; transform: translateY(-1px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-google-min.png">&nbsp; Se connecter avec Google';
+          btnApple.innerHTML = '<img style="width: 18px; transform: translateY(-2px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-apple-min.png">&nbsp; Se connecter avec Apple';
+          btnFacebook.innerHTML = '<img style="width: 19px; transform: translateY(-1px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-facebook-min.png">&nbsp; Se connecter avec Facebook';
+          captcha = webAuth.renderCaptcha(
+            document.querySelector('.captcha-container'),
+            null,
+            (error, payload) => {
+              if (payload) {
+                triggerCaptcha = payload.triggerCaptcha;
+              }
+            }
+          );
+        } else {
+          title.innerHTML = "Nouveau compte";
+          instructions.innerHTML = "Veuillez remplir ces champs pour créer un compte";
+          loginSignupLink.innerHTML = "Connexion";
+          msg.innerHTML = "Vous avez déjà un compte ?"
+          btnGoogle.id = 'btn-google-signup';
+          btnApple.id = 'btn-apple-signup';
+          btnFacebook.id = 'btn-facebook-signup';
+          btnGoogle.innerHTML = '<img style="width: 18px; transform: translateY(-1px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-google-min.png">&nbsp; Continuer avec Google';
+          btnApple.innerHTML = '<img style="width: 18px; transform: translateY(-2px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-apple-min.png">&nbsp; Continuer avec Apple';
+          btnFacebook.innerHTML = '<img style="width: 19px; transform: translateY(-1px);" src="https://wilout-img.s3.eu-west-2.amazonaws.com/logo-facebook-min.png">&nbsp; Continuer avec Facebook';
+          signupCaptcha = webAuth.renderSignupCaptcha(
+            document.querySelector('.captcha-container'),
+            null,
+            (error, payload) => {
+              if (payload) {
+                triggerCaptcha = payload.triggerCaptcha;
+              }
+            }
+          );
+        }
+      }
+
+      function signup() {
+        hideMessage();
+        var button = this;
+        var email = document.getElementById('email').value.trim();
+        var password = document.getElementById('password').value.trim();
+        if(!email){
+          displayError({description:'Veuillez renseigner une adresse e-mail'});
+          return true;
+        }
+        if(!password){
+          displayError({description:'Veuillez saisir un mot de passe'});
+          return true;
+        }
+        button.disabled = true;
+        var request = () => {
+          webAuth.redirect.signupAndLogin({
+            connection: databaseConnection,
+            email: email,
+            password: password,
+            captcha: signupCaptcha.getValue()
+          }, function(err) {
+            if (err){
+              displayError(err);
+            }
+            button.disabled = false;
+          });
+        };
+
+        if (triggerCaptcha) {
+          triggerCaptcha(request);
+        } else {
+          request();
+        }
+      }
+
+      function loginWithGoogle() {
+        hideMessage();
+        webAuth.authorize({
+          connection: 'google-oauth2'
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+      
+      function loginWithApple() {
+        hideMessage();
+        webAuth.authorize({
+          connection: 'apple'
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+      
+      function loginWithFacebook() {
+        hideMessage();
+        webAuth.authorize({
+          connection: 'facebook'
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+      
+      function switchToForgotPass(e) {
+        e.preventDefault();
+        hideMessage();
+        var title = document.getElementById('title');
+        var instructions = document.getElementById('instructions');
+        var firstFormGroup = document.getElementsByClassName('first-form-group')[0];
+        var forgotPass = document.getElementById('forgot-pass');
+        var loginBtn = document.getElementById('btn-login');
+        var returnToLoginContainer = document.getElementById('return-to-login-container');
+        var switchFormContainer = document.getElementById('switch-form-container');
+        var resetPassBtn = document.getElementById('btn-reset-pass');
+        var separator = document.getElementsByClassName('separator')[0];
+        var btnSecondaryList = document.querySelectorAll('.btn-secondary');
+        firstFormGroup.classList.toggle('invisible');
+        forgotPass.classList.toggle('invisible');
+        returnToLoginContainer.classList.toggle('invisible');
+        switchFormContainer.classList.toggle('invisible');
+        loginBtn.classList.toggle('invisible');
+        resetPassBtn.classList.toggle('invisible');
+        separator.classList.toggle('invisible');
+        btnSecondaryList.forEach(function(btn) {
+          btn.classList.toggle('invisible');
+        });
+        if (firstFormGroup.classList.contains('invisible')) {
+          title.innerHTML = "Mot de passe oublié";
+          instructions.innerHTML = "Renseignez votre adresse e-mail pour recevoir les instructions afin de modifier votre mot de passe.";
+        } else {
+        	title.innerHTML = "Connexion";
+          instructions.innerHTML = "Veuillez saisir vos identifiants pour vous connecter";
+        }
+      }
+      
+      function resetPass(e) {
+        e.preventDefault();
+        hideMessage();
+        const email = document.getElementById('email').value.trim();
+        if (!email) {
+          displayError({description:'Veuillez renseigner votre adresse e-mail'});
+          return;
+        }
+        webAuth.changePassword({
+          connection: 'Username-Password-Authentication',
+          email: email
+        }, function (err, resp) {
+          if (err) {
+            alert('Erreur : ' + err.description);
+          } else {
+            displaySuccess('Un e-mail vous a été envoyé');
+          }
+        });
+      };
+
+      function displayError(err) {
+        captcha.reload();
+        var errorMessage = document.getElementById('error-message');
+        var errorTxt = '';
+        if(err.code){
+          if(err.code === 'invalid_user_password'){
+          	errorTxt = 'E-mail ou mot de passe incorrect';
+          }else if(err.code.substring(0, 14) === 'error in email'){
+            errorTxt = 'Veuillez vérifier l\'adresse e-mail saisie';
+          }else if(err.code === 'invalid_password'){
+            errorTxt = 'Le mot de passe saisi doit contenir au minimum 8 caractères';
+          }else if(err.code === 'invalid_signup'){
+            errorTxt = 'Cette adresse e-mail n\'est pas disponible';
+          }else{
+            errorTxt = err.policy || err.description;
+          }
+        }else{
+           errorTxt = err.policy || err.description;
+        }
+        errorMessage.innerText = errorTxt;
+        errorMessage.style.display = 'block';
+      }
+      
+      function displaySuccess(txt) {
+        var successMessage = document.getElementById('success-message');
+        successMessage.innerText = txt;
+        successMessage.style.display = 'block';
+      }
+      
+      function hideMessage() {
+        var errorMessage = document.getElementById('error-message');
+        var successMessage = document.getElementById('success-message');
+        errorMessage.innerText = '';
+        errorMessage.style.display = 'none';
+        successMessage.innerText = '';
+        successMessage.style.display = 'none';
+      }
+
+      document.getElementById('toggle-password').addEventListener('click', function() {
+        var input = document.getElementById('password');
+        var iconEye = document.getElementById('icon-eye');
+        var iconEyeSlash = document.getElementById('icon-eye-slash');
+        if (input.type === 'password') {
+          input.type = 'text';
+          iconEye.style.display = 'none';
+          iconEyeSlash.style.display = '';
+        } else {
+          input.type = 'password';
+          iconEye.style.display = '';
+          iconEyeSlash.style.display = 'none';
+        }
+      });
+
+      document.getElementById('btn-login').addEventListener('click', login);
+      document.querySelector('.btn-google').addEventListener('click', loginWithGoogle);
+      document.querySelector('.btn-apple').addEventListener('click', loginWithApple);
+      document.querySelector('.btn-facebook').addEventListener('click', loginWithFacebook);
+      document.getElementById('btn-signup').addEventListener('click', signup);
+      document.getElementById('forgot-pass').addEventListener('click', switchToForgotPass);
+      document.getElementById('btn-reset-pass').addEventListener('click', resetPass);
+      document.getElementById('return-to-login').addEventListener('click', switchToForgotPass);
+      document.getElementById('link-signup-login').addEventListener('click', toggleSignupLogin);
+    });
+  </script>
+
+
+</body></html>

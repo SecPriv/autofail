@@ -1,0 +1,1557 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-TNTJK2BQN8&amp;cx=c&amp;gtm=4e65k1"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-173053600-1" type="text/javascript"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173053600-1');
+</script>
+	
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>AgraMas Group | Pesan Tiket Bus Agra Mas Online | Jelajah Nusantara | Layanan Bus Antar Kota Antar Propinsi</title>
+<meta name="title" content="AgraMas Group | Pesan Tiket Bus Agra Mas Online | Jelajah Nusantara | Layanan Bus Antar Kota Antar Propinsi">
+<meta name="description" content="AgraMas Group penyedia layanan bus antar kota antar propinsi, layanan bus dalam kota, layanan bus pariwisata , jelajah nusantara dengan nyaman dan pelayanan terbaik dari AgraMas">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:locale" content="id_ID">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agramas Group | Jelajah Nusantara | Layanan Bus Antar Kota Antar Propinsi">
+<meta property="og:description" content="AgraMas Group penyedia layanan bus antar kota antar propinsi, layanan bus dalam kota, layanan bus pariwisata , jelajah nusantara dengan nyaman dan pelayanan terbaik dari AgraMas">
+<meta property="og:url" content="https://www.agramasgroup.com">
+<meta property="og:site_name" content="AgraMas Group | Jelajah Nusantara">
+<meta name="keywords" content="PO Agra Mas,Agra Mas, Bus Agra Mas,Bus AgraMas, AgraMas Group,Jadwal Bus Agra Mas,Tiket Bus Online, Tiket AgraMas, AgraMas Online, Pesan Tiket Bus, Booking Online, Bus Jakarta - Wonogiri, Bus Jakarta - Solo">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://agramasgroup.com/images/icon.png" type="image/x-icon">
+<!-- Google Fonts -->	
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<!-- Bootstrap Stylesheet -->	
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/bootstrap.min.css">
+
+<!-- Font Awesome Stylesheet -->
+<!-- <link rel="stylesheet" href="https://agramasgroup.com/lib/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/all.min.css">
+        
+<!-- Custom Stylesheets -->	
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/style.css?i=5">
+<link rel="stylesheet" id="cpswitch" href="https://agramasgroup.com/lib/css/orange.css">
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/responsive.css?i=10">
+
+<!-- Owl Carousel Stylesheet -->
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/owl.carousel.css">
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/owl.theme.css">
+    
+<!-- Flex Slider Stylesheet -->
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/flexslider.css" type="text/css">
+
+<!--Date-Picker Stylesheet-->
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/datepicker.css">
+
+<!-- Magnific Gallery -->
+<link rel="stylesheet" href="https://agramasgroup.com/lib/css/magnific-popup.css">
+</head>
+
+<body id="hotel-homepage" class="modal-open">
+
+    <style>
+	#dvAlert{
+		position:fixed;
+		z-index:10000;
+		top:80px;
+		width:100%;
+		margin: 0 auto;
+		display:none;
+	}
+	#dvInnerAlert{
+		text-align:center;
+	}
+	#sptext{
+		font-size:20px;
+	}
+</style>
+<div id="dvAlert" style="display: none;">
+    <div id="dvInnerAlert">
+        <button type="button" class="close" onclick="if (!window.__cfRLUnblockHandlers) return false; $('#dvAlert').hide();">×</button>
+        <span id="sptext"></span>
+    </div>
+</div>
+<div id="dvMoRoGin" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+Date.prototype.addHours = function(h) {
+	this.setTime(this.getTime() + h * 60 * 60 * 1000)
+	return this
+}
+var apiUrl = 'https://oragedebus.com/oragedebus/agramas/api';
+var dUrl = 'https://agramasgroup.com/';
+function openRegis(){
+	$('#dvMoRoGin .modal-title').html('Registrasi');
+	var contRegis = ['<div class="custom-form custom-form-fields" id="dvRegisForm">'
+					,'<p>Silahkan isi form registrasi untuk bergabung bersama kami dan dapatkan kemudahannya.</p>'
+					,'<form>'
+					,'<div class="form-group"><input name="username" type="text" onkeyup="remofChar(this);" class="form-control" placeholder="Nama"  required/>'
+					,'<span><i class="fa-solid fa-user"></i></span></div>'
+					,'<div class="form-group"><input name="email" type="email" onkeyup="remofChar(this);" class="form-control" placeholder="Email"  required/>'
+					,'<span><i class="fa-solid fa-envelope"></i></span></div>'
+					,'<div class="form-group"><input name="phone" type="text" onkeydown="return IsNumeric(event);" onkeyup="numberMobile(event);" class="form-control" placeholder="No.Handphone"  required/>'
+					,'<span><i class="fa-solid fa-phone"></i></span></div>'
+					,'<div class="form-group"><input name="address" type="text" onkeyup="remofChar(this);" class="form-control" placeholder="Alamat"  required/>'
+					,'<span><i class="fa-solid fa-building"></i></span></div>'
+					,'<div class="form-group"><input name="password" type="password" onkeyup="remofChar(this);" class="form-control" placeholder="Password"  required/>'
+					,'<span><i class="fa-solid fa-lock"></i></span></div>'
+					,'<div class="form-group"><input  name="password2" type="password" class="form-control" onkeyup="remofChar(this);" placeholder="Konfirmasi Password"  required/>'
+					,'<span><i class="fa-solid fa-lock"></i></span></div>'
+					,'<button id="btnRegister" type="button" class="btn btn-orange btn-block" onclick="doRegister();">Register</button>'
+					,'</form></div>'].join('');
+	$('#dvMoRoGin .modal-body').html(contRegis);
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}
+function openLogin(){
+	$('#dvMoRoGin .modal-title').html('Login');
+	var contLogin = ['<div class="custom-form custom-form-fields" id="dvLoginForm">'
+					,'<p>Gunakan email atau nomor handphone anda untuk login ke dalam sistem kami.</p>'
+					,'<form>'
+					,'<div class="form-group"><input type="text" class="form-control" onkeyup="remofChar(this);" placeholder="Email / No.Handphone"  required/>'
+					,'<span><i class="fa-solid fa-user"></i></span></div>'
+					,'<div class="form-group"><input type="password" class="form-control" onkeyup="remofChar(this);" placeholder="Password"  required/>'
+					,'<span><i class="fa-solid fa-lock"></i></span></div>'
+					,'<div class="checkbox"><label><input type="checkbox"> Tetap Sign In</label></div>'
+					,'<button id="btnLogin"  class="btn btn-orange btn-block" type="button" onclick="doLogin();" >Login</button>'
+					,'</form>'
+					,'<div class="other-links">'
+					,'<p class="link-line">Belum terdaftar ? <a style="cursor:pointer;" onclick="openRegis();">Registrasi</a></p>'
+					,'<a class="simple-link" href="',dUrl,'forgot">Lupa Password ?</a>'
+					,'</div></div>'].join('');
+	$('#dvMoRoGin .modal-body').html(contLogin);
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}
+function openEditProf(){
+	$('#dvMoRoGin .modal-title').html('Edit Profile');
+	var contLogin = ['<div class="custom-form custom-form-fields" id="dvEditForm">'
+					,'<p>Ubah Alamat</p>'
+					,'<form>'
+					//,'<div class="form-group"><input type="text" class="form-control" placeholder="Nama"  required/>'
+					//,'<span><i class="fa-solid fa-user"></i></span></div>'
+					,'<div class="form-group"><input type="text" onkeyup="remofChar(this);" class="form-control" placeholder="Alamat"  required/>'
+					,'<span><i class="fa-solid fa-building"></i></span></div>'
+					,'<button id="btnUpdate"  class="btn btn-orange btn-block" type="button" onclick="doUpdate();">Update</button>'
+					,'</form></div>'].join('');
+	$('#dvMoRoGin .modal-body').html(contLogin);
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}
+function openSeat(idx, dt, BP){
+	var BusLv;
+    var busRows;
+    var seats; var seatDetail;
+	var contSeat = ''; var tblSeat = '';
+	var DDBus = dt.split('&');//Seats[idx].split('&');
+	var tempSeatTaken;
+	var occuSeat = BP == 0 ? occuSeatB : occuSeatP;
+	var tArrSeat = BP == 0 ? tempArrSeat : tempArrSeatPP;
+	
+	for(var a=0;a<DDBus.length;a++){
+		BusLv = DDBus[a].substring(1,DDBus[a].length-1).split("','");
+		contSeat = '';
+		tblSeat += '<div id="dv'+a+'" class="seatChart-container">';
+		for(var i=0; i<BusLv.length; i++){
+			//console.log('Bus Lv ' + i + ' : ' + BusLv[i]);
+			busRows = BusLv[i].split('|_|');
+			if(i==0){
+				if(DDBus.length>1){
+					contSeat +=['<div class="frontD">'
+								, (a==0?'Depan (Bawah)':'Depan (Atas)')
+								,'</div>'].join('');
+				} else {
+					contSeat += '<div class="frontD">Depan</div>';
+				}
+			}
+			
+			contSeat += '<div class="seatCharts-row">';
+			for(var j=0; j<busRows.length; j++){
+				seats = busRows[j].split('|');
+					for(var k=0; k<seats.length;k++){
+						tempSeatTaken = false;
+						if(tArrSeat.length>0){
+							for(var ST=0; ST<tArrSeat.length;ST++){
+								//console.log('seats : ' + seats[k] + ' ST : ' + tempArrSeat[ST]);
+								if(seats[k] == tArrSeat[ST]){
+									tempSeatTaken = true;
+								}
+							}
+						}
+						/*if(occuSeat.length>0){
+							if(occuSeat.indexOf(seats[k].split('^')[1])!=-1){
+								tempSeatTaken = true;
+							}
+						}*/
+						if(seats[k].split('^')[1]){
+							for(var oS=0; oS<occuSeat.split(',').length;oS++){
+								//console.log(occuSeat.split(',')[oS] + ' vs ' + seats[k].split('^')[1]);
+								if(occuSeat.split(',')[oS]==seats[k].split('^')[1]){
+									tempSeatTaken = true;
+									break;
+								}
+							}
+						}
+						if(seats[k]!='D' && seats[k]!='T' && seats[k]!='-'){
+							seatsDetail = seats[k].split('^');
+							var extraClass = '';
+							// Sleeper seat
+							if (/^[SAB]/.test(seatsDetail[1])) {
+								extraClass = ' sleeper-seat';
+							}
+							contSeat +=['<div focusable="true"'
+										, (!tempSeatTaken ? [' onclick="bookSeat(\'',seats[k],'\',\'',idx,'\', ',BP, ')"'].join('') : '')
+										,' class="seatCharts-seat seatCharts-cell seat_',seatsDetail[0],' ',(seatsDetail[2]=='1' && !tempSeatTaken ?'seatAV':'seatNO'),extraClass, '">'
+										, seatsDetail[1]
+										, '</div>'
+										].join('');   
+						} else {
+							if(seats[k]!='-'){
+								contSeat +=['<div class="seatCharts-seat seatCharts-cell seat_',seats[k],'">'
+											, seats[k]
+											, '</div></td>'
+											].join('');  
+							} else {
+								contSeat +=['<div class="seatCharts-cell seatCharts-empt">&nbsp;</div>'].join(''); 
+							}
+						}
+					}
+					if(j!=seats.length-1){
+						contSeat +=['<div class="seatCharts-cell seatCharts-empt">&nbsp;</div>'].join('');
+					}
+			}
+			contSeat += '</div>';
+		}
+		tblSeat += contSeat + '</div>';
+	}
+	var sTrx2 = JSON.parse(sessionStorage.getItem('trx2'));
+	var tblLegend = ['<div class="legend-container">'
+					, '<div class="seatChart-legend">'
+					, '<ul class="seatCharts-legendList">'
+					, (sTrx2.prc1 ? ['<li class="seatCharts-legendItem"><div class="seatCharts-seat seatCharts-cell seatAV seat_e">&nbsp;</div>'
+										,'<span>',currFormatter(sTrx2.prc1,0,'Rp.'),'</span>'
+										,'</li>'].join('') : '')					
+					, (sTrx2.prc2 && Number(sTrx2.prc1) < Number(sTrx2.prc2) ? ['<li class="seatCharts-legendItem"><div class="seatCharts-seat seatCharts-cell seatAV seat_f">&nbsp;</div>'
+										,'<span>',currFormatter(sTrx2.prc2,0,'Rp.'),'</span>'
+										,'</li>'].join('') : '')
+					, (sTrx2.prc3 ? ['<li class="seatCharts-legendItem"><div class="seatCharts-seat seatCharts-cell seatAV seat_s">&nbsp;</div>'
+										,'<span>',currFormatter(sTrx2.prc3,0,'Rp.'),'</span>'
+										,'</li>'].join('') : '')
+										,'<li class="seatCharts-legendItem">'
+					,'<div class="seatCharts-seat seatCharts-cell seatNO"></div>'
+					,'<span>Tidak Tersedia</span></li>'
+					,'<li class="seatCharts-legendItem">'
+					,'<div class="seatCharts-seat seatCharts-cell seat_D">D</div>'
+					,'<span>Pintu</span></li>'
+					,'<li class="seatCharts-legendItem">'
+					,'<div class="seatCharts-seat seatCharts-cell seat_T">T</div>'
+					,'<span>Toilet</span></li>'
+					, '</ul></div></div>'].join('');
+	$('#dvMoRoGin .modal-title').html('Pilih Seat Penumpang ' + (Number(idx)+1));
+	var conMo = ['<div id="dvSeat">'
+					, tblSeat
+					, tblLegend
+					,'</div>'].join('');
+	$('#dvMoRoGin .modal-body').html(conMo);
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}
+function openAlert(altype, almsg){
+	$('#dvInnerAlert').attr('class', 'alert ' + altype);
+	$('#sptext').html(almsg);
+	$('#dvAlert').show();
+}
+
+function openMapAgen(idx){
+	$('#dvMoRoGin .modal-title').html('Lokasi');
+	/*var contmap = ['<iframe '
+					,'src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2804.1253153948905!2d106.89678496839605!3d-6.311973142119757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sJl.+Bambu+Kuning+Utara+No.2+Bambu+Apus+Cipayung!5e0!3m2!1sen!2sid!4v1533479049892" '
+					,'width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'].join('');
+					*/
+	var contmap = gmapBank[idx];
+	$('#dvMoRoGin .modal-body').html(contmap);
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}; // e/o openMapAgen
+
+
+function printContent(){
+	$('div').each(function() {
+        $(this).addClass('noprint');
+	});
+	$('#dvMoRoGin').removeClass('noprint');
+	$('.modal-dialog').removeClass('noprint');
+	$('.modal-content').removeClass('noprint');
+	$('.modal-header').removeClass('noprint');
+	$('.modal-body').removeClass('noprint');
+	$('#trPrint').addClass('noprint');
+	$('#dvMoRoGin').addClass('dvPrint');
+	window.print();
+}
+
+function showEticks(idx, dt, idxDetail){
+	var isMobile = window.innerWidth <= 768
+	if(isMobile) {
+		$('#dvMoRoGin .modal-title').html('E-TIKET').css({ "flex": "1", "text-align": "right" });
+		$('#dvMoRoGin .modal-header').css({ "display": "flex" });
+		$('#dvMoRoGin .modal-header .close').html('<i class="fa-solid fa-angle-left"></i>').css({ "width": "10%" });
+	}
+	$('#dvMoRoGin .modal-title').html('E-TIKET')
+	var durl = 'https://agramasgroup.com/';
+	var contET ='';
+	var ETcont = '';
+	var ETheader = ['<table width="100%" border="0" cellspacing="0"><tbody><tr><td colspan="2">&nbsp;</td></tr>'
+					,'<tr><td align="center" colspan="2"><img src="',durl,'images/agralogo.png"></td></tr>'
+					,'<tr><td align="center" colspan="2"><p size="1"><b>'
+					,'Jl. Bambu Kuning Utara No.2,Bambu Apus,Cipayung<br>'
+					,'Jakarta Timur , 13890 <br>'
+					,'021-293 899 71 , 021-293 899 72<br>'
+					,'info@agramasgroup.com'
+					,'</b></p></td></tr>'
+					,'<tr><td colspan="2"><hr></td></tr>'].join('');
+	if(dt.length>0){
+		var dtHeader = dtHistory[idx];
+		var infoP='';
+		for(var i=0; i<dt.length; i++){
+			infoP += ['<tr><td colspan="2" class="heading"><font size="2"><b><u>Informasi Penumpang #',i+1,'</u></b></font></td></tr>'					
+					,'<tr><td><font><b>Nama Penumpang </b></font></td><td><font><b>: ',dt[i].status ,'.&nbsp;',dt[i].fullname,'</b></font></td></tr>'
+					,'<tr><td><font><b>No.Kursi </b></font></td><td><font><b>: ',dt[i].seat_no ,'</b></font></td></tr>'].join('');
+		}
+		if(isMobile) {
+			ETcont = [
+					'<tr><td colspan="2" align="center"><font><b>',dt[0].agen_name,'</b></font></td></tr>'
+					,'<tr><td align="center" colspan="2">'//<img src="',dt[0].barcode_url,'" height="100px" width="100px">'
+					,'<b style="font-size:3rem">',dt[0].bookingcode,'</b></td></tr><tr>'
+					,'<td colspan="2" align="center"><font><b>Pembelian : ',dt[0].trx_date,'</b></font></td></tr>'
+					,'<tr><td colspan="2" class="heading"><font size="2"><b><u>Rute Perjalanan</u></b></font></td></tr>'
+					,'<tr><td align="left" width="50%"><font><b>Dari : </b></font></td>'
+					,'<td align="left" width="50%"><font><b>Tujuan : </b></font></td></tr>'
+					,'<tr><td align="left" width="50%"><font>',dtHeader.bills_detail[idxDetail].from,'<br> ',dtHeader.bills_detail[idxDetail].pickup,' <br>',dtHeader.bills_detail[idxDetail].boarding_date,'</font></td>'
+					,'<td align="left" width="50%"><font>',dtHeader.bills_detail[idxDetail].to,'<br> ',dtHeader.bills_detail[idxDetail].drop,' <br>',dtHeader.bills_detail[idxDetail].drop_date,'</font></td></tr>'					
+					,'<tr><td colspan="2" class="heading"><font size="2"><b><u>Informasi Pemesan</u></b></font></td></tr>'
+					,'<tr><td><font><b>Nama  </b></font></td><td><font><b>: ',dtHeader.contact_name,'</b></font></td></tr>'
+					,'<tr><td><font><b>No.Telp </b></font></td><td><font><b>: ',dtHeader.contact_phone,'</b></font></td></tr>'
+					, infoP
+					,'<tr><td colspan="2"><hr></td></tr>'
+			].join('');
+			ETcont +='<tr id="trPrint"><td colspan="2" style="text-align:center;"><button class="btn btn-orange" onclick="printContent();">Print</button></td></tr>';
+			$('#dvMoRoGin .modal-body').html(ETheader + ETcont + '</table>'); 
+		} else {
+			ETcont = [
+				'<tr><td colspan="2" align="center"><font size="1"><b>',dt[0].agen_name,'</b></font></td></tr>'
+				,'<tr><td align="center" colspan="2">'//<img src="',dt[0].barcode_url,'" height="100px" width="100px">'
+				,'<b style="font-size:32px">',dt[0].bookingcode,'</b></td></tr><tr>'
+				,'<td colspan="2" align="center"><font size="1"><b>Pembelian : ',dt[0].trx_date,'</b></font></td></tr>'
+				,'<tr><td colspan="2"><font size="2"><b><u>Rute Perjalanan</u></b></font></td></tr>'
+				,'<tr><td align="center" width="50%"><font size="1"><b>Dari : </b></font></td>'
+				,'<td align="center" width="50%"><font size="1"><b>Tujuan : </b></font></td></tr>'
+				,'<tr><td align="center" width="50%"><font size="1">',dtHeader.bills_detail[idxDetail].from,'<br> ',dtHeader.bills_detail[idxDetail].pickup,' <br>',dtHeader.bills_detail[idxDetail].boarding_date,'</font></td>'
+				,'<td align="center" width="50%"><font size="1">',dtHeader.bills_detail[idxDetail].to,'<br> ',dtHeader.bills_detail[idxDetail].drop,' <br>',dtHeader.bills_detail[idxDetail].drop_date,'</font></td></tr>'					
+				,'<tr><td colspan="2"><font size="2"><b><u>Informasi Pemesan</u></b></font></td></tr>'
+				,'<tr><td><font size="1"><b>Nama  </b></font></td><td><font size="1"><b>: ',dtHeader.contact_name,'</b></font></td></tr>'
+				,'<tr><td><font size="1"><b>No.Telp </b></font></td><td><font size="1"><b>: ',dtHeader.contact_phone,'</b></font></td></tr>'
+				, infoP
+				,'<tr><td colspan="2"><hr></td></tr>'
+			].join('');
+			ETcont +='<tr id="trPrint"><td colspan="2" style="text-align:center;"><button class="btn btn-orange" onclick="printContent();">Print</button></td></tr>';
+			$('#dvMoRoGin .modal-body').html(ETheader + ETcont + '</table>');
+		}
+	} else {
+		$('#dvMoRoGin .modal-body').html('Transaksi Tidak Ditemukan');
+	}
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}; // e/o showEticks
+
+var isDOKU=false;
+var objDOKU = {};
+function goTrxDetail(idx, dt, statusTrx, idxDetail){
+	clearInterval(x_timer);
+	var isMobile = window.innerWidth <= 768
+	if(isMobile){
+		$('#dvMoRoGin .modal-title').html('Total Tagihan').css({ "flex": "1", "text-align": "right" });
+		$('#dvMoRoGin .modal-header').css({ "display": "flex" });
+		$('#dvMoRoGin .modal-header .close').html('<i class="fa-solid fa-angle-left"></i>').css({ "width": "10%" });
+	}
+	$('#dvMoRoGin .modal-title').html('Total Tagihan')
+	var durl = 'https://agramasgroup.com/';
+	var contTrxDtl = '';
+	if(dt.length>0){
+		var VABCA;
+		var sVA="style='display:none'";
+		var totHarga = 0;
+		var dtHeader = dtHistory[idx];
+		var infoP='<table class="table"><tbody><tr><td colspan="3" class="heading"><b><u>INFO PENUMPANG </u></b></td></tr><tr><td><b>No </b></td><td><b>Nama</b></td><td><b>No.Kursi</b></td></tr>';
+		for(var i=0; i<dt.length; i++){
+			totHarga += Number(dt[i].detail_fare);
+			infoP += ['<tr><td>',i+1,'</td>'
+						,'<td>',dt[i].status ,'.&nbsp;',dt[i].fullname,'</td>'
+						,'<td>',dt[i].seat_no ,'</td></tr>'
+					].join('');
+		}
+		infoP += (statusTrx.toUpperCase()=='APPROVED' ? '<tr id="trPrint"><td colspan="3" style="text-align:center;"><button class="btn btn-orange" onclick="printContent();">Print</button></td></tr>' : '' )
+		infoP +='</table>';
+		
+		if(dtHeader.payment_method=='BCA VIRTUAL ACCOUNT'){VABCA ='11531'+dtHeader.contact_phone;sVA="";}
+			
+		
+		var contBD = ['<table class="table"><tbody>'
+						,'<tr><td align="left" colspan="2"><img src="',durl,'images/agralogo.png"></td></tr>'
+						,'<tr><td></td></tr>'
+						,'<tr><td colspan="2" class="heading"><b><u>INFO PERJALANAN</u></b></td></tr>'
+						,'<tr><td><b>Bus : </b></td><td>',dtHeader.bills_detail[idxDetail].route_name,'</td></tr>'
+						,'<tr><td><b>Berangkat : </b></td><td>',dtHeader.bills_detail[idxDetail].from,' / ',dtHeader.bills_detail[idxDetail].pickup,'</td></tr>'						
+						,'<tr><td><b>Tujuan : </b></td><td>',dtHeader.bills_detail[idxDetail].to,' / ',dtHeader.bills_detail[idxDetail].drop,'</td></tr>'						
+						,'<tr><td><b>Keberangkatan : </b></td><td>',dtHeader.bills_detail[idxDetail].boarding_date,'</td></tr>'
+						,'<tr><td><b>Kedatangan : </b></td><td>',dtHeader.bills_detail[idxDetail].drop_date,'</td></tr>'
+						,'<tr><td><b>Total Penumpang : </b></td><td>',dt.length,'</td></tr>'						
+						,'</tbody></table>'
+					].join('');
+		
+		isDOKU = (dtHeader.payment_method.toUpperCase() == 'DOKU' ? true : false);
+		if(isDOKU){
+			objDOKU.kode_booking = dtHeader.bookingcode;
+			objDOKU.amt = dtHeader.total_fare;
+		}
+		var contKD = ['<table class="table"><tbody>'
+						,'<tr><td colspan="2" class="heading"><b><u>INFO PEMESAN & PEMBAYARAN</u></b></td></tr>'
+						//,'<tr><td><b>Kode Booking :</b></td><td>',dtHeader.bills_detail[idxDetail].bookingcode,'</td></tr>'
+						,'<tr><td><b>Nama Kontak : </b></td><td>',dtHeader.contact_name,'</td></tr>'
+						,'<tr><td><b>Email : </b></td><td>',dtHeader.contact_email,'</td></tr>'
+						,'<tr><td><b>Telp : </b></td><td>',dtHeader.contact_phone,'</td></tr>'
+						// ,'<tr><td><b>Metode Pembayaran : </b></td><td>',dtHeader.payment_method,'</td></tr>'
+						,'<tr ',sVA,'><td><b>No Virtual Account : </b></td><td>',VABCA,'</td></tr>'
+						,'<tr><td><b>Total : </b></td><td>',currFormatter(dtHeader.bills_detail[idxDetail].fare,0,'Rp.'),'</td></tr>'
+						,'<tr><td><b>Status Pembayaran : </b></td><td id="tdTimer" class="',statusTrx.toLowerCase(),'">',statusTrx.toUpperCase(),'</td></tr>'
+						,'<tr><td colspan="2"><b>Segera lakukan pembayaran sebelum batas waktu berakhir untuk menghindari pembatalan pemesanan tiket.</b></td></tr>'
+						,'</tbody></table>'
+					].join('');
+		contTrxDtl = [contBD, contKD, infoP].join('');
+		$('#dvMoRoGin .modal-body').html(contTrxDtl);
+		if(dtHeader.payment_method.toLowerCase()!='cash'){
+			if (statusTrx.toUpperCase() == 'PENDING' || statusTrx.toUpperCase() == 'CANCEL'){
+				CD_Date = new Date(dtHeader.bills_expired).getTime();
+				if(isNaN(CD_Date)){	
+					var arr = dtHeader.bills_expired.split(/[- :]/);
+					CD_Date = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]).getTime();
+				}
+				cdTimer();
+			}
+		}
+	} else {
+		$('#dvMoRoGin .modal-body').html('Transaksi Tidak Ditemukan');
+	}	
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}// e/o goTrxDetail
+
+function showRouteModal(i) {
+	const data = dtSrc[i]; // Ambil data dari dtSrc global
+	const trx = trxInfo;
+	const durl = 'https://agramasgroup.com/'; // Sesuaikan URL dasar jika gambar atau logo diperlukan
+
+	const amndt = data.amenities_id.split(',');
+	let amnList = '';
+	for (let j = 0; j < amndt.length; j++) {
+		if (Amnts[amndt[j]]) {
+			// amnList +=['<li><span title="',Amnts[amndt[j]],'"><i class="',setAmnIcon(Amnts[amndt[j]]),'">'
+			// 						,'</i>',Amnts[amndt[j]],'</span></li>'].join(''); 
+			amnList += `<li>${Amnts[amndt[j]]}</li>`;
+		}
+	}
+
+	let content = `
+		<div class="bus-detail-card">
+			<h3 class="bus-name">${data.bus_type}</h3>
+			<p class="bus-schedule">${checkdiscount(data.route_id, data.price1, 'B') + currFormatter(data.price1,0,'Rp.') + (data.price2 && Number(data.price2) > 50000 ? ' ~ ' + checkdiscount(data.route_id, data.price2, 'B') + currFormatter(data.price2,0,'Rp.') : '')}</p>
+			<p>${sayDate(trx.tglB)} - ${sayDate(trx.tglP)}</p>
+			<p class="bus-type">${Number(trx.jumP)} Penumpang</p>
+
+			<div class="bus-image-slider">
+				${createBusDisplay(data.bus_img, i)}
+			</div>
+
+			<div class="modal-scrollable-content">
+				<section id="boardingPoints" class="bus-boarding-section">
+					<h4>Boarding points</h4>
+					<p>${data.city_from}</p>
+					<div class="boarding-point-detail">
+						<div class="time"> ${data.est_time_from} </div>
+						<div class="date"> ${sayDate(trx.tglB)} </div>
+						<div class="location">
+							<strong>${data.pickup_point}</strong>
+							<p>${data.pickup_point}, Kota ${data.city_from}</p>
+						</div>
+					</div>
+					<p>${data.city_to}</p>
+					<div class="boarding-point-detail">
+						<div class="time"> ${data.est_time_to} </div>
+						<div class="date"> ${sayDate(trx.tglP)} </div>
+						<div class="location">
+							<strong>${data.drop_point}</strong>
+							<p>${data.drop_point}, Kota ${data.city_to}</p>
+						</div>
+					</div>
+				</section>
+				<section id="amenities" class="bus-amenities-section">
+					<h4>Amenities</h4>
+					<ol>
+						${amnList}
+					</ol>
+				</section>
+				<div style="text-align:center; margin-top:20px;">
+					<button id="btn_${data.route_id}" 
+						class="btn btn-orange btn-validate" 
+						type="button" 
+						onclick="validateTrx(${i}, 0, this);">
+						Pilih Rute Keberangkatan
+					</button>
+				</div>
+			</div>
+		</div>
+	`;
+
+	// ======= For Slide Bar =======
+	// <div class="bus-info-tabs">
+	// 	<ul>
+	// 		<li class="tab-item active" data-target="boardingPoints">Boarding points</li>
+	// 		<li class="tab-item" data-target="amenities">Amenities</li>
+	// 	</ul>
+	// </div>
+
+	$('#dvMoRoGin .modal-dialog').addClass('bottomToTop');
+	$('#dvMoRoGin .modal-title').html('Detail Rute');
+	$('#dvMoRoGin .modal-body').html(content);
+	$('#dvMoRoGin').modal('show');
+
+	$(document).on('click', '.tab-item', function() {
+		$('.tab-item').removeClass('active');
+		$(this).addClass('active');
+
+		const targetId = $(this).data('target');
+		const targetSection = $('#' + targetId);
+
+		if (targetSection.length) {
+			const modalBody = $('#dvMoRoGin .modal-body');
+			const modalOffset = modalBody.offset().top;
+			const sectionOffset = targetSection.offset().top;
+
+			const scrollPosition = modalBody.scrollTop() + (sectionOffset - modalOffset);
+
+			modalBody.animate({
+				scrollTop: scrollPosition
+			}, 400);
+		}
+	});
+}
+
+
+function openChgPass(){
+	$('#dvMoRoGin .modal-title').html('Ubah Password');
+	var contChgPass = ['<div class="custom-form custom-form-fields" id="dvChgPass">'
+					,'<p>Silahkan isi Password Baru Anda.</p>'
+					,'<form>'
+					,'<div class="form-group"><input type="password" class="form-control" placeholder="Password Baru"  required/>'
+					,'<span><i class="fa-solid fa-lock"></i></span></div>'
+					,'<div class="form-group"><input type="password" class="form-control" placeholder="Konfirmasi Password Baru"  required/>'
+					,'<span><i class="fa-solid fa-lock"></i></span></div>'
+					,'<button id="btnChgPass" type="button" class="btn btn-orange btn-block" onclick="doChgPass();">Ubah</button>'
+					,'</form></div>'].join('');
+	$('#dvMoRoGin .modal-body').html(contChgPass);
+	$('#dvMoRoGin').appendTo("body").modal('show');
+}
+var specialKeys = new Array();  
+specialKeys.push(8);  
+function IsNumeric(e) {  
+	var keyCode = e.which ? e.which : e.keyCode  
+	var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);  
+	return ret;  
+}
+function numberMobile(e){
+	e.target.value = e.target.value.replace(/[^\d]/g,'');
+	return false;
+}
+function remofChar(obj){
+	obj.value = obj.value.replace(/<|>|!/gi, '');
+}
+function getGMT7(){
+	const now = new Date();
+	const GMT7 = new Date(now.getTime() + now.getTimezoneOffset() * 60000).addHours(7);
+	return GMT7;
+}; // e/o getGMT7
+
+function filterDTsearch(oldDT, tgl){
+	var tglB = new Date(tgl);
+	if(tglB.getDate() === getGMT7().getDate()){
+		var shiftR = "SORE";
+		if(getGMT7().getHours() <= 9){
+			shiftR = "PAGI";
+		} else if(getGMT7().getHours() > 9 && getGMT7().getHours() <= 15) {
+			shiftR = "SIANG";
+		}
+		var filteredData = new Array();
+		for(var i=0; i < oldDT.length; i++){
+			if(oldDT[i].shift_route == shiftR){
+				filteredData.push(oldDT[i]);
+			}
+		}
+		return filteredData;
+	} else {
+		return oldDT;
+	}
+}
+</script>
+<!--============= BOTTOM NAVBAR ===========-->
+<div id="bottom-bar" class="bottom-nav d-block d-sm-none">
+    <div class="nav-container">
+        <a href="https://agramasgroup.com/profile" class="nav-item ">
+            <i class="fa-solid fa-circle-user"></i>
+            <span class="nav-label">Akun</span>
+        </a>
+        <a href="https://agramasgroup.com/riwayat-tiket" class="nav-item ">
+            <i class="fa-solid fa-calendar"></i>
+            <span class="nav-label">Riwayat</span>
+        </a>
+        <a href="https://agramasgroup.com/" class="nav-item active">
+            <i class="fa-solid fa-chair"></i>
+            <span class="nav-label">Pesan Tiket</span>
+        </a>
+        <a href="https://agramasgroup.com/pesanan-tiket" class="nav-item ">
+            <i class="fa-solid fa-shopping-cart" aria-hidden="true"></i>
+            <span class="nav-label">Pesanan</span>
+        </a>
+        <a href="https://agramasgroup.com/kontak" class="nav-item ">
+            <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+            <span class="nav-label">Kontak Agen</span>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function chkLogin(){
+        var retVal = true;
+        if(sessionStorage.getItem("usProf") === null){
+            retVal = false;
+        }	
+        return retVal;
+    }
+
+    var islgn = chkLogin();
+    document.addEventListener("DOMContentLoaded", function() {
+        const navLinks = document.querySelectorAll(".nav-container a");
+        const pesanTiketUrl = "https://agramasgroup.com/";
+        const kontakAgenUrl = "https://agramasgroup.com/kontak";
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(e) {
+		const href = link.getAttribute("href");
+
+                if (href !== pesanTiketUrl && href !== kontakAgenUrl && !islgn) {
+                    e.preventDefault();
+                    openLogin();
+                }
+            });
+        });
+    });
+</script>
+    <style>
+        .drpdwn {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 1;
+        }
+
+        .dropdown-content h5 {
+            margin: 0;
+            padding: 4px 8px;
+            background-color: #E0E0E0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 6px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+    </style>
+    <style>
+        .fl-fl {
+            background: #128C7E;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 2px;
+            width: 190px;
+            position: fixed;
+            right: -160px;
+            z-index: 1000;
+            font: normal normal 10px Arial;
+            -webkit-transition: all .25s ease;
+            -moz-transition: all .25s ease;
+            -ms-transition: all .25s ease;
+            -o-transition: all .25s ease;
+            transition: all .25s ease;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .fa {
+            font-size: 20px;
+            color: #fff;
+
+        }
+
+        .fl-fl:hover {
+            right: 0;
+        }
+
+        .fl-fl a {
+            color: #fff !important;
+            text-decoration: none;
+            text-align: center;
+            line-height: 43px !important;
+            vertical-align: top !important;
+        }
+
+        .float-fb {
+            top: 160px;
+        }
+
+        .float-tw {
+            top: 215px;
+        }
+
+        .float-gp {
+            top: 270px;
+        }
+
+        .float-rs {
+            top: 325px;
+        }
+
+        .float-ig {
+            top: 380px;
+        }
+
+        .float-pn {
+            top: 435px;
+        }
+
+        .PPchoice label {
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+            padding-left: 10px;
+        }
+
+        .PPchoice input {
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        .show {
+            display: inline-block;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+    <div class="loader" style="display: none;"></div>
+
+<nav class="navbar navbar-default main-navbar navbar-custom navbar-white affix" id="mynavbar-1">
+    <div class="container">
+       <div class="navbar-header">
+            <button type="button" class="navbar-toggle" id="menu-button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://agramasgroup.com/" class="navbar-brand"><img src="https://agramasgroup.com/images/agralogo.png" class="img-responsive"></a>
+            <div id="user-profile" class="navbar-profile"><div class="profile-container"><button id="btn-profile-nosignin" class="btn-profile-nosignin">Login</button><div class="dropdown" id="dropdownSign"><a style="cursor:pointer;" onclick="openLogin();"><span><i class="fa fa-lock" style="color:black; margin-right:5px; font-size:1.5rem;"></i></span>Login</a><a style="cursor:pointer;" onclick="openRegis();"><span><i class="fa fa-key" style="color:black; margin-right:5px; font-size:1.5rem;"></i></span>Registrasi</a></div></div></div>
+       </div><!-- end navbar-header -->
+        
+        <div class="collapse navbar-collapse" id="myNavbar1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Beranda<span><i class="fa-solid fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://agramasgroup.com/agramas">Tentang AgraMas</a></li>
+                                <li><a href="https://agramasgroup.com/aturan">Aturan dan Ketentuan</a></li>
+								<li><a href="https://agramasgroup.com/informasi">Informasi Dan Cara Pemesanan</a></li>
+                            </ul>			
+                        </li>
+                        <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Armada<span><i class="fa-solid fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://agramasgroup.com/armada/super-double-decker">Super Double Decker</a></li>
+                                <li><a href="https://agramasgroup.com/armada/executive">Executive</a></li>
+                                <li><a href="https://agramasgroup.com/armada/vip">VIP</a></li>
+                                
+                            </ul>			
+                        </li>
+                        <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Layanan<span><i class="fa-solid fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://agramasgroup.com/layanan/lintas-propinsi">Antar Kota Antar Propinsi</a></li>
+                                <li><a href="https://agramasgroup.com/layanan/lintas-bandara">Jabodetabek dan Bandara</a></li>
+                                <li><a href="https://agramasgroup.com/layanan/lintas-pariwisata">Angkutan Pariwisata</a></li>
+                                <!--<li><a href="https://agramasgroup.com/layanan/lintas-kota">Lintas Kota</a></li>-->
+                                
+                            </ul>			
+                        </li>
+                        <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Agen<span><i class="fa-solid fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://agramasgroup.com/agen/banten">Banten</a></li>
+                                <li><a href="https://agramasgroup.com/agen/dki-jakarta">DKI Jakarta</a></li>
+                                <li><a href="https://agramasgroup.com/agen/jawa-barat">Jawa Barat</a></li>
+                                <li><a href="https://agramasgroup.com/agen/jawa-tengah">Jawa Tengah</a></li>
+								<li><a href="https://agramasgroup.com/agen/daerah-istimewa-yogyakarta">Yogyakarta</a></li>
+                                <li><a href="https://agramasgroup.com/agen/jawa-timur">Jawa Timur</a></li>
+                                <li><a href="https://agramasgroup.com/agen/sumatera-selatan">Sumatera Selatan</a></li>
+                                <li><a href="https://agramasgroup.com/agen/lampung">Lampung</a></li>
+                            </ul>			
+                        </li>
+                        <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kontak<span><i class="fa-solid fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://agramasgroup.com/kontak/hubungi-kami">Hubungi Kami</a></li>
+                                <li><a href="https://agramasgroup.com/kontak/sosial-media">Sosial Media</a></li>
+                                
+                            </ul>			
+                        </li>
+                       
+                        <li style="display:none"><a href="javascript:void(0)" class="search-button"><span><i class="fa-solid fa-magnifying-glass"></i></span></a></li>
+                    </ul>
+                </div><!-- end navbar collapse -->
+    </div><!-- end container -->
+</nav><!-- end navbar -->
+<div class="sidenav-content">
+    <div id="mySidenav" class="sidenav">
+	<h2 id="web-name"><span><i class="fa-solid fa-bus"></i></span>AgraMas</h2>
+
+        <div id="main-menu">
+            <div class="closebtn">
+                <button class="btn btn-default" id="closebtn">×</button>
+            </div><!-- end close-btn -->
+            
+            <div class="list-group panel">
+            
+                <a href="#home-links" class="list-group-item active" data-toggle="collapse" data-parent="#main-menu"><span><i class="fa-solid fa-house link-icon"></i></span>Beranda<span><i class="fa-solid fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="home-links">
+                    <a href="https://agramasgroup.com/agramas" class="list-group-item">Tentang AgraMas</a>
+                    <a href="https://agramasgroup.com/aturan" class="list-group-item">Aturan dan Ketentuan</a>
+					<a href="https://agramasgroup.com/informasi" class="list-group-item">Informasi dan Cara Pemesanan</a>
+                </div><!-- end sub-menu -->
+                
+                <a href="#flights-links" class="list-group-item " data-toggle="collapse" data-parent="#main-menu"><span><i class="fa-solid fa-bus link-icon"></i></span>Armada<span><i class="fa-solid fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="flights-links">
+                    <a href="https://agramasgroup.com/armada/super-double-decker" class="list-group-item">Super Double Decker</a>
+                    <a href="https://agramasgroup.com/armada/executive" class="list-group-item">Executive</a>
+                    <a href="https://agramasgroup.com/armada/vip" class="list-group-item">VIP</a>
+                    
+                </div><!-- end sub-menu -->
+                
+                <a href="#hotels-links" class="list-group-item " data-toggle="collapse" data-parent="#main-menu"><span><i class="fa-solid fa-bus link-icon"></i></span>Layanan<span><i class="fa-solid fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="hotels-links">
+                    <a href="https://agramasgroup.com/layanan/lintas-propinsi" class="list-group-item">Antar Kota Antar Propinsi</a>
+                    <a href="https://agramasgroup.com/layanan/lintas-bandara" class="list-group-item">Jabodetabek dan Bandara</a>
+                    <a href="https://agramasgroup.com/layanan/lintas-pariwisata" class="list-group-item">Angkutan Pariwisata</a>
+                   
+                   
+                </div><!-- end sub-menu -->
+                
+                <!-- <a href="#tours-links" class="list-group-item " data-toggle="collapse" data-parent="#main-menu"><span><i class="fa-solid fa-bus link-icon"></i></span>Agen<span><i class="fa-solid fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="tours-links">
+				    <a href="https://agramasgroup.com/agen/banten" class="list-group-item">Banten</a>
+                    <a href="https://agramasgroup.com/agen/dki-jakarta" class="list-group-item">DKI Jakarta</a>
+                    <a href="https://agramasgroup.com/agen/jawa-barat" class="list-group-item">Jawa Barat</a>
+                    <a href="https://agramasgroup.com/agen/jawa-tengah" class="list-group-item">Jawa Tengah</a>
+					<a href="https://agramasgroup.com/agen/daerah-istimewa-yogyakarta" class="list-group-item">Yogyakarta</a>
+                    <a href="https://agramasgroup.com/agen/jawa-timur" class="list-group-item">Jawa Timur</a>
+                    <a href="https://agramasgroup.com/agen/lampung" class="list-group-item">Lampung</a>
+                    <a href="https://agramasgroup.com/agen/sumatera-selatan" class="list-group-item">Sumatera Selatan</a>
+                </div> -->
+                
+                <a href="#cruise-links" class="list-group-item " data-toggle="collapse" data-parent="#main-menu"><span><i class="fa-solid fa-envelope link-icon"></i></span>Kontak<span><i class="fa-solid fa-chevron-down arrow"></i></span></a>
+                <div class="collapse sub-menu" id="cruise-links">
+                    <a href="https://agramasgroup.com/kontak/hubungi-kami" class="list-group-item">Hubungi Kami</a>
+                    <a href="https://agramasgroup.com/kontak/sosial-media" class="list-group-item">Sosial Media</a>
+                    
+                </div><!-- end sub-menu -->
+    
+                
+               
+                
+            </div><!-- end list-group -->
+        </div><!-- end main-menu -->
+    </div><!-- end mySidenav -->
+</div><!-- end sidenav-content -->    <!--========================= FLEX SLIDER =====================-->
+    <section class="flexslider-container" id="flexslider-container-3">
+
+        <div class="header-absolute">
+            <div class="flexslider slider" id="slider-3">
+                
+            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 2200%; transition-duration: 0.6s; transform: translate3d(-786px, 0px, 0px);"><li class="item-9 back-size clone" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus_2/13.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;" aria-hidden="true">
+                    </li>
+
+                    <li class="item-1 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images//exe/1.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-1 -->
+
+                    <li class="item-2 back-size flex-active-slide" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe/3.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-2 -->
+                    <li class="item-3 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe/5.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-3 -->
+                    <li class="item-4 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus/1.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-4 -->
+                    <li class="item-5 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus/3.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-5 -->
+                    <li class="item-6 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus/5.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-6 -->
+                    <li class="item-7 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus_2/1.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-7 -->
+                    <li class="item-8 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus_2/3.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-8 -->
+                    <li class="item-9 back-size" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images/exe_plus_2/13.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;">
+                    </li><!-- end item-9 -->
+
+                <li class="item-1 back-size clone" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) 0% 0% / cover, url(&quot;https://agramasgroup.com/images//exe/1.jpeg&quot;) 50% 65%; height: 100%; width: 393px; margin-right: 0px; float: left; display: block;" aria-hidden="true">
+                    </li></ul></div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul></div><!-- end slider -->
+
+            <div class="search-tabs" id="search-tabs-3">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-pd-r">
+
+                            <!-- <ul class="nav nav-tabs">
+                        <li class="active"><a href="#flights" data-toggle="tab"><span><i class="fa fa-bus"></i></span><span class="st-text">Booking Tiket</span></a></li>
+                        <li><a href="#hotels" data-toggle="tab"><span><i class="fa fa-building"></i></span><span class="st-text">Cek Tiket</span></a></li>
+                        <li><a href="#tours" data-toggle="tab"><span><i class="fa fa-suitcase"></i></span><span class="st-text">Sewa Bus</span></a></li>
+                    </ul> -->
+
+                            <div class="tab-content">
+                                <div id="flights" class="tab-pane rounded in active">
+                                    <h4 style="margin-bottom: 2rem; text-align: center;">HALAMAN PEMESANAN TIKET</h4>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-3 PPchoice">
+                                                <input type="checkbox" id="PP" name="PPCB" value="Pesan Pulang" oninput="if (!window.__cfRLUnblockHandlers) return false; checkPPCB(this);"><label for="PPCB">Pesan Tiket Pulang Pergi?</label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                                        <div class="form-group left-icon">
+                                                            <label>Keberangkatan</label>
+                                                            <input id="inFrom" type="text" class="form-control" autocomplete="off" placeholder="Dari Kota" onkeyup="if (!window.__cfRLUnblockHandlers) return false; filtertxt(this, 'dvFrom', arrFrom);">
+                                                            <!-- <i class="fa fa-map"></i> -->
+                                                            <div id="dvFrom" class="dropdown-content"><div><h5>BABAT</h5><a href="javascript:getTo(106,'BABAT','370','BABAT');">BABAT</a></div><div><h5>Bancar</h5><a href="javascript:getTo(116,'Bancar','403','Bancar');">Bancar</a></div><div><h5>Bandar Lampung</h5><a href="javascript:getTo(124,'Bandar Lampung','577','Agen Agra Mas Candi mas');">Agen Agra Mas Candi mas</a><a href="javascript:getTo(124,'Bandar Lampung','588','Agen Agra Mas Way Halim');">Agen Agra Mas Way Halim</a><a href="javascript:getTo(124,'Bandar Lampung','765','Bakauheni');">Bakauheni</a><a href="javascript:getTo(124,'Bandar Lampung','768','Kalibalok');">Kalibalok</a><a href="javascript:getTo(124,'Bandar Lampung','598','Kantor Agra Mas Lampung');">Kantor Agra Mas Lampung</a></div><div><h5>Banjarnegara</h5><a href="javascript:getTo(133,'Banjarnegara','723','Banjarnegara');">Banjarnegara</a><a href="javascript:getTo(133,'Banjarnegara','726','Gandulekor');">Gandulekor</a><a href="javascript:getTo(133,'Banjarnegara','733','Gumiwang');">Gumiwang</a><a href="javascript:getTo(133,'Banjarnegara','735','Kalimendong');">Kalimendong</a><a href="javascript:getTo(133,'Banjarnegara','707','Klampok');">Klampok</a><a href="javascript:getTo(133,'Banjarnegara','727','Mandiraja');">Mandiraja</a><a href="javascript:getTo(133,'Banjarnegara','732','Mantrianom');">Mantrianom</a><a href="javascript:getTo(133,'Banjarnegara','728','Proyek Merican');">Proyek Merican</a><a href="javascript:getTo(133,'Banjarnegara','731','Pucang');">Pucang</a><a href="javascript:getTo(133,'Banjarnegara','734','Purwonegoro');">Purwonegoro</a></div><div><h5>BANYUMAS</h5><a href="javascript:getTo(98,'BANYUMAS','623','Agen Agra Mas Cilongok');">Agen Agra Mas Cilongok</a><a href="javascript:getTo(98,'BANYUMAS','625','Agen Agra Mas Counter 11 Ter. Bulupitu ');">Agen Agra Mas Counter 11 Ter. Bulupitu </a><a href="javascript:getTo(98,'BANYUMAS','624','Agen Agra Mas Karang Lewas');">Agen Agra Mas Karang Lewas</a><a href="javascript:getTo(98,'BANYUMAS','622','Agen Agra Mas Pancurendang');">Agen Agra Mas Pancurendang</a><a href="javascript:getTo(98,'BANYUMAS','626','Agen Agra Mas Sokaraja');">Agen Agra Mas Sokaraja</a><a href="javascript:getTo(98,'BANYUMAS','296','BUNTU');">BUNTU</a><a href="javascript:getTo(98,'BANYUMAS','570','Endang Pereng');">Endang Pereng</a><a href="javascript:getTo(98,'BANYUMAS','297','SUMPIUH');">SUMPIUH</a><a href="javascript:getTo(98,'BANYUMAS','531','Sumpiuh 2');">Sumpiuh 2</a><a href="javascript:getTo(98,'BANYUMAS','298','TAMBAK');">TAMBAK</a><a href="javascript:getTo(98,'BANYUMAS','410','Tambak 2');">Tambak 2</a></div><div><h5>Batang</h5><a href="javascript:getTo(132,'Batang','685','Bandar');">Bandar</a><a href="javascript:getTo(132,'Batang','686','Blado');">Blado</a><a href="javascript:getTo(132,'Batang','683','Cepoko Kuning');">Cepoko Kuning</a><a href="javascript:getTo(132,'Batang','783','Exit Tol Warungasem');">Exit Tol Warungasem</a><a href="javascript:getTo(132,'Batang','778','Pandansari');">Pandansari</a><a href="javascript:getTo(132,'Batang','689','Reban');">Reban</a><a href="javascript:getTo(132,'Batang','688','Wonorojo');">Wonorojo</a><a href="javascript:getTo(132,'Batang','684','Wonotunggal');">Wonotunggal</a></div><div><h5>BAURENO</h5><a href="javascript:getTo(105,'BAURENO','364','BAURENO');">BAURENO</a></div><div><h5>Bekasi</h5><a href="javascript:getTo(43,'Bekasi','374','ARMED NAROGONG');">ARMED NAROGONG</a><a href="javascript:getTo(43,'Bekasi','264','Bekasi Timur');">Bekasi Timur</a><a href="javascript:getTo(43,'Bekasi','68','Cibitung');">Cibitung</a><a href="javascript:getTo(43,'Bekasi','266','JATIASIH');">JATIASIH</a><a href="javascript:getTo(43,'Bekasi','263','JATIWARNA');">JATIWARNA</a><a href="javascript:getTo(43,'Bekasi','659','Kandang Roda Cikarang');">Kandang Roda Cikarang</a><a href="javascript:getTo(43,'Bekasi','377','KANTOR AGRAMAS BEKASI TIMUR');">KANTOR AGRAMAS BEKASI TIMUR</a><a href="javascript:getTo(43,'Bekasi','461','Komsen Jatiasih');">Komsen Jatiasih</a><a href="javascript:getTo(43,'Bekasi','643','Narogong');">Narogong</a><a href="javascript:getTo(43,'Bekasi','654','Palm Cibarusah');">Palm Cibarusah</a><a href="javascript:getTo(43,'Bekasi','375','PANGKALAN 2');">PANGKALAN 2</a><a href="javascript:getTo(43,'Bekasi','655','Puri Persada Cibarusah');">Puri Persada Cibarusah</a><a href="javascript:getTo(43,'Bekasi','376','SAWO JL RAYA NAROGONG');">SAWO JL RAYA NAROGONG</a><a href="javascript:getTo(43,'Bekasi','644','Setu');">Setu</a><a href="javascript:getTo(43,'Bekasi','67','Taman Harapan Baru');">Taman Harapan Baru</a><a href="javascript:getTo(43,'Bekasi','658','Wahana Cibarusah');">Wahana Cibarusah</a></div><div><h5>Blora</h5><a href="javascript:getTo(27,'Blora','105','Blora');">Blora</a><a href="javascript:getTo(27,'Blora','717','Cepu');">Cepu</a><a href="javascript:getTo(27,'Blora','440','Jepon');">Jepon</a><a href="javascript:getTo(27,'Blora','797','Medang');">Medang</a></div><div><h5>Bogor</h5><a href="javascript:getTo(40,'Bogor','373','BAYGON');">BAYGON</a><a href="javascript:getTo(40,'Bogor','51','Bubulak');">Bubulak</a><a href="javascript:getTo(40,'Bogor','142','Ciawi');">Ciawi</a><a href="javascript:getTo(40,'Bogor','57','cibinong');">cibinong</a><a href="javascript:getTo(40,'Bogor','552','Cikaret');">Cikaret</a><a href="javascript:getTo(40,'Bogor','58','Cileungsi');">Cileungsi</a><a href="javascript:getTo(40,'Bogor','59','Citereup');">Citereup</a><a href="javascript:getTo(40,'Bogor','657','Citra Indah City');">Citra Indah City</a><a href="javascript:getTo(40,'Bogor','55','Gunung Putri');">Gunung Putri</a><a href="javascript:getTo(40,'Bogor','56','Kandang Roda');">Kandang Roda</a><a href="javascript:getTo(40,'Bogor','480','Kantor Agramas Jalan Baru Bogor');">Kantor Agramas Jalan Baru Bogor</a><a href="javascript:getTo(40,'Bogor','53','Karadenan');">Karadenan</a><a href="javascript:getTo(40,'Bogor','52','Kayumanis');">Kayumanis</a><a href="javascript:getTo(40,'Bogor','467','Nanggewer');">Nanggewer</a><a href="javascript:getTo(40,'Bogor','643','Narogong');">Narogong</a><a href="javascript:getTo(40,'Bogor','54','Pasar Parung');">Pasar Parung</a><a href="javascript:getTo(40,'Bogor','319','Pertigaan Cibucil');">Pertigaan Cibucil</a><a href="javascript:getTo(40,'Bogor','63','Simpang Pomad');">Simpang Pomad</a><a href="javascript:getTo(40,'Bogor','157','terminal baranangsiang');">terminal baranangsiang</a><a href="javascript:getTo(40,'Bogor','50','Warung Jambu');">Warung Jambu</a></div><div><h5>Bojonegoro</h5><a href="javascript:getTo(52,'Bojonegoro','701','Agen Agra mas Tinggang');">Agen Agra mas Tinggang</a><a href="javascript:getTo(52,'Bojonegoro','697','Agen Agramas Balen');">Agen Agramas Balen</a><a href="javascript:getTo(52,'Bojonegoro','698','Agen Agramas Kalitidu');">Agen Agramas Kalitidu</a><a href="javascript:getTo(52,'Bojonegoro','699','Agen Agramas Mayanggeneng');">Agen Agramas Mayanggeneng</a><a href="javascript:getTo(52,'Bojonegoro','703','Agen Agramas Ngasinan');">Agen Agramas Ngasinan</a><a href="javascript:getTo(52,'Bojonegoro','694','Agen Agramas Ngraho');">Agen Agramas Ngraho</a><a href="javascript:getTo(52,'Bojonegoro','696','Agen Agramas Sumberejo');">Agen Agramas Sumberejo</a><a href="javascript:getTo(52,'Bojonegoro','132','Kalitidu');">Kalitidu</a><a href="javascript:getTo(52,'Bojonegoro','360','Kapas');">Kapas</a><a href="javascript:getTo(52,'Bojonegoro','700','Pasar Pungpungan');">Pasar Pungpungan</a><a href="javascript:getTo(52,'Bojonegoro','131','Terminal Bojonegoro');">Terminal Bojonegoro</a><a href="javascript:getTo(52,'Bojonegoro','695','Terminal Padangan');">Terminal Padangan</a><a href="javascript:getTo(52,'Bojonegoro','133','TOBO');">TOBO</a></div><div><h5>Boyolali</h5><a href="javascript:getTo(13,'Boyolali','651','Agen Agramas Kacangan');">Agen Agramas Kacangan</a><a href="javascript:getTo(13,'Boyolali','649','Agen Cepresan');">Agen Cepresan</a><a href="javascript:getTo(13,'Boyolali','648','Agen Klego');">Agen Klego</a><a href="javascript:getTo(13,'Boyolali','81','Boyolali');">Boyolali</a><a href="javascript:getTo(13,'Boyolali','642','Exit Tol Boyolali');">Exit Tol Boyolali</a></div><div><h5>BREBES</h5><a href="javascript:getTo(99,'BREBES','286','AJIBARANG');">AJIBARANG</a><a href="javascript:getTo(99,'BREBES','528','Buntu (Lampu Merah)');">Buntu (Lampu Merah)</a><a href="javascript:getTo(99,'BREBES','347','Buntu 2');">Buntu 2</a><a href="javascript:getTo(99,'BREBES','293','JATILAWANG');">JATILAWANG</a><a href="javascript:getTo(99,'BREBES','405','Margasana');">Margasana</a><a href="javascript:getTo(99,'BREBES','481','Pasar Kucing');">Pasar Kucing</a><a href="javascript:getTo(99,'BREBES','294','RAWALO');">RAWALO</a><a href="javascript:getTo(99,'BREBES','295','SAMPANG');">SAMPANG</a><a href="javascript:getTo(99,'BREBES','287','TERMINAL BUMIAYU');">TERMINAL BUMIAYU</a><a href="javascript:getTo(99,'BREBES','407','Terminal Kroya');">Terminal Kroya</a><a href="javascript:getTo(99,'BREBES','292','WANGON');">WANGON</a></div><div><h5>Bulu</h5><a href="javascript:getTo(115,'Bulu','484','Bulu');">Bulu</a><a href="javascript:getTo(115,'Bulu','615','Sarang');">Sarang</a></div><div><h5>Cibinong</h5><a href="javascript:getTo(82,'Cibinong','57','cibinong');">cibinong</a></div><div><h5>Cibitung</h5><a href="javascript:getTo(41,'Cibitung','68','Cibitung');">Cibitung</a></div><div><h5>Cikarang</h5><a href="javascript:getTo(44,'Cikarang','69','Cikarang Barat');">Cikarang Barat</a></div><div><h5>Cilegon</h5><a href="javascript:getTo(78,'Cilegon','32','Grogol Damkar');">Grogol Damkar</a><a href="javascript:getTo(78,'Cilegon','16','Merak');">Merak</a><a href="javascript:getTo(78,'Cilegon','197','Terminal Seruni');">Terminal Seruni</a></div><div><h5>Demak</h5><a href="javascript:getTo(16,'Demak','253','Demak Pecinan');">Demak Pecinan</a><a href="javascript:getTo(16,'Demak','248','GAJAH');">GAJAH</a><a href="javascript:getTo(16,'Demak','487','Kali Kondang');">Kali Kondang</a><a href="javascript:getTo(16,'Demak','795','Terminal Demak');">Terminal Demak</a><a href="javascript:getTo(16,'Demak','472','Trengguli');">Trengguli</a><a href="javascript:getTo(16,'Demak','473','Wonokerto');">Wonokerto</a></div><div><h5>Depok</h5><a href="javascript:getTo(39,'Depok','633','Agen Agra Mas limo');">Agen Agra Mas limo</a><a href="javascript:getTo(39,'Depok','476','Margonda');">Margonda</a><a href="javascript:getTo(39,'Depok','291','SAWANGAN');">SAWANGAN</a><a href="javascript:getTo(39,'Depok','62','Terminal Jatijajar');">Terminal Jatijajar</a></div><div><h5>Jakarta Barat</h5><a href="javascript:getTo(8,'Jakarta Barat','676','Agen Agramas Season City');">Agen Agramas Season City</a><a href="javascript:getTo(8,'Jakarta Barat','30','Cengkareng');">Cengkareng</a><a href="javascript:getTo(8,'Jakarta Barat','646','Jelambar');">Jelambar</a><a href="javascript:getTo(8,'Jakarta Barat','29','Jembatan Gantung');">Jembatan Gantung</a><a href="javascript:getTo(8,'Jakarta Barat','710','Kedoya');">Kedoya</a><a href="javascript:getTo(8,'Jakarta Barat','33','Terminal Grogol');">Terminal Grogol</a></div><div><h5>Jakarta Selatan</h5><a href="javascript:getTo(7,'Jakarta Selatan','634','Agen Agra Mas Brigif');">Agen Agra Mas Brigif</a><a href="javascript:getTo(7,'Jakarta Selatan','39','Cilandak');">Cilandak</a><a href="javascript:getTo(7,'Jakarta Selatan','41','Lenteng Agung');">Lenteng Agung</a><a href="javascript:getTo(7,'Jakarta Selatan','37','Pasar Jumat');">Pasar Jumat</a><a href="javascript:getTo(7,'Jakarta Selatan','488','Pasar minggu');">Pasar minggu</a><a href="javascript:getTo(7,'Jakarta Selatan','36','Pondok Pinang');">Pondok Pinang</a><a href="javascript:getTo(7,'Jakarta Selatan','725','Tanjung Barat');">Tanjung Barat</a><a href="javascript:getTo(7,'Jakarta Selatan','172','VETERAN');">VETERAN</a></div><div><h5>Jakarta Timur</h5><a href="javascript:getTo(10,'Jakarta Timur','227','Cakung');">Cakung</a><a href="javascript:getTo(10,'Jakarta Timur','218','Kampung Rambutan');">Kampung Rambutan</a><a href="javascript:getTo(10,'Jakarta Timur','179','Kantor Agra mas Bambu Apus');">Kantor Agra mas Bambu Apus</a><a href="javascript:getTo(10,'Jakarta Timur','569','Loket Agra Mas Halte Walk PGC Cililitan Lt. Ground');">Loket Agra Mas Halte Walk PGC Cililitan Lt. Ground</a><a href="javascript:getTo(10,'Jakarta Timur','48','Pangkalan Jati - Kalimalang');">Pangkalan Jati - Kalimalang</a><a href="javascript:getTo(10,'Jakarta Timur','40','Pasar Induk');">Pasar Induk</a><a href="javascript:getTo(10,'Jakarta Timur','245','PASAR REBO');">PASAR REBO</a><a href="javascript:getTo(10,'Jakarta Timur','492','PTC Pulogadung');">PTC Pulogadung</a><a href="javascript:getTo(10,'Jakarta Timur','49','Pulogebang');">Pulogebang</a><a href="javascript:getTo(10,'Jakarta Timur','47','SUMBER ARTA');">SUMBER ARTA</a><a href="javascript:getTo(10,'Jakarta Timur','596','Ter. Kampung Rambutan');">Ter. Kampung Rambutan</a></div><div><h5>Jakarta Utara</h5><a href="javascript:getTo(9,'Jakarta Utara','25','Kapuk Ringroad');">Kapuk Ringroad</a><a href="javascript:getTo(9,'Jakarta Utara','265','Pluit');">Pluit</a><a href="javascript:getTo(9,'Jakarta Utara','24','Samping Setasiun Tanjung Priok');">Samping Setasiun Tanjung Priok</a><a href="javascript:getTo(9,'Jakarta Utara','27','Teluk Gong');">Teluk Gong</a><a href="javascript:getTo(9,'Jakarta Utara','281','TERMINAL PRIOK');">TERMINAL PRIOK</a></div><div><h5>Jombang</h5><a href="javascript:getTo(135,'Jombang','749','jombang');">jombang</a><a href="javascript:getTo(135,'Jombang','720','Virtual Boarding Msjd Moeldoko (WA: 082124359046)');">Virtual Boarding Msjd Moeldoko (WA: 082124359046)</a><a href="javascript:getTo(135,'Jombang','719','Virtual Boarding Tembelang (WA: 082124359046)');">Virtual Boarding Tembelang (WA: 082124359046)</a></div><div><h5>Karanganyar</h5><a href="javascript:getTo(17,'Karanganyar','169','Karangpandan');">Karangpandan</a><a href="javascript:getTo(17,'Karanganyar','170','Matesih');">Matesih</a><a href="javascript:getTo(17,'Karanganyar','168','terminal karanganyar');">terminal karanganyar</a></div><div><h5>Karawang</h5><a href="javascript:getTo(42,'Karawang','652','Agen Exit Tol Klari');">Agen Exit Tol Klari</a><a href="javascript:getTo(42,'Karawang','530','badami');">badami</a><a href="javascript:getTo(42,'Karawang','636','Exit Tol Karawang Timur');">Exit Tol Karawang Timur</a><a href="javascript:getTo(42,'Karawang','70','Garasi Karawang Timur');">Garasi Karawang Timur</a><a href="javascript:getTo(42,'Karawang','71','Karawang Barat');">Karawang Barat</a><a href="javascript:getTo(42,'Karawang','215','KOSAMBI');">KOSAMBI</a><a href="javascript:getTo(42,'Karawang','285','TERMINAL KLARI');">TERMINAL KLARI</a></div><div><h5>Kartasura</h5><a href="javascript:getTo(18,'Kartasura','87','Kartosuro');">Kartosuro</a></div><div><h5>KEBUMEN</h5><a href="javascript:getTo(97,'KEBUMEN','345','GOMBONG RINA');">GOMBONG RINA</a><a href="javascript:getTo(97,'KEBUMEN','300','IJO');">IJO</a><a href="javascript:getTo(97,'KEBUMEN','308','Kedungbener');">Kedungbener</a><a href="javascript:getTo(97,'KEBUMEN','302','KEMIT');">KEMIT</a><a href="javascript:getTo(97,'KEBUMEN','309','KUTOWINANGUN');">KUTOWINANGUN</a><a href="javascript:getTo(97,'KEBUMEN','408','Pasar Tengok Simpang Lima');">Pasar Tengok Simpang Lima</a><a href="javascript:getTo(97,'KEBUMEN','305','SIMPANG LIMA');">SIMPANG LIMA</a><a href="javascript:getTo(97,'KEBUMEN','306','SOKABARU');">SOKABARU</a><a href="javascript:getTo(97,'KEBUMEN','304','SRUWENG');">SRUWENG</a><a href="javascript:getTo(97,'KEBUMEN','301','TERMINAL GOMBONG');">TERMINAL GOMBONG</a><a href="javascript:getTo(97,'KEBUMEN','346','TERMINAL GOMBONG');">TERMINAL GOMBONG</a><a href="javascript:getTo(97,'KEBUMEN','307','TERMINAL KEBUMEN');">TERMINAL KEBUMEN</a><a href="javascript:getTo(97,'KEBUMEN','310','TERMINAL PREMBUN');">TERMINAL PREMBUN</a></div><div><h5>Kendal</h5><a href="javascript:getTo(30,'Kendal','504','Pageruyung');">Pageruyung</a></div><div><h5>Klaten</h5><a href="javascript:getTo(36,'Klaten','85','Bendo Gantungan');">Bendo Gantungan</a><a href="javascript:getTo(36,'Klaten','72','Delanggu');">Delanggu</a><a href="javascript:getTo(36,'Klaten','83','Karangwuni');">Karangwuni</a><a href="javascript:getTo(36,'Klaten','84','Kraguman');">Kraguman</a><a href="javascript:getTo(36,'Klaten','82','TERMINAL KLATEN');">TERMINAL KLATEN</a></div><div><h5>Kudus</h5><a href="javascript:getTo(29,'Kudus','107','Terminal Kudus');">Terminal Kudus</a></div><div><h5>LAMONGAN</h5><a href="javascript:getTo(107,'LAMONGAN','692','Agen Agra Mas Babat');">Agen Agra Mas Babat</a><a href="javascript:getTo(107,'LAMONGAN','365','BEDAHAN');">BEDAHAN</a><a href="javascript:getTo(107,'LAMONGAN','366','MOROPELANG');">MOROPELANG</a><a href="javascript:getTo(107,'LAMONGAN','489','Pucuk Stasiun');">Pucuk Stasiun</a><a href="javascript:getTo(107,'LAMONGAN','368','SUKODADI');">SUKODADI</a><a href="javascript:getTo(107,'LAMONGAN','463','Terminal Lamongan');">Terminal Lamongan</a><a href="javascript:getTo(107,'LAMONGAN','482','Turi');">Turi</a><a href="javascript:getTo(107,'LAMONGAN','446','Widang');">Widang</a></div><div><h5>Lampung Tengah</h5><a href="javascript:getTo(140,'Lampung Tengah','761','Exit toll Tegineneng');">Exit toll Tegineneng</a><a href="javascript:getTo(140,'Lampung Tengah','756','Exit Toll Terbanggi');">Exit Toll Terbanggi</a></div><div><h5>Madiun</h5><a href="javascript:getTo(54,'Madiun','127','Madiun');">Madiun</a><a href="javascript:getTo(54,'Madiun','128','Maospati');">Maospati</a></div><div><h5>Magelang</h5><a href="javascript:getTo(83,'Magelang','271','JALAN LINTAS MUNTILAN');">JALAN LINTAS MUNTILAN</a><a href="javascript:getTo(83,'Magelang','272','TERMINAL MAGELANG');">TERMINAL MAGELANG</a><a href="javascript:getTo(83,'Magelang','273','TERMINAL SECANG');">TERMINAL SECANG</a></div><div><h5>Magetan</h5><a href="javascript:getTo(51,'Magetan','268','TERMINAL MAGETAN');">TERMINAL MAGETAN</a></div><div><h5>Malang Kota</h5><a href="javascript:getTo(122,'Malang Kota','763','kantor Agra Mas malang');">kantor Agra Mas malang</a><a href="javascript:getTo(122,'Malang Kota','560','Klojen Kios Lia Jaya Sentosa Tour And Travel');">Klojen Kios Lia Jaya Sentosa Tour And Travel</a><a href="javascript:getTo(122,'Malang Kota','549','Lawang');">Lawang</a><a href="javascript:getTo(122,'Malang Kota','550','Pandaan');">Pandaan</a><a href="javascript:getTo(122,'Malang Kota','600','Sarana Transport Pandaan');">Sarana Transport Pandaan</a><a href="javascript:getTo(122,'Malang Kota','548','Terminal Arjosari Loket No 05');">Terminal Arjosari Loket No 05</a></div><div><h5>Malang Selatan</h5><a href="javascript:getTo(121,'Malang Selatan','543','Agen Agra Mas Dampit');">Agen Agra Mas Dampit</a><a href="javascript:getTo(121,'Malang Selatan','555','Agen Agramas Dinda Kepanjen');">Agen Agramas Dinda Kepanjen</a><a href="javascript:getTo(121,'Malang Selatan','546','Agen Agramas Sultan Agung Kepanjen');">Agen Agramas Sultan Agung Kepanjen</a><a href="javascript:getTo(121,'Malang Selatan','547','Agen Agramas Travelin Kepanjen ');">Agen Agramas Travelin Kepanjen </a><a href="javascript:getTo(121,'Malang Selatan','544','Agen Turen (Datu)');">Agen Turen (Datu)</a><a href="javascript:getTo(121,'Malang Selatan','545','Agen Turen Transport');">Agen Turen Transport</a><a href="javascript:getTo(121,'Malang Selatan','553','Gondang Legi');">Gondang Legi</a><a href="javascript:getTo(121,'Malang Selatan','554','Kanjuruan');">Kanjuruan</a><a href="javascript:getTo(121,'Malang Selatan','559','Pakisaji');">Pakisaji</a><a href="javascript:getTo(121,'Malang Selatan','618','Virtual Boarding Point Talang Agung (082124359046)');">Virtual Boarding Point Talang Agung (082124359046)</a></div><div><h5>Mesuji</h5><a href="javascript:getTo(138,'Mesuji','754','Exit Toll Simpang Pematang');">Exit Toll Simpang Pematang</a></div><div><h5>Mojokerto</h5><a href="javascript:getTo(136,'Mojokerto','750','Mojokerto');">Mojokerto</a><a href="javascript:getTo(136,'Mojokerto','721','Virtual Boarding Exit Tol Mojokerto 082124359046');">Virtual Boarding Exit Tol Mojokerto 082124359046</a></div><div><h5>Nganjuk</h5><a href="javascript:getTo(137,'Nganjuk','751','Terminal Tipe C Nganjuk');">Terminal Tipe C Nganjuk</a><a href="javascript:getTo(137,'Nganjuk','748','Virtual Boarding kertosono');">Virtual Boarding kertosono</a></div><div><h5>Ngawi</h5><a href="javascript:getTo(53,'Ngawi','130','Gendingan');">Gendingan</a><a href="javascript:getTo(53,'Ngawi','129','Geneng');">Geneng</a><a href="javascript:getTo(53,'Ngawi','125','Sidowayah');">Sidowayah</a><a href="javascript:getTo(53,'Ngawi','126','Terminal Ngawi');">Terminal Ngawi</a></div><div><h5>Ogan ilir</h5><a href="javascript:getTo(127,'Ogan ilir','580','Agen Agra Mas Indralaya KM 32');">Agen Agra Mas Indralaya KM 32</a><a href="javascript:getTo(127,'Ogan ilir','589','Agen Agra Mas Karya Jaya Kertapati');">Agen Agra Mas Karya Jaya Kertapati</a><a href="javascript:getTo(127,'Ogan ilir','586','Agen Agra Mas Km 32 Timbangan Indralaya');">Agen Agra Mas Km 32 Timbangan Indralaya</a></div><div><h5>Ogan Komering ilir</h5><a href="javascript:getTo(126,'Ogan Komering ilir','775','Dabuk Rejo 2');">Dabuk Rejo 2</a><a href="javascript:getTo(126,'Ogan Komering ilir','760','Lubuk Siberuk');">Lubuk Siberuk</a><a href="javascript:getTo(126,'Ogan Komering ilir','770','Pasar Bunut');">Pasar Bunut</a><a href="javascript:getTo(126,'Ogan Komering ilir','773','Pasar Gajah');">Pasar Gajah</a><a href="javascript:getTo(126,'Ogan Komering ilir','766','Pasar Jahe Lempuing Jaya');">Pasar Jahe Lempuing Jaya</a><a href="javascript:getTo(126,'Ogan Komering ilir','753','Simpang Pedamaran');">Simpang Pedamaran</a><a href="javascript:getTo(126,'Ogan Komering ilir','767','Surya Adi');">Surya Adi</a><a href="javascript:getTo(126,'Ogan Komering ilir','758','Tugu Mulyo');">Tugu Mulyo</a></div><div><h5>Pacitan</h5><a href="javascript:getTo(49,'Pacitan','139','Donorojo');">Donorojo</a><a href="javascript:getTo(49,'Pacitan','507','Pasar Punung');">Pasar Punung</a></div><div><h5>Palembang</h5><a href="javascript:getTo(125,'Palembang','585','Agen Agra Mas KM 09 Palembang ');">Agen Agra Mas KM 09 Palembang </a><a href="javascript:getTo(125,'Palembang','587','Agen Agra Mas Km 11 Palembang Dina');">Agen Agra Mas Km 11 Palembang Dina</a><a href="javascript:getTo(125,'Palembang','722','Agen Agra Mas Poligon');">Agen Agra Mas Poligon</a><a href="javascript:getTo(125,'Palembang','594','Agen KM 09 Lia Soekarno hatta');">Agen KM 09 Lia Soekarno hatta</a><a href="javascript:getTo(125,'Palembang','571','Pol Agra Mas KM 12 Palembang');">Pol Agra Mas KM 12 Palembang</a><a href="javascript:getTo(125,'Palembang','573','simpang macan lindungan');">simpang macan lindungan</a><a href="javascript:getTo(125,'Palembang','764','Terminal Alang-alang lebar');">Terminal Alang-alang lebar</a></div><div><h5>Pati</h5><a href="javascript:getTo(24,'Pati','616','Batangan');">Batangan</a><a href="javascript:getTo(24,'Pati','251','kajen');">kajen</a><a href="javascript:getTo(24,'Pati','119','Kayen');">Kayen</a><a href="javascript:getTo(24,'Pati','115','Sukolilo');">Sukolilo</a><a href="javascript:getTo(24,'Pati','113','Tayu');">Tayu</a><a href="javascript:getTo(24,'Pati','111','Termial Juwana');">Termial Juwana</a><a href="javascript:getTo(24,'Pati','112','Terminal Pati');">Terminal Pati</a><a href="javascript:getTo(24,'Pati','122','Wedari Jaksa');">Wedari Jaksa</a></div><div><h5>Pekalongan</h5><a href="javascript:getTo(117,'Pekalongan','786','Bojong');">Bojong</a><a href="javascript:getTo(117,'Pekalongan','789','Doro');">Doro</a><a href="javascript:getTo(117,'Pekalongan','511','Kali Jambe');">Kali Jambe</a><a href="javascript:getTo(117,'Pekalongan','788','Karanganyar');">Karanganyar</a><a href="javascript:getTo(117,'Pekalongan','787','Larikan');">Larikan</a><a href="javascript:getTo(117,'Pekalongan','680','Ponolawen');">Ponolawen</a><a href="javascript:getTo(117,'Pekalongan','613','Rembun');">Rembun</a><a href="javascript:getTo(117,'Pekalongan','785','Sedayu');">Sedayu</a><a href="javascript:getTo(117,'Pekalongan','779','Setono');">Setono</a><a href="javascript:getTo(117,'Pekalongan','517','Sipait');">Sipait</a><a href="javascript:getTo(117,'Pekalongan','512','Sragi');">Sragi</a><a href="javascript:getTo(117,'Pekalongan','518','Tengeng');">Tengeng</a><a href="javascript:getTo(117,'Pekalongan','510','Terminal Kesesi');">Terminal Kesesi</a><a href="javascript:getTo(117,'Pekalongan','682','Terminal Pekalongan');">Terminal Pekalongan</a><a href="javascript:getTo(117,'Pekalongan','784','Wonopringgo');">Wonopringgo</a><a href="javascript:getTo(117,'Pekalongan','603','Wonosari');">Wonosari</a></div><div><h5>Pemalang</h5><a href="javascript:getTo(118,'Pemalang','743','Ambo Wetan');">Ambo Wetan</a><a href="javascript:getTo(118,'Pemalang','714','Bantar Bolang');">Bantar Bolang</a><a href="javascript:getTo(118,'Pemalang','716','Belik');">Belik</a><a href="javascript:getTo(118,'Pemalang','514','Comal Blandong');">Comal Blandong</a><a href="javascript:getTo(118,'Pemalang','515','Iser');">Iser</a><a href="javascript:getTo(118,'Pemalang','606','Kantor Agra mas Pemalang');">Kantor Agra mas Pemalang</a><a href="javascript:getTo(118,'Pemalang','605','Petarukan Azam');">Petarukan Azam</a><a href="javascript:getTo(118,'Pemalang','523','Petarukan Yudha');">Petarukan Yudha</a><a href="javascript:getTo(118,'Pemalang','715','Randu Dongkal');">Randu Dongkal</a><a href="javascript:getTo(118,'Pemalang','604','Ujung Gede');">Ujung Gede</a></div><div><h5>Ponorogo</h5><a href="javascript:getTo(84,'Ponorogo','140','Terminal Ponorogo');">Terminal Ponorogo</a></div><div><h5>Prambanan</h5><a href="javascript:getTo(20,'Prambanan','86','Prambanan');">Prambanan</a></div><div><h5>Purbalingga</h5><a href="javascript:getTo(129,'Purbalingga','631','Agen Agra Mas Bobotsari');">Agen Agra Mas Bobotsari</a><a href="javascript:getTo(129,'Purbalingga','630','Agen Agra Mas Jalan Walik');">Agen Agra Mas Jalan Walik</a><a href="javascript:getTo(129,'Purbalingga','627','Agen Agra Mas Jompo');">Agen Agra Mas Jompo</a><a href="javascript:getTo(129,'Purbalingga','629','Agen Agra Mas Penaruban');">Agen Agra Mas Penaruban</a><a href="javascript:getTo(129,'Purbalingga','745','Bojongsari');">Bojongsari</a><a href="javascript:getTo(129,'Purbalingga','706','Bukateja');">Bukateja</a><a href="javascript:getTo(129,'Purbalingga','742','Karangreja');">Karangreja</a><a href="javascript:getTo(129,'Purbalingga','738','Kedungmenjangan');">Kedungmenjangan</a><a href="javascript:getTo(129,'Purbalingga','796','Terminal Purbalingga');">Terminal Purbalingga</a><a href="javascript:getTo(129,'Purbalingga','740','Tlahap Bawah');">Tlahap Bawah</a><a href="javascript:getTo(129,'Purbalingga','739','Toko DDS Telagayasa');">Toko DDS Telagayasa</a></div><div><h5>Purwakarta</h5><a href="javascript:getTo(108,'Purwakarta','662','Agen Agramas Cikopo');">Agen Agramas Cikopo</a></div><div><h5>Purworejo</h5><a href="javascript:getTo(37,'Purworejo','316','BAGELEN');">BAGELEN</a><a href="javascript:getTo(37,'Purworejo','475','Imogiri');">Imogiri</a><a href="javascript:getTo(37,'Purworejo','409','Jurangkah');">Jurangkah</a><a href="javascript:getTo(37,'Purworejo','311','KLEPU');">KLEPU</a><a href="javascript:getTo(37,'Purworejo','313','KUTOARJO 1');">KUTOARJO 1</a><a href="javascript:getTo(37,'Purworejo','331','KUTOARJO 2');">KUTOARJO 2</a><a href="javascript:getTo(37,'Purworejo','332','KUTOARJO 3');">KUTOARJO 3</a><a href="javascript:getTo(37,'Purworejo','330','LOANO');">LOANO</a><a href="javascript:getTo(37,'Purworejo','312','MBUTUH');">MBUTUH</a><a href="javascript:getTo(37,'Purworejo','315','PENDOWO');">PENDOWO</a><a href="javascript:getTo(37,'Purworejo','329','Purworejo Kota');">Purworejo Kota</a><a href="javascript:getTo(37,'Purworejo','458','Rest Area Sekar Panjang');">Rest Area Sekar Panjang</a><a href="javascript:getTo(37,'Purworejo','454','Terminal Salaman');">Terminal Salaman</a></div><div><h5>Rembang</h5><a href="javascript:getTo(23,'Rembang','259','Karas');">Karas</a><a href="javascript:getTo(23,'Rembang','114','Lasem');">Lasem</a><a href="javascript:getTo(23,'Rembang','118','Pamotan');">Pamotan</a><a href="javascript:getTo(23,'Rembang','78','Sale 1');">Sale 1</a><a href="javascript:getTo(23,'Rembang','442','Sarang');">Sarang</a><a href="javascript:getTo(23,'Rembang','485','Sluke');">Sluke</a><a href="javascript:getTo(23,'Rembang','77','Sulang');">Sulang</a><a href="javascript:getTo(23,'Rembang','76','Terminal Rembang');">Terminal Rembang</a></div><div><h5>Salatiga</h5><a href="javascript:getTo(21,'Salatiga','79','Salatiga');">Salatiga</a><a href="javascript:getTo(21,'Salatiga','80','Sruwen');">Sruwen</a></div><div><h5>Semarang</h5><a href="javascript:getTo(12,'Semarang','597','Ambarawa');">Ambarawa</a><a href="javascript:getTo(12,'Semarang','75','Banyumanik');">Banyumanik</a><a href="javascript:getTo(12,'Semarang','242','KALI BANTENG');">KALI BANTENG</a><a href="javascript:getTo(12,'Semarang','470','RM. Kendhil Mas');">RM. Kendhil Mas</a><a href="javascript:getTo(12,'Semarang','73','Terminal Bawen');">Terminal Bawen</a></div><div><h5>Serang</h5><a href="javascript:getTo(77,'Serang','350','Cikande');">Cikande</a><a href="javascript:getTo(77,'Serang','17','Pakupatan');">Pakupatan</a><a href="javascript:getTo(77,'Serang','22','Serang Barat');">Serang Barat</a></div><div><h5>Solo</h5><a href="javascript:getTo(5,'Solo','151','Terminal Solo');">Terminal Solo</a><a href="javascript:getTo(5,'Solo','204','Terminal Solo');">Terminal Solo</a></div><div><h5>Sragen</h5><a href="javascript:getTo(22,'Sragen','529','Gemolong');">Gemolong</a><a href="javascript:getTo(22,'Sragen','200','Masaran');">Masaran</a><a href="javascript:getTo(22,'Sragen','88','Terminal Pilangsari');">Terminal Pilangsari</a></div><div><h5>Subang</h5><a href="javascript:getTo(91,'Subang','718','Agen Agramas Kalijati');">Agen Agramas Kalijati</a></div><div><h5>Sukabumi</h5><a href="javascript:getTo(130,'Sukabumi','637','Caringin');">Caringin</a><a href="javascript:getTo(130,'Sukabumi','640','Cibadak');">Cibadak</a><a href="javascript:getTo(130,'Sukabumi','663','Cibolang');">Cibolang</a><a href="javascript:getTo(130,'Sukabumi','641','Cigombong');">Cigombong</a><a href="javascript:getTo(130,'Sukabumi','638','Parung Kuda');">Parung Kuda</a><a href="javascript:getTo(130,'Sukabumi','639','Sukabumi');">Sukabumi</a></div><div><h5>Sukoharjo</h5><a href="javascript:getTo(14,'Sukoharjo','180','KELIR');">KELIR</a><a href="javascript:getTo(14,'Sukoharjo','205','Nguter');">Nguter</a><a href="javascript:getTo(14,'Sukoharjo','185','Sritex');">Sritex</a><a href="javascript:getTo(14,'Sukoharjo','90','Terminal Sukoharjo');">Terminal Sukoharjo</a></div><div><h5>Surabaya</h5><a href="javascript:getTo(123,'Surabaya','564','Agramas RedBus Lounge');">Agramas RedBus Lounge</a><a href="javascript:getTo(123,'Surabaya','561','Medaeng Aryo jaya Tour &amp; Travel');">Medaeng Aryo jaya Tour &amp; Travel</a><a href="javascript:getTo(123,'Surabaya','551','Terminal Purabaya Jalur 26');">Terminal Purabaya Jalur 26</a></div><div><h5>TambakBoyo</h5><a href="javascript:getTo(113,'TambakBoyo','443','TambakBoyo');">TambakBoyo</a></div><div><h5>Tangerang</h5><a href="javascript:getTo(46,'Tangerang','704','Agen Agramas Nagrak');">Agen Agramas Nagrak</a><a href="javascript:getTo(46,'Tangerang','10','Ampera');">Ampera</a><a href="javascript:getTo(46,'Tangerang','7','Balaraja');">Balaraja</a><a href="javascript:getTo(46,'Tangerang','527','Balaraja 2');">Balaraja 2</a><a href="javascript:getTo(46,'Tangerang','3','Bitung');">Bitung</a><a href="javascript:getTo(46,'Tangerang','524','Bitung 2');">Bitung 2</a><a href="javascript:getTo(46,'Tangerang','349','CIKUPA');">CIKUPA</a><a href="javascript:getTo(46,'Tangerang','526','Cikupa 2');">Cikupa 2</a><a href="javascript:getTo(46,'Tangerang','23','Ciledug');">Ciledug</a><a href="javascript:getTo(46,'Tangerang','664','Galeong');">Galeong</a><a href="javascript:getTo(46,'Tangerang','4','Jatake');">Jatake</a><a href="javascript:getTo(46,'Tangerang','566','Kantor Agra mas Rajeg');">Kantor Agra mas Rajeg</a><a href="javascript:getTo(46,'Tangerang','711','Kantor Perwakilan Agra mas Poris');">Kantor Perwakilan Agra mas Poris</a><a href="javascript:getTo(46,'Tangerang','9','Karawaci');">Karawaci</a><a href="javascript:getTo(46,'Tangerang','537','Kebon Besar');">Kebon Besar</a><a href="javascript:getTo(46,'Tangerang','13','Kebon Nanas');">Kebon Nanas</a><a href="javascript:getTo(46,'Tangerang','11','Kotabumi');">Kotabumi</a><a href="javascript:getTo(46,'Tangerang','35','Kreo');">Kreo</a><a href="javascript:getTo(46,'Tangerang','5','Legok');">Legok</a><a href="javascript:getTo(46,'Tangerang','8','Pasar Kemis');">Pasar Kemis</a><a href="javascript:getTo(46,'Tangerang','282','Terminal Poris');">Terminal Poris</a></div><div><h5>Tangerang Selatan</h5><a href="javascript:getTo(45,'Tangerang Selatan','177','Ashobirin');">Ashobirin</a><a href="javascript:getTo(45,'Tangerang Selatan','456','Cilenggang');">Cilenggang</a><a href="javascript:getTo(45,'Tangerang Selatan','34','Ciputat');">Ciputat</a><a href="javascript:getTo(45,'Tangerang Selatan','14','Cisauk');">Cisauk</a><a href="javascript:getTo(45,'Tangerang Selatan','614','Gaplek');">Gaplek</a><a href="javascript:getTo(45,'Tangerang Selatan','5','Legok');">Legok</a><a href="javascript:getTo(45,'Tangerang Selatan','15','Terminal Pondok Cabe');">Terminal Pondok Cabe</a></div><div><h5>Tegal</h5><a href="javascript:getTo(119,'Tegal','516','Butak');">Butak</a></div><div><h5>TEMANGGUNG</h5><a href="javascript:getTo(96,'TEMANGGUNG','502','Bejen');">Bejen</a><a href="javascript:getTo(96,'TEMANGGUNG','478','BENGKAL');">BENGKAL</a><a href="javascript:getTo(96,'TEMANGGUNG','501','CANDIROTO 2');">CANDIROTO 2</a><a href="javascript:getTo(96,'TEMANGGUNG','274','JALAN LINTAS KRANGGAN');">JALAN LINTAS KRANGGAN</a><a href="javascript:getTo(96,'TEMANGGUNG','277','LINTAS JALAN RAYA KEDU');">LINTAS JALAN RAYA KEDU</a><a href="javascript:getTo(96,'TEMANGGUNG','491','Parakan');">Parakan</a><a href="javascript:getTo(96,'TEMANGGUNG','279','Terminal Ngadirejo');">Terminal Ngadirejo</a><a href="javascript:getTo(96,'TEMANGGUNG','275','TERMINAL TEMANGGUNG');">TERMINAL TEMANGGUNG</a></div><div><h5>Tuban</h5><a href="javascript:getTo(55,'Tuban','254','BAKALAN');">BAKALAN</a><a href="javascript:getTo(55,'Tuban','174','Bangilan');">Bangilan</a><a href="javascript:getTo(55,'Tuban','448','bulu');">bulu</a><a href="javascript:getTo(55,'Tuban','486','Jatirogo 2');">Jatirogo 2</a><a href="javascript:getTo(55,'Tuban','135','Jelaru');">Jelaru</a><a href="javascript:getTo(55,'Tuban','136','Parengan 1');">Parengan 1</a><a href="javascript:getTo(55,'Tuban','134','Ponco');">Ponco</a></div><div><h5>Tuban (Via Pantura)</h5><a href="javascript:getTo(112,'Tuban (Via Pantura)','447','Pakah');">Pakah</a><a href="javascript:getTo(112,'Tuban (Via Pantura)','490','Tuban Arlosa');">Tuban Arlosa</a></div><div><h5>Tulang Bawang</h5><a href="javascript:getTo(139,'Tulang Bawang','774','Exit tol Lambu Kibang');">Exit tol Lambu Kibang</a><a href="javascript:getTo(139,'Tulang Bawang','782','Way Kenanga');">Way Kenanga</a></div><div><h5>Wonogiri</h5><a href="javascript:getTo(6,'Wonogiri','202','Baturetno');">Baturetno</a><a href="javascript:getTo(6,'Wonogiri','209','Betal');">Betal</a><a href="javascript:getTo(6,'Wonogiri','201','Betal');">Betal</a><a href="javascript:getTo(6,'Wonogiri','192','Boto');">Boto</a><a href="javascript:getTo(6,'Wonogiri','100','Cengkal');">Cengkal</a><a href="javascript:getTo(6,'Wonogiri','240','Dringo');">Dringo</a><a href="javascript:getTo(6,'Wonogiri','93','Eromoko');">Eromoko</a><a href="javascript:getTo(6,'Wonogiri','98','Giri Belah');">Giri Belah</a><a href="javascript:getTo(6,'Wonogiri','181','Giriwoyo');">Giriwoyo</a><a href="javascript:getTo(6,'Wonogiri','104','Giriwoyo');">Giriwoyo</a><a href="javascript:getTo(6,'Wonogiri','186','Gumiwang');">Gumiwang</a><a href="javascript:getTo(6,'Wonogiri','94','Jatisrono');">Jatisrono</a><a href="javascript:getTo(6,'Wonogiri','536','Kantor Wonogiri (Transit Solo)');">Kantor Wonogiri (Transit Solo)</a><a href="javascript:getTo(6,'Wonogiri','96','Karangturi');">Karangturi</a><a href="javascript:getTo(6,'Wonogiri','91','Krisak');">Krisak</a><a href="javascript:getTo(6,'Wonogiri','173','Manyaran');">Manyaran</a><a href="javascript:getTo(6,'Wonogiri','95','Ngadirojo');">Ngadirojo</a><a href="javascript:getTo(6,'Wonogiri','99','Pracimantoro');">Pracimantoro</a><a href="javascript:getTo(6,'Wonogiri','101','Purwantoro');">Purwantoro</a><a href="javascript:getTo(6,'Wonogiri','103','Sidoharjo');">Sidoharjo</a><a href="javascript:getTo(6,'Wonogiri','189','Sidoharjo');">Sidoharjo</a><a href="javascript:getTo(6,'Wonogiri','191','Sidokriyo');">Sidokriyo</a><a href="javascript:getTo(6,'Wonogiri','102','Slogohimo');">Slogohimo</a><a href="javascript:getTo(6,'Wonogiri','195','Tanggulangin Wonogiri');">Tanggulangin Wonogiri</a><a href="javascript:getTo(6,'Wonogiri','206','Terminal Jatisrono');">Terminal Jatisrono</a><a href="javascript:getTo(6,'Wonogiri','198','TIRTOMOYO');">TIRTOMOYO</a><a href="javascript:getTo(6,'Wonogiri','383','wonogiri');">wonogiri</a><a href="javascript:getTo(6,'Wonogiri','183','Wonokarto');">Wonokarto</a></div><div><h5>Wonosobo</h5><a href="javascript:getTo(131,'Wonosobo','729','Sawangan');">Sawangan</a><a href="javascript:getTo(131,'Wonosobo','730','Sigaluh');">Sigaluh</a><a href="javascript:getTo(131,'Wonosobo','709','Terminal Tipe A Mendolo Wonosobo');">Terminal Tipe A Mendolo Wonosobo</a></div><div><h5>YOGYAKARTA</h5><a href="javascript:getTo(90,'YOGYAKARTA','324','Depan Terminal Giwangan 2');">Depan Terminal Giwangan 2</a><a href="javascript:getTo(90,'YOGYAKARTA','318','DONGKELAN 1');">DONGKELAN 1</a><a href="javascript:getTo(90,'YOGYAKARTA','325','DONGKELAN 2');">DONGKELAN 2</a><a href="javascript:getTo(90,'YOGYAKARTA','289','GAMPING 1');">GAMPING 1</a><a href="javascript:getTo(90,'YOGYAKARTA','533','Gamping Bagas');">Gamping Bagas</a><a href="javascript:getTo(90,'YOGYAKARTA','777','Gamping Ringroad Barat No.60');">Gamping Ringroad Barat No.60</a><a href="javascript:getTo(90,'YOGYAKARTA','494','Giwangan Vika');">Giwangan Vika</a><a href="javascript:getTo(90,'YOGYAKARTA','475','Imogiri');">Imogiri</a><a href="javascript:getTo(90,'YOGYAKARTA','496','JALAN LINTAS SLEMAN 3');">JALAN LINTAS SLEMAN 3</a><a href="javascript:getTo(90,'YOGYAKARTA','497','JALAN LINTAS SLEMAN MERAPI');">JALAN LINTAS SLEMAN MERAPI</a><a href="javascript:getTo(90,'YOGYAKARTA','506','Kantor Agra Mas Yogyakarta');">Kantor Agra Mas Yogyakarta</a><a href="javascript:getTo(90,'YOGYAKARTA','522','Nagung');">Nagung</a><a href="javascript:getTo(90,'YOGYAKARTA','457','Nanggulan');">Nanggulan</a><a href="javascript:getTo(90,'YOGYAKARTA','327','NGEPLANG');">NGEPLANG</a><a href="javascript:getTo(90,'YOGYAKARTA','290','PASAR BARU SENTOLO');">PASAR BARU SENTOLO</a><a href="javascript:getTo(90,'YOGYAKARTA','328','SENTOLO');">SENTOLO</a><a href="javascript:getTo(90,'YOGYAKARTA','269','TEMPEL');">TEMPEL</a><a href="javascript:getTo(90,'YOGYAKARTA','241','TERMINAL GIWANGAN');">TERMINAL GIWANGAN</a><a href="javascript:getTo(90,'YOGYAKARTA','267','TERMINAL JOMBOR');">TERMINAL JOMBOR</a><a href="javascript:getTo(90,'YOGYAKARTA','404','Terminal Palbapang');">Terminal Palbapang</a><a href="javascript:getTo(90,'YOGYAKARTA','317','Terminal Wates');">Terminal Wates</a></div></div>
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                                        <div class="form-group left-icon">
+                                                            <label>Tujuan</label>
+                                                            <input id="inTo" type="text" class="form-control" autocomplete="off" placeholder="Tujuan Kota" onkeyup="if (!window.__cfRLUnblockHandlers) return false; filtertxt(this, 'dvTo', arrTo);">
+                                                            <!-- <i class="fa-solid fa-location-dot"></i> -->
+                                                            <div id="dvTo" class="dropdown-content"></div>
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                </div><!-- end row -->
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="form-group right-icon">
+                                                    <label>Jumlah Penumpang</label>
+                                                    <select id="ddlJP" class="form-control">
+                                                        <option selected="">01</option>
+                                                        <option>02</option>
+                                                        <option>03</option>
+                                                        <option>04</option>
+                                                    </select>
+                                                    <i class="fa-solid fa-angle-down"></i>
+                                                </div>
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                                        <div class="form-group left-icon">
+                                                            <label>Tanggal Keberangkatan</label>
+                                                            <input id="inTglB" type="text" autocomplete="off" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" class="form-control dpd1" placeholder="mm/dd/yy">
+                                                            <!-- <i class="fa fa-calendar"></i> -->
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                </div><!-- end row -->
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hide" id="dvTglPlg">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                                        <div class="form-group left-icon">
+                                                            <label>Tanggal Pulang</label>
+                                                            <input id="inTglP" type="text" autocomplete="off" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" class="form-control dpd2" placeholder="mm/dd/yy">
+                                                            <!-- <i class="fa fa-calendar"></i> -->
+                                                        </div>
+                                                    </div><!-- end columns -->
+                                                </div><!-- end row -->
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-btn">
+                                                <button id="btnCari" type="button" class="col-xs-12 btn btn-orange" onclick="if (!window.__cfRLUnblockHandlers) return false; cari();">Cari</button>
+                                            </div><!-- end columns -->
+
+                                        </div><!-- end row -->
+                                    </form>
+                                </div><!-- end flights -->
+
+                                <div id="hotels" class="tab-pane rounded">
+                                    <form>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12">
+                                                        <div class="form-group left-icon">
+                                                            <label>No.HP</label>
+                                                            <input id="inNoHp" type="text" onkeydown="if (!window.__cfRLUnblockHandlers) return false; return IsNumeric(event);" onkeyup="if (!window.__cfRLUnblockHandlers) return false; numberMobile(event);" autocomplete="off" class="form-control" placeholder="No.HP">
+                                                            <i class="fa-solid fa-phone"></i>
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                    <div class="col-xs-12 col-sm-12">
+                                                        <div class="form-group left-icon">
+                                                            <label>Kode Booking</label>
+                                                            <input id="inBookCode" type="text" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" autocomplete="off" class="form-control" placeholder="Kode Booking">
+                                                            <i class="fa-solid fa-book"></i>
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                </div><!-- end row -->
+                                            </div><!-- end columns -->
+
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-btn">
+                                                <button type="button" class="btn btn-orange" onclick="if (!window.__cfRLUnblockHandlers) return false; cekTiket();">Cek Tiket</button>
+                                            </div><!-- end columns -->
+
+                                        </div><!-- end row -->
+                                    </form>
+                                </div><!-- end hotels -->
+
+                                <div id="tours" class="tab-pane rounded">
+                                    <form>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="form-group left-icon">
+                                                    <label>Nama</label>
+                                                    <input id="inCName" type="text" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" autocomplete="off" class="form-control" placeholder="Nama">
+                                                    <i class="fa-solid fa-user"></i>
+                                                </div>
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <div class="form-group left-icon">
+                                                    <label>No. HP</label>
+                                                    <input id="inCHP" type="text" onkeydown="if (!window.__cfRLUnblockHandlers) return false; return IsNumeric(event);" onkeyup="if (!window.__cfRLUnblockHandlers) return false; numberMobile(event);" autocomplete="off" class="form-control" placeholder="No. HP">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                </div>
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                <div class="form-group left-icon">
+                                                    <label>Email</label>
+                                                    <input id="inCEmail" type="text" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" autocomplete="off" class="form-control" placeholder="Email">
+                                                    <i class="fa-solid fa-envelope"></i>
+                                                </div>
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                                        <div class="form-group left-icon">
+                                                            <label>Tujuan Kota</label>
+                                                            <input id="inCKota" maxlength="20" autocomplete="off" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" type="text" class="form-control" placeholder="Tujuan Kota">
+                                                            <!-- <i class="fa-solid fa-location-dot"></i> -->
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                                        <div class="form-group left-icon">
+                                                            <label>Tanggal Sewa</label>
+                                                            <input id="inTglBCarter" type="text" onkeyup="if (!window.__cfRLUnblockHandlers) return false; remofChar(this);" autocomplete="off" class="form-control dpd1" placeholder="mm/dd/yy">
+                                                            <i class="fa-solid fa-calendar"></i>
+                                                        </div>
+                                                    </div><!-- end columns -->
+
+                                                </div><!-- end row -->
+                                            </div><!-- end columns -->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-btn">
+                                                <button type="button" class="btn btn-orange" onclick="if (!window.__cfRLUnblockHandlers) return false; carter();">INFO BUS PARIWISATA</button>
+                                            </div><!-- end columns -->
+
+                                        </div><!-- end row -->
+                                    </form>
+                                </div><!-- end tours -->
+
+
+
+
+                            </div><!-- end tab-content -->
+
+                        </div><!-- end columns -->
+
+                        <div class="hidden-xs hidden-sm col-md-6 no-pd-l">
+                            <div class="welcome-message">
+                                <h2>Reservasi Mudah dan Cepat!</h2>
+                                <p>AgraMas berkomitmen untuk memberi kemudahan kepada para pelanggannya dalam mendapatkan tiket perjalan secara real time.</p>
+                                <p>Kemudahaan transaksi pembayaran juga menjadi fitur utama dari aplikasi kami.</p>
+                                <p>Download aplikasi AGRAMas di Play Store!</p>
+                                <a href="https://play.google.com/store/apps/details?id=com.oragedebus.agramas" target="_blank"><img src="https://agramasgroup.com/images/1.png"></a>
+                                <a href="#"><img src="https://agramasgroup.com/images/2.png"></a>
+                            </div>
+                        </div>
+
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end search-tabs -->
+
+    </div></section><!-- end flexslider-container -->
+    
+    <!--===== INNERPAGE-WRAPPER ====-->
+    <section class="innerpage-wrapper">
+        <div id="popup-ad-page">
+            <div class="container">
+                <div class="row">
+                    <div id="popup-ad" class="modal fade in" role="dialog" style="display: block;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+
+                                    <div class="row">
+                                        <div class="col-12 col-md-12">
+                                            <div class="popup-ad-text">
+                                                <h4>Periode Angkutan Lebaran</h4>
+                                                <h4>04 Maret 2026 - 19 April 2026</h4>
+                                                <p>
+                                                </p><ol>
+                                                    <li>Batas pengajuan pembatalan adalah H-5 Sebelum Jadwal Keberangakatan lama dan jadwal keberangkatan baru</li>
+															<li>Perubahan tanggal keberangkatan dapat diajukan selambat-lambatnya H-5 Sebelum Jadwal Keberangakatan lama dan jadwal keberangkatan baru</li>
+															<li>Pembatalan keberangkatan dikenakan pemotongan 50% dari harga tiket</li>
+                                                </ol>
+                                                <p></p>
+												<h4>
+														Simpan baik-baik tiket fisik Perjalanan Anda,dan tukarkan menjadi :
+														</h4>
+														<p>
+															</p><ol>
+																<li>Free 1 Tiket perjalanan (BDB).</li>
+																<li>Merchandise Eksklusif Agra Mas.</li>
+																<li>Syarat dan Ketentuan berlaku.</li>
+															</ol>
+														<p></p>
+                                                <a href="https://agramasgroup.com/informasi" class="btn btn-orange">Informasi Lanjut</a>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <!-- <div class="float-sm">
+		 
+		  <div class="fl-fl float-tw">
+			<i class="fa fa-whatsapp" style="padding: 10px 0;width: 40px;margin-left: 8px;">&nbsp;</i>
+			<a href="https://api.whatsapp.com/send?phone=6281299000070" target="_blank">Bus Pariwisata</a>
+		  </div>
+		  <div class="fl-fl float-gp">
+			<i class="fa fa-whatsapp" style="padding: 10px 0;width: 40px;margin-left: 8px;">&nbsp;</i>
+		   <a href="https://api.whatsapp.com/send?phone=6281299000070" target="_blank">Bus Bandara</a>
+		  </div>
+		  <div class="fl-fl float-rs">
+			<i class="fa fa-whatsapp" style="padding: 10px 0;width: 40px;margin-left: 8px;">&nbsp;</i>
+		   <a href="https://api.whatsapp.com/send?phone=6282110107107" target="_blank">Bus Jabodetabek</a>
+		  </div>
+		 
+		</div> -->
+
+    <!-- Page Scripts Starts -->
+<script src="https://agramasgroup.com/lib/js/jquery.min.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/jquery.flexslider.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/custom-navigation.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/custom-flex.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/custom-owl.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/custom-date-picker.js?i=94" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/custom-gallery.js" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/ogd_util.js?i=16" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/popup-ad.js?i=18" type="text/javascript"></script>
+<script src="https://agramasgroup.com/lib/js/axios.min.js" type="text/javascript"></script>
+<!-- Page Scripts Ends -->    <script type="text/javascript">
+        var arrFrom = new Array();
+        var arrTo = new Array();
+        var selFrom = '',
+            selTo = '';
+        var pickPointId = '',
+            pickPointName = '';
+        var selFromName = '',
+            selToName = '';
+        var dropPointId = '',
+            dropPointName = '';
+
+        function closeAllDv() {
+            var dvNames = ['dvFrom', 'dvTo'];
+            for (var i = 0; i < dvNames.length; i++) {
+                $('#' + dvNames[i]).removeClass('show');
+            }
+        }; // e/o closeAllDv
+        function filtertxt(obj, dvName, data) {
+            if (dvName == 'dvTo' && selFrom == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Kota Asal Belum Dipilih');
+                obj.value = '';
+                return;
+            }
+            closeAllDv();
+            var input, filter, ul, li, a, i;
+            filter = obj.value.toUpperCase();
+            div = $('#' + dvName);
+            div.addClass('show');
+            a = div.find('div');
+            b = div.find('a');
+
+            var PPDP = new Array();
+            for (var i = 0; i < data.length; i++) {
+                PPDP = data[i].pickup_point ? data[i].pickup_point.map(function(x) {
+                    return x.toUpperCase();
+                }) : data[i].drop_point.map(function(x) {
+                    return x.toUpperCase();
+                });
+                if (data[i].city.toUpperCase().indexOf(filter) > -1 || PPDP.join('').indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }; // e/o filtertxt
+        function setFrom() {
+            var opts = '';
+            var pickPoint;
+            for (var i = 0; i < arrFrom.length; i++) {
+                opts += ['<div><h5>', arrFrom[i].city, '</h5>'].join('');
+                for (var j = 0; j < arrFrom[i].pickup_point.length; j++) {
+                    pickPoint = arrFrom[i].pickup_point[j].split('|');
+                    opts += ['<a href="javascript:getTo(', arrFrom[i].id, ',\'', arrFrom[i].city, '\',\'', pickPoint[0], '\',\'', pickPoint[1], '\');">', pickPoint[1], '</a>'].join('');
+                }
+                opts += '</div>';
+            }
+            $('#dvFrom').html(opts);
+        }; // e/o setFrom
+        function setTo() {
+            var opts = '';
+            var dropPoint;
+            for (var i = 0; i < arrTo.length; i++) {
+                opts += ['<div><h5>', arrTo[i].city, '</h5>'].join('');
+                for (var j = 0; j < arrTo[i].drop_point.length; j++) {
+                    dropPoint = arrTo[i].drop_point[j].split('|');
+                    opts += ['<a href="javascript:setTo2(', arrTo[i].id, ',\'', arrTo[i].city, '\',\'', dropPoint[0], '\',\'', dropPoint[1], '\');">', dropPoint[1], '</a>'].join('');
+                }
+                opts += '</div>';
+            }
+            $('#dvTo').html(opts);
+        }; // e/o setTo
+        function setTo2(tID, tName, dId, dName) {
+            closeAllDv();
+            $('#inTo').val(dName);
+            selTo = tID;
+            selToName = tName;
+            dropPointId = dId;
+            dropPointName = dName;
+        }
+
+        function setFromData(data) {
+            closeAllDv();
+            arrFrom = data; //[{"id": "10","city": "Jakarta Timur"},{"id": "42","city": "Karawang"},{"id":"40", "city":"Bogor"}];
+            setFrom();
+        }; // e/o setFromData
+        function setToData(data) {
+            closeAllDv();
+            arrTo = data;
+            setTo();
+        }
+
+        function getTo(fID, fName, pId, pName) {
+            $('#inFrom').val(pName);
+            selFrom = fID;
+            selFromName = fName;
+            pickPointId = pId;
+            pickPointName = pName;
+            axios.get('https://oragedebus.com/oragedebus/agramas/api/point/search_to', {
+                    params: {
+                        from_city_id: fID
+                    }
+                })
+                .then(function(response) {
+                    if (!response.data.status) {
+                        openAlert('alert-danger', response.data.error);
+                    } else {
+                        setToData(response.data.data);
+                    }
+                })
+                .catch(function(error) {
+                    openAlert('alert-danger', 'Hubungan ke server gagal, silahkan coba lagi. Jika masalah berlanjut, mohon hubungi customer service kami');
+                });
+        }
+
+        function cari() {
+            var tglB = $('#inTglB').val();
+            var tglPDate = new Date(Number(tglB.split('/')[2]), Number(tglB.split('/')[0]) - 1, Number(tglB.split('/')[1]));
+            var tglP = new Date(tglPDate.setDate(tglPDate.getDate() + 1));
+            var newTglP = [tglP.getMonth() + 1, (tglP.getDate().toString().length < 2 ? '0' + tglP.getDate().toString() : tglP.getDate()), tglP.getFullYear()].join('/');
+            var isPP = document.getElementById('PP').checked;
+            var tglPPB = '',
+                tglPPP = '',
+                newTglPPP = '';
+            if (isPP) {
+                tglPPB = $('#inTglP').val();
+                var tglPPPDate = new Date(Number(tglPPB.split('/')[2]), Number(tglPPB.split('/')[0]) - 1, Number(tglPPB.split('/')[1]));
+                tglPPP = new Date(tglPPPDate.setDate(tglPPPDate.getDate() + 1));
+                newTglPPP = [tglPPP.getMonth() + 1, (tglPPP.getDate().toString().length < 2 ? '0' + tglPPP.getDate().toString() : tglPPP.getDate()), tglPPP.getFullYear()].join('/');
+                if (tglPDate >= tglPPPDate) {
+                    openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Tanggal Pulang Tidak Boleh Lebih Kecil Dari Tanggal Berangkat');
+                    return;
+                }
+            }
+
+            var jumP = $('#ddlJP option:selected').text();
+            if (selFrom == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Kota Asal Belum Dipilih');
+                return;
+            }
+            if (selTo == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Kota Tujuan Belum Dipilih');
+                return;
+            }
+            if (tglB == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Tanggal Berangkat Belum Dipilih');
+                return;
+            }
+            if (isPP) {
+                var inTglP = $('#inTglP').val();
+                if (inTglP == '') {
+                    openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Tanggal Pulang Belum Dipilih');
+                    return;
+                }
+            }
+            var trxObj = {
+                'selFromName': selFromName,
+                'selFrom': selFrom,
+                'pickUpPointId': pickPointId,
+                'pickUpPointName': pickPointName,
+                'selToName': selToName,
+                'selTo': selTo,
+                'dropPointId': dropPointId,
+                'dropPointName': dropPointName,
+                'tglB': tglB,
+                'tglP': newTglP,
+                'jumP': jumP,
+                'PPTrip': isPP,
+                'tglPPB': tglPPB,
+                'tglPPP': newTglPPP
+            };
+            sessionStorage.setItem('trx', JSON.stringify(trxObj));
+            location.href = 'https://agramasgroup.com/trx/';
+        }
+
+        function carter() {
+            var txtName = $('#inCName').val();
+            var txtMail = $('#inCEmail').val();
+            var txtHP = $('#inCHP').val();
+            var txtKota = $('#inCKota').val();
+            var tglB = $('#inTglBCarter').val();
+            var txtTglBC = [tglB.split('/')[2], tglB.split('/')[0], tglB.split('/')[1]].join('/');
+            if (txtName == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Nama Harus Diisi');
+                return;
+            }
+            if (txtHP == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;No Handphone Belum Diisi');
+                return;
+            }
+            if (txtMail == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Email Belum Diisi');
+                return;
+            }
+            if (txtKota == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Kota Tujuan Belum Diisi');
+                return;
+            }
+            if (tglB == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Tanggal Berangkat Belum Dipilih');
+                return;
+            }
+            var payloaddt = {
+                "fullname": txtName,
+                "phone": txtHP,
+                "email": txtMail,
+                "city": txtKota,
+                "boarding_date": txtTglBC
+            };
+
+            axios.post('https://oragedebus.com/oragedebus/agramas/api' + '/trx/request_rent_bus', payloaddt)
+                .then(function(response) {
+                    if (!response.data.status) {
+                        openAlert('alert-danger', response.data.error);
+                    } else {
+                        openAlert('alert-success', '<strong>Carter Request Berhasil</strong>&nbsp;Customer service akan menghubungi anda melalui Handphone atau Email');
+                    }
+                })
+                .catch(function(error) {
+                    openAlert('alert-danger', response.data.error);
+                });
+        }
+
+        function dispCheckTicketResponse(data) {
+            $('#dvMoRoGin .modal-title').html('Cek Tiket');
+            var dataCT = data.data;
+            if (dataCT) {
+                var contBD = ['<table class="table"><tbody>', '<tr><td>Bus</td><td>', dataCT.route_name, '</td></tr>', '<tr><td>Berangkat</td><td>', dataCT.from, '</td></tr>', '<tr><td>Titik Naik</td><td>', dataCT.boarding_name, '</td></tr>', '<tr><td>Tujuan </td><td>', dataCT.to, '</td></tr>', '<tr><td>Titik Turun</td><td>', dataCT.drop_name, '</td></tr>', '<tr><td>Keberangkatan</td><td>', dataCT.boarding_date, '</td></tr>', '<tr><td>Kedatangan</td><td>', dataCT.drop_date, '</td></tr>', '<tr><td>Penumpang</td><td>', Number(dataCT.total_pax), '</td></tr>', '<tr><td>Total </td><td>', currFormatter(dataCT.total_fare, 0, 'Rp.'), '</td></tr>', '</tbody></table>'].join('');
+
+                var contKD = ['<table class="table"><tbody><tr><td>Kode Pemesanan :</td><td>', dataCT.bookingcode, '</td></tr>', '<tr><td>Nama Kontak : </td><td>', dataCT.contact_name, '</td></tr>', '<tr><td>Email : </td><td>', dataCT.contact_email, '</td></tr>', '<tr><td>Tlp : </td><td>', dataCT.contact_phone, '</td></tr>', '<tr><td>Metode Pembayaran : </td><td>', dataCT.payment_option, '</td></tr>', '<tr><td>Batas Pembayaran : </td><td id="tdTimer" class="', dataCT.trx_status.toLowerCase(), '">', dataCT.trx_status.toUpperCase(), '</td></tr>', '</table>'].join('');
+                var contTrxDtl = [contBD, contKD].join('');
+                $('#dvMoRoGin .modal-body').html(contTrxDtl);
+            } else {
+                $('#dvMoRoGin .modal-body').html('Data Tidak Ditemukan');
+            }
+            $('#dvMoRoGin').appendTo("body").modal('show');
+        }; // dispCheckTicketResponse
+
+        function cekTiket() {
+            var bookCode = $('#inBookCode').val();
+            var noPhone = $('#inNoHp').val();
+            var payloaddt = {
+                "booking_code": bookCode,
+                "phone": noPhone
+            };
+            if (noPhone == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;No Handphone Belum Diisi');
+                return;
+            }
+            if (bookCode == '') {
+                openAlert('alert-warning', '<strong>Peringatan</strong>&nbsp;Kode Booking Belum Diisi');
+                return;
+            }
+            axios.post('https://oragedebus.com/oragedebus/agramas/api' + '/trx/check_booking_code', payloaddt)
+                .then(function(response) {
+                    if (!response.data.status) {
+                        openAlert('alert-danger', response.data.error);
+                    } else {
+                        dispCheckTicketResponse(response.data);
+                    }
+                })
+                .catch(function(error) {
+                    openAlert('alert-danger', response.data.error);
+                });
+        } // e/o cekTiket
+
+        function checkPPCB(obj) {
+            if (obj.checked) {
+                $('#dvTglPlg').removeClass('hide').addClass('show');
+            } else {
+                $('#dvTglPlg').removeClass('show').addClass('hide');
+            }
+        }
+
+        function init() {
+            var olog = getUrlVars()["olog"];
+            if (olog && sessionStorage.getItem("usProf") === null) {
+                openLogin();
+            }
+            axios.get('https://oragedebus.com/oragedebus/agramas/api/point/search_from', {
+                    params: {
+                        keyword: ''
+                    }
+                })
+                .then(function(response) {
+                    if (!response.data.status) {
+                        openAlert('alert-danger', response.data.error);
+                    } else {
+                        setFromData(response.data.data);
+                    }
+                })
+                .catch(function(error) {
+                    openAlert('alert-danger', 'Hubungan ke server gagal, silahkan coba lagi. Jika masalah berlanjut, mohon hubungi customer service kami');
+                });
+        }
+
+
+
+
+        $(document).ready(function() {
+            $('#dvAlert').hide();
+            if (isLocalStorageNameSupported()) {
+                init();
+            } else {
+                openAlert('alert-danger', 'Mohon untuk tidak menggunakan incognito mode / private browsing');
+            }
+        });
+    </script>
+    <!--Start of Tawk.to Script-->
+    <!--<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/5dd0c1aed96992700fc7cd35/default';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+		})();
+		</script>-->
+    <!--End of Tawk.to Script-->
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a00486a42f6990bb',t:'MTc3OTU0NDE4Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;a99c8368bab44ba19b0a660ba2d5cd4b&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div class="datepicker dropdown-menu"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">May 2026</th><th class="next">›</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day disabled old">26</td><td class="day disabled old">27</td><td class="day disabled old">28</td><td class="day disabled old">29</td><td class="day disabled old">30</td><td class="day disabled">1</td><td class="day disabled">2</td></tr><tr><td class="day disabled">3</td><td class="day disabled">4</td><td class="day disabled">5</td><td class="day disabled">6</td><td class="day disabled">7</td><td class="day disabled">8</td><td class="day disabled">9</td></tr><tr><td class="day disabled">10</td><td class="day disabled">11</td><td class="day disabled">12</td><td class="day disabled">13</td><td class="day disabled">14</td><td class="day disabled">15</td><td class="day disabled">16</td></tr><tr><td class="day disabled">17</td><td class="day disabled">18</td><td class="day disabled">19</td><td class="day disabled">20</td><td class="day disabled">21</td><td class="day disabled">22</td><td class="day disabled active">23</td></tr><tr><td class="day ">24</td><td class="day ">25</td><td class="day ">26</td><td class="day ">27</td><td class="day ">28</td><td class="day ">29</td><td class="day ">30</td></tr><tr><td class="day ">31</td><td class="day  new">1</td><td class="day  new">2</td><td class="day  new">3</td><td class="day  new">4</td><td class="day  new">5</td><td class="day  new">6</td></tr></tbody></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">2026</th><th class="next">›</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month active">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">2020-2029</th><th class="next">›</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year">2024</span><span class="year">2025</span><span class="year active">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody></table></div></div><div class="datepicker dropdown-menu"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">May 2026</th><th class="next">›</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day disabled old">26</td><td class="day disabled old">27</td><td class="day disabled old">28</td><td class="day disabled old">29</td><td class="day disabled old">30</td><td class="day disabled">1</td><td class="day disabled">2</td></tr><tr><td class="day disabled">3</td><td class="day disabled">4</td><td class="day disabled">5</td><td class="day disabled">6</td><td class="day disabled">7</td><td class="day disabled">8</td><td class="day disabled">9</td></tr><tr><td class="day disabled">10</td><td class="day disabled">11</td><td class="day disabled">12</td><td class="day disabled">13</td><td class="day disabled">14</td><td class="day disabled">15</td><td class="day disabled">16</td></tr><tr><td class="day disabled">17</td><td class="day disabled">18</td><td class="day disabled">19</td><td class="day disabled">20</td><td class="day disabled">21</td><td class="day disabled">22</td><td class="day disabled active">23</td></tr><tr><td class="day ">24</td><td class="day ">25</td><td class="day ">26</td><td class="day ">27</td><td class="day ">28</td><td class="day ">29</td><td class="day ">30</td></tr><tr><td class="day ">31</td><td class="day  new">1</td><td class="day  new">2</td><td class="day  new">3</td><td class="day  new">4</td><td class="day  new">5</td><td class="day  new">6</td></tr></tbody></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">2026</th><th class="next">›</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month active">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">2020-2029</th><th class="next">›</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year">2024</span><span class="year">2025</span><span class="year active">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody></table></div></div><div class="datepicker dropdown-menu"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">May 2026</th><th class="next">›</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day disabled old">26</td><td class="day disabled old">27</td><td class="day disabled old">28</td><td class="day disabled old">29</td><td class="day disabled old">30</td><td class="day disabled">1</td><td class="day disabled">2</td></tr><tr><td class="day disabled">3</td><td class="day disabled">4</td><td class="day disabled">5</td><td class="day disabled">6</td><td class="day disabled">7</td><td class="day disabled">8</td><td class="day disabled">9</td></tr><tr><td class="day disabled">10</td><td class="day disabled">11</td><td class="day disabled">12</td><td class="day disabled">13</td><td class="day disabled">14</td><td class="day disabled">15</td><td class="day disabled">16</td></tr><tr><td class="day disabled">17</td><td class="day disabled">18</td><td class="day disabled">19</td><td class="day disabled">20</td><td class="day disabled">21</td><td class="day disabled">22</td><td class="day disabled active">23</td></tr><tr><td class="day ">24</td><td class="day ">25</td><td class="day ">26</td><td class="day ">27</td><td class="day ">28</td><td class="day ">29</td><td class="day ">30</td></tr><tr><td class="day ">31</td><td class="day  new">1</td><td class="day  new">2</td><td class="day  new">3</td><td class="day  new">4</td><td class="day  new">5</td><td class="day  new">6</td></tr></tbody></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">2026</th><th class="next">›</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month active">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev">‹</th><th colspan="5" class="switch">2020-2029</th><th class="next">›</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year">2024</span><span class="year">2025</span><span class="year active">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody></table></div></div><div class="modal-backdrop fade in"></div></body></html>

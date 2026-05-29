@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head>
+    <meta charset="UTF-8">
+    <style>
+        .notification-wrapper {
+            height: 120px;
+            background-color: #fafafa;
+            padding: 20px;
+            position: relative;
+            display: none;
+            -webkit-box-shadow: 0px 1px 11px 0px #8f8c8c;
+            box-shadow: 0px 1px 11px 0px #8f8c8c;
+            border-radius: 10px;
+            margin: 3px 10px;
+        }
+
+        .notification-logo {
+            float: left;
+            margin: 13px 15px 0px 0px;
+        }
+
+        .notification-logo img {
+            width: 65px;
+            height: 65px;
+            border-radius: 5px;
+        }
+
+        .notification-title {
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.5em;
+            color: #000;
+            overflow: hidden;
+            font-family: "Metropolis Bold";
+        }
+
+        .notification-info {
+            line-height: 16px;
+            margin: 10px 0;
+            padding: 0;
+            text-align: left;
+            overflow: hidden;
+            font-family: "Metropolis Regular" !important;
+            font-style: normal !important;
+            font-size: 14px;
+            display: -webkit-box;
+            max-width: 100%;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .notification-text-wrapper {
+            position: relative;
+            padding: 10px 0 0 0;
+            color: #000;
+            text-align: left;
+            margin: 0;
+            line-height: 1.4em;
+        }
+
+        .btn-notification {
+            background-color: #37AF2E;
+            float: left;
+            color: #fff;
+            margin: 0px 5px;
+            cursor: pointer;
+            width: 100px;
+            height: 30px;
+            padding: 0;
+            line-height: 30px;
+            text-align: center;
+            font-family: "Metropolis Bold";
+            border-radius: 5px;
+        }
+
+        .btn-notification:hover {
+            background-color: #127B0A;
+        }
+
+        .btn-secondary:hover {
+            background-color: #666;
+        }
+
+        .notification-buttons {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+        }
+
+        .btn-secondary {
+            background-color: #999;
+        }
+    </style>
+    <script>var nmfbx; (() => { "use strict"; var t = { d: (e, o) => { for (var n in o) t.o(o, n) && !t.o(e, n) && Object.defineProperty(e, n, { enumerable: !0, get: o[n] }) }, o: (t, e) => Object.prototype.hasOwnProperty.call(t, e), r: t => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(t, "__esModule", { value: !0 }) } }, e = {}; function o() { const t = new URL("https://ntm.netmera-web.com/wsdk2"), e = function () { const t = {}, e = /^[a-zA-Z0-9\-_:/?#\@!$&'*+,;=.]+$/; return location.hash.substr(1).split("&").forEach((function (o) { const n = o.split("="); if (2 === n.length) { const o = decodeURIComponent(n[0]), r = decodeURIComponent(n[1]); e.test(o) && e.test(r) ? t[o] = r : console.warn("Invalid Key or Value:", o, r) } else console.warn("Invalid parameter format:", o) })), t }(), o = new URL(e.wSrc); if (function (t, e) { return "https:" === e.protocol && (t.host === e.host || e.host.endsWith(".netmera-web.com")) }(t, o)) { const t = document.createElement("script"); t.type = "text/javascript", t.async = !0, t.src = e.wSrc, t.onload = function () { nmWorker.init(e) }, document.getElementsByTagName("head")[0].appendChild(t) } else console.error("Netmara::js domain mismatch! sdkArtifactHost=" + t.host + ", targetJsHost=" + o.host) } t.r(e), t.d(e, { init: () => o }), nmfbx = e })();</script>
+<script type="text/javascript" async="" src="https://ntm.netmera-web.com/wsdk2/fbox.js"></script><style>html,body{height:100%; overflow: hidden}.notification-wrapper{height: calc(100% - 82px);}</style></head>
+
+<body onload="nmfbx.init()">
+    <div class="notification-wrapper" id="notification-dlg" style="background-color: rgb(250, 250, 250); display: block;">
+        <div class="notification-logo" id="notification-logo"><img id="app-logo-img" src="https://wsdkapi.netmera.com/wsdk/3.0/appIcon?appKey=hurryet" style="width:65px;height:65px"></div>
+        <div class="notification-text-wrapper">
+            <div class="notification-title" id="notification-title" style="font-style: inherit; font-size: 16px; color: rgb(9, 9, 9);">Gündemden ilk senin haberin olsun!  </div>
+            <div class="notification-info" id="notification-info" style="font-style: inherit; color: rgb(9, 9, 9);">Türkiye ve dünyadan son dakika haberler, en güncel gelişmeler için bildirimlere izin ver</div>
+        </div>
+        <div style="clear: both;">
+            <div class="notification-buttons">
+                <div class="btn-notification btn-secondary" id="btn-later" onclick="nmWorker.onAskLaterClicked();" style="background-color: rgb(249, 249, 249); color: rgb(75, 75, 75); border: 0px;">Daha Sonra</div>
+                <div class="btn-notification" id="btn-allow" onclick="nmWorker.onContinueOptinClicked();" style="background-color: rgb(236, 0, 0); color: rgb(255, 255, 255); border: 0px;">İzin Ver</div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+
+</body></html>

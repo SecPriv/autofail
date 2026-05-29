@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>愛言葉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;900&amp;family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<script>
+$(function(){ 
+// waypoints
+  $('.js_inview').waypoint(function(direction){
+      var activePoint = $(this.element);
+      if (direction === 'down') { //scroll down
+          if(activePoint.attr('data-delay') != undefined){
+              var delayVal = activePoint.attr('data-delay');
+              activePoint.delay(delayVal).queue(function(){
+                  activePoint.addClass('active');
+                  $(this).dequeue();
+              });
+          }else{
+              activePoint.addClass('active');
+          }
+      }
+  },{offset : '80%'});
+});
+</script>
+<style>
+/*　Universal Reset　=================================*/
+html,body{margin:0;padding:0;width:100%;height:100%;font-size:100%;}
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,div,object,ul,ol,li,dl,dt,dd,tr,td,fieldset,form,legend,figure{margin:0;padding:0;font-size:100%;font-weight:normal;}
+ul,ol{list-style:none;}
+fieldset{margin:0;padding:0;border:0 none;}
+legend{display:none;}
+table,th,td{border:0;border-spacing:0;}
+caption,th{text-align:left;}
+em,strong,cite,abbr,caption,th,address{font-style:normal;font-weight:normal;}
+img{max-width:100%;border:0 none;vertical-align:bottom;vertical-align:bottom;}
+input,select,textarea{margin:0;padding:0;vertical-align:middle;}
+input{-webkit-appearance:none;appearance:none;}
+input[type="submit"]{border:none;border-radius:0;}
+input[type="radio"]{-webkit-appearance:radio;appearance:radio;}
+input[type="checkbox"]{-webkit-appearance:checkbox;appearance:checkbox;}
+option{padding-right:5px;}
+article,aside,dialog,details,figure,figcaption,footer,header,hgroup,menu,nav,section{display:block;}
+mark{font-weight:normal;font-style:normal;}
+blockquote,q{quotes:none;}
+a{vertical-align:baseline;text-decoration:none;}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+
+/*　style　=================================*/
+html{font-size: calc(1000vw / 750);}
+body{color:#fff;font-size:3.2rem;font-family:'Noto Sans JP',"Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;line-height:1.6;-webkit-text-size-adjust:100%;-webkit-touch-callout:none;background:#F0F0F0;
+animation: fadeIn 2s ease 0s 1 normal;}
+#container{max-width:750px;margin: 0 auto;overflow: hidden;background: #4c341a;}
+
+.pt_0{padding-top:0 !important;}
+.pb_0{padding-bottom:0 !important;}
+.mt_0{margin-top: 0 !important;}
+.mb_0{margin-bottom: 0 !important;}
+.mb_S{margin-bottom: 0.5em !important;}
+.mb_M{margin-bottom: 1em !important;}
+.mb_L{margin-bottom: 1.5em !important;}
+
+.tx_center{text-align: center;}
+
+
+
+/*=======　contents　=======*/
+/*--- title ---*/
+.ttl_01{font-family: 'Noto Serif JP', serif;text-align: center;font-size: 4rem;color: #4c341a;padding: 9rem 4rem 0;font-weight: 700;letter-spacing: -0.03em;line-height: 1.5;}
+.ttl_01 span{display: block;}
+
+/*--- decoration ---*/
+.keyhole{position: relative;}
+.keyhole::before {position: absolute;content: "";left: 0;right: 0;top: 0;margin: auto;background: url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_keyhole_icon01.png) no-repeat 0 0 / 100%;width: 2.3rem;height: 5.1rem;}
+
+/*--- area_regist ---*/
+.area_regist .area_agree{text-align: center;}
+.area_regist .area_agree > p{font-size:2.5rem;margin-bottom:1rem;font-weight: 300;}
+.area_regist .area_agree > p a{color:#fff;border-bottom:0.1rem solid #fff;}
+.area_agree { color: #fff;}
+.area_agree > p > input[type="checkbox"] {display: none;}
+.area_agree > p > input[type="checkbox"] + label{padding-left:4rem; position:relative; font-size: 2.5rem;}
+.area_agree > p > input[type="checkbox"] + label::before{position: absolute;display: block;left: 0;top: 0; width: 4rem;height: 4rem;content: "";
+background:url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_regist_check_box.png) center center / 2.6rem no-repeat;}
+.area_agree > p > input[type="checkbox"]:checked + label::before {background:url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_regist_checked_box.png) center center / 2.6rem no-repeat;}
+
+/*--- list_registbtn ---*/
+ul.list_registbtn{margin:5rem auto 3rem;}
+ul.list_registbtn .btn_regist > a{display:block;margin:2.5rem auto;text-align: center;width: 85%;max-width: 501px;}
+ul.list_registbtn + p.note{font-size:2.1rem;text-align:center;font-weight: 300;line-height: 2;}
+
+/*--- footer ---*/
+footer{background:#d877ac;}
+footer nav{max-width:1000px;margin:0 auto;}
+footer nav ul li a{display: block;max-width: 900px;margin: 0 auto;padding: 3rem 3rem 3rem 7rem;color: #4c341a;font-size: 2.5rem;border-bottom: 1px solid #FFF;position: relative;}
+footer nav ul li a:hover {color: #c9b67f;}
+footer .copyright{color: #4c341a;font-size: 1.8rem;padding: 3rem 0 10rem;text-align: center;}
+footer .txt_cardbrand{margin-top:3rem;}
+footer ul.list_cardbrand{display:flex;justify-content:center;gap:2rem;padding:2rem;}
+footer ul.list_cardbrand > li{width:15%;}
+
+/*=======　block　=======*/
+*[class^="blc_"] > .inner{padding:7rem 4rem;}
+
+/*--- blc_mv ---*/
+.blc_mv{overflow: hidden;}
+.blc_mv .area_mv{position:relative;min-height:48.5rem;background:url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_mv_bg.jpg) center top / 100% no-repeat;padding: 12rem 38rem 0 9rem;overflow: hidden;}
+.blc_mv .area_mv > h1{max-width: 24.9rem;text-align: center;}
+.blc_mv .area_mv > h1 .img{max-width: 16.1rem;margin-bottom: 2rem;}
+.blc_mv .catch_mv{background: #c9b67f;margin: 7rem 4rem;position: relative;padding: 5rem 3rem 7rem;}
+.blc_mv .catch_mv::before, 
+.blc_mv .catch_mv::after{position: absolute;right: 0;content: "";width: 100%;height: 6.5rem;background: url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_mv_deco.jpg) no-repeat 0 0 / 100%;}
+.blc_mv .catch_mv::before{top: calc(-1rem + 1px);}
+.blc_mv .catch_mv::after{bottom: calc(-1rem + 1px);transform: rotate(180deg);}
+.blc_mv .catch_mv > p{text-align: center;color: #4c341a;font-family: 'Noto Serif JP', serif;font-weight: 600;}
+.blc_mv .catch_mv > p:not(:last-child) {margin-bottom: 6rem;}
+.blc_mv .catch_mv > p.keyhole{padding-top: 9rem;}
+
+/*--- blc_step ---*/
+.blc_step{background: #c9b67f;padding-top: 9rem;}
+.blc_step ul.list_step{padding: 7rem 4rem 2rem 0;}
+.blc_step ul.list_step > li{overflow: hidden;}
+.blc_step ul.list_step > li:last-child{margin-bottom: 0;}
+.blc_step ul.list_step > li > dl > dt > span{display: block;}
+.blc_step ul.list_step > li > dl > dt > .ttl{padding: 5rem 0 0 4rem;}
+.blc_step ul.list_step > li > dl > dd{font-family: 'Noto Serif JP', serif;color: #4c341a;padding: 5rem 0 5rem 4rem;font-weight: 600;}
+
+/*--- blc_security ---*/
+.blc_security{padding-top: 9rem;}
+.blc_security .ttl_01{color: #fff;}
+.blc_security .keyhole::before {background: url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_keyhole_icon02.png) no-repeat 0 0 / 100%;}
+.blc_security ul.list_security{overflow: hidden;}
+.blc_security ul.list_security > li{margin: 9rem 0 15rem;}
+.blc_security ul.list_security > li:last-child{margin-bottom: 0;}
+.blc_security ul.list_security > li > h3{min-height: 39.2rem;position: relative;}
+.blc_security ul.list_security > li > h3 img{position: absolute;top: -9rem;}
+.blc_security ul.list_security > li:nth-child(1) > h3{background: url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_security_img01.jpg) center top / 100% no-repeat;}
+.blc_security ul.list_security > li:nth-child(2) > h3{background: url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_security_img02.jpg) center top / 100% no-repeat;}
+.blc_security ul.list_security > li:nth-child(3) > h3{background: url(https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_security_img03.jpg) center top / 100% no-repeat;}
+.blc_security ul.list_security > li > p{font-family: 'Noto Serif JP', serif;padding-top: 5rem;}
+
+
+
+/* Responsive =================================*/
+@media screen and (min-width: 750px) {
+html{font-size: 62.5%;}
+
+/**/}/**/
+/*　animation　=================================*/
+/*-- zoomRepeat --*/
+.animated_zoomRepeat {
+-webkit-animation: zoomRepeat 1.5s ease-in-out infinite;
+animation: zoomRepeat 1.5s ease-in-out infinite;
+}
+@-webkit-keyframes zoomRepeat {
+0% {-webkit-transform: scale(0.9);}
+30% {-webkit-transform: scale(1, 1);}
+60% {-webkit-transform: scale(0.9);}
+100% {-webkit-transform: scale(0.9);}
+}
+@keyframes zoomRepeat {
+0% {transform: scale(0.9);}
+30% {transform: scale(1, 1);}
+60% {transform: scale(0.9);}
+100% {transform: scale(0.9);}
+}
+
+.js_inview{opacity: 0;}
+/*-- imageview --*/
+.animated_imageview{overflow: hidden;position: relative;}
+.animated_imageview > img{display: block;margin:auto;opacity: 0;position: relative;
+ transition:all .5s .3s ease;
+ z-index: 0;}
+.animated_imageview:before{content: '';display: block;position: absolute;width: 100%;height: 100%;top:0;background: #4c341a;
+ transform: translateX(-100%);
+ transition:all 1s 0s ease;
+ z-index: 1;}
+.animated_imageview.active,
+.animated_imageview.active > img{ opacity: 1;}
+.animated_imageview.active:before{transform: translateX(100%);}
+/*-- zoomIn inview(keyframe:animate.css) --*/
+.animated_zoomIn.active{opacity: 1;
+-webkit-animation:zoomIn 0.8s ease 1;
+animation: zoomIn 0.8s ease 1;
+}
+/*-- fadeIn inview(keyframe:animate.css) --*/
+.animated_fadeIn.active{opacity: 1;
+-webkit-animation:fadeIn 0.8s ease 1;
+animation: fadeIn 0.8s ease 1;
+}
+/*-- fadeInUp inview(keyframe:animate.css) --*/
+.animated_fadeInUp.active{opacity: 1;
+-webkit-animation:fadeInUp 0.8s ease 1;
+animation: fadeInUp 0.8s ease 1;
+} 
+/*-- flipInY inview(keyframe:animate.css) --*/
+.animated_flipInY.active{opacity: 1;
+-webkit-animation:flipInY 1s ease 1;
+animation: flipInY 1s ease 1;
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+<main>
+
+
+<div class="blc_mv">
+<div class="area_mv">
+<h1>
+<img class="img js_inview animated_flipInY active" data-delay="500" src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_mv_img.png" alt="">
+<img class="logo js_inview animated_fadeInUp active" data-delay="1000" src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_mv_logo.png" alt="心の扉を開く愛言葉">
+</h1>
+</div><!--/.area_mv-->
+<div class="catch_mv">
+<p class="keyhole"><span class="js_inview animated_fadeIn active" data-delay="1600">あなたのメッセージが<br>大人の出会いのカギとなる...</span></p>
+<p><span class="js_inview animated_fadeIn active" data-delay="2100">完全匿名マッチング、<br>始めてみませんか？</span></p>
+</div><!--/.catch_mv-->
+</div><!--/.blc_mv-->
+
+<div class="blc_regist">
+<div class="inner pt_0">
+<div class="area_regist">
+<div class="area_agree">
+<p><a href="kiyaku">利用規約を読む</a></p>
+<p><input id="ck1" type="checkbox" checked="">
+<label for="ck1">利用規約とメール配信に同意する</label></p>
+</div><!--/.area_agree -->
+<ul class="list_registbtn">
+<li class="btn_regist animated_zoomRepeat"><a href="https://aikotoba2020.com/mem/mail"><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_btn_mail.png" alt="メールアドレスで始める"></a></li>
+<li class="btn_regist animated_zoomRepeat"><a href="https://aikotoba2020.com/mem/access?afl="><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_btn_line.png" alt="友だち登録して始める"></a></li>
+</ul><!--/.list_registbtn -->
+<p class="note">※18歳未満及び高校生の方はご利用いただけません<br> 
+※メール配信、利用規約に同意の上ご登録ください</p>
+</div><!--/.area_regist-->
+</div><!--/.inner-->
+</div><!--/.blc_regist -->
+
+
+<section class="blc_step">
+<h2 class="ttl_01 keyhole">
+<span class="js_inview animated_fadeInUp">登録＆お相手検索は無料！<br>マッチングまでとにかく簡単！</span>
+</h2>
+<ul class="list_step">
+<li>
+<dl>
+<dt>
+<span class="js_inview animated_imageview"><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_step_img01.jpg" alt="STEP01"></span>
+<span class="ttl"><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_step_ttl01.png" alt="サーチ＆メッセージ"></span>
+</dt>
+<dd>あなたの近所のメンバーが自動的に表示されます。<br>
+新メンバーからメッセージが届くとあなたのLINEに通知が届きます。<br>
+求める条件で検索することも可能です。</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>
+<span class="js_inview animated_imageview"><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_step_img02.jpg" alt="STEP02"></span>
+<span class="ttl"><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_step_ttl02.png" alt="相手にメッセージ"></span>
+</dt>
+<dd>参加したその瞬間からメッセージが送信可能です。<br>
+あなたの疑いを吹き飛ばす人気ぶりなので､まずは参加して実際に体験してみてください♫</dd>
+</dl>
+</li>
+</ul><!--/.list_step -->
+</section><!--/.blc_step -->
+
+
+<section class="blc_security">
+<h2 class="ttl_01 keyhole">
+<span class="js_inview animated_fadeInUp">愛言葉の安心・安全の取り組み</span>
+</h2>
+<div class="inner">
+<ul class="list_security">
+<li>
+<h3><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_security_ttl01.png" alt="完全匿名利用"></h3>
+<p class="js_inview animated_fadeInUp">未成年はご利用不可です。<br>あなたのLINEやお名前が相手に公開される事は一切ありません。</p>
+</li>
+<li>
+<h3><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_security_ttl02.png" alt="24時間365日の監視体制"></h3>
+<p class="js_inview animated_fadeInUp">不適切な書き込みがないことを24時間365日の監視体制で確認し、トラブルになることを未然に防ぎます。</p>
+</li>
+<li>
+<h3><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_security_ttl03.png" alt="24時間365日の監視体制"></h3>
+<p class="js_inview animated_fadeInUp">疑問があればいつでもご相談ください。<br>
+困ったことをいつでもサポートいたします。<br>
+法令遵守を第一とした上で法令に基づき、「インターネット異性紹介事業」の届出を行っており、受理されております。</p>
+</li>
+</ul><!--/.list_security-->
+</div><!--/.inner-->
+</section><!--/.blc_security -->
+
+
+</main>
+<footer>
+<nav>
+<ul>
+<li><a href="kiyaku">利用規約</a></li>
+<li><a href="policy">プライバシーポリシー</a></li>
+<li><a href="company">特定商取引法に基づく表示</a></li>
+</ul>
+</nav>
+<div class="copyright">
+<p>インターネット異性紹介事業　届出済み（受理番号 62240007001）</p>
+<p>Copyright©　愛言葉　All Rights Reserved.</p>
+<p class="txt_cardbrand">【取扱カードブランド】</p>
+<ul class="list_cardbrand">
+<li><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_cardbrand_visa.png" alt="VISA"></li>
+<li><img src="https://rb8miuplqjvi.ywufsjhc4.jp/mume/imgs/default_cardbrand_master.png" alt="mastercard"></li>
+</ul>
+</div>
+</footer>
+</div><!--/#container-->
+
+
+</body></html>

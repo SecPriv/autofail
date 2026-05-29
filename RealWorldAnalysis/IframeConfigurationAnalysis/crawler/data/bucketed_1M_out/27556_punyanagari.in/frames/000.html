@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../static/script/auth.js"></script>
+    <title>Login | Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../static/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="../static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../static/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+  </head>
+  <body style="background: rgb(233, 236, 239); min-height: 178px;">
+    <div id="overlay">
+      <div class="loader"></div>
+    </div>
+    <div class="container hold-transition login-page">
+      <div class="card">
+        <div class="card-header card-outline card-primary">
+          <div class="login-logo">
+            <img src="../static/img/Punyanagari_Logo.svg" style="width: 280px" alt="Punyanagari_Logo">
+          </div>
+        </div>
+        <div class="card-body login-card-body">
+          <p class="login-box-msg ">Sign in to start your session</p>
+          <div class="login-box">
+            <form id="loginForm" action="/" method="post">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input id="inputEmail" type="email" class="form-control" placeholder="Email" required="">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+                <input type="password" class="form-control" id="passwordInput" placeholder="Password" minlength="8" maxlength="12" required="">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-eye-slash" id="togglePassword" style="cursor: pointer;"></span>
+                  </div>
+                </div>
+              </div>
+              <p id="error-message" style="color: red ; display: none;">Please check username and password !!</p>
+              <div class="row">
+                <div class="col-4 mx-auto">
+                  <button onclick="login(); loginCookie()" type="button" class="btn btn-primary btn-block">
+                    Log In
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="mb-1 mt-2">
+              <a id="forgot" href="forgotpassword">I forgot my password</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../static/plugins/jquery/jquery.min.js"></script>
+    <script src="../static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/dist/js/adminlte.min.js"></script>
+    <script src="../static/script/login.js"></script>
+    <script src="../static/script/users.js"></script>
+    <script>
+      document.getElementById("passwordInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault(); // Prevent form submission
+          login(); // Call login function
+        }
+      });
+    </script>
+  
+</body></html>

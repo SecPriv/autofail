@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--[if lte IE 7]> <html class="ie7 detect-js"> <![endif]--><!--[if IE 8]> <html class="ie8"> <![endif]--><!--[if IE 9]> <html class="ie9"> <![endif]--><!--[if gte IE 9]> <html class="ie9p"> <![endif]--><!--[if !IE]><!--><html class="ff js" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" style="display: block;"><!--<![endif]--><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+<style>
+.js { display: none; }
+</style>
+
+<script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-D1X5H613D9&amp;cx=c&amp;gtm=4e65l0h2"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5M8PL8"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">
+function compare(number1, number2)
+{
+	var precision1, precision2, decimal1, decimal2, flag = false;  
+
+    precision1 = parseInt(number1.substr(0, number1.indexOf(".")));  
+    decimal1 = parseInt(number1.substr(number1.indexOf(".") +1));  
+
+	precision2 = parseInt(number2.substr(0, number2.indexOf(".")));  
+	decimal2 = parseInt(number2.substr(number2.indexOf(".") +1));  
+
+	if(precision1 < precision2) flag = true;
+	else if(precision1 == precision2 && decimal1 < decimal2) flag = true;  
+
+	/*  -- debug code -- */
+	/*if(flag)  
+	alert(number2 + " greater than " + number1);  
+
+	else
+	alert(number1 + " greater than " + number2); */
+	
+	return flag;
+}  
+	
+var htCls = document.documentElement.className;
+
+// all js versions need xf protection
+if((htCls.indexOf("detect-js")) != -1)
+{
+  var jsClassName = htCls.replace("detect-js","js");
+  document.documentElement.className = jsClassName;
+}
+
+// except some firefox versions
+var ffVrs = -1, safVrs = -1, chrVrs = -1;
+if((htCls.indexOf("ff")) != -1)
+{
+  var ffua = navigator.userAgent;
+  
+  if(ffua.indexOf("Firefox") != -1)
+  {
+    var vrs = ffua.substring(ffua.indexOf("Firefox"));
+    ffVrs = vrs.substring(vrs.indexOf("/") + 1);
+  }
+  else if(ffua.indexOf("Chrome") != -1)
+  {
+    var vrs = ffua.substring(ffua.indexOf("Chrome"));
+	chrVrs = vrs.substring(vrs.indexOf("/") + 1);
+	chrVrs = chrVrs.substring(0,chrVrs.indexOf(" "));
+	compare("4.1.249.1042", chrVrs);
+  }
+  else if(ffua.indexOf("Safari") != -1)
+  {
+    var vrs = ffua.substring(ffua.indexOf("Version"));
+	safVrs = vrs.substring(vrs.indexOf("/") + 1);
+	safVrs = safVrs.substring(0,safVrs.indexOf(" "));
+	compare("4.0", safVrs);
+  }
+}
+
+if(self == top || (ffVrs != -1 && compare("3.7", ffVrs))) { 
+/* no action needed x-frame-options enabled */
+  document.documentElement.style.display = 'block'
+}
+else if(safVrs != -1 && compare("4.0", safVrs))
+{
+/* no action needed x-frame-options enabled */
+  document.documentElement.style.display = 'block'
+}
+else if(chrVrs != -1 && compare("4.1.249.1042", chrVrs))
+{
+/* no action needed x-frame-options enabled */
+  document.documentElement.style.display = 'block'
+}
+else
+{
+  top.location = self.location;
+}
+</script>
+
+<link rel="StyleSheet" href="/eftps/theme/eftps_v4.css" type="text/css">
+<link rel="StyleSheet" href="/eftps/theme/navigation_v3.css" type="text/css">
+<link rel="StyleSheet" href="/eftps/theme/foundation.min.css" type="text/css">
+
+
+	<link rel="stylesheet" href="/eftps/feedback/css/feedback_custom.css">
+
+<link rel="shortcut icon" href="/eftps/fs-favicon.png">
+<title>Welcome to EFTPS online</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33788656-1']);
+   _gaq.push(['_setDomainName', "none"]);  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5M8PL8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5M8PL8');</script>
+<!-- End Google Tag Manager -->
+
+	
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script></head>
+
+<body class="bodywhite">
+
+<div id="content-container">
+	
+
+
+
+<script language="javascript">
+//lStorage = window.localStorage;
+sStorage = window.sessionStorage;
+sStorage.setItem( "onlineTabCount", (+sStorage.getItem("onlineTabCount") + 1) );
+
+if (+sStorage.getItem("onlineTabCount") <= 1)
+{
+	self.setTimeout("timeoutWarning()", 8*60*1000);
+	sStorage.setItem("onlineActiveTab", 1);
+}
+
+window.onunload = function () {
+    sStorage.setItem( "onlineTabCount", (+sStorage.getItem("onlineTabCount") - 1) );
+};
+
+
+function timeoutWarning() {
+	window.alert("This session is about to expire. Select OK to continue the session");
+    myRequest = createXMLHTTPRequest();
+    myRequest.open("GET", "/eftps/timeout?dummy=" + new Date().getTime(), true);
+    myRequest.onreadystatechange = validateReturnStatus;
+    myRequest.send(null);
+}
+
+function validateReturnStatus() {
+    if ((myRequest.readyState == 4) && (myRequest.status == 200)) {
+		try {
+        	myRequest.responseXML.getElementsByTagName("status")[0].childNodes[0].nodeValue;
+			self.setTimeout("timeoutWarning()", 8*60*1000);
+		} catch(err0) {
+			location.href="/eftps/direct/SessionExpiredPage.page";
+		}
+    }
+}
+
+function createXMLHTTPRequest() {
+    var request = false;
+    try {
+        request = new XMLHttpRequest();
+    }
+    catch (err1)
+    {
+        try {
+			request = new ActiveXObject('Msxml2.XMLHTTP');
+        }
+        catch (err2) {
+			request = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+    }
+    return request;
+}
+</script>
+
+<!-- *** 
+-e_prd2
+
+*** --> 
+
+
+
+
+
+
+
+
+<div id="header" role="banner">
+	<div id="headerImg"><a href="#maincontent"><img src="/eftps/images/misc/headerSkip.png" width="5" height="86" alt="Skip to main page content." border="0"></a><a href="/eftps/direct/EftpsHome.page"><img src="/eftps/images/misc/EFTPSHeader.png" width="716" height="86" alt="Electronic Federal Tax Payment System (EFTPS) Logo, links to home page" border="0"></a><a href="/eftps/help/homeGovernmentLinkWarning?link=106"><img src="/eftps/images/misc/Header_USTreasury.png" width="71" height="86" alt="Treasury Logo, links to United States Treasury home page" border="0" id="t_logo"></a></div>
+		
+	<div class="line" role="navigation" aria-label="header links">
+		<ul class="headerNav">		
+			
+				
+				
+						<li class="unit size1of7 borderRight"><a href="/eftps/direct/EftpsHome.page" class="navAt">HOME</a></li>
+				
+						
+			
+				
+				
+					<li class="unit size2of7 borderRight"><a href="/eftps/enrollment/new-enrollment-flow">ENROLLMENT</a></li>
+					
+			
+				
+				
+					<li class="unit size3of7 borderRight"><a href="/eftps/direct/ProfileMain.page" aria-describedby="logintxt">MY PROFILE</a></li> 
+					
+			
+				
+				
+					<li class="unit size4of7 borderRight"><a href="/eftps/payments/home" aria-describedby="logintxt">PAYMENTS</a></li>
+					
+			
+				
+				
+					<li class="unit size5of7 borderRight"><a href="/eftps/direct/Help.page">HELP &amp; INFORMATION</a></li> 
+				
+			
+				
+				
+					<li class="unit size6of7 borderRight"><a href="/eftps/direct/ContactUs.page" aria-label="contact us">contact us</a></li>
+					
+			
+			
+				
+					
+					
+						<li class="unit size7of7"><a href="/eftps/login/loginInitial" aria-describedby="logintxt">LOGIN</a></li>
+					
+				
+				
+				
+			
+		</ul>
+	</div>
+</div>
+
+
+
+
+	<table cellpadding="0" cellspacing="0" border="0" width="792">
+	    <tbody><tr>
+	        <td class="sideNav-bg">
+
+
+
+		<ul class="sideNav" role="navigation" aria-label="left side menu links">
+		   <li><a href="/eftps/direct/HelpAboutMain.page" class="oneLine" data-fdclass="sideNav" data-fdid="sidenav_home_about">ABOUT EFTPS</a></li>
+	       <li><a href="/eftps/direct/HowToEnroll.page" class="oneLine" data-fdclass="sideNav" data-fdid="sidenav_home_how">HOW TO USE EFTPS</a></li>
+	       <li><a href="/eftps/direct/FAQGeneral.page" class="oneLine" data-fdclass="sideNav" data-fdid="sidenav_home_faq">FAQ</a></li>
+	     
+	     
+			
+		    	
+     			
+					<li><a href="/eftps/direct/HomeWhatNew.page" class="oneLine" data-fdclass="sideNav" data-fdid="sidenav_home_whatsnew">WHAT'S NEW?</a></li>
+			
+				
+			
+		
+			
+		    	
+     		
+				<li><a href="/eftps/direct/HelpDisclosure.page" class="oneLine" data-fdclass="sideNav" data-fdid="sidenav_home_privacy">PRIVACY STATEMENT</a></li>
+			
+				
+			
+				
+			
+		    	
+     		
+				<li><a href="/eftps/direct/HelpAccessability.page" class="oneLine" data-fdclass="sideNav" data-fdid="sidenav_home_access">ACCESSIBILITY STATEMENT</a></li>
+			
+			
+	 	</ul>	</td>
+	        <td valign="top" align="left">
+
+
+
+<img src="/eftps/images/home/flag_v2.png" width="631" height="64" border="0" alt="">
+			
+<div class="container" role="main">
+			<a name="maincontent"></a>
+			<div class="welcomeContainer">
+
+			<img src="/eftps/images/home/welcometoeftps_v3.png" width="224" height="19" border="0" alt="Welcome to EFTPS®">
+				      </div>
+					
+		    
+		    
+		    
+				    			
+		    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="txt-body">
+<tbody><tr>
+    	<td>
+   			<div style="color:#c33; font-weight: bold;">New to our site?</div>
+    	The Electronic Federal Tax Payment System® tax payment service is provided free by the U.S. Department of the Treasury. After you've 	enrolled and received your credentials, you can pay any tax due to the Internal Revenue Service (IRS) using this system.<br><br>
+   	 	</td>
+    	<td>
+        	<div style="text-align: center; margin-left: 15px;">
+ 			<ul class="homeBtns">
+				<li style="display:block; margin-bottom: 15px;"><a href="/eftps/payments/home" aria-describedby="logintxt">MAKE A PAYMENT</a> </li>
+				<li style="display:block;"><a href="/eftps/enrollment/new-enrollment-flow">ENROLL</a></li> 
+        	</ul> 
+            </div>  
+		</td>
+	</tr>
+    <tr>
+        <td colspan="2">
+            <div style="color:#c33; font-weight: bold;">Notice to Individual Taxpayers:</div>
+            <p class="txt-body">Effective October 17th, 2025,  Individuals will not be able to create new enrollments via EFTPS.gov. If you are an individual taxpayer and are not enrolled in EFTPS.gov by October 17th, you'll need to create an IRS Online Account for Individuals or use the IRS Direct Pay guest path.</p>
+
+            <p class="txt-body">If you are already enrolled in EFTPS.gov to make your individual tax payments you will still be able to make payments; however, it is encouraged you transition to IRS Online Account for Individuals or IRS Direct Pay. All individuals will be required to transition from EFTPS.gov later in 2026.</p>
+
+            <p class="txt-body">For more information on paying via IRS Online Accounts or Direct Pay, visit <a href="https://www.irs.gov/payments/online-account-for-individuals" title="IRS Online Account" aria-describedby="logintxt">IRS Online Account</a> or <a href="https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account" title="IRS Direct Pay" aria-describedby="logintxt">IRS Direct Pay</a> for Individuals. Click <a href="https://www.irs.gov/payments/direct-pay-help#comparisonchart" title="here" aria-describedby="logintxt">here</a> to see the applications that accept payments for each form.</p>
+
+        </td>
+
+    </tr>
+	<tr>
+		<td colspan="3">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="txt-body">
+    			<tbody><tr>        			
+            		<td>	
+                    <div style="color:#c33; font-weight: bold;">Notice to Website Users - Multifactor Authentication (MFA):</div>
+                    <ul style="margin-top: 0">
+                        <li>
+                            <span class="txt-body"><b>What is Multifactor Authentication (MFA) and why is it required?</b></span><br>
+                            <span class="txt-body">Fiscal Service is requiring Multifactor Authentication (MFA) for system access. The new authentication process supports Executive Order 14028, requiring all federal agency applications to implement MFA. EFTPS is partnering with third-party credential service providers Login.gov and ID.me for MFA services. 
+								<br><br>Secure sign-in via Login.gov or ID.me is required as of <strong><u>October 19, 2023</u></strong>.</span>
+                        </li><br>
+
+                        <li>
+                            <span class="txt-body"><b>Where can I go for MFA help?</b></span><br>
+							<ul>
+                            	<li><span class="txt-body"><strong>Login.gov</strong> - Visit <a href="https://login.gov/contact/" target="_blank" class="bodyLink">login.gov/contact</a> for FAQs, help ticket submission, and live agent assistance</span><br></li><br>
+								<li><span class="txt-body"><strong>ID.me</strong> - Visit <a href="https://help.id.me/" target="_blank" class="bodyLink">help.ID.me</a> for FAQs, help ticket submission, and virtual chat support </span><br></li><br>
+								<li><span class="txt-body">EFTPS - Call 1.800.555.4477 for live customer service agent assistance or visit <a href="/eftps/direct/FAQGeneral.page" class="bodyLink">Multifactor Authentication (MFA) &amp; Login Questions</a> for FAQs, including these common questions:</span><br></li>
+									<ul>
+										<li><span class="txt-body"><a href="/eftps/direct/FAQGeneral.page#howAuthenticate" class="bodyLink">How do I register or authenticate with ID.me, Login.gov, or PIV/CAC?</a></span><br></li>
+										<li><span class="txt-body"><a href="/eftps/direct/FAQGeneral.page#loginAfterAuth" class="bodyLink">How do I log in to EFTPS after I authenticate?</a></span><br></li>
+										<li><span class="txt-body"><a href="/eftps/direct/FAQGeneral.page#authMultipleEnrol" class="bodyLink">How do I authenticate if I need to access multiple EFTPS enrollments?</a></span><br></li>
+										<li><span class="txt-body"><a href="/eftps/direct/FAQGeneral.page#noAuthCode" class="bodyLink">What if I have trouble signing in to ID.me or Login.gov or don't receive an authentication code?</a></span><br></li>
+										<li><span class="txt-body"><a href="/eftps/direct/FAQGeneral.page#browserIssue" class="bodyLink">How can I fix a browser issue or error I experienced with ID.me or Login.gov?</a></span><br></li>
+									</ul>
+							</ul>
+                        </li>
+                    </ul>
+                    
+                    <div> <p> <span style="color:#c33; font-weight: bold;">Please note:&nbsp;</span><span class="txt-body-bold">Your tax payment is due regardless of this Web site's availability. You can always make a tax payment by calling our voice response system at 1.800.555.3453. Follow the prompts to make your payment.</span></p></div>
+					</td>
+				</tr>
+            </tbody></table>
+        </td>
+     </tr>
+    
+</tbody></table> 			 
+<div class="importantContainer">	
+<span class="txt-body-bold">What You Need to Know</span>
+	<ul>
+		<li><p class="txt-body"><strong>Important Notice for Individual Taxpayers:</strong><br>If you are an individual taxpayer (i.e., paying taxes for yourself rather than for a business or on behalf of another entity), IRS Direct Pay and IRS Online Account for Individuals are available for making tax payments.<br><br> Effective DATE = October 17, 2025, new individual taxpayers will be required to use either IRS Direct Pay or IRS Online Account for Individuals to make their tax payments. You must create an account to make a payment through IRS Online Account. An enrollment is not required for IRS Direct Pay. Starting 2026*, all individual taxpayers must use one of these options.<br><br> If you currently use EFTPS to make your tax payments, we encourage you to transition to IRS Direct Pay or IRS Online Account for Individuals in advance to become familiar with the system.<br><br> For more information, visit <a href="https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account" title="IRS Direct Pay" aria-describedby="logintxt">IRS Direct Pay</a> or <a href="https://www.irs.gov/payments/online-account-for-individuals" title="IRS Online Account" aria-describedby="logintxt">IRS Online Account</a> for Individuals.<br><br> *Anticipated September 2026; though specific date may change.</p></li>
+		<li><p class="txt-body">The IRS continues to remind taxpayers to watch out for email schemes. Taxpayers will only receive an email from EFTPS if they have opted in for email notifications when they sign up for email through EFTPS. Report all unsolicited email claiming to be from the IRS or an IRS-related function to phishing@irs.gov.</p></li>
+		<li><p class="txt-body">You must be enrolled to use the EFTPS® tax payment service. To enroll, click on Enrollment at the top of this page and follow the steps. If this is your first time enrolling in EFTPS®, your information will need to be validated with the IRS. After this process is complete you will receive a personal identification number (PIN) via U.S. Mail in five to seven business days at your IRS address of record.</p></li> 
+		<li><p class="txt-body">Payments using this Web site or our voice response system must be scheduled by <strong>8 p.m. ET the day before the due date</strong> to be received timely by the IRS. The funds will move out of your banking account on the date you select for settlement.</p></li> 
+		<li><p class="txt-body">This EFTPS® tax payment service Web site supports Microsoft EDGE for Windows, Google Chrome for Windows and Mozilla Firefox for Windows.</p></li>
+		<li><p class="txt-body">You may use this Web site and our voice response system (1.800.555.3453) interchangeably to make payments.</p></li> 
+		<li><p class="txt-body">If you are required to make deposits electronically but do not wish to use the EFTPS® tax payment service yourself, ask your financial institution about ACH Credit or same-day wire payments, or consult a tax professional or payroll provider about making payments for you. Please note: These options may result in fees from the providers. Payments through third parties may have earlier cutoff times; please check with them for their deadlines.</p> </li>
+	</ul>
+</div>					
+		
+		</div>	
+
+<!--
+	Build Date: 2026-03-09_22-52-44 
+	Build Version: 7.3.1
+ -->
+
+</td>
+	    </tr>
+	    <tr>
+	    	<td colspan="2">
+
+
+
+<div class="footerContainer" role="contentinfo">
+	<div class="footerDiv">
+		<div class="footerDiv1"></div>
+		<div class="footerDiv2"></div>
+		<div class="footerDiv3"></div>
+		<div class="footerDiv4"></div>
+		<div class="footerDiv5"></div>
+	</div>	
+	<div class="footer" role="navigation" aria-label="footer links">
+	    <a href="/eftps/direct/EftpsHome.page" title="Home" class="footerLink">Home</a>
+	    <a href="/eftps/enrollment/new-enrollment-flow" title="Enrollment, for new and additional enrollments" class="footerLink" "="">Enrollment</a>
+		<a href="/eftps/direct/ProfileMain.page" title="My Profile, for profile management options." class="footerLink" aria-describedby="logintxt">My Profile</a>
+		<a href="/eftps/payments/home" title="Payments, for making and cancelling payments and view history" class="footerLink" aria-describedby="logintxt">Payments</a>
+		<a href="/eftps/direct/Help.page" title="Help and Information" class="footerLink">Help &amp; Information</a>
+		<a href="/eftps/direct/ContactUs.page" title="Contact EFTPS" class="footerLink">Contact Us</a>
+
+		
+			
+				
+				
+					<a href="/eftps/login/loginInitial" title="Login to EFTPS." class="footerLink" aria-describedby="logintxt">Login</a>
+				
+			
+		
+		
+        <span id="logintxt" class="hidden-text" aria-hidden="true">Upon logging in to this site, you may be redirected to a separate page and prompted to register and/or authenticate with a Credential Service Provider, ID.me or Login.gov. Federal Agency users have the option to utilize PIV/CAC to authenticate. Upon completion of this step, you will be redirected back to EFTPS to input your EIN or SSN, PIN, and Password.</span>
+
+	 </div>
+	 	 
+	 <div class="footer">
+	 	<a href="/eftps/help/homeGovernmentLinkWarning?link=20" title="Leave EFTPS and go to the USA.gov website" class="footerLink">USA.gov</a>
+	 	<a href="/eftps/help/homeGovernmentLinkWarning?link=101" title="Leave EFTPS and go to the IRS website" class="footerLink">IRS.gov</a>
+	 	<a href="/eftps/help/homeGovernmentLinkWarning?link=106" title="Leave EFTPS and go to the United States Treasury website" class="footerLink">Treasury.gov</a>
+	 </div>
+	 
+     <div class="footerNotice">Electronic Federal Tax Payment System® and EFTPS® are registered servicemarks of the U.S. Department of the Treasury's Bureau of the Fiscal Service.</div>
+</div>
+
+
+
+	
+	<div class="feedback-container feedback-right" id="feedback-number-0" onclick="openFeedbackModal();">
+  <div class="feedback-inner-wrapper">
+      <div id="feedback_tab">
+          <a href="javascript:void(0);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="0.5in" height="0.5in" viewBox="0 0 44 40">
+                  <path id="Selection #2" fill="#ffffff" stroke="#ffffff" stroke-width="1" d="M 24.00,27.31
+         C 19.70,26.25 6.48,28.51 4.02,25.40
+           2.77,23.81 3.00,19.99 3.00,18.00
+           2.99,14.93 2.19,5.93 4.60,4.02
+           6.08,2.85 9.18,3.01 11.00,3.00
+           14.52,2.98 29.26,2.33 31.40,4.02
+           33.10,5.37 32.96,8.05 33.00,10.00
+           33.00,10.00 33.00,33.00 33.00,33.00
+           30.27,31.08 27.15,28.10 24.00,27.31 Z
+         M 9.00,9.00
+         C 9.00,9.00 9.00,12.00 9.00,12.00
+           9.00,12.00 27.00,12.00 27.00,12.00
+           27.00,12.00 27.00,9.00 27.00,9.00
+           27.00,9.00 9.00,9.00 9.00,9.00 Z
+         M 9.00,14.00
+         C 9.00,14.00 9.00,17.00 9.00,17.00
+           9.00,17.00 27.00,17.00 27.00,17.00
+           27.00,17.00 27.00,14.00 27.00,14.00
+           27.00,14.00 9.00,14.00 9.00,14.00 Z
+         M 9.00,19.00
+         C 9.00,19.00 9.00,22.00 9.00,22.00
+           9.00,22.00 27.00,22.00 27.00,22.00
+           27.00,22.00 27.00,19.00 27.00,19.00
+           27.00,19.00 9.00,19.00 9.00,19.00 Z"></path>
+              </svg>
+              <span>Feedback</span>
+          </a>
+      </div>
+  </div>
+</div>
+<div id="feedback_modal" onclick="this.style.display = 'none'">
+	<script src="/eftps/feedback/js/feedback_custom.js"></script>
+	<script src="/eftps/js/eftps/common/cnxSessionSet.js"></script>
+	
+	<script>
+    const ConcextrixUrlData = { 
+	"default" : { 
+		"percent" : 0, 
+		"pageId" : 0 
+	}, 
+	"urls" : [ 
+		{ 
+			"path" : "/payments/payment-confirmation-flow", 
+			"percent" : 0.02, 
+			"pageId" : 1 
+		}, 
+		{ 
+			"path" : "/enrollment/congratulations-flow", 
+			"percent" : 0.33, 
+			"pageId" : 2 
+		}, 
+		{ 
+			"path" : "/login/forgotPassword", 
+			"percent" : 0.50, 
+			"pageId" : 4 
+		}, 
+		{ 
+			"path" : "/direct/ContactUs.page", 
+			"percent" : 1.0, 
+			"pageId" : 8 
+		}, 
+		{ 
+			"path" : "/payments/business-payment-flow", 
+			"percent" : 0.02, 
+			"pageId" : 16 
+		}, 
+		{ 
+			"path" : "/direct/FAQGeneral.page", 
+			"percent" : 1.0, 
+			"pageId" : 32 
+		}, 
+		{ 
+			"path" : "/login/createPassword", 
+			"percent" : 0.20, 
+			"pageId" : 64 
+		}, 
+		{ 
+			"path" : "/profile/changePassword", 
+			"percent" : 1.0, 
+			"pageId" : 128 
+		}, 
+		{ 
+			"path" : "/direct/Help.page", 
+			"percent" : 1.0, 
+			"pageId" : 256 
+		}, 
+		{ 
+			"path" : "/direct/Logout.page", 
+			"percent" : 0.02, 
+			"pageId" : 512 
+		}, 
+		{ 
+			"path" : "/login/logout", 
+			"percent" : 0.02, 
+			"pageId" : 1024 
+		},
+		{ 
+			"path" : "/payments/history/view", 
+			"percent" : 1.0, 
+			"pageId" : 2048 
+		},
+		{ 
+			"path" : "/enrollment/add-enrollment-flow", 
+			"percent" : 1.0, 
+			"pageId" : 4096 
+		}
+	] 
+}
+</script>
+	<script>
+		const basePathCnxCdnURL = "https://cnxdigitalintercept.azureedge.net/prod/clients/eftps/B1620FD3CDB341BEBA73FC9FBDEB9391/";
+		const dlDate = new Date();
+		const dlTimestamp = dlDate.toJSON();
+		const userDataObject = {};
+		const urlDefaults = ConcextrixUrlData.default;
+		const urlMatch = getCnxValues(ConcextrixUrlData);
+
+		if(urlMatch){setSurvey(urlDefaults, urlMatch)};
+
+		userDataObject.loggedIn = ("false").toLowerCase() === 'true';
+		userDataObject.txn = ""; //Individual amt
+		userDataObject.txnAmount = ""; //Rollup amt
+		userDataObject.totalTxnAmount = fixTxn(userDataObject.txn);
+		userDataObject.cnxTimestamp = dlTimestamp;
+
+		writeDataLayer(userDataObject);
+	</script>
+
+</div></td>
+		</tr>
+	</tbody></table>
+</div>
+
+<script type="text/javascript" id="" charset="">var _siteChannel={};(function(){this.publishEvent=function(b,a){a=a||{};a.event=b;dataLayer.push(a)}}).apply(_siteChannel);_siteChannel.publishEvent("Load Library - Core");</script><script type="text/javascript" id="" charset="">var makeNewSessionID=function(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(a){var b=16*Math.random()|0;a="x"==a?b:b&3|8;return a.toString(16)})},isEmpty=function(a){return"undefined"==typeof a||null==a||0>=a.length?!0:!1};isEmpty(sessionStorage.getItem("cnxsession"))&&sessionStorage.setItem("cnxsession",makeNewSessionID());var cnxsession=sessionStorage.getItem("cnxsession");</script><script id="_fed_an_ua_tag" text="" charset="" type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=TRE&amp;subagency=FS&amp;exts=xml,prn,json,csv,tsv"></script><script type="text/javascript" id="" charset="">var _analytics=_analytics||{};
+(function(){Date.now||(Date.now=function(){return+new Date});this.gtmStartTime=Date.now();this.trackPageview=function(a){_siteChannel.publishEvent("trackPageview",{eventData:{pageURL:a}})};this.trackEvent=function(a,c,b,d){d=d||{};if(!d.value){for(var f=google_tag_manager["rm"]["1142640"](6),e=0;e<f.length;e++){var h=f[e][0],k=f[e][1],l=f[e][2],m=f[e][3];if(g(a,h)&&g(c,k)&&g(b,l)){d.value=m;break}}var g=function(b,a){return a?b?"string"==typeof a?0<=b.indexOf(a):a.test(b):"string"==typeof a?""==a:a.test(""):!0}}_siteChannel.publishEvent("trackEvent",
+{eventData:{eventCategory:a,eventAction:c,eventLabel:b,eventValue:d.value,nonInteraction:d.nonInteraction}})};this.trackSocial=function(a,c,b,d){d=d||{};_siteChannel.publishEvent("trackSocial",{eventData:{socialNetwork:a,socialAction:c,socialTarget:b,socialPageURL:d.pageURL}})};this.setDimension=function(a,c,b){b=b||{};switch(b.scope){case "user":case "visitor":b.scope=1;break;case "session":case "visit":b.scope=2;break;case "hit":case "page":b.scope=3}_siteChannel.publishEvent("setDimension",{eventData:{dimensionIndex:a,
+dimensionValue:c,dimensionName:b.name,dimensionScope:b.scope}})};this.setMetric=function(a,c){_siteChannel.publishEvent("setMetric",{eventData:{metricIndex:a,metricValue:c}})};this.setContentGroup=function(a,c){_siteChannel.publishEvent("setContentGroup",{eventData:{groupIndex:a,groupName:c}})}}).apply(_analytics);_siteChannel.publishEvent("Load Library - Ecommerce");</script><script type="text/javascript" id="" charset="">var _analytics=_analytics||{};
+(function(){this.addProduct=function(c,a,b){b=b||{};_siteChannel.publishEvent("addProduct",{eventData:{productId:c,productName:a,productCategory:b.category,productBrand:b.brand,productVariant:b.variant,productPrice:b.price,productQuantity:b.quantity,productCoupon:b.coupon,productPosition:b.position}})};this.setTransaction=function(c,a){a=a||{};_siteChannel.publishEvent("setTransaction",{eventData:{transactionId:c,transactionAffiliation:a.affiliation,transactionRevenue:a.revenue,transactionTax:a.tax,
+transactionShipping:a.shipping,transactionCoupon:a.coupon}})};this.trackTransaction=function(c,a){this.setTransaction(c,a);this.trackEvent("ecommerce","transaction",void 0,{nonInteraction:!0})}}).apply(_analytics);_siteChannel.publishEvent("Load Library - Forms");</script><script type="text/javascript" id="" charset="">var _analytics=_analytics||{};
+(function(){this.trackFormSubmit=function(b){var c=b.getAttribute("id")||"ID";b=b.getAttribute("name")||"NAME";this.trackEvent("forms","form submit","Form - "+c+"/"+b)};this.tagFormFields=function(b){function c(a){if(a.form){var b=a.form.getAttribute("id");var c=a.form.getAttribute("name")}b=b?b:"ID";c=c?c:"NAME";var d=a.getAttribute("id")?a.getAttribute("id"):"ID";a=a.getAttribute("name")?a.getAttribute("name"):"NAME";_analytics.trackEvent("forms","form field update","Form - "+b+"/"+c+" | Field - "+
+d+"/"+a)}if(b)for(var g=["input","select","textarea"],d=0;d<g.length;d++)for(var h=b.getElementsByTagName(g[d]),e=0;e<h.length;e++){var a=h[e];if(!a.tagged){var k=a.tagName,f=a.getAttribute("type");/submit/i.test(f)||(/input/i.test(k)&&/date$|month|week|^time|datetime-local|number|range|color/i.test(f)?(a.original_event=a.onblur,a.onblur=function(){c(this);this.original_event&&this.original_event()}):/input/i.test(k)&&/radio|checkbox|button/i.test(f)?(a.original_event=a.onclick,a.onclick=function(){c(this);
+this.original_event&&this.original_event()}):(a.original_event=a.onchange,a.onchange=function(){c(this);this.original_event&&this.original_event()}),a.tagged=!0)}}}}).apply(_analytics);_siteChannel.publishEvent("Load Library - Links");</script><script type="text/javascript" id="" charset="">var _analytics=_analytics||{};
+(function(){this.trackLinkClick=function(c){var e=c.href;if(e&&!e.match(/^javascript:/i))if(e.match(/^mailto:/i))this.trackEvent("mailto","click",e.replace(/^mailto:/i,""));else if(e.match(/^tel:/i))this.trackEvent("tel","click",e.replace(/^tel:/i,""));else if(e.match(/^https?:/i)){var a=c;var b=google_tag_manager["rm"]["1142640"](10);b=new RegExp(".*\\.("+b.join("|")+")(\\?.*|#.*)?$","i");b.test(a.href)?(_analytics.trackEvent("download","click",a.href),a=!0):a=!1;if(!a){a:{a=c;b=google_tag_manager["rm"]["1142640"](11);for(var d=0;d<
+b.length;d++){var f=b[d][0],g=b[d][1],h=b[d][2],k=b[d][3];if(h&&h.test(a.href)){_analytics.trackSocial(f,g,a.href);a=!0;break a}else if(k==a.id){_analytics.trackSocial(f,g,a.id);a=!0;break a}}a=!1}if(!a){if(c.hostname){c=c.hostname;a=-1!=c.indexOf(_analytics.getTopLevelDomain());if(!a)for(b=google_tag_manager["rm"]["1142640"](12),d=0;d<b.length;d++)if(-1!=c.indexOf(b[d].toLowerCase())){a=!0;break}c=a}else c=!0;c||this.trackEvent("outbound","click",e)}}}}}).apply(_analytics);_siteChannel.publishEvent("Load Library - Supplemental");</script><script type="text/javascript" id="" charset="">var _analytics=_analytics||{};
+(function(){this.getCookie=function(c){var b=document.cookie,a=b.indexOf(" "+c+"\x3d");-1==a&&(a=b.indexOf(c+"\x3d"),1<a&&(a=-1));-1==a?b=null:(a=b.indexOf("\x3d",a)+1,c=b.indexOf(";",a),-1==c&&(c=b.length),b=unescape(b.substring(a,c)));return b};this.setCookie=function(c,b,a,d,f){a||(a=30);var e=new Date;e.setDate(e.getDate()+a);document.cookie=c+"\x3d"+b+";expires\x3d"+(0>a?"":e.toGMTString())+";path\x3d"+(d?d:"/")+";domain\x3d"+(f?f:this.getTopLevelDomain())};this.deleteCookie=function(c,b,a){document.cookie=
+c+"\x3d;expires\x3dThu, 01-Jan-1970 00:00:01 GMT;path\x3d"+(b?b:"/")+";domain\x3d"+(a?a:this.getTopLevelDomain())};this.getTopLevelDomain=function(){for(var c=document.domain.split(".").reverse(),b="__test__",a=c[0],d=0;d<c.length;d++){document.cookie=b+"\x3d__test__;path\x3d/;domain\x3d"+a;if(null!=this.getCookie(b))return document.cookie=b+"\x3d;expires\x3dThu, 01-Jan-1970 00:00:01 GMT;path\x3d/;domain\x3d"+a,a;a=c[d+1]+"."+a}};this.getURLParameter=function(c,b){var a=decodeURI((RegExp("[?\x26]"+
+c+"\x3d([^\x26#]*)","i").exec(location.search)||[,""])[1]);return!a&&b?b:a};this.ready=function(c){/in/.test(document.readyState)?setTimeout("_analytics.ready("+c+")",9):c()};this.jQueryReady=function(c){window.jQuery?c():setTimeout("_analytics.jQueryReady("+c+")",9)};this.createLabel=function(){for(var c="|",b=[],a=0;a<arguments.length;a++){var d=arguments[a];b[a]=d instanceof Array?d[0]+"\x3d"+d[1]:void 0==d?"undefined":d}return b.join(c)};this.appendScript=function(c,b){b=b||{};var a=document.createElement("script");
+a.type="text/javascript";a.async="true";a.src=c;if(b.callback){var d=!1;a.onload=a.onreadystatechange=function(){d||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState||(d=!0,b.callback(),a.onload=a.onreadystatechange=null)}}b.scope?b.scope.appendChild(a):document.getElementsByTagName("head")[0].appendChild(a)}}).apply(_analytics);_siteChannel.publishEvent("Load Library - Site");</script><script type="text/javascript" id="" charset="">var _analytics=_analytics||{};
+(function(){this.debug=function(a,b){var c=!1;c&&window.console&&(b?console.log(a,b):console.log(a))};this.setMetrics=function(){};this.setDimensions=function(){_analytics.setDimension(1,document.referrer?document.referrer:"(not set)");_analytics.setDimension(2,navigator.userAgent)};this.setContentGroups=function(){};this.setEcommerceData=function(){};String.prototype.trim||(String.prototype.trim=function(){return this.toString().replace(/^([\s]*)|([\s]*)$/g,"")});this.trim=function(a){if(a)return a.toString().trim()};
+window.Element&&(Element.prototype.matches=Element.prototype.matches||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector||Element.prototype.oMatchesSelector||Element.prototype.webkitMatchesSelector||Element.prototype.webkitMatchesSelector,Element.prototype.matches||(Element.prototype.matches=function(a){var b=this;a=(b.document||b.ownerDocument).querySelectorAll(a);for(var c=0;a[c]&&a[c]!==b;)c++;return a[c]?!0:!1}));this.onEvent=function(a,b,c){function e(a,b,c){a=a.target||
+a.srcElement;if(b){if("string"==typeof b){var d=b;b=function(a){return a&&a.matches&&a.matches(d)}}do if(b(a)){c.call(a);break}while(a=a&&a.parentNode)}else c.call(a)}var d=document;d.addEventListener?d.addEventListener(a,function(a){e(a,b,c)},!0):d.attachEvent&&d.attachEvent("on"+a,function(a){e(a,b,c)})};this.closest=function(a,b){if(a&&a.matches)return a.matches(b)?a:a.querySelector(b)||_analytics.closest(a.parentNode,b)}}).apply(_analytics);_siteChannel.publishEvent("Run Analytics Base Tag");</script><script type="text/javascript" id="" charset="">google_tag_manager["rm"]["1142640"](16)&&(function(a,d,b){a.GoogleAnalyticsObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date;_analytics.appendScript("https://www.google-analytics.com/analytics.js")}(window,document,"ga"),function(){var a=google_tag_manager["rm"]["1142640"](17);a instanceof Array||(a=[a]);for(var d=0;d<a.length;d++){var b=a[d],c=b.replace(/-/g,"");ga("create",b,"auto",{name:c,allowLinker:!0});ga(c+".require","linkid","linkid.js");ga(c+".require","linker");ga(c+".linker:autoLink",google_tag_manager["rm"]["1142640"](18));
+ga(c+".require","displayfeatures");ga(c+".require","ec");google_tag_manager["rm"]["1142640"](19)&&ga(c+".set","\x26uid",google_tag_manager["rm"]["1142640"](20))}}());_analytics.ready(function(){_analytics.setMetrics();_analytics.setDimensions();_analytics.setContentGroups();_analytics.setEcommerceData();_analytics.trackPageview();_analytics.debug("Time to load GTM and track the pageview took "+parseInt(Date.now()-_analytics.gtmStartTime)+" milliseconds.");_siteChannel.publishEvent("Run Tracking Tags")});</script><script type="text/javascript" id="" charset="">(function(){var c=google_tag_manager["rm"]["1142640"](30)||{};if(google_tag_manager["rm"]["1142640"](31)){var a=google_tag_manager["rm"]["1142640"](32);a instanceof Array||(a=[a]);for(var b=0;b<a.length;b++){var d=a[b].replace(/-/g,"");ga(d+".set","dimension"+c.dimensionIndex,c.dimensionValue)}}})();</script><script type="text/javascript" id="" charset="">(function(){var c=google_tag_manager["rm"]["1142640"](34)||{};if(google_tag_manager["rm"]["1142640"](35)){var a=google_tag_manager["rm"]["1142640"](36);a instanceof Array||(a=[a]);for(var b=0;b<a.length;b++){var d=a[b].replace(/-/g,"");ga(d+".set","dimension"+c.dimensionIndex,c.dimensionValue)}}})();</script><script type="text/javascript" id="" charset="">(function(){var a=google_tag_manager["rm"]["1142640"](38)||{};a=(a=a.pageURL)?a:google_tag_manager["rm"]["1142640"](39);if(google_tag_manager["rm"]["1142640"](40)){var b=google_tag_manager["rm"]["1142640"](41);b instanceof Array||(b=[b]);for(var c=0;c<b.length;c++){var d=b[c].replace(/-/g,"");ga(d+".send","pageview",a)}}})();</script><script type="text/javascript" id="" charset="">_analytics.onEvent("click",".headerNav a",function(){var a=this.textContent||this.innerText;_analytics.trackEvent("Navigation buttons","Clicked on","EFTPS Header Navigation - "+a)});_analytics.onEvent("click","[data-fdclass\x3d'sideNav']",function(){var a=this.textContent||this.innerText,b=document.querySelector(".headerNav .navAt");b=b.textContent||b.innerText;_analytics.trackEvent("Navigation buttons","Clicked on","EFTPS Side Navigation - "+b+" \x3e "+a)});
+_analytics.onEvent("click",".homeBtns a",function(){var a=/payments/.test(this.href)?"Make a Payment":"Enroll";_analytics.trackEvent("Navigation buttons","Clicked on","EFTPS Home Page button - "+a)});_analytics.onEvent("click","[data-fdclass\x3d'helpLink']",function(){_analytics.trackEvent("Help links","Clicked on","EFTPS field help for "+this.dataset.fdid)});_analytics.onEvent("submit","#LoginForm",function(){_analytics.trackEvent("Forms","Submitted Form","EFTPS Login Form")});
+_analytics.onEvent("click","a[title\x3d'Need a Password']",function(){_analytics.trackEvent("Navigation links","Interacted with","EFTPS Need a Password link")});_analytics.onEvent("submit","#answerFields",function(){var a=$("#bankingInfo").attr("checked")?"Banking Info":"ETN";_analytics.trackEvent("Forms","Submitted Form","EFTPS Need a Password Form with "+a+" selected")});_analytics.onEvent("submit","#passwordFields",function(){_analytics.trackEvent("Forms","Submitted Form","EFTPS Create a Password Form")});
+if(window.userData){_analytics.setDimension(4,window.userData.taxpayerType);var loginset=sessionStorage.getItem("ga_eftps_loginset");"true"!==loginset&&(_analytics.trackEvent("Login Results","Logged in as","EFTPS Login success as - "+window.userData.taxpayerType),sessionStorage.setItem("ga_eftps_loginset","true"))}/taiLoginAttempt/.test(window.location.pathname)&&_analytics.trackEvent("Login Results","Login failed","EFTPS Login failure");
+/^\/eftps\/profile\/deletePassword/.test(window.location.pathname)&&function(){var a=document.querySelector("[title\x3d'Delete Password Confirmation']");a&&_analytics.trackEvent("My Profile","Completed","EFTPS Delete Password success")}();if(/^\/eftps\/direct\/Logout\.page/.test(window.location.pathname))_analytics.onEvent("click",".pageLink",function(){var a=/previous\spage/.test(this.title)?"Decline":"Accept";_analytics.trackEvent("Logout","Selected Logout and chose","EFTPS Logout"+a)});
+function timeoutWarning(){_analytics.trackEvent("Warnings","Displayed","EFTPS Session Timeout Warning");window.alert("This session is about to expire. Select OK to continue the session");myRequest=createXMLHTTPRequest();myRequest.open("GET","/eftps/timeout?dummy\x3d"+(new Date).getTime(),!0);myRequest.onreadystatechange=validateReturnStatus;myRequest.send(null)}(function(){var a=document.querySelector("[title\x3d'Additional PIN Confirmation']");a&&_analytics.trackEvent("My Profile","Completed","EFTPS Request PIN success")})();
+(function(){var a=document.querySelector("[title\x3d'Change Password Confirmation']");a&&_analytics.trackEvent("My Profile","Completed","EFTPS Change Password success")})();(function(){var a=document.querySelector("[title\x3d'Change Password Confirmation']");a&&_analytics.trackEvent("Need a Password","Completed","EFTPS Create Password success")})();
+(function(){var a=document.querySelector("p[class\x3d'errorHybrid']");a&&_analytics.trackEvent("Errors","Error displayed","EFTPS Error message displayed - "+a)})();_analytics.onEvent("click","[title\x3d'Privacy Act and Paperwork Reduction Act Information'] input",function(){_analytics.trackEvent("My Profile","Accepted or Declined","EFTPS Privacy Act - "+this.value)});_analytics.trackEvent("CNX","Session ID",sessionStorage.getItem("cnxsession"));_analytics.setDimension(11,sessionStorage.getItem("cnxsession"));</script><script type="text/javascript" id="" charset="">(function(){var a=google_tag_manager["rm"]["1142640"](45)||{};if(google_tag_manager["rm"]["1142640"](46)){var b=google_tag_manager["rm"]["1142640"](47);b instanceof Array||(b=[b]);for(var c=0;c<b.length;c++){var d=b[c].replace(/-/g,"");ga(d+".set","page",google_tag_manager["rm"]["1142640"](48));ga(d+".send",{hitType:"event",eventCategory:a.eventCategory,eventAction:a.eventAction,eventLabel:a.eventLabel,eventValue:a.eventValue,nonInteraction:a.nonInteraction})}}})();</script><script type="text/javascript" id="" charset="">(function(){var c=google_tag_manager["rm"]["1142640"](49)||{};if(google_tag_manager["rm"]["1142640"](50)){var a=google_tag_manager["rm"]["1142640"](51);a instanceof Array||(a=[a]);for(var b=0;b<a.length;b++){var d=a[b].replace(/-/g,"");ga(d+".set","dimension"+c.dimensionIndex,c.dimensionValue)}}})();</script></body></html>

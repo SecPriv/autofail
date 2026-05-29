@@ -1,0 +1,123 @@
+<!DOCTYPE html><html type="html5" lang="cs"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="https://share.seznam.cz/static-content/novinky/69f9c31ac24a2550866a739d?parentUrl=https%3A%2F%2Fwww.novinky.cz%2Fclanek%2Flifestyle-sex-vztahy-zivot-v-sendvici-kdyz-pece-o-druhe-vycerpava-psychicky-i-financne-40578560">
+        <title>Static Content Server</title>
+
+        <script type="text/javascript" src="//h.seznam.cz/js/dot-small.js"></script>
+        <script>
+            !function(){"use strict";var e={init:function(e){window.$redirect=(...t)=>e.processLinkRedirect(...t),window.$redirectAllLinks=(...t)=>e.processAllLinksRedirect(...t),window.$redirectToUrl=(...t)=>e.redirectToUrl(...t),window.$resizeStaticContent=(...t)=>e.resizeStaticContent(...t),window.$sendGA4Hit=(...t)=>e.sendGA4Hit(...t),window.$setFullscreenMode=(...t)=>{e.sendFullscreenModePostMessage(...t),e.overwriteScrollToMethod(...t)},window.$staticContentConfig={resizeAllowed:!0,listenersAllowed:!0}}};const{replace:t}="",s=/[&<>'"]/g,n={"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"},i=e=>n[e],o=e=>t.call(e,s,i),r=new Set(["isAmp"]),d=new Set([]),a=new Set([]);const c=new class{getUrlParams(e){const t={};return e.slice(1).split("&").forEach(e=>{const s=e.indexOf("=");if(-1!==s){let n=e.slice(0,s),i=e.slice(s+1);if(n=decodeURIComponent(n),i=o(decodeURIComponent(i)),r.has(n)&&(i="isAmp"!==n&&("true"===i||"1"===i)),d.has(n)&&(i=Number.parseInt(i)),a.has(n))try{i=JSON.parse(i)}catch{i=void 0}t[n]=i}}),t}parseUrl(e){const t={protocol:void 0,host:void 0,hostname:void 0,port:void 0,pathname:void 0,search:void 0,hash:void 0};if(!e||"string"!=typeof e)return console.warn(`LinkHelper.parseUrl() method got argument ${e}. Only valid argument is string.`),t;const s=e.match(/^(https?:)?\/\/(([^#/:?]*)(?::(\d+))?)(\/[^#?]*)(\?[^#]*|)(#.*|)$/);return s?{protocol:s[1],host:s[2],hostname:s[3],port:s[4],pathname:s[5],search:o(s[6]),hash:s[7]}:t}},l=new class{constructor(e,t){this._window=e,this._document=t,this._sentinel=this._window.location.pathname.split("/").pop(),this._container=null,this._sendIt=null,this._customLinkRedirectionAllowed=!1,this._processLinkRedirect=this.processLinkRedirect.bind(this)}init(){this._processLinksRedirectHandshake()}listen(){this._window.addEventListener("load",()=>{this._container=this._document.querySelector("#static-content"),this._window.$staticContentConfig.resizeAllowed&&this._window.$staticContentConfig.listenersAllowed&&this._sendResizePostMessage()}),this._window.addEventListener("resize",()=>{this._window.$staticContentConfig.resizeAllowed&&this._window.$staticContentConfig.listenersAllowed&&this.resizeStaticContent()}),this._window.addEventListener("message",e=>{const{data:t}=e;t.sentinel===this._sentinel&&"link_redirect_ACK"===t.type&&(this._customLinkRedirectionAllowed=!0)}),this._window.addEventListener("error",({error:e})=>{this._sendErrorMessage(e)})}overwriteScrollToMethod(){this._window.scrollTo=(e,t)=>{const s={sentinel:this._sentinel,type:"SCROLL_TO",payload:{x:e,y:t}};this._sendCommand(s)}}processAllLinksRedirect(){const e=[...this._document.links||[]];for(const t of e)t.removeEventListener("click",this._processLinkRedirect),t.addEventListener("click",this._processLinkRedirect)}processLinkRedirect(e){this._customLinkRedirectionAllowed&&this._sendRouterRedirectPostMessage(e)}redirectToUrl(e){this._customLinkRedirectionAllowed&&e&&this._sendRedirectPostMessage(e)}resizeStaticContent(){this._window.$staticContentConfig.resizeAllowed&&(clearTimeout(this._sendIt),this._sendIt=setTimeout(()=>this._sendResizePostMessage(),100))}sendFullscreenModePostMessage(){const e={sentinel:this._sentinel,type:"FULLSCREEN_MODE",payload:{activate:!0}};this._sendCommand(e)}sendGA4Hit(e,t){const s={type:"GA4",component:"static-content",name:e,parameters:t};this._sendCommand(s)}_processLinksRedirectHandshake(){this._sendCommand({sentinel:this._sentinel,type:"link_redirect_SYN"})}_sendCommand(e){this._window.parent&&e&&this._window.parent.postMessage(e,"*")}_sendErrorMessage(e){const{name:t,message:s,stack:n}=e;this._sendCommand({sentinel:this._sentinel,type:"ERROR",error:{name:t,message:s,stack:n}})}_sendRedirectPostMessage(e){const t={sentinel:this._sentinel,type:"REDIRECT",url:e};this._sendCommand(t)}_sendResizePostMessage(){let e={};this._container&&(e={sentinel:this._sentinel,type:"RESIZE",payload:{height:this._container.offsetHeight}}),this._sendCommand(e)}_sendRouterRedirectPostMessage(e){if(0!==e.button||e.ctrlKey)return;e.preventDefault(),e.stopPropagation();let t=e.target;for(;!t.href&&t.parentNode&&"BODY"!==t.tagName;)t=t.parentNode;this._sendRedirectPostMessage(t.href)}}(window,document);window.DOT&&window.DOT.cfg({propagateHits:!0}),window.$Debug=!1,window.$UrlParams=c.getUrlParams(window.location.search),window.$urlParams=window.$UrlParams,window.$parentParsedUrl=c.parseUrl(window.$UrlParams.parentUrl),window.$parentUrlParams=c.getUrlParams(window.$parentParsedUrl.search||""),window.scriptLoader=new class{static get $dependencies(){return[]}constructor(){this._loadedScripts={}}load(e,t){if(this._loadedScripts[e])return this._loadedScripts[e];const s=this._createScriptElement();return this._loadedScripts[e]=new Promise((n,i)=>{s.onload=()=>n({url:e}),s.onerror=function(s){s instanceof Error?i(s):i(new Error(`Failed to load resource: ${t||e}`))}}),t?s.innerHTML=t:(s.async=!0,s.src=e),document.head.appendChild(s),t&&setTimeout(()=>s.onload(),0),this._loadedScripts[e]}_createScriptElement(){return document.createElement("script")}},l.init(),l.listen(),e.init(l)}();
+
+        </script>
+        <style>
+            html,body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="static-content"><style>
+  body, html, a {
+    margin: 0px;
+    padding: 0px;
+    
+    line-height: 1.5;
+    color: #0B2D36;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    
+    background-color: rgba(213, 240, 191, 0.84);
+  }
+  
+  .container {
+  	display: flex;
+  
+  	padding: 8px 16px;
+    
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .logo {
+  	width: 52px;
+    height: 50px;
+  }
+  
+  .button {
+  	flex-shrink: 0;
+  
+	margin-left: auto;
+  	border-radius: 100px;
+    border: 3px solid #0B2D36;
+    background: rgba(255, 255, 255, 0.24);
+    padding: 10px 30px;
+    
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  
+  .button:hover,
+  .button:focus-visible {
+  	border-color: #0B2D36;
+    
+    color: white;
+    
+    background-color: #0B2D36;
+  }
+  
+  .icon {
+  	display: none;
+  }
+  
+  @media (max-width: 540px) {
+  	body {
+    	font-size: 12px;
+    }
+  
+  	.button {
+    	display: flex;
+    
+    	padding: 0;
+        height: 38px;
+        width: 38px;
+        
+        justify-content: center;
+        align-items: center;
+    }
+  
+  	.text {
+    	display: none;
+    }
+    
+    .icon {
+    	display: flex;
+    }
+  }
+</style>
+
+<a class="container" target="_top" href="https://www.novinky.cz/p/fotosoutez/nejhezci-zahradni-jezirko-21">
+
+<img class="logo" src="https://d15-a.sdn.cz/d_15/c_img_qB_A/kcHp2YdDtBwNESBc7sGiBJBb/6677/fotosoutez-zahrada-jezirko.png?fl=nop" alt="logo">
+
+Fotosoutěž: Nejhezčí zahradní jezírko
+
+<span class="button">
+  <span class="text">Chci soutěžit</span>
+  <svg class="icon" width="11.775001" height="20" viewBox="0 0 11.775001 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <path d="M 1.775,20 0,18.225 8.225,10 0,1.775 1.775,0 l 10,10 z" fill="currentColor"></path>
+  </svg>
+</span>
+
+</a>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    window.$redirectAllLinks();
+  });
+</script></div>
+    
+
+</body></html>

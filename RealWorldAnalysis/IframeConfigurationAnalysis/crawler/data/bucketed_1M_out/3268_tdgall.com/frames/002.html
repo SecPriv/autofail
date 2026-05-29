@@ -1,0 +1,110 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head>
+    <title>criteoad</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+</head>
+<body style="margin:0;padding:0;text-align:center;">
+<script type="text/javascript" async="async" src="https://static.criteo.net/js/ld/publishertag.js"></script>
+<script>
+    window.Criteo = window.Criteo || {};
+    window.Criteo.events = window.Criteo.events || [];
+</script>
+<script type="text/javascript">
+
+    var uid = "474843";
+    var common_slotid = "criteo-" + uid;
+    var div = document.createElement("div");
+    div.setAttribute("id", common_slotid);
+    document.getElementsByTagName("body")[0].appendChild(div);
+
+    var passback_url = decodeURIComponent("https%3A%2F%2Fwww.mediacategory.com%2Fservlet%2FadbnMobileBanner%3Ffrom%3D%26location%3Dhttps%25253A%252F%252Ftdgall.com%252F%26s%3D877439%26iwh%3D320_50%26bntype%3D37%26cntad%3D3%26cntsr%3D1%26au_id%3Ddf041a4f9e2b5aa3-177aa09719e54684e7c5e65%26newAuid%3DY%26usehawk%3DY%26directHawk%3DY%26uaInfo%3DX19fX2ZhbHNlXw%253D%253D%26passback%3Dcriteoadno");
+    var extAddition = JSON.parse('{"publisherId":"110307","floor":"400"}');
+    var elpwidth = "320";
+    var elpheight = "50";
+    var sizes = elpwidth + 'x' + elpheight;
+    var floor = extAddition.floor;
+    var publisherId = extAddition.publisherId;
+    var zoneId = extAddition.zoneId;
+    var networkId = "8367";
+
+    Criteo.events.push(function () {
+        var adUnits = {
+            'networkId': networkId,
+            'publisherId': publisherId,
+            'placements': [{
+                'slotid': common_slotid,
+                'zoneId': zoneId,
+                'sizes': [sizes],
+                'ext': {
+                    'bidder': {
+                        'uid': uid
+                    },
+                    'floors': {
+                        'banner': {
+                            '*': {
+                                'floor': floor,
+                                'currency': 'KRW'
+                            }
+                        }
+                    }
+                }
+            }]
+        }
+        Criteo.Passback.RequestBids(adUnits, 1500);
+    });
+</script><div id="criteo-474843"><iframe id="criteo-474843_iframe" frameborder="0" allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" scrolling="no" vspace="0" width="320" height="50"></iframe></div>
+
+<script type="text/javascript">
+
+    Criteo.events.push(function () {
+        Criteo.Passback.RenderAd(common_slotid, mobonPassbackCall);
+        setTimeout(function () {
+            mobonPassbackCall();
+        }, 2000);
+    });
+
+    function mobonPassbackCall() {
+        if (document.getElementById(common_slotid).children.length > 0) {
+            return;
+        }
+        var div = document.getElementById(common_slotid);
+        if (!div) {
+            return;
+        }
+            var ifr = document.createElement("iframe");
+            ifr.setAttribute("id", common_slotid + "_iframe");
+            ifr.setAttribute("frameborder", "0");
+            ifr.setAttribute("allowtransparency", "true");
+            ifr.setAttribute("hspace", "0");
+            ifr.setAttribute("marginwidth", "0");
+            ifr.setAttribute("marginheight", "0");
+            ifr.setAttribute("scrolling", "no");
+            ifr.setAttribute("vspace", "0");
+            ifr.setAttribute("width", elpwidth);
+            ifr.setAttribute("height", elpheight);
+            div.appendChild(ifr);
+
+        var htmlcode = "<html><head></head><body></body></html>";
+        var ifrd = ifr.contentWindow.document;
+        ifrd.open();
+        ifrd.write(htmlcode);
+
+        var mob_iframe = document.createElement("iframe");
+        mob_iframe.src = passback_url;
+        mob_iframe.width = elpwidth;
+        mob_iframe.height = elpheight;
+        mob_iframe.scrolling = "no";
+        mob_iframe.frameBorder="0";
+        mob_iframe.marginWidth="0";
+        mob_iframe.marginHeight="0";
+        ifrd.getElementsByTagName("body")[0].appendChild(mob_iframe);
+
+        ifrd.close();
+
+    }
+</script>
+
+
+<iframe src="https://gum.criteo.com/syncframe?origin=publishertag&amp;topUrl=tdgall.com#{&quot;bundle&quot;:{&quot;origin&quot;:0},&quot;optout&quot;:{&quot;value&quot;:false,&quot;origin&quot;:0},&quot;tld&quot;:&quot;www.mediacategory.com&quot;,&quot;topUrl&quot;:&quot;tdgall.com&quot;,&quot;version&quot;:106803,&quot;origin&quot;:&quot;publishertag&quot;,&quot;requestId&quot;:&quot;0.4188897019528671&quot;}" width="0" height="0" frameborder="0" sandbox="allow-scripts allow-same-origin" aria-hidden="true" tabindex="-1" title="Criteo GUM iframe" style="border-width: 0px; margin: 0px; display: none;"></iframe></body></html>

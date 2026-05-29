@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <title>UUID1 Relay</title>
+</head>
+<body>
+<script>
+(function () {
+  // 設定參數
+  const CHILD_URL = 'https://auto-cdn.likr.com.tw/cm/uuid.php'; // 你的最底層 URL
+  const CHILD_ORIGIN = 'https://auto-cdn.likr.com.tw';          // 用來驗證來源
+  const EXPIRE_DAYS = 10;
+  const DOMAIN = location.hostname.replace(/^www\./, '');
+
+  let hasRelayed = false; // 標記是否已經完成轉發
+
+  // 輔助函式：寫 Cookie
+  function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 86400000).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; domain=${DOMAIN}; SameSite=None; Secure`;
+  }
+
+  // 輔助函式：產生 UUID (僅用於 Fallback)
+  function generateUUIDv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  // ==========================================
+  // 核心邏輯：監聽來自 uuid.php 的訊息
+  // ==========================================
+  window.addEventListener('message', e => {
+    // 1. 如果已經轉發過，就不再處理 (避免重複)
+    if (hasRelayed) return;
+
+    // 2. 驗證來源：必須是 uuid.php 的網域
+    if (e.origin !== CHILD_ORIGIN) {
+      // 可以在這裡把不明來源印出來除錯
+      // console.warn('[UUID1] 忽略非預期來源:', e.origin); 
+      return;
+    }
+
+    // 3. 驗證資料格式 (簡單驗證 UUID)
+    if (typeof e.data === 'string' && e.data.length === 36) {
+      console.log('[UUID1] ✅ 成功接到 uuid.php 回傳:', e.data);
+
+      // A. 把收到的值存在自己這裡 (中間層 Cookie)
+      setCookie('AviviD_uuid', e.data, EXPIRE_DAYS);
+      setCookie('uuid', e.data, EXPIRE_DAYS);
+
+      // B. 【關鍵步驟】往上拋給 uuid.js
+      parent.postMessage(e.data, '*');
+      
+      hasRelayed = true;
+      clearTimeout(fallbackTimer); // 取消超時倒數
+    }
+  });
+
+  // ==========================================
+  // 啟動流程：載入 iframe
+  // ==========================================
+  
+  // 準備網址：這裡不帶參數，讓 uuid.php 自己決定要用舊的還是新的
+  // 如果你需要「傳遞 uuid1 既有的 Cookie 給 uuid」，可以在這裡加上 ?uuid=...
+  const iframe = document.createElement('iframe');
+  iframe.src = CHILD_URL; 
+  iframe.style.display = 'none';
+  
+  // 先掛載監聽器 (上面)，再掛載 iframe，確保不會漏接
+  document.body.appendChild(iframe);
+  console.log('[UUID1] 正在呼叫 uuid.php...');
+
+  // ==========================================
+  // 保險機制：如果 5 秒內 uuid.php 沒回話 (可能被擋)，自己生一個
+  // ==========================================
+  const fallbackTimer = setTimeout(() => {
+    if (hasRelayed) return;
+
+    console.warn('[UUID1] ⚠️ 等待 uuid.php 超時，啟動 Fallback 機制');
+    
+    // 嘗試讀取自己的 Cookie，如果沒有就生新的
+    // 這裡簡化處理，直接生新的，或你可以補上 getCookie 邏輯
+    const myUUID = generateUUIDv4(); 
+    
+    setCookie('AviviD_uuid', myUUID, EXPIRE_DAYS);
+    setCookie('uuid', myUUID, EXPIRE_DAYS);
+
+    parent.postMessage(myUUID, '*');
+    hasRelayed = true;
+  }, 5000); // 5秒超時
+
+})();
+</script><iframe src="https://auto-cdn.likr.com.tw/cm/uuid.php" style="display: none;"></iframe>
+
+</body></html>

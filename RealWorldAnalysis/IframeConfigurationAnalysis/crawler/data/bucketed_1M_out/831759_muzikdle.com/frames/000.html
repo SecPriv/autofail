@@ -1,0 +1,1134 @@
+<!DOCTYPE html><html lang="es"><head>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DB59X857C2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        // Por defecto, denegar almacenamiento
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
+
+        gtag('js', new Date());
+        gtag('config', 'G-DB59X857C2');
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-7434271777027617">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzikdle</title>
+    <meta name="description" content="Juego diario de adivinanzas de álbumes de música urbana. ¡Adivina el álbum del día!">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Muzikdle - Adivina el álbum urbano del día">
+    <meta property="og:description" content="Juego diario de adivinanzas de álbumes de música urbana. ¡Adivina el álbum del día!">
+    <meta property="og:image" content="https://www.muzikdle.com/uploads/logomuzikdletwitter.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://www.muzikdle.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Muzikdle">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@muzikdle">
+    <meta name="twitter:title" content="Muzikdle - Adivina el álbum urbano del día">
+    <meta name="twitter:description" content="Juego diario de adivinanzas de álbumes de música urbana. ¡Adivina el álbum del día!">
+    <meta name="twitter:image" content="https://www.muzikdle.com/uploads/logomuzikdletwitter.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="icon" href="../uploads/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../uploads/favicon.ico?v=2" type="image/x-icon">
+    <script src="https://accounts.google.com/gsi/client" async="" defer=""></script>
+    <style>
+        .enlace-spotify {
+            display: flex;
+            justify-content: center;
+            /* Centra el contenido horizontalmente */
+            align-items: center;
+            gap: 8px;
+            /* Espacio entre el logo y la palabra */
+            text-decoration: none;
+            color: #000000;
+            /* Letras en negro */
+            background-color: #1DB954;
+            /* Fondo verde Spotify */
+            font-size: 1.25rem;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 10px 20px;
+            /* Tamaño del botón */
+            border-radius: 500px;
+            /* Bordes redondeados estilo cápsula */
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        /* Control del tamaño del SVG */
+        .logo-spotify {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            /* 🎨 Fuerza al SVG a ser completamente negro sea cual sea su color original */
+            filter: brightness(0);
+        }
+
+        .enlace-spotify:hover {
+            transform: scale(1.04);
+            /* Pequeño efecto de pulsación */
+            background-color: #1ed760;
+            /* Verde un poco más brillante al pasar el ratón */
+        }
+
+        #banner-stack {
+            position: fixed;
+            top: 25px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+            /* para que no sea demasiado ancho */
+            width: auto;
+        }
+
+        .update-banner {
+            background: #272727;
+            /* mismo fondo que el cookie banner */
+            color: #fff;
+            padding: 14px 20px;
+            /* ligeramente más compacto que el de cookies */
+            border-radius: 16px;
+            /* igual que cookies */
+            border: 1px solid #555;
+            /* borde similar */
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            /* misma sombra */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .update-banner.cerrando {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+
+        .banner-text {
+            flex: 1 1 auto;
+            white-space: nowrap;
+        }
+
+        /* Botón de cerrar con estilo similar al de "Rechazar" cookies */
+        .banner-close {
+            background: transparent;
+            color: #aaa;
+            border: 1px solid #555;
+            border-radius: 20px;
+            padding: 6px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .banner-close:hover {
+            color: #fff;
+            border-color: #888;
+        }
+
+        /* Ajuste en móvil para que el texto no desborde */
+        @media (max-width: 768px) {
+            #banner-stack {
+                right: 10px;
+                top: 30px;
+                max-width: 90vw;
+            }
+
+            .banner-text {
+                white-space: normal;
+            }
+        }
+
+        /* Banner Instagram sutil y moderno */
+        .ig-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2000;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff;
+            padding: 10px 0;
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .ig-banner.mostrar {
+            transform: translateY(0);
+        }
+
+        .ig-banner-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 20px;
+        }
+
+        .ig-icon {
+            width: 26px;
+            height: 26px;
+            filter: brightness(0) invert(1);
+        }
+
+        .ig-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .ig-text a {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            margin-left: 4px;
+        }
+
+        .ig-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+
+        .ig-close:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Pequeño ajuste para móviles */
+        @media (max-width: 500px) {
+            .ig-text {
+                font-size: 0.8rem;
+            }
+
+            .ig-icon {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .ig-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 350;
+            /* por encima del cookie banner (300) */
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        /* Botón circular */
+        .ig-float-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 0;
+        }
+
+        .ig-float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Bocadillo / tooltip */
+        .ig-tooltip {
+            position: absolute;
+            right: 64px;
+            /* separación del botón */
+            background: #fff;
+            color: #1a1a1a;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+            /* el bocadillo no interfiere con el botón */
+        }
+
+        /* Triangulito del bocadillo (opcional, queda muy limpio) */
+        .ig-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #fff;
+        }
+
+        .ig-tooltip a {
+            color: #e1306c;
+            text-decoration: none;
+        }
+
+        /* Mostrar tooltip al hacer hover en el botón */
+        .ig-float-btn:hover+.ig-tooltip,
+        .ig-tooltip.mostrar {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        /* En móviles, el tooltip se muestra al tocar (se añade clase "mostrar" con JS) */
+        @media (max-width: 600px) {
+            .ig-float {
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+    </style>
+<style id="googleidentityservice_button_styles">.qJTHM{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;color:#202124;direction:ltr;-webkit-touch-callout:none;font-family:Roboto-Regular,arial,sans-serif;-webkit-font-smoothing:antialiased;font-weight:400;margin:0;overflow:hidden;-webkit-text-size-adjust:100%}.ynRLnc{left:-9999px;position:absolute;top:-9999px}.L6cTce{display:none}.bltWBb{overflow-wrap:break-word;word-break:break-word}.hSRGPd{color:#1a73e8;cursor:pointer;font-weight:500;text-decoration:none}.Bz112c-W3lGp{height:16px;width:16px}.Bz112c-E3DyYd{height:20px;width:20px}.Bz112c-r9oPif{height:24px;width:24px}.Bz112c-u2z5K{height:36px;width:36px}.Bz112c-uaxL4e{border-radius:10px}.LgbsSe-Bz112c{display:block}.S9gUrf-YoZ4jf{border:none;margin:0;padding:0}.S9gUrf-YoZ4jf *{border:none;margin:0;padding:0}.fFW7wc-ibnC6b>.aZ2wEe>div{border-color:#4285f4}.P1ekSe-ZMv3u{-webkit-transition:height .2s linear;transition:height .2s linear}.P1ekSe-ZMv3u>div:first-child{background-color:#1a73e8!important;-webkit-transition:width .3s linear;transition:width .3s linear}.P1ekSe-ZMv3u>div:nth-child(2){background-image:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.7))),-webkit-gradient(linear,left top,right top,from(#1a73e8),to(#1a73e8))!important;background-image:-webkit-linear-gradient(left,rgba(255,255,255,.7),rgba(255,255,255,.7)),-webkit-linear-gradient(left,#1a73e8,#1a73e8)!important;background-image:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(90deg,#1a73e8,#1a73e8)!important}.P1ekSe-ZMv3u>div:nth-child(3){background-image:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.7))),-webkit-gradient(linear,left top,right top,from(#1a73e8),to(#1a73e8))!important;background-image:-webkit-linear-gradient(left,rgba(255,255,255,.7),rgba(255,255,255,.7)),-webkit-linear-gradient(left,#1a73e8,#1a73e8)!important;background-image:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(90deg,#1a73e8,#1a73e8)!important}.haAclf{display:inline-block}.nsm7Bb-HzV7m-LgbsSe{border-radius:4px;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s;transition:background-color .218s,border-color .218s;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;border:1px solid #dadce0;color:#3c4043;cursor:pointer;font-family:Google Sans,arial,sans-serif;font-size:14px;height:40px;letter-spacing:.25px;outline:none;overflow:hidden;padding:0 12px;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}@media screen and (-ms-high-contrast:active){.nsm7Bb-HzV7m-LgbsSe{border:2px solid windowText;color:windowText}}@media screen and (preferes-contrast:more){.nsm7Bb-HzV7m-LgbsSe{color:#000}}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe{font-size:14px;height:32px;letter-spacing:.25px;padding:0 10px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe{font-size:11px;height:20px;letter-spacing:.3px;padding:0 8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe{padding:0;width:40px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe{width:32px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe{width:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK{border-radius:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe{border-radius:16px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe{border-radius:10px}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc{border:none;color:#fff}.nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc{background-color:#1a73e8}.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{background-color:#202124;color:#e8eaed}@media screen and (prefers-contrast:more){.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{color:#fff}}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:18px;margin-right:8px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:14px;min-width:14px;width:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:10px;min-width:10px;width:10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin-left:8px;margin-right:-4px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:10px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:4px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-top-left-radius:3px;border-bottom-left-radius:3px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;align-items:center;background-color:#fff;height:36px;margin-left:-10px;margin-right:12px;min-width:36px;width:36px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:28px;margin-left:-8px;margin-right:10px;min-width:28px;width:28px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:16px;margin-left:-6px;margin-right:8px;min-width:16px;width:16px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:3px;margin-left:2px;margin-right:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:8px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;align-items:center;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;height:100%;position:relative;width:100%}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX{-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:1;-webkit-box-flex:1;flex-grow:1;font-family:Google Sans,arial,sans-serif;font-weight:500;overflow:hidden;text-overflow:ellipsis;vertical-align:top}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-weight:300}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:0;-webkit-box-flex:0;flex-grow:0}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe{-webkit-transition:background-color .218s;transition:background-color .218s;bottom:0;left:0;position:absolute;right:0;top:0}.nsm7Bb-HzV7m-LgbsSe:focus,.nsm7Bb-HzV7m-LgbsSe:hover{box-shadow:none;border-color:rgb(210,227,252);outline:none}.nsm7Bb-HzV7m-LgbsSe:focus-within{outline:2px solid #00639b;border-color:transparent}.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.08)}.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.1)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.24)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.32)}.nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY{border-radius:50%;display:-webkit-box;display:-webkit-flex;display:flex;height:20px;margin-left:-4px;margin-right:8px;min-width:20px;width:20px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-family:Roboto;font-size:12px;text-align:left}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS,.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf{overflow:hidden;text-overflow:ellipsis}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;align-items:center;color:#5f6368;fill:#5f6368;font-size:11px;font-weight:400}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#e8eaed;fill:#e8eaed}@media screen and (prefers-contrast:more){.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff,.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#000;fill:#000}}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c{height:18px;margin:-3px -3px -3px 2px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:3px;border-bottom-right-radius:3px;margin-left:12px;margin-right:-10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:18px}.L5Fo6c-sM5MNb{border:0;display:block;left:0;position:relative;top:0}.L5Fo6c-bF1uUb{border-radius:4px;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0}.L5Fo6c-bF1uUb:focus{border:none;outline:none}sentinel{}</style><link id="googleidentityservice" type="text/css" media="all" href="https://accounts.google.com/gsi/style" rel="stylesheet"></head>
+
+<body>
+    <svg style="display: none" ;="" viewBox="0 0 700.000000 205.000000" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="logo-muzikdle" viewBox="0 0 700 205">
+            <g transform="translate(0,205) scale(0.1,-0.1)" fill="none" stroke="currentColor">
+                <path d="M0 1025 l0 -1025 3500 0 3500 0 0 1025 0 1025 -3500 0 -3500 0 0
+-1025z m766 590 c6 -27 17 -88 23 -135 7 -47 16 -112 21 -145 5 -33 15 -100
+21 -148 7 -48 15 -90 19 -92 3 -2 14 60 24 138 39 316 54 419 63 428 l9 9 215
+-2 214 -3 3 -657 2 -658 -150 0 -150 0 -1 213 c-1 116 0 291 0 387 1 96 -2
+181 -7 187 l-8 13 -13 -93 c-19 -147 -32 -238 -41 -302 -5 -33 -19 -138 -31
+-232 l-23 -173 -108 0 -108 0 0 11 c0 25 -111 783 -115 788 -3 2 -5 -176 -5
+-397 l0 -402 -150 0 -150 0 0 653 c0 360 3 657 7 661 4 3 102 5 217 4 l211 -3
+11 -50z m1094 -495 c3 -300 9 -551 13 -557 5 -7 21 -13 37 -13 16 0 32 6 37
+13 4 6 10 257 13 557 l5 545 159 3 c88 1 163 -1 168 -6 13 -13 20 -583 10
+-857 l-9 -250 -14 -30 c-7 -16 -30 -53 -52 -82 l-38 -52 -65 -31 -66 -31 -86
+-6 -87 -5 -68 10 c-83 13 -162 48 -215 96 l-40 36 -23 53 -24 52 -3 539 c-2
+296 -1 545 2 553 l6 13 167 -2 168 -3 5 -545z m1138 538 l12 -12 0 -119 0
+-119 -106 -326 c-139 -427 -146 -453 -140 -460 3 -3 51 -4 106 -3 l101 1 20
+-10 20 -11 -3 -122 -3 -122 -312 -3 -313 -2 0 105 0 105 34 108 c19 59 48 152
+65 207 16 55 57 188 90 297 34 108 61 203 61 212 l0 16 -110 0 -110 0 0 128
+c0 71 3 132 7 135 3 4 133 7 288 7 l281 0 12 -12z m440 -651 l2 -657 -172 2
+-173 3 -3 644 -2 644 11 14 12 13 161 -2 161 -3 3 -658z m482 418 l5 -240 12
+35 c6 19 37 121 68 225 32 105 61 198 66 208 l10 17 149 0 c82 0 151 -4 154
+-8 3 -5 -24 -96 -60 -203 -35 -107 -78 -238 -95 -291 l-31 -97 30 -103 c17
+-57 53 -182 82 -278 28 -96 60 -203 70 -236 10 -34 21 -72 25 -83 l6 -21 -177
+2 -177 3 -12 45 c-7 25 -34 132 -59 237 -26 106 -51 203 -56 215 l-9 23 0
+-263 -1 -262 -172 2 -173 3 -3 644 -2 644 11 14 12 13 161 -2 161 -3 5 -240z
+m1010 235 c124 -11 186 -29 238 -68 40 -30 82 -99 82 -135 0 -14 6 -27 13 -29
+l12 -5 0 -433 0 -433 -12 -4 c-7 -3 -13 -14 -13 -26 0 -36 -38 -101 -74 -125
+-19 -13 -58 -30 -88 -38 l-53 -14 -282 0 -283 0 0 653 c0 360 3 657 7 660 10
+11 324 8 453 -3z m810 -515 c3 -286 6 -521 8 -522 1 -2 40 -3 86 -3 46 0 91
+-3 100 -6 l16 -6 0 -129 0 -129 -275 0 -275 0 0 653 c0 360 3 657 7 661 4 3
+79 5 167 4 l161 -3 5 -520z m865 503 c3 -13 5 -72 3 -133 l-3 -110 -112 -3
+-113 -3 0 -124 0 -125 105 0 105 0 1 -22 c0 -13 0 -66 -1 -118 l-1 -95 -12 -7
+c-7 -4 -54 -8 -105 -8 l-93 0 3 -142 3 -143 83 3 c45 2 100 1 122 -3 l40 -7 0
+-129 0 -129 -297 2 -298 3 -3 625 c-1 344 0 640 3 658 l6 32 279 0 280 0 5
+-22z"></path>
+                <path d="M4810 1011 l0 -431 29 0 c16 0 39 9 52 19 l24 19 3 384 3 384 -18 23
+-18 22 -37 6 -38 6 0 -432z"></path>
+            </g>
+            <g transform="translate(0,205) scale(0.1,-0.1)" fill="none" stroke="currentColor">
+                <path d="M327 1664 c-4 -4 -7 -301 -7 -661 l0 -653 150 0 150 0 0 402 c0 221
+2 399 5 397 4 -5 115 -763 115 -788 l0 -11 108 0 108 0 23 173 c12 94 26 199
+31 232 9 64 22 155 41 302 l13 93 8 -13 c5 -6 8 -91 7 -187 0 -96 -1 -271 0
+-387 l1 -213 150 0 150 0 -2 658 -3 657 -214 3 -215 2 -9 -9 c-9 -9 -24 -112
+-63 -428 -10 -78 -21 -140 -24 -138 -4 2 -12 44 -19 92 -6 48 -16 115 -21 148
+-5 33 -14 98 -21 145 -6 47 -17 108 -23 135 l-11 50 -211 3 c-115 1 -213 -1
+-217 -4z"></path>
+                <path d="M1514 1657 c-3 -8 -4 -257 -2 -553 l3 -539 24 -52 23 -53 40 -36 c53
+-48 132 -83 215 -96 l68 -10 87 5 86 6 66 31 65 31 38 52 c22 29 45 66 52 82
+l14 30 9 250 c10 274 3 844 -10 857 -5 5 -80 7 -168 6 l-159 -3 -5 -545 c-3
+-300 -9 -551 -13 -557 -5 -7 -21 -13 -37 -13 -16 0 -32 6 -37 13 -4 6 -10 257
+-13 557 l-5 545 -168 3 -167 2 -6 -13z"></path>
+                <path d="M2417 1663 c-4 -3 -7 -64 -7 -135 l0 -128 110 0 110 0 0 -16 c0 -9
+-27 -104 -61 -212 -33 -109 -74 -242 -90 -297 -17 -55 -46 -148 -65 -207 l-34
+-108 0 -105 0 -105 313 2 312 3 3 122 3 122 -20 11 -20 10 -101 -1 c-55 -1
+-103 0 -106 3 -6 7 1 33 140 460 l106 326 0 119 0 119 -12 12 -12 12 -281 0
+c-155 0 -285 -3 -288 -7z"></path>
+                <path d="M3101 1657 l-11 -14 2 -644 3 -644 173 -3 172 -2 -2 657 -3 658 -161
+3 -161 2 -12 -13z"></path>
+                <path d="M3581 1657 l-11 -14 2 -644 3 -644 173 -3 172 -2 1 262 0 263 9 -23
+c5 -12 30 -109 56 -215 25 -105 52 -212 59 -237 l12 -45 177 -3 177 -2 -6 21
+c-4 11 -15 49 -25 83 -10 33 -42 140 -70 236 -29 96 -65 221 -82 278 l-30 103
+31 97 c17 53 60 184 95 291 36 107 63 198 60 203 -3 4 -72 8 -154 8 l-149 0
+-10 -17 c-5 -10 -34 -103 -66 -208 -31 -104 -62 -206 -68 -225 l-12 -35 -5
+240 -5 240 -161 3 -161 2 -12 -13z"></path>
+                <path d="M4477 1663 c-4 -3 -7 -300 -7 -660 l0 -653 283 0 282 0 53 14 c30 8
+69 25 88 38 36 24 74 89 74 125 0 12 6 23 13 26 l12 4 0 433 0 433 -12 5 c-7
+2 -13 15 -13 29 0 36 -42 105 -82 135 -52 39 -114 57 -238 68 -129 11 -443 14
+-453 3z m426 -254 l18 -23 -3 -384 -3 -384 -24 -19 c-13 -10 -36 -19 -52 -19
+l-29 0 0 431 0 432 38 -6 37 -6 18 -22z"></path>
+                <path d="M5407 1664 c-4 -4 -7 -301 -7 -661 l0 -653 275 0 275 0 0 129 0 129
+-16 6 c-9 3 -54 6 -100 6 -46 0 -85 1 -86 3 -2 1 -5 236 -8 522 l-5 520 -161
+3 c-88 1 -163 -1 -167 -4z"></path>
+                <path d="M6035 1638 c-3 -18 -4 -314 -3 -658 l3 -625 298 -3 297 -2 0 129 0
+129 -40 7 c-22 4 -77 5 -122 3 l-83 -3 -3 143 -3 142 93 0 c51 0 98 4 105 8
+l12 7 1 95 c1 52 1 105 1 118 l-1 22 -105 0 -105 0 0 125 0 124 113 3 112 3 3
+110 c2 61 0 120 -3 133 l-5 22 -280 0 -279 0 -6 -32z"></path>
+            </g>
+        </symbol>
+    </svg>
+    <div class="floating-items">
+        <div class="float-left-right" style="top: 30%; left: 30%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-right-left" style="top: 10%;
+    width: 600px; left: 90%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-up-down" style="top: 0%; left: -20%; width: 600px; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-down-up" style="top: 100%; left: 20%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-up-down" style="top: 0%; left: 0%; width: 600px; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-down-up" style="top: 100%; left: 20%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-up-down" style="top: 95%; left: -10%; width: 600px; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-down-up" style="top: 100%; left: 20%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-dr" style="top: 0%; left: 5%; width: 600px; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-ul" style="top: 85%; left: 90%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-ur" style="top: 75%; left: 15%; width: 600px; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-dl" style="top: 0%; left: 90%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-square" style="top: 60%; left: 30%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-up-down" style="top: 60%; left: 0%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-left-right" style="top: 80%; left: 10%; width: 600px; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-right-left" style="top: 90%; left: 100%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-up-down" style="top: 20%; left: 90%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-down-up" style="top: 80%; left: 80%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-dr" style="top: 20%; left: 0%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-ul" style="top: 65%; left: 60%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-ur" style="top: 95%; left: 0%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-dl" style="top: 20%; left: 75%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-square" style="top: 70%; left: 0%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+        <div class="float-diagonal-dr" style="top: 20%; left: 0%; animation-duration: 100s;">
+            <svg width="100%" height="100%" viewBox="0 0 700 205">
+                <use href="#logo-muzikdle"></use>
+            </svg>
+        </div>
+    </div>
+    <!-- Banner Instagram -->
+    <div id="instagram-banner" class="ig-banner mostrar">
+        <div class="ig-banner-content">
+            <svg class="ig-icon" viewBox="0 0 22 22" fill="white">
+                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4C5.61,4 4,5.61 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4C18.39,20 20,18.39 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7.5C14.48,7.5 16.5,9.52 16.5,12C16.5,14.48 14.48,16.5 12,16.5C9.52,16.5 7.5,14.48 7.5,12C7.5,9.52 9.52,7.5 12,7.5M12,9C10.34,9 9,10.34 9,12C9,13.66 10.34,15 12,15C13.66,15 15,13.66 15,12C15,10.34 13.66,9 12,9M17.25,6.5C17.94,6.5 18.5,7.06 18.5,7.75C18.5,8.44 17.94,9 17.25,9C16.56,9 16,8.44 16,7.75C16,7.06 16.56,6.5 17.25,6.5Z"></path>
+            </svg>
+            <span class="ig-text">¡Síguenos en Instagram! <a href="https://instagram.com/muzikdle" target="_blank" rel="noopener" onclick="gtag('event', 'click', { 'event_category': 'outbound', 'event_label': 'instagram_float' });">@muzikdle</a></span>
+            <button class="ig-close" onclick="cerrarInstagramBanner()">✕</button>
+        </div>
+    </div>
+    <!-- Navbar simplificada -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="..\uploads\logo1.jpg" alt="Álbum del Día" class="logo-img">
+            </a>
+            <div class="botones-derecha">
+                <a href="stats.html" class="menu-hamburguesa">
+                    <img src="uploads/stats.svg" alt="Ver estadísticas" class="icono-calendario" style="transform: scale(0.85);">
+                </a>
+                <a href="historial.html" class="menu-hamburguesa">
+                    <img src="..\uploads\calendario.svg" alt="Ver historial" class="icono-calendario">
+                </a>
+                <a href="#" class="menu-hamburguesa" id="botonMenu">
+                    <img src="..\uploads\menu.svg" alt="Menú" class="icono-calendario">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+<nav class="menu-lateral" id="menuLateral">
+        <div class="menu-cabecera">
+            <h3>MENU</h3>
+            <button class="cerrar-menu" id="botonCerrar">×</button>
+        </div>
+        <ul class="lista-menu">
+            <li class="separador-menu">
+                <img src="..\uploads\reloj.png" alt="Ver historial" class="icono-reloj-mini">
+            </li>
+            <li><a href="/">NORMAL</a></li>
+            <li><a href="canciones.html">CANCIONES</a></li>
+            <br>
+            <li class="separador-menu">
+                <img src="..\uploads\calendario.svg" alt="Ver historial" class="icono-calendario-mini">
+            </li>
+
+            <li><a href="historial.html">ARCHIVO NORMAL</a></li>
+            <li><a href="historialcanciones.html">ARCHIVO CANCIONES</a></li>
+            <br>
+            <li class="separador-menu">
+                <img src="..\uploads\videojuego.png" alt="Ver historial" class="icono-calendario-mini">
+            </li>
+            <li><a href="flappy_muzikdle.html">FLAPPY MUZIKDLE</a></li>
+            <li class="footer-links-hamburguesa">
+                <a href="https://open.spotify.com/playlist/4V4LJ0jckTAckNch2SugCv?si=a6c5a99c84b6431d
+" class="footer-link" target="_blank" rel="noopener noreferrer">
+                    <img src="..\uploads\spotify.svg">
+                </a>
+                <a href="mailto:muzikdle@gmail.com" class="footer-link">
+                    <img src="..\uploads\correo.svg">
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="capa-oscura" id="capaOscura"></div>
+
+    <div class="container">
+        <header>
+            <!--Pop-Ups
+            <div id="banner-stack">
+                <div class="update-banner" data-banner-id="stats">
+                    <span class="banner-text">¡Estadísticas disponibles!</span>
+                    <button class="banner-close" onclick="cerrarBanner(this)">✕</button>
+                </div>
+                <div class="update-banner" data-banner-id="flappy">
+                    <span class="banner-text">¡Nuevo minijuego Flappy!</span>
+                    <button class="banner-close" onclick="cerrarBanner(this)">✕</button>
+                </div>
+            </div>
+            -->
+            <button class="btn-info" id="btnInfo" aria-label="Instrucciones">?</button>
+            <h1 id="titulo-pagina">Álbum #118</h1>
+
+            <div class="info-popup" id="infoPopup">
+                <div class="info-popup-content">
+                    <span class="info-popup-close" id="closePopup">×</span>
+                    <h3>Modo Clásico</h3>
+                    <p>Cada día aparece un nuevo álbum pixelado. Con cada intento se despixela más hasta que se
+                        acierta o no y aparece el álbum del día.
+                    </p>
+                    <p>Escribe tu respuesta en el campo de búsqueda y selecciona una de las sugerencias. Tienes 5
+                        intentos.
+                    </p>
+                    <p>Comparte tu resultado para retar a tus amigos y demostrar que eres el más desempleado.</p>
+                    <p>Vuelve cada día para un nuevo álbum o juega álbumes de días anteriores!!</p>
+                </div>
+            </div>
+
+            <div class="navegacion-dias">
+                <a id="boton-antes" class="boton-antes"></a>
+                <p class="fecha-hoy" id="fecha-hoy">23/05/2026</p>
+                <a id="boton-despues" class="boton-despues"></a>
+            </div>
+        </header>
+        <main>
+            <div class="imagen-container">
+                <div class="cargando" id="cargando" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Cargando juego del día...</p>
+                </div>
+
+                <div class="imagen-info" style="display: block;">
+                    <img id="imagen-del-dia" src="/uploads/Yipiyou(1).jpg" alt="Pista 1">
+                    <div class="detalles">
+                        <h2 id="imagen-titulo" style="display: none;"></h2>
+                        <p id="imagen-descripcion" style="display: none;"></p>
+                        <div class="metadata">
+                            <span id="contador">Pista 1 de 5</span>
+                        </div>
+
+                        <div class="busqueda-container">
+                            <div class="input-wrapper">
+                                <input type="text" id="input-busqueda" placeholder="Buscar Álbum" autocomplete="off" style="display: block;">
+                                <div class="sugerencias-container" id="sugerencias-container" style="display: none;"></div>
+                            </div>
+                            <button id="btn-buscar" class="btn" style="display: block;">➤</button>
+                        </div>
+
+                        <div class="mensaje-resultado" id="mensaje-resultado" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="error" style="display: none;">
+                    <p id="mensaje-error"></p>
+                </div>
+            </div>
+            <!-- Modal para compartir resultado -->
+            <div id="modal-compartir" class="modal-compartir" style="display: none;">
+                <div class="modal-contenido">
+                    <div class="modal-header">
+                        <h3>¡Comparte tu resultado!</h3>
+                        <button class="modal-cerrar" id="modal-cerrar">×</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Vista previa del emojigrama -->
+                        <div class="emojigrama-preview" id="emojigrama-preview">
+                            <!-- Se llenará con JavaScript -->
+                        </div>
+
+                        <!-- Texto para copiar -->
+                        <div class="texto-para-copiar">
+                            <textarea id="texto-para-compartir" readonly="" rows="4"></textarea>
+                            <button class="btn-copiar" id="btn-copiar-texto">📋 Copiar</button>
+                        </div>
+
+                        <!-- Botones de compartir -->
+                        <div class="botones-compartir">
+                            <a class="btn-compartir twitter" id="btn-twitter" target="_blank">
+                                <img src="..\uploads\twitter.svg" alt="Álbum del Día" class="logo-img-rrss">
+                            </a>
+                            <a class="btn-compartir whatsapp" id="btn-whatsapp" target="_blank">
+                                <img src="..\uploads\whatsapp.svg" alt="Álbum del Día" class="logo-img-rrss">
+                            </a>
+                            <a class="btn-compartir telegram" id="btn-telegram" target="_blank">
+                                <img src="..\uploads\telegram.svg" alt="Álbum del Día" class="logo-img-rrss">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="estadisticas-album-container" class="estadisticas-album-container" style="display: block;">
+        <div class="estadisticas-album-header">
+            <h3>Estadísticas Álbum #118</h3>
+            <small class="estadisticas-fecha">23/05/2026</small>
+        </div>
+
+       
+        <div class="distribucion-container">
+            <div class="distribucion-barras">
+                
+            <div class="distribucion-item">
+                <div class="distribucion-label">
+                    <span class="intento-num">1</span>
+                    <span class="intento-text">intento</span>
+                </div>
+                <div class="distribucion-bar-container">
+                    <div class="distribucion-bar" style="width: 40.909090909090914%">
+                        <span class="distribucion-valor"></span>
+                    </div>
+                </div>
+                <div class="distribucion-porcentaje">41%</div>
+            </div>
+        
+            <div class="distribucion-item">
+                <div class="distribucion-label">
+                    <span class="intento-num">2</span>
+                    <span class="intento-text">intentos</span>
+                </div>
+                <div class="distribucion-bar-container">
+                    <div class="distribucion-bar" style="width: 27.27272727272727%">
+                        <span class="distribucion-valor"></span>
+                    </div>
+                </div>
+                <div class="distribucion-porcentaje">27%</div>
+            </div>
+        
+            <div class="distribucion-item">
+                <div class="distribucion-label">
+                    <span class="intento-num">3</span>
+                    <span class="intento-text">intentos</span>
+                </div>
+                <div class="distribucion-bar-container">
+                    <div class="distribucion-bar" style="width: 11.363636363636363%">
+                        <span class="distribucion-valor"></span>
+                    </div>
+                </div>
+                <div class="distribucion-porcentaje">11%</div>
+            </div>
+        
+            <div class="distribucion-item">
+                <div class="distribucion-label">
+                    <span class="intento-num">4</span>
+                    <span class="intento-text">intentos</span>
+                </div>
+                <div class="distribucion-bar-container">
+                    <div class="distribucion-bar" style="width: 6.8181818181818175%">
+                        <span class="distribucion-valor"></span>
+                    </div>
+                </div>
+                <div class="distribucion-porcentaje">7%</div>
+            </div>
+        
+            <div class="distribucion-item">
+                <div class="distribucion-label">
+                    <span class="intento-num">5</span>
+                    <span class="intento-text">intentos</span>
+                </div>
+                <div class="distribucion-bar-container">
+                    <div class="distribucion-bar" style="width: 13.636363636363635%">
+                        <span class="distribucion-valor"></span>
+                    </div>
+                </div>
+                <div class="distribucion-porcentaje">14%</div>
+            </div>
+        
+            </div>
+            <div class="total-aciertos">
+                Total jugadores: <strong>75</strong>
+                <div class="reseteo-container">
+                    <div class="reseteo-info">Próximo reinicio:</div>
+                    <div class="reloj-reseteo" id="reloj-reseteo">07:35:05</div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="resumen-box">
+            <div class="resumen-numero">58.7%</div>
+            <div class="resumen-label">Tasa Acierto</div>
+        </div>
+    
+        <br>
+        <div id="auth-section">
+            <div id="google-btn-container"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><iframe src="https://accounts.google.com/gsi/button?type=standard&amp;theme=outline&amp;size=large&amp;is_fedcm_supported=false&amp;client_id=787303651764-d9f3un1su3ngiokp24fu358du3abvetm.apps.googleusercontent.com&amp;iframe_id=gsi_287220_696208&amp;cas=vNMrywt3ptdE4Ag8Cs3OpMxI49blwcIlrTOvucBzlLI" class="L5Fo6c-PQbLGe" allow="identity-credentials-get" id="gsi_287220_696208" title="Button „Über Google anmelden“" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 228px; border: 0px; margin: -2px -10px;"></iframe></div></div>
+            <div id="user-panel" style="display:none;">
+                <img id="user-pic" src="" alt="avatar" style="width:32px; border-radius:50%; vertical-align:middle;">
+                <span id="user-name"></span>
+                <button id="logout-btn">Salir</button>
+            </div>
+        </div>
+        <section id="comments-section">
+            <h3>Comentarios</h3>
+            <div class="sort-buttons" style="margin-bottom: 10px; display: flex; gap: 10px;">
+                <button class="btn-sort active" data-sort="recent">Más recientes</button>
+                <button class="btn-sort" data-sort="oldest">Más antiguos</button>
+                <button class="btn-sort" data-sort="likes">Más likes</button>
+            </div>
+            <div id="comments-list">
+    <div class="comentario" style="margin-left: 0px;" data-comment-id="43">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLVcJFtXDQQd9IycTpNqcIrP6wItVoz9Yy2hEvFPVGbcfcQWA=s96-c" alt="Pedro Salinas">
+        <div class="contenido">
+            <strong>Pedro Salinas</strong>
+            <p style="color:#fff">una polla</p>
+            <small title="5/19/2026, 11:11:53 AM">Hace 4 días · Álbum #114</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="43">
+                    🤍 <span class="like-count">0</span>
+                </button>
+                <button class="btn-reply" data-id="43">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-43" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="43">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 20px;" data-comment-id="56">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLrn4BIwjFJDIGMYJ_QEPHHUX3CcEdjtjru__L16IzJphGNf90=s96-c" alt="supglo">
+        <div class="contenido">
+            <strong>supglo</strong>
+            <p style="color:#fff">como has hecho 750 en el flappy colgao😭🙏</p>
+            <small title="5/20/2026, 1:43:55 AM">Hace 3 días · Canción #87</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="56">
+                    🤍 <span class="like-count">2</span>
+                </button>
+                <button class="btn-reply" data-id="56">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-56" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="56">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 40px;" data-comment-id="58">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocK0rl5FYIGoAyqKqeA3ZiJgMiGpgg3AogxenVSlcPSusDDGCUwq=s96-c" alt="Diego">
+        <div class="contenido">
+            <strong>Diego</strong>
+            <p style="color:#fff">es fan Nº1 del Cruzca, parece</p>
+            <small title="5/20/2026, 1:04:14 PM">Hace 3 días · Álbum #4</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="58">
+                    🤍 <span class="like-count">0</span>
+                </button>
+                <button class="btn-reply" data-id="58">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-58" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="58">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 40px;" data-comment-id="59">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLVcJFtXDQQd9IycTpNqcIrP6wItVoz9Yy2hEvFPVGbcfcQWA=s96-c" alt="Pedro Salinas">
+        <div class="contenido">
+            <strong>Pedro Salinas</strong>
+            <p style="color:#fff">era eso o atender a las mierdas de diapos en fol.</p>
+            <small title="5/20/2026, 6:10:46 PM">Hace 2 días · Álbum #63</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="59">
+                    🤍 <span class="like-count">1</span>
+                </button>
+                <button class="btn-reply" data-id="59">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-59" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="59">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 0px;" data-comment-id="42">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLTfwrvYi6eZSAfcNnZOMuxPtypdQU3IdLgfZNQVFIJqje7NKA=s96-c" alt="Carla Liriel De Lima">
+        <div class="contenido">
+            <strong>Carla Liriel De Lima</strong>
+            <p style="color:#fff">FO FREEE</p>
+            <small title="5/18/2026, 10:18:24 AM">Hace 5 días · Álbum #112</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="42">
+                    🤍 <span class="like-count">0</span>
+                </button>
+                <button class="btn-reply" data-id="42">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-42" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="42">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 0px;" data-comment-id="22">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLVcJFtXDQQd9IycTpNqcIrP6wItVoz9Yy2hEvFPVGbcfcQWA=s96-c" alt="Pedro Salinas">
+        <div class="contenido">
+            <strong>Pedro Salinas</strong>
+            <p style="color:#fff">muy guapo el cuarto mapita del flappy por el motivo que sea</p>
+            <small title="5/12/2026, 7:48:44 PM">Hace 1 semana · Álbum #107</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="22">
+                    🤍 <span class="like-count">1</span>
+                </button>
+                <button class="btn-reply" data-id="22">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-22" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="22">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 0px;" data-comment-id="17">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocIo2AzoV7Fbn4iq8P6-a9neijDjyClXBeAB1ui8hc_1Qh4w-gY=s96-c" alt="nico">
+        <div class="contenido">
+            <strong>nico</strong>
+            <p style="color:#fff">histórico</p>
+            <small title="5/10/2026, 11:26:05 AM">Hace 1 semana · Álbum #105</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="17">
+                    🤍 <span class="like-count">1</span>
+                </button>
+                <button class="btn-reply" data-id="17">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-17" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="17">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="comentario" style="margin-left: 0px;" data-comment-id="16">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocISswldsayU6HgA7M5cEVjQhuBRlBC3lQE7EOPSPFfEASpfgA=s96-c" alt="Víctor Rodríguez">
+        <div class="contenido">
+            <strong>Víctor Rodríguez</strong>
+            <p style="color:#fff">La cabra ?</p>
+            <small title="5/8/2026, 9:39:36 PM">Hace 2 semanas · Álbum #103</small>
+            <div class="comentario-acciones">
+                <button class="btn-like" data-id="16">
+                    🤍 <span class="like-count">2</span>
+                </button>
+                <button class="btn-reply" data-id="16">Responder</button>
+                
+            </div>
+            <div class="reply-form-container" id="reply-form-16" style="display:none; margin-top:10px;">
+                <textarea class="reply-text" rows="2" placeholder="Escribe una respuesta..."></textarea>
+                <button class="submit-reply" data-id="16">Enviar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+            <button class="btn-sort" id="load-more-comments" style="display: block; margin-top: 10px;" data-sort="recent" data-page="1">Cargar más comentarios</button>
+            <div id="comment-form-container" style="display:none; margin-top:1rem;">
+                <textarea id="comment-text" rows="3" placeholder="Escribe un comentario..."></textarea>
+                <button id="submit-comment">Enviar</button>
+            </div>
+        </section>
+    </div><footer>
+            <div class="footer-content">
+
+                <p id="footer-texto">© 2026 Muzikdle</p>
+                <div class="footer-links">
+                    <a href="pp.html" class="footer-link">Política de Privacidad</a>
+                    <a href="ts.html" class="footer-link">Términos de Servicio</a>
+                    <a href="sn.html" class="footer-link">Sobre Nosotros</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Banner de cookies -->
+    <div id="cookie-banner" style="display: flex; visibility: visible; opacity: 1;">
+        <p>Usamos cookies para mejorar tu experiencia y mostrar anuncios personalizados.</p>
+        <br>
+        <div>
+            <button id="accept-cookies" class="btn-accept">Aceptar</button>
+            <button id="reject-cookies" class="btn-reject">Rechazar</button>
+        </div>
+    </div>
+    <!-- Botón flotante Instagram -->
+    <div id="instagram-float" class="ig-float">
+        <button class="ig-float-btn" aria-label="Instagram">
+            <!-- Icono SVG de Instagram (blanco) -->
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4C5.61,4 4,5.61 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4C18.39,20 20,18.39 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7.5C14.48,7.5 16.5,9.52 16.5,12C16.5,14.48 14.48,16.5 12,16.5C9.52,16.5 7.5,14.48 7.5,12C7.5,9.52 9.52,7.5 12,7.5M12,9C10.34,9 9,10.34 9,12C9,13.66 10.34,15 12,15C13.66,15 15,13.66 15,12C15,10.34 13.66,9 12,9M17.25,6.5C17.94,6.5 18.5,7.06 18.5,7.75C18.5,8.44 17.94,9 17.25,9C16.56,9 16,8.44 16,7.75C16,7.06 16.56,6.5 17.25,6.5Z"></path>
+            </svg>
+        </button>
+        <div class="ig-tooltip" id="ig-tooltip">
+            <span>¡Síguenos! <a href="https://instagram.com/muzikdle" target="_blank" rel="noopener" onclick="gtag('event', 'click', { 'event_category': 'outbound', 'event_label': 'instagram_float' });">@muzikdle</a></span>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const btn = document.querySelector('.ig-float-btn');
+            const tooltip = document.getElementById('ig-tooltip');
+            let timeoutTooltip;
+
+            // Mostrar tooltip al hacer clic/tocar (para móviles) y ocultar automático
+            function mostrarTooltip() {
+                tooltip.classList.add('mostrar');
+                clearTimeout(timeoutTooltip);
+                // Ocultar después de 4 segundos
+                timeoutTooltip = setTimeout(() => {
+                    tooltip.classList.remove('mostrar');
+                }, 1000);
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                // Si ya se había cerrado definitivamente (botón extra), lo ignoramos
+                if (btn.classList.contains('cerrado-def')) return;
+
+                // Abrir Instagram en nueva pestaña
+                window.open('https://instagram.com/muzikdle', '_blank');
+
+                // Mostrar tooltip brevemente por si no abre
+                mostrarTooltip();
+            });
+
+            // Para escritorio, el hover ya funciona con CSS, pero podemos también mostrar al enfocar
+            btn.addEventListener('mouseenter', function () {
+                if (!btn.classList.contains('cerrado-def')) {
+                    mostrarTooltip();
+                }
+            });
+
+            // Opción de cierre manual: doble clic en el botón lo elimina por sesión
+            btn.addEventListener('dblclick', function () {
+                if (confirm('¿Ocultar este botón durante esta sesión?')) {
+                    btn.classList.add('cerrado-def');
+                    document.getElementById('instagram-float').style.display = 'none';
+                    sessionStorage.setItem('ig-float-cerrado', 'true');
+                }
+            });
+
+            // Restaurar si se cerró antes
+            if (sessionStorage.getItem('ig-float-cerrado') === 'true') {
+                document.getElementById('instagram-float').style.display = 'none';
+            }
+        })();
+    </script>
+    <script>
+        // Guarda en localStorage que este banner fue cerrado
+        function cerrarBanner(boton) {
+            const banner = boton.closest('.update-banner');
+            const id = banner.getAttribute('data-banner-id');
+            if (id) {
+                localStorage.setItem('banner_closed_' + id, 'true');
+            }
+            banner.classList.add('cerrando');
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
+        }
+
+        // Oculta al cargar la página los banners que ya se cerraron antes
+        function ocultarBannersCerrados() {
+            document.querySelectorAll('.update-banner[data-banner-id]').forEach(banner => {
+                const id = banner.getAttribute('data-banner-id');
+                if (localStorage.getItem('banner_closed_' + id) === 'true') {
+                    banner.style.display = 'none';
+                }
+            });
+        }
+
+        // Asigna los eventos a todos los botones de cierre
+        document.querySelectorAll('.banner-close').forEach(btn => {
+            btn.addEventListener('click', function () {
+                cerrarBanner(this);
+            });
+        });
+
+        // Ejecuta al cargar
+        ocultarBannersCerrados();
+    </script>
+    <script>
+        function mostrarInstagramBanner() {
+            const banner = document.getElementById('instagram-banner');
+            if (!banner) return;
+
+            // Mostrar solo si no se ha cerrado en esta sesión (puedes cambiar a localStorage para recordar por más tiempo)
+            if (localStorage.getItem('ig-banner-cerrado')) return;
+
+            setTimeout(() => {
+                banner.classList.add('mostrar');
+            }, 600); // pequeña demora para que se note la animación
+        }
+
+        function cerrarInstagramBanner() {
+            const banner = document.getElementById('instagram-banner');
+            banner.classList.remove('mostrar');
+            localStorage.setItem('ig-banner-cerrado', 'true');
+            // Si prefieres que no vuelva a aparecer en todo el día, usa localStorage en lugar de sessionStorage
+        }
+
+        // Iniciar al cargar
+        window.addEventListener('DOMContentLoaded', mostrarInstagramBanner);
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/cookies.js"></script>
+
+
+</body></html>

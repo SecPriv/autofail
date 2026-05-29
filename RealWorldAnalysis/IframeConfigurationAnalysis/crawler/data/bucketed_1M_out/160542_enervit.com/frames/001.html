@@ -1,0 +1,384 @@
+<html><head></head><body><script>var AWIN = AWIN || {};AWIN.Tracking = AWIN.Tracking || {};AWIN.payload = {"advertiser":{"config":{"advertiserId":"28348","pagetype":"generic","accessConfig":{"location":true,"referrer":true,"sale":true,"basket":true,"zxParams":["pagetype","identifier","product_name","product_price","search_query","category","total_amount","transaction","isClient"]}}},"plugin":{"publisherId":"","advertiserId":23312,"protocol":"https://","zxParams":{},"location":{"ancestorOrigins":{},"href":"https://www.enervit.com/it/","origin":"https://www.enervit.com","protocol":"https:","host":"www.enervit.com","hostname":"www.enervit.com","port":"","pathname":"/it/","search":"","hash":""},"referrer":"","basket":[]}};AWIN.pluginName = "SirData";</script><script>var AWIN = AWIN || {};
+AWIN.iScriptCount = 0;
+
+AWIN.Tracking = (function (pluginName, payload) {
+	var fetchZxParam = function (name) {
+		return payload.plugin.zxParams[name] || null;
+	};
+	var scriptAppend = function (sScriptSrc, sScriptContent, onLoadCallback, oScriptTagParams, tcfVendorId) {
+		// only one of the two can be set
+		if (sScriptSrc && sScriptContent) {
+			return false;
+		}
+
+		// create script node
+		var scriptNode = document.createElement('script');
+		scriptNode.type = 'text/javascript';
+		scriptNode.id = '_aw_script_' + AWIN.iScriptCount++;
+
+		// only add if param was passed
+		if (sScriptSrc) {
+			scriptNode.src = sScriptSrc;
+		} else if (sScriptContent) {
+			scriptNode.text = sScriptContent;
+		}
+
+		// set optional parameters
+		if (oScriptTagParams) {
+			for (var name in oScriptTagParams) {
+				scriptNode[name] = oScriptTagParams[name];
+			}
+		}
+
+		// attach an event handler
+		if (onLoadCallback) {
+			// send Debug EVent when onLoadCallback is not a function. TODO This is temporary change, should be removed after analysis
+			if (typeof onLoadCallback !== 'function') {
+				AWIN.Tracking.sendDebugEvent({
+					severity: 'warning',
+					source: { app: 'AMT', category: 'scriptAppend' },
+					body: {
+						message: 'onLoadCallback is not a function in mastertag-sb.',
+						url: sScriptSrc || 'inline script',
+						advertiserId: AWIN.Tracking.iMerchantId,
+					},
+				});
+			}
+
+			// for IE
+			scriptNode.onreadystatechange = function () {
+				if (scriptNode.readyState == 'complete' || scriptNode.readyState == 'loaded') {
+					onLoadCallback();
+				}
+			};
+
+			// for everything elses
+			scriptNode.onload = onLoadCallback;
+		}
+
+		// append node
+		if (sScriptSrc) {
+			AWIN.Tracking.Consent.getGdprAppends(
+				tcfVendorId,
+				AWIN.Tracking.getQueryParameterDelimiter(scriptNode.src),
+				function (gdprAppends) {
+					scriptNode.src += gdprAppends;
+					AWIN.Tracking.getScriptAppendNode().appendChild(scriptNode);
+				}
+			);
+		} else {
+			AWIN.Tracking.getScriptAppendNode().appendChild(scriptNode);
+		}
+
+		return scriptNode;
+	};
+	var frameAppend = function (sFrameSrc, tcfVendorId) {
+		if (document.getElementsByTagName('body')[0]) {
+			AWIN.Tracking.Consent.getGdprAppends(
+				tcfVendorId,
+				AWIN.Tracking.getQueryParameterDelimiter(sFrameSrc),
+				function (gdprAppends) {
+					sFrameSrc += gdprAppends;
+
+					var iframe = document.createElement('iframe');
+					iframe.setAttribute('aria-hidden', 'true');
+					iframe.src = sFrameSrc;
+					document.getElementsByTagName('body')[0].appendChild(iframe);
+					// AWIN.Tracking.hideElement(iframe); // not needed, iframe is hidden already
+				}
+			);
+		}
+	};
+	var pixelAppend = function (sImageSrc, tcfVendorId) {
+		if (document.getElementsByTagName('body')[0]) {
+			AWIN.Tracking.Consent.getGdprAppends(
+				tcfVendorId,
+				AWIN.Tracking.getQueryParameterDelimiter(sImageSrc),
+				function (gdprAppends) {
+					sImageSrc += gdprAppends;
+
+					var image = document.createElement('img');
+					image.setAttribute('aria-hidden', 'true');
+					image.src = sImageSrc;
+					document.getElementsByTagName('body')[0].appendChild(image);
+					// AWIN.Tracking.hideElement(image); // not needed, iframe is hidden already
+				}
+			);
+		}
+	};
+	var getQueryParameterDelimiter = function (currentUrl) {
+		return currentUrl.indexOf('?') === -1 ? '?' : '&';
+	};
+	var buildQueryString = function (params) {
+		var bits = [];
+		for (var name in params) {
+			if (params.hasOwnProperty(name)) {
+				bits.push(name + '=' + encodeURIComponent(params[name]));
+			}
+		}
+		return bits.join('&');
+	};
+	var getScriptAppendNode = function () {
+		return document.body;
+	};
+	var getBasketData = function () {
+		return payload.plugin.basket || [];
+	};
+	var getAffiliateId = function () {
+		return payload.plugin.publisherId;
+	};
+	var _getAWCValue = function () {
+		return payload.plugin.awc;
+	};
+
+	var Consent = {};
+
+	(function (awinTrackingConsent) {
+		// if we locate the CMP iframe we will reference it with this
+		var cmpFrame;
+
+		(function () {
+			// start here at our window
+			var frame = window;
+
+			// map of calls
+			var cmpCallbacks = {};
+			while (frame) {
+				try {
+					/**
+					 * throws a reference error if no frames exist
+					 */
+					if (frame.frames['__tcfapiLocator']) {
+						cmpFrame = frame;
+						break;
+					}
+				} catch (ignore) {}
+				if (frame === window.top) {
+					break;
+				}
+				frame = frame.parent;
+			}
+
+			/**
+			 * Set up a __tcfapi proxy method to do the postMessage and map the callback.
+			 * From the caller's perspective, this function behaves identically to the
+			 * CMP API's __tcfapi call
+			 */
+			window.__tcfapi = function (cmd, version, callback, arg) {
+				if (!cmpFrame) {
+					callback({ msg: 'CMP not found' }, false);
+				} else {
+					var callId = Math.random() + '';
+					var msg = {
+						__tcfapiCall: {
+							command: cmd,
+							parameter: arg,
+							version: version,
+							callId: callId,
+						},
+					};
+
+					/**
+					 * map the callback for lookup on response
+					 */
+					cmpCallbacks[callId] = callback;
+					cmpFrame.postMessage(msg, '*');
+				}
+			};
+
+			function postMessageHandler(event) {
+				/**
+				 * when we get the return message, call the mapped callback
+				 */
+				var json = {};
+
+				try {
+					/**
+					 * if this isn't valid JSON then this will throw an error
+					 */
+					json = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+				} catch (ignore) {}
+
+				var payload = json.__tcfapiReturn;
+				if (payload) {
+					/**
+					 * messages we care about will have a payload
+					 */
+					if (typeof cmpCallbacks[payload.callId] === 'function') {
+						/**
+						 * call the mapped callback and then remove the reference
+						 */
+
+						cmpCallbacks[payload.callId](payload.returnValue, payload.success);
+						cmpCallbacks[payload.callId] = null;
+					}
+				}
+			}
+			window.addEventListener('message', postMessageHandler, false);
+		})();
+
+		awinTrackingConsent.isCmpPresentOnPage = function () {
+			return typeof cmpFrame !== 'undefined';
+		};
+
+		awinTrackingConsent.getGdprAppends = function (tcfVendorId, delimiter, callback) {
+			if (tcfVendorId) {
+				// prepare for no CMP and errors
+				var fallbackAppend = delimiter + 'gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_' + tcfVendorId + '}';
+
+				// cmp found, asking __tcfapi for a consent string for this vendorId
+				if (AWIN.Tracking.Consent.isCmpPresentOnPage()) {
+					try {
+						__tcfapi(
+							'getTCData',
+							2,
+							function (tcData, success) {
+								var appends = delimiter;
+								if (tcData && success) {
+									if (typeof tcData.gdprApplies !== 'undefined') {
+										if (tcData.gdprApplies) {
+											appends += 'gdpr=1';
+										} else {
+											appends += 'gdpr=0';
+										}
+										appends += '&gdpr_consent=' + tcData.tcString;
+										callback(appends);
+										return;
+									}
+								}
+								// no data, no success or missing tcData.gdprApplies
+								callback(fallbackAppend);
+							},
+							[tcfVendorId]
+						);
+					} catch (err) {
+						callback(fallbackAppend);
+					}
+				} else {
+					// no CMP found
+					callback(fallbackAppend);
+				}
+			} else {
+				// no vendorId provided
+				callback('');
+			}
+		};
+	})(Consent);
+
+	var publicObject = {
+		// functions
+		fetchZxParam: fetchZxParam,
+		scriptAppend: scriptAppend,
+		frameAppend: frameAppend,
+		pixelAppend: pixelAppend,
+		getQueryParameterDelimiter: getQueryParameterDelimiter,
+		buildQueryString: buildQueryString,
+		getScriptAppendNode: getScriptAppendNode,
+		getBasketData: getBasketData,
+		getAffiliateId: getAffiliateId,
+		_getAWCValue: _getAWCValue,
+		Consent: Consent,
+
+		// Awin properties
+		Sale: payload.plugin.sale,
+		iMerchantId: payload.plugin.advertiserId, // can be added without configuration
+		sProtocol: payload.plugin.protocol, // can be added without configuration
+
+		// new access property
+		context: {
+			plugin: payload.plugin,
+			advertiser: payload.advertiser,
+			location: payload.plugin.location,
+		},
+	};
+
+	AWIN.sProtocol = payload.plugin.protocol;
+	publicObject[pluginName] = payload.advertiser.config;
+	return publicObject;
+})(AWIN.pluginName, AWIN.payload);
+
+AWIN.Tracking.SirData = AWIN.Tracking.SirDataSB || AWIN.Tracking.SirData || {};
+AWIN.Tracking.SirData.url = AWIN.Tracking.SirData.url || AWIN.sProtocol + "js.cookieless-data.com";
+
+(function ($s) {
+    if ($s.terminate === true) {
+        return;
+    }
+
+    if ("undefined" === typeof $s.advertiserId) {
+        return;
+    }
+    
+    var pagetype = $s.pagetype || AWIN.Tracking.fetchZxParam('pagetype');
+
+    if ("undefined" === typeof pagetype) {
+        return;
+    }
+
+    if (AWIN.Tracking.Sale) {
+        pagetype = "checkout";
+    } else if ("checkout" === pagetype.toLowerCase()) {
+        AWIN.Tracking.Sale = {};
+    }
+
+    var url = $s.url;
+    var query = false;
+
+    switch (pagetype.toLowerCase()) {
+        case "product":
+            url += "/product.d?" + AWIN.Tracking.buildQueryString({
+                product_id: $s.identifier || AWIN.Tracking.fetchZxParam('identifier'),
+                product_name: $s.productName || AWIN.Tracking.fetchZxParam('product_name'),
+                product_price: $s.price || AWIN.Tracking.fetchZxParam('product_price')
+            });
+            query = true;
+            break;
+        case "search":
+            url += "/LAL.d?" + AWIN.Tracking.buildQueryString({
+                s: $s.searchQuery || AWIN.Tracking.fetchZxParam('search_query')
+            });
+            query = true;
+            break;
+        case "category":
+            url += "/LAL.d?" + AWIN.Tracking.buildQueryString({
+                cat_name: $s.category || AWIN.Tracking.fetchZxParam('category')
+            });
+            query = true;
+            break;
+        case "basket":
+            url += "/cart.d?" + AWIN.Tracking.buildQueryString({
+                command_amount: $s.totalAmount || AWIN.Tracking.fetchZxParam('total_amount')
+            });
+            query = true;
+            break;
+        case "checkout":
+            url += "/order.d?" + AWIN.Tracking.buildQueryString({
+                command_amount: AWIN.Tracking.fetchZxParam('total_amount') || AWIN.Tracking.Sale.amount,
+                command_id: AWIN.Tracking.fetchZxParam('transaction') || AWIN.Tracking.Sale.orderRef,
+                ht_paid: 1
+            });
+            query = true;
+            break;
+        default:
+            url += "/LAL.d";
+            break;
+    }
+    
+    __tcfapi('addEventListener', 2, function (tcData, success) {
+      // should get response from window.top's CMP
+      url += (query ? "&" : "?") + AWIN.Tracking.buildQueryString({
+          pa: $s.advertiserId,
+          si: 1,
+          su: 1,
+          u: AWIN.Tracking.context.plugin.location.href,
+          r: AWIN.Tracking.context.plugin.referrer,
+          is_client: AWIN.Tracking.fetchZxParam('isClient') || $s.isClient || 0,
+          gdpr : tcData.gdprApplies,
+          gdpr_consent : tcData.tcString
+      });
+
+      AWIN.Tracking.scriptAppend(url);
+    });
+   
+})(AWIN.Tracking.SirData);
+</script><script type="text/javascript" id="_aw_script_0" src="https://js.cookieless-data.com/LAL.d?pa=28348&amp;si=1&amp;su=1&amp;u=https%3A%2F%2Fwww.enervit.com%2Fit%2F&amp;r=&amp;is_client=0&amp;gdpr=undefined&amp;gdpr_consent=undefined"></script><script type="text/javascript" src="https://trk.datnova.com/status.js?pid=28348" defer=""></script></body></html>

@@ -1,0 +1,44 @@
+<html><head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<style type="text/css">
+				span, body, embed { margin: 0; }
+				iframe, object, embed { height: 100%; width: 100%; }
+			</style>
+		</head>
+		<body>
+			<iframe src="https://open.spotify.com/embed-podcast/show/3WECCX4SDoAJ5rmd0zr60l" width="258" height="232" frameborder="0" style="width:100%; border:0;"></iframe>			<script type="text/javascript">
+				var funcSizeRequest = function( e ) {
+					var ref = document.createElement( 'a' );
+					ref.href = document.referrer;
+
+					// Verify message origin
+					if ( ref.protocol + '//' + ref.host !== e.origin )
+						return;
+
+					// Verify message is in a format we expect
+					if ( 'object' !== typeof e.data || undefined === e.data.msg_type )
+						return;
+
+					switch ( e.data.msg_type ) {
+						case 'poll_size':
+							e.source.postMessage( {
+								'_request' : e.data,
+								'msg_type' : 'poll_size:response',
+								'height'   : document.body.scrollHeight,
+								'width'    : document.body.scrollWidth
+							}, e.origin );
+							return;
+						default:
+							return;
+					}
+				};
+
+				if ( 'function' === typeof window.addEventListener ) {
+					window.addEventListener( 'message', funcSizeRequest, false );
+				} else if ( 'function' === typeof window.attachEvent ) {
+					window.attachEvent( 'onmessage', funcSizeRequest );
+				}
+			</script>
+		
+	
+	</body></html>

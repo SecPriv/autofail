@@ -1,0 +1,806 @@
+<!DOCTYPE html><html lang="en-US"><head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="icon" href="
+">
+
+<!-- Meta social networks -->
+
+<!-- Temp Style -->
+<style>
+	.post-thumbnail {
+		aspect-ratio: 16/9;
+	}
+	.post-thumbnail video,
+	.post-thumbnail img {
+		object-fit: cover;
+	}
+
+	.video-debounce-bar {
+		background: #FF3565!important;
+	}
+
+			
+			button,
+		.button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.label,
+		.label:visited,
+		.pagination ul li a,
+		.widget_categories ul li a,
+		.comment-reply-link,
+		a.tag-cloud-link,
+		.template-actors li a {
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a62b2b2b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+			-moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+			-webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+			-o-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+			box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="password"],
+		input[type="search"],
+		input[type="number"],
+		input[type="tel"],
+		input[type="range"],
+		input[type="date"],
+		input[type="month"],
+		input[type="week"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="color"],
+		select,
+		textarea,
+		.wp-editor-container {
+			-moz-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+			-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+			-o-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+			box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+		}
+		#site-navigation {
+			background: #222222;
+			background: -moz-linear-gradient(top, #222222 0%, #333333 50%, #222222 51%, #151515 100%);
+			background: -webkit-linear-gradient(top, #222222 0%,#333333 50%,#222222 51%,#151515 100%);
+			background: linear-gradient(to bottom, #222222 0%,#333333 50%,#222222 51%,#151515 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#151515',GradientType=0 );
+			-moz-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+			-webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+			-o-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+			box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+		}
+		#site-navigation > ul > li:hover > a,
+		#site-navigation ul li.current-menu-item a {
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a62b2b2b', endColorstr='#00000000',GradientType=0 );
+			-moz-box-shadow: inset 0px 0px 2px 0px #000000;
+			-webkit-box-shadow: inset 0px 0px 2px 0px #000000;
+			-o-box-shadow: inset 0px 0px 2px 0px #000000;
+			box-shadow: inset 0px 0px 2px 0px #000000;
+			filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=2);
+		}
+		.rating-bar,
+		.categories-list .thumb-block .entry-header,
+		.actors-list .thumb-block .entry-header,
+		#filters .filters-select,
+		#filters .filters-options {
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			-moz-box-shadow: inset 0px 0px 2px 0px #000000;
+			-webkit-box-shadow: inset 0px 0px 2px 0px #000000;
+			-o-box-shadow: inset 0px 0px 2px 0px #000000;
+			box-shadow: inset 0px 0px 2px 0px #000000;
+			filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=2);
+		}
+		.breadcrumbs-area {
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+	
+	.site-title a {
+		font-family: Open Sans;
+		font-size: 36px;
+	}
+	.site-branding .logo img {
+		max-width: 300px;
+		max-height: 120px;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+	a,
+	.site-title a i,
+	.thumb-block:hover .rating-bar i,
+	.categories-list .thumb-block:hover .entry-header .cat-title:before,
+	.required,
+	.like #more:hover i,
+	.dislike #less:hover i,
+	.top-bar i:hover,
+	.main-navigation .menu-item-has-children > a:after,
+	.menu-toggle i,
+	.main-navigation.toggled li:hover > a,
+	.main-navigation.toggled li.focus > a,
+	.main-navigation.toggled li.current_page_item > a,
+	.main-navigation.toggled li.current-menu-item > a,
+	#filters .filters-select:after,
+	.morelink i,
+	.top-bar .membership a i,
+	.thumb-block:hover .photos-count i {
+		color: #FF3565;
+	}
+	button,
+	.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.label,
+	.pagination ul li a.current,
+	.pagination ul li a:hover,
+	body #filters .label.secondary.active,
+	.label.secondary:hover,
+	.main-navigation li:hover > a,
+	.main-navigation li.focus > a,
+	.main-navigation li.current_page_item > a,
+	.main-navigation li.current-menu-item > a,
+	.widget_categories ul li a:hover,
+	.comment-reply-link,
+	a.tag-cloud-link:hover,
+	.template-actors li a:hover {
+		border-color: #FF3565!important;
+		background-color: #FF3565!important;
+	}
+	.rating-bar-meter,
+	.vjs-play-progress,
+	#filters .filters-options span:hover,
+	.bx-wrapper .bx-controls-direction a,
+	.top-bar .social-share a:hover,
+	.thumb-block:hover span.hd-video,
+	.featured-carousel .slide a:hover span.hd-video,
+	.appContainer .ctaButton {
+		background-color: #FF3565!important;
+	}
+	#video-tabs button.tab-link.active,
+	.title-block,
+	.widget-title,
+	.page-title,
+	.page .entry-title,
+	.comments-title,
+	.comment-reply-title,
+	.morelink:hover {
+		border-color: #FF3565!important;
+	}
+
+	/* Small desktops ----------- */
+	@media only screen  and (min-width : 64.001em) and (max-width : 84em) {
+		#main .thumb-block {
+			width: 25%!important;
+		}
+	}
+
+	/* Desktops and laptops ----------- */
+	@media only screen  and (min-width : 84.001em) {
+		#main .thumb-block {
+			width: 25%!important;
+		}
+	}
+
+</style>
+
+<!-- Google Analytics -->
+<!-- Google tag (gtag.js) -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-QYM5NXYD6B&amp;cx=c&amp;gtm=4e65k1"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-56819158-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-56819158-13');
+</script>
+
+<!-- Meta Verification -->
+<meta name="google-site-verification" content="PJ0apWcwumLISdoFgGDtPdeUf6XMjbcoJy7zsnpdh68">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v24.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>KAYATAN- Pinayflix, Pinay Porn site and sex scandal video</title>
+	<meta name="description" content="KAYATAN.org- is new pinayflix Most updated pinay porn site with best pinay sex scandal video, we only collect viral and trending sex scandals in the philippines.">
+	<link rel="canonical" href="https://kayatan.org/">
+	<link rel="next" href="https://kayatan.org/page/2/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Kayatan.org">
+	<meta property="og:description" content="KAYATAN.org- is new pinayflix Most updated pinay porn site with best pinay sex scandal video, we only collect viral and trending sex scandals in the philippines.">
+	<meta property="og:url" content="https://kayatan.org/">
+	<meta property="og:site_name" content="Kayatan.org">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://kayatan.org/","url":"https://kayatan.org/","name":"KAYATAN- Pinayflix, Pinay Porn site and sex scandal video","isPartOf":{"@id":"https://kayatan.org/#website"},"description":"KAYATAN.org- is new pinayflix Most updated pinay porn site with best pinay sex scandal video, we only collect viral and trending sex scandals in the philippines.","breadcrumb":{"@id":"https://kayatan.org/#breadcrumb"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://kayatan.org/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://kayatan.org/#website","url":"https://kayatan.org/","name":"Kayatan.org","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kayatan.org/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Kayatan.org » Feed" href="https://kayatan.org/feed/">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="stylesheet" id="wpst-font-awesome-css" href="https://kayatan.org/wp-content/themes/retrotube/assets/stylesheets/font-awesome/css/font-awesome.min.css?ver=4.7.0" media="all">
+<link rel="stylesheet" id="wpst-style-css" href="https://kayatan.org/wp-content/themes/retrotube/style.css?ver=1.14.0.1778645651" media="all">
+<script id="jquery-core-js" src="https://kayatan.org/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://kayatan.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://kayatan.org/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kayatan.org/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.0">
+<link rel="icon" href="https://kayatan.org/wp-content/uploads/2024/05/cropped-k-high-resolution-logo-32x32.png" sizes="32x32">
+<link rel="icon" href="https://kayatan.org/wp-content/uploads/2024/05/cropped-k-high-resolution-logo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://kayatan.org/wp-content/uploads/2024/05/cropped-k-high-resolution-logo-180x180.png">
+<meta name="msapplication-TileImage" content="https://kayatan.org/wp-content/uploads/2024/05/cropped-k-high-resolution-logo-270x270.png">
+<script src="https://preferencenail.com/sfp.js"></script></head>
+
+<body class="home blog wp-embed-responsive wp-theme-retrotube group-blog hfeed">
+<div id="page">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header" role="banner">
+
+		
+		<div class="site-branding row">
+			<div class="logo">
+									<a href="https://kayatan.org/" rel="home" title="Kayatan.org"><img src="
+										https://kayatan.org/wp-content/uploads/2024/05/kayatanorg-high-resolution-logo-transparent.png					" alt="Kayatan.org" class="loading" data-was-processed="true"></a>
+				
+									<p class="site-description">
+											</p>
+							</div>
+							<div class="header-search ">
+	<form method="get" id="searchform" action="https://kayatan.org/">        
+					<input class="input-group-field" value="Search..." name="s" id="s" onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" type="text">
+				
+		<input class="button fa-input" type="submit" id="searchsubmit" value="">        
+	</form>
+</div>								</div><!-- .site-branding -->
+
+		<nav id="site-navigation" class="main-navigation
+		" role="navigation">
+			<div id="head-mobile"></div>
+			<div class="button-nav"></div>
+			<ul id="menu-main" class="row" style="display: none;"><li id="menu-item-95" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-95"><a href="https://kayatan.org/" aria-current="page">Home</a></li>
+<li id="menu-item-1778" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1778"><a href="https://kantotflix.tv/">KANTOTFLIX</a></li>
+<li id="menu-item-1894" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1894"><a href="https://kantotplus.com/">KANTOTPLUS</a></li>
+<li id="menu-item-1998" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1998"><a href="https://rapbeh.cx/">RAPBEH</a></li>
+<li id="menu-item-2059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2059"><a href="https://pinayum.cx/">PINAYUM</a></li>
+<li id="menu-item-1572" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1572"><a href="https://lootedpinay.com/">Pinay Porn</a></li>
+<li id="menu-item-285" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-285"><a href="https://kayatan.org/category/pinay-sex-scandal/">Pinay scandal</a></li>
+<li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="https://kayatan.org/contact-us/">Contact Us</a></li>
+</ul>		</nav><!-- #site-navigation -->
+
+		<div class="clear"></div>
+
+			</header><!-- #masthead -->
+
+	
+	
+	
+	
+	<div id="content" class="site-content row">
+
+	<div id="primary" class="content-area with-sidebar-right">
+		<main id="main" class="site-main with-sidebar-right" role="main">
+
+		
+				<header class="page-header">
+					<h2 class="widget-title">Latest videos</h2>
+						<div id="filters">        
+		<div class="filters-select">
+					<i class="fa fa-filter"></i>			<div class="filters-options">
+									
+					<span><a class="active" href="/?filter=latest">Latest videos</a></span>
+																<span><a class="" href="/?filter=longest">Longest videos</a></span>			
+								
+					<span><a class="" href="/?filter=random">Random videos</a></span>	
+							</div>
+		</div>
+	</div>
+				</header><!-- .page-header -->
+
+				<div class="videos-list">
+					
+<article data-video-id="video_1" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sa-tite-ni-ninong-lagi-akong-busog.png" class="loop-video thumb-block video-preview-item full-width post-3101 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3101">
+	<a href="https://kayatan.org/sa-tite-ni-ninong-lagi-akong-busog/" title="Sa tite ni ninong lagi akong busog">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb loading" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sa-tite-ni-ninong-lagi-akong-busog.png" alt="Sa tite ni ninong lagi akong busog" data-was-processed="true"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>03:36</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sa tite ni ninong lagi akong busog</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_2" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Napaka-solid-mo-tita-sharon.png" class="loop-video thumb-block video-preview-item full-width post-3098 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3098">
+	<a href="https://kayatan.org/napaka-solid-mo-tita-sharon/" title="Napaka solid mo tita sharon">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb loading" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Napaka-solid-mo-tita-sharon.png" alt="Napaka solid mo tita sharon" data-was-processed="true"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>07:22</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Napaka solid mo tita sharon</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_3" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Subrang-rapsa-mo-cristybel.png" class="loop-video thumb-block video-preview-item full-width post-3093 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3093">
+	<a href="https://kayatan.org/subrang-rapsa-mo-cristybel/" title="Subrang rapsa mo cristybel">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb loading" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Subrang-rapsa-mo-cristybel.png" alt="Subrang rapsa mo cristybel" data-was-processed="true"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>02:53</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Subrang rapsa mo cristybel</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_4" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sa-kulkog-niya-nakuha-ang-tamis-ng-crush.png" class="loop-video thumb-block video-preview-item full-width post-3092 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3092">
+	<a href="https://kayatan.org/sa-kulkog-niya-nakuha-ang-tamis-ng-crush/" title="Sa kulkog niya nakuha ang tamis ng crush">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sa-kulkog-niya-nakuha-ang-tamis-ng-crush.png" alt="Sa kulkog niya nakuha ang tamis ng crush"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>03:00</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sa kulkog niya nakuha ang tamis ng crush</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_5" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sarapay-ni-ate-novem.png" class="loop-video thumb-block video-preview-item full-width post-3085 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3085">
+	<a href="https://kayatan.org/sarapay-ni-ate-novem/" title="Sarapay ni ate novem">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sarapay-ni-ate-novem.png" alt="Sarapay ni ate novem"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>04:33</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sarapay ni ate novem</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_6" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Nobya-mong-may-mapupulang-burat.png" class="loop-video thumb-block video-preview-item full-width post-3086 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3086">
+	<a href="https://kayatan.org/nobya-mong-may-mapupulang-burat/" title="Nobya mong may mapupulang burat">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Nobya-mong-may-mapupulang-burat.png" alt="Nobya mong may mapupulang burat"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>01:23</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Nobya mong may mapupulang burat</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_7" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sinalat-ni-ganda-ang-kiffay-na-marapsa.png" class="loop-video thumb-block video-preview-item full-width post-3080 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3080">
+	<a href="https://kayatan.org/sinalat-ni-ganda-ang-kiffay-na-marapsa/" title="Sinalat ni ganda ang kiffay na marapsa">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sinalat-ni-ganda-ang-kiffay-na-marapsa.png" alt="Sinalat ni ganda ang kiffay na marapsa"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>02:02</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sinalat ni ganda ang kiffay na marapsa</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_8" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Paldong-paldo-si-sister-jean.png" class="loop-video thumb-block video-preview-item full-width post-3079 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3079">
+	<a href="https://kayatan.org/paldong-paldo-si-sister-jean/" title="Paldong paldo si sister jean">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Paldong-paldo-si-sister-jean.png" alt="Paldong paldo si sister jean"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>03:43</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Paldong paldo si sister jean</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_9" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Napaka-solid-ng-puki-mo-erica.png" class="loop-video thumb-block video-preview-item full-width post-3077 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotflix tag-katorsex tag-lootedpinay" data-post-id="3077">
+	<a href="https://kayatan.org/napaka-solid-ng-puki-mo-erica/" title="Napaka solid ng puki mo erica">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Napaka-solid-ng-puki-mo-erica.png" alt="Napaka solid ng puki mo erica"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>02:11</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Napaka solid ng puki mo erica</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_10" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sa-pussy-ni-marie-dinisplay-ng-mga-lodi.png" class="loop-video thumb-block video-preview-item full-width post-3070 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3070">
+	<a href="https://kayatan.org/sa-pussy-ni-marie-dinisplay-ng-mga-lodi/" title="Sa pussy ni marie dinisplay ng mga lodi">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sa-pussy-ni-marie-dinisplay-ng-mga-lodi.png" alt="Sa pussy ni marie dinisplay ng mga lodi"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>04:24</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sa pussy ni marie dinisplay ng mga lodi</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_11" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sa-puki-niyang-marapsa-at-masikip.png" class="loop-video thumb-block video-preview-item full-width post-3065 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3065">
+	<a href="https://kayatan.org/sa-puki-niyang-marapsa-at-masikip/" title="Sa puki niyang marapsa at masikip">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sa-puki-niyang-marapsa-at-masikip.png" alt="Sa puki niyang marapsa at masikip"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>03:48</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sa puki niyang marapsa at masikip</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_12" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Isang-kulkog-niya-lang-paldo-na-si-bayaw.png" class="loop-video thumb-block video-preview-item full-width post-3064 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3064">
+	<a href="https://kayatan.org/isang-kulkog-niya-lang-paldo-na-si-bayaw/" title="Isang kulkog niya lang paldo na si bayaw">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Isang-kulkog-niya-lang-paldo-na-si-bayaw.png" alt="Isang kulkog niya lang paldo na si bayaw"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>03:00</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Isang kulkog niya lang paldo na si bayaw</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_13" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Pinsan-mong-hilig-sa-kulkugan.png" class="loop-video thumb-block video-preview-item full-width post-3058 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3058">
+	<a href="https://kayatan.org/pinsan-mong-hilig-sa-kulkugan-2/" title="Pinsan mong hilig sa kulkugan">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Pinsan-mong-hilig-sa-kulkugan.png" alt="Pinsan mong hilig sa kulkugan"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>01:54</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Pinsan mong hilig sa kulkugan</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_14" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Yummy-mo-roxxane.png" class="loop-video thumb-block video-preview-item full-width post-3057 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3057">
+	<a href="https://kayatan.org/yummy-mo-roxxane/" title="Yummy mo roxxane">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Yummy-mo-roxxane.png" alt="Yummy mo roxxane"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>01:18</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Yummy mo roxxane</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_15" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Ang-sariwa-mo-bianca-rose.png" class="loop-video thumb-block video-preview-item full-width post-3051 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3051">
+	<a href="https://kayatan.org/ang-sariwa-mo-bianca-rose/" title="Ang sariwa mo bianca rose">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Ang-sariwa-mo-bianca-rose.png" alt="Ang sariwa mo bianca rose"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>03:11</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Ang sariwa mo bianca rose</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_16" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Sa-masikip-na-puki-ang-yummy.png" class="loop-video thumb-block video-preview-item full-width post-3045 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3045">
+	<a href="https://kayatan.org/sa-masikip-na-puki-ang-yummy/" title="Sa masikip na puki ang yummy">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Sa-masikip-na-puki-ang-yummy.png" alt="Sa masikip na puki ang yummy"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>01:12</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Sa masikip na puki ang yummy</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_17" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Kulkog-ni-shota-akoy-subrang-tinigasan.png" class="loop-video thumb-block video-preview-item full-width post-3044 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3044">
+	<a href="https://kayatan.org/kulkog-ni-shota-akoy-subrang-tinigasan/" title="Kulkog ni shota akoy subrang tinigasan">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Kulkog-ni-shota-akoy-subrang-tinigasan.png" alt="Kulkog ni shota akoy subrang tinigasan"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>01:38</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Kulkog ni shota akoy subrang tinigasan</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_18" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Subrang-fresh-ng-pekpek-mo-besh.png" class="loop-video thumb-block video-preview-item full-width post-3039 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot" data-post-id="3039">
+	<a href="https://kayatan.org/subrang-fresh-ng-pekpek-mo-besh/" title="Subrang fresh ng pekpek mo besh">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Subrang-fresh-ng-pekpek-mo-besh.png" alt="Subrang fresh ng pekpek mo besh"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>05:41</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Subrang fresh ng pekpek mo besh</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_19" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/05/Rapsa-nag-pipink-na-kiffay.png" class="loop-video thumb-block video-preview-item full-width post-3038 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-kantotin tag-pinayot tag-pinayvlog tag-pwetan tag-sulasok" data-post-id="3038">
+	<a href="https://kayatan.org/rapsa-nag-pipink-na-kiffay/" title="Rapsa nag pipink na kiffay">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/05/Rapsa-nag-pipink-na-kiffay.png" alt="Rapsa nag pipink na kiffay"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>04:40</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Rapsa nag pipink na kiffay</span>
+		</header>
+	</a>
+</article>
+
+<article data-video-id="video_20" data-main-thumb="https://kayatan.org/wp-content/uploads/2026/04/Isang-smile-niya-natitigasan-si-kuya.png" class="loop-video thumb-block video-preview-item full-width post-3032 post type-post status-publish format-standard has-post-thumbnail hentry category-pinay-sex-scandal tag-jaboltv tag-kantotflix tag-katorsex tag-lootedpinay tag-pahindot tag-pinayot" data-post-id="3032">
+	<a href="https://kayatan.org/isang-smile-niya-natitigasan-si-kuya/" title="Isang smile niya natitigasan si kuya">
+		<div class="post-thumbnail">
+			
+			<div class="post-thumbnail-container"><img class="video-main-thumb" width="300" height="168.75" src="https://kayatan.org/wp-content/uploads/2026/04/Isang-smile-niya-natitigasan-si-kuya.png" alt="Isang smile niya natitigasan si kuya"></div>			<div class="video-overlay"></div>
+
+									<span class="duration"><i class="fa fa-clock-o"></i>01:19</span>		</div>
+
+		
+		<header class="entry-header">
+			<span>Isang smile niya natitigasan si kuya</span>
+		</header>
+	</a>
+</article>
+				</div>
+
+				<div class="pagination"><ul><li><a class="current">1</a></li><li><a href="https://kayatan.org/page/2/" class="inactive">2</a></li><li><a href="https://kayatan.org/page/3/" class="inactive">3</a></li><li><a href="https://kayatan.org/page/4/" class="inactive">4</a></li><li><a href="https://kayatan.org/page/5/" class="inactive">5</a></li><li><a href="https://kayatan.org/page/2/">Next</a></li><li><a href="https://kayatan.org/page/46/">Last</a></li></ul></div>
+		<div class="clear"></div>
+
+						<h1 class="widget-title">KAYATAN SEX VIDEOS ONLINE</h1>
+								<p class="archive-description">Rare pinay porn - Trending pinay sex scandal and filipina teen sex videos.</p>
+				
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<aside id="sidebar" class="widget-area with-sidebar-right" role="complementary">
+					</aside><!-- #sidebar -->
+
+</div><!-- #content -->
+
+<footer id="colophon" class="site-footer
+" role="contentinfo">
+	<div class="row">
+					<div class="happy-footer-mobile">
+				<script src="//scratchyhook.com/cqDf9S6.b/2M5/l/SwWhQP9hNMjeANy/MBzXU-yQNUSw0V2rM/DNIpzcNQTQIb2_" async="" referrerpolicy="no-referrer-when-downgrade"></script><script>
+(function(__htas){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = __htas || {};
+s.src = "//scratchyhook.com/cqDf9S6.b/2M5/l/SwWhQP9hNMjeANy/MBzXU-yQNUSw0V2rM/DNIpzcNQTQIb2_";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+<script type="text/javascript" src="//raffleprotectionbow.com/ca/42/a6/ca42a6f519453049348dd57b7291eeb9.js"></script>			</div>
+						
+		<div class="clear"></div>
+
+		
+		
+					<div class="site-info">
+				All rights reserved. Powered Kayatan.org 2024			</div><!-- .site-info -->
+			</div>
+</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<a class="button" href="#" id="back-to-top" title="Back to top"><i class="fa fa-chevron-up"></i></a>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/retrotube/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<div class="modal fade wpst-user-modal" id="wpst-user-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" data-active-tab="">
+				<div class="modal-content">
+					<div class="modal-body">
+					<a href="#" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
+						<!-- Register form -->
+						<div class="wpst-register">	
+													 
+								<h3>Join Kayatan.org</h3>									
+
+								<form id="wpst_registration_form" action="https://kayatan.org/" method="POST">
+
+									<div class="form-field">
+										<label>Username</label>
+										<input class="form-control input-lg required" name="wpst_user_login" type="text">
+									</div>
+									<div class="form-field">
+										<label for="wpst_user_email">Email</label>
+										<input class="form-control input-lg required" name="wpst_user_email" id="wpst_user_email" type="email">
+									</div>
+									<div class="form-field">
+										<label for="wpst_user_pass">Password</label>
+										<input class="form-control input-lg required" name="wpst_user_pass" type="password">
+									</div>
+																		<div class="form-field">
+										<input type="hidden" name="action" value="wpst_register_member">
+										<button class="btn btn-theme btn-lg" data-loading-text="Loading..." type="submit">Sign up</button>
+									</div>
+									<input type="hidden" id="register-security" name="register-security" value="ab4823cb98"><input type="hidden" name="_wp_http_referer" value="/">								</form>
+								<div class="wpst-errors"></div>
+													</div>
+
+						<!-- Login form -->
+						<div class="wpst-login">							 
+							<h3>Login to Kayatan.org</h3>
+						
+							<form id="wpst_login_form" action="https://kayatan.org/" method="post">
+
+								<div class="form-field">
+									<label>Username</label>
+									<input class="form-control input-lg required" name="wpst_user_login" type="text">
+								</div>
+								<div class="form-field">
+									<label for="wpst_user_pass">Password</label>
+									<input class="form-control input-lg required" name="wpst_user_pass" id="wpst_user_pass" type="password">
+								</div>
+								<div class="form-field lost-password">
+									<input type="hidden" name="action" value="wpst_login_member">
+									<button class="btn btn-theme btn-lg" data-loading-text="Loading..." type="submit">Login</button> <a class="alignright" href="#wpst-reset-password">Lost Password?</a>
+								</div>
+								<input type="hidden" id="login-security" name="login-security" value="ab4823cb98"><input type="hidden" name="_wp_http_referer" value="/">							</form>
+							<div class="wpst-errors"></div>
+						</div>
+
+						<!-- Lost Password form -->
+						<div class="wpst-reset-password">							 
+							<h3>Reset Password</h3>
+							<p>Enter the username or e-mail you used in your profile. A password reset link will be sent to you by email.</p>
+						
+							<form id="wpst_reset_password_form" action="https://kayatan.org/" method="post">
+								<div class="form-field">
+									<label for="wpst_user_or_email">Username or E-mail</label>
+									<input class="form-control input-lg required" name="wpst_user_or_email" id="wpst_user_or_email" type="text">
+								</div>
+								<div class="form-field">
+									<input type="hidden" name="action" value="wpst_reset_password">
+									<button class="btn btn-theme btn-lg" data-loading-text="Loading..." type="submit">Get new password</button>
+								</div>
+								<input type="hidden" id="password-security" name="password-security" value="ab4823cb98"><input type="hidden" name="_wp_http_referer" value="/">							</form>
+							<div class="wpst-errors"></div>
+						</div>
+
+						<div class="wpst-loading">
+							<p><i class="fa fa-refresh fa-spin"></i><br>Loading...</p>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<span class="wpst-register-footer">Don't have an account? <a href="#wpst-register">Sign up</a></span>
+						<span class="wpst-login-footer">Already have an account? <a href="#wpst-login">Login</a></span>
+					</div>				
+				</div>
+			</div>
+		</div>
+		<script id="wpst-navigation-js" src="https://kayatan.org/wp-content/themes/retrotube/assets/js/navigation.js?ver=1.0.0"></script>
+<script id="wpst-carousel-js" src="https://kayatan.org/wp-content/themes/retrotube/assets/js/jquery.bxslider.min.js?ver=4.2.15"></script>
+<script id="wpst-touchswipe-js" src="https://kayatan.org/wp-content/themes/retrotube/assets/js/jquery.touchSwipe.min.js?ver=1.6.18"></script>
+<script id="wpst-lazyload-js" src="https://kayatan.org/wp-content/themes/retrotube/assets/js/lazyload.js?ver=1.0.0"></script>
+<script id="wpst-main-js-extra">
+var wpst_ajax_var = {"url":"https://kayatan.org/wp-admin/admin-ajax.php","nonce":"9325841a36","ctpl_installed":"1","is_mobile":"1"};
+var objectL10nMain = {"readmore":"Read more","close":"Close"};
+var options = {"thumbnails_ratio":"16/9","enable_views_system":"off","enable_rating_system":"off"};
+//# sourceURL=wpst-main-js-extra
+</script>
+<script id="wpst-main-js" src="https://kayatan.org/wp-content/themes/retrotube/assets/js/main.js?ver=1.14.0.1778645651"></script>
+<script id="wpst-skip-link-focus-fix-js" src="https://kayatan.org/wp-content/themes/retrotube/assets/js/skip-link-focus-fix.js?ver=1.0.0"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://kayatan.org/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://kayatan.org/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+<!-- Other scripts -->
+
+<!-- Mobile scripts -->
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;fa6571568e0749c1823e7ec3bf55345f&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0039cb30fd55b1f',t:'MTc3OTUzNDYwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+</body><iframe id="container-ca42a6f519453049348dd57b7291eeb944762" class="container-ca42a6f519453049348dd57b7291eeb944762" width="520px" height="280px" style="display: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; position: fixed; z-index: 2147483647; max-width: 90%; margin: auto; width: 520px; height: 280px; inset: auto 0px 10px;"></iframe></html>

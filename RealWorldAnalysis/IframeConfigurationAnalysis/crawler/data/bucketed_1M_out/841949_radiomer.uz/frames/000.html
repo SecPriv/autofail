@@ -1,0 +1,356 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" ng-app="UserApp" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title translate="label.title" class="ng-scope">Radiomer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/resources/icons/favicon.ico">
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/components/jstree/js/themes/proton/style.min.css">
+    <link rel="stylesheet" href="/resources/css/main.css">
+</head>
+
+<body ng-controller="indexCtrl" data-context="/" class="ng-scope">
+
+<div class="container-fluid">
+
+    <nav class="navbar alert-info navbar-default navbar-fixed-top header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index">Radiomer</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse ">
+                <ul class="nav navbar-nav" id="menu_clicked">
+                    <li><a id="home" href="#" ng-click="load('home.html')" translate="label.home" class="ng-scope">Главная</a></li>
+                    <li><a href="#" ng-click="load('news.html')" translate="label.news" class="ng-scope">Новости</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span translate="label.products" class="ng-scope">Продукты</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" ng-click="load('systems.html')" translate="label.systems" class="ng-scope">Системы</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" ng-click="load('softs.html')" translate="label.softs" class="ng-scope">Программы</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" ng-click="load('devices.html')" translate="label.devices" class="ng-scope">Аппараты</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" ng-click="load('contacts.html')" translate="label.contacts" class="ng-scope">Контакты</a></li>
+                    <li><a href="#" ng-click="load('partners.html')" translate="label.partners" class="ng-scope">Партнёры</a></li>
+                    <li><a href="http://www.radiomer.uz:8090/user" translate="label.new_version" class="ng-scope">Новый версия!!</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <div class="pull-right btn-group">
+                        <a href="#" ng-click="changeLanguage('uz')"><img src="/resources/png/uz.png"></a>
+                        <a href="#" ng-click="changeLanguage('ru')"><img src="/resources/png/ru.png"></a>
+                        <a href="#" ng-click="changeLanguage('us')"><img src="/resources/png/us.png"></a>
+                    </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span translate="label.cabinet" class="ng-scope">Персональный кабинет</span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" data-role="listview">
+                            <li class="bg-success"><a translate="label.mainserver" href="/loginPage" class="ng-scope">Основной сервер</a></li>
+                            <li class="bg-success"><a href="http://213.230.68.147" rel="external" translate="city.buxoro" class="ng-scope">Бухоро вилояти</a></li>
+                            <!--<li class="bg-success"><a href="http://213.230.68.186" rel="external" translate="city.fergana"/></li>-->
+                            <li class="bg-success"><a href="http://213.230.121.76" rel="external" translate="city.xorazm" class="ng-scope">Хоразм вилояти</a></li>
+                            <!--<li><a href="" translate="city.kashkadaryo"/></li>-->
+                            <li class="bg-success"><a href="http://213.230.99.59" rel="external" translate="city.karakalpagistan" class="ng-scope">Кораколпогистон</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+       <div class="row">
+            <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                <!-- ngInclude: template --><div id="mycontent" ng-include="template" class="ng-scope"><div id="myCarousel" class="carousel slide ng-scope" data-ride="carousel" data-interval="3000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+        <li data-target="#myCarousel" data-slide-to="9"></li>
+        <li data-target="#myCarousel" data-slide-to="10"></li>
+	<li data-target="#myCarousel" data-slide-to="11"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+	<div class="item active">
+            <img class="img-rounded center-block" src="resources/jpg/dispetcher6.jpg">
+            <div class="carousel-caption">
+                <h3>Хоразмда ракамлаштириш</h3>
+            </div>
+        </div>
+	<div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/mes.jpg">
+            <div class="carousel-caption">
+                <h3>Энергетика ракамлаштириш Президентимиз ва давр талаби "RadioMer"</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/mustafoev.jpg">
+            <div class="carousel-caption">
+                <h3>У.Мустафоев "RadioMer"дастури билан танишмокда</h3>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/dispetcher5.jpg">
+            <div class="carousel-caption">
+                <h3>Хоразм вилояти Хива туман</h3>
+            </div>
+        </div>
+
+	<div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/dispetcher4.jpg">
+            <div class="carousel-caption">
+                <h3>Диспетчер</h3>
+            </div>
+        </div>
+
+	 <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/dispetcher3.jpg">
+            <div class="carousel-caption">
+                <h3>Диспетчер</h3>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/dispetcher2.jpg">
+            <div class="carousel-caption">
+                <h3>Диспетчер</h3>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/scada.jpg">
+            <div class="carousel-caption">
+                <h3>EnergyScada</h3>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/dispetcher.jpg">
+            <div class="carousel-caption">
+            <h3>Диспетчер</h3>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="img-rounded center-block  " src="resources/jpg/dispetcher1.jpg">
+            <div class="carousel-caption">
+                <h3>Диспетчер</h3>
+            </div>
+        </div>
+
+        <div class="item">
+            <img class="img-rounded center-block" src="resources/jpg/panel.jpg">
+            <div class="carousel-caption">
+                <h3>Диспетчер</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img class="img-responsive center-block" src="resources/jpg/panel1.jpg">
+            <div class="carousel-caption">
+                <h3>Диспетчер</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br class="ng-scope">
+<div class="tab_content ng-scope">
+    <p style="text-align: justify;">
+        <span style="font-size: small;">
+            <span style="font-family: Verdana;">&nbsp; Компания <strong>RadioMer</strong> предлагает услуги по разработе электронных устройств под ключ по заданию заказчика, а также, услуги по созданию программного обеспечения для компьютеров для управления/мониторинга/программирования электронных устройств.</span>
+        </span>
+    </p>
+    <p style="text-align: justify;"></p>
+    <p style="text-align: justify;">
+        <span style="font-size: small;">
+            <span style="font-family: Verdana;">&nbsp; &nbsp;Инженеры нашей компании имеют большой опыт в разработке софта и конструировании &nbsp;электронных приборов различной степени сложности.</span>
+        </span>
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: small;">
+            <span style="font-family: Verdana;">
+                <strong>Почему стоит работать с нами?</strong>
+            </span>
+        </span>
+    </p>
+    <ul>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Мы имеем партнерские отношения с ключевыми поставщиками радиодеталей, корпусов, производителяти печатных плат, фальш-панелей, наклеек, благодаря чему цены и сроки поставки комплектующих для проектируемого устройства будут минимальны.</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Используя свой опыт и знания, выполняем подбор и конструирование приборов только на современной и доступной на рынке.</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;"><span style="font-family: Verdana;">Разводка и проектирование печатных плат в пакете P-CAD (Altium Designer):&nbsp;самый популярный пакет САПР в мире, по исходникам из которого печатные платы можно заказывать в любых произодителей в мире.</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Активное использование пакетов для моделирования процессов (Proteus, MathCAD), создания 3D-моделей устройств, корпусов (Solidworks), проектировки панелей, фальш-панелей, клавиатур (Corel Draw, Adobe Photoshop).</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Разработка с применение микроконтроллеров семейства Atmel/ST/PIC, готовые библиотеки под большинство задач, которые значительно ускоряют процесс разработки устройств.</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Опыт работы с интерфейсами: I2C,SPI, RS-232, RS-485,RS-422, USB, Ethernet, Wi-Fi, инфракрасный RC5, радиоканал 433 МГц/2.4 ГГц, инфракрасные датчики для обработки прохода, закрытия, открытия.</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Огромный опыт монтажа ЭРЭ, макетирования, наладки и запуска плат, монтажа устройств в корпус позволит быть уверенным в том, что даже на макетной плате ваше устройство будет работать надежно &nbsp;и стабильно.</span>
+            </span>
+        </li>
+        <li style="text-align: justify;">
+            <span style="font-size: small;">
+                <span style="font-family: Verdana;">Опыт &nbsp;в разработке и создании программного обеспечения для компьютера для различных задач (более 100 проектов).</span>
+            </span>
+        </li>
+    </ul>
+    <hr>
+    <p style="text-align: center;">
+        <span style="font-size: small;">
+            <span style="font-family: Verdana;">
+                <strong>Что мы умеем и можем? </strong>
+            </span>
+        </span>
+    </p>
+    <p style="text-align: justify;">
+        <span style="font-family: Verdana; font-size: small; text-align: justify;">&nbsp; &nbsp;Среди наших разработок есть как серийные модели, так различные прототипы и штучные устойства. Все устройства находятся на гарантии и проблемы в работе устраняются нашими специалистами бесплатно, а техподдержка выполняется на всем периоде эксплуатации устройств.</span>
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: small;">
+        <span style="font-family: Verdana;"><strong>Что необходимо от заказчика?</strong></span>
+        </span>
+    </p>
+    <p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Verdana;">&nbsp; &nbsp;Поскольку опыт показал, что наиболее эфективный способ работы через согласованное техническое задание, для успешной реализации проекта и исключения недоразумения мы рекомендуем обращаться к нам с уже готовым техническим заданием (идея заказчика, обнуманная и детально изложенная на бумаге, на основе которой просчитывается стоимость, сроки &nbsp;т.д.). </span></span></p><p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Verdana;">&nbsp; &nbsp;При обращении к нам только с общими идеями относительно устройства мы проконсультируем по всем интересующим вопросам и в минимальные сроки разработаем техническое задание с нашим видением поставленной задачи. </span></span></p><p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Verdana;">&nbsp; &nbsp; После согласования ТЗ, просчитываются сроки проектрировки, а также стоимость работ, стоимость первого образца.<br></span></span></p><hr><p style="text-align: center;"><strong><span style="font-size: small;"><span style="font-family: Verdana;">Кому нужны наши услуги?</span></span></strong></p><p style="text-align: justify;"><span style="font-size: small;"><span style="font-family: Verdana;">&nbsp; &nbsp;Различные электронные устройства&nbsp;пользуются популярностью среди создателей «квестов в реальности». Квест это игра в реальной жизни. Нескольких человек запирают в комнате, полной загадок и головоломок. Цель — за определенное время найти способ выйти.</span>
+    </span></p>
+    <p style="text-align: justify;">
+                <span style="font-size: small;">
+                <span style="font-family: Verdana;">&nbsp; &nbsp;Из реквизита для квест комнат часто необходимы: таймеры, датчики наличия, датчики открытия, датчики снятия, закрытия, датчики прохода, контроллеры для управления сценариями, диммеры, головоломки и т.д. Наша компания готова в сотрудничестве с разработчиками декораций и сценариев для квест-комнат, создавать различные устройства для квест комнат для воплощения любых идей в жизнь!</span>
+            </span>
+    </p>
+
+    <div class="clearing"></div>
+</div>
+
+<p class="ng-scope"><a href="https://www.youtube.com/channel/UCgzCU0JHHvakAVF5DROEKrw" style="font-weight: bold;color: red" target="_blank">Наши каналы на YouTube</a></p>
+
+</div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                 <div class="row">
+                     <div class="col-l2-12 col-md-12 col-sm-12 col-xs-12">
+                         <div class="panel panel-info">
+                             <div class="panel-heading text-center">
+                                <span translate="label.emsys" class="ng-scope">Встраиваемые системы</span>
+                             </div>
+                             <div class="panel-body">
+                                <img class="img-responsive center-block" src="/resources/png/emsys.png">
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-l2-12 col-md-12 col-sm-12 col-xs-12">
+                         <div class="panel panel-info">
+                             <div class="panel-heading clearfix text-center">
+                                 <span translate="label.chip_e" class="ng-scope">Микропроцессорные устройства систем управления</span>
+                             </div>
+                             <div class="panel-body">
+                                 <img class="img-responsive center-block" src="/resources/png/chip_e.png">
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-l2-12 col-md-12 col-sm-12 col-xs-12">
+                         <div class="panel panel-info">
+                             <div class="panel-heading clearfix text-center">
+                                 <span translate="label.rf" class="ng-scope">Беспроводное управление процессом</span>
+                             </div>
+                             <div class="panel-body">
+                                 <img class="img-responsive center-block" src="/resources/jpg/rf.jpg">
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-l2-12 col-md-12 col-sm-12 col-xs-12">
+                         <div class="panel panel-info">
+                             <div class="panel-heading clearfix text-center">
+                                 <span translate="label.appsoft" class="ng-scope">Прикладное программное обеспечение</span>
+                             </div>
+                             <div class="panel-body">
+                                 <img class="img-responsive center-block" src="/resources/png/appsoft.png">
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-l2-12 col-md-12 col-sm-12 col-xs-12">
+                         <div class="panel panel-info">
+                             <div class="panel-heading clearfix text-center">
+                                 <span translate="label.altdes" class="ng-scope">Принципиальные схемы и печатные платы</span>
+                             </div>
+                             <div class="panel-body">
+                                 <img class="img-responsive center-block" src="/resources/png/altdes.png">
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer">
+            <p class="text-muted text-center ng-scope" translate="label.maincontact">"Андижон ХЭТК" АЖ, ДТБВХ булими-&gt; Маълумот учун:+998939101233(Нуриддинов Одилжон)</p>
+        </div>
+    </footer>
+
+</div>
+
+<script src="/components/jquery/js/jquery.min.js"></script>
+<script src="/components/transparency/js/transparency.min.js"></script>
+<script src="/components/mustache/js/mustache.min.js"></script>
+<script src="/components/bootstrap/js/bootstrap.min.js"></script>
+
+<!--AngularJS-->
+<script src="/components/angular/js/angular.min.js"></script>
+<script src="/components/angular/js/angular-translate.min.js"></script>
+<script src="/components/angular/js/angular-translate-loader-url.min.js"></script>
+<script src="/components/app/js/angular/app.js"></script>
+<script src="/components/app/js/angular/services.js"></script>
+<script src="/components/app/js/angular/indexControllers.js"></script>
+
+
+</body></html>

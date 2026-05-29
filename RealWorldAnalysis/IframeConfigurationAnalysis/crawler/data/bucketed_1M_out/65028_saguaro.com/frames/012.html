@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en"><head><title>Gorgias Shopper Engagement</title><style>
+        
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+ display: block;
+}
+body {
+ line-height: 1;
+}
+ol, ul {
+ list-style: none;
+}
+blockquote, q {
+ quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content: '';
+ content: none;
+}
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+
+*:focus[tabindex]:not([tabindex="0"]):not([tabindex^="+"]) {
+    outline: none;
+}
+
+
+        html, body, #mount-floating-engagement-widget, .frame-content {
+            height: 100%;
+            display: flex;
+        }
+
+        body, #mount-floating-engagement-widget, .frame-content {
+            width: 100%;
+        }
+    </style><style>/* Auto-generated core tokens from Axiom design system
+ * Generated on: 2025-08-28T11:09:41.848Z
+ * Sources: colors/core.css, effects.css, spacing.css
+ */
+
+/* From @gorgias/axiom/dist/tokens/colors/core.css */
+:root {
+  --white: #ffffff;
+  --black: #1e242e;
+  --grey-50: #fafafa;
+  --grey-100: #ebecef;
+  --grey-200: #d5d7dd;
+  --grey-300: #c7cad1;
+  --grey-400: #b3b8c1;
+  --grey-500: #6e7686;
+  --grey-600: #5c6370;
+  --grey-700: #4c525d;
+  --grey-800: #373b43;
+  --grey-900: #2c2f35;
+  --grey-950: #1a1e23;
+  --grey-750: #40454f;
+  --green-50: #e9fbf5;
+  --green-100: #bbf2e1;
+  --green-200: #9fe7d0;
+  --green-300: #74dcba;
+  --green-400: #59d5ae;
+  --green-500: #32c898;
+  --green-600: #21c38f;
+  --green-700: #0eaa77;
+  --green-800: #147656;
+  --green-900: #0f5a42;
+  --teal-50: #e8f5f8;
+  --teal-100: #b6e0e9;
+  --teal-200: #93d1de;
+  --teal-300: #62bdcf;
+  --teal-400: #43b0c6;
+  --teal-500: #149db8;
+  --teal-600: #128ea7;
+  --teal-700: #0e7083;
+  --teal-800: #0b5665;
+  --teal-900: #08424d;
+  --blue-50: #e6f5ff;
+  --blue-100: #b0deff;
+  --blue-200: #8aceff;
+  --blue-300: #5db6f6;
+  --blue-400: #3da8f5;
+  --blue-500: #1a90e5;
+  --blue-600: #1783d1;
+  --blue-700: #1267a3;
+  --blue-800: #075185;
+  --blue-900: #053e66;
+  --purple-50: #f5f1fe;
+  --purple-100: #e1d7f8;
+  --purple-200: #d2c3f4;
+  --purple-300: #bfabed;
+  --purple-400: #b39de7;
+  --purple-500: #a084e1;
+  --purple-600: #8c6adb;
+  --purple-700: #6640bf;
+  --purple-800: #4f3194;
+  --purple-900: #3c2671;
+  --red-50: #feedf0;
+  --red-100: #fbc8d0;
+  --red-200: #f9aeb9;
+  --red-300: #f68998;
+  --red-400: #f57285;
+  --red-500: #f24f66;
+  --red-600: #dc485d;
+  --red-700: #c22238;
+  --red-800: #961a2c;
+  --red-900: #731422;
+  --coral-50: #fef4f3;
+  --coral-100: #fcdcd9;
+  --coral-200: #facbc7;
+  --coral-300: #f8b3ae;
+  --coral-400: #f7a49e;
+  --coral-500: #f58d86;
+  --coral-600: #da6e67;
+  --coral-700: #c3524a;
+  --coral-800: #984039;
+  --coral-900: #73302c;
+  --orange-50: #fff5ee;
+  --orange-100: #ffe0cb;
+  --orange-200: #ffd1b2;
+  --orange-300: #ffbb8e;
+  --orange-400: #ffae79;
+  --orange-500: #ff9a57;
+  --orange-600: #eb8b4c;
+  --orange-700: #db6518;
+  --orange-800: #a94f13;
+  --orange-900: #823c0e;
+  --yellow-50: #fefaef;
+  --yellow-100: #fdf1cd;
+  --yellow-200: #fbe9b5;
+  --yellow-300: #fae194;
+  --yellow-400: #f9da7f;
+  --yellow-500: #f7d15f;
+  --yellow-600: #e1be56;
+  --yellow-700: #af9443;
+  --yellow-800: #887334;
+  --yellow-900: #685828;
+  --fuchsia-900: #6f1c61;
+  --fuchsia-800: #92247f;
+  --fuchsia-600: #d926bb;
+  --fuchsia-500: #e467cf;
+  --fuchsia-700: #bc2fa4;
+  --fuchsia-300: #fc8ae9;
+  --fuchsia-200: #fdaef0;
+  --fuchsia-100: #fec9f5;
+  --fuchsia-400: #ef6cd9;
+  --fuchsia-50: #fee1f9;
+}
+
+/* From @gorgias/axiom/dist/tokens/effects.css */
+:root {
+  --effects-shadow-container: 0px 2px 20px 0px #0000000a;
+  --effects-shadow-component: 0px 2px 3px 0px #0000000d;
+  --effects-inner-light: inset 1px 2px 3px 0px #ffffff33;
+  --effects-inner-shadow: inset 1px 2px 3px 0px #0000000f;
+}
+
+/* From @gorgias/axiom/dist/tokens/spacing.css */
+:root {
+  --spacing-0: 0px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+  --spacing-sm: 12px;
+  --spacing-lg: 24px;
+  --spacing-md: 16px;
+  --spacing-xs: 8px;
+  --spacing-xl: 32px;
+  --spacing-xxxs: 4px;
+  --spacing-xxs: 6px;
+  --spacing-xxxxs: 2px;
+  --spacing-button-corner: 10px;
+}
+
+/* Font weight tokens */
+:root {
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Glass border tokens */
+:root {
+  --glass-border: linear-gradient(
+    91deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+);
+} /* Auto-generated semantic tokens from Axiom design system
+ * Generated on: 2025-08-28T11:09:41.850Z
+ * Source: @gorgias/axiom/dist/tokens/colors/semantic/light.css
+ * 
+ * Note: Light theme tokens are exposed directly to :root
+ */
+
+:root {
+  --focus: var(--black);
+  --hover-default: #1b233208;
+  --hover-input: #00000003;
+  --pressed-default: #222c3f12;
+  --static-additional-yellow: var(--yellow-500);
+  --static-additional-fuchsia: var(--fuchsia-400);
+  --static-additional-purple: var(--purple-500);
+  --static-success: var(--green-500);
+  --static-additional-coral: var(--coral-400);
+  --static-default-black: var(--black);
+  --static-default-white: var(--white);
+  --static-secondary: var(--grey-400);
+  --static-additional-blue: var(--blue-400);
+  --static-error: var(--red-500);
+  --static-warning: var(--orange-500);
+  --static-additional-teal: var(--teal-400);
+  --static-tertiary: var(--grey-600);
+  --border-additional-coral: var(--coral-300);
+  --border-additional-yellow: var(--yellow-300);
+  --border-additional-teal: var(--teal-300);
+  --border-error-primary: var(--red-300);
+  --border-success-primary: var(--green-300);
+  --border-additional-purple: var(--purple-300);
+  --border-neutral-tertiary: var(--grey-400);
+  --border-neutral-default: var(--grey-100);
+  --border-warning-primary: var(--orange-300);
+  --border-additional-blue: var(--blue-200);
+  --border-additional-fuchsia: var(--fuchsia-200);
+  --border-neutral-secondary: var(--grey-500);
+  --content-additional-blue: var(--blue-700);
+  --content-neutral-secondary: var(--grey-600);
+  --content-warning-primary: var(--orange-700);
+  --content-additional-fuchsia: var(--fuchsia-700);
+  --content-additional-coral: var(--coral-600);
+  --content-success-primary: var(--green-700);
+  --content-additional-yellow: var(--yellow-700);
+  --content-additional-teal: var(--teal-700);
+  --content-error-primary: var(--red-600);
+  --content-additional-purple: var(--purple-700);
+  --content-neutral-default: var(--black);
+  --content-neutral-tertiary: var(--grey-500);
+  --elevation-neutral-bg: var(--grey-50);
+  --elevation-neutral-high: var(--white);
+  --elevation-neutral-mid: var(--white);
+  --elevation-neutral-default: var(--white);
+  --surface-additional-blue: var(--blue-50);
+  --surface-additional-fuchsia: var(--fuchsia-50);
+  --surface-warning-primary: var(--orange-50);
+  --surface-neutral-primary: var(--grey-50);
+  --surface-additional-purple: var(--purple-50);
+  --surface-additional-coral: var(--coral-50);
+  --surface-additional-yellow: var(--yellow-50);
+  --surface-success-primary: var(--green-50);
+  --surface-error-primary: var(--red-50);
+  --surface-additional-teal: var(--teal-50);
+  --surface-neutral-tertiary: var(--grey-200);
+  --surface-neutral-secondary: var(--grey-100);
+  --surface-destructive-primary: var(--red-700);
+  --content-inverted-default: var(--white);
+  --surface-inverted-default: var(--black);
+  --inverted-hover: #ffffff14;
+  --inverted-pressed-default: #ffffff1f;
+  --ai-placeholder: var(--blue-600);
+  --surface-button-secondary: #ffffff03;
+}
+</style><style data-emotion="shopper-engagement-widget-global" data-s=""></style><style data-emotion="shopper-engagement-widget-global" data-s=""></style><style data-emotion="shopper-engagement-widget-global" data-s=""></style><style data-emotion="shopper-engagement-widget-global" data-s=""></style><style data-emotion="shopper-engagement-widget-global" data-s=""></style><style data-emotion="shopper-engagement-widget" data-s=""></style></head><body><div id="mount-floating-engagement-widget" class="frame-root"><div class="frame-content"><div class="shopper-engagement-widget-1k8ckt6"><div class="shopper-engagement-widget-eqst75"></div></div></div></div></body></html>

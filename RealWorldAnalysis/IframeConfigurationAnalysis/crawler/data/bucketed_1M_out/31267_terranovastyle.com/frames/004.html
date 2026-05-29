@@ -1,0 +1,247 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Terranova</title>
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5TX6T7G5&amp;gtg_health=1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-9WLMPDJTPH&amp;cx=c&amp;gtm=4e65l0h2&amp;sign=632453e4e1174574a84db7204a3dc52f5d40c5a2e6c6b59d221a545eae4de8b8_20260523"></script><script type="text/javascript" async="" src="https://sgtm.terranovastyle.com/gtag/js?id=G-KL0V1YXPVC&amp;cx=c&amp;gtm=4e65l0h2&amp;sign=632453e4e1174574a84db7204a3dc52f5d40c5a2e6c6b59d221a545eae4de8b8_20260523"></script><script async="" src="https://sgtm.terranovastyle.com/gtm.js?id=GTM-5TX6T7G5"></script><script src="https://www.terranovastyle.com/cdn/wpm/s34f07b34w0f0599d7pa9bdc545m9e2c49ebm.js"></script>
+
+    <script type="text/javascript">
+  (function(shopify) {shopify.extend('WebPixel::Render', function(api) {
+var analytics=api.analytics,browser=api.browser,init=api.init;
+/* Google Tag Manager */
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://sgtm.terranovastyle.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5TX6T7G5');
+/* End Google Tag Manager */
+
+window.dataLayer = window.dataLayer || [];
+
+/* Hash function */
+const sha256 = async (value) => {
+  if (!value) return undefined;
+  const normalizedValue = value.toString().trim().toLowerCase();
+  const encoder = new TextEncoder();
+  const data = encoder.encode(normalizedValue);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+};
+/* END - Hash function */
+
+
+/* id_64 */
+analytics.subscribe('checkout_started', (event) => {
+  const checkout = event.data.checkout;
+  const pageLocation = event.context.window.location.href;
+  const pagePath = event.context.window.location.pathname;
+  const pageTitle = event.context.document.title;
+  const storeCountry = checkout.localization.country.isoCode;
+  const coupons = (checkout.discountApplications || []).filter(d => d.allocationMethod === "ACROSS").map(d => d.title);
+  const items = checkout.lineItems.map(item => ({
+    item_id: item.variant.sku ? item.variant.sku.substring(0, 13) : 'undefined',
+    item_name: item.title,
+    discount: (item.discountAllocations || []).reduce((sum, d) => sum + (d.amount?.amount || 0), 0),
+    coupon: item.discountAllocations?.map(d => d.discountApplication.title.toLowerCase()) || [],
+    item_brand: item.variant.product.vendor,
+    item_category: 'undefined',
+    item_category2: 'undefined',
+    item_category3: 'undefined',
+    item_category4: 'undefined',
+    item_category5: 'undefined',
+    item_variant: item.variant.sku ? item.variant.sku.substring(0, 17) : 'undefined',
+    price: item.finalLinePrice.amount,
+    quantity: item.quantity,
+    item_availableSizes: 'undefined',
+    item_inStockSizes: 'undefined',
+    item_outOfStockSizes: 'undefined',
+    item_commercialCategory: 'undefined',
+    item_commercialType: 'undefined',
+    item_collection: 'undefined',
+    item_idTagliaColore: item.variant.sku ? item.variant.sku.substring(0, 17) + item.variant.title : 'undefined',
+    item_coming_soon: 'undefined'
+  }));
+
+  window.dataLayer.push({
+    event: 'begin_checkout',
+    page_storeCountry: storeCountry,
+    ecommerce: {
+      currency: checkout.currencyCode,
+      value: checkout.totalPrice.amount,
+      coupon: coupons.join(",").toLowerCase(),
+      items: items
+    }
+  });
+
+  window.dataLayer.push({
+    event: 'page_viewed',
+    page_location: pageLocation,
+    page_path: pagePath,
+    page_title: pageTitle
+  });
+
+});
+/* END - id_64 */
+
+
+/* id_09 */
+analytics.subscribe("clicked", (event) => {
+  const elementId = event.data.element.id;
+  const elementValue = event.data.element.value;
+  const checkout = event.data.checkout;
+  const storeCountry = checkout.localization.country.isoCode;
+  if (elementId == 'delivery_save_shipping_information' && elementValue == 'true') {
+    window.dataLayer.push({
+      event: 'add_invoice_info',
+      page_storeCountry: storeCountry
+    });
+  }
+});
+/* END - id_09 */
+
+
+/* id_10 */
+analytics.subscribe("checkout_shipping_info_submitted", (event) => {
+  const checkout = event.data.checkout;
+  const storeCountry = checkout.localization.country.isoCode;
+  const shippingRate = checkout.delivery.selectedDeliveryOptions[0];
+  const shippingRateName = shippingRate.title;
+  const shippingRateCost = shippingRate.cost.amount;
+  const coupons = (checkout.discountApplications || []).filter(d => d.allocationMethod === "ACROSS").map(d => d.title);
+  const items = checkout.lineItems.map(item => ({
+    item_id: item.variant.sku ? item.variant.sku.substring(0, 13) : 'undefined',
+    item_name: item.title,
+    discount: (item.discountAllocations || []).reduce((sum, d) => sum + (d.amount?.amount || 0), 0),
+    coupon: item.discountAllocations?.map(d => d.discountApplication.title.toLowerCase()) || [],
+    item_brand: item.variant.product.vendor,
+    item_category: 'undefined',
+    item_category2: 'undefined',
+    item_category3: 'undefined',
+    item_category4: 'undefined',
+    item_category5: 'undefined',
+    item_variant: item.variant.sku ? item.variant.sku.substring(0, 17) : 'undefined',
+    price: item.finalLinePrice.amount,
+    quantity: item.quantity,
+    item_availableSizes: 'undefined',
+    item_inStockSizes: 'undefined',
+    item_outOfStockSizes: 'undefined',
+    item_commercialCategory: 'undefined',
+    item_commercialType: 'undefined',
+    item_collection: 'undefined',
+    item_idTagliaColore: item.variant.sku ? item.variant.sku.substring(0, 17) + item.variant.title : 'undefined',
+    item_coming_soon: 'undefined'
+  }));
+  
+  window.dataLayer.push({
+    event: 'add_shipping_info',
+    page_storeCountry: storeCountry,
+    shipping_tier: shippingRateCost,
+    shipping_name: shippingRateName,
+    ecommerce: {
+      currency: checkout.currencyCode,
+      value: checkout.totalPrice.amount,
+      coupon: coupons.join(",").toLowerCase(),
+      items: items
+    }
+  });
+});
+/* END - id_10 */
+
+
+analytics.subscribe("checkout_completed", async (event) => {
+  const checkout = event.data.checkout;
+  const storeCountry = checkout.localization.country.isoCode;
+  const coupons = (checkout.discountApplications || []).filter(d => d.allocationMethod === "ACROSS").map(d => d.title);
+  const items = checkout.lineItems.map(item => ({
+    item_id: item.variant.sku ? item.variant.sku.substring(0, 13) : 'undefined',
+    item_name: item.title,
+    discount: (item.discountAllocations || []).reduce((sum, d) => sum + (d.amount?.amount || 0), 0),
+    coupon: item.discountAllocations?.map(d => d.discountApplication.title.toLowerCase()) || [],
+    item_brand: item.variant.product.vendor,
+    item_category: 'undefined',
+    item_category2: 'undefined',
+    item_category3: 'undefined',
+    item_category4: 'undefined',
+    item_category5: 'undefined',
+    item_variant: item.variant.sku ? item.variant.sku.substring(0, 17) : 'undefined',
+    price: item.finalLinePrice.amount,
+    quantity: item.quantity,
+    item_availableSizes: 'undefined',
+    item_inStockSizes: 'undefined',
+    item_outOfStockSizes: 'undefined',
+    item_commercialCategory: 'undefined',
+    item_commercialType: 'undefined',
+    item_collection: 'undefined',
+    item_idTagliaColore: item.variant.sku ? item.variant.sku.substring(0, 17) + item.variant.title : 'undefined',
+    item_coming_soon: 'undefined'
+  }));
+
+  
+  /* id_11 */
+  const paymentMethods = checkout.transactions?.map(t => t.paymentMethod.type) || [];
+  const paymentMethodsString = paymentMethods.join(",");
+  
+  window.dataLayer.push({
+    event: 'add_payment_info',
+    page_storeCountry: storeCountry,
+    payment_type: paymentMethodsString,
+    ecommerce: {
+      currency: checkout.currencyCode,
+      value: checkout.totalPrice.amount,
+      coupon: coupons.join(",").toLowerCase(),
+      items: items
+    }
+  });
+  /* END - id_11 */
+
+  
+  /* id_12 */
+  window.dataLayer.push({
+    event: 'place_order',
+    page_storeCountry: storeCountry
+  });
+  /* END - id_12 */
+
+
+  /* id_13 */
+  const hashedEmail = await sha256(checkout.email);
+  const hashedPhone = await sha256(checkout.shippingAddress.phone);
+  
+  window.dataLayer.push({
+    event: 'purchase',
+    page_storeCountry: storeCountry,
+    ecommerce: {
+      transaction_id: checkout.order.id,
+      value: checkout.totalPrice.amount,
+      tax: checkout.totalTax.amount,
+      shipping: checkout.shippingLine.price.amount,
+      currency: checkout.currencyCode,
+      coupon: coupons.join(",").toLowerCase(),
+      items: items
+    },
+    user: {
+      customerEmailPurchase: hashedEmail,
+      customerPhonePurchase: hashedPhone,
+      customerNamePurchase: checkout.shippingAddress.firstName,
+      customerSurnamePurchase: checkout.shippingAddress.lastName,
+      customerCityPurchase: checkout.shippingAddress.city,
+      customerStreetPurchase: checkout.shippingAddress.address1 + (checkout.shippingAddress.address2 ? " - " + checkout.shippingAddress.address2 : ""),
+      customerRegionPurchase: checkout.shippingAddress.provinceCode,
+      customerCountryPurchase: checkout.shippingAddress.country,
+      customerPostalCodePurchase: checkout.shippingAddress.zip
+    }
+  });
+  /* END - id_13 */
+});
+
+
+
+
+
+});})(self.webPixelsManager.createShopifyExtend('238748026', 'custom'));
+
+</script>
+
+  </head>
+  <body>
+
+<div style="display: none; visibility: hidden;"><script>document.addEventListener("om.Analytics.impression",function(a){(a=a.detail)&&(a=a.Campaign)&&(a=a.data)&&(a=a.name)&&dataLayer.push({event:"optin_monster_impression",optin_monster_campaign:a})});document.addEventListener("om.Analytics.conversion",function(a){(a=a.detail)&&(a=a.Campaign)&&(a=a.data)&&(a=a.name)&&dataLayer.push({event:"optin_monster_conversion",optin_monster_campaign:a})});</script></div></body></html>
