@@ -6,7 +6,7 @@ The `ADAPT` directory contains the architecture to run the differential testing 
 
 ### RealWorldAnalysis
 
-The `RealWorldAnalysis` directory contains the artifacts to reproduce the real-world analysis discussed in Sec 8., alongside the data produced by such tools that we used in the paper. In particular, `RealWorldAnalysis/HeaderConfigurationsAnalysis` and `RealWorldAnalysis/HeaderConfigurationsAnalysis`  contain the artifact for the analysis discussed in Sec 8.1 and Sec 8.2, respectively.
+The `RealWorldAnalysis` directory contains the artifacts to reproduce the real-world analysis discussed in Sec 8., alongside the data produced by such tools that we used in the paper. In particular, `RealWorldAnalysis/HeaderConfigurationsAnalysis` and `RealWorldAnalysis/HeaderConfigurationsAnalysis`  contain the artifact for the analysis discussed in Sec 8.1 **Iframe Analysis.** and **Embeddability Analysis** respectively.
 
 ### Spill
 
