@@ -9,7 +9,7 @@ INPUT_FILE = sys.argv[1]
 def csp_frame_ancestors_allows(csp_headers):
     """
     Parse frame-ancestors directives from all CSP headers and determine if the page allows being framed by external sites.
-    Returns True or False for whether frame-ancestors allows external framing.
+    Returns a tuple: (has_frame_ancestors_directive, allows_external_framing)
     """
     directives = []
     for header in csp_headers:
@@ -21,7 +21,7 @@ def csp_frame_ancestors_allows(csp_headers):
                 break  # As per spec, only consider the first frame-ancestors directive per header
                 
     if not directives:
-        return True # No frame-ancestors means no restrictions, so allows framing by default
+        return False, True 
     
     # Apply the most restrictive directive logic: if any directive disallows framing, then it's disallowed overall.
     allowed = False
@@ -32,9 +32,9 @@ def csp_frame_ancestors_allows(csp_headers):
             allowed = True
         else:
             # If the directive doesn't contain any allowed sources, it effectively disallows framing.
-            return False
+            return True, False 
             
-    return allowed
+    return True, allowed
 
 def analyze_row(row):
     """
@@ -48,15 +48,16 @@ def analyze_row(row):
     has_xfo = len(xfo_headers) > 0
     xfo_allows = (not has_xfo) or (not any('DENY' == h or 'SAMEORIGIN' == h for h in xfo_headers))
 
-
     csp_headers = [h.strip() for h in row.get("csp_headers", []) if h.strip()]
-    csp_fa_allows = csp_frame_ancestors_allows(csp_headers)
     
+    has_csp_fa, csp_fa_allows = csp_frame_ancestors_allows(csp_headers)
     
-    if xfo_allows and csp_fa_allows:
-        embeddable = True
+    if has_csp_fa:
+        # If CSP frame-ancestors is present, it completely overrides XFO.
+        embeddable = csp_fa_allows
     else:
-        embeddable = False
+        # If no CSP frame-ancestors is present, fallback to XFO logic.
+        embeddable = xfo_allows
 
     # -------------------------------------------------------------
     # Create normalized representation for global stats

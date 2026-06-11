@@ -1,1 +1,1 @@
-To respect the size limit of files for github, we spltitted the query result into smaller files that can be found in the `bq_result_splitted` directory. To restore the file again, run the `file_aggregator.py` script.
+To respect the size limit of files for github, we spltitted the query result into smaller files that can be found in the `bq_result_splitted` directory. To restore the  file again, run the `file_aggregator.py` script.
