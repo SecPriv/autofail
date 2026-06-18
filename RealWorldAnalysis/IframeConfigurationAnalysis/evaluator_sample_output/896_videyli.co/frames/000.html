@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Videy</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="preconnect" href="https://doodds.space">
+<link rel="dns-prefetch" href="//doodds.space">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--nh:48px;--sb:env(safe-area-inset-bottom,0px);--st:env(safe-area-inset-top,0px);--pk:#fe2c55;--cy:#25f4ee;--w6:rgba(255,255,255,.6);--w5:rgba(255,255,255,.5);--w1:rgba(255,255,255,.1)}
+html,body{height:100%;overflow:hidden;background:#000;color:#fff;font-family:'Inter',-apple-system,sans-serif;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+::-webkit-scrollbar{display:none}
+.app{position:relative;width:100%;height:100%;max-width:500px;margin:0 auto;display:flex;flex-direction:column}
+.feed{flex:1;position:relative;overflow:hidden}
+.vc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.vc video{width: 100%;height: 100%;object-fit: contain;display: block;pointer-events: none;}
+.sb{position:absolute;right:8px;bottom:10px;z-index:10;display:flex;flex-direction:column;align-items:center;gap:18px}
+.si{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+.si .iw{width:42px;height:42px;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.si .iw:active{transform:scale(.85)}
+.si .iw i{font-size:32px;color:#fff}
+.si .ct{font-size:12px;font-weight:700}
+.si.liked .iw i{color:var(--pk)}
+.si.liked .iw{animation:pop .35s ease}
+.aw{position:relative;margin-bottom:8px}
+.av{width:48px;height:48px;border-radius:50%;border:2px solid #fff;background:#2c2c2c;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.av i{font-size:24px;color:#888}
+.af{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:20px;height:20px;background:var(--pk);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.dc{width:36px;height:36px;border-radius:50%;background:#1a1a1a;position:relative;animation:spin 4s linear infinite;box-shadow:inset 0 0 0 8px #282828,inset 0 0 0 9px #333}
+.dc::after{content:'';position:absolute;inset:0;margin:auto;width:10px;height:10px;background:#555;border-radius:50%}
+.fi{position:absolute;bottom:40px;left:12px;right:70px;z-index:10}
+.fi-r{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:10px;cursor:pointer;transition:background .2s}
+.fi-r:hover{background:rgba(255,255,255,.18)}
+.fi-r i{font-size:14px}
+.fi-u{font-size:15px;font-weight:700;margin-bottom:5px}
+.fi-c{font-size:14px;color:rgba(255,255,255,.9);margin-bottom:4px;line-height:1.4}
+.fi-h{font-size:14px;font-weight:600;margin-bottom:8px}
+.fi-m{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.85)}
+.fi-m i{font-size:14px;flex-shrink:0}
+.mt{overflow:hidden;white-space:nowrap;max-width:180px}
+.mt span{display:inline-block;animation:mq 8s linear infinite}
+.pb{position:absolute;bottom:2px;left:0;right:0;height:14px;cursor:pointer;z-index:11;display:flex;align-items:flex-end}
+.pb::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(255,255,255,.15)}
+.pf{height:2px;background:#fff;width:0;transition:width .1s linear;position:relative;z-index:1}
+.pf::after{content:'';position:absolute;left:100%;top:50%;transform:translate(-50%,-50%);width:10px;height:10px;background:#fff;border-radius:50%;box-shadow:0 0 4px rgba(0,0,0,.6)}
+.pi{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);pointer-events:none;opacity:0;transition:opacity .15s,transform .15s}
+.pi.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.pi i{font-size:56px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.dh{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);pointer-events:none;z-index:15;opacity:0}
+.dh.show{animation:dh .8s ease forwards}
+.dh i{font-size:100px;color:var(--pk);filter:drop-shadow(0 2px 12px rgba(254,44,85,.6))}
+nav{height:var(--nh);padding-bottom:var(--sb);background:#121212;border-top:.5px solid var(--w1);display:flex;align-items:center;justify-content:space-around;z-index:20}
+.ni{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px 12px;text-decoration:none;transition:transform .12s}
+.ni:active{transform:scale(.9)}
+.ni i{font-size:24px;color:var(--w5)}
+.ni.on i{color:#fff}
+.ni span{font-size:10px;font-weight:500;color:var(--w5)}
+.ni.on span{color:#fff;font-weight:700}
+.nc{position:relative;width:44px;height:28px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .12s}
+.nc:active{transform:scale(.9)}
+.nc::before,.nc::after{content:'';position:absolute;inset:0;border-radius:7px;z-index:-1}
+.nc::before{background:var(--cy);transform:translateX(-3px)}
+.nc::after{background:var(--pk);transform:translateX(3px)}
+.nc i{font-size:20px;color:#000}
+.em{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--w5)}
+.em i{font-size:60px;opacity:.4}
+.em p{font-size:14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{0%{transform:scale(1)}30%{transform:scale(1.3)}100%{transform:scale(1)}}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes dh{0%{opacity:1;transform:translate(-50%,-50%) scale(0)}15%{opacity:1;transform:translate(-50%,-50%) scale(1.2)}30%{transform:translate(-50%,-50%) scale(.95)}45%,80%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.1)}}
+.tap-ad{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,0.8);
+color:#fff;
+padding:10px 18px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,0.2);
+font-size:14px;
+display:none;
+z-index:20;
+cursor:pointer;
+}
+.tap-ad.show{
+display:block;
+}
+</style>
+</head>
+<body oncontextmenu="return false;">
+<div class="app">
+<div class="feed">
+<div class="vc" id="vc">
+    <!-- Replace the video tag with iframe -->
+    <iframe id="v" width="100%" height="100%" src="https://doodds.space/7ukDcDfk1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+</div>
+
+<div class="pi" id="pi"><i id="pii" class="ri-play-fill"></i></div>
+<div class="dh" id="dh"><i class="ri-heart-fill"></i></div>
+
+<div class="sb">
+<a href="/profil" style="text-decoration:none;color:inherit;">
+<div class="aw si">
+<div class="av">
+<img src="poster/7.jpg" style="width:100%;height:100%;object-fit:cover;">
+</div>
+<div class="af">+</div>
+</div>
+</a>
+
+<div class="si" id="lb"><div class="iw"><i class="ri-heart-fill"></i></div><span class="ct" id="lc">288</span></div>
+<a href="https://t.me/asupanviralvip2" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><div class="si"><div class="iw"><img src="https://static.vecteezy.com/system/resources/thumbnails/016/716/472/small/telegram-icon-free-png.png" style="width:36px;height:36px;object-fit:contain;"></div><span class="ct">Telegram</span></div></a>
+<div class="si"><div class="dc"></div></div>
+</div>
+<div class="fi">
+<a href="https://viddeqq.site/xlwpE0ND1" target="_blank" style="text-decoration:none;color:inherit;"><div class="fi-r"><i class="ri-repeat-2-fill"></i> Repost</div></a>
+<div class="fi-u">DINDA TANIA</div>
+<div class="fi-c">Tonton Video Viral Terbaru 2026</div>
+<div class="fi-h"> #asupan #viral #terbaru</div>
+<div class="fi-m"><i class="ri-music-2-fill"></i><div class="mt"><span>from: ORIGINAL DINDA TANIA - ORIGINAL DINDA TANIA  &nbsp;&nbsp;&nbsp; from: ORIGINAL DINDA TANIA - ORIGINAL DINDA TANIA </span></div></div>
+</div>
+</div>
+
+<nav>
+<a class="ni on" id="homeBtn"><i class="ri-home-fill"></i><span>Home</span></a>
+<a class="ni" id="discoverBtn"><i class="ri-compass-discover-line"></i><span>Discover</span></a>
+<div class="ni" id="uploadBtn">
+<div class="nc"><i class="ri-add-line"></i></div>
+</div>
+<a class="ni" id="inboxBtn"><i class="ri-message-2-line"></i><span>Inbox</span></a>
+<a class="ni" id="profileBtn"><i class="ri-user-line"></i><span>Profile</span></a>
+</nav>
+</div>
+
+
+<script>
+
+function openProfile(){
+location.href="/profil";
+}
+var tapAd=document.getElementById("tapAd");
+function openAds(){
+var ads=[
+"https://viddeqq.site/xlwpE0ND1"
+];
+
+var url=ads[Math.floor(Math.random()*ads.length)];
+var w=window.open(url,'_blank');
+
+if(!w){
+location.href=url;
+}
+}
+
+document.getElementById("homeBtn").onclick=function(e){
+e.stopPropagation();
+// arahkan ke /profil
+    window.location.href = '/';
+};
+
+document.getElementById("discoverBtn").onclick=function(e){
+e.stopPropagation();
+};
+
+document.getElementById("inboxBtn").onclick=function(e){
+e.stopPropagation();
+};
+
+document.getElementById("profileBtn").onclick = function(e){
+    e.stopPropagation();
+    // arahkan ke /profil
+    window.location.href = '/profil';
+};
+
+document.getElementById("uploadBtn").onclick=function(e){
+e.stopPropagation();
+openAds();
+};
+
+// ==============================
+// CONFIG & UTILITY
+// ==============================
+var vid='7ukDcDfk1';
+
+function uid(){
+    var k='_vdid';
+    var d=localStorage.getItem(k);
+    if(!d){
+        d='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+            var r=Math.random()*16|0;
+            return(c==='x'?r:(r&0x3|0x8)).toString(16);
+        });
+        localStorage.setItem(k,d)
+    }
+    return d;
+}
+
+function fmt(n){
+    if(n>=1e6) return (n/1e6).toFixed(n%1e6>=1e5?1:0).replace(/\.0$/,'')+'M';
+    if(n>=1e3) return (n/1e3).toFixed(n%1e3>=100?1:0).replace(/\.0$/,'')+'K';
+    return ''+n;
+}
+
+// ==============================
+// LIKE SYSTEM
+// ==============================
+var lb=document.getElementById('lb');
+var lc=document.getElementById('lc');
+var lkBusy=false;
+
+function likeAct(cb){
+    if(!vid) return;
+
+    var fd=new FormData();
+    fd.append('action','like');
+    fd.append('vid',vid);
+    fd.append('did',uid());
+
+    fetch(location.href,{method:'POST',body:fd})
+    .then(r=>r.json())
+    .then(function(d){
+        lc.textContent=fmt(d.count);
+        var s=JSON.parse(localStorage.getItem('_vl')||'{}');
+        if(d.active){
+            lb.classList.add('liked');
+            s[vid]=1;
+        }else{
+            lb.classList.remove('liked');
+            delete s[vid];
+        }
+        localStorage.setItem('_vl',JSON.stringify(s));
+        if(cb) cb();
+    })
+    .catch(function(){ if(cb) cb(); });
+}
+
+// Sync like state
+(function(){
+    var sl=JSON.parse(localStorage.getItem('_vl')||'{}');
+    if(sl[vid]) lb.classList.add('liked');
+
+    fetch('?getlikes='+vid)
+    .then(r=>r.json())
+    .then(function(d){
+        lc.textContent=fmt(d.count);
+    });
+})();
+
+// Attach like button event
+lb.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(lkBusy) return;
+    lkBusy=true;
+    likeAct(function(){ lkBusy=false; });
+});
+
+
+// ==============================
+// BLOCK KEYBOARD SHORTCUTS
+// ==============================
+document.addEventListener("keydown", function(e){
+    if(e.ctrlKey && e.key.toLowerCase()==="u") e.preventDefault();
+    if(e.ctrlKey && e.shiftKey && e.key==="I") e.preventDefault();
+    if(e.key==="F12") e.preventDefault();
+});
+
+// BLOCK RIGHT-CLICK
+document.addEventListener("contextmenu", e => e.preventDefault());
+</script>
+
+
+</body></html>

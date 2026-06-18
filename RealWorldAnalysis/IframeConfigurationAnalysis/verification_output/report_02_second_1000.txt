@@ -1,0 +1,112 @@
+================================================================================
+IFRAME ANALYSIS REPORT: SECOND 1000 (1001-2000)
+================================================================================
+
+Total sites analyzed: 1000
+Total frames (all types): 4083
+Total iframe elements: 2912
+
+--------------------------------------------------------------------------------
+1. CROSS-SITE vs SAME-SITE IFRAMES
+--------------------------------------------------------------------------------
+Total iframe elements: 2912
+
+  Cross-site iframes:   1103  (37.9%)
+  Same-site iframes:    1809  (62.1%)
+
+--------------------------------------------------------------------------------
+2. SANDBOX ATTRIBUTE USAGE
+--------------------------------------------------------------------------------
+Total iframe elements: 2912
+
+  With sandbox:       685  (23.5%)
+  Without sandbox:   2227  (76.5%)
+
+  Sandbox breakdown by cross-site:
+    Sandboxed iframes:
+      Cross-site:       463  (67.6%)
+      Same-site:        222  (32.4%)
+    Non-sandboxed iframes:
+      Cross-site:       640  (28.7%)
+      Same-site:       1587  (71.3%)
+
+--------------------------------------------------------------------------------
+3. SANDBOX DIRECTIVES (ALL SANDBOXED IFRAMES)
+--------------------------------------------------------------------------------
+Total sandboxed iframes: 685
+
+  Specific conditions (Out of all sandboxed):
+    Cross-site + Sandboxed + (allow-scripts OR allow-forms) + NO allow-same-origin:      0  (0.0%)
+    Sandboxed + allow-scripts + allow-same-origin:    580  (84.7%)
+
+  Individual directive usage (All sandboxed):
+    allow-same-origin                                       650  (94.9%)
+    allow-scripts                                           593  (86.6%)
+    allow-forms                                             372  (54.3%)
+    allow-popups                                            354  (51.7%)
+    allow-popups-to-escape-sandbox                          342  (49.9%)
+
+  Directive combinations (top 20, All sandboxed):
+     1. allow-forms + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts + allow-top-navigation-by-user-activation    197  (28.8%)
+     2. allow-same-origin + allow-scripts                               194  (28.3%)
+     3. allow-forms + allow-modals + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts + allow-storage-access-by-user-activation + allow-top-navigation     49  (7.2%)
+     4. allow-forms + allow-same-origin + allow-scripts                   8  (1.2%)
+     5. allow-forms + allow-popups + allow-same-origin + allow-scripts      4  (0.6%)
+     6. allow-forms + allow-modals + allow-pointer-lock + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts + allow-top-navigation-by-user-activation      3  (0.4%)
+     7. allow-forms + allow-pointer-lock + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts      3  (0.4%)
+     8. allow-popups + allow-popups-to-escape-sandbox + allow-presentation + allow-same-origin + allow-scripts      1  (0.1%)
+     9. allow-forms + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts + allow-top-navigation      1  (0.1%)
+    10. allow-forms + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts      1  (0.1%)
+    11. allow-forms + allow-pointer-lock + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts + allow-top-navigation-by-user-activation      1  (0.1%)
+    12. allow-forms + allow-popups + allow-popups-to-escape-sandbox + allow-same-origin + allow-scripts + allow-storage-access-by-user-activation      1  (0.1%)
+
+--------------------------------------------------------------------------------
+4. PER-SITE STATISTICS
+--------------------------------------------------------------------------------
+Total sites: 1000
+
+  Sites with any iframes:              588  (58.8%)
+  Sites with cross-site iframes:       387  (38.7%)
+  Sites with sandboxed iframes:        257  (25.7%)
+  Sites with login forms:              118  (11.8%)
+
+--------------------------------------------------------------------------------
+5. SITES WITH CROSS-SITE IFRAMES AND LOGIN FORMS
+--------------------------------------------------------------------------------
+Total sites: 1000
+Total sites with login forms: 118
+
+  Sites with BOTH cross-site iframes AND login forms:
+    Count:     55
+    % of total analyzed sites:   5.5%
+    % of sites with login forms: 46.6%
+
+  Sites with BOTH cross-site iframes AND login forms where the cross-site
+  iframe is either NOT SANDBOXED or allows scripts (allow-scripts):
+    Count:     55
+    % of total analyzed sites:   5.5%
+    % of sites with login forms: 46.6%
+
+--------------------------------------------------------------------------------
+6. VISIBLE, INTERACTABLE & RISKY CROSS-SITE IFRAMES (PER SITE)
+--------------------------------------------------------------------------------
+Total sites: 1000
+
+  Sites containing at least one iframe that is:
+  - Cross-site
+  - Visible & interactable
+  - Non-sandboxed OR sandboxed with allow-scripts/allow-forms
+
+    Count:    243
+    % of total analyzed sites: 24.3%
+
+--------------------------------------------------------------------------------
+7. CREDENTIALLESS IFRAMES
+--------------------------------------------------------------------------------
+Total iframe elements: 2912
+
+  Iframes using credentialless:      0  (0.0%)
+
+================================================================================
+END OF REPORT
+================================================================================

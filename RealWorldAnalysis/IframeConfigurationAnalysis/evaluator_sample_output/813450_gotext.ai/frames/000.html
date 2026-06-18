@@ -1,0 +1,3732 @@
+<!DOCTYPE html><html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/gotext-icon.png">
+    <title>GoText AI Text Transformer - Parafrase, Rewrite, Translate</title>
+    <!-- Quill.js CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f2b46;
+            --secondary-color: #287eb7;
+            --accent-color: #2178b5;
+            --border-color: #e0e0e0;
+            --light-border: #f0f0f0;
+            --background-color: #f5f8fb;
+            --light-bg: #f0f0f0;
+            --text-color: #14203c;
+            --light-text: #5a6b85;
+            --border-radius: 4px;
+            --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .herox {
+            max-width: 100%;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 40px;
+            background: linear-gradient(135deg, #1e1edc, #a832a6, black);
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .app-title {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        /* Hide text and links on small screens */
+        .hide-on-mobile {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            .hide-on-mobile {
+                display: none;
+            }
+        }
+
+
+        .membership-badge {
+            background-color: #f0f4f8;
+            border: 1px solid #d0d9e5;
+            color: var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+        }
+
+        .membership-badge a {
+            text-decoration: none;
+        }
+
+        .membership-badge.pro {
+            background-color: #e3f2fd;
+            border-color: #90caf9;
+            color: #1565c0;
+        }
+
+        .membership-badge.vip {
+            background-color: #fff3e0;
+            border-color: #ffcc02;
+            color: #f57c00;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .main-content {
+            border-top: 10px solid grey;
+            border-radius: 12px;
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.25);
+            /* bayangan besar & tegas */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 20px !important;
+            padding: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+
+
+
+        .tabs {
+            display: flex;
+            border-radius: 5px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 10px;
+            backgrousnd-color: lightgray;
+        }
+
+        .tab {
+            padding: 10px 16px;
+            border: none;
+            background: none;
+            font-size: 22px;
+            color: var(--light-text);
+            cursor: pointer;
+            margin-right: 10px;
+            position: relative;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .tab:hover {
+            color: var(--accent-color);
+        }
+
+        .tab.active {
+            color: var(--accent-color);
+            font-weight: 600;
+            background-color: #f0f0f0;
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .settings-bar {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0px;
+            width: 100%;
+        }
+
+        .setting-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .setting-label {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-right: 5px;
+        }
+
+        select {
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: white;
+            color: var(--text-color);
+            min-width: 150px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6b85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Style for incompatible select options */
+        select.incompatible {
+            border-color: #ff6b6b;
+            background-color: #fff0f0;
+        }
+
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .range-slider {
+            width: 130px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            background: var(--light-border);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .range-value {
+            font-size: 14px;
+            color: var(--text-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .text-container {
+            display: flex;
+            flex: 1;
+            height: 60vh;
+            min-height: 350px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .text-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .text-column:first-child {
+            border-right: 1px solid var(--border-color);
+        }
+
+        .editor-container {
+            height: 100%;
+            overflow-y: auto;
+            background-color: #f8fafa;
+        }
+
+        .ql-toolbar.ql-snow {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid var(--light-border);
+            display: none;
+
+        }
+
+        .ql-container.ql-snow {
+            border: none;
+            font-family: inherit;
+            font-size: 16px;
+            height: calc(100% - 42px);
+        }
+
+        /* Improve paragraph spacing */
+        .ql-editor p {
+            margin-bottom: 1.2em;
+        }
+
+        .ql-editor h1,
+        .ql-editor h2,
+        .ql-editor h3,
+        .ql-editor h4,
+        .ql-editor h5,
+        .ql-editor h6 {
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        .result-editor .ql-editor {
+            width: 100%;
+            height: 100%;
+        }
+
+        .result-editor .ql-toolbar {
+            display: none;
+        }
+
+        .text-header {
+            padding: 10px 15px;
+            background-color: var(--light-bg);
+            border-bottom: 1px solid var(--light-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+
+        .text-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .control-button {
+            background: white;
+            border: 1px solid lightgrey;
+
+            color: var(--light-text);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 5px;
+        }
+
+        .control-button:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--text-color);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            border: none;
+            resize: none;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-color);
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        .character-count {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 12px;
+            color: var(--light-text);
+            background-color: var(--light-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            opacity: 1;
+        }
+
+        .character-count.limit-warning {
+            color: #f57c00;
+            font-weight: 500;
+        }
+
+        .character-count.limit-exceeded {
+            color: #d32f2f;
+            font-weight: 500;
+        }
+
+        .processing-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .processing-content {
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+        }
+
+        .processing-spinner {
+            border: 4px solid var(--light-border);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .processing-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .processing-details {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .disabled-button {
+            background-color: lightgrey;
+            color: white;
+            border: none;
+            margin: 20px;
+            padding: 10px 44px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .action-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 44px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .action-button:hover {
+            background-color: #1a6ca8;
+        }
+
+        .success-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+        }
+
+        .error {
+            background-color: #ffebee;
+            border-left: 3px solid #f44336;
+            color: #d32f2f;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .error a.upgrade-link {
+            color: #d32f2f;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .error a.upgrade-link:hover {
+            text-decoration: none;
+        }
+
+        .membership-info {
+            background-color: #F0F4C3;
+            border: 0px solid var(--border-color);
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .limit-info {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        .upgrade-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .upgrade-button:hover {
+            background-color: #1a6ca8;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Preset styles */
+        .preset-container {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .preset-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .preset-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .preset-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .preset-button.active {
+            background-color: #4a90e2;
+            color: white;
+            border-color: #2a70c2;
+        }
+
+        /* Tooltip for incompatible options */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* New styles for simplified advanced settings */
+        .settings-toggle-container {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            /* ubah dari center ke flex-start */
+            margin: 5px 0 10px 0;
+        }
+
+        .settings-toggle {
+            background-color: #f0f4f8;
+            border: 1px solid var(--border-color);
+            color: var(--accent-color);
+            padding: 6px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+
+        .settings-toggle:hover {
+            background-color: #e3f2fd;
+        }
+
+        .toggle-icon {
+            font-size: 10px;
+            transition: transform 0.3s;
+        }
+
+        .settings-advanced {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 0;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+        }
+
+        .settings-advanced.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        .settings-advanced.expanded {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 0px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .text-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .text-column:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            textarea {
+                height: 200px;
+            }
+
+            .settings-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .setting-group {
+                width: 100%;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            .main-content {
+                padding-top: 10px !important;
+                padding: 15px 10px;
+            }
+
+            .usxer-menu {
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 5px;
+                dispclay: none;
+            }
+
+            .settings-advanced {
+                flex-direction: column;
+            }
+
+            .tab {
+                padding: 8px 12px;
+                font-size: 20px;
+            }
+
+            #original_text_editor .ql-editor {
+                min-height: 150px;
+                /* tinggi minimal */
+                height: auto;
+                /* biar menyesuaikan isi */
+
+            }
+        }
+
+        /* Smartphone-specific adjustments */
+        @media (max-width: 480px) {
+            .text-container {
+                min-height: auto;
+            }
+
+            .editor-container {
+                height: 250px;
+                /* Limit height on smartphones */
+                max-height: 40vh;
+                /* Alternative height limitation based on viewport */
+            }
+
+            .ql-container.ql-snow {
+                height: calc(100% - 42px);
+            }
+
+            #original_text_editor .ql-editor {
+                min-height: 150px;
+                /* tinggi minimal */
+                height: auto;
+                /* biar menyesuaikan isi */
+            }
+
+            .main-content {
+                padding-top: 10px !important;
+                padding: 15px 10px;
+            }
+
+            .header {
+                padding: 10px;
+            }
+
+            .settings-bar {
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+
+            .tab {
+                padding: 8px 12px;
+                font-size: 18px;
+            }
+
+            .header-content {
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .usxer-menu {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                discplay: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <a href="index.php"><img src="images/gotext.png" alt="GoText AI" style="height: 50px;width:auto;"></a>
+                </h1>
+
+                <div class="user-menu">
+                    <div class="user-info">
+                        
+                        <span class="user-name hide-on-mobile">
+                                                    </span>
+
+                                                    <!-- Belum login -->
+                            <a href="https://accounts.google.com/o/oauth2/auth?client_id=91744524273-sa7atmrof0unbkq9oc2c2jc21nm28h4e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fgotext.ai%2Fcallback.php&amp;response_type=code&amp;scope=email+profile&amp;access_type=online&amp;prompt=select_account" class="btn btn-primary" style="padding: 4px 12px; font-size: 14px;">
+                                Login
+                            </a>
+                        
+
+                    </div>
+
+                    <div class="nav-links">
+
+                                            </div>
+                </div>
+
+            </div>
+        </div>
+        <style>
+            .login-body {
+                padding-top: 30px;
+                basckground-color: white;
+                /* warna dasar putih */
+                width: 320px;
+                /* lebar tetap */
+                margin: 0 auto;
+                /* agar center jika perlu */
+                border-radius: 8px;
+                /* opsional: sudut membulat */
+                box-shandow: 0 0 10px rgba(0, 0, 0, 0.05);
+                /* opsional: bayangan halus */
+            }
+
+            .google-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                border: 1px solid gray;
+                border-radius: 50px;
+                padding: 12px 20px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                text-decoration: none;
+                color: var(--text-color);
+                width: 100%;
+                transition: all 0.3s ease;
+                margin-bottom: 30px;
+            }
+
+            .google-btn:hover {
+                background-color: #f7f7f7;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .google-btn img {
+                width: 24px;
+                height: 24px;
+                margin-right: 12px;
+            }
+        </style>
+        <div class="herox">
+            <style>
+                .custom-section {
+                    max-width: 850px;
+                    margin: 0 auto;
+                }
+
+                /* Smartphone landscape (max-width sekitar 767px) */
+                @media (max-width: 767px) and (orientation: landscape) {
+                    .custom-section {
+                        max-width: 500px;
+                    }
+                }
+            </style>
+
+            <section class="py-5 text-center text-white custom-section">
+                <style>
+                    .stabilo-magenta {
+                        background-color: #ff00ff;
+                        color: white;
+                        padding: 2px 6px;
+                        border-radius: 4px;
+                        font-size: 1.4rem;
+                        /* ukuran default untuk desktop */
+                        font-weight: 700;
+                    }
+
+                    @media (max-width: 600px) {
+
+                        /* Saat dibuka di smartphone */
+                        .stabilo-magenta {
+                            font-size: 1rem;
+                            /* perkecil ukuran teks */
+                            padding: 1px 4px;
+                            /* sesuaikan padding */
+                        }
+                    }
+                </style>
+
+                <h4><mark class="stabilo-magenta">TURUNKAN PLAGIARISME HINGGA 0%</mark></h4>
+
+                <h1 class="display-4 fw-bold mb-3" style="max-width: 90%; margin: 0 auto;">
+                    Parafrase, Rewrite, &amp; Translate Teks. Unlimited, Pakai AI
+                </h1>
+                <p class="lead px-3" style="max-width: 500px; margin: 0 auto;">
+                    Pakai Sepuasnya, Unlimited Hanya <b>Rp 40rb/bulan</b> – Hasil Lebih Akurat, Selesai Lebih Cepat!
+                </p>
+
+                                    <div class="login-body">
+                        <a href="https://accounts.google.com/o/oauth2/auth?client_id=91744524273-sa7atmrof0unbkq9oc2c2jc21nm28h4e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fgotext.ai%2Fcallback.php&amp;response_type=code&amp;scope=email+profile&amp;access_type=online&amp;prompt=select_account" class="google-btn">
+                            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo">
+                            Daftar dengan Google
+                        </a>
+                    </div>
+                            </section>
+
+            <div class="main-content">
+
+                <div class="tabs">
+
+                    <button class="tab active" data-mode="paraphrase"><i class="fas fa-sync-alt"></i> Paraphrase</button>
+                    <button class="tab " data-mode="rewrite"><i class="fas fa-pen"></i> Rewrite</button>
+                    <button class="tab " data-mode="translate"><i class="fas fa-language"></i> Translate</button>
+                </div>
+
+                
+                <!-- ENHANCED: Monthly usage info for logged-in users -->
+                
+                <form id="transformForm" method="post">
+                    <input type="hidden" id="mode" name="mode" value="paraphrase">
+
+                    <!-- Translate Settings - SIMPLIFIED -->
+                    <div id="translateSettings" class="settings-bar" style="display: none">
+
+                        <style>
+                            /* inline CSS — sembunyikan label "From:" pada layar kecil (smartphone) */
+                            @media (max-width: 600px) {
+                                .setting-label.from-label {
+                                    display: none !important;
+                                }
+                            }
+                        </style>
+
+                        <div class="setting-group">
+                            <div class="setting-label from-label">From:</div>
+                            <select name="source_lang">
+                                                                    <option value="English">English</option>
+                                                                    <option value="Indonesian (Bahasa Indonesia)">Indonesian (Bahasa Indonesia)</option>
+                                                            </select>
+
+                            <div class="setting-label">To:</div>
+                            <select name="target_lang">
+                                                                    <option value="English" selected="">English</option>
+                                                                    <option value="Indonesian (Bahasa Indonesia)">Indonesian (Bahasa Indonesia)</option>
+                                                            </select>
+                        </div>
+
+                        <div class="settings-toggle-container">
+                            <button type="button" class="settings-toggle" data-target="translate-advanced">
+                                <span class="toggle-text">Settings</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+
+                        <div id="translate-advanced" class="settings-advanced collapsed">
+                            <div class="setting-group">
+                                <div class="setting-label">Formality:</div>
+                                <select name="formality_level" id="formality_level">
+                                                                            <option value="Auto" selected="">
+                                            Auto                                        </option>
+                                                                            <option value="Formal">
+                                            Formal                                        </option>
+                                                                            <option value="Informal">
+                                            Informal                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Domain:</div>
+                                <select name="translation_domain" id="translation_domain">
+                                                                            <option value="General" selected="">
+                                            General                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                            <option value="Business">
+                                            Business                                        </option>
+                                                                            <option value="Legal">
+                                            Legal                                        </option>
+                                                                            <option value="Medical">
+                                            Medical                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                            <option value="Casual">
+                                            Casual                                        </option>
+                                                                            <option value="Literature">
+                                            Literature                                        </option>
+                                                                            <option value="Scientific">
+                                            Scientific                                        </option>
+                                                                    </select>
+                            </div>
+                            <!-- Preset Buttons for Translate -->
+                            <div class="preset-container">
+                                <div class="setting-label">Atau pilih Preset:</div>
+                                <div class="preset-buttons">
+                                    <button type="button" class="preset-button" data-preset="general" data-mode="translate">General</button>
+                                    <button type="button" class="preset-button" data-preset="formal_business" data-mode="translate">Business</button>
+                                    <button type="button" class="preset-button" data-preset="technical_document" data-mode="translate">Technical</button>
+                                    <button type="button" class="preset-button" data-preset="academic_paper" data-mode="translate">Academic</button>
+                                    <button type="button" class="preset-button" data-preset="legal_document" data-mode="translate">Legal</button>
+                                    <button type="button" class="preset-button" data-preset="casual_conversation" data-mode="translate">Casual</button>
+                                    <button type="button" class="preset-button" data-preset="medical_content" data-mode="translate">Medical</button>
+                                    <button type="button" class="preset-button" data-preset="literary_translation" data-mode="translate">Literary</button>
+                                    <button type="button" class="preset-button" data-preset="scientific_translation" data-mode="translate">Scientific</button>
+                                    <button type="button" class="preset-button" data-preset="marketing_translation" data-mode="translate">Marketing</button>
+                                    <button type="button" class="preset-button" data-preset="educational_translation" data-mode="translate">Educational</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- Paraphrase Settings - SIMPLIFIED -->
+                    <div id="paraphraseSettings" class="settings-bar" style="display: flex">
+                        <div class="setting-group">
+                            <div class="setting-label">Output Language:</div>
+                            <select name="paraphrase_output_lang" id="paraphrase_output_lang">
+                                                                                                            <option value="English" selected="">
+                                            English                                        </option>
+                                                                                                                                                <option value="Indonesian (Bahasa Indonesia)">
+                                            Indonesian (Bahasa Indonesia)                                        </option>
+                                                                                                </select>
+                        </div>
+
+                        <div class="settings-toggle-container">
+                            <button type="button" class="settings-toggle" data-target="paraphrase-advanced">
+                                <span class="toggle-text">Settings</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+
+                        <div id="paraphrase-advanced" class="settings-advanced collapsed">
+
+
+                            <div class="setting-group">
+                                <div class="setting-label">Style:</div>
+                                <select name="paraphrase_writing_style" id="paraphrase_writing_style">
+                                                                            <option value="Professional and formal" selected="">
+                                            Professional and formal                                        </option>
+                                                                            <option value="Casual and friendly">
+                                            Casual and friendly                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                            <option value="Creative">
+                                            Creative                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                            <option value="Persuasive">
+                                            Persuasive                                        </option>
+                                                                            <option value="Conversational">
+                                            Conversational                                        </option>
+                                                                            <option value="Journalistic">
+                                            Journalistic                                        </option>
+                                                                            <option value="Descriptive">
+                                            Descriptive                                        </option>
+                                                                            <option value="Instructional">
+                                            Instructional                                        </option>
+                                                                            <option value="Narrative">
+                                            Narrative                                        </option>
+                                                                            <option value="Analytical">
+                                            Analytical                                        </option>
+                                                                            <option value="Business">
+                                            Business                                        </option>
+                                                                            <option value="Scientific">
+                                            Scientific                                        </option>
+                                                                            <option value="Legal">
+                                            Legal                                        </option>
+                                                                            <option value="Medical">
+                                            Medical                                        </option>
+                                                                            <option value="Poetic">
+                                            Poetic                                        </option>
+                                                                            <option value="Philosophical">
+                                            Philosophical                                        </option>
+                                                                            <option value="Marketing">
+                                            Marketing                                        </option>
+                                                                            <option value="Educational">
+                                            Educational                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Tone:</div>
+                                <select name="paraphrase_tone" id="paraphrase_tone">
+                                                                            <option value="Neutral" selected="">Neutral</option>
+                                                                            <option value="Formal">Formal</option>
+                                                                            <option value="Casual">Casual</option>
+                                                                            <option value="Professional">Professional</option>
+                                                                            <option value="Friendly">Friendly</option>
+                                                                            <option value="Academic">Academic</option>
+                                                                            <option value="Creative">Creative</option>
+                                                                            <option value="Confident">Confident</option>
+                                                                            <option value="Authoritative">Authoritative</option>
+                                                                            <option value="Enthusiastic">Enthusiastic</option>
+                                                                            <option value="Humorous">Humorous</option>
+                                                                            <option value="Inspirational">Inspirational</option>
+                                                                            <option value="Compassionate">Compassionate</option>
+                                                                            <option value="Analytical">Analytical</option>
+                                                                            <option value="Reflective">Reflective</option>
+                                                                            <option value="Optimistic">Optimistic</option>
+                                                                            <option value="Skeptical">Skeptical</option>
+                                                                            <option value="Urgent">Urgent</option>
+                                                                            <option value="Relaxed">Relaxed</option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Complexity:</div>
+                                <select name="paraphrase_complexity_level" id="paraphrase_complexity">
+                                                                            <option value="Simple">
+                                            Simple                                        </option>
+                                                                            <option value="Basic">
+                                            Basic                                        </option>
+                                                                            <option value="Intermediate" selected="">
+                                            Intermediate                                        </option>
+                                                                            <option value="Advanced">
+                                            Advanced                                        </option>
+                                                                            <option value="Expert">
+                                            Expert                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Audience:</div>
+                                <select name="paraphrase_target_audience" id="paraphrase_audience">
+                                                                            <option value="General" selected="">
+                                            General                                        </option>
+                                                                            <option value="Students">
+                                            Students                                        </option>
+                                                                            <option value="Professionals">
+                                            Professionals                                        </option>
+                                                                            <option value="Experts">
+                                            Experts                                        </option>
+                                                                            <option value="Children">
+                                            Children                                        </option>
+                                                                            <option value="Teenagers">
+                                            Teenagers                                        </option>
+                                                                            <option value="Elderly">
+                                            Elderly                                        </option>
+                                                                            <option value="Business">
+                                            Business                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Level:</div>
+                                <div class="range-container">
+                                    <div class="range-slider">
+                                        <input type="range" name="paraphrase_level" min="1" max="5" value="3" oninput="updateRangeValue(this, 'paraphraseValue')">
+                                    </div>
+                                    <div class="range-value" id="paraphraseValue">3</div>
+                                </div>
+                            </div>
+
+                            <div class="setting-group">
+                                <div class="setting-label">Synonyms:</div>
+                                <div class="range-container">
+                                    <div class="range-slider">
+                                        <input type="range" name="synonym_sensitivity" min="1" max="5" value="3" oninput="updateRangeValue(this, 'synonymValue')">
+                                    </div>
+                                    <div class="range-value" id="synonymValue">3</div>
+                                </div>
+                            </div>
+
+                            <!-- Preset Buttons for Paraphrase -->
+                            <div class="preset-container">
+                                <div class="setting-label">Atau pilih Preset:</div>
+                                <div class="preset-buttons">
+                                    <button type="button" class="preset-button" data-preset="standard" data-mode="paraphrase">Standard</button>
+                                    <button type="button" class="preset-button" data-preset="academic" data-mode="paraphrase">Academic</button>
+                                    <button type="button" class="preset-button" data-preset="simplified" data-mode="paraphrase">Simple</button>
+                                    <button type="button" class="preset-button" data-preset="technical" data-mode="paraphrase">Technical</button>
+                                    <button type="button" class="preset-button" data-preset="creative" data-mode="paraphrase">Creative</button>
+                                    <button type="button" class="preset-button" data-preset="business" data-mode="paraphrase">Business</button>
+                                    <button type="button" class="preset-button" data-preset="marketing_copy" data-mode="paraphrase">Marketing</button>
+                                    <button type="button" class="preset-button" data-preset="child_friendly" data-mode="paraphrase">Child-Friendly</button>
+                                    <button type="button" class="preset-button" data-preset="storytelling" data-mode="paraphrase">Storytelling</button>
+                                    <button type="button" class="preset-button" data-preset="executive_summary" data-mode="paraphrase">Executive</button>
+                                    <button type="button" class="preset-button" data-preset="social_media" data-mode="paraphrase">Social Media</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rewrite Settings - SIMPLIFIED -->
+                    <div id="rewriteSettings" class="settings-bar" style="display: none">
+                        <div class="setting-group">
+                            <div class="setting-label">Output Language:</div>
+                            <select name="rewrite_output_lang" id="rewrite_output_lang">
+                                                                                                            <option value="English" selected="">
+                                            English                                        </option>
+                                                                                                                                                <option value="Indonesian (Bahasa Indonesia)">
+                                            Indonesian (Bahasa Indonesia)                                        </option>
+                                                                                                </select>
+                        </div>
+
+                        <div class="settings-toggle-container">
+                            <button type="button" class="settings-toggle" data-target="rewrite-advanced">
+                                <span class="toggle-text">Settings</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+
+                        <div id="rewrite-advanced" class="settings-advanced collapsed">
+
+                            <div class="setting-group">
+                                <div class="setting-label">Style:</div>
+                                <select name="rewrite_writing_style" id="rewrite_writing_style">
+                                                                            <option value="Professional and formal" selected="">
+                                            Professional and formal                                        </option>
+                                                                            <option value="Casual and friendly">
+                                            Casual and friendly                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                            <option value="Creative">
+                                            Creative                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                            <option value="Persuasive">
+                                            Persuasive                                        </option>
+                                                                            <option value="Conversational">
+                                            Conversational                                        </option>
+                                                                            <option value="Journalistic">
+                                            Journalistic                                        </option>
+                                                                            <option value="Descriptive">
+                                            Descriptive                                        </option>
+                                                                            <option value="Instructional">
+                                            Instructional                                        </option>
+                                                                            <option value="Narrative">
+                                            Narrative                                        </option>
+                                                                            <option value="Analytical">
+                                            Analytical                                        </option>
+                                                                            <option value="Business">
+                                            Business                                        </option>
+                                                                            <option value="Scientific">
+                                            Scientific                                        </option>
+                                                                            <option value="Legal">
+                                            Legal                                        </option>
+                                                                            <option value="Medical">
+                                            Medical                                        </option>
+                                                                            <option value="Poetic">
+                                            Poetic                                        </option>
+                                                                            <option value="Philosophical">
+                                            Philosophical                                        </option>
+                                                                            <option value="Marketing">
+                                            Marketing                                        </option>
+                                                                            <option value="Educational">
+                                            Educational                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Tone:</div>
+                                <select name="rewrite_tone" id="rewrite_tone">
+                                                                            <option value="Neutral" selected="">Neutral</option>
+                                                                            <option value="Formal">Formal</option>
+                                                                            <option value="Casual">Casual</option>
+                                                                            <option value="Professional">Professional</option>
+                                                                            <option value="Friendly">Friendly</option>
+                                                                            <option value="Academic">Academic</option>
+                                                                            <option value="Creative">Creative</option>
+                                                                            <option value="Confident">Confident</option>
+                                                                            <option value="Authoritative">Authoritative</option>
+                                                                            <option value="Enthusiastic">Enthusiastic</option>
+                                                                            <option value="Humorous">Humorous</option>
+                                                                            <option value="Inspirational">Inspirational</option>
+                                                                            <option value="Compassionate">Compassionate</option>
+                                                                            <option value="Analytical">Analytical</option>
+                                                                            <option value="Reflective">Reflective</option>
+                                                                            <option value="Optimistic">Optimistic</option>
+                                                                            <option value="Skeptical">Skeptical</option>
+                                                                            <option value="Urgent">Urgent</option>
+                                                                            <option value="Relaxed">Relaxed</option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Transform:</div>
+                                <select name="transformation_type" id="transformation_type">
+                                                                            <option value="Standard rewrite" selected="">
+                                            Standard rewrite                                        </option>
+                                                                            <option value="Simplify">
+                                            Simplify                                        </option>
+                                                                            <option value="Elaborate">
+                                            Elaborate                                        </option>
+                                                                            <option value="Change perspective">
+                                            Change perspective                                        </option>
+                                                                            <option value="Make more concise">
+                                            Make more concise                                        </option>
+                                                                            <option value="Make more detailed">
+                                            Make more detailed                                        </option>
+                                                                            <option value="Active to passive">
+                                            Active to passive                                        </option>
+                                                                            <option value="Passive to active">
+                                            Passive to active                                        </option>
+                                                                            <option value="Improve clarity">
+                                            Improve clarity                                        </option>
+                                                                            <option value="Improve flow">
+                                            Improve flow                                        </option>
+                                                                            <option value="Add examples">
+                                            Add examples                                        </option>
+                                                                            <option value="Add metaphors">
+                                            Add metaphors                                        </option>
+                                                                            <option value="Add statistics">
+                                            Add statistics                                        </option>
+                                                                            <option value="Add quotes">
+                                            Add quotes                                        </option>
+                                                                            <option value="Make more persuasive">
+                                            Make more persuasive                                        </option>
+                                                                            <option value="Make more objective">
+                                            Make more objective                                        </option>
+                                                                    </select>
+                            </div>
+
+                            <div class="setting-group">
+                                <div class="setting-label">Length:</div>
+                                <select name="length_adjustment" id="length_adjustment">
+                                                                            <option value="Keep same length" selected="">
+                                            Keep same length                                        </option>
+                                                                            <option value="Make shorter">
+                                            Make shorter                                        </option>
+                                                                            <option value="Make longer">
+                                            Make longer                                        </option>
+                                                                            <option value="Make significantly shorter">
+                                            Make significantly shorter                                        </option>
+                                                                            <option value="Make significantly longer">
+                                            Make significantly longer                                        </option>
+                                                                            <option value="25% shorter">
+                                            25% shorter                                        </option>
+                                                                            <option value="50% shorter">
+                                            50% shorter                                        </option>
+                                                                            <option value="75% shorter">
+                                            75% shorter                                        </option>
+                                                                            <option value="25% longer">
+                                            25% longer                                        </option>
+                                                                            <option value="50% longer">
+                                            50% longer                                        </option>
+                                                                            <option value="100% longer">
+                                            100% longer                                        </option>
+                                                                            <option value="Tweet length">
+                                            Tweet length                                        </option>
+                                                                            <option value="Paragraph length">
+                                            Paragraph length                                        </option>
+                                                                            <option value="Essay length">
+                                            Essay length                                        </option>
+                                                                    </select>
+
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Complexity:</div>
+                                <select name="rewrite_complexity_level" id="rewrite_complexity">
+                                                                            <option value="Simple">
+                                            Simple                                        </option>
+                                                                            <option value="Basic">
+                                            Basic                                        </option>
+                                                                            <option value="Intermediate" selected="">
+                                            Intermediate                                        </option>
+                                                                            <option value="Advanced">
+                                            Advanced                                        </option>
+                                                                            <option value="Expert">
+                                            Expert                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="setting-group">
+                                <div class="setting-label">Audience:</div>
+                                <select name="rewrite_target_audience" id="rewrite_audience">
+                                                                            <option value="General" selected="">
+                                            General                                        </option>
+                                                                            <option value="Students">
+                                            Students                                        </option>
+                                                                            <option value="Professionals">
+                                            Professionals                                        </option>
+                                                                            <option value="Experts">
+                                            Experts                                        </option>
+                                                                            <option value="Children">
+                                            Children                                        </option>
+                                                                            <option value="Teenagers">
+                                            Teenagers                                        </option>
+                                                                            <option value="Elderly">
+                                            Elderly                                        </option>
+                                                                            <option value="Business">
+                                            Business                                        </option>
+                                                                            <option value="Academic">
+                                            Academic                                        </option>
+                                                                            <option value="Technical">
+                                            Technical                                        </option>
+                                                                    </select>
+                            </div>
+                            <!-- Preset Buttons for Rewrite -->
+                            <div class="preset-container">
+                                <div class="setting-label">Atau pilih Preset:</div>
+                                <div class="preset-buttons">
+                                    <button type="button" class="preset-button" data-preset="standard" data-mode="rewrite">Standard</button>
+                                    <button type="button" class="preset-button" data-preset="simplify" data-mode="rewrite">Simplify</button>
+                                    <button type="button" class="preset-button" data-preset="elaborate" data-mode="rewrite">Elaborate</button>
+                                    <button type="button" class="preset-button" data-preset="academic" data-mode="rewrite">Academic</button>
+                                    <button type="button" class="preset-button" data-preset="concise" data-mode="rewrite">Concise</button>
+                                    <button type="button" class="preset-button" data-preset="persuasive" data-mode="rewrite">Persuasive</button>
+                                    <button type="button" class="preset-button" data-preset="seo_optimization" data-mode="rewrite">SEO</button>
+                                    <button type="button" class="preset-button" data-preset="student_assignment" data-mode="rewrite">Student</button>
+                                    <button type="button" class="preset-button" data-preset="technical_docs" data-mode="rewrite">Technical</button>
+                                    <button type="button" class="preset-button" data-preset="email_communication" data-mode="rewrite">Email</button>
+                                    <button type="button" class="preset-button" data-preset="blog_post" data-mode="rewrite">Blog</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-message" id="successMessage">Text copied to clipboard!</div>
+                    <style>
+                        .popup-overlay {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0.6);
+                            display: none;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 9999;
+                        }
+
+                        .popup-content {
+                            background: #fff;
+                            padding: 20px;
+                            border-radius: 12px;
+                            text-align: center;
+                            max-width: 300px;
+                            width: 100%;
+                        }
+
+                        .popup-content img {
+                            width: 20px;
+                            vertical-align: middle;
+                            margin-right: 8px;
+                        }
+                    </style>
+
+
+                                            <!-- POPUP -->
+                        <div class="popup-overlay" id="signupPopup">
+                            <div class="popup-content">
+                                <p>Silakan daftar/login dulu</p>
+                                <a href="https://accounts.google.com/o/oauth2/auth?client_id=91744524273-sa7atmrof0unbkq9oc2c2jc21nm28h4e.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fgotext.ai%2Fcallback.php&amp;response_type=code&amp;scope=email+profile&amp;access_type=online&amp;prompt=select_account" class="google-btn">
+                                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo">
+                                    Daftar / Login
+                                </a>
+                                <br>
+                                <a href="#" onclick="closePopup(event)">Tutup</a>
+                            </div>
+                        </div>
+                                        <!-- Text Container -->
+                    <div class="text-container">
+                        <div class="text-column">
+                            <div class="text-header">
+                                <div class="text-title" id="inputTextLabel">
+                                    Original Text                                </div>
+                                <div class="text-controls">
+                                    <button type="button" class="control-button" onclick="pasteText()"><i class="fas fa-paste"></i> Paste</button>
+                                    <button type="button" class="control-button" onclick="clearOriginalText()"><i class="fas fa-eraser"></i> Clear</button>
+                                </div>
+                            </div>
+                            <!-- Hidden textarea to store the HTML content -->
+                            <input type="hidden" name="original_text" id="original_text_hidden">
+                            <!-- Quill editor container -->
+                            <div class="ql-toolbar ql-snow"><span class="ql-formats"><span class="ql-header ql-picker"><span class="ql-picker-label" tabindex="0" role="button" aria-expanded="false" aria-controls="ql-picker-options-0"><svg viewBox="0 0 18 18"> <polygon class="ql-stroke" points="7 11 9 13 11 11 7 11"></polygon> <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon> </svg></span><span class="ql-picker-options" aria-hidden="true" tabindex="-1" id="ql-picker-options-0"><span tabindex="0" role="button" class="ql-picker-item" data-value="1"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="2"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="3"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="4"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="5"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="6"></span><span tabindex="0" role="button" class="ql-picker-item ql-selected"></span></span></span><select class="ql-header" style="display: none;"><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option><option selected="selected"></option></select></span><span class="ql-formats"><button type="button" class="ql-bold"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"></path> <path class="ql-stroke" d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"></path> </svg></button><button type="button" class="ql-italic"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="13" y1="4" y2="4"></line> <line class="ql-stroke" x1="5" x2="11" y1="14" y2="14"></line> <line class="ql-stroke" x1="8" x2="10" y1="14" y2="4"></line> </svg></button><button type="button" class="ql-underline"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect> </svg></button><button type="button" class="ql-strike"><svg viewBox="0 0 18 18"> <line class="ql-stroke ql-thin" x1="15.5" x2="2.5" y1="8.5" y2="9.5"></line> <path class="ql-fill" d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z"></path> <path class="ql-fill" d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z"></path> </svg></button></span><span class="ql-formats"><button type="button" class="ql-list" value="ordered"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="7" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="7" x2="15" y1="14" y2="14"></line> <line class="ql-stroke ql-thin" x1="2.5" x2="4.5" y1="5.5" y2="5.5"></line> <path class="ql-fill" d="M3.5,6A0.5,0.5,0,0,1,3,5.5V3.085l-0.276.138A0.5,0.5,0,0,1,2.053,3c-0.124-.247-0.023-0.324.224-0.447l1-.5A0.5,0.5,0,0,1,4,2.5v3A0.5,0.5,0,0,1,3.5,6Z"></path> <path class="ql-stroke ql-thin" d="M4.5,10.5h-2c0-.234,1.85-1.076,1.85-2.234A0.959,0.959,0,0,0,2.5,8.156"></path> <path class="ql-stroke ql-thin" d="M2.5,14.846a0.959,0.959,0,0,0,1.85-.109A0.7,0.7,0,0,0,3.75,14a0.688,0.688,0,0,0,.6-0.736,0.959,0.959,0,0,0-1.85-.109"></path> </svg></button><button type="button" class="ql-list" value="bullet"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="6" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="6" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="6" x2="15" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="3" y1="4" y2="4"></line> <line class="ql-stroke" x1="3" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="3" y1="14" y2="14"></line> </svg></button></span><span class="ql-formats"><button type="button" class="ql-blockquote"><svg viewBox="0 0 18 18"> <rect class="ql-fill ql-stroke" height="3" width="3" x="4" y="5"></rect> <rect class="ql-fill ql-stroke" height="3" width="3" x="11" y="5"></rect> <path class="ql-even ql-fill ql-stroke" d="M7,8c0,4.031-3,5-3,5"></path> <path class="ql-even ql-fill ql-stroke" d="M14,8c0,4.031-3,5-3,5"></path> </svg></button><button type="button" class="ql-code-block"><svg viewBox="0 0 18 18"> <polyline class="ql-even ql-stroke" points="5 7 3 9 5 11"></polyline> <polyline class="ql-even ql-stroke" points="13 7 15 9 13 11"></polyline> <line class="ql-stroke" x1="10" x2="8" y1="5" y2="13"></line> </svg></button></span><span class="ql-formats"><span class="ql-align ql-picker ql-icon-picker"><span class="ql-picker-label" tabindex="0" role="button" aria-expanded="false" aria-controls="ql-picker-options-1"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="3" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="13" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="9" y1="4" y2="4"></line> </svg></span><span class="ql-picker-options" aria-hidden="true" tabindex="-1" id="ql-picker-options-1"><span tabindex="0" role="button" class="ql-picker-item ql-selected"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="3" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="13" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="9" y1="4" y2="4"></line> </svg></span><span tabindex="0" role="button" class="ql-picker-item" data-value="center"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="15" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="14" x2="4" y1="14" y2="14"></line> <line class="ql-stroke" x1="12" x2="6" y1="4" y2="4"></line> </svg></span><span tabindex="0" role="button" class="ql-picker-item" data-value="right"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="15" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="15" x2="5" y1="14" y2="14"></line> <line class="ql-stroke" x1="15" x2="9" y1="4" y2="4"></line> </svg></span><span tabindex="0" role="button" class="ql-picker-item" data-value="justify"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="15" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="15" x2="3" y1="14" y2="14"></line> <line class="ql-stroke" x1="15" x2="3" y1="4" y2="4"></line> </svg></span></span></span><select class="ql-align" style="display: none;"><option selected="selected"></option><option value="center"></option><option value="right"></option><option value="justify"></option></select></span><span class="ql-formats"><button type="button" class="ql-clean"><svg class="" viewBox="0 0 18 18"> <line class="ql-stroke" x1="5" x2="13" y1="3" y2="3"></line> <line class="ql-stroke" x1="6" x2="9.35" y1="12" y2="3"></line> <line class="ql-stroke" x1="11" x2="15" y1="11" y2="15"></line> <line class="ql-stroke" x1="15" x2="11" y1="11" y2="15"></line> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="7" x="2" y="14"></rect> </svg></button></span></div><div id="original_text_editor" class="editor-container ql-container ql-snow"><div class="ql-editor ql-blank" data-gramm="false" contenteditable="true" data-placeholder="Enter text to paraphrase..."><p><br></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div><div class="ql-tooltip ql-hidden"><a class="ql-preview" target="_blank" href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="https://quilljs.com" data-video="Embed URL"><a class="ql-action"></a><a class="ql-remove"></a></div></div>
+                            <div class="character-count" id="originalCharCount">0 / 0</div>
+                        </div>
+
+                        <div class="text-column">
+                            <div class="text-header">
+                                <div class="text-title" id="resultTextLabel">
+                                    Paraphrased Text                                </div>
+                                <div class="text-controls">
+                                    <button type="button" class="control-button" onclick="copyResult()"><i class="fas fa-copy"></i> Copy</button>
+                                    <button type="button" class="control-button" onclick="clearResultText()"><i class="fas fa-eraser"></i>️ Clear</button>
+                                </div>
+                            </div>
+                            <!-- Quill editor container for result -->
+                            <div id="result_text_editor" class="editor-container result-editor ql-container ql-snow ql-disabled"><div class="ql-editor ql-blank" data-gramm="false" contenteditable="false"><p><br></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div></div>
+                            <div class="character-count" id="resultCharCount">0 characters</div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                                            <div style="text-align:center;">
+                            <div class="action-buttons">
+                                <button class="action-button" disabled="" style="background-color:#ccc; cursor:not-allowed; opacity:0.7;">
+                                    Silakan daftar/login dulu...
+                                </button>
+                            </div>
+                        </div>
+                    
+                                    </form>
+                            </div>
+        </div>
+    </div>
+
+    <!-- GoText AI Landing Page Section with 3 Tabs -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.landing-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.main-header {
+    max-width:700px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 40px 0;
+    background: transparent;
+    border-radius: 0;
+    color: #333;
+    margin:auto;
+}
+
+.main-header h1 {
+    font-size: 4em;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+    display: inline-block;
+}
+
+.logo-container {
+    display: inline-block;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+.main-header h1 img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+.main-header p {
+    font-size: 1.8em;
+    margin: 0;
+    opacity: 0.8;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.tabs-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.tabs-nav {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 20px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tab-button:hover {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.tab-button.active {
+    background: #fff;
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+.tab-icon {
+    font-size: 1.5em;
+}
+
+.tab-content {
+    display: none;
+    padding: 40px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tool-hero {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+}
+
+.tool-hero h2 {
+    font-size: 2.5em;
+    color: #2d3748;
+    margin: 0 0 15px 0;
+}
+
+.tool-hero p {
+    font-size: 1.2em;
+    color: #4a5568;
+    margin: 0;
+}
+
+h3 {
+    color: #2d3748;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.description-section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.description-section h3 {
+    color: #2d3748;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.description-section p {
+    color: #4a5568;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.benefits-section {
+    margin-bottom: 40px;
+}
+
+.benefits-section h3 {
+    color: #4a5568;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.benefits-list li {
+    background: #f7fafc;
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform 0.2s ease;
+}
+
+.benefits-list li:hover {
+    transform: translateX(5px);
+    background: #edf2f7;
+}
+
+.benefit-icon {
+    font-size: 1.5em;
+    color: #667eea;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.benefit-content h4 {
+    color: #2d3748;
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.benefit-content p {
+    color: #4a5568;
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.how-to-use {
+    margin-bottom: 40px;
+}
+
+.how-to-use h3 {
+    color: #4a5568;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.steps-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: step-counter;
+}
+
+.steps-list li {
+    background: #f7fafc;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    font-weight: 500;
+    position: relative;
+    counter-increment: step-counter;
+}
+
+.steps-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+    color: #667eea;
+}
+
+.feature-card h4 {
+    color: #2d3748;
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+}
+
+.feature-card p {
+    color: #4a5568;
+    margin: 0;
+}
+
+.preset-showcase {
+    background: #f7fafc;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.preset-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.preset-tag {
+    background: #667eea;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.comparison-table th {
+    background: #4a5568;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f7fafc;
+}
+
+.pro-badge {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.vip-badge {
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.free-badge {
+    background: #68d391;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.faq-section {
+    margin: 50px 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 40px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #f7fafc;
+    padding: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 20px;
+    color: #4a5568;
+    display: none;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.pricing-highlight {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 40px 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.pricing-highlight h3 {
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 20px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.pricing-highlight p {
+    color: #e2e8f0;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.section-divider {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 40px;
+    margin: 40px 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.pricing-card {
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+.pricing-card ul {
+
+    text-align: left;
+
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.pricing-card.recommended {
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #667eea;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .landing-section {
+        padding: 20px 10px;
+    }
+    
+    .main-header {
+        padding: 30px 0;
+        margin-bottom: 20px;
+    }
+    
+    .main-header h1 {
+        font-size: 2.5em;
+    }
+    
+    .logo-container {
+        padding: 0;
+        border-radius: 0;
+    }
+    
+    .main-header h1 img {
+        height: 60px;
+    }
+    
+    .main-header p {
+        font-size: 1.3em;
+    }
+    
+    .tabs-nav {
+        flex-direction: column;
+    }
+    
+    .tab-content {
+        padding: 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-list li {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .comparison-table {
+        font-size: 1em;
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 15px 12px;
+        font-size: 0.95em;
+        line-height: 1.4;
+    }
+    
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+        width: 40%;
+        font-weight: 600;
+    }
+    
+    .comparison-table th:nth-child(2),
+    .comparison-table td:nth-child(2) {
+        width: 30%;
+    }
+    
+    .comparison-table th:nth-child(3),
+    .comparison-table td:nth-child(3) {
+        width: 30%;
+    }
+    
+    .section-divider {
+        padding: 20px 15px;
+    }
+    
+    .pricing-highlight {
+        padding: 30px 20px;
+    }
+    
+    .price {
+        font-size: 2.5em;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<div class="landing-section">
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="logo-container">
+            <h1><img src="images/gotext-ai.png" alt="GoText AI"></h1>
+        </div>
+        <p>Platform AI Terlengkap untuk Translate, Paraphrase &amp; Rewrite yang Tidak Menguras Kantong Anda!</p>
+    </div>
+    
+    <!-- Pricing Plans -->
+    <div class="section-divider">
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2d3748;"><i class="fas fa-gem"></i> Pilihan Paket</h2>
+        <div class="pricing-grid">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h3 style="color: #68d391; margin-bottom: 15px;">FREE</h3>
+                <div style="font-size: 2.5em; font-weight: bold; color: #2d3748; margin-bottom: 20px;">Gratis</div>
+                <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> 1000 karakter per request</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> <strong>10 request /bulan</strong></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> <strong>10,000 karakter /bulan</strong></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> 3 bahasa (Auto, EN, ID)</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> Semua tools dasar</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> Community support</li>
+                </ul>
+                
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card ">
+                
+                <h3 style="color: #667eea; margin-bottom: 15px;">PRO</h3>
+                <div style="font-size: 2.5em; font-weight: bold; color: #2d3748; margin-bottom: 20px;">
+                    Rp 39k/bulan
+                    <div style="font-size: 0.4em; color: #4a5568;">(~Rp 470,000/tahun)</div>
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> 15,000 karakter per request</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> <strong>200 request /bulan</strong></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> <strong>3,000,000 karakter /bulan</strong></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> 30+ bahasa dunia</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> Advanced settings</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> Priority support</li>
+                </ul>
+                <a href="https://gotext-20616.myr.id/pl/gotext-ai-pro-tahunan" class="cta-button" style="width: 100%; text-align: center; margin-top: 15px;">Upgrade ke Pro</a>
+            </div>
+
+            <!-- VIP Plan -->
+            <div class="pricing-card recommended">
+                <div class="recommended-badge">Paling Populer</div>
+                <h3 style="color: #f093fb; margin-bottom: 15px;">VIP</h3>
+                <div style="font-size: 2.5em; font-weight: bold; color: #2d3748; margin-bottom: 20px;">
+                    Rp 40k/bulan
+                    <div style="font-size: 0.4em; color: #4a5568;">(~Rp 480,000/tahun)</div>
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> 30,000 karakter per request</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> <strong>Unlimited request*</strong></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> <strong>Unlimited karakter*</strong></li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> 60+ bahasa dunia</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> Advanced Settings</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #68d391; margin-right: 8px;"></i> Priority support</li>
+                    <li style="margin-bottom: 15px; font-size: 0.9em; color: #666; border-top: 1px solid #eee; padding-top: 10px;">
+                        *Fair Use Policy berlaku
+                    </li>
+                </ul>
+                <a href="https://gotext-20616.myr.id/pl/gotext-ai-vip-tahunan" class="cta-button" style="width: 100%; text-align: center; margin-top: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Upgrade ke VIP</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabs Container -->
+    <div class="tabs-container">
+        <!-- Tab Navigation -->
+        <div class="tabs-nav">
+            <button class="tab-button active" onclick="openTab(event, 'paraphrase-tab')">
+                <span class="tab-icon"><i class="fas fa-sync-alt"></i></span>
+                <span>Paraphraser</span>
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'rewrite-tab')">
+                <span class="tab-icon"><i class="fas fa-pen"></i></span>
+                <span>Rewriter</span>
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'translate-tab')">
+                <span class="tab-icon"><i class="fas fa-language"></i></span>
+                <span>Translator</span>
+            </button>
+        </div>
+
+        <!-- Translate Tab Content -->
+        <div id="translate-tab" class="tab-content">
+            <div class="tool-hero">
+                <h2>AI Translator</h2>
+                <p>Terjemahkan teks ke 60+ bahasa dengan akurasi tinggi dan pemahaman konteks</p>
+            </div>
+
+            <!-- Deskripsi -->
+            <div>
+                <h3><i class="fas fa-language"></i> Apa itu GoText AI Translator?</h3>
+                <p>GoText AI Translator adalah <b>tool penerjemahan bertenaga AI</b> yang menggunakan teknologi Google terbaru. Tidak seperti translator biasa, kami memahami konteks, nuansa bahasa, dan terminologi spesifik domain untuk menghasilkan terjemahan yang natural dan akurat.</p>
+                
+                <p>Dengan dukungan 60+ bahasa dan spesialisasi domain seperti Business, Legal, Medical, Technical, dan Academic, GoText AI menjadi solusi terpercaya untuk kebutuhan penerjemahan profesional Anda.</p>
+                
+                <p>Yang membuatnya istimewa? Kami mempertahankan format Rich text asli dokumen Anda, sehingga struktur, heading, dan formatting tetap utuh setelah diterjemahkan.</p>
+            </div>
+
+            <!-- Manfaat -->
+            <div class="benefits-section">
+                <h3><i class="fas fa-gem"></i> Manfaat</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-bolt"></i></span>
+                        <div class="benefit-content">
+                            <h4>Hemat Waktu</h4>
+                            <p>Terjemahkan dokumen panjang dalam hitungan detik, tidak perlu menerjemahkan kata per kata</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-dollar-sign"></i></span>
+                        <div class="benefit-content">
+                            <h4>Biaya Efektif</h4>
+                            <p>Lebih murah dari jasa translator profesional, dengan kualitas yang sebanding</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-bullseye"></i></span>
+                        <div class="benefit-content">
+                            <h4>Akurasi Tinggi</h4>
+                            <p>AI memahami konteks dan domain spesifik untuk hasil terjemahan yang natural</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-lock"></i></span>
+                        <div class="benefit-content">
+                            <h4>Privasi Terjamin</h4>
+                            <p>Dokumen Anda tidak disimpan, konten diproses secara aman dan private</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-mobile-alt"></i></span>
+                        <div class="benefit-content">
+                            <h4>Akses Kapan Saja</h4>
+                            <p>Tersedia 24/7 dari browser, tidak perlu install aplikasi</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-globe"></i></span>
+                        <div class="benefit-content">
+                            <h4>Multi Bahasa</h4>
+                            <p>60+ bahasa utama dunia, dari Eropa hingga Asia, lengkap dengan auto-detect</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Keunggulan -->
+            <h3><i class="fas fa-rocket"></i> Keunggulan</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-robot"></i></span>
+                    <h4>AI Terdepan</h4>
+                    <p>Menggunakan teknologi Google Gemini Flash terbaru untuk akurasi tinggi dan pemahaman konteks yang superior</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-bullseye"></i></span>
+                    <h4>Spesialisasi Domain</h4>
+                    <p>Terjemahan khusus untuk Business, Legal, Medical, Technical, Academic, dan Scientific dengan terminologi yang tepat</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-file-alt"></i></span>
+                    <h4>Preservasi Format</h4>
+                    <p>Mempertahankan semua format Rich Text termasuk heading, bold, italic, list, dan struktur paragraf</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-search"></i></span>
+                    <h4>Deteksi Bahasa Cerdas</h4>
+                    <p>Auto-detect canggih mengidentifikasi bahasa sumber secara otomatis untuk workflow yang seamless</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-bolt"></i></span>
+                    <h4>Kontrol Formalitas</h4>
+                    <p>Pilih antara Auto, Formal, dan Informal sesuai kebutuhan komunikasi Anda</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-globe-asia"></i></span>
+                    <h4>60+ Bahasa</h4>
+                    <p>Member premium mendapat akses ke bahasa-bahasa utama dunia termasuk Mandarin, Jepang, Arab, dan lainnya</p>
+                </div>
+            </div>
+
+            <div class="preset-showcase">
+                <h4>Preset Siap Pakai:</h4>
+                <div class="preset-tags">
+                    <span class="preset-tag">General</span>
+                    <span class="preset-tag">Business</span>
+                    <span class="preset-tag">Technical</span>
+                    <span class="preset-tag">Academic</span>
+                    <span class="preset-tag">Legal</span>
+                    <span class="preset-tag">Medical</span>
+                    <span class="preset-tag">Literary</span>
+                    <span class="preset-tag">Scientific</span>
+                    <span class="preset-tag">Marketing</span>
+                    <span class="preset-tag">Educational</span>
+                </div>
+            </div>
+
+            <!-- Cara Penggunaan -->
+            <div class="how-to-use">
+                <h3><i class="fas fa-clipboard-list"></i> Cara Penggunaan</h3>
+                <p>Menggunakan translator AI kami sangat mudah dan efisien. Ikuti langkah sederhana berikut untuk mendapatkan terjemahan profesional dalam hitungan detik:</p>
+                
+                <ol class="steps-list">
+                    <li><strong>Pilih tab "Translate"</strong> pada interface utama</li>
+                    <li><strong>Pilih preset</strong> untuk pengaturan cepat (General, Business, Technical, Academic, dll.)</li>
+                    <li><strong>Masukkan teks Anda</strong> di kotak teks kiri atau paste konten berformat</li>
+                    <li><strong>Sesuaikan pengaturan</strong> jika diperlukan menggunakan Advanced Settings</li>
+                    <li><strong>Klik tombol "Translate"</strong></li>
+                    <li><strong>Copy teks terjemahan</strong> dari panel kanan</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Paraphrase Tab Content -->
+        <div id="paraphrase-tab" class="tab-content active">
+            <div class="tool-hero">
+                <h2>AI Paraphraser</h2>
+                <p>Parafrase konten dengan mempertahankan makna, hilangkan plagiarisme 100%</p>
+            </div>
+
+            <!-- Deskripsi -->
+            <div>
+                <h3><i class="fas fa-sync-alt"></i> Apa itu GoText AI Paraphraser?</h3>
+                <p>GoText AI Paraphraser adalah tool revolusioner yang menggunakan artificial intelligence untuk <b>mengubah struktur dan kata-kata dalam teks Anda</b> sambil mempertahankan makna asli. Berbeda dari paraphrasing tool biasa, AI kami memahami konteks mendalam untuk menghasilkan variasi yang natural dan berkualitas tinggi.</p>
+                
+                <p>Dengan 11 preset spesialisasi dan kontrol granular hingga level 1-5, Anda bisa menyesuaikan intensitas perubahan sesuai kebutuhan. Dari Academic untuk paper ilmiah hingga Social Media untuk konten viral, setiap preset dioptimalkan untuk use case spesifik.</p>
+                
+                <p>Tool ini sempurna untuk content creator, mahasiswa, peneliti, dan profesional yang ingin menghindari plagiarisme sambil mempertahankan kualitas dan orisinalitas konten.</p>
+            </div>
+
+            <!-- Manfaat -->
+            <div class="benefits-section">
+                <h3><i class="fas fa-gem"></i> Manfaat</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-ban"></i></span>
+                        <div class="benefit-content">
+                            <h4>100% Anti-Plagiarisme</h4>
+                            <p>Eliminasi risiko plagiarisme dengan AI yang menulis ulang konten secara cerdas</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-graduation-cap"></i></span>
+                        <div class="benefit-content">
+                            <h4>Sempurna untuk Akademik</h4>
+                            <p>Preset Academic dan Scientific khusus untuk paper, thesis, dan jurnal penelitian</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-chart-line"></i></span>
+                        <div class="benefit-content">
+                            <h4>Boost Kreativitas</h4>
+                            <p>Dapatkan perspektif baru dari konten lama, inspirasi untuk ide-ide fresh</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-bolt"></i></span>
+                        <div class="benefit-content">
+                            <h4>Produktivitas Tinggi</h4>
+                            <p>Parafrase dokumen panjang dalam hitungan detik, tidak perlu manual</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-bullseye"></i></span>
+                        <div class="benefit-content">
+                            <h4>Kontrol Presisi</h4>
+                            <p>Atur level perubahan dari minimal (1) hingga transformasi total (5)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-users"></i></span>
+                        <div class="benefit-content">
+                            <h4>Multi Audience</h4>
+                            <p>Sesuaikan tone dan kompleksitas untuk Children, Professionals, atau Experts</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Keunggulan -->
+            <h3><i class="fas fa-rocket"></i> Keunggulan</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-theater-masks"></i></span>
+                    <h4>11 Mode Spesialisasi</h4>
+                    <p>Preset khusus termasuk Academic, Creative, Technical, Business, Marketing, Child-Friendly, dan Social Media</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-sliders-h"></i></span>
+                    <h4>Kontrol Granular</h4>
+                    <p>Level Parafrase (1-5), Sensitivitas Sinonim (1-5), 19 tone berbeda, 20 writing style, 7 complexity level</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-ban"></i></span>
+                    <h4>Eliminasi Plagiarisme</h4>
+                    <p>AI canggih menulis ulang konten sepenuhnya sambil mempertahankan makna asli, menghasilkan teks 100% unik</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <h4>Excellence Akademik</h4>
+                    <p>Preset Academic dan Scientific khusus untuk mahasiswa dan peneliti dengan tone dan terminologi scholarly</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-chart-line"></i></span>
+                    <h4>Ready Content Marketing</h4>
+                    <p>Preset Marketing dan Social Media mengoptimalkan konten untuk engagement dan konversi</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-users"></i></span>
+                    <h4>Target Audience</h4>
+                    <p>10 jenis audience termasuk Students, Professionals, Experts, Children, Business untuk komunikasi optimal</p>
+                </div>
+            </div>
+
+            <div class="preset-showcase">
+                <h4>Preset Paraphrasing:</h4>
+                <div class="preset-tags">
+                    <span class="preset-tag">Standard</span>
+                    <span class="preset-tag">Academic</span>
+                    <span class="preset-tag">Creative</span>
+                    <span class="preset-tag">Technical</span>
+                    <span class="preset-tag">Business</span>
+                    <span class="preset-tag">Marketing</span>
+                    <span class="preset-tag">Child-Friendly</span>
+                    <span class="preset-tag">Storytelling</span>
+                    <span class="preset-tag">Executive</span>
+                    <span class="preset-tag">Social Media</span>
+                </div>
+            </div>
+
+            <!-- Cara Penggunaan -->
+            <div class="how-to-use">
+                <h3><i class="fas fa-clipboard-list"></i> Cara Penggunaan</h3>
+                <p>Transform konten Anda sambil mempertahankan makna dengan tool paraphrasing intelligent kami:</p>
+                
+                <ol class="steps-list">
+                    <li><strong>Klik tab "Paraphrase"</strong> untuk mengakses interface paraphrasing</li>
+                    <li><strong>Pilih preset</strong> (Standard, Academic, Creative, Business, dll.)</li>
+                    <li><strong>Input teks asli</strong> di editor</li>
+                    <li><strong>Customize pengaturan</strong> - sesuaikan tone, style, complexity level, dan intensitas parafrase</li>
+                    <li><strong>Tekan "Paraphrase"</strong> untuk memproses konten</li>
+                    <li><strong>Review dan copy</strong> teks hasil parafrase</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Rewrite Tab Content -->
+        <div id="rewrite-tab" class="tab-content">
+            <div class="tool-hero">
+                <h2>AI Rewriter</h2>
+                <p>Tulis ulang teks sepenuhnya dengan gaya dan struktur baru</p>
+            </div>
+
+            <!-- Deskripsi -->
+            <div>
+                <h3><i class="fas fa-pen"></i> Apa itu GoText AI Rewriter?</h3>
+                <p>GoText AI Rewriter adalah tool transformasi teks paling canggih yang dapat <b>mengubah konten Anda secara fundamental</b> sambil mempertahankan pesan inti. Berbeda dari paraphrasing, rewriting melakukan transformasi menyeluruh - mengubah gaya, tone, struktur, bahkan panjang konten sesuai kebutuhan Anda.</p>
+                
+                <p>Dengan 16 jenis transformasi dan 11 preset spesialisasi, Anda bisa mengubah essay menjadi blog post, simplifikasi konten teknis untuk audience umum, atau mengubah email formal menjadi komunikasi kasual. Fitur length adjustment memungkinkan kontrol presisi dari 75% lebih pendek hingga 100% lebih panjang.</p>
+                
+                <p>Tool ini ideal untuk content marketer, copywriter, blogger, dan professional yang perlu mengadaptasi konten untuk berbagai platform, audience, dan tujuan komunikasi yang berbeda.</p>
+            </div>
+
+            <!-- Manfaat -->
+            <div class="benefits-section">
+                <h3><i class="fas fa-gem"></i> Manfaat</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-redo"></i></span>
+                        <div class="benefit-content">
+                            <h4>Repurpose Konten</h4>
+                            <p>Ubah satu konten menjadi multiple format untuk berbagai platform dan audience</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-bullseye"></i></span>
+                        <div class="benefit-content">
+                            <h4>Multi-Audience Targeting</h4>
+                            <p>Adaptasi konten untuk Students, Professionals, Children, atau Business executives</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-ruler"></i></span>
+                        <div class="benefit-content">
+                            <h4>Kontrol Panjang Presisi</h4>
+                            <p>Sesuaikan panjang konten dari Tweet (pendek) hingga Essay (panjang) dengan exact control</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-star"></i></span>
+                        <div class="benefit-content">
+                            <h4>Improvement Otomatis</h4>
+                            <p>Fitur "Improve Clarity" dan "Improve Flow" untuk konten yang lebih engaging</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-rocket"></i></span>
+                        <div class="benefit-content">
+                            <h4>SEO Optimization</h4>
+                            <p>Preset SEO khusus untuk optimasi content marketing dan organic traffic</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon"><i class="fas fa-briefcase"></i></span>
+                        <div class="benefit-content">
+                            <h4>Professional Grade</h4>
+                            <p>20 writing style termasuk Business, Legal, Medical, Technical untuk keperluan profesional</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Keunggulan -->
+            <h3><i class="fas fa-rocket"></i> Keunggulan</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-wrench"></i></span>
+                    <h4>16 Jenis Transformasi</h4>
+                    <p>Standard Rewrite, Simplify, Elaborate, Make Concise, Improve Clarity, Change Perspective, Add Examples, Make Persuasive, dan lainnya</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-ruler"></i></span>
+                    <h4>Kontrol Panjang Cerdas</h4>
+                    <p>Penyesuaian presisi dari 75% lebih pendek hingga 100% lebih panjang, dengan opsi Tweet length, Paragraph length, Essay length</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-briefcase"></i></span>
+                    <h4>20 Writing Style Profesional</h4>
+                    <p>Business, Technical, Academic, Creative, Journalistic, Legal, Medical, Marketing untuk konten grade profesional</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-bullseye"></i></span>
+                    <h4>Smart Audience Targeting</h4>
+                    <p>Optimasi konten untuk audience spesifik: Students, Professionals, Experts, Children, Business executives</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-brain"></i></span>
+                    <h4>AI Transformation Engine</h4>
+                    <p>Teknologi AI terdepan yang memahami konteks dan intent untuk transformasi yang intelligent</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon"><i class="fas fa-bolt"></i></span>
+                    <h4>Processing Cepat</h4>
+                    <p>Algoritma super-fast yang dapat menangani dokumen panjang dalam hitungan detik</p>
+                </div>
+            </div>
+
+            <div class="preset-showcase">
+                <h4>Preset Rewriting:</h4>
+                <div class="preset-tags">
+                    <span class="preset-tag">Standard</span>
+                    <span class="preset-tag">Simplify</span>
+                    <span class="preset-tag">Elaborate</span>
+                    <span class="preset-tag">Academic</span>
+                    <span class="preset-tag">Concise</span>
+                    <span class="preset-tag">Persuasive</span>
+                    <span class="preset-tag">SEO</span>
+                    <span class="preset-tag">Student</span>
+                    <span class="preset-tag">Technical</span>
+                    <span class="preset-tag">Email</span>
+                    <span class="preset-tag">Blog</span>
+                </div>
+            </div>
+
+            <!-- Cara Penggunaan -->
+            <div class="how-to-use">
+                <h3><i class="fas fa-clipboard-list"></i> Cara Penggunaan</h3>
+                <p>Transform teks Anda sepenuhnya dengan rewriting engine yang powerful:</p>
+                
+                <ol class="steps-list">
+                    <li><strong>Navigasi ke tab "Rewrite"</strong></li>
+                    <li><strong>Pilih dari 11 preset spesialisasi</strong> (Standard, Simplify, Elaborate, Academic, dll.)</li>
+                    <li><strong>Paste atau ketik konten</strong> di area input</li>
+                    <li><strong>Konfigurasi transformation settings</strong> - style, tone, length adjustment, dan complexity</li>
+                    <li><strong>Klik "Rewrite"</strong> untuk generate konten yang ditransformasi</li>
+                    <li><strong>Download atau copy</strong> teks hasil rewrite</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="section-divider">
+        <h2 style="text-align: center; margin-bottom: 30px; color: #2d3748;"><i class="fas fa-chart-bar"></i> Perbandingan Fitur &amp; Limit</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Fitur</th>
+                    <th><span class="free-badge">Free</span></th>
+                    <th><span class="pro-badge">PRO</span></th>
+                    <th><span class="vip-badge">VIP</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Batas Karakter per Request</strong></td>
+                    <td>1000 karakter</td>
+                    <td>15,000 karakter</td>
+                    <td>30,000 karakter</td>
+                </tr>
+                <tr>
+                    <td><strong>Batas Request per Bulan</strong></td>
+                    <td><strong>10 request</strong></td>
+                    <td><strong>200 request</strong></td>
+                    <td><strong>Unlimited*</strong><br><small>*Fair Use: 500 request/bulan</small></td>
+                </tr>
+                <tr>
+                    <td><strong>Maks Karakter per Bulan</strong></td>
+                    <td><strong>10,000 karakter</strong></td>
+                    <td><strong>3,000,000 karakter</strong></td>
+                    <td><strong>Unlimited*</strong><br><small>*Fair Use: 15,000,000 karakter/bulan</small></td>
+                </tr>
+                <tr>
+                    <td><strong>Bahasa Tersedia</strong></td>
+                    <td>3 (Auto, English, Indonesian)</td>
+                    <td>30+ bahasa dunia</td>
+                    <td>60+ bahasa dunia</td>
+                </tr>
+                <tr>
+                    <td><strong>Processing Speed</strong></td>
+                    <td>Standard</td>
+                    <td>Priority processing</td>
+                    <td>Highest priority</td>
+                </tr>
+                <tr>
+                    <td><strong>Akses Preset</strong></td>
+                    <td>Semua preset</td>
+                    <td>Semua preset + advanced</td>
+                    <td>Semua preset + advanced</td>
+                </tr>
+                <tr>
+                    <td><strong>Advanced Settings</strong></td>
+                    <td>Terbatas</td>
+                    <td>Akses penuh</td>
+                    <td>Akses penuh</td>
+                </tr>
+                <tr>
+                    <td><strong>Biaya per Bulan</strong></td>
+                    <td><strong style="color: #68d391;">Rp 0</strong></td>
+                    <td><strong style="color: #667eea;">~Rp 39,000</strong></td>
+                    <td><strong style="color: #f093fb;">~Rp 40,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Pembayaran</strong></td>
+                    <td>Gratis</td>
+                    <td>Per Tahun</td>
+                    <td>Per Tahun</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<style>
+@media (max-width: 768px) {
+    /* Sembunyikan kolom Free Member di smartphone */
+    .comparison-table th:nth-child(2),
+    .comparison-table td:nth-child(2) {
+        display: none;
+    }
+}
+</style>
+    
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2 style="text-align: center; margin-bottom: 40px; color: #2d3748;"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Apakah GoText AI gratis digunakan?
+            </div>
+            <div class="faq-answer">
+                Ya! Kami menawarkan paket gratis dengan batas 1000 karakter per request dan 10 request per bulan. Member Pro (Rp 470k/tahun) dan VIP (Rp 480k/tahun) membuka akses lebih besar dengan request limit hingga unlimited per bulan.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Bagaimana sistem limit request per bulan bekerja?
+            </div>
+            <div class="faq-answer">
+                Setiap kali Anda memproses teks (translate, paraphrase, atau rewrite), itu dihitung sebagai 1 request. Free member mendapat 10 request/bulan, Pro member 200 request/bulan, dan VIP member unlimited request/bulan (dengan fair use policy maksimal 500 request dan 15 juta karakter). Limit reset setiap tanggal 1.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Apa itu Fair Use Policy pada paket VIP?
+            </div>
+            <div class="faq-answer">
+                Fair Use Policy adalah kebijakan penggunaan wajar yang menetapkan batas 500 request dan 15 juta karakter per bulan untuk member VIP. Meskipun disebut "unlimited", kebijakan ini memastikan layanan tetap stabil dan berkualitas untuk semua pengguna dengan mencegah penyalahgunaan sumber daya sistem.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Mengapa ada Fair Use Policy jika VIP unlimited?
+            </div>
+            <div class="faq-answer">
+                Fair Use Policy bertujuan untuk: (1) Menjaga performa server optimal untuk semua pengguna, (2) Mencegah penggunaan berlebihan yang dapat mengganggu layanan, (3) Memastikan sustainability layanan jangka panjang, dan (4) Melindungi dari potensi penyalahgunaan otomatis/bot. Batas 500 request dan 15 juta karakter per bulan sudah lebih dari cukup untuk 99% pengguna normal.
+            </div>
+        </div>
+
+ 
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Seberapa akurat hasil terjemahannya?
+            </div>
+            <div class="faq-answer">
+                AI kami menggunakan model Google Gemini terbaru dengan spesialisasi domain, memberikan akurasi professional-grade untuk konten spesialis.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Bisakah saya parafrase paper akademik?
+            </div>
+            <div class="faq-answer">
+                Tentu saja! Preset Academic kami dirancang khusus untuk konten scholarly, mempertahankan terminologi dan format citation yang sesuai.
+            </div>
+        </div>
+
+ 
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Berapa bahasa yang didukung?
+            </div>
+            <div class="faq-answer">
+                Member gratis mendapat 3 bahasa (Auto Detect, English, Indonesian). Member Pro 30+ dan VIP mendapat akses ke 60+ bahasa utama dunia.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Apa perbedaan antara Pro dan VIP?
+            </div>
+            <div class="faq-answer">
+                Pro member mendapat 15k karakter/request dengan 200 request/bulan. VIP member mendapat 30k karakter/request dengan unlimited request/bulan (fair use: 500 request, 15 juta karakter/bulan), plus highest priority processing dan 24/7 dedicated support. VIP cocok untuk power users dan bisnis dengan volume tinggi.
+            </div>
+        </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Apa perbedaan paraphrase dan rewrite?
+            </div>
+            <div class="faq-answer">
+                Paraphrasing mempertahankan makna asli dengan penggantian sinonim dan perubahan struktur. Rewriting dapat mentransformasi gaya, tone, dan pendekatan sepenuhnya sambil mempertahankan konsep inti.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Bisakah digunakan untuk keperluan komersial?
+            </div>
+            <div class="faq-answer">
+                Ya! Paket Pro dan VIP kami sempurna untuk bisnis, content creator, dan professional writer dengan kebutuhan processing volume tinggi. Batas VIP (500 request, 15 juta karakter/bulan) sudah sangat memadai untuk sebagian besar kebutuhan komersial.
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div style="text-align: center; margin: 50px 0; padding: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+        <h3 style="margin-bottom: 15px; font-size: 2em;color: white;">Siap Memulai?</h3>
+        <p style="margin-bottom: 25px; font-size: 1.2em; opacity: 0.9;">Bergabunglah dengan ribuan pengguna yang telah merasakan kualitas AI text transformation terbaik</p>
+        <a href="#" class="cta-button" style="background: white; color: #667eea; font-size: 1.2em; padding: 18px 36px;">Coba Gratis Sekarang</a>
+    </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    
+    // Hide all tab contents
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+    
+    // Remove active class from all tab buttons
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    
+    // Show the selected tab content and mark button as active
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const isActive = element.classList.contains('active');
+    
+    // Close all other FAQs
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        q.nextElementSibling.classList.remove('active');
+    });
+    
+    // Toggle current FAQ
+    if (!isActive) {
+        element.classList.add('active');
+        answer.classList.add('active');
+    }
+}
+</script>
+    <footer style="color: #555; text-align: center; padding: 20px 10px; font-size: 0.95em; border-top: 1px solid #ddd;">
+  © 2025 <strong>GoText AI</strong>. Hak cipta dilindungi undang-undang. 
+  | <a href="privacy.php" style="color: #555; text-decoration: none;">Privacy Policy</a> 
+  | <a href="tos.php" style="color: #555; text-decoration: none;">Terms of Service</a>
+</footer>
+<!-- Default Statcounter code for GoText AI
+https://gotext.ai -->
+<script type="text/javascript">
+var sc_project=13163731; 
+var sc_invisible=1; 
+var sc_security="760a971e"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async=""></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13163731/0/760a971e/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+    <!-- Processing Overlay -->
+    <div class="processing-overlay" id="processingOverlay">
+        <div class="processing-content">
+            <div class="processing-spinner"></div>
+            <div class="processing-text">Processing your text...</div>
+            <div class="processing-details" id="processingDetails">This may take a few moments</div>
+        </div>
+    </div>
+
+    <!-- Quill.js -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script>
+
+        // Store content for each mode
+        const modeContent = {
+            translate: {
+                input: "",
+                result: ""            },
+            paraphrase: {
+                input: "",
+                result: ""            },
+            rewrite: {
+                input: "",
+                result: ""            }
+        };
+
+        // Store settings for each mode
+        const modeSettings = {
+            translate: {
+                tone: null, // Not used in translate mode
+                writing_style: null, // Not used in translate mode
+                source_lang: "Auto Detect",
+                target_lang: "English",
+                formality_level: "Auto",
+                translation_domain: "General"            },
+            paraphrase: {
+                tone: "Neutral",
+                writing_style: "Professional and formal",
+                output_lang: "English",
+                paraphrase_level: 3,
+                synonym_sensitivity: 3,
+                complexity_level: "Intermediate",
+                target_audience: "General"            },
+            rewrite: {
+                tone: "Neutral",
+                writing_style: "Professional and formal",
+                output_lang: "English",
+                transformation_type: "Standard rewrite",
+                length_adjustment: "Keep same length",
+                complexity_level: "Intermediate",
+                target_audience: "General"            }
+        };
+
+        // Current mode
+        let currentMode = 'paraphrase';
+
+        // Character limit
+        const characterLimit = 0;
+
+        // ENHANCED: Monthly usage tracking
+        const monthlyUsage = 0;
+        const monthlyRequestLimit = 0;
+        const monthlyLimitExceeded = false;
+        const remainingMonthlyRequests = 0;
+
+        // Preset and compatibility rules
+        const presets = {"translate":{"general":{"name":"General Translation","formality_level":"Auto","translation_domain":"General"},"formal_business":{"name":"Formal Business","formality_level":"Formal","translation_domain":"Business"},"casual_conversation":{"name":"Casual Conversation","formality_level":"Informal","translation_domain":"Casual"},"technical_document":{"name":"Technical Document","formality_level":"Formal","translation_domain":"Technical"},"academic_paper":{"name":"Academic Paper","formality_level":"Formal","translation_domain":"Academic"},"legal_document":{"name":"Legal Document","formality_level":"Formal","translation_domain":"Legal"},"medical_content":{"name":"Medical Content","formality_level":"Formal","translation_domain":"Medical"},"literary_translation":{"name":"Literary","formality_level":"Auto","translation_domain":"Literature"},"scientific_translation":{"name":"Scientific","formality_level":"Formal","translation_domain":"Scientific"},"marketing_translation":{"name":"Marketing","formality_level":"Auto","translation_domain":"Business"},"educational_translation":{"name":"Educational","formality_level":"Auto","translation_domain":"Academic"}},"paraphrase":{"standard":{"name":"Standard Paraphrase","tone":"Neutral","writing_style":"Professional and formal","paraphrase_level":3,"synonym_sensitivity":3,"complexity_level":"Intermediate","target_audience":"General"},"academic":{"name":"Academic Paraphrase","tone":"Academic","writing_style":"Academic","paraphrase_level":4,"synonym_sensitivity":3,"complexity_level":"Advanced","target_audience":"Academic"},"simplified":{"name":"Simplified Content","tone":"Friendly","writing_style":"Casual and friendly","paraphrase_level":2,"synonym_sensitivity":2,"complexity_level":"Simple","target_audience":"General"},"technical":{"name":"Technical Documentation","tone":"Professional","writing_style":"Technical","paraphrase_level":3,"synonym_sensitivity":2,"complexity_level":"Expert","target_audience":"Professionals"},"creative":{"name":"Creative Writing","tone":"Creative","writing_style":"Creative","paraphrase_level":4,"synonym_sensitivity":5,"complexity_level":"Intermediate","target_audience":"General"},"business":{"name":"Business Communication","tone":"Professional","writing_style":"Business","paraphrase_level":3,"synonym_sensitivity":2,"complexity_level":"Intermediate","target_audience":"Professionals"},"marketing_copy":{"name":"Marketing Copy","tone":"Enthusiastic","writing_style":"Marketing","paraphrase_level":4,"synonym_sensitivity":4,"complexity_level":"Intermediate","target_audience":"General"},"child_friendly":{"name":"Child-Friendly","tone":"Friendly","writing_style":"Casual and friendly","paraphrase_level":2,"synonym_sensitivity":2,"complexity_level":"Simple","target_audience":"Children"},"storytelling":{"name":"Storytelling","tone":"Creative","writing_style":"Narrative","paraphrase_level":4,"synonym_sensitivity":3,"complexity_level":"Intermediate","target_audience":"General"},"executive_summary":{"name":"Executive Summary","tone":"Professional","writing_style":"Business","paraphrase_level":4,"synonym_sensitivity":2,"complexity_level":"Advanced","target_audience":"Professionals"},"social_media":{"name":"Social Media","tone":"Casual","writing_style":"Conversational","paraphrase_level":3,"synonym_sensitivity":4,"complexity_level":"Basic","target_audience":"General"}},"rewrite":{"standard":{"name":"Standard Rewrite","tone":"Neutral","writing_style":"Professional and formal","transformation_type":"Standard rewrite","length_adjustment":"Keep same length","complexity_level":"Intermediate","target_audience":"General"},"simplify":{"name":"Simplify Content","tone":"Friendly","writing_style":"Casual and friendly","transformation_type":"Simplify","length_adjustment":"Make shorter","complexity_level":"Simple","target_audience":"General"},"elaborate":{"name":"Elaborate Content","tone":"Professional","writing_style":"Descriptive","transformation_type":"Elaborate","length_adjustment":"Make longer","complexity_level":"Advanced","target_audience":"Professionals"},"academic":{"name":"Academic Rewrite","tone":"Academic","writing_style":"Academic","transformation_type":"Make more detailed","length_adjustment":"Keep same length","complexity_level":"Expert","target_audience":"Academic"},"concise":{"name":"Concise Business","tone":"Professional","writing_style":"Business","transformation_type":"Make more concise","length_adjustment":"Make shorter","complexity_level":"Intermediate","target_audience":"Professionals"},"persuasive":{"name":"Persuasive Content","tone":"Confident","writing_style":"Persuasive","transformation_type":"Make more persuasive","length_adjustment":"Keep same length","complexity_level":"Intermediate","target_audience":"General"},"seo_optimization":{"name":"SEO Optimization","tone":"Neutral","writing_style":"Marketing","transformation_type":"Improve clarity","length_adjustment":"Keep same length","complexity_level":"Intermediate","target_audience":"General"},"student_assignment":{"name":"Student Assignment","tone":"Academic","writing_style":"Academic","transformation_type":"Improve flow","length_adjustment":"Keep same length","complexity_level":"Intermediate","target_audience":"Students"},"technical_docs":{"name":"Technical Documentation","tone":"Professional","writing_style":"Technical","transformation_type":"Improve clarity","length_adjustment":"Keep same length","complexity_level":"Expert","target_audience":"Professionals"},"email_communication":{"name":"Email Communication","tone":"Professional","writing_style":"Business","transformation_type":"Make more concise","length_adjustment":"25% shorter","complexity_level":"Intermediate","target_audience":"Business"},"blog_post":{"name":"Blog Post","tone":"Conversational","writing_style":"Conversational","transformation_type":"Add examples","length_adjustment":"Make longer","complexity_level":"Intermediate","target_audience":"General"}}};
+        const compatibilityRules = {"translate":{"domain_formality":{"Business":["Formal","Auto"],"Legal":["Formal","Auto"],"Medical":["Formal","Auto"],"Academic":["Formal","Auto"],"Technical":["Formal","Auto","Informal"],"Scientific":["Formal","Auto"],"Casual":["Informal","Auto"],"Literature":["Auto","Formal","Informal"],"General":["Auto","Formal","Informal"]}},"paraphrase":{"tone_style":{"Formal":["Professional and formal","Academic","Technical","Business","Legal","Scientific"],"Casual":["Casual and friendly","Conversational","Descriptive"],"Professional":["Professional and formal","Technical","Business","Analytical","Instructional"],"Friendly":["Casual and friendly","Conversational","Narrative","Creative"],"Academic":["Academic","Scientific","Analytical","Technical"],"Creative":["Creative","Descriptive","Narrative","Poetic","Philosophical"],"Neutral":["Professional and formal","Journalistic","Descriptive","Instructional"],"Confident":["Persuasive","Business","Marketing"],"Authoritative":["Professional and formal","Technical","Legal","Academic"],"Enthusiastic":["Marketing","Creative","Persuasive"],"Humorous":["Creative","Casual and friendly","Conversational"],"Inspirational":["Creative","Persuasive","Philosophical"],"Compassionate":["Conversational","Narrative","Descriptive"],"Analytical":["Technical","Scientific","Academic","Analytical"],"Reflective":["Philosophical","Narrative","Descriptive"],"Optimistic":["Persuasive","Marketing","Casual and friendly"],"Skeptical":["Analytical","Journalistic","Academic"],"Urgent":["Persuasive","Journalistic","Instructional"],"Relaxed":["Casual and friendly","Conversational","Narrative"]},"audience_complexity":{"General":["Simple","Basic","Intermediate"],"Students":["Basic","Intermediate","Advanced"],"Professionals":["Intermediate","Advanced","Expert","Technical"],"Experts":["Advanced","Expert","Technical","Academic"],"Children":["Simple"],"Teenagers":["Simple","Basic","Intermediate"],"Elderly":["Simple","Basic"],"Business":["Intermediate","Advanced"],"Academic":["Advanced","Expert","Academic"],"Technical":["Intermediate","Advanced","Expert","Technical"]}},"rewrite":{"transform_length":{"Standard rewrite":["Keep same length","Make shorter","Make longer"],"Simplify":["Keep same length","Make shorter","Make significantly shorter","25% shorter","50% shorter","75% shorter","Tweet length"],"Elaborate":["Make longer","Make significantly longer","25% longer","50% longer","100% longer","Paragraph length","Essay length"],"Change perspective":["Keep same length","Make shorter","Make longer"],"Make more concise":["Make shorter","Make significantly shorter","25% shorter","50% shorter","75% shorter","Tweet length"],"Make more detailed":["Make longer","Make significantly longer","25% longer","50% longer","100% longer","Paragraph length","Essay length"],"Active to passive":["Keep same length","Make shorter","Make longer"],"Passive to active":["Keep same length","Make shorter","Make longer"],"Improve clarity":["Keep same length","Make longer","25% longer"],"Improve flow":["Keep same length","Make longer","25% longer"],"Add examples":["Make longer","Make significantly longer","50% longer","100% longer"],"Add metaphors":["Make longer","Make significantly longer","25% longer","50% longer"],"Add statistics":["Make longer","Make significantly longer","25% longer","50% longer"],"Add quotes":["Make longer","Make significantly longer","25% longer","50% longer"],"Make more persuasive":["Keep same length","Make longer","25% longer","50% longer"],"Make more objective":["Keep same length","Make shorter","25% shorter"]},"tone_style":{"Formal":["Professional and formal","Academic","Technical","Business","Legal","Scientific"],"Casual":["Casual and friendly","Conversational","Descriptive"],"Professional":["Professional and formal","Technical","Business","Analytical","Instructional"],"Friendly":["Casual and friendly","Conversational","Narrative","Creative"],"Academic":["Academic","Scientific","Analytical","Technical"],"Creative":["Creative","Descriptive","Narrative","Poetic","Philosophical"],"Neutral":["Professional and formal","Journalistic","Descriptive","Instructional"],"Confident":["Persuasive","Business","Marketing"],"Authoritative":["Professional and formal","Technical","Legal","Academic"],"Enthusiastic":["Marketing","Creative","Persuasive"],"Humorous":["Creative","Casual and friendly","Conversational"],"Inspirational":["Creative","Persuasive","Philosophical"],"Compassionate":["Conversational","Narrative","Descriptive"],"Analytical":["Technical","Scientific","Academic","Analytical"],"Reflective":["Philosophical","Narrative","Descriptive"],"Optimistic":["Persuasive","Marketing","Casual and friendly"],"Skeptical":["Analytical","Journalistic","Academic"],"Urgent":["Persuasive","Journalistic","Instructional"],"Relaxed":["Casual and friendly","Conversational","Narrative"]},"audience_complexity":{"General":["Simple","Basic","Intermediate"],"Students":["Basic","Intermediate","Advanced"],"Professionals":["Intermediate","Advanced","Expert","Technical"],"Experts":["Advanced","Expert","Technical","Academic"],"Children":["Simple"],"Teenagers":["Simple","Basic","Intermediate"],"Elderly":["Simple","Basic"],"Business":["Intermediate","Advanced"],"Academic":["Advanced","Expert","Academic"],"Technical":["Intermediate","Advanced","Expert","Technical"]},"transform_style":{"Add examples":["Instructional","Educational","Descriptive"],"Add metaphors":["Creative","Descriptive","Narrative","Poetic"],"Add statistics":["Analytical","Scientific","Academic","Technical","Business"],"Add quotes":["Journalistic","Academic","Persuasive"],"Make more persuasive":["Persuasive","Marketing","Business"],"Make more objective":["Journalistic","Scientific","Academic","Technical"]}}};
+
+        // Function to apply preset with name prefixes based on mode
+        function applyPreset(presetName, mode) {
+            const preset = presets[mode][presetName];
+            if (!preset) return false;
+
+            console.log('Applying preset:', presetName, 'for mode:', mode);
+            console.log('Preset data:', preset);
+
+            // Mapping khusus untuk field rewrite yang tidak menggunakan prefix
+            const rewriteFieldMapping = {
+                'transformation_type': 'transformation_type',
+                'length_adjustment': 'length_adjustment',
+                'tone': 'rewrite_tone',
+                'writing_style': 'rewrite_writing_style',
+                'output_lang': 'rewrite_output_lang',
+                'complexity_level': 'rewrite_complexity',
+                'target_audience': 'rewrite_audience'
+            };
+
+            // Mapping khusus untuk field paraphrase
+            const paraphraseFieldMapping = {
+                'tone': 'paraphrase_tone',
+                'writing_style': 'paraphrase_writing_style',
+                'output_lang': 'paraphrase_output_lang',
+                'paraphrase_level': 'paraphrase_level',
+                'synonym_sensitivity': 'synonym_sensitivity',
+                'complexity_level': 'paraphrase_complexity',
+                'target_audience': 'paraphrase_audience'
+            };
+
+            // Apply preset values
+            Object.keys(preset).forEach(key => {
+                if (key !== 'name') {
+                    let elementId;
+
+                    // Determine the correct element ID based on mode
+                    if (mode === 'translate') {
+                        elementId = key; // translate menggunakan nama asli
+                    } else if (mode === 'rewrite') {
+                        elementId = rewriteFieldMapping[key] || key;
+                    } else if (mode === 'paraphrase') {
+                        elementId = paraphraseFieldMapping[key] || key;
+                    }
+
+                    // Find the element
+                    const element = document.getElementById(elementId) ||
+                        document.querySelector(`[name="${elementId}"]`);
+
+                    console.log('Setting', key, 'to', preset[key], 'on element', elementId, 'found:', !!element);
+
+                    if (element) {
+                        if (element.tagName === 'INPUT' && element.type === 'range') {
+                            element.value = preset[key];
+                            // Update range display
+                            if (key === 'paraphrase_level') {
+                                updateRangeValue(element, 'paraphraseValue');
+                            } else if (key === 'synonym_sensitivity') {
+                                updateRangeValue(element, 'synonymValue');
+                            }
+                        } else if (element.tagName === 'SELECT') {
+                            element.value = preset[key];
+
+                            // Trigger change event to enforce compatibility rules
+                            const event = new Event('change', { bubbles: true });
+                            element.dispatchEvent(event);
+                        }
+                    } else {
+                        console.warn('Element not found for key:', key, 'elementId:', elementId);
+                    }
+                }
+            });
+
+            // Highlight active preset button
+            document.querySelectorAll(`.preset-button[data-mode="${mode}"]`).forEach(btn => {
+                if (btn.getAttribute('data-preset') === presetName) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            return true;
+        }
+
+        // Function to enforce compatibility rules with mode-specific field names
+        function enforceCompatibilityRules(mode, changedElement, newValue = null) {
+            const rules = compatibilityRules[mode];
+            if (!rules) return;
+
+            const value = newValue || changedElement.value;
+            const elementName = changedElement.id || changedElement.name;
+
+            if (mode === 'translate') {
+                // Domain-Formality compatibility
+                if (elementName === 'translation_domain') {
+                    const formalitySelect = document.getElementById('formality_level');
+                    const compatibleFormalities = rules.domain_formality[value] || ['Auto'];
+
+                    if (formalitySelect && !compatibleFormalities.includes(formalitySelect.value)) {
+                        formalitySelect.value = compatibleFormalities[0];
+                        formalitySelect.classList.add('incompatible');
+                        setTimeout(() => formalitySelect.classList.remove('incompatible'), 1000);
+                    }
+                }
+            } else if (mode === 'paraphrase' || mode === 'rewrite') {
+                const prefix = mode + '_';
+
+                // Extract base property name (without mode prefix)
+                let baseProperty = elementName;
+                if (elementName.startsWith(prefix)) {
+                    baseProperty = elementName.substring(prefix.length);
+                }
+
+                // Tone-Style compatibility
+                if (baseProperty === 'tone') {
+                    const styleSelect = document.getElementById(`${prefix}writing_style`);
+                    const compatibleStyles = rules.tone_style[value] || [];
+
+                    if (styleSelect && compatibleStyles.length > 0 && !compatibleStyles.includes(styleSelect.value)) {
+                        styleSelect.value = compatibleStyles[0];
+                        styleSelect.classList.add('incompatible');
+                        setTimeout(() => styleSelect.classList.remove('incompatible'), 1000);
+                    }
+                }
+
+                // Audience-Complexity compatibility
+                if (baseProperty === 'target_audience') {
+                    const complexitySelect = document.getElementById(`${prefix}complexity`);
+                    const compatibleComplexities = rules.audience_complexity[value] || [];
+
+                    if (complexitySelect && compatibleComplexities.length > 0 && !compatibleComplexities.includes(complexitySelect.value)) {
+                        complexitySelect.value = compatibleComplexities[0];
+                        complexitySelect.classList.add('incompatible');
+                        setTimeout(() => complexitySelect.classList.remove('incompatible'), 1000);
+                    }
+                }
+
+                // For rewrite mode, additional rules for transformation type
+                if (mode === 'rewrite' && baseProperty === 'transformation_type') {
+                    // Transform-Length compatibility
+                    const lengthSelect = document.getElementById('length_adjustment');
+                    const compatibleLengths = rules.transform_length[value] || [];
+
+                    if (lengthSelect && compatibleLengths.length > 0 && !compatibleLengths.includes(lengthSelect.value)) {
+                        lengthSelect.value = compatibleLengths[0];
+                        lengthSelect.classList.add('incompatible');
+
+                        // Update tooltip text
+                        const tooltip = document.getElementById('length_adjustment_tooltip');
+                        if (tooltip) {
+                            tooltip.textContent = `Compatible lengths for "${value}" are: ${compatibleLengths.join(', ')}`;
+                        }
+
+                        setTimeout(() => lengthSelect.classList.remove('incompatible'), 1000);
+                    }
+
+                    // Transform-Style compatibility
+                    if (rules.transform_style[value]) {
+                        const styleSelect = document.getElementById('rewrite_writing_style');
+                        const compatibleStyles = rules.transform_style[value] || [];
+
+                        if (styleSelect && !compatibleStyles.includes(styleSelect.value)) {
+                            styleSelect.value = compatibleStyles[0];
+                            styleSelect.classList.add('incompatible');
+                            setTimeout(() => styleSelect.classList.remove('incompatible'), 1000);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Set active mode and update form
+        function setMode(mode) {
+            // Save current content to the appropriate content store
+            if (originalQuill && resultQuill) {
+                // Simpan konten HTML persis seperti yang ditampilkan, tanpa modifikasi
+                modeContent[currentMode].input = originalQuill.root.innerHTML;
+                modeContent[currentMode].result = resultQuill.root.innerHTML;
+            }
+
+            // Update current mode
+            currentMode = mode;
+            document.getElementById('mode').value = mode;
+
+            // Hide all settings
+            document.getElementById('translateSettings').style.display = 'none';
+            document.getElementById('paraphraseSettings').style.display = 'none';
+            document.getElementById('rewriteSettings').style.display = 'none';
+
+            // Update button text and title labels
+            const actionButton = document.querySelector('.action-button');
+            const inputTextLabel = document.getElementById('inputTextLabel');
+            const resultTextLabel = document.getElementById('resultTextLabel');
+
+            // Show appropriate settings and update UI text
+            if (mode === 'translate') {
+                document.getElementById('translateSettings').style.display = 'flex';
+                if (!monthlyLimitExceeded) {
+                    actionButton.textContent = 'Translate';
+                }
+                inputTextLabel.textContent = 'Original Text';
+                resultTextLabel.textContent = 'Translated Text';
+            } else if (mode === 'paraphrase') {
+                document.getElementById('paraphraseSettings').style.display = 'flex';
+                if (!monthlyLimitExceeded) {
+                    actionButton.textContent = 'Paraphrase';
+                }
+                inputTextLabel.textContent = 'Original Text';
+                resultTextLabel.textContent = 'Paraphrased Text';
+            } else if (mode === 'rewrite') {
+                document.getElementById('rewriteSettings').style.display = 'flex';
+                if (!monthlyLimitExceeded) {
+                    actionButton.textContent = 'Rewrite';
+                }
+                inputTextLabel.textContent = 'Original Text';
+                resultTextLabel.textContent = 'Rewritten Text';
+            }
+
+            // Set content from the correct mode using proper Quill methods
+            if (originalQuill && resultQuill) {
+                // Gunakan metode yang lebih aman untuk mempertahankan struktur HTML asli
+
+                // Kosongkan editor terlebih dahulu
+                originalQuill.setContents([]);
+                resultQuill.setContents([]);
+
+                // Gunakan dangerouslyPasteHTML untuk memastikan format asli terjaga
+                if (modeContent[mode].input) {
+                    originalQuill.clipboard.dangerouslyPasteHTML(0, modeContent[mode].input, 'api');
+                }
+
+                if (modeContent[mode].result) {
+                    resultQuill.clipboard.dangerouslyPasteHTML(0, modeContent[mode].result, 'api');
+                }
+
+                // Update character counts after changing content with slight delay to ensure processing
+                setTimeout(function () {
+                    updateQuillCharCount(originalQuill, 'originalCharCount');
+                    updateQuillCharCount(resultQuill, 'resultCharCount');
+                }, 50);
+            }
+
+            // Update active tab
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-mode') === mode) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+
+        // Update range value display
+        function updateRangeValue(slider, valueId) {
+            document.getElementById(valueId).textContent = slider.value;
+        }
+
+        // ENHANCED: Update character count for Quill editor with monthly limit checking
+        function updateQuillCharCount(quill, counterId) {
+            // Get just text content without HTML tags
+            const text = quill.getText();
+            const count = text.length - 1; // Subtract 1 for the trailing newline Quill adds
+
+            if (counterId === 'originalCharCount') {
+                // For input text, show remaining chars from limit
+                const counterElement = document.getElementById(counterId);
+                counterElement.textContent = count.toLocaleString() + ' / ' + characterLimit.toLocaleString();
+
+                // Add warning classes based on percentage of limit used
+                counterElement.classList.remove('limit-warning', 'limit-exceeded');
+
+                const submitButton = document.getElementById('submitButton');
+
+                // Check both character limit and monthly limit
+                const characterLimitExceeded = count > characterLimit;
+                const shouldDisableButton = characterLimitExceeded || monthlyLimitExceeded;
+
+                if (characterLimitExceeded) {
+                    counterElement.classList.add('limit-exceeded');
+
+                    // Create appropriate message based on the character limit
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'error';
+
+                    // Different messages based on limit
+                    if (characterLimit === 1000) {
+                        errorMessage.innerHTML = "<b>Character limit exceeded</b>. As a Free Member, you can only process up to 1000 characters. <a href='membership.php' class='upgrade-link'>Upgrade to Pro</a> for up to 15,000 characters per request.";
+                    } else if (characterLimit === 15000) {
+                        errorMessage.innerHTML = "<b>Character limit exceeded</b>. As a Pro Member, you can process up to 15,000 characters. <a href='membership.php' class='upgrade-link'>Upgrade to VIP</a> for up to 30,000 characters per request.";
+                    } else {
+                        errorMessage.innerHTML = "Character limit exceeded!";
+                    }
+
+                    // Check if error message already exists
+                    const existingError = document.querySelector('.error');
+                    if (!existingError) {
+                        document.querySelector('.main-content').insertBefore(errorMessage, document.querySelector('.tabs'));
+                    }
+
+                    // Change submit button color to light grey and add message
+                    submitButton.style.backgroundColor = 'lightgrey';
+                    submitButton.dataset.originalText = submitButton.dataset.originalText || submitButton.textContent;
+                    submitButton.textContent = "Character limit exceeded!";
+                } else if (!monthlyLimitExceeded) {
+                    // Restore button color and original text if both limits are not exceeded
+                    submitButton.style.backgroundColor = '';
+                    if (submitButton.dataset.originalText) {
+                        submitButton.textContent = submitButton.dataset.originalText;
+                    }
+
+                    // Remove character limit error message if exists
+                    const existingError = document.querySelector('.error');
+                    if (existingError && existingError.textContent.includes('Character limit')) {
+                        existingError.remove();
+                    }
+                }
+
+                // Update submit button state - disabled if either limit is exceeded
+                submitButton.disabled = shouldDisableButton;
+                if (shouldDisableButton) {
+                    submitButton.style.cursor = 'not-allowed';
+                } else {
+                    submitButton.style.cursor = 'pointer';
+                }
+            } else {
+                // For result text, just show total char count
+                document.getElementById(counterId).textContent = count.toLocaleString() + ' characters';
+            }
+        }
+
+        // Paste text from clipboard, preserving formatting
+        async function pasteText() {
+            try {
+                // Modern clipboard API for formatted content
+                const clipboardItems = await navigator.clipboard.read();
+
+                for (const clipboardItem of clipboardItems) {
+                    // Try to get HTML format
+                    if (clipboardItem.types.includes('text/html')) {
+                        const blob = await clipboardItem.getType('text/html');
+                        const html = await blob.text();
+
+                        // Insert the HTML at current selection using a mode that preserves structure
+                        const range = originalQuill.getSelection() || { index: 0 };
+                        originalQuill.clipboard.dangerouslyPasteHTML(range.index, html, 'api');
+                        updateQuillCharCount(originalQuill, 'originalCharCount');
+                        return;
+                    }
+                }
+
+                // Fallback to plain text if HTML not available
+                const text = await navigator.clipboard.readText();
+                const range = originalQuill.getSelection() || { index: 0 };
+                originalQuill.insertText(range.index, text);
+                updateQuillCharCount(originalQuill, 'originalCharCount');
+            } catch (err) {
+                console.error('Failed to read clipboard:', err);
+                // Fallback for older browsers or permissions issues
+                alert('Clipboard access denied or not supported. Please press Ctrl+V to paste.');
+            }
+        }
+
+        // Copy result to clipboard and show success message
+        function copyResult() {
+            // Get HTML content from Quill
+            const resultHtml = resultQuill.root.innerHTML;
+
+            // Create a temporary div to hold the HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = resultHtml;
+            document.body.appendChild(tempDiv);
+
+            // Select the div content
+            const range = document.createRange();
+            range.selectNodeContents(tempDiv);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            // Copy the content
+            document.execCommand('copy');
+
+            // Clean up
+            selection.removeAllRanges();
+            document.body.removeChild(tempDiv);
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+
+            // Hide after 2 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 2000);
+        }
+
+        // Clear original text
+        function clearOriginalText() {
+            originalQuill.setContents([]);
+            updateQuillCharCount(originalQuill, 'originalCharCount');
+        }
+
+        // Clear result text
+        function clearResultText() {
+            resultQuill.setContents([]);
+            updateQuillCharCount(resultQuill, 'resultCharCount');
+        }
+
+        // Function to save all current settings to ensure they persist
+        function saveCurrentSettings() {
+            // Save translate settings
+            const sourceSelect = document.querySelector('[name="source_lang"]');
+            const targetSelect = document.querySelector('[name="target_lang"]');
+            const formalitySelect = document.querySelector('[name="formality_level"]');
+            const domainSelect = document.querySelector('[name="translation_domain"]');
+
+            // Save paraphrase settings
+            const paraphraseToneSelect = document.querySelector('[name="paraphrase_tone"]');
+            const paraphraseStyleSelect = document.querySelector('[name="paraphrase_writing_style"]');
+            const paraphraseOutputSelect = document.querySelector('[name="paraphrase_output_lang"]');
+            const paraphraseLevelRange = document.querySelector('[name="paraphrase_level"]');
+            const synonymRange = document.querySelector('[name="synonym_sensitivity"]');
+            const paraphraseComplexitySelect = document.querySelector('[name="paraphrase_complexity_level"]');
+            const paraphraseAudienceSelect = document.querySelector('[name="paraphrase_target_audience"]');
+
+            // Save rewrite settings
+            const rewriteToneSelect = document.querySelector('[name="rewrite_tone"]');
+            const rewriteStyleSelect = document.querySelector('[name="rewrite_writing_style"]');
+            const rewriteOutputSelect = document.querySelector('[name="rewrite_output_lang"]');
+            const transformSelect = document.querySelector('[name="transformation_type"]');
+            const lengthSelect = document.querySelector('[name="length_adjustment"]');
+            const rewriteComplexitySelect = document.querySelector('[name="rewrite_complexity_level"]');
+            const rewriteAudienceSelect = document.querySelector('[name="rewrite_target_audience"]');
+
+            // Store in sessionStorage as backup
+            if (typeof (Storage) !== "undefined") {
+                sessionStorage.setItem('currentMode', currentMode);
+
+                // Store translate settings
+                if (sourceSelect) sessionStorage.setItem('source_lang', sourceSelect.value);
+                if (targetSelect) sessionStorage.setItem('target_lang', targetSelect.value);
+                if (formalitySelect) sessionStorage.setItem('formality_level', formalitySelect.value);
+                if (domainSelect) sessionStorage.setItem('translation_domain', domainSelect.value);
+
+                // Store paraphrase settings
+                if (paraphraseToneSelect) sessionStorage.setItem('paraphrase_tone', paraphraseToneSelect.value);
+                if (paraphraseStyleSelect) sessionStorage.setItem('paraphrase_writing_style', paraphraseStyleSelect.value);
+                if (paraphraseOutputSelect) sessionStorage.setItem('paraphrase_output_lang', paraphraseOutputSelect.value);
+                if (paraphraseLevelRange) sessionStorage.setItem('paraphrase_level', paraphraseLevelRange.value);
+                if (synonymRange) sessionStorage.setItem('synonym_sensitivity', synonymRange.value);
+                if (paraphraseComplexitySelect) sessionStorage.setItem('paraphrase_complexity_level', paraphraseComplexitySelect.value);
+                if (paraphraseAudienceSelect) sessionStorage.setItem('paraphrase_target_audience', paraphraseAudienceSelect.value);
+
+                // Store rewrite settings
+                if (rewriteToneSelect) sessionStorage.setItem('rewrite_tone', rewriteToneSelect.value);
+                if (rewriteStyleSelect) sessionStorage.setItem('rewrite_writing_style', rewriteStyleSelect.value);
+                if (rewriteOutputSelect) sessionStorage.setItem('rewrite_output_lang', rewriteOutputSelect.value);
+                if (transformSelect) sessionStorage.setItem('transformation_type', transformSelect.value);
+                if (lengthSelect) sessionStorage.setItem('length_adjustment', lengthSelect.value);
+                if (rewriteComplexitySelect) sessionStorage.setItem('rewrite_complexity_level', rewriteComplexitySelect.value);
+                if (rewriteAudienceSelect) sessionStorage.setItem('rewrite_target_audience', rewriteAudienceSelect.value);
+            }
+        }
+
+        // ENHANCED: Modified form submit handler with comprehensive limit checking
+        document.getElementById('transformForm').addEventListener('submit', function (e) {
+            // Check if text exceeds character limit
+            const text = originalQuill.getText();
+            const count = text.length - 1; // Subtract 1 for the trailing newline
+
+            // Check character limit
+            if (count > characterLimit) {
+                e.preventDefault();
+                if (characterLimit === 1000) {
+                    alert('Character limit exceeded. As a Free Member, you can only process up to 1000 characters per request. Upgrade to Pro for up to 15,000 characters.');
+                } else if (characterLimit === 15000) {
+                    alert('Character limit exceeded. As a Pro Member, you can process up to 15,000 characters per request. Upgrade to VIP for up to 30,000 characters.');
+                } else {
+                    alert('Character limit exceeded. You can only process up to ' + characterLimit.toLocaleString() + ' characters per request.');
+                }
+                return false;
+            }
+
+            // Check monthly request limit
+            if (monthlyLimitExceeded) {
+                e.preventDefault();
+                let upgradeMessage = '';
+                if (monthlyRequestLimit === 10) {
+                    upgradeMessage = ' Upgrade to Pro for 100 requests per month.';
+                } else if (monthlyRequestLimit === 100) {
+                    upgradeMessage = ' Upgrade to VIP for unlimited requests per month.';
+                }
+                alert('Monthly request limit exceeded. You have used all ' + monthlyRequestLimit + ' requests for this month.' + upgradeMessage);
+                return false;
+            }
+
+            // Check if empty
+            if (count <= 1) {
+                e.preventDefault();
+                alert('Please enter some text to process.');
+                return false;
+            }
+
+            // Save all current settings before submission
+            saveCurrentSettings();
+
+            // Store HTML content for form submission
+            const originalHTML = originalQuill.root.innerHTML;
+            document.getElementById('original_text_hidden').value = originalHTML;
+
+            // Backup original content before form submission
+            modeContent[currentMode].input = originalHTML;
+
+            // Show processing overlay
+            const overlay = document.getElementById('processingOverlay');
+            overlay.style.display = 'flex';
+
+            // Update processing message based on text length
+            const inputLength = text.length;
+            const processingDetails = document.getElementById('processingDetails');
+
+            if (inputLength > 10000) {
+                processingDetails.textContent = 'Processing a large text. This may take several minutes...';
+            } else if (inputLength > 7000) {
+                processingDetails.textContent = 'Processing your text. This may take a minute or two...';
+            } else if (inputLength > 3000) {
+                processingDetails.textContent = 'Processing your text. This may take up to a minute...';
+            } else {
+                processingDetails.textContent = 'This may take a few moments...';
+            }
+        });
+
+        // Initialize on page load
+        window.onload = function () {
+            // Initialize Quill editors
+            originalQuill = new Quill('#original_text_editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                        ['blockquote', 'code-block'],
+                        [{ 'align': [] }],
+                        ['clean']
+                    ],
+                    clipboard: {
+                        matchVisual: false
+                    },
+                    history: {
+                        userOnly: true
+                    }
+                },
+                formats: ['header', 'bold', 'italic', 'underline', 'strike', 'list', 'bullet', 'blockquote', 'code-block', 'align'],
+                preserveWhitespace: true,
+                placeholder: 'Enter text to paraphrase...'
+            });
+
+            resultQuill = new Quill('#result_text_editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: false,
+                    clipboard: {
+                        matchVisual: false
+                    }
+                },
+                preserveWhitespace: true,
+                readOnly: true
+            });
+
+            // Load initial content based on current mode
+            if (modeContent[currentMode].input) {
+                originalQuill.clipboard.dangerouslyPasteHTML(0, modeContent[currentMode].input, 'api');
+            }
+
+            if (modeContent[currentMode].result) {
+                resultQuill.clipboard.dangerouslyPasteHTML(0, modeContent[currentMode].result, 'api');
+            }
+
+            // Update character count on editor change
+            originalQuill.on('text-change', function (delta, oldDelta, source) {
+                updateQuillCharCount(originalQuill, 'originalCharCount');
+                document.getElementById('original_text_hidden').value = originalQuill.root.innerHTML;
+            });
+
+            resultQuill.on('text-change', function () {
+                updateQuillCharCount(resultQuill, 'resultCharCount');
+            });
+
+            // Initialize character counts
+            setTimeout(function () {
+                updateQuillCharCount(originalQuill, 'originalCharCount');
+                updateQuillCharCount(resultQuill, 'resultCharCount');
+            }, 100);
+
+            // Initialize range values
+            const paraphraseSlider = document.querySelector('input[name="paraphrase_level"]');
+            const synonymSlider = document.querySelector('input[name="synonym_sensitivity"]');
+
+            if (paraphraseSlider) {
+                updateRangeValue(paraphraseSlider, 'paraphraseValue');
+            }
+
+            if (synonymSlider) {
+                updateRangeValue(synonymSlider, 'synonymValue');
+            }
+
+            // Add event listeners for compatibility rules
+            const translationDomain = document.getElementById('translation_domain');
+            const formalityLevel = document.getElementById('formality_level');
+            const paraphraseTone = document.getElementById('paraphrase_tone');
+            const paraphraseStyle = document.getElementById('paraphrase_writing_style');
+            const paraphraseComplexity = document.getElementById('paraphrase_complexity');
+            const paraphraseAudience = document.getElementById('paraphrase_audience');
+            const rewriteTone = document.getElementById('rewrite_tone');
+            const rewriteStyle = document.getElementById('rewrite_writing_style');
+            const rewriteComplexity = document.getElementById('rewrite_complexity');
+            const rewriteAudience = document.getElementById('rewrite_audience');
+            const transformationType = document.getElementById('transformation_type');
+
+            // Add change listeners
+            if (translationDomain) {
+                translationDomain.addEventListener('change', function () {
+                    enforceCompatibilityRules('translate', this);
+                });
+            }
+
+            if (paraphraseTone) {
+                paraphraseTone.addEventListener('change', function () {
+                    enforceCompatibilityRules('paraphrase', this);
+                });
+            }
+
+            if (paraphraseAudience) {
+                paraphraseAudience.addEventListener('change', function () {
+                    enforceCompatibilityRules('paraphrase', this);
+                });
+            }
+
+            if (rewriteTone) {
+                rewriteTone.addEventListener('change', function () {
+                    enforceCompatibilityRules('rewrite', this);
+                });
+            }
+
+            if (rewriteAudience) {
+                rewriteAudience.addEventListener('change', function () {
+                    enforceCompatibilityRules('rewrite', this);
+                });
+            }
+
+            if (transformationType) {
+                transformationType.addEventListener('change', function () {
+                    enforceCompatibilityRules('rewrite', this);
+                });
+            }
+
+            // Add preset button event listeners
+            document.querySelectorAll('.preset-button').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const preset = this.getAttribute('data-preset');
+                    const mode = this.getAttribute('data-mode');
+                    applyPreset(preset, mode);
+                });
+            });
+
+            // Handle tab clicks
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function () {
+                    setMode(this.getAttribute('data-mode'));
+                });
+            });
+
+            // Add event listeners for advanced settings toggle
+            document.querySelectorAll('.settings-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    const toggleIcon = this.querySelector('.toggle-icon');
+
+                    if (targetElement.classList.contains('collapsed')) {
+                        targetElement.classList.remove('collapsed');
+                        targetElement.classList.add('expanded');
+                        toggleIcon.style.transform = 'rotate(180deg)';
+                    } else {
+                        targetElement.classList.remove('expanded');
+                        targetElement.classList.add('collapsed');
+                        toggleIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // ENHANCED: Check monthly limit on page load and update UI accordingly
+            if (monthlyLimitExceeded) {
+                const submitButton = document.getElementById('submitButton');
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.style.backgroundColor = '#ccc';
+                    submitButton.style.cursor = 'not-allowed';
+                    submitButton.textContent = 'Monthly Limit Reached';
+                }
+            }
+
+            // Initialize compatibility check on page load
+            if (currentMode === 'translate') {
+                if (translationDomain) {
+                    enforceCompatibilityRules('translate', translationDomain);
+                }
+            } else if (currentMode === 'paraphrase') {
+                if (paraphraseTone) {
+                    enforceCompatibilityRules('paraphrase', paraphraseTone);
+                }
+                if (paraphraseAudience) {
+                    enforceCompatibilityRules('paraphrase', paraphraseAudience);
+                }
+            } else if (currentMode === 'rewrite') {
+                if (rewriteTone) {
+                    enforceCompatibilityRules('rewrite', rewriteTone);
+                }
+                if (rewriteAudience) {
+                    enforceCompatibilityRules('rewrite', rewriteAudience);
+                }
+                if (transformationType) {
+                    enforceCompatibilityRules('rewrite', transformationType);
+                }
+            }
+        };
+    </script>
+
+            <script>
+            document.querySelectorAll('.text-container').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    document.getElementById('signupPopup').style.display = 'flex';
+                });
+            });
+            function closePopup(event) {
+                event.preventDefault();
+                document.getElementById('signupPopup').style.display = 'none';
+            }
+        </script>
+    
+
+
+</body></html>

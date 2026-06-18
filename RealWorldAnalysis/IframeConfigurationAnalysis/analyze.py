@@ -327,6 +327,13 @@ def calculate_stats(sites):
         'sandbox_specific_condition_frames': 0,
         'sandbox_allow_same_origin_and_scripts': 0,
         
+        # Counters for ALL sandboxed iframes (for paper verification)
+        'sandbox_allow_same_origin_count': 0,
+        'sandbox_allow_scripts_count': 0,
+        'sandbox_allow_forms_count': 0,
+        'sandbox_allow_popups_count': 0,
+        'sandbox_allow_popups_escape_count': 0,
+        
         'sandbox_cross_site': 0,
         'sandbox_same_site': 0,
         
@@ -395,6 +402,19 @@ def calculate_stats(sites):
             if has_sandbox:
                 stats['sandboxed_iframes'] += 1
                 site_has_sandbox = True
+                
+                # Track directives for ALL sandboxed iframes (for paper verification)
+                if sandbox_directives is not None:
+                    if 'allow-same-origin' in sandbox_directives:
+                        stats['sandbox_allow_same_origin_count'] += 1
+                    if 'allow-scripts' in sandbox_directives:
+                        stats['sandbox_allow_scripts_count'] += 1
+                    if 'allow-forms' in sandbox_directives:
+                        stats['sandbox_allow_forms_count'] += 1
+                    if 'allow-popups' in sandbox_directives:
+                        stats['sandbox_allow_popups_count'] += 1
+                    if 'allow-popups-to-escape-sandbox' in sandbox_directives:
+                        stats['sandbox_allow_popups_escape_count'] += 1
                 
                 if sandbox_directives is not None:
                     # Check for the specific condition: CROSS-SITE AND (allow-scripts OR allow-forms) AND NOT allow-same-origin
@@ -507,23 +527,26 @@ def write_report(stats, output_path, title):
         f.write(f"      Same-site:     {stats['non_sandbox_same_site']:>6}  ({format_percentage(stats['non_sandbox_same_site'], total_non_sandbox) if total_non_sandbox > 0 else 'N/A'})\n\n")
         
         f.write("-" * 80 + "\n")
-        f.write("3. SANDBOX DIRECTIVES (CROSS-SITE IFRAMES ONLY)\n")
+        f.write("3. SANDBOX DIRECTIVES (ALL SANDBOXED IFRAMES)\n")
         f.write("-" * 80 + "\n")
-        total_cross_site_sandbox = stats['sandbox_cross_site']
-        f.write(f"Total sandboxed cross-site iframes: {total_cross_site_sandbox}\n\n")
+        total_sandboxed_all = stats['sandboxed_iframes']
+        f.write(f"Total sandboxed iframes: {total_sandboxed_all}\n\n")
         
         f.write("  Specific conditions (Out of all sandboxed):\n")
-        f.write(f"    Cross-site + Sandboxed + (allow-scripts OR allow-forms) + NO allow-same-origin: {stats['sandbox_specific_condition_frames']:>6}  ({format_percentage(stats['sandbox_specific_condition_frames'], total_sandbox)})\n")
-        f.write(f"    Sandboxed + allow-scripts + allow-same-origin: {stats['sandbox_allow_same_origin_and_scripts']:>6}  ({format_percentage(stats['sandbox_allow_same_origin_and_scripts'], total_sandbox)})\n\n")
+        f.write(f"    Cross-site + Sandboxed + (allow-scripts OR allow-forms) + NO allow-same-origin: {stats['sandbox_specific_condition_frames']:>6}  ({format_percentage(stats['sandbox_specific_condition_frames'], total_sandboxed_all)})\n")
+        f.write(f"    Sandboxed + allow-scripts + allow-same-origin: {stats['sandbox_allow_same_origin_and_scripts']:>6}  ({format_percentage(stats['sandbox_allow_same_origin_and_scripts'], total_sandboxed_all)})\n\n")
         
-        f.write("  Individual directive usage (Cross-site):\n")
-        for directive, count in stats['sandbox_directives_count'].most_common():
-            f.write(f"    {directive:<50} {count:>6}  ({format_percentage(count, total_cross_site_sandbox)})\n")
+        f.write("  Individual directive usage (All sandboxed):\n")
+        f.write(f"    allow-same-origin                                    {stats['sandbox_allow_same_origin_count']:>6}  ({format_percentage(stats['sandbox_allow_same_origin_count'], total_sandboxed_all)})\n")
+        f.write(f"    allow-scripts                                        {stats['sandbox_allow_scripts_count']:>6}  ({format_percentage(stats['sandbox_allow_scripts_count'], total_sandboxed_all)})\n")
+        f.write(f"    allow-forms                                          {stats['sandbox_allow_forms_count']:>6}  ({format_percentage(stats['sandbox_allow_forms_count'], total_sandboxed_all)})\n")
+        f.write(f"    allow-popups                                         {stats['sandbox_allow_popups_count']:>6}  ({format_percentage(stats['sandbox_allow_popups_count'], total_sandboxed_all)})\n")
+        f.write(f"    allow-popups-to-escape-sandbox                       {stats['sandbox_allow_popups_escape_count']:>6}  ({format_percentage(stats['sandbox_allow_popups_escape_count'], total_sandboxed_all)})\n")
         f.write("\n")
         
-        f.write("  Directive combinations (top 20, Cross-site):\n")
+        f.write("  Directive combinations (top 20, All sandboxed):\n")
         for i, (combination, count) in enumerate(stats['sandbox_combinations'].most_common(20)):
-            f.write(f"    {i+1:>2}. {combination:<60} {count:>6}  ({format_percentage(count, total_cross_site_sandbox)})\n")
+            f.write(f"    {i+1:>2}. {combination:<60} {count:>6}  ({format_percentage(count, total_sandboxed_all)})\n")
         f.write("\n")
         
         f.write("-" * 80 + "\n")

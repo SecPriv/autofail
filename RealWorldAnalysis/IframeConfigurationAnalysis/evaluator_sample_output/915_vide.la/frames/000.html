@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en"><head><style type="text/css">.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 2147483647;
+  transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+</style>
+  <meta charset="utf-8">
+  <!-- ===== Turbo: navigasi tanpa reload (app-like). Dimuat sekali di <head> ===== -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.13/dist/turbo.es2017-esm.min.js"></script>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,shrink-to-fit=no,viewport-fit=cover">
+  <title>Vidoy - Make money by sharing video</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+        <link rel="manifest" href="/assets/img/manifest.json">
+        <meta name="msapplication-TileColor" content="#020203">
+        <meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#0c0e12">
+		<meta name="keywords" content="videq,vidoy,doodstream,file upload,share files,free upload, poop, poophd">
+  
+  
+  <meta name="description" content="Login or create your Vidoy creator account.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/homepage/style.css?S" data-turbo-track="reload">
+  <link rel="stylesheet" href="/assets/css/vidoy-modern.css?v8" data-turbo-track="reload">
+  <!-- .intro-copy dipindah ke /assets/css/pages/homepage.css -->
+</head>
+<body>
+  	
+
+<link rel="stylesheet" href="/assets/css/pages/homepage.css?v=8">
+
+
+                
+        
+<div class="page-bg" aria-hidden="true"></div>
+
+  <main class="auth-page">
+    <section class="auth-shell" aria-label="Vidoy login area">
+      <div class="intro-panel">
+        <a class="brand" href="/" aria-label="Vidoy home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="145px" viewBox="0 0 375 112.5"><g><path fill="#fe6081" d="M 56.148438 82.09375 L 26.28125 29.898438 L 59.019531 29.898438 L 72.5625 53.484375 L 105.207031 53.484375 L 118.75 29.898438 L 86.015625 29.898438 L 72.5625 53.484375 Z M 56.148438 82.09375 "></path><path fill="#fff" d="M 155.523438 65.414062 L 165.117188 33.933594 L 179.46875 33.933594 L 163.773438 78.6875 L 147.089844 78.6875 L 131.484375 33.933594 L 145.925781 33.933594 Z M 196.417969 33.933594 L 196.417969 78.6875 L 182.875 78.6875 L 182.875 33.933594 Z M 201.261719 55.90625 C 201.261719 51.332031 202.160156 47.386719 203.863281 43.976562 C 205.566406 40.570312 207.898438 37.878906 210.859375 36.085938 C 213.816406 34.203125 217.136719 33.304688 220.722656 33.304688 C 223.59375 33.304688 226.285156 33.933594 228.707031 35.097656 C 231.128906 36.355469 233.011719 37.96875 234.355469 40.03125 L 234.355469 16.804688 L 247.898438 16.804688 L 247.898438 78.6875 L 234.355469 78.6875 L 234.355469 71.691406 C 233.101562 73.84375 231.308594 75.457031 228.976562 76.714844 C 226.644531 77.96875 223.863281 78.597656 220.8125 78.597656 C 217.136719 78.597656 213.90625 77.699219 210.949219 75.816406 C 207.988281 73.933594 205.65625 71.242188 203.953125 67.835938 C 202.25 64.425781 201.351562 60.390625 201.351562 55.816406 Z M 234.265625 55.996094 C 234.265625 52.585938 233.371094 49.988281 231.484375 48.015625 C 229.601562 46.039062 227.359375 45.054688 224.671875 45.054688 C 221.980469 45.054688 219.738281 46.039062 217.855469 47.925781 C 215.96875 49.808594 215.074219 52.5 215.074219 55.90625 C 215.074219 59.3125 215.96875 61.914062 217.855469 63.886719 C 219.738281 65.863281 221.980469 66.847656 224.671875 66.847656 C 227.359375 66.847656 229.601562 65.863281 231.484375 63.886719 C 233.371094 61.914062 234.265625 59.3125 234.265625 55.90625 Z M 275.433594 78.6875 C 271.128906 78.6875 267.179688 77.789062 263.773438 75.90625 C 260.367188 74.023438 257.585938 71.421875 255.613281 68.015625 C 253.640625 64.605469 252.652344 60.570312 252.652344 55.996094 C 252.652344 51.421875 253.640625 47.476562 255.613281 43.976562 C 257.585938 40.570312 260.367188 37.878906 263.863281 35.996094 C 267.359375 34.113281 271.21875 33.214844 275.523438 33.214844 C 279.828125 33.214844 283.773438 34.113281 287.183594 35.996094 C 290.679688 37.878906 293.371094 40.480469 295.433594 43.976562 C 297.40625 47.386719 298.390625 51.421875 298.390625 55.996094 C 298.390625 60.570312 297.40625 64.515625 295.34375 68.015625 C 293.28125 71.421875 290.589844 74.113281 287.003906 75.996094 C 283.503906 77.878906 279.558594 78.777344 275.253906 78.777344 Z M 275.433594 67.027344 C 278.035156 67.027344 280.1875 66.039062 282.070312 64.15625 C 283.863281 62.273438 284.761719 59.582031 284.761719 55.996094 C 284.761719 52.5 283.863281 49.71875 282.070312 47.835938 C 280.277344 45.949219 278.125 44.964844 275.523438 44.964844 C 272.921875 44.964844 270.679688 45.859375 268.976562 47.746094 C 267.269531 49.628906 266.375 52.320312 266.375 55.90625 C 266.375 59.402344 267.269531 62.183594 268.976562 64.066406 C 270.679688 65.949219 272.832031 66.9375 275.433594 66.9375 Z M 348.527344 34.023438 L 322.609375 95.277344 L 308.078125 95.277344 L 316.507812 76.625 L 298.570312 34.023438 L 313.640625 34.023438 L 323.863281 61.644531 L 334 34.023438 L 348.617188 34.023438 Z"></path><path fill="#fe6081" d="M 182.964844 16.804688 L 196.507812 16.804688 L 196.507812 16.980469 C 196.507812 24.335938 190.5 30.253906 183.234375 30.253906 L 183.054688 30.253906 L 183.054688 16.714844 Z"></path></g></svg>
+        </a>
+
+        <div class="intro-copy">
+          
+          <h1>Make money by sharing videos</h1>
+          <p>
+            Manage videos, track viewers, check earnings, and keep your account secure from one simple dashboard.
+          </p>
+          
+          
+           <img width="80%" src="/assets/img/hero2.png" class="hero-illustration" alt="Vidoy dashboard illustration">
+  
+        </div>
+
+
+
+
+
+ 
+
+     
+      </div>
+      
+      
+      
+ 
+
+      <aside class="auth-card" aria-label="Login and register form">
+        <div class="auth-tabs" role="tablist" aria-label="Account access tabs">
+          <button class="auth-tab active" type="button" data-tab="login" role="tab" aria-selected="true">Login</button>
+          <button class="auth-tab" type="button" data-tab="register" role="tab" aria-selected="false">Register</button>
+        </div>
+        
+        
+             
+
+
+
+        <form class="auth-form active" id="login-form" action="/signin" method="post" data-panel="login" data-turbo="false">
+          <label class="field-group">
+            
+            <input type="text" name="username" placeholder="Username or email" autocomplete="username" required="">
+          </label>
+
+          <label class="field-group">
+           
+            <div class="password-field">
+              <input type="password" name="password" placeholder="Password" autocomplete="current-password" required="">
+              <button type="button" class="toggle-password" aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg></button>
+            </div>
+          </label>
+
+          <input type="hidden" name="fp" value="b3e4b9d1102e06f9659a75f1b14a4fdf" autocomplete="off">
+
+          <button class="btn btn-primary btn-full" type="submit">Login</button>
+
+          <p class="switch-note">
+            New to Vidoy?
+            <button type="button" data-open-tab="register">Create account</button>
+          </p>
+          <div class="switch-note">
+            <a href="/forgot-password">Forgot Password</a>
+          </div>
+        </form>
+
+        <form class="auth-form" id="register-form" action="/signup" method="post" data-turbo="false" data-panel="register">
+          <label class="field-group">
+            
+            <input type="text" name="username" placeholder="Username" autocomplete="username" minlength="3" required="" disabled="">
+          </label>
+
+          <label class="field-group">
+            
+            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required="" disabled="">
+          </label>
+
+          <label class="field-group">
+            
+            <div class="password-field">
+              <input type="password" name="password" placeholder="Password" autocomplete="new-password" minlength="8" required="" disabled="">
+              <button type="button" class="toggle-password" aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg></button>
+            </div>
+         
+          </label>
+          
+          <label class="field-group">
+        
+            <div class="password-field">
+              <input type="password" name="match_password" placeholder="Repeat Password" autocomplete="new-password" minlength="8" required="" disabled="">
+              <button type="button" class="toggle-password" aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg></button>
+            </div>
+          </label>
+          
+          <div class="cf-turnstile mb-1" data-theme="dark" data-sitekey="0x4AAAAAABuEPEiIfJnWB9_X"><div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-2kin2_response" value=""></div></div>
+              <script>
+                              // Callback dari Cloudflare Turnstile ketika berhasil dimuat dan diverifikasi
+                              function turnstileCallback(token) {
+                                document.getElementById('loginBtn').disabled = false;
+                              }
+                            
+                              // Cek apakah turnstile berhasil dimuat dalam waktu 5 detik
+                              setTimeout(() => {
+                                const turnstileIframe = document.querySelector('iframe[src*="challenges.cloudflare.com"]');
+                                if (!turnstileIframe) {
+                                  // Jika iframe turnstile tidak muncul, disable tombol input
+                                  document.getElementById('submitBtn').disabled = true;
+                                  alert("Captcha Cloudflare gagal dimuat. Silakan muat ulang halaman.");
+                                }
+                              }, 5000);
+                            </script>
+            
+            <script>
+              // Callback dari Cloudflare Turnstile ketika berhasil dimuat dan diverifikasi
+              function turnstileCallback(token) {
+                document.getElementById('loginBtn').disabled = false;
+              }
+            
+              // Cek apakah turnstile berhasil dimuat dalam waktu 5 detik
+              setTimeout(() => {
+                const turnstileIframe = document.querySelector('iframe[src*="challenges.cloudflare.com"]');
+                if (!turnstileIframe) {
+                  // Jika iframe turnstile tidak muncul, disable tombol input
+                  document.getElementById('submitBtn').disabled = true;
+                  alert("Captcha Cloudflare gagal dimuat. Silakan muat ulang halaman.");
+                }
+              }, 5000);
+            </script>
+          <label class="check-label terms-check">
+            <input type="checkbox" name="terms" value="1" required="">
+            <span>I agree to the <a href="/terms-conditions" target="_blank" rel="noopener">Terms of Service</a>.</span>
+          </label>
+
+          <button class="btn btn-secondary btn-full" type="submit" disabled="">Closed</button>
+
+          <input type="hidden" name="fp" value="b3e4b9d1102e06f9659a75f1b14a4fdf" autocomplete="off">
+
+          <p class="switch-note">
+            Already have an account?
+            <button type="button" data-open-tab="login">Login</button>
+          </p>
+        </form>
+      </aside>
+    </section>
+
+    <section class="simple-section" aria-label="Why creators use Vidoy">
+      <h2>Made for creators</h2>
+      <div class="simple-grid">
+        <article>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-video"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4"></path><path d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8"></path></svg></span>
+          <h3>Upload videos</h3>
+          <p>Host and organize your videos with a clean creator dashboard.</p>
+        </article>
+        <article>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chart-bar"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -6"></path><path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -10"></path><path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -14"></path><path d="M4 20h14"></path></svg></span>
+          <h3>Track performance</h3>
+          <p>Monitor viewers, traffic quality, and content performance.</p>
+        </article>
+        <article>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-currency-dollar"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2"></path><path d="M12 3v3m0 12v3"></path></svg></span>
+          <h3>High CPM</h3>
+          <p>Earn more from your traffic with competitive CPM rates built for creators.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer compact-footer">
+    <p>© <span id="year">2026</span> Vidoy</p>
+    <div>
+      <a href="/terms-conditions">Terms</a>
+      <a href="mailto:vio@vidoy.com">Support</a>
+      <a href="mailto:abuse@vidoy.com">Abuse Report</a>
+    </div>
+  </footer>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script>
+  <script src="/homepage/app.js"></script>
+
+  <!-- Device fingerprint (FingerprintJS open-source v4, gratis) -> isi hidden input name="fp" -->
+  <script>
+    (function () {
+      function applyFp(visitorId) {
+        document.querySelectorAll('input[name="fp"]').forEach(function (i) {
+          if (!i.value) i.value = visitorId;
+        });
+      }
+      function loadFp() {
+        // dynamic import supaya tetap jalan saat navigasi Turbo
+        import('https://openfpcdn.io/fingerprintjs/v4')
+          .then(function (FP) { return FP.default.load(); })
+          .then(function (fp) { return fp.get(); })
+          .then(function (res) { applyFp(res.visitorId); })
+          .catch(function () { /* fp gagal -> server fallback ke IP */ });
+      }
+      document.addEventListener('DOMContentLoaded', loadFp);
+      document.addEventListener('turbo:load', loadFp);
+      if (document.readyState !== 'loading') loadFp();
+    })();
+  </script>
+  
+  
+     
+        
+
+
+
+	</body></html>
