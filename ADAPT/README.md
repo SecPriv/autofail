@@ -31,26 +31,34 @@ You can find the explanation of what the setup scripts do later in this page.
 
 ### certificate generation
 
-To create the certificate:
+The root CA certificate (`rootCA.pem`) used to sign the server certificates is already available in `setup_files/rootCA.pem`. You can use this certificate directly.
+
+Push the certificate to the Android device:
+
+```bash
+adb push setup_files/rootCA.pem /sdcard/Download/
+```
+
+Now, install the certificate in the device. Open **Settings** and search for **CA Certificate**. Select the `rootCA.pem` file pushed previously.
+
+If you want to generate your own certificates instead, you can use `mkcert`:
 
 ```bash
 mkcert -install
 mkcert a.com b.com localhost 127.0.0.1
 ```
 
-You need your Android device to trust our certification authority. To find the certification authority certificate file, run:
+To find the certification authority certificate file, run:
 
 ```bash
 mkcert -CAROOT
 ```
 
-Push the certificate to the Android device:
+Then push it to the device:
 
 ```bash
 adb push /path/to/authority/rootCA.pem /sdcard/Download/
 ```
-
-Now, install the certificate in the device. Open **Settings** and search for **CA Certificate**. Select the `rootCA.pem` file pushed previously.
 
 ### Password manager entries
 
