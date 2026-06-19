@@ -211,17 +211,15 @@ def create_bp_a():
     def test_n(n):
         match n:
             case 0: return make_response(render_template("simple_login.html"))
-            case 1: return make_response(render_template("login_and_iframe_inside.html"))
-            case 2: return make_response(render_template("login_and_iframe_inside.html"))
-            case 3: return make_response(render_template("login_and_iframe_outside.html"))
-            case 4: return make_response(render_template("login_and_iframe_outside.html"))
-            case 5: return make_response(render_template("sandboxed_iframe.html"))
-            case 6: return make_response(render_template("iframe.html"))
+            case 1: return make_response(render_template("simple_iframe.html"))
+            case 2: return make_response(render_template("login_and_iframe_outside.html"))
+            case 3: return make_response(render_template("iframe.html"))
+            case 4: return make_response(render_template("sandboxed_iframe.html"))
+            case 5: return make_response(render_template("credentialless.html"))
+            case 6: return make_response(render_template("simple_login.html"))
             case 7: return make_response(render_template("simple_login.html"))
             case 8: return make_response(render_template("object.html"))
-            case 9: return make_response(render_template("credentialless.html"))
-            case 10: return make_response(render_template("simple_login.html"))
-            case 11: return make_response(render_template("simple_iframe.html"))
+            case 9: return make_response(render_template("login_and_iframe_inside.html"))
 
     return bp
 
@@ -483,7 +481,7 @@ def run_test_adb(test_num, browser_pkg):
             start_https_server()
         scheme = "https"
 
-    if test_num == 10:
+    if test_num == 6:
         port_str = ":8081"
     
     url = f"{scheme}://a.com{port_str}/a/test_{test_num}"

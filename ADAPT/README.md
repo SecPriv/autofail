@@ -1,31 +1,3 @@
-To be able to test websites served through HTTPS and that embed cross-origin iframes in Android, you must perform this setup. You need a rooted Android device or emulator.
-
-If it's your first time performing this test, you should perform the one time setup first. 
-
-Then each time you want to test you must:
-
-```
-- Reboot the device 
-- run the script ./frida.sh
-- run the script ./network_setup.sh
-```
-
-It is important to run the bash scripts in the correct order.
-
-Now you can run the orchestrator.py script which will handle opening the test pages and sending the results to the database. You must run the orchestrator.py with root permission.
-
-
-
-```bash
-cd server
-sudo -E python3 orchestrator.py
-```
-
-In the orchestrator you can use the command `browser browser_package` to launch a browser and attach the frida script to it. The frida script will attach automatically to any password manager service started.
-
-Then you can run the `test` command to start the tests. You will find the results in the SQL database in `server/results.db`.
-
-You can find the explanation of what the setup scripts do later in this page.
 
 ## One time setup
 
@@ -72,13 +44,33 @@ Website: b.com
 Username: b@mail.com
 Password: bbbbpassword
 
-## Setup scripts
+## Running the server
 
-### Frida
+To start the server, run:
 
-The `firda.sh` script simply pushes the frida server to the devices and runs it.
-To avoid detection the frida server executable has been renamed to `simple_process`.
-It is possible to get an error from the frida server. You can run `pm uninstall com.google.android.art` as root in the device's shell to solve it.
+```bash
+./run_server.sh
+```
+
+This script will first execute the network setup, then start the orchestrator on ports 80 (HTTP) and 443 (HTTPS).
+
+Once the orchestrator is running, use the following commands:
+
+1. **Set the browser** to test:
+   ```
+   browser <package_name>
+   ```
+
+2. **Enter test mode**:
+   ```
+   test
+   ```
+
+3. **Run tests**: Press **Enter** to proceed to the next test. The orchestrator will automatically advance through tests 0-9.
+
+## Setup script explaination
+
+This section explains what the setup scripts do, it is not necessary to read it to run the server.
 
 ### Networking
 
