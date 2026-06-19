@@ -26,6 +26,6 @@ if [ "$unauthorized" -gt 0 ]; then
     exit 1
 fi
 
-echo "Success: Android device connected and USB debugging is enabled"
+echo "Success: Android device connected and USB debugging is enabled!"
 adb devices
 exit 0
