@@ -10,6 +10,7 @@ import os
 from flask import Flask, Blueprint, request, render_template, make_response, jsonify
 from functools import partial
 from werkzeug.serving import make_server 
+from package_map import BROWSER_MAP, PWM_MAP
 
 # ==========================================
 # 0. SETUP FLAGS
@@ -71,8 +72,8 @@ srv_log, sup_log = setup_loggers()
 # 2. CONFIGURATION
 # ==========================================
 
-HTTPS_PORT = 443 
-HTTP_PORT = 80 
+HTTPS_PORT = 8443
+HTTP_PORT = 8080
 CERT = 'cert/cert.pem'
 KEY = 'cert/key.pem'
 DB_LOCK = threading.Lock()
@@ -209,19 +210,19 @@ def create_bp_a():
 
     @bp.route(f'/test_<int:n>')
     def test_n(n):
-        match n:
-            case 0: return make_response(render_template("simple_login.html"))
-            case 1: return make_response(render_template("login_and_iframe_inside.html"))
-            case 2: return make_response(render_template("login_and_iframe_inside.html"))
-            case 3: return make_response(render_template("login_and_iframe_outside.html"))
-            case 4: return make_response(render_template("login_and_iframe_outside.html"))
-            case 5: return make_response(render_template("sandboxed_iframe.html"))
-            case 6: return make_response(render_template("iframe.html"))
-            case 7: return make_response(render_template("simple_login.html"))
-            case 8: return make_response(render_template("object.html"))
-            case 9: return make_response(render_template("credentialless.html"))
-            case 10: return make_response(render_template("simple_login.html"))
-            case 11: return make_response(render_template("simple_iframe.html"))
+        templates = {
+            0: "simple_login.html",
+            1: "simple_iframe.html",
+            2: "login_and_iframe_outside.html",
+            3: "iframe.html",
+            4: "sandboxed_iframe.html",
+            5: "credentialless.html",
+            6: "simple_login.html",
+            7: "simple_login.html",
+            8: "object.html",
+            9: "login_and_iframe_inside.html",
+        }
+        return make_response(render_template(templates[n]))
 
     return bp
 
@@ -463,6 +464,40 @@ def set_pwm_target(package_name, device):
     print(f"[*] PWM Target set to: {package_name}")
     print(f"[*] Supervisor is now listening for packages containing: {package_name}")
 
+def resolve_handle(handle, mapping, label):
+    package = mapping.get(handle)
+    if package is None:
+        print(f"[-] Unknown {label} handle: '{handle}'")
+        print(f"    Available {label} handles: {', '.join(mapping.keys())}")
+    return package
+
+def print_available_handles():
+    print("AVAILABLE HANDLES:")
+    print(f"  Browsers: {', '.join(BROWSER_MAP.keys())}")
+    print(f"  PWMs:     {', '.join(PWM_MAP.keys())}")
+
+def kill_processes_by_prefix(package_name):
+    try:
+        result = subprocess.run(["adb", "shell", "ps", "-A"], capture_output=True, text=True, check=True)
+        pids = []
+        for line in result.stdout.splitlines()[1:]:
+            fields = line.split()
+            if len(fields) >= 2 and fields[-1].startswith(package_name):
+                pids.append(fields[1])
+
+        if not pids:
+            print(f"[*] No running processes match {package_name}*")
+            return
+
+        for pid in pids:
+            subprocess.run(["adb", "shell", "kill", "-9", pid], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            sup_log.info(f"[+] Killed PID {pid} ({package_name})")
+        print(f"[*] Killed {len(pids)} process(es) matching {package_name}*")
+    except Exception as e:
+        err = f"[-] Kill failed for {package_name}: {e}"
+        print(err)
+        sup_log.info(err)
+
 # ==========================================
 # 8. TEST AUTOMATION LOGIC
 # ==========================================
@@ -483,7 +518,7 @@ def run_test_adb(test_num, browser_pkg):
             start_https_server()
         scheme = "https"
 
-    if test_num == 10:
+    if test_num == 6:
         port_str = ":8081"
     
     url = f"{scheme}://a.com{port_str}/a/test_{test_num}"
@@ -638,25 +673,35 @@ if __name__ == "__main__":
         print(" [!!!] NO-PWM-HOOKS MODE ACTIVE - Browser hooks enabled, PWM hooks disabled")
     print("="*50)
     print("COMMANDS:")
-    print("  pwm <package_name>      -> Set target Password Manager")
-    print("  browser <package_name>  -> Spawn and hook a browser")
-    print("  test                    -> Enter Test Automation Mode")
-    print("  exit                    -> Stop everything")
+    print("  pwm <handle>      -> Set target Password Manager")
+    print("  browser <handle>  -> Spawn and hook a browser")
+    print("  list              -> Show available handles")
+    print("  test              -> Enter Test Automation Mode")
+    print("  exit              -> Stop everything")
     print("="*50)
+    print_available_handles()
 
     while True:
         cmd = input(">>> ").strip()
         if cmd.startswith("browser "):
             try:
-                pkg = cmd.split(" ")[1]
-                spawn_browser(pkg, device)
-            except IndexError: print("Usage: browser <package_name>")
+                handle = cmd.split(" ")[1]
+                pkg = resolve_handle(handle, BROWSER_MAP, "browser")
+                if pkg is not None:
+                    spawn_browser(pkg, device)
+            except IndexError: print("Usage: browser <handle>")
         
         elif cmd.startswith("pwm "):
             try:
-                pkg = cmd.split(" ")[1]
-                set_pwm_target(pkg, device)
-            except IndexError: print("Usage: pwm <package_name>")
+                handle = cmd.split(" ")[1]
+                pkg = resolve_handle(handle, PWM_MAP, "pwm")
+                if pkg is not None:
+                    kill_processes_by_prefix(pkg)
+                    set_pwm_target(pkg, device)
+            except IndexError: print("Usage: pwm <handle>")
+
+        elif cmd == "list":
+            print_available_handles()
 
         elif cmd == "test":
             run_test_mode(device)
