@@ -113,4 +113,5 @@ fi
 
 # --- 7. Launch Emulator ---
 echo "Launching emulator..."
-$ANDROID_HOME/emulator/emulator -avd "$AVD_NAME" -gpu host -no-boot-anim -no-snapshot
+$ANDROID_HOME/emulator/emulator -avd "$AVD_NAME" -gpu host -no-boot-anim -no-snapshot -partition-size 16384
+
