@@ -14,11 +14,24 @@ cleanup() {
 # Set trap for SIGINT (Ctrl+C) and SIGTERM
 trap cleanup SIGINT SIGTERM
 
-# Step 1: Run network_setup.sh
+# Step 1: Run frida.sh (launches the frida server on the device)
+echo "[*] Running frida.sh..."
+"$SCRIPT_DIR/frida.sh"
+
+# Step 2: Open Chrome on the emulator. An app must be foregrounded between
+# frida startup and network setup, otherwise the phone stops responding.
+echo "[*] Opening Chrome on the emulator..."
+adb shell am start -n com.android.chrome/com.google.android.apps.chrome.Main
+
+sleep 10
+
+adb shell am force-stop com.android.chrome
+
+# Step 3: Run network_setup.sh
 echo "[*] Running network_setup.sh..."
 "$SCRIPT_DIR/network_setup.sh"
 
-# Step 2: Change to server directory and run orchestrator
+# Step 4: Change to server directory and run orchestrator
 echo "[*] Starting orchestrator..."
 cd "$SCRIPT_DIR/server" || exit 1
 
@@ -31,4 +44,4 @@ if [ -x "$SCRIPT_DIR/server/.venv/bin/python" ]; then
 else
     PYTHON="python3"
 fi
-$PYTHON orchestrator.py --no-frida --debug
+$PYTHON orchestrator.py
