@@ -39,7 +39,7 @@ Run `./setup.sh`. This installs (user-space, no root):
    ```
    ./emulator/launch_emulator.sh
    ```
-   Installs Java 17, the Android SDK, and launches the `ae_android16` AOSP emulator.
+   Installs Java 17, the Android SDK, and launches the `ae_android16` Google APIs emulator (rootable, no Play Store).
 
 2. **Install Chrome + password managers**:
    ```

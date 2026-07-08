@@ -1,6 +1,6 @@
-# Android 16 AOSP Emulator Setup for macOS (Apple Silicon)
+# Android 16 Emulator Setup for macOS (Apple Silicon)
 
-This script sets up a self-contained Android development environment (Java, Android SDK, Emulator) and launches an Android 16 (API 36) AOSP emulator on macOS with Apple Silicon.
+This script sets up a self-contained Android development environment (Java, Android SDK, Emulator) and launches an Android 16 (API 36) Google APIs emulator on macOS with Apple Silicon. The `google_apis` image is a rootable `userdebug` build without the Play Store, which is required by the ADAPT tooling (frida-server, system-CA injection, iptables).
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ This script sets up a self-contained Android development environment (Java, Andr
 On the first execution, the script will:
 - Download and install OpenJDK 17 in `./jdk` (if not already installed system-wide)
 - Download and install the Android SDK Command Line Tools in `./android-sdk`
-- Download the Android 16 (API 36) AOSP ARM64 system image (~1.5 GB)
+- Download the Android 16 (API 36) Google APIs ARM64 system image (~1.5 GB)
 - Create an AVD named `ae_android16`
 - Launch the emulator
 
@@ -48,5 +48,5 @@ rm -rf jdk android-sdk
 ## Troubleshooting
 
 - **"This script requires macOS running on Apple Silicon"**: The emulator requires hardware virtualization (HVF) only available on Apple Silicon. Running on Intel Macs or other OSes is not supported.
-- **"The required AOSP system image is not available"**: Google may not have published the plain AOSP image for Android 16 yet. The script will strictly fail in this case. You would need to use the Google APIs image instead (requires modifying the script).
+- **"The required Google APIs system image is not available"**: Google may not have published the `google_apis` image for Android 16 yet. The script will strictly fail in this case. Do **not** substitute the `playstore` image — it is not rootable and breaks the ADAPT tooling.
 - **Emulator is slow**: Ensure macOS virtualization permissions are enabled. The emulator automatically uses `-gpu host` for native graphics acceleration.

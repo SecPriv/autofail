@@ -14,19 +14,11 @@ cd "$SCRIPT_DIR"
 JAVA_DIR="$SCRIPT_DIR/jdk"
 ANDROID_DIR="$SCRIPT_DIR/android-sdk"
 
-mkdir -p "$JAVA_DIR" "$ANDROID_DIR"
+mkdir -p "$ANDROID_DIR"
 
 # --- 3. Java Setup ---
-setup_local_java() {
-    echo "Downloading Java 17 (Eclipse Temurin)..."
-    JAVA_URL="https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.11_9.tar.gz"
-    JAVA_ARCHIVE="$SCRIPT_DIR/jdk.tar.gz"
-
-    curl -L -o "$JAVA_ARCHIVE" "$JAVA_URL"
-    tar -xzf "$JAVA_ARCHIVE" -C "$JAVA_DIR" --strip-components=1
-    rm "$JAVA_ARCHIVE"
-}
-
+# Java 17+ is installed by ./setup.sh (into emulator/jdk/) or available
+# system-wide. This script only reuses it; it does not install Java itself.
 JAVA_CMD=""
 if command -v java &> /dev/null; then
     JAVA_VERSION=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
@@ -39,13 +31,14 @@ fi
 
 if [[ -z "$JAVA_CMD" ]]; then
     if [[ -x "$JAVA_DIR/Contents/Home/bin/java" ]]; then
-        echo "Using local Java 17"
+        echo "Using local Java 17 (installed by ./setup.sh)"
+        export JAVA_HOME="$JAVA_DIR/Contents/Home"
+        JAVA_CMD="$JAVA_HOME/bin/java"
+        export PATH="$JAVA_HOME/bin:$PATH"
     else
-        setup_local_java
+        echo "Error: Java 17+ not found. Run ./setup.sh first." >&2
+        exit 1
     fi
-    export JAVA_HOME="$JAVA_DIR/Contents/Home"
-    JAVA_CMD="$JAVA_HOME/bin/java"
-    export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
 # Verify Java
@@ -70,7 +63,10 @@ if [[ ! -f "$SDKMANAGER" ]]; then
     rm -rf "$ANDROID_HOME/cmdline-tools/tmp" "$SDK_ZIP"
 fi
 
-# --- 5. Install Components & Strict AOSP Check ---
+# --- 5. Install Components & Strict Image Check ---
+# Uses the google_apis image (Google APIs, no Play Store, rootable userdebug).
+# A Play Store / production (user) build would fail: adb root, frida-server,
+# system-CA injection, and iptables all require root.
 
 VERSION="android-36"
 API="google_apis"
@@ -91,11 +87,11 @@ if ! $SDKMANAGER --sdk_root="$ANDROID_HOME" "${PACKAGES[@]}" 2>&1 | tee "$INSTAL
     exit 1
 fi
 
-# Strict failure if the exact AOSP package could not be found/installed
+# Strict failure if the exact google_apis package could not be found/installed
 IMAGE_DIR="$ANDROID_HOME/system-images/$VERSION/$API/$ARCH"
 if grep -q "Failed to find package " "$INSTALL_LOG" || [[ ! -d "$IMAGE_DIR" ]]; then
-    echo "Error: The required AOSP system image '$SYSTEM_IMAGE' is not available in the SDK repository." >&2
-    echo "The script will not proceed without the plain Android / AOSP image." >&2
+    echo "Error: The required Google APIs system image '$SYSTEM_IMAGE' is not available in the SDK repository." >&2
+    echo "The script will not proceed without the google_apis (rootable, no Play Store) image." >&2
     rm -f "$INSTALL_LOG"
     exit 1
 fi
