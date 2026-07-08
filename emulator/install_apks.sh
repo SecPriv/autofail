@@ -30,13 +30,13 @@ if [[ ! -d "$APKS_DIR" ]]; then
     exit 1
 fi
 
-# --- 3. Check emulator ---
-if ! "$ADB" devices | grep -q "emulator-"; then
-    echo "Error: No emulator detected. Start it with ./launch_emulator.sh first." >&2
+# --- 3. Check device (emulator or physical) ---
+if ! "$ADB" devices | grep -q "device$"; then
+    echo "Error: No Android device detected. Connect a device or start it with ./launch_emulator.sh first." >&2
     exit 1
 fi
 
-echo "Waiting for emulator to fully boot..."
+echo "Waiting for device to fully boot..."
 "$ADB" wait-for-device
 
 # Poll until boot completes (timeout 120s)
