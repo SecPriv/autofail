@@ -174,7 +174,7 @@ async function getAdFrameStatuses(page) {
       await Promise.race([
         client.detach(),
         new Promise((_, reject) => {
-          setTimeout(() => reject(new Error('CDP detach timeout')), 2000);
+          setTimeout(2000).then(() => reject(new Error('CDP detach timeout')));
         }),
       ]);
     } catch {
@@ -210,14 +210,10 @@ async function collectFrames(page, framesDir) {
 }
 
 async function withTimeout(promise, ms, label = 'Operation') {
-  let timeoutId;
   const timeoutPromise = new Promise((_, reject) => {
-    timeoutId = setTimeout(() => {
-      reject(new Error(`${label} timed out after ${ms}ms`));
-    }, ms);
+    setTimeout(ms).then(() => reject(new Error(`${label} timed out after ${ms}ms`)));
   });
   const result = await Promise.race([promise, timeoutPromise]);
-  clearTimeout(timeoutId);
   return result;
 }
 
@@ -226,7 +222,7 @@ async function closeWithTimeout(resource, ms, label) {
     await Promise.race([
       resource.close(),
       new Promise((_, reject) => {
-        setTimeout(() => reject(new Error(`${label} close timeout`)), ms);
+        setTimeout(ms).then(() => reject(new Error(`${label} close timeout`)));
       }),
     ]);
   } catch {

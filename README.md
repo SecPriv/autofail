@@ -32,6 +32,7 @@ Run `./setup.sh`. This installs (user-space, no root):
 - Android `platform-tools` (adb) — required even for a physical device
 - Node.js + npm for the real-world analysis crawler
 - Java 17+ JDK (only if system Java is older than 17) — for building the Android PoC apps via Gradle
+- Puppeteer + Chrome browser for the iframe crawler (RealWorldAnalysis, auto-downloaded)
 
 ### Running the evaluation
 

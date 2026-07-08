@@ -89,6 +89,8 @@ fi
 
 print_info "Input CSV found: $INPUT_CSV"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Check if Node.js is available
 if ! command -v node &> /dev/null; then
     print_error "Node.js is not installed or not in PATH"
