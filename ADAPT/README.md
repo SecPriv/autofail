@@ -46,12 +46,10 @@ Password: bbbbpassword
 
 ## Keyboard
 
-Using the emulator, we experienced that when focusing an input field, a floating menu appears on the left side of the screen instead of the keyboard.
-This prevents the password managers to use the keyboard autofill suggestions. To make the keyboard appear when focusing an input field, open **Settings** and search for **keyboard**.
-Open the **On-screen keyboard** submenu and then tap on the Gboard entry to open the Gboard specific settings. Here, disable **Glide typing**, **Voice typing**
+Using the emulator, we noticed that when focusing on an input field, a floating menu appears on the left side of the screen instead of the keyboard.
+This prevents the password managers from using the keyboard autofill suggestions. To make the keyboard appear when focusing an input field, open **Settings** and search for **keyboard**.
+Open the **On-screen keyboard** submenu and then tap on the Gboard entry to open the Gboard-specific settings. Here, disable **Glide typing**, **Voice typing**
 and **Write in text fields**. Open the **Physical keyboard** submenu and turn on the **Show on-screen keyboard** option.
-
-
 
 ## Running the server
 
@@ -67,10 +65,15 @@ Once the orchestrator is running, use the following commands:
 
 1. **Set the browser** to test:
    ```
-   browser <package_name>
+   browser <browser_handle>
    ```
 
-2. **Enter test mode**:
+2. **Set the pwm** to test:
+   ```
+   pwm <pwm_handle>
+   ```
+
+3. **Enter test mode**:
    ```
    test
    ```
