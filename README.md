@@ -16,7 +16,10 @@ The `Spill` directory contains the source code of a PoC app that performs the **
 
 The `XCLMitigation` directory contains the source code of a PoC app that performs the autofill using the secure interaction flow to mitigate the **Cross-Context Account Oracle** described in Sec 7.
 
-
 ### Dependencies
 
 Run `./setup.sh` to install the dependencies.
+
+### Emulator
+
+Run `./emulator/launch_emulator.sh` to install and run the emulator (macOS required).
