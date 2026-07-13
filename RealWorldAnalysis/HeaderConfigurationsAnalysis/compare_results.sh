@@ -82,7 +82,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Sort both files by URL using Python for efficiency with large files
+# Sort both files by URL, CSP headers, and XFO headers using Python
 sort_ndjson_by_url() {
     local input_file="$1"
     local output_file="$2"
@@ -105,8 +105,12 @@ with open(input_file, 'r', encoding='utf-8') as f:
             except json.JSONDecodeError:
                 pass
 
-# Sort by url field
-records.sort(key=lambda x: x.get('url', ''))
+# Sort by url, then csp_headers, then xfo_headers
+records.sort(key=lambda x: (
+    x.get('url', ''), 
+    tuple(x.get('csp_headers', [])), 
+    tuple(x.get('xfo_headers', []))
+))
 
 # Write sorted records
 with open(output_file, 'w', encoding='utf-8') as f:
@@ -115,10 +119,10 @@ with open(output_file, 'w', encoding='utf-8') as f:
 " "$input_file" "$output_file"
 }
 
-echo "Sorting original file by URL..."
+echo "Sorting original file..."
 sort_ndjson_by_url "$ORIGINAL_FILE" "$ORIGINAL_SORTED"
 
-echo "Sorting provided file by URL..."
+echo "Sorting provided file..."
 sort_ndjson_by_url "$REVIEWER_FILE" "$REVIEWER_SORTED"
 
 # Compare the sorted files
