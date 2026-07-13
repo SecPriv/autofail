@@ -19,7 +19,7 @@ SELECT
       AND value IS NOT NULL
   ) AS xfo_headers
 FROM
-  `httparchive.latest.requests`
+  `httparchive.crawl.requests`
 WHERE
   is_root_page
   AND page = url

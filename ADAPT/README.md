@@ -1,4 +1,3 @@
-
 ## One time setup
 
 ### certificate generation
@@ -11,7 +10,7 @@ Push the certificate to the Android device:
 adb push setup_files/rootCA.pem /sdcard/Download/
 ```
 
-Now, install the certificate in the device. Open **Settings** and search for **CA Certificate**. Select the `rootCA.pem` file pushed previously.
+Now, install the certificate on the device. Open **Settings** and search for **CA Certificate**. Select the `rootCA.pem` file pushed previously.
 
 If you want to generate your own certificates instead, you can use `mkcert`:
 
@@ -20,7 +19,7 @@ mkcert -install
 mkcert a.com b.com localhost 127.0.0.1
 ```
 
-To find the certification authority certificate file, run:
+To find the certificate authority certificate file, run:
 
 ```bash
 mkcert -CAROOT
@@ -78,15 +77,15 @@ Once the orchestrator is running, use the following commands:
    test
    ```
 
-3. **Run tests**: Press **Enter** to proceed to the next test. The orchestrator will automatically advance through tests 0-9.
+4. **Run tests**: Press **Enter** to proceed to the next test. The orchestrator will automatically advance through tests 0-9.
 
-## Setup script explaination
+## Setup script explanation
 
 This section explains what the setup scripts do, it is not necessary to read it to run the server.
 
 ### Frida
 
-The `firda.sh` script simply pushes the frida server to the devices and runs it.
+The `frida.sh` script simply pushes the frida server to the devices and runs it.
 To avoid detection the frida server executable has been renamed to `simple_process`.
 It is possible to get an error from the frida server. You can run `pm uninstall com.google.android.art` as root in the device's shell to solve it.
 
@@ -95,9 +94,9 @@ It is possible to get an error from the frida server. You can run `pm uninstall 
 
 The `network_setup.sh` script performs multiple things.
 
-#### Making the certifcate a **System credential**
+#### Making the certificate a **System credential**
 
-In the one time setup the certification authority certificate was installed as a **User credential**. Most of the browsers only use **System credentials**. 
+In the one time setup the certificate authority certificate was installed as a **User credential**. Most of the browsers only use **System credentials**. 
 
 To make your certificate a System certificate, follow these steps (the script.sh was written by Tim Perry from [HTTP Toolkit](https://httptoolkit.com/blog/android-14-install-system-ca-certificate/)):
 
@@ -115,13 +114,13 @@ chmod +x script.sh
 ./script.sh
 ```
 
-At this point, the custom certificate should appear under **System credentials**
+At this point, the custom certificate should appear under **System credentials**.
 
 #### Domain resolution
 
-The device needs to resolve `a.com` and `b.com` to `127.0.0.1`. To do so, you can change the content of the `/system/etc/hosts` file. The `system` is write-only only so you need to perform some additional steps to overwrite the file, in a similar fashion on how the script used in the previous section does it.
+The device needs to resolve `a.com` and `b.com` to `127.0.0.1`. To do so, you can change the content of the `/system/etc/hosts` file. The `system` is read-only so you need to perform some additional steps to overwrite the file, in a similar fashion on how the script used in the previous section does it.
 
-In the device, create a temporary directory and copy the content of `/system/etc/` into it:
+On the device, create a temporary directory and copy the content of `/system/etc/` into it:
 
 ```bash
 su
@@ -158,4 +157,4 @@ adb reverse tcp:8080 tcp:80
 adb reverse tcp:8443 tcp:443
 adb reverse tcp:8081 tcp:443
 ```
-Then you should map the device's ports `80` and `443` to the devices's port `8080`,`8443`. We need this loop because we cannot use adb reverse to directly map device's `80` or `443` to computer's `80` or `443`. But with this loop we achieve the same result.
+Then you should map the device's ports `80` and `443` to the device's port `8080`,`8443`. We need this loop because we cannot use adb reverse to directly map device's `80` or `443` to computer's `80` or `443`. But with this loop we achieve the same result.
