@@ -18,7 +18,7 @@ fi
 # --- 2. Download APKs if missing ---
 if [[ ! -d "$APKS_DIR" ]]; then
     echo "APKs directory not found. Downloading from Zenodo..."
-    ZENODO_URL="https://zenodo.org/records/21222213/files/apks.zip?download=1"
+    ZENODO_URL="https://zenodo.org/records/21496203/files/apks.zip?download=1"
     curl -L -o "$REPO_ROOT/apks.zip" "$ZENODO_URL"
     unzip -q "$REPO_ROOT/apks.zip" -d "$REPO_ROOT"
     rm "$REPO_ROOT/apks.zip"
